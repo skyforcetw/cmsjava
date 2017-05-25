@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>JNative</fullname>
+<class>
+<path>[../lib/JNative/JNative.jar]</path>
+</class>
+<source>
+<path>[../lib/JNative/JNative_1.4RC3_src.zip]</path>
+</source>
+<documentation>
+<path>../lib/JNative/docs</path>
+</documentation>
+<lastmodsaved>1319592832559</lastmodsaved>
+</library>

@@ -1,0 +1,28 @@
+[PropertyInfo]
+blackPatch,shu.cms.Patch,false,false, , ,true,<default>
+blackPatchIndex,int,false,false, , ,false,<default>
+calibrationMatrix,double[][],false,false, , ,true,<default>
+codeBit,shu.cms.lcd.LCDTargetBase.CodeBit,false,false, , ,true,<default>
+darkestPatch,shu.cms.Patch,false,false, , ,true,<default>
+darkestPatchIndex,int,false,false, , ,false,<default>
+filter,shu.cms.lcd.LCDTarget.Filter,false,false, , ,false,<default>
+instrument,shu.cms.measure.meter.Meter.Instr,false,false, , ,true,<default>
+inverseLuminanceCode,double,false,false, , ,true,<default>
+inverseModeMeasure,boolean,false,false, , ,true,<default>
+isRGBPatchOnly,boolean,false,false, , ,false,<default>
+labPatchList,java.util.List,false,false, , ,true,<default>
+level,int,false,false, , ,true,<default>
+measureMeter,shu.cms.measure.meter.Meter,false,false, , ,true,<default>
+number,shu.cms.lcd.LCDTargetBase.Number,false,false, , ,true,<default>
+step,double,false,false, , ,true,<default>
+targetChannel,shu.cms.colorspace.RGB.Channel,false,false, , ,true,<default>
+targetFilter,shu.cms.lcd.LCDTarget.TargetFilter,false,false, , ,false,<default>
+whitePatch,shu.cms.Patch,false,false, , ,true,<default>
+whitePatchIndex,int,false,false, , ,false,<default>
+whitestPatch,shu.cms.Patch,false,false, , ,true,<default>
+whitestPatchIndex,int,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

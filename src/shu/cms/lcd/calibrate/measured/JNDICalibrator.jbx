@@ -1,0 +1,22 @@
+[PropertyInfo]
+calibratedChannel,shu.cms.colorspace.RGB.Channel,false,false, , ,false,<default>
+calibratedInfomation,String,false,false, , ,true,<default>
+calibratedPatchList,java.util.List,false,false, , ,true,<default>
+compromiseCalibrate,boolean,false,false, , ,false,<default>
+compromiseCalibrateCount,int,false,false, , ,false,<default>
+compromiseRGBArray,shu.cms.colorspace.RGB[],false,false, , ,false,<default>
+considerHKEffect,boolean,false,false, , ,false,<default>
+estimateCalibrate,boolean,false,false, , ,true,<default>
+estimateRGBArray,shu.cms.colorspace.RGB[],false,false, , ,false,<default>
+minDeltaCalibrate,boolean,false,false, , ,true,<default>
+minDeltaRGBArray,shu.cms.colorspace.RGB[],false,false, , ,false,<default>
+negativeCompromiseCalibrate,boolean,false,false, , ,false,<default>
+originalRampLCDTarget,shu.cms.lcd.LCDTarget,false,false, , ,false,<default>
+patternComparator,shu.cms.lcd.calibrate.measured.JNDICalibrator.PatternComparator,false,false, , ,false,<default>
+positiveCompromiseCalibrate,boolean,false,false, , ,false,<default>
+step,double,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

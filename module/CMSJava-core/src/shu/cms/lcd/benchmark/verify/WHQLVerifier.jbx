@@ -1,0 +1,10 @@
+[PropertyInfo]
+IEC61966_4LCDReport,shu.cms.DeltaEReport,false,false, , ,false,<default>
+integratedLCDReport,shu.cms.DeltaEReport,false,false, , ,false,<default>
+SRGBModel,shu.cms.devicemodel.lcd.ProfileColorSpaceModel,false,false, , ,false,<default>
+standAloneLCDReport,shu.cms.DeltaEReport,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

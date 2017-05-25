@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+<property category="generalFormatting2" name="overrideBasicFormatting" value="1"/>
+<property category="javaFormatting" name="EventStyle" value="0"/>
+<property category="javaFormatting" name="InstanceVisibility" value="4"/>
+<property category="javaFormatting" name="packagePrefixGroups" value="java;javax;BLANK_LINE;java.awt;javax.swing;BLANK_LINE;org;(*)"/>
+<property category="javadoc" name="custom.tags.1" value="todo;a;To Do:"/>
+<property category="path" name="DefaultDiagram" value="diagrams"/>
+<property category="path" name="Diagram" value="diagrams"/>
+<property category="runtime" name="DefaultConfiguration" value="-1"/>
+<property category="runtime" name="ExcludeDefaultForZero" value="1"/>
+<property category="serverservices" name="disabled.services" value="jdatastore"/>
+<property category="serverservices" name="single.server.name" value=""/>
+<property category="sys" name="AuthorLabel" value="@author"/>
+<property category="sys" name="BackupPath" value="bak"/>
+<property category="sys" name="CheckStable" value="1"/>
+<property category="sys" name="Company" value="skygroup"/>
+<property category="sys" name="CompanyLabel" value="Company:"/>
+<property category="sys" name="Copyright" value="Copyright (c) 2008"/>
+<property category="sys" name="CopyrightLabel" value="Copyright:"/>
+<property category="sys" name="DefaultPath" value="src"/>
+<property category="sys" name="Description" value="a Colour Management System by Java"/>
+<property category="sys" name="DescriptionLabel" value="Description:"/>
+<property category="sys" name="DocPath" value="doc"/>
+<property category="sys" name="Encoding" value="MS950"/>
+<property category="sys" name="ExcludeClassEnabled" value="0"/>
+<property category="sys" name="IncludeTestPath" value="1"/>
+<property category="sys" name="InstanceVisibility" value="2"/>
+<property category="sys" name="JDK" value="java version 1.6.0_16-b01"/>
+<property category="sys" name="JvmVersion" value="1.5"/>
+<property category="sys" name="LastTag" value="0"/>
+<property category="sys" name="Libraries" value="../jython.jar;../pxlab.jar;../jbcl.jar;../jrawio-1.0.RC5.jar;JBCL;../iccess/iccess.jpx;../jacob/jacob.jar;../jxl.jar;../LOC.jar;../registry.jar;../jfreechart/jfreechartDemo/jfreechartDemo.jpx;../JXLayer/JXLayer.jpx;../live.jar;../mtj.jar;../JMathTools/JMathTools.jpx"/>
+<property category="sys" name="MakeStable" value="0"/>
+<property category="sys" name="OutPath" value="classes"/>
+<property category="sys" name="SourcePath" value="src;test"/>
+<property category="sys" name="SourceVersion" value="1.5"/>
+<property category="sys" name="TestPath" value="test"/>
+<property category="sys" name="Title" value="Colour Management System"/>
+<property category="sys" name="TitleLabel" value="Title:"/>
+<property category="sys" name="Version" value="1.0"/>
+<property category="sys" name="VersionLabel" value="@version"/>
+<property category="sys" name="WorkingDirectory" value="."/>
+<file path="LiveGraphics3D.html"/>
+</project>

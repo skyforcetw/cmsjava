@@ -1,0 +1,16 @@
+[PropertyInfo]
+CCT,int,false,false, , ,false,<default>
+cctStyle,shu.cms.lcd.calibrate.CCTStyle,false,false, , ,false,<default>
+CCTWhitePoint,boolean,false,false, , ,true,<default>
+maxCode,double,false,false, , ,true,<default>
+model,shu.cms.lcd.model.LCDModel,false,false, , ,false,<default>
+RGBWhitePoint,boolean,false,false, , ,true,<default>
+whiteCode,shu.cms.colorspace.RGB,false,false, , ,false,<default>
+whitePoint,shu.cms.lcd.calibrate.parameter.WhiteParameter.WhitePoint,false,false, , ,false,<default>
+whitexyY,shu.cms.colorspace.CIExyY,false,false, , ,true,<default>
+xyYWhitePoint,boolean,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

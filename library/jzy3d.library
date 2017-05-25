@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>jzy3d</fullname>
+<class>
+<path>[../lib/jzy3d/jogl.jar]</path>
+<path>[../lib/jzy3d/org.jzy3d-0.8.4.jar]</path>
+<path>[../lib/jzy3d/swt.jar]</path>
+<path>[../lib/jzy3d/swt-debug.jar]</path>
+<path>[../lib/jzy3d/opencsv-2.1.jar]</path>
+<path>[../lib/jzy3d/org.convexhull.jar]</path>
+<path>[../lib/jzy3d/gluegen-rt.jar]</path>
+</class>
+<source>
+<path>[../lib/jzy3d/org.jzy3d-0.8.4-demos.zip]</path>
+</source>
+<lastmodsaved>1319593491387</lastmodsaved>
+</library>

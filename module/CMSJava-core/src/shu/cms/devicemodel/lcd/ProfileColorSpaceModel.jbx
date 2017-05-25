@@ -1,0 +1,11 @@
+[PropertyInfo]
+description,String,false,false, , ,true,<default>
+gammaCorrectLCDTarget,shu.cms.lcd.LCDTarget,false,false, , ,true,<default>
+LCDTarget,shu.cms.lcd.LCDTarget,false,false, , ,true,<default>
+luminanceFactor,double,false,false, , ,false,<default>
+pcs,shu.cms.profile.ProfileColorSpace,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

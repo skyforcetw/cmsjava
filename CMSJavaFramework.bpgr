@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--Project Group-->
+<projectgroup>
+<project path="module/CMSJava-static/CMSJava-static.jpx"/>
+<project path="module/CMSJava-core/CMSJava-core.jpx"/>
+<project path="module/CMSJava-AUO/CMSJava-AUO.jpx"/>
+<project path="module/CMSJava-applet/CMSJava-applet.jpx"/>
+<project path="module/jColor/jColor.jpx"/>
+<project path="module/CMSJava-AUO-DeMura/CMSJava-AUO-DeMura.jpx"/>
+<project path="module/CMSJava-thesis/CMSJava-thesis.jpx"/>
+<project path="module/HubbleAPI/HubbleAPI.jpx"/>
+<project path="module/jzy3dDemo/jzy3dDemo.jpx"/>
+<project path="module/JAIStuff/JAIStuff.jpx"/>
+<project path="module/CMSJava-vv/CMSJava-vv.jpx"/>
+<project path="module/SDuino/SDuino.jpx"/>
+</projectgroup>

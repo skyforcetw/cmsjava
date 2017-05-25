@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>jxl</fullname>
+<class>
+<path>[../lib/jexcelapi/jxl.jar]</path>
+</class>
+<source>
+<path>../lib/jexcelapi/src</path>
+</source>
+<documentation>
+<path>../lib/jexcelapi/docs</path>
+</documentation>
+<lastmodsaved>1323745876809</lastmodsaved>
+</library>

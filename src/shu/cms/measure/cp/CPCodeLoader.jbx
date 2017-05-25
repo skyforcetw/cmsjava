@@ -1,0 +1,18 @@
+[PropertyInfo]
+CheckDifference,boolean,false,false, , ,false,<default>
+connector,shu.cms.lcd.calibrate.cp.PlatformConnector,false,false, , ,false,<default>
+darkFrame,shu.cms.measure.cp.DarkFrame,false,false, , ,false,<default>
+DarkInsert,boolean,false,false, , ,false,<default>
+DummyLCDModel,shu.cms.devicemodel.lcd.LCDModel,false,false, , ,false,<default>
+DummyLoading,boolean,false,false, , ,false,<default>
+ForceLoading,boolean,false,false, , ,false,<default>
+LastCPCode,shu.cms.colorspace.depend.RGB[],false,false, , ,false,<default>
+LoadingCount,int,false,false, , ,false,<default>
+mode,shu.cms.measure.cp.CPCodeLoader.Mode,false,false, , ,false,<default>
+OriginalLoaded,boolean,false,false, , ,false,<default>
+WaitTime,long,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

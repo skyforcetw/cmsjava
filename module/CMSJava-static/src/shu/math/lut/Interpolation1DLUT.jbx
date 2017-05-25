@@ -1,0 +1,15 @@
+[PropertyInfo]
+ensureTrend,boolean,false,false, , ,true,<default>
+extrapolation,boolean,false,false, , ,false,<default>
+hasCorrectedInRange,boolean,false,false, , ,false,<default>
+interpKey,shu.math.Interpolation,false,false, , ,false,<default>
+interpolationType,shu.math.lut.Interpolation1DLUT.Algo,false,false, , ,true,<default>
+interpValue,shu.math.Interpolation,false,false, , ,false,<default>
+keyArray,double[],false,false, , ,true,<default>
+trendCheck,boolean,false,false, , ,false,<default>
+valueArray,double[],false,false, , ,true,<default>
+[IconNames]
+
+
+
+

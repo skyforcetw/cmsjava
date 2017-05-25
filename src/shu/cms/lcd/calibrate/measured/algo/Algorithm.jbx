@@ -1,0 +1,8 @@
+[PropertyInfo]
+forceMeasure,boolean,false,false, , ,false,<default>
+mode,shu.cms.lcd.calibrate.measured.algo.Algorithm.Mode,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

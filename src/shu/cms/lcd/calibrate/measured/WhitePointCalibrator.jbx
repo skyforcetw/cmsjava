@@ -1,0 +1,13 @@
+[PropertyInfo]
+calibratedInfomation,String,false,false, , ,true,<default>
+calibratedPatchList,java.util.List,false,false, , ,true,<default>
+chromaAroundAlgo,shu.cms.lcd.calibrate.measured.algo.ChromaticAroundAlgorithm,false,false, , ,false,<default>
+deltaE,double,false,false, , ,false,<default>
+deltauvp,double[],false,false, , ,false,<default>
+initWhiteRGB,shu.cms.colorspace.depend.RGB,false,false, , ,true,<default>
+nearestAlgo,shu.cms.lcd.calibrate.measured.algo.CIEuv1960CompromiseAlogorithm,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

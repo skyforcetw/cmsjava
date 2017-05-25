@@ -1,0 +1,9 @@
+[PropertyInfo]
+LCDMetadata,shu.cms.lcd.LCDMetadata,false,false, , ,true,<default>
+lcdMetadata,shu.cms.lcd.LCDMetadata,false,false, , ,false,<default>
+measureMetadata,shu.cms.lcd.LCDTargetBase.MeasureMetadata,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

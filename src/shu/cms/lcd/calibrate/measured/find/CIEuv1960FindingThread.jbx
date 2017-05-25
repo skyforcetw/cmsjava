@@ -1,0 +1,30 @@
+[PropertyInfo]
+c,shu.cms.lcd.calibrate.measured.find.CalibratorAccessIF,false,false, , ,false,<default>
+calibrated,boolean[],false,false, , ,false,<default>
+chromaAroundAlgo,shu.cms.lcd.calibrate.measured.algo.ChromaticAroundAlgorithm,false,false, , ,false,<default>
+chromaticCalibrate,boolean,false,false, , ,false,<default>
+compoundNearAlogo,shu.cms.lcd.calibrate.measured.algo.CompoundNearestAlogorithm,false,false, , ,false,<default>
+cubeAroundMode,boolean,false,false, , ,false,<default>
+deltaENearAlgo,shu.cms.lcd.calibrate.measured.algo.DeltaE00NearestAlogorithm,false,false, , ,false,<default>
+enableTrace,boolean,false,false, , ,false,<default>
+index,int,false,false, , ,false,<default>
+info,shu.cms.lcd.calibrate.measured.find.FindingInfo,false,false, , ,false,<default>
+lightnessAroundAlgo,shu.cms.lcd.calibrate.measured.algo.LightnessAroundAlgorithm,false,false, , ,false,<default>
+lightnessNearAlgo,shu.cms.lcd.calibrate.measured.algo.LightnessNearestAlogorithm,false,false, , ,false,<default>
+luminanceCalibrate,boolean,false,false, , ,false,<default>
+p,shu.cms.lcd.calibrate.measured.find.FindingPlotter,false,false, , ,false,<default>
+plotStep,boolean,false,false, , ,false,<default>
+plotting,boolean,false,false, , ,false,<default>
+pstep,shu.cms.lcd.calibrate.measured.find.FindingPlotter,false,false, , ,false,<default>
+redundantMeasure,int,false,false, , ,true,<default>
+stepAroundAlgo,shu.cms.lcd.calibrate.measured.algo.StepAroundAlgorithm,false,false, , ,false,<default>
+targetMaxValue,shu.cms.colorspace.depend.RGBBase.MaxValue,false,false, , ,false,<default>
+trace,String,false,false, , ,true,<default>
+traceBuf,StringBuilder,false,false, , ,false,<default>
+uvNearAlgo,shu.cms.lcd.calibrate.measured.algo.CIEuv1960NearestAlogorithm,false,false, , ,false,<default>
+white,shu.cms.colorspace.independ.CIEXYZ,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

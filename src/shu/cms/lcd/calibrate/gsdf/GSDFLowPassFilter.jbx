@@ -1,0 +1,14 @@
+[PropertyInfo]
+coverRange,int,false,false, , ,true,<default>
+deltaThreshold,double,false,false, , ,true,<default>
+filterTimes,int,false,false, , ,true,<default>
+kernel1,double[],false,false, , ,true,<default>
+kernel2,double[],false,false, , ,true,<default>
+part1FilterTimes,int,false,false, , ,true,<default>
+part2FilterTimes,int,false,false, , ,true,<default>
+plotting,boolean,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

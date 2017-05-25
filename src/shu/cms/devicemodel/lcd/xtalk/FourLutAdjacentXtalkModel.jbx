@@ -1,0 +1,10 @@
+[PropertyInfo]
+channelVI,shu.cms.colorspace.RGB.Channel,false,false, , ,false,<default>
+channelVICorrect,boolean,false,false, , ,false,<default>
+chVIEliminator,shu.cms.lcd.model.xtalk.XTalkEliminator,false,false, , ,false,<default>
+chVIIProperty,shu.cms.lcd.model.xtalk.XTalkProperty,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

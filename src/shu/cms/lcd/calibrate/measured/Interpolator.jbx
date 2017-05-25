@@ -1,0 +1,8 @@
+[PropertyInfo]
+jndi,shu.cms.lcd.calibrate.measured.algo.JNDIInterface,false,false, , ,false,<default>
+mode,shu.cms.lcd.calibrate.measured.Interpolator.Mode,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

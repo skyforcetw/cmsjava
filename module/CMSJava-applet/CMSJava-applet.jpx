@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+<property category="generalFormatting" name="baseCodeStyle" value="java/Java Standard.codestyle"/>
+<property category="generalFormatting2" name="blockIndent" value="4"/>
+<property category="generalFormatting2" name="continuationIndent" value="8"/>
+<property category="generalFormatting2" name="overrideBasicFormatting" value="1"/>
+<property category="javaFormatting" name="alignMultilineAssign" value="1"/>
+<property category="javaFormatting" name="arrayInitDataOnNewLine" value="0"/>
+<property category="javaFormatting" name="blankLinesAfterClass" value="2"/>
+<property category="javaFormatting" name="catchOnNewLine" value="0"/>
+<property category="javaFormatting" name="elseOnNewLine" value="0"/>
+<property category="javaFormatting" name="extendsOnNewLine" value="0"/>
+<property category="javaFormatting" name="finallyOnNewLine" value="0"/>
+<property category="javaFormatting" name="implementsOnNewLine" value="0"/>
+<property category="javaFormatting" name="indentCase" value="0"/>
+<property category="javaFormatting" name="packagePrefixGroups" value="java;BLANK_LINE;javax;BLANK_LINE;(*)"/>
+<property category="javaFormatting" name="preservedBlankLinesInDecl" value="2"/>
+<property category="javaFormatting" name="spaceBeforeLparen" value="0"/>
+<property category="javaFormatting" name="whileOnNewLine" value="0"/>
+<property category="javadoc" name="custom.tags.1" value="todo;a;To Do:"/>
+<property category="runtime" name="DefaultConfiguration" value="-1"/>
+<property category="runtime" name="ExcludeDefaultForZero" value="1"/>
+<property category="serverservices" name="disabled.services" value="jdatastore"/>
+<property category="serverservices" name="single.server.name" value=""/>
+<property category="sys" name="AuthorLabel" value="@author"/>
+<property category="sys" name="BackupPath" value="bak"/>
+<property category="sys" name="CheckStable" value="1"/>
+<property category="sys" name="Company" value=""/>
+<property category="sys" name="CompanyLabel" value="Company:"/>
+<property category="sys" name="Copyright" value="Copyright (c) 2011"/>
+<property category="sys" name="CopyrightLabel" value="Copyright:"/>
+<property category="sys" name="DefaultPath" value="src"/>
+<property category="sys" name="Description" value=""/>
+<property category="sys" name="DescriptionLabel" value="Description:"/>
+<property category="sys" name="DocPath" value="doc"/>
+<property category="sys" name="Encoding" value="MS950"/>
+<property category="sys" name="ExcludeClassEnabled" value="0"/>
+<property category="sys" name="IncludeTestPath" value="1"/>
+<property category="sys" name="InstanceVisibility" value="2"/>
+<property category="sys" name="JDK" value="java version 1.6.0_43-b01"/>
+<property category="sys" name="JvmVersion" value="1.5"/>
+<property category="sys" name="LastTag" value="0"/>
+<property category="sys" name="Libraries" value="../CMSJava-static/CMSJava-static.jpx;../CMSJava-core/CMSJava-core.jpx;commons-io"/>
+<property category="sys" name="MakeStable" value="0"/>
+<property category="sys" name="OutPath" value="classes"/>
+<property category="sys" name="SourcePath" value="src;test"/>
+<property category="sys" name="SourceVersion" value="1.5"/>
+<property category="sys" name="TestPath" value="test"/>
+<property category="sys" name="Title" value="CMSJava-applet"/>
+<property category="sys" name="TitleLabel" value="Title:"/>
+<property category="sys" name="Version" value="1.0"/>
+<property category="sys" name="VersionLabel" value="@version"/>
+<property category="sys" name="WorkingDirectory" value="../../workdir"/>
+<node name="GradientShower" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:shu/cms/applet/gradient/GradientShowerFrame.class"/>
+<property category="archiving" name="contentRules.2" value="I:shu/cms/applet/gradient/about.png"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="1:../CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="libraryStates.2" value="1:../CMSJava-core/CMSJava-core.jpx"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.applet.gradient.GradientShowerFrame"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="GradientShower.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="GradientShower2" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:shu/cms/applet/gradient/*.*"/>
+<property category="archiving" name="libraryStates.1" value="1:../CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="libraryStates.2" value="1:../CMSJava-core/CMSJava-core.jpx"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.applet.gradient.GradientShowerFrame"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="GradientShower2.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="MeasureTool" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:shu/cms/applet/measure/tool/MeasureToolFrame.class"/>
+<property category="archiving" name="contentRules.2" value="I:shu/cms/applet/measure/tool/*.*"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="3:../CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="libraryStates.10" value="3:../CMSJava-core/CMSJava-core.jpx*jbcl"/>
+<property category="archiving" name="libraryStates.2" value="2:../CMSJava-static/CMSJava-static.jpx*commons-lang"/>
+<property category="archiving" name="libraryStates.3" value="3:../CMSJava-static/CMSJava-static.jpx*commons-logging"/>
+<property category="archiving" name="libraryStates.4" value="2:../CMSJava-static/CMSJava-static.jpx*Jama"/>
+<property category="archiving" name="libraryStates.5" value="1:../CMSJava-static/CMSJava-static.jpx*jython"/>
+<property category="archiving" name="libraryStates.6" value="3:../CMSJava-static/CMSJava-static.jpx*xstream"/>
+<property category="archiving" name="libraryStates.7" value="1:../CMSJava-static/CMSJava-static.jpx*jacob"/>
+<property category="archiving" name="libraryStates.8" value="3:../CMSJava-core/CMSJava-core.jpx"/>
+<property category="archiving" name="libraryStates.9" value="1:../CMSJava-core/CMSJava-core.jpx*jxl"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.applet.measure.tool.MeasureToolFrame"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetCompressed" value="1"/>
+<property category="archiving" name="targetPath" value="MeasureTool.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<file path="CMSJava-applet.html"/>
+</project>

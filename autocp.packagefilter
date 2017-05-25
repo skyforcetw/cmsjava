@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filters>
+  <include />
+  <exclude>
+    <rule>shu.thesis.applet.psychophysics.*</rule>
+    <rule>shu.cms.devicemodel.lcd.thread.*</rule>
+    <rule>shu.cms.plot.livegraphics3d.*</rule>
+    <rule>shu.cms.colorformat.munsell.*</rule>
+    <rule>shu.cms.colorformat.legend.*</rule>
+    <rule>shu.cms.reference.spectra.*</rule>
+    <rule>shu.cms.measure.calibrate.*</rule>
+    <rule>shu.cms.hvs.cam._ciecam97.*</rule>
+    <rule>shu.cms.colorformat.trans.*</rule>
+    <rule>shu.cms.reference.camera.*</rule>
+    <rule>shu.cms.measure.meterapi.*</rule>
+    <rule>com.gretagmacbeth.eyeone.*</rule>
+    <rule>shu.cms.measure.cp.test.*</rule>
+    <rule>shu.cms.colorformat.cxf.*</rule>
+    <rule>shu.cms.measure.verify.*</rule>
+    <rule>shu.cms.hvs.incomplete.*</rule>
+    <rule>shu.cms.hvs.experiment.*</rule>
+    <rule>shu.cms.devicemodel.dc.*</rule>
+    <rule>shu.cms.measure.test.*</rule>
+    <rule>shu.cms.hvs.cam.icam.*</rule>
+    <rule>shu.cms.hvs.cam.hunt.*</rule>
+    <rule>sky4s.jnative.test.*</rule>
+    <rule>shu.thesis.recover.*</rule>
+    <rule>shu.cms.colororder.*</rule>
+    <rule>com.stanley.memmap.*</rule>
+    <rule>shu.math.geometry.*</rule>
+    <rule>shu.cms.plot.test.*</rule>
+    <rule>shu.util.source.*</rule>
+    <rule>shu.cms.recover.*</rule>
+    <rule>shu.cms.profile.*</rule>
+    <rule>shu.cms.hvs.pca.*</rule>
+    <rule>shu.cms.hvs.jnd.*</rule>
+    <rule>shu.cms.grabber.*</rule>
+    <rule>shu.thesis.lcd.*</rule>
+    <rule>shu.cms.applet.*</rule>
+    <rule>shu.thesis.dc.*</rule>
+    <rule>shu.math.test.*</rule>
+    <rule>shu.cms.image.*</rule>
+    <rule>shu.math.mda.*</rule>
+    <rule>shu.cms.test.*</rule>
+    <rule>shu.cms.ncm.*</rule>
+    <rule>shu.cms.gma.*</rule>
+    <rule>quickhull3d.*</rule>
+    <rule>shu.cms.wb.*</rule>
+    <rule>shu.cms.ui.*</rule>
+    <rule>shu.cms.dc.*</rule>
+    <rule>shu.jai.*</rule>
+    <rule>shu.ui.*</rule>
+  </exclude>
+</filters>
+

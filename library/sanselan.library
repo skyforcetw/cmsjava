@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>sanselan</fullname>
+<class>
+<path>[../lib/sanselan-0.97-incubator/sanselan-0.97-incubator.jar]</path>
+</class>
+<source>
+<path>[../lib/sanselan-0.97-incubator/sanselan-0.97-incubator-sources.jar]</path>
+</source>
+<documentation>
+<path>[../lib/sanselan-0.97-incubator/sanselan-0.97-incubator-javadoc.jar]</path>
+</documentation>
+<lastmodsaved>1319593053606</lastmodsaved>
+</library>

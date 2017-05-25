@@ -1,0 +1,24 @@
+[PropertyInfo]
+calibrateCount,int,false,false, , ,true,<default>
+calibrated,boolean[],false,false, , ,true,<default>
+calibratedIndexArray,double[],false,false, , ,false,<default>
+calibratedRGB,shu.cms.colorspace.depend.RGB[],false,false, , ,true,<default>
+calibratedRGBArray,shu.cms.colorspace.depend.RGB[],false,false, , ,true,<default>
+cubeSearchTimes,int,false,false, , ,true,<default>
+deltaEIndexArray,double[],false,false, , ,true,<default>
+deltaJNDIIndexArray,double[],false,false, , ,true,<default>
+deltaunvpIndexArray,double[][],false,false, , ,false,<default>
+deltauvpDistArray,double[],false,false, , ,true,<default>
+init,boolean,false,false, , ,true,<default>
+initRGBArray,shu.cms.colorspace.depend.RGB[],false,false, , ,true,<default>
+nonCalibrated,int,false,false, , ,true,<default>
+nonQualifyArray,boolean[],false,false, , ,false,<default>
+nonQualifyInfo,String,false,false, , ,true,<default>
+nonQualifyTimes,int,false,false, , ,true,<default>
+size,int,false,false, , ,false,<default>
+stepArray,shu.cms.colorspace.depend.RGBBase.MaxValue[],false,false, , ,false,<default>
+[IconNames]
+
+
+
+

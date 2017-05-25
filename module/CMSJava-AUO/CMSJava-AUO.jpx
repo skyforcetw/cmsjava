@@ -1,0 +1,177 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+<property category="build" name="CopyExtensions.1" value="txt"/>
+<property category="build" name="CopyExtensions.2" value="xls"/>
+<property category="debug.2" name="RemoteAttachArgumentNames.1" value="hostname"/>
+<property category="debug.2" name="RemoteAttachArgumentNames.2" value="port"/>
+<property category="debug.2" name="RemoteAttachArgumentValues.1" value="localhost"/>
+<property category="debug.2" name="RemoteAttachArgumentValues.2" value="3999"/>
+<property category="debug.2" name="RemoteAttachTransport" value="dt_socket"/>
+<property category="debug.2" name="RemoteLaunchTransport" value="dt_socket"/>
+<property category="generalFormatting2" name="overrideBasicFormatting" value="1"/>
+<property category="javaFormatting" name="EventStyle" value="0"/>
+<property category="javaFormatting" name="InstanceVisibility" value="4"/>
+<property category="javaFormatting" name="packagePrefixGroups" value="java;javax;BLANK_LINE;java.awt;javax.swing;BLANK_LINE;org;(*)"/>
+<property category="javadoc" name="custom.tags.1" value="todo;a;To Do:"/>
+<property category="path" name="DefaultDiagram" value="diagrams"/>
+<property category="path" name="Diagram" value="diagrams"/>
+<property category="runtime" name="ConfigurationCount" value="4"/>
+<property category="runtime" name="DefaultConfiguration" value="-1"/>
+<property category="runtime.0" name="ConfigurationName" value="HSVDumpApp"/>
+<property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+<property category="runtime.0" name="application.class" value="auo.cms.applet.hsvdump.HSVDumpApp"/>
+<property category="runtime.1" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+<property category="runtime.1" name="ConfigurationName" value="1000m"/>
+<property category="runtime.1" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+<property category="runtime.1" name="application.vmparameters" value="-Xmx1000m"/>
+<property category="runtime.2" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+<property category="runtime.2" name="ConfigurationName" value="Native Run"/>
+<property category="runtime.2" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+<property category="runtime.2" name="application.class" value="auo.cms.applet.hsvdump.HSVDumpApp"/>
+<property category="runtime.2" name="custom.init_required" value="0"/>
+<property category="runtime.2" name="custom.required.1" value="JBCL"/>
+<property category="runtime.2" name="custom.required.10" value="imageIO"/>
+<property category="runtime.2" name="custom.required.11" value="XStream"/>
+<property category="runtime.2" name="custom.required.12" value="Java 3D"/>
+<property category="runtime.2" name="custom.required.13" value="commons-primitives"/>
+<property category="runtime.2" name="custom.required.14" value="commons-logging"/>
+<property category="runtime.2" name="custom.required.15" value="commons-lang"/>
+<property category="runtime.2" name="custom.required.16" value="commons-math"/>
+<property category="runtime.2" name="custom.required.17" value="Flanagan"/>
+<property category="runtime.2" name="custom.required.18" value="Jama"/>
+<property category="runtime.2" name="custom.required.19" value="../../lib/mtj.jar"/>
+<property category="runtime.2" name="custom.required.2" value="../../lib/jython.jar"/>
+<property category="runtime.2" name="custom.required.20" value="../../lib/live.jar"/>
+<property category="runtime.2" name="custom.required.21" value="../../lib/vecmath.jar"/>
+<property category="runtime.2" name="custom.required.22" value="sanselan-0.97-incubator"/>
+<property category="runtime.2" name="custom.required.23" value="jawin"/>
+<property category="runtime.2" name="custom.required.24" value="../../lib/LiveGraphics3D/LiveGraphics3D.jpx"/>
+<property category="runtime.2" name="custom.required.25" value="../../lib/iccess/iccess.jpx"/>
+<property category="runtime.2" name="custom.required.26" value="../CMSJava-static/CMSJava-static.jpx"/>
+<property category="runtime.2" name="custom.required.27" value="../../lib/beansbinding-1.2.1.jar"/>
+<property category="runtime.2" name="custom.required.28" value="JNative"/>
+<property category="runtime.2" name="custom.required.29" value="jzy3d"/>
+<property category="runtime.2" name="custom.required.3" value="../../lib/pxlab.jar"/>
+<property category="runtime.2" name="custom.required.30" value="commons-io-2"/>
+<property category="runtime.2" name="custom.required.31" value="../../CMSJava.jpx"/>
+<property category="runtime.2" name="custom.required.4" value="../../lib/jacob/jacob.jar"/>
+<property category="runtime.2" name="custom.required.5" value="../../lib/jxl.jar"/>
+<property category="runtime.2" name="custom.required.6" value="../../lib/LOC.jar"/>
+<property category="runtime.2" name="custom.required.7" value="../../lib/registry.jar"/>
+<property category="runtime.2" name="custom.required.8" value="JFreeChart"/>
+<property category="runtime.2" name="custom.required.9" value="JAI"/>
+<property category="runtime.2" name="enable.tcpmonitor" value="0"/>
+<property category="runtime.2" name="enable.wsimonitor" value="0"/>
+<property category="runtime.2" name="tcpmonitor.listenport" value=""/>
+<property category="runtime.2" name="tcpmonitor.targethost" value=""/>
+<property category="runtime.2" name="tcpmonitor.targetport" value=""/>
+<property category="runtime.2" name="wsimonitor.listenport" value=""/>
+<property category="runtime.2" name="wsimonitor.logfile" value=""/>
+<property category="runtime.2" name="wsimonitor.targethost" value=""/>
+<property category="runtime.2" name="wsimonitor.targetport" value=""/>
+<property category="runtime.3" name="ConfigurationName" value="TuneSpotApplet"/>
+<property category="runtime.3" name="RunnableType" value="com.borland.jbuilder.runtime.AppletRunner"/>
+<property category="runtime.3" name="applet.class" value="auo.cms.applet.hsvautotune.TuneSpotApplet"/>
+<property category="runtime.4" name="ConfigurationName" value="TuneSpotApplet"/>
+<property category="runtime.4" name="RunnableType" value="com.borland.jbuilder.runtime.AppletRunner"/>
+<property category="runtime.4" name="applet.class" value="auo.cms.applet.hsvautotune.TuneSpotApplet"/>
+<property category="serverservices" name="disabled.services" value="jdatastore"/>
+<property category="serverservices" name="single.server.name" value=""/>
+<property category="sys" name="AuthorLabel" value="@author"/>
+<property category="sys" name="BackupPath" value="bak"/>
+<property category="sys" name="CheckStable" value="1"/>
+<property category="sys" name="Company" value="skygroup"/>
+<property category="sys" name="CompanyLabel" value="Company:"/>
+<property category="sys" name="Copyright" value="Copyright (c) 2009"/>
+<property category="sys" name="CopyrightLabel" value="Copyright:"/>
+<property category="sys" name="DefaultPath" value="src"/>
+<property category="sys" name="Description" value="a Colour Management System by Java"/>
+<property category="sys" name="DescriptionLabel" value="Description:"/>
+<property category="sys" name="DocPath" value="doc"/>
+<property category="sys" name="Encoding" value="MS950"/>
+<property category="sys" name="ExcludeClassEnabled" value="0"/>
+<property category="sys" name="IncludeTestPath" value="1"/>
+<property category="sys" name="InstanceVisibility" value="2"/>
+<property category="sys" name="JDK" value="java version 1.6.0_43-b01"/>
+<property category="sys" name="JvmVersion" value="1.5"/>
+<property category="sys" name="LastTag" value="0"/>
+<property category="sys" name="Libraries" value="../CMSJava-core/CMSJava-core.jpx;opencsv;beansbinding"/>
+<property category="sys" name="MakeStable" value="0"/>
+<property category="sys" name="OutPath" value="classes"/>
+<property category="sys" name="SourcePath" value="src;test"/>
+<property category="sys" name="SourceVersion" value="1.5"/>
+<property category="sys" name="TestPath" value="test"/>
+<property category="sys" name="Title" value="Colour Management System"/>
+<property category="sys" name="TitleLabel" value="Title:"/>
+<property category="sys" name="Version" value="1.0"/>
+<property category="sys" name="VersionLabel" value="@version"/>
+<property category="sys" name="WorkingDirectory" value="workdir"/>
+<property category="sys" name="uidesign.size.auo.applet.eeprom.EEPROMAnalyzeFrame" value="557,211"/>
+<property category="sys" name="uidesign.size.auo.contrast.applet.ContrastEnhanceFrame2" value="945,649"/>
+<property category="sys" name="uidesign.size.auo.contrast.applet.Frame1" value="894,731"/>
+<node name="ContrastEnhance" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:auo/applet/contrast/*.*"/>
+<property category="archiving" name="contentRules.2" value="I:auo/contrast/ContrastEnhancer.class"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="2:../CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="libraryStates.2" value="2:../CMSJava-static/CMSJava-static.jpx*Jama"/>
+<property category="archiving" name="libraryStates.3" value="2:../CMSJava-static/CMSJava-static.jpx*jython"/>
+<property category="archiving" name="libraryStates.4" value="2:../JAIStuff/JAIStuff.jpx*jai"/>
+<property category="archiving" name="libraryStates.5" value="2:../CMSJava-core/CMSJava-core.jpx"/>
+<property category="archiving" name="libraryStates.6" value="2:../CMSJava-core/CMSJava-core.jpx*jbcl"/>
+<property category="archiving" name="manifestMainClass" value="auo.applet.contrast.ContrastEnhanceApplication"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="ContrastEnhance.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="demura" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ExecutableArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:auo/mura/CommandLineExecuter.class"/>
+<property category="archiving" name="contentRules.2" value="X:shu/cms/*.*"/>
+<property category="archiving" name="contentRules.3" value="X:edu/cornell/*.*"/>
+<property category="archiving" name="executableEnabled.1" value="0"/>
+<property category="archiving" name="executableEnabled.2" value="1"/>
+<property category="archiving" name="executableEnabled.3" value="0"/>
+<property category="archiving" name="executableEnabled.4" value="0"/>
+<property category="archiving" name="executableEnabled.5" value="0"/>
+<property category="archiving" name="executableFiles.1" value="CMSJava-AUOW.exe"/>
+<property category="archiving" name="executableFiles.2" value=""/>
+<property category="archiving" name="executableFiles.3" value="CMSJava-AUO-linux"/>
+<property category="archiving" name="executableFiles.4" value="CMSJava-AUO-solaris"/>
+<property category="archiving" name="executableFiles.5" value="CMSJava-AUO-mac"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="2:../CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="libraryStates.2" value="3:../JAIStuff/JAIStuff.jpx*jai"/>
+<property category="archiving" name="libraryStates.3" value="1:../CMSJava-static/CMSJava-static.jpx*jxl"/>
+<property category="archiving" name="libraryStates.4" value="3:opencsv"/>
+<property category="archiving" name="manifestMainClass" value="auo.mura.CommandLineExecuter"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetCompressed" value="1"/>
+<property category="archiving" name="targetPath" value="demura.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="HSVDump" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:**/*.*"/>
+<property category="archiving" name="libraryStates.1" value="2:../CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="libraryStates.2" value="3:../CMSJava-static/CMSJava-static.jpx*Jama"/>
+<property category="archiving" name="libraryStates.3" value="3:../JAIStuff/JAIStuff.jpx*jai"/>
+<property category="archiving" name="libraryStates.4" value="2:../CMSJava-core/CMSJava-core.jpx"/>
+<property category="archiving" name="libraryStates.5" value="2:../CMSJava-core/CMSJava-core.jpx*jbcl"/>
+<property category="archiving" name="manifestConfigFile" value="1"/>
+<property category="archiving" name="manifestMainClass" value="auo.cms.applet.hsvdump.HSVDumpApp"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="overrideManifestPath" value="HSVDump.MF"/>
+<property category="archiving" name="targetCompressed" value="1"/>
+<property category="archiving" name="targetPath" value="HSVDump.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<file path="classes/Applet1.html"/>
+<file path="CMSJava-AUO.html"/>
+<file path="classes/TuneSpotApplet.html"/>
+</project>

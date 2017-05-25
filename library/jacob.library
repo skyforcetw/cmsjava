@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>jacob</fullname>
+<class>
+<path>[../lib/jacob/jacob.jar]</path>
+</class>
+<lastmodsaved>1319678412579</lastmodsaved>
+</library>

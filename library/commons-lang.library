@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>commons-lang</fullname>
+<class>
+<path>[../lib/commons-lang-2.4/commons-lang-2.4.jar]</path>
+</class>
+<source>
+<path>[../lib/commons-lang-2.4/commons-lang-2.4-sources.jar]</path>
+</source>
+<documentation>
+<path>../lib/commons-lang-2.4/apidocs</path>
+<path>[../lib/commons-lang-2.4/commons-lang-2.4-javadoc.jar]</path>
+</documentation>
+<lastmodsaved>1319592511574</lastmodsaved>
+</library>

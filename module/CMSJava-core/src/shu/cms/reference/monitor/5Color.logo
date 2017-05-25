@@ -1,0 +1,11 @@
+Logo TestChart für Farbmonitore			
+BEGIN_DATA_FORMAT			
+Sample_ID	RGB_R	RGB_G	RGB_B
+END_DATA_FORMAT			
+BEGIN_DATA			
+A1	255	255	255
+A2	255	0	0
+A3	0	255	0
+A4	0	0	255
+A5	0	0	0
+END_DATA			

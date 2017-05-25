@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>JXLayer</fullname>
+<class>
+<path>../lib/JXLayer/classes</path>
+<path>[../lib/JXLayer/dist/JXLayer.jar]</path>
+<path>[../lib/JXLayer/lib/filters.jar]</path>
+<path>../lib/JXLayer/build/classes</path>
+</class>
+<source>
+<path>../lib/JXLayer/src</path>
+</source>
+<lastmodsaved>1319678541099</lastmodsaved>
+</library>

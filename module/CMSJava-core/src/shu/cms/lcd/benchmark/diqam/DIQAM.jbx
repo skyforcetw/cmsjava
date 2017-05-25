@@ -1,0 +1,10 @@
+[PropertyInfo]
+lcdTarget,shu.cms.lcd.LCDTarget,false,false, , ,false,<default>
+plot,shu.cms.plot.Plot2D,false,false, , ,true,<default>
+plot2D,shu.cms.plot.Plot2D,false,false, , ,false,<default>
+title,String,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

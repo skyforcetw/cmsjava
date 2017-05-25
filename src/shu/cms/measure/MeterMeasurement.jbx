@@ -1,0 +1,36 @@
+[PropertyInfo]
+autoClose,boolean,false,false, , ,true,<default>
+background,java.awt.Color,false,false, , ,false,<default>
+backgroundColor,java.awt.Color,false,false, , ,true,<default>
+blank,java.awt.Color,false,false, , ,true,<default>
+blankTimes,int,false,false, , ,true,<default>
+CPBackground,java.awt.Color,false,false, , ,true,<default>
+cpBackground,java.awt.Color,false,false, , ,false,<default>
+CPBlank,java.awt.Color,false,false, , ,true,<default>
+cpBlank,java.awt.Color,false,false, , ,false,<default>
+CPCodeMeasurement,shu.cms.measure.cp.CPCodeMeasurement,false,false, , ,true,<default>
+cpm,shu.cms.measure.cp.CPCodeMeasurement,false,false, , ,false,<default>
+do255InverseMode,boolean,false,false, , ,true,<default>
+doBlankInsert,boolean,false,false, , ,true,<default>
+fakeMeasure,boolean,false,false, , ,true,<default>
+gain,double,false,false, , ,false,<default>
+informationProvider,shu.cms.measure.MeterMeasurement.InformationProvider,false,false, , ,true,<default>
+longMeasureVerify,boolean,false,false, , ,true,<default>
+measuredBlack,shu.cms.colorspace.independ.CIEXYZ,false,false, , ,false,<default>
+measureWindow,shu.cms.measure.MeasureWindow2,false,false, , ,true,<default>
+measureWindowClosing,boolean,false,false, , ,false,<default>
+measureWindowsVisible,boolean,false,false, , ,true,<default>
+meter,shu.cms.measure.meter.Meter,false,false, , ,true,<default>
+meterMode,shu.cms.measure.MeterMeasurement.MeterMode,false,false, , ,false,<default>
+offset,double,false,false, , ,false,<default>
+screenSize,java.awt.Dimension,false,false, , ,false,<default>
+softCalibrate,boolean,false,false, , ,true,<default>
+title,String,false,false, , ,true,<default>
+titleTouched,boolean,false,false, , ,false,<default>
+unSoftCalXYZValues,double[],false,false, , ,false,<default>
+waitTimes,int,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,12 @@
+[PropertyInfo]
+basicPowers,int[][],false,false, , ,false,<default>
+order,int,false,false, , ,false,<default>
+powerComparator,shu.math.test.PolynomialFunction.PowerComparator,false,false, , ,false,<default>
+termPowerArray,int[][],false,false, , ,false,<default>
+variableCount,int,false,false, , ,false,<default>
+variables,double[],false,false, , ,false,<default>
+[IconNames]
+
+
+
+

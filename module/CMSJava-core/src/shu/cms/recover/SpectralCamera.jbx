@@ -1,0 +1,13 @@
+[PropertyInfo]
+camera,shu.cms.dc.ideal.IdealDigitalCamera,false,false, , ,false,<default>
+colorSpace,shu.cms.colorspace.RGB.ColorSpace,false,false, , ,false,<default>
+illuminantSpectra,shu.cms.Spectra,false,false, , ,false,<default>
+mode,shu.cms.recover.SpectralCamera.Mode,false,false, , ,false,<default>
+spectraAdjustFactor,double,false,false, , ,false,<default>
+white,shu.cms.colorspace.CIEXYZ,false,false, , ,false,<default>
+wiener,shu.cms.recover.Wiener,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

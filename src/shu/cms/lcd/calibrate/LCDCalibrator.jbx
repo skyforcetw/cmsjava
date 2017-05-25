@@ -1,0 +1,24 @@
+[PropertyInfo]
+ap,shu.cms.lcd.calibrate.parameter.AdjustParameter,false,false, , ,false,<default>
+calibrateRGBArray,shu.cms.colorspace.RGB[],false,false, , ,false,<default>
+codeCalibrator,shu.cms.lcd.calibrate.LCDCalibrator.CodeCalibrator,false,false, , ,false,<default>
+deltauvPrimeReport,String,false,false, , ,true,<default>
+inverseProduce,boolean,false,false, , ,false,<default>
+model,shu.cms.lcd.model.LCDModel,false,false, , ,false,<default>
+p,shu.cms.lcd.calibrate.parameter.Parameter,false,false, , ,false,<default>
+rbCalibrate,boolean,false,false, , ,false,<default>
+rbDeltaEArray,shu.cms.DeltaE[],false,false, , ,false,<default>
+RDeltaEArray,shu.cms.DeltaE[],false,false, , ,false,<default>
+rootDir,String,false,false, , ,false,<default>
+showPlot,boolean,false,false, , ,true,<default>
+targetPatchList,java.util.List,false,false, , ,true,<default>
+targetxyYCurve,shu.cms.colorspace.CIExyY[],false,false, , ,true,<default>
+vp,shu.cms.lcd.calibrate.parameter.ViewingParameter,false,false, , ,false,<default>
+whiteRGB,shu.cms.colorspace.RGB,false,false, , ,false,<default>
+whiteXYZ,shu.cms.colorspace.CIEXYZ,false,false, , ,false,<default>
+wp,shu.cms.lcd.calibrate.parameter.WhiteParameter,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

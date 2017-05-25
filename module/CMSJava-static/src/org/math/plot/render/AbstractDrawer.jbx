@@ -1,0 +1,34 @@
+[PropertyInfo]
+base_offset,double[],false,false, , ,false,<default>
+baseOffset,double[],false,false, , ,true,<default>
+boundsSc,int[][],false,false, , ,true,<default>
+canvas,org.math.plot.canvas.PlotCanvas,false,false, , ,false,<default>
+color,java.awt.Color,false,false, , ,true,<default>
+comp2D,java.awt.Graphics2D,false,false, , ,false,<default>
+dimension,int,false,false, , ,true,<default>
+dot_fill,int,false,false, , ,false,<default>
+dot_pattern,boolean[][],false,false, , ,false,<default>
+dot_radius,int,false,false, , ,false,<default>
+dot_type,int,false,false, , ,false,<default>
+dotFill,int,false,false, , ,true,<default>
+dotPattern,boolean[][],false,false, , ,true,<default>
+dotRadius,int,false,false, , ,true,<default>
+dotType,int,false,false, , ,true,<default>
+font,java.awt.Font,false,false, , ,true,<default>
+line_type,int,false,false, , ,false,<default>
+line_width,int,false,false, , ,false,<default>
+lineType,int,false,false, , ,true,<default>
+lineWidth,int,false,false, , ,true,<default>
+screen_offset,int[],false,false, , ,false,<default>
+screenOffset,int[],false,false, , ,true,<default>
+text_angle,double,false,false, , ,false,<default>
+text_Eastoffset,double,false,false, , ,false,<default>
+text_Northoffset,double,false,false, , ,false,<default>
+textAngle,double,false,false, , ,true,<default>
+textOffset,double[],false,false, , ,true,<default>
+units,double[],false,false, , ,true,<default>
+[IconNames]
+
+
+
+

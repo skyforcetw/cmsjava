@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>flanagan</fullname>
+<class>
+<path>[../lib/flanagan.jar]</path>
+</class>
+<lastmodsaved>1319570670355</lastmodsaved>
+</library>

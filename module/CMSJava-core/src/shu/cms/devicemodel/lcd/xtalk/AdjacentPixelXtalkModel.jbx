@@ -1,0 +1,14 @@
+[PropertyInfo]
+codeValues,double[],false,false, , ,false,<default>
+crosstalkCorrect,boolean,false,false, , ,false,<default>
+description,String,false,false, , ,true,<default>
+doubleCorrect,boolean,false,false, , ,false,<default>
+eliminator,shu.cms.lcd.model.xtalk.XTalkEliminator,false,false, , ,false,<default>
+mmModel,shu.cms.lcd.model.MultiMatrixModel,false,false, , ,false,<default>
+property,shu.cms.lcd.model.xtalk.XTalkProperty,false,false, , ,false,<default>
+reconstructor,shu.cms.lcd.model.xtalk.AbstractXTalkReconstructor,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,23 @@
+[PropertyInfo]
+_getRGBDeltaE,shu.cms.DeltaE,false,false, , ,false,<default>
+autoRGBChangeMaxValue,boolean,false,false, , ,false,<default>
+covert,shu.cms.lcd.model.covert.ReverseModelCovert,false,false, , ,false,<default>
+coverting,boolean,false,false, , ,true,<default>
+covertInitRGB,shu.cms.colorspace.RGB,false,false, , ,false,<default>
+covertMode,boolean,false,false, , ,true,<default>
+displayLUT,shu.cms.lcd.DisplayLUT,false,false, , ,true,<default>
+getXYZRGB,shu.cms.colorspace.RGB,false,false, , ,false,<default>
+modelFactors,shu.cms.lcd.model.LCDModelBase.Factor[],false,false, , ,true,<default>
+modelWhite,shu.cms.colorspace.CIEXYZ,false,false, , ,true,<default>
+RGBDeltaE,shu.cms.DeltaE,false,false, , ,true,<default>
+test,shu.cms.lcd.model.LCDModel.Test,false,false, , ,false,<default>
+theModelFactors,shu.cms.lcd.model.LCDModelBase.Factor[],false,false, , ,false,<default>
+whiteDeltaE,shu.cms.DeltaE,false,false, , ,true,<default>
+whiteRGB,shu.cms.colorspace.RGB,false,false, , ,false,<default>
+whiteRGBCalc,shu.cms.lcd.model.util.RBCalculator,false,false, , ,false,<default>
+whiteRGBDeltaE,shu.cms.DeltaE,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,8 @@
+[PropertyInfo]
+storeInstance,shu.cms.devicemodel.lcd.ChannelDependentModel,false,false, , ,true,<default>
+xtalkLCDTarget,shu.cms.lcd.LCDTarget,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

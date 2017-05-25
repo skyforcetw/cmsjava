@@ -1,0 +1,20 @@
+[PropertyInfo]
+adapter,shu.cms.lcd.model.LCDModelAdapter,false,false, , ,false,<default>
+aroundCovert,shu.cms.lcd.model.covert.CovertIF,false,false, , ,false,<default>
+bestMode,shu.cms.lcd.model.covert.ReverseModelCovert.Mode,false,false, , ,false,<default>
+coverting,boolean,false,false, , ,true,<default>
+initRGB,shu.cms.colorspace.RGB,false,false, , ,false,<default>
+integerMode,boolean,false,false, , ,true,<default>
+lcdModel,shu.cms.lcd.model.LCDModel,false,false, , ,false,<default>
+max,double,false,false, , ,false,<default>
+minimumCovert,shu.cms.lcd.model.covert.CovertIF,false,false, , ,false,<default>
+mode,shu.cms.lcd.model.covert.ReverseModelCovert.Mode,false,false, , ,false,<default>
+step,double,false,false, , ,false,<default>
+steps,double[],false,false, , ,false,<default>
+whiteRGB,shu.cms.colorspace.RGB,false,false, , ,false,<default>
+xtalkModel,boolean,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refactor PUBLIC "-//Borland Software Corporation//Refactor 1.0//EN" "http://www.borland.com/devsupport/jbuilder/dtds/refactor_1_0.dtd">
+
+<refactor>
+  <rename-method id="6AP0LK27VF1FK8LGC5Q0QKH0" creation-time="Tue May 08 15:42:20.671 CST 2007">
+    <declaring-class-name>tw.edu.shu.im.iccio.ICCProfileHeader</declaring-class-name>
+    <declared-method-signature>()Ltw/edu/shu/im/iccio/datatype/ColorSpace;</declared-method-signature>
+    <old-method-name>getPcs_</old-method-name>
+    <new-method-name>getPCS_</new-method-name>
+  </rename-method>
+</refactor>
+

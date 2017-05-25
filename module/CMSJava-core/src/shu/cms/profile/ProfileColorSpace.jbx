@@ -1,0 +1,12 @@
+[PropertyInfo]
+catType,shu.cms.hvs.cam.CAMConst.CATType,false,false, , ,false,<default>
+D65ChromaticAdaptation,shu.cms.hvs.cam.ChromaticAdaptation,false,false, , ,false,<default>
+lookUpTableType,boolean,false,false, , ,true,<default>
+PCSChromaticAdaptation,shu.cms.hvs.cam.ChromaticAdaptation,false,false, , ,false,<default>
+referenceWhite,shu.cms.colorspace.CIEXYZ,false,false, , ,true,<default>
+style,shu.cms.profile.ProfileColorSpace.Style,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

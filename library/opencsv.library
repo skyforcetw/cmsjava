@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>opencsv</fullname>
+<class>
+<path>[../lib/opencsv-2.3/deploy/opencsv-2.3.jar]</path>
+</class>
+<source>
+<path>../lib/opencsv-2.3/src</path>
+</source>
+<documentation>
+<path>../lib/opencsv-2.3/doc</path>
+</documentation>
+<lastmodsaved>1363155921246</lastmodsaved>
+</library>

@@ -1,0 +1,26 @@
+[PropertyInfo]
+bandNames,String[],false,false, , ,true,<default>
+black,boolean,false,false, , ,true,<default>
+CCT,double,false,false, , ,true,<default>
+corrected,boolean,false,false, , ,false,<default>
+degree,shu.cms.colorspace.independ.CIEXYZ.Degree,false,false, , ,false,<default>
+legal,boolean,false,false, , ,true,<default>
+normalizeY,shu.cms.colorspace.independ.NormalizeY,false,false, , ,true,<default>
+powerByXYZ,double,false,false, , ,true,<default>
+spectralCamera,shu.cms.recover.SpectralCamera,false,false, , ,false,<default>
+uvPrimeValues,double[],false,false, , ,true,<default>
+uvValues,double[],false,false, , ,true,<default>
+whitenessIndex,double[],false,false, , ,true,<default>
+X,double,false,false, , ,false,<default>
+xyValues,double[],false,false, , ,true,<default>
+XYZAdaptedFromD65,shu.cms.colorspace.independ.CIEXYZ,false,false, , ,true,<default>
+XYZAdaptedToD65,shu.cms.colorspace.independ.CIEXYZ,false,false, , ,true,<default>
+xyzValues,double[],false,false, , ,true,<default>
+Y,double,false,false, , ,false,<default>
+yellownessIndex,double,false,false, , ,true,<default>
+Z,double,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

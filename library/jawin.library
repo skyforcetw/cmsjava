@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>jawin</fullname>
+<class>
+<path>[../lib/jawin/jawin.jar]</path>
+<path>[../lib/jawin/jawin-stubs.jar]</path>
+</class>
+<lastmodsaved>1319592863418</lastmodsaved>
+</library>

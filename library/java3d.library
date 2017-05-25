@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>java3d</fullname>
+<class>
+<path>[../lib/java3d/j3dutils.jar]</path>
+<path>[../lib/java3d/j3dcore.jar]</path>
+<path>[../lib/java3d/vecmath.jar]</path>
+</class>
+<lastmodsaved>1319593473606</lastmodsaved>
+</library>

@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>commons-logging</fullname>
+<class>
+<path>[../lib/commons-logging-1.1.1/commons-logging-adapters-1.1.1.jar]</path>
+<path>[../lib/commons-logging-1.1.1/commons-logging-tests.jar]</path>
+<path>[../lib/commons-logging-1.1.1/commons-logging-api-1.1.1.jar]</path>
+<path>[../lib/commons-logging-1.1.1/commons-logging-1.1.1.jar]</path>
+</class>
+<source>
+<path>[../lib/commons-logging-1.1.1/commons-logging-1.1.1-sources.jar]</path>
+</source>
+<documentation>
+<path>[../lib/commons-logging-1.1.1/commons-logging-1.1.1-javadoc.jar]</path>
+<path>../lib/commons-logging-1.1.1/site/apidocs</path>
+</documentation>
+<lastmodsaved>1319570670350</lastmodsaved>
+</library>

@@ -1,0 +1,31 @@
+[PropertyInfo]
+borderLayout1,java.awt.BorderLayout,false,false, , ,false,<default>
+color,java.awt.Color,false,false, , ,true,<default>
+color1,java.awt.Color,false,false, , ,false,<default>
+color2,java.awt.Color,false,false, , ,false,<default>
+color3,java.awt.Color,false,false, , ,false,<default>
+CPCodeLoading,boolean,false,false, , ,true,<default>
+cpcodeLoading,boolean,false,false, , ,false,<default>
+DICOMMode,boolean,false,false, , ,false,<default>
+dicomTargetLength,int,false,false, , ,false,<default>
+dicomTargetLocationX,int,false,false, , ,false,<default>
+dicomTargetLocationY,int,false,false, , ,false,<default>
+hsbValues,float[],false,false, , ,false,<default>
+JPanel1,javax.swing.JPanel,false,false, , ,false,<default>
+mode,shu.cms.measure.MeasureWindow.Mode,false,false, , ,false,<default>
+multiColor,boolean,false,false, , ,false,<default>
+northLabel1,String,false,false, , ,true,<default>
+northLabel2,String,false,false, , ,true,<default>
+northLabel3,String,false,false, , ,true,<default>
+northLabel4,String,false,false, , ,true,<default>
+patchCanvas,shu.cms.measure.MeasureWindow.PatchCanvas,false,false, , ,false,<default>
+screenSize,java.awt.Dimension,false,false, , ,false,<default>
+southLabel,String,false,false, , ,true,<default>
+verticalFlowLayout1,com.borland.jbcl.layout.VerticalFlowLayout,false,false, , ,false,<default>
+windowHeight,int,false,false, , ,false,<default>
+windowWidth,int,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

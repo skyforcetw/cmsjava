@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>Jama</fullname>
+<class>
+<path>[../lib/Jama/Jama-1.0.2.jar]</path>
+</class>
+<source>
+<path>[../lib/Jama/Jama-1.0.2.zip]</path>
+</source>
+<lastmodsaved>1319570670347</lastmodsaved>
+</library>

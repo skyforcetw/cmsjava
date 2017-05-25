@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>jfreechart</fullname>
+<class>
+<path>[../lib/jfreechart/itext-2.0.6.jar]</path>
+<path>[../lib/jfreechart/jfreechart-1.0.9-experimental.jar]</path>
+<path>[../lib/jfreechart/jcommon-1.0.12.jar]</path>
+<path>[../lib/jfreechart/jfreechart-1.0.9.jar]</path>
+</class>
+<lastmodsaved>1381309033069</lastmodsaved>
+</library>

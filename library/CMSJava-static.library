@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>CMSJava-static</fullname>
+<class>
+<path>[../module/CMSJava-static/CMSJava-static.jar]</path>
+</class>
+<source>
+<path>[../module/CMSJava-static/CMSJava-static-source.jar]</path>
+</source>
+<lastmodsaved>1390791910076</lastmodsaved>
+</library>

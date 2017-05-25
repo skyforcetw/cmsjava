@@ -1,0 +1,20 @@
+[PropertyInfo]
+algoDebug,boolean,false,false, , ,false,<default>
+calibratedInfomation,String,false,false, , ,true,<default>
+greenBasedResult,shu.cms.colorspace.depend.RGB[],false,false, , ,false,<default>
+greenCalibrated,boolean[],false,false, , ,true,<default>
+interpolator,shu.cms.lcd.calibrate.measured.Interpolator,false,false, , ,true,<default>
+LCDModel,shu.cms.devicemodel.lcd.LCDModel,false,false, , ,true,<default>
+lcdModel,shu.cms.devicemodel.lcd.LCDModel,false,false, , ,false,<default>
+luminaceCalibrated,boolean[],false,false, , ,false,<default>
+luminanceBasedResult,shu.cms.colorspace.depend.RGB[],false,false, , ,false,<default>
+luminanceCalibrated,boolean[],false,false, , ,true,<default>
+originalRampLCDTarget,shu.cms.lcd.LCDTarget,false,false, , ,false,<default>
+smoothGreen,shu.cms.lcd.calibrate.measured.IndependentCoordinateCalibrator.SmoothGreen,false,false, , ,false,<default>
+whiteBasedResult,shu.cms.colorspace.depend.RGB[],false,false, , ,false,<default>
+whiteCalibrated,boolean[],false,false, , ,true,<default>
+[IconNames]
+
+
+
+

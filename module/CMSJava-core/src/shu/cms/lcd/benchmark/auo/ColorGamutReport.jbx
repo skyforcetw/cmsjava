@@ -1,0 +1,14 @@
+[PropertyInfo]
+basedColorSpace,shu.cms.colorspace.depend.RGBBase.ColorSpace,false,false, , ,false,<default>
+basedxyYArray,shu.cms.colorspace.independ.CIExyY[],false,false, , ,false,<default>
+gamutName,String,false,false, , ,false,<default>
+lcdTarget,shu.cms.lcd.LCDTarget,false,false, , ,false,<default>
+locusPlot,shu.cms.plot.LocusPlot,false,false, , ,false,<default>
+plot,shu.cms.plot.Plot2D,false,false, , ,true,<default>
+plot2D,shu.cms.plot.Plot2D,false,false, , ,false,<default>
+rgbxyY,shu.cms.colorspace.independ.CIExyY[],false,false, , ,false,<default>
+[IconNames]
+
+
+
+

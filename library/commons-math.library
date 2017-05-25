@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>commons-math</fullname>
+<class>
+<path>[../lib/commons-math-2.0/commons-math-2.0.jar]</path>
+</class>
+<source>
+<path>[../lib/commons-math-2.0/commons-math-2.0-sources.jar]</path>
+<path>../lib/commons-math-2.0/docs/userguide</path>
+</source>
+<documentation>
+<path>../lib/commons-math-2.0/docs/apidocs</path>
+<path>[../lib/commons-math-2.0/commons-math-2.0-javadoc.jar]</path>
+</documentation>
+<lastmodsaved>1319592964106</lastmodsaved>
+</library>

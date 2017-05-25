@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<library>
+<!--JBuilder Library Definition File-->
+<fullname>commons-io</fullname>
+<class>
+<path>[../lib/commons-io-2.0.1/commons-io-2.0.1.jar]</path>
+</class>
+<source>
+<path>[../lib/commons-io-2.0.1/commons-io-2.0.1-sources.jar]</path>
+</source>
+<documentation>
+<path>../lib/commons-io-2.0.1/docs</path>
+<path>[../lib/commons-io-2.0.1/commons-io-2.0.1-javadoc.jar]</path>
+</documentation>
+<lastmodsaved>1319592769215</lastmodsaved>
+</library>

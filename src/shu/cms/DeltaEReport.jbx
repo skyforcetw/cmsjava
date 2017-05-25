@@ -1,0 +1,32 @@
+[PropertyInfo]
+colorDivision,shu.cms.ColorDivision,false,false, , ,false,<default>
+deltaEDistribute,int[],false,false, , ,false,<default>
+deltaEList,java.util.List,false,false, , ,false,<default>
+description,String,false,false, , ,false,<default>
+df,java.text.DecimalFormat,false,false, , ,false,<default>
+maxCIE2000DeltaLCH,shu.cms.DeltaE,false,false, , ,false,<default>
+maxDeltaE,shu.cms.DeltaE,false,false, , ,false,<default>
+maxDeltauvPrime,double[],false,false, , ,false,<default>
+meanCIE2000DeltaLCH,shu.cms.DeltaE,false,false, , ,false,<default>
+meanDeltaE,shu.cms.DeltaE,false,false, , ,false,<default>
+meanDeltauvPrime,double[],false,false, , ,false,<default>
+minCIE2000DeltaLCH,shu.cms.DeltaE,false,false, , ,false,<default>
+minDeltaE,shu.cms.DeltaE,false,false, , ,false,<default>
+minDeltauvPrime,double[],false,false, , ,false,<default>
+mixDeltaE,shu.cms.DeltaE,false,false, , ,false,<default>
+mixDeltauvPrime,double[],false,false, , ,false,<default>
+modelPatchList,java.util.List,false,false, , ,false,<default>
+OnlyCountMeasuredDeltaE,boolean,false,false, , ,false,<default>
+originalPatchList,java.util.List,false,false, , ,false,<default>
+patchCount,int,false,false, , ,false,<default>
+patchDeltaEList,java.util.List,false,false, , ,false,<default>
+patchDeltaEReport,shu.cms.DeltaEReport.PatchDeltaEReport,false,false, , ,true,<default>
+reverseReport,boolean,false,false, , ,false,<default>
+stdDeltaE,shu.cms.DeltaE,false,false, , ,false,<default>
+stdDeltauvPrime,double[],false,false, , ,false,<default>
+whitePointDeltaE,shu.cms.DeltaE,false,false, , ,false,<default>
+[IconNames]
+
+
+
+

@@ -1,0 +1,16 @@
+[PropertyInfo]
+backgroundIndex,int,false,false, , ,false,<default>
+blankIndex,int,false,false, , ,false,<default>
+calibrationCount,String,false,false, , ,true,<default>
+calibrationDescription,String,false,false, , ,true,<default>
+connected,boolean,false,false, , ,true,<default>
+connector,shu.cms.lcd.calibrate.cp.PlatformConnector,false,false, , ,false,<default>
+lastCalibration,String,false,false, , ,true,<default>
+patchIntensity,shu.cms.measure.meter.Meter.PatchIntensity,false,false, , ,true,<default>
+screenType,shu.cms.measure.meter.Meter.ScreenType,false,false, , ,true,<default>
+type,shu.cms.measure.meter.Meter.Instr,false,false, , ,true,<default>
+[IconNames]
+
+
+
+

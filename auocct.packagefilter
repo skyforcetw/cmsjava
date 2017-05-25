@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<filters>
+  <include />
+  <exclude>
+    <rule>shu.cms.colororder.*</rule>
+    <rule>shu.cms.reference.*</rule>
+    <rule>shu.cms.recover.*</rule>
+    <rule>shu.cms.profile.*</rule>
+    <rule>shu.cms.grabber.*</rule>
+    <rule>shu.cms.image.*</rule>
+    <rule>shu.cms.test.*</rule>
+    <rule>shu.cms.ncm.*</rule>
+    <rule>shu.cms.gma.*</rule>
+    <rule>shu.cms.wb.*</rule>
+    <rule>shu.cms.ui.*</rule>
+    <rule>shu.cms.dc.*</rule>
+  </exclude>
+</filters>
+

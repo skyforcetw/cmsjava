@@ -1,0 +1,13 @@
+[PropertyInfo]
+BMaxInverse,double[],false,false, , ,false,<default>
+byMatrixCount,int,false,false, , ,false,<default>
+byMinimisationxCount,int,false,false, , ,false,<default>
+GMaxInverse,double[],false,false, , ,false,<default>
+luminanceRGBValues,double[],false,false, , ,false,<default>
+recover,shu.cms.lcd.model.xtalk.XTalkReconstructor.XTalkRGBRecover,false,false, , ,false,<default>
+RMaxInverse,double[],false,false, , ,false,<default>
+[IconNames]
+
+
+
+

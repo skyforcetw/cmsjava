@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE refactor PUBLIC "-//Borland Software Corporation//Refactor 1.0//EN" "http://www.borland.com/devsupport/jbuilder/dtds/refactor_1_0.dtd">
+
+<refactor>
+  <rename-class id="7AP05NIC0R3G9WTN92X46V2" creation-time="Mon Dec 28 16:49:03.188 CST 2009">
+    <old-class-name>shu.math.DoubleArray</old-class-name>
+    <new-class-name>shu.math.array.DoubleArray</new-class-name>
+  </rename-class>
+  <rename-class id="6AP05NIC0R3G9WTN92X46V2" creation-time="Mon Dec 28 16:49:21.734 CST 2009">
+    <old-class-name>shu.math.FloatArray</old-class-name>
+    <new-class-name>shu.math.array.FloatArray</new-class-name>
+  </rename-class>
+  <rename-class id="5AP05NIC0R3G9WTN92X46V2" creation-time="Mon Dec 28 16:49:32.281 CST 2009">
+    <old-class-name>shu.math.IntArray</old-class-name>
+    <new-class-name>shu.math.array.IntArray</new-class-name>
+  </rename-class>
+  <rename-class id="4AP05NIC0R3G9WTN92X46V2" creation-time="Mon Dec 28 16:49:40.984 CST 2009">
+    <old-class-name>shu.math.M</old-class-name>
+    <new-class-name>shu.math.array.M</new-class-name>
+  </rename-class>
+  <rename-method id="3AP05NIC0R3G9WTN92X46V2" creation-time="Mon Dec 28 19:39:29.834 CST 2009">
+    <declaring-class-name>shu.math.test.PolynomialFunction</declaring-class-name>
+    <declared-method-signature>()I</declared-method-signature>
+    <old-method-name>terms</old-method-name>
+    <new-method-name>termCount</new-method-name>
+  </rename-method>
+  <rename-class id="7AP0C58SF2TGHNCD22X46V2" creation-time="Tue Sep 27 13:19:16.800 CST 2011">
+    <old-class-name>shu.math.plot.plots.GridPlot2D</old-class-name>
+    <new-class-name>shu.plot.plots.GridPlot2D</new-class-name>
+  </rename-class>
+  <rename-class id="6AP0C58SF2TGHNCD22X46V2" creation-time="Tue Sep 27 13:19:29.136 CST 2011">
+    <old-class-name>shu.math.plot.plots.PlanePlot</old-class-name>
+    <new-class-name>shu.plot.plots.PlanePlot</new-class-name>
+  </rename-class>
+  <rename-method id="6AP0LDXF08TGSVE98DZ0QKH0" creation-time="Sat Oct 01 11:17:41.352 CST 2011">
+    <declaring-class-name>shu.plot.jzy3D</declaring-class-name>
+    <declared-method-signature>(Lorg/jzy3d/plot3d/primitives/AbstractDrawable;)V</declared-method-signature>
+    <old-method-name>add</old-method-name>
+    <new-method-name>addDrawable</new-method-name>
+  </rename-method>
+  <rename-method id="7AP0YCM0UUTGTRUED2X46V2" creation-time="Mon Oct 17 10:15:16.018 CST 2011">
+    <declaring-class-name>shu.math.GammaFinder</declaring-class-name>
+    <declared-method-signature>([DD)[D</declared-method-signature>
+    <old-method-name>gamma</old-method-name>
+    <new-method-name>gammaCurve</new-method-name>
+  </rename-method>
+  <rename-method id="6AP0YCM0UUTGTRUED2X46V2" creation-time="Mon Oct 17 10:15:22.346 CST 2011">
+    <declaring-class-name>shu.math.GammaFinder</declaring-class-name>
+    <declared-method-signature>([DDD)[D</declared-method-signature>
+    <old-method-name>gamma</old-method-name>
+    <new-method-name>gammaCurve</new-method-name>
+  </rename-method>
+  <rename-method id="7AP0WPDK6D1HW0LNH5V46V2" creation-time="Mon Apr 23 15:04:20.836 CST 2012">
+    <declaring-class-name>shu.math.GammaFinder</declaring-class-name>
+    <declared-method-signature>([D[DDDDD)D</declared-method-signature>
+    <old-method-name>findingGamma</old-method-name>
+    <new-method-name>findGamma</new-method-name>
+  </rename-method>
+  <rename-method id="6AP0WPDK6D1HW0LNH5V46V2" creation-time="Mon Apr 23 15:04:41.427 CST 2012">
+    <declaring-class-name>shu.math.GammaFinder</declaring-class-name>
+    <declared-method-signature>([D[D)D</declared-method-signature>
+    <old-method-name>findingGamma</old-method-name>
+    <new-method-name>findGamma</new-method-name>
+  </rename-method>
+  <rename-method id="5AP0WPDK6D1HW0LNH5V46V2" creation-time="Mon Apr 23 15:04:51.909 CST 2012">
+    <declaring-class-name>shu.math.GammaFinder</declaring-class-name>
+    <declared-method-signature>([D[D)D</declared-method-signature>
+    <old-method-name>findingGammaCPT1</old-method-name>
+    <new-method-name>findGammaCPT1</new-method-name>
+  </rename-method>
+  <rename-method id="4AP0WPDK6D1HW0LNH5V46V2" creation-time="Mon Apr 23 15:04:58.596 CST 2012">
+    <declaring-class-name>shu.math.GammaFinder</declaring-class-name>
+    <declared-method-signature>([D[D)D</declared-method-signature>
+    <old-method-name>findingGammaCPT2</old-method-name>
+    <new-method-name>findGammaCPT2</new-method-name>
+  </rename-method>
+  <rename-method id="3AP0WPDK6D1HW0LNH5V46V2" creation-time="Mon Apr 23 15:05:03.111 CST 2012">
+    <declaring-class-name>shu.math.GammaFinder</declaring-class-name>
+    <declared-method-signature>([D)D</declared-method-signature>
+    <old-method-name>findingGamma</old-method-name>
+    <new-method-name>findGamma</new-method-name>
+  </rename-method>
+  <rename-method id="2AP0WPDK6D1HW0LNH5V46V2" creation-time="Mon Apr 23 15:05:10.313 CST 2012">
+    <declaring-class-name>shu.math.GammaFinder</declaring-class-name>
+    <declared-method-signature>([D[D)[D</declared-method-signature>
+    <old-method-name>findingGammas</old-method-name>
+    <new-method-name>findGammas</new-method-name>
+  </rename-method>
+  <rename-method id="1AP0WPDK6D1HW0LNH5V46V2" creation-time="Mon Apr 23 15:05:18.937 CST 2012">
+    <declaring-class-name>shu.math.GammaFinder</declaring-class-name>
+    <declared-method-signature>([D)D</declared-method-signature>
+    <old-method-name>findingGammaWithOffset</old-method-name>
+    <new-method-name>findGammaWithOffset</new-method-name>
+  </rename-method>
+  <rename-method id="7AP0MDKTHQEHTOR1GKV46V2" creation-time="Tue Mar 26 11:16:35.818 CST 2013">
+    <declaring-class-name>shu.math.lut.TetrahedralInterpolation</declaring-class-name>
+    <declared-method-signature>([D[D[[DI)[D</declared-method-signature>
+    <old-method-name>tetrahedralInterpolate</old-method-name>
+    <new-method-name>cubeTetrahedralInterpolate</new-method-name>
+  </rename-method>
+  <rename-method id="6AP0MDKTHQEHTOR1GKV46V2" creation-time="Tue Mar 26 11:16:47.802 CST 2013">
+    <declaring-class-name>shu.math.lut.TetrahedralInterpolation</declaring-class-name>
+    <declared-method-signature>([D[D[[D)[D</declared-method-signature>
+    <old-method-name>tetrahedralInterpolate</old-method-name>
+    <new-method-name>cubeTetrahedralInterpolate</new-method-name>
+  </rename-method>
+  <rename-method id="5AP0MDKTHQEHTOR1GKV46V2" creation-time="Tue Mar 26 11:17:22.428 CST 2013">
+    <declaring-class-name>shu.math.lut.TetrahedralInterpolation</declaring-class-name>
+    <declared-method-signature>([D[D[[D)[D</declared-method-signature>
+    <old-method-name>cubeTetrahedralInterpolate</old-method-name>
+    <new-method-name>tetrahedralInterpolate</new-method-name>
+  </rename-method>
+  <rename-method id="4AP0MDKTHQEHTOR1GKV46V2" creation-time="Tue Mar 26 11:17:35.615 CST 2013">
+    <declaring-class-name>shu.math.lut.TetrahedralInterpolation</declaring-class-name>
+    <declared-method-signature>([D[Lshu/math/lut/CubeTable$KeyValue;I)[D</declared-method-signature>
+    <old-method-name>tetrahedralInterpolate</old-method-name>
+    <new-method-name>cubeTetrahedralInterpolate</new-method-name>
+  </rename-method>
+  <rename-method id="3AP0MDKTHQEHTOR1GKV46V2" creation-time="Tue Mar 26 11:17:57.272 CST 2013">
+    <declaring-class-name>shu.math.lut.TetrahedralInterpolation</declaring-class-name>
+    <declared-method-signature>([D[D[[D)[D</declared-method-signature>
+    <old-method-name>tetrahedralInterpolate</old-method-name>
+    <new-method-name>cubeTetrahedralInterpolate</new-method-name>
+  </rename-method>
+  <rename-method id="4AP0HXHPKDKHL7NG7KV46V2" creation-time="Thu Aug 15 14:17:21.926 CST 2013">
+    <declaring-class-name>shu.image.ImageUtils</declaring-class-name>
+    <declared-method-signature>(Ljava/lang/String;Ljava/awt/image/BufferedImage;)V</declared-method-signature>
+    <old-method-name>storeBMPFImage</old-method-name>
+    <new-method-name>storeBMPImage</new-method-name>
+  </rename-method>
+</refactor>
+

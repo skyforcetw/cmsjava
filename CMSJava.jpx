@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--JBuilder XML Project-->
+<project>
+<property category="build" name="CopyExtensions.1" value="cgats"/>
+<property category="build" name="CopyExtensions.2" value="cxf"/>
+<property category="build" name="CopyExtensions.3" value="logo"/>
+<property category="build" name="CopyExtensions.4" value="txt"/>
+<property category="config" name="autoformat.java.keepEndOfLines" value="true"/>
+<property category="config" name="autoformat.java.maxNumOfEmptyNeightbouringLines" value="1"/>
+<property category="config" name="autoformat.java.optimize.imports.numOfClassesToImportOnDemandUse" value="5"/>
+<property category="config" name="options.umlVersion" value="14"/>
+<property category="config" name="parser.java.syntax" value="1.3"/>
+<property category="config" name="project.encoding" value="MS950"/>
+<property category="debug.0" name="RemoteAttachArgumentNames.1" value="hostname"/>
+<property category="debug.0" name="RemoteAttachArgumentNames.2" value="port"/>
+<property category="debug.0" name="RemoteAttachArgumentValues.1" value="localhost"/>
+<property category="debug.0" name="RemoteAttachArgumentValues.2" value="3999"/>
+<property category="debug.0" name="RemoteAttachTransport" value="dt_socket"/>
+<property category="debug.0" name="RemoteLaunchTransport" value="dt_socket"/>
+<property category="generalFormatting2" name="overrideBasicFormatting" value="1"/>
+<property category="idl" name="ProcessIDL" value="false"/>
+<property category="java.sapient" name="ACE" value="false"/>
+<property category="java.sapient" name="AFLV" value="true"/>
+<property category="java.sapient" name="AFP" value="false"/>
+<property category="java.sapient" name="ASMDCN" value="true"/>
+<property category="java.sapient" name="ASMO" value="true"/>
+<property category="java.sapient" name="BSMC" value="true"/>
+<property category="java.sapient" name="BTJC" value="false"/>
+<property category="java.sapient" name="CA" value="false"/>
+<property category="java.sapient" name="CEV" value="false"/>
+<property category="java.sapient" name="CFPV" value="false"/>
+<property category="java.sapient" name="CIUCFL" value="true"/>
+<property category="java.sapient" name="CQS" value="false"/>
+<property category="java.sapient" name="CSR" value="true"/>
+<property category="java.sapient" name="CVSBF" value="true"/>
+<property category="java.sapient" name="DIH" value="true"/>
+<property category="java.sapient" name="EIAV" value="false"/>
+<property category="java.sapient" name="EJB_CL" value="false"/>
+<property category="java.sapient" name="EJB_CONSOLE" value="false"/>
+<property category="java.sapient" name="EJB_ENTITY" value="false"/>
+<property category="java.sapient" name="EJB_FDESCR" value="false"/>
+<property category="java.sapient" name="EJB_FILES" value="false"/>
+<property category="java.sapient" name="EJB_HOME" value="false"/>
+<property category="java.sapient" name="EJB_IO" value="false"/>
+<property category="java.sapient" name="EJB_JDBC" value="false"/>
+<property category="java.sapient" name="EJB_MESSAGE" value="false"/>
+<property category="java.sapient" name="EJB_NAMES" value="false"/>
+<property category="java.sapient" name="EJB_NATIVE" value="false"/>
+<property category="java.sapient" name="EJB_OBJECT" value="false"/>
+<property category="java.sapient" name="EJB_REFL" value="false"/>
+<property category="java.sapient" name="EJB_SEC" value="false"/>
+<property category="java.sapient" name="EJB_SECOBJ" value="false"/>
+<property category="java.sapient" name="EJB_SESSION" value="false"/>
+<property category="java.sapient" name="EJB_SFACT" value="false"/>
+<property category="java.sapient" name="EJB_SOCKET" value="false"/>
+<property category="java.sapient" name="EJB_SUBST" value="false"/>
+<property category="java.sapient" name="EJB_THREADS" value="false"/>
+<property category="java.sapient" name="EOBA" value="true"/>
+<property category="java.sapient" name="EVC" value="true"/>
+<property category="java.sapient" name="ICSBF" value="false"/>
+<property category="java.sapient" name="IFM" value="true"/>
+<property category="java.sapient" name="ILC" value="false"/>
+<property category="java.sapient" name="IMCM" value="true"/>
+<property category="java.sapient" name="IMMD" value="true"/>
+<property category="java.sapient" name="LF" value="false"/>
+<property category="java.sapient" name="LMC" value="false"/>
+<property category="java.sapient" name="LNU" value="true"/>
+<property category="java.sapient" name="MCP" value="true"/>
+<property category="java.sapient" name="MCS" value="true"/>
+<property category="java.sapient" name="MLOWP" value="false"/>
+<property category="java.sapient" name="MNOM" value="true"/>
+<property category="java.sapient" name="MNU" value="true"/>
+<property category="java.sapient" name="MSOL" value="true"/>
+<property category="java.sapient" name="MVDSN" value="false"/>
+<property category="java.sapient" name="NC" value="true"/>
+<property category="java.sapient" name="NCLS" value="true"/>
+<property category="java.sapient" name="NFSF" value="false"/>
+<property category="java.sapient" name="NLC" value="false"/>
+<property category="java.sapient" name="NOIS" value="false"/>
+<property category="java.sapient" name="ODCM" value="false"/>
+<property category="java.sapient" name="OHCE" value="true"/>
+<property category="java.sapient" name="OIM" value="true"/>
+<property category="java.sapient" name="ONAMAM" value="true"/>
+<property category="java.sapient" name="ONE" value="true"/>
+<property category="java.sapient" name="OPM" value="true"/>
+<property category="java.sapient" name="OSNBU" value="false"/>
+<property category="java.sapient" name="OWS" value="false"/>
+<property category="java.sapient" name="PCO" value="true"/>
+<property category="java.sapient" name="PDBB" value="false"/>
+<property category="java.sapient" name="PFC" value="false"/>
+<property category="java.sapient" name="PIFS" value="false"/>
+<property category="java.sapient" name="PJDC" value="false"/>
+<property category="java.sapient" name="PMSNT" value="false"/>
+<property category="java.sapient" name="PN" value="false"/>
+<property category="java.sapient" name="PPA" value="false"/>
+<property category="java.sapient" name="PPCF" value="true"/>
+<property category="java.sapient" name="PSIB" value="true"/>
+<property category="java.sapient" name="RIP" value="false"/>
+<property category="java.sapient" name="SBC" value="true"/>
+<property category="java.sapient" name="SEB" value="false"/>
+<property category="java.sapient" name="SL" value="false"/>
+<property category="java.sapient" name="SSSIDC" value="false"/>
+<property category="java.sapient" name="SU" value="true"/>
+<property category="java.sapient" name="TMSSC" value="false"/>
+<property category="java.sapient" name="UAAO" value="true"/>
+<property category="java.sapient" name="UC" value="true"/>
+<property category="java.sapient" name="UCVN" value="false"/>
+<property category="java.sapient" name="UE" value="true"/>
+<property category="java.sapient" name="UL" value="true"/>
+<property category="java.sapient" name="ULVFP" value="true"/>
+<property category="java.sapient" name="UMM" value="true"/>
+<property category="java.sapient" name="URSP" value="true"/>
+<property category="javaFormatting" name="EventStyle" value="0"/>
+<property category="javaFormatting" name="InstanceVisibility" value="4"/>
+<property category="javaFormatting" name="packagePrefixGroups" value="java;javax;BLANK_LINE;java.awt;javax.swing;BLANK_LINE;org;(*)"/>
+<property category="javadoc" name="custom.tags.1" value="todo;a;To Do:"/>
+<property category="optimize.0" name="OptimizableType" value="intuitive.ide.borland.jb10.ProfilerBootstrap"/>
+<property category="optimize.0" name="oicc.FilterFile" value="Z:\workspace\CMSJava\CMSJava.oif"/>
+<property category="optimize.0" name="oipr.AutoStartCPU" value="1"/>
+<property category="optimize.0" name="oipr.DisableMemoryProfiler" value="1"/>
+<property category="optimize.0" name="oipr.EnableUnitTest" value="0"/>
+<property category="optimize.0" name="oipr.FilterFile" value="Z:\workspace\CMSJava\CMSJava.oif"/>
+<property category="optimize.0" name="oira.AttachHost" value="localhost"/>
+<property category="optimize.0" name="oira.FilterFile" value="Z:\workspace\CMSJava\CMSJava.oif"/>
+<property category="path" name="DefaultDiagram" value="diagrams"/>
+<property category="path" name="Diagram" value="diagrams"/>
+<property category="personality" name="personality" value="com.borland.jbuilder.personality.J2EEPersonality com.borland.jbuilder.webservices.personality.WebServicesPersonality com.borland.jbuilder.personality.EJBPersonality com.borland.jbuilder.personality.WebAppPersonality com.borland.jbuilder.personality.DatabasePersonality com.borland.jbuilder.personality.CorbaPersonality com.borland.primetime.personality.P2PPersonality "/>
+<property category="runtime" name="ConfigurationCount" value="5"/>
+<property category="runtime.0" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+<property category="runtime.0" name="ConfigurationName" value="XTalkAnalyzer"/>
+<property category="runtime.0" name="ExclusionFilter" value="2"/>
+<property category="runtime.0" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+<property category="runtime.0" name="application.class" value="vastview.applet.xtalk.XTalkAnalyzerFrame"/>
+<property category="runtime.0" name="appserver.ejbJarsSaved" value="1"/>
+<property category="runtime.0" name="appserver.parameters" value="-jts -jns -jss -jdb"/>
+<property category="runtime.0" name="appserver.servername" value="ejbcontainer"/>
+<property category="runtime.0" name="appserver.vmparameters" value="-Dvbroker.agent.port=14000 -Djava.library.path=/Borland/AppServer/lib;/Borland/AppServer/bin"/>
+<property category="runtime.0" name="custom.init_required" value="0"/>
+<property category="runtime.0" name="custom.required.1" value="lib/flanagan.jar"/>
+<property category="runtime.0" name="custom.required.10" value="lib/jai/jai_codec.jar"/>
+<property category="runtime.0" name="custom.required.11" value="lib/jai/jai_core.jar"/>
+<property category="runtime.0" name="custom.required.12" value="lib/iccess/iccess.jpx"/>
+<property category="runtime.0" name="custom.required.13" value="lib/commons-math-1.1.jar"/>
+<property category="runtime.0" name="custom.required.14" value="lib/jacob/jacob.jar"/>
+<property category="runtime.0" name="custom.required.15" value="lib/jawin/jawin.jar"/>
+<property category="runtime.0" name="custom.required.16" value="lib/jawin/jawin-stubs.jar"/>
+<property category="runtime.0" name="custom.required.17" value="lib/jxl.jar"/>
+<property category="runtime.0" name="custom.required.18" value="lib/LOC.jar"/>
+<property category="runtime.0" name="custom.required.19" value="lib/registry.jar"/>
+<property category="runtime.0" name="custom.required.2" value="lib/jython.jar"/>
+<property category="runtime.0" name="custom.required.20" value="lib/jcommon-1.0.12.jar"/>
+<property category="runtime.0" name="custom.required.21" value="lib/jfreechart-1.0.9.jar"/>
+<property category="runtime.0" name="custom.required.22" value="lib/sanselan.jar"/>
+<property category="runtime.0" name="custom.required.3" value="lib/pxlab.jar"/>
+<property category="runtime.0" name="custom.required.4" value="lib/jbcl.jar"/>
+<property category="runtime.0" name="custom.required.5" value="lib/jrawio-1.0.RC5.jar"/>
+<property category="runtime.0" name="custom.required.6" value="lib/jai-imageio/jai_imageio.jar"/>
+<property category="runtime.0" name="custom.required.7" value="lib/jai-imageio/clibwrapper_jiio.jar"/>
+<property category="runtime.0" name="custom.required.8" value="JBCL"/>
+<property category="runtime.0" name="custom.required.9" value="lib/jai/mlibwrapper_jai.jar"/>
+<property category="runtime.0" name="enable.tcpmonitor" value="0"/>
+<property category="runtime.0" name="enable.wsimonitor" value="0"/>
+<property category="runtime.0" name="jsprunner.launchuri" value="/"/>
+<property category="runtime.0" name="tcpmonitor.listenport" value=""/>
+<property category="runtime.0" name="tcpmonitor.targethost" value=""/>
+<property category="runtime.0" name="tcpmonitor.targetport" value=""/>
+<property category="runtime.0" name="wsimonitor.listenport" value=""/>
+<property category="runtime.0" name="wsimonitor.logfile" value=""/>
+<property category="runtime.0" name="wsimonitor.targethost" value=""/>
+<property category="runtime.0" name="wsimonitor.targetport" value=""/>
+<property category="runtime.1" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+<property category="runtime.1" name="ConfigurationName" value="ApplicationLoader"/>
+<property category="runtime.1" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+<property category="runtime.1" name="application.class" value="vastview.applet.cieplotter.CIEPlotterFrame"/>
+<property category="runtime.1" name="application.vmparameters" value="shu.util.ApplicationLoader"/>
+<property category="runtime.2" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+<property category="runtime.2" name="ConfigurationName" value="512 Heap"/>
+<property category="runtime.2" name="ExclusionFilter" value="2"/>
+<property category="runtime.2" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+<property category="runtime.2" name="application.vmparameters" value="-Xmx512m"/>
+<property category="runtime.2" name="custom.init_required" value="0"/>
+<property category="runtime.2" name="custom.required.1" value="lib/flanagan.jar"/>
+<property category="runtime.2" name="custom.required.10" value="JBCL"/>
+<property category="runtime.2" name="custom.required.11" value="jaxb"/>
+<property category="runtime.2" name="custom.required.12" value="lib/jai/mlibwrapper_jai.jar"/>
+<property category="runtime.2" name="custom.required.13" value="lib/jai/jai_codec.jar"/>
+<property category="runtime.2" name="custom.required.14" value="lib/jai/jai_core.jar"/>
+<property category="runtime.2" name="custom.required.2" value="lib/jython.jar"/>
+<property category="runtime.2" name="custom.required.3" value="lib/pxlab.jar"/>
+<property category="runtime.2" name="custom.required.4" value="lib/jbcl.jar"/>
+<property category="runtime.2" name="custom.required.5" value="lib/jmatharray.jar"/>
+<property category="runtime.2" name="custom.required.6" value="lib/jrawio-1.0.RC5.jar"/>
+<property category="runtime.2" name="custom.required.7" value="lib/jai-imageio/jai_imageio.jar"/>
+<property category="runtime.2" name="custom.required.8" value="lib/jai-imageio/clibwrapper_jiio.jar"/>
+<property category="runtime.2" name="custom.required.9" value="../iccess/iccess.jpx"/>
+<property category="runtime.3" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+<property category="runtime.3" name="ConfigurationName" value="1000 Heap"/>
+<property category="runtime.3" name="ExclusionFilter" value="2"/>
+<property category="runtime.3" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+<property category="runtime.3" name="application.vmparameters" value="-Xmx1000m"/>
+<property category="runtime.4" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+<property category="runtime.4" name="ConfigurationName" value="Assertion"/>
+<property category="runtime.4" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+<property category="runtime.4" name="application.vmparameters" value="-ea"/>
+<property category="runtime.5" name="BuildTargetOnRun" value="com.borland.jbuilder.build.ProjectBuilder$ProjectBuildAction;make"/>
+<property category="runtime.5" name="ConfigurationName" value="Lua"/>
+<property category="runtime.5" name="RunnableType" value="com.borland.jbuilder.runtime.ApplicationRunner"/>
+<property category="runtime.5" name="application.class" value="org.keplerproject.luajava.Console"/>
+<property category="serverservices" name="disabled.services" value="jdatastore;sqlj"/>
+<property category="serverservices" name="is.single.server" value="0"/>
+<property category="serverservices" name="single.server.name" value=""/>
+<property category="sys" name="AuthorLabel" value="@author"/>
+<property category="sys" name="BackupPath" value="bak"/>
+<property category="sys" name="BeansInstantiate" value="false"/>
+<property category="sys" name="BraceStyle" value="0"/>
+<property category="sys" name="CheckStable" value="1"/>
+<property category="sys" name="Company" value="skygroup"/>
+<property category="sys" name="CompanyLabel" value="Company:"/>
+<property category="sys" name="Copyright" value="Copyright (c) 2009"/>
+<property category="sys" name="CopyrightLabel" value="Copyright:"/>
+<property category="sys" name="DefaultPath" value="src"/>
+<property category="sys" name="Description" value="a Colour Management System by Java"/>
+<property category="sys" name="DescriptionLabel" value="Description:"/>
+<property category="sys" name="DocPath" value="doc"/>
+<property category="sys" name="Encoding" value="MS950"/>
+<property category="sys" name="EventMatch" value="false"/>
+<property category="sys" name="EventStyle" value="1"/>
+<property category="sys" name="ExcludeClass" value="shu.cms.measure.Meter$Instr"/>
+<property category="sys" name="ExcludeClassEnabled" value="0"/>
+<property category="sys" name="FallThrougs" value="1"/>
+<property category="sys" name="GenerateSourceToOutDir" value="0"/>
+<property category="sys" name="IncludeTestPath" value="1"/>
+<property category="sys" name="InstanceVisibility" value="0"/>
+<property category="sys" name="JDK" value="java version 1.6.0_23-b05"/>
+<property category="sys" name="JbxEventListener0" value="java.beans.VetoableChangeListener"/>
+<property category="sys" name="JvmVersion" value="1.5"/>
+<property category="sys" name="LastTag" value="0"/>
+<property category="sys" name="Libraries" value="module/CMSJava-static/CMSJava-static.jpx;commons-io;JNative;jawin;jxl;pxlab;jbcl;lib/iccess/iccess.jpx;JXLayer"/>
+<property category="sys" name="MakeStable" value="0"/>
+<property category="sys" name="OutPath" value="classes"/>
+<property category="sys" name="ReturnWithinFinally" value="1"/>
+<property category="sys" name="SourcePath" value="src;test"/>
+<property category="sys" name="SourceVersion" value="1.5"/>
+<property category="sys" name="TestPath" value="test"/>
+<property category="sys" name="Title" value="Colour Management System"/>
+<property category="sys" name="TitleLabel" value="Title:"/>
+<property category="sys" name="Version" value="1.0"/>
+<property category="sys" name="VersionLabel" value="@version"/>
+<property category="sys" name="WorkingDirectory" value="workdir"/>
+<property category="sys" name="uidesign.size.auo.cms.applet.cm.ColoWheelFrame" value="727,890"/>
+<property category="sys" name="uidesign.size.auo.cms.applet.hue.HueFrame" value="661,651"/>
+<property category="sys" name="uidesign.size.auo.cms.applet.hue.HueSimulationFrame" value="810,787"/>
+<property category="sys" name="uidesign.size.auo.cms.cm.ColoWheelFrame" value="400,821"/>
+<property category="sys" name="uidesign.size.auo.cms.test.hsv.BezierFrame" value="400,266"/>
+<property category="sys" name="uidesign.size.auo.cms.test.hsv.PolynomialPotterFrame" value="462,140"/>
+<property category="sys" name="uidesign.size.shu.cms.measure.applet.MeasureWindow" value="237,128"/>
+<property category="sys" name="uidesign.size.shu.cms.measure.cp.msg.CPMMessageFrame" value="1057,544"/>
+<property category="sys" name="uidesign.size.shu.util.log.SwingHandlerFrame" value="259,189"/>
+<property category="sys" name="uidesign.size.sky4s.cms.app.MeasurementFileCheckFrame" value="506,240"/>
+<property category="sys" name="uidesign.size.sky4s.cms.app.automeasure.PatchShower" value="647,561"/>
+<property category="sys" name="uidesign.size.sky4s.cms.util.PatchShower" value="265,182"/>
+<property category="sys" name="uidesign.size.sky4s.test.frc.FRCGradientShowerFrame" value="914,699"/>
+<property category="team" name="ignorePath.0" value="classes"/>
+<property category="team" name="ignorePath.1" value="bak"/>
+<property category="team" name="ignorePath.10" value="workdir/MaxRGB-CAT.jpg"/>
+<property category="team" name="ignorePath.11" value="workdir/MaxRGB-RGB.jpg"/>
+<property category="team" name="ignorePath.12" value="workdir/Thumbs.db"/>
+<property category="team" name="ignorePath.13" value="workdir/debugger.log"/>
+<property category="team" name="ignorePath.14" value="workdir/step2Check.tmp"/>
+<property category="team" name="ignorePath.15" value="workdir/step3outputTraining.tmp"/>
+<property category="team" name="ignorePath.16" value="workdir/step3target.tmp"/>
+<property category="team" name="ignorePath.17" value="workdir/step3training.tmp"/>
+<property category="team" name="ignorePath.18" value="workdir/t.tmp"/>
+<property category="team" name="ignorePath.19" value="workdir/training.tmp"/>
+<property category="team" name="ignorePath.2" value="doc"/>
+<property category="team" name="ignorePath.20" value="workdir/Measurement Files/ColorChecker SG"/>
+<property category="team" name="ignorePath.21" value="workdir/misaki.jpg"/>
+<property category="team" name="ignorePath.22" value="workdir/1234.cxf"/>
+<property category="team" name="ignorePath.23" value="workdir/2.5BG.txt"/>
+<property category="team" name="ignorePath.24" value="workdir/Camera Files/D2H"/>
+<property category="team" name="ignorePath.25" value="workdir/Camera Files/D70"/>
+<property category="team" name="ignorePath.26" value="workdir/Reference Files/GATF"/>
+<property category="team" name="ignorePath.27" value="workdir/mon.icc"/>
+<property category="team" name="ignorePath.28" value="workdir/vcgt.icc"/>
+<property category="team" name="ignorePath.29" value="workdir/Camera Files/D2H"/>
+<property category="team" name="ignorePath.3" value="workdir/Evaluate"/>
+<property category="team" name="ignorePath.30" value="workdir/Camera Files/D70"/>
+<property category="team" name="ignorePath.32" value="workdir/Camera Files/D2H"/>
+<property category="team" name="ignorePath.33" value="workdir/Camera Files/D70"/>
+<property category="team" name="ignorePath.4" value="workdir/Image"/>
+<property category="team" name="ignorePath.5" value="workdir/Reference Files/RGB Reference Images"/>
+<property category="team" name="ignorePath.6" value="workdir/Reference Files/GATF.nrg"/>
+<property category="team" name="ignorePath.7" value="workdir/tmp"/>
+<property category="team" name="ignorePath.8" value="workdir/GWT-CAT.jpg"/>
+<property category="team" name="ignorePath.9" value="workdir/GWT-RGB.jpg"/>
+<property category="together" name="language" value="java"/>
+<node name="CMSJava" type="Archive">
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:shu/cms/plot/**"/>
+<property category="archiving" name="contentRules.2" value="I:shu/plot/**"/>
+<property category="archiving" name="contentRules.3" value="I:shu/cms/colorspace/depend/*.*"/>
+<property category="archiving" name="contentRules.4" value="I:shu/cms/colorspace/ColorSpace.class"/>
+<property category="archiving" name="contentRules.5" value="I:shu/cms/reference/cie/*.*"/>
+<property category="archiving" name="contentRules.6" value="X:shu/plot/Plot2D.class"/>
+<property category="archiving" name="contentRules.7" value="X:shu/plot/Plot3D.class"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="cmsjava.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="CMSJavaAPI" type="Javadoc">
+<property category="nodeJavadoc" name="buildWithProject" value="0"/>
+<property category="nodeJavadoc" name="directory" value="doc"/>
+<property category="nodeJavadoc" name="displayAllOutput" value="0"/>
+</node>
+<node name="ColorMatrix" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="contentRules.1" value="I:shu/cms/test/colormatrix/*.*"/>
+<property category="archiving" name="contentRules.2" value="F:module/CMSJava-static/classes/shu/ui/GUIUtils.class;module/CMSJava-static/classes/shu/ui/GUIUtils.class"/>
+<property category="archiving" name="contentRules.3" value="F:module/CMSJava-static/classes/shu/ui/GUIUtils$1.class;module/CMSJava-static/classes/shu/ui/GUIUtils$1.class"/>
+<property category="archiving" name="contentRules.4" value="F:module/CMSJava-static/classes/shu/math/array/DoubleArray.class;module/CMSJava-static/classes/shu/math/array/DoubleArray.class"/>
+<property category="archiving" name="contentRules.5" value="F:module/CMSJava-static/classes/shu/math/array/IntArray.class;module/CMSJava-static/classes/shu/math/array/IntArray.class"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="2:JAI"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.test.colormatrix.ColorMatrixFrame"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="cm.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="ColoWheelFrame" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:**/*.*"/>
+<property category="archiving" name="contentRules.2" value="I:auo/cms/applet/cm/ColoWheelFrame.class"/>
+<property category="archiving" name="libraryStates.1" value="3:JBCL"/>
+<property category="archiving" name="libraryStates.2" value="3:Jama"/>
+<property category="archiving" name="libraryStates.3" value="3:module/CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="manifestMainClass" value="auo.cms.applet.cm.ColoWheelFrame"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="ColoWheelFrame.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="ContrastThresholdJudge" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:shu/cms/reference/cie/*.*"/>
+<property category="archiving" name="contentRules.2" value="F:classes/shu/cms/applet/gradient/ContrastThresholdJudge.class;shu/cms/applet/gradient/ContrastThresholdJudge.class"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="3:lib/jxl.jar"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.applet.gradient.model.ContrastThresholdJudge"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetCompressed" value="1"/>
+<property category="archiving" name="targetPath" value="ContrastThresholdJudge.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="FrontEnd" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:**/*.*"/>
+<property category="archiving" name="includeAll" value="1"/>
+<property category="archiving" name="libraryStates.1" value="3:JBCL"/>
+<property category="archiving" name="libraryStates.10" value="3:CMSJava.jpx*commons-math"/>
+<property category="archiving" name="libraryStates.11" value="3:CMSJava.jpx*commons-io"/>
+<property category="archiving" name="libraryStates.12" value="3:CMSJava.jpx*sanselan-0.97-incubator"/>
+<property category="archiving" name="libraryStates.13" value="3:CMSJava.jpx*Flanagan"/>
+<property category="archiving" name="libraryStates.14" value="3:CMSJava.jpx*Jama"/>
+<property category="archiving" name="libraryStates.2" value="3:lib/jython.jar"/>
+<property category="archiving" name="libraryStates.3" value="3:lib/jxl.jar"/>
+<property category="archiving" name="libraryStates.4" value="3:lib/JMathTools/JMathTools.jpx"/>
+<property category="archiving" name="libraryStates.5" value="3:lib/JMathTools/JMathTools.jpx*Jama"/>
+<property category="archiving" name="libraryStates.6" value="3:CMSJava.jpx*XStream"/>
+<property category="archiving" name="libraryStates.7" value="3:CMSJava.jpx*commons-primitives"/>
+<property category="archiving" name="libraryStates.8" value="3:CMSJava.jpx*commons-logging"/>
+<property category="archiving" name="libraryStates.9" value="3:CMSJava.jpx*commons-lang"/>
+<property category="archiving" name="manifestMainClass" value="vv.cms.lcd.calibrate.shm.FrontEnd"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="FrontEnd.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="GamutChecker" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:**/*.*"/>
+<property category="archiving" name="libraryStates.1" value="3:JBCL"/>
+<property category="archiving" name="libraryStates.10" value="3:module/CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="libraryStates.2" value="3:lib/jacob/jacob.jar"/>
+<property category="archiving" name="libraryStates.3" value="3:lib/jxl.jar"/>
+<property category="archiving" name="libraryStates.4" value="3:commons-primitives"/>
+<property category="archiving" name="libraryStates.5" value="3:commons-logging"/>
+<property category="archiving" name="libraryStates.6" value="3:commons-lang"/>
+<property category="archiving" name="libraryStates.7" value="3:commons-math"/>
+<property category="archiving" name="libraryStates.8" value="3:Flanagan"/>
+<property category="archiving" name="libraryStates.9" value="3:Jama"/>
+<property category="archiving" name="manifestMainClass" value="auo.cms.cm.GamutChecker"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="GamutChecker.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="GradientShower" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:shu/cms/ui/DitherCanvas.class"/>
+<property category="archiving" name="contentRules.2" value="I:shu/cms/applet/gradient/*.*"/>
+<property category="archiving" name="contentRules.3" value="F:classes/shu/cms/applet/about.png;shu/cms/applet/about.png"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.applet.gradient.GradientShowerFrame"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="GradientShower.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="MeasureTool" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:shu/cms/applet/measure/tool/*.*"/>
+<property category="archiving" name="contentRules.2" value="I:shu/cms/reference/cie/*.*"/>
+<property category="archiving" name="contentRules.3" value="I:shu/cms/reference/monitor/*.*"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="3:JBCL"/>
+<property category="archiving" name="libraryStates.2" value="3:lib/jython.jar"/>
+<property category="archiving" name="libraryStates.3" value="3:lib/jacob/jacob.jar"/>
+<property category="archiving" name="libraryStates.4" value="2:lib/jxl.jar"/>
+<property category="archiving" name="libraryStates.5" value="3:XStream"/>
+<property category="archiving" name="libraryStates.6" value="3:commons-logging"/>
+<property category="archiving" name="libraryStates.7" value="2:commons-lang"/>
+<property category="archiving" name="libraryStates.8" value="2:Jama"/>
+<property category="archiving" name="libraryStates.9" value="3:module/CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.applet.measure.tool.MeasureToolFrame"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetCompressed" value="1"/>
+<property category="archiving" name="targetPath" value="MeasureTool.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="Psychophysics" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:**/*.*"/>
+<property category="archiving" name="contentRules.2" value="F:classes/tw/edu/shu/im/cms/app/psychophysics/PsychophysicsExperiment.class;tw/edu/shu/im/cms/app/psychophysics/PsychophysicsExperiment.class"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="3:lib/flanagan.jar"/>
+<property category="archiving" name="libraryStates.2" value="3:JBCL"/>
+<property category="archiving" name="libraryStates.3" value="3:lib/jai/mlibwrapper_jai.jar"/>
+<property category="archiving" name="libraryStates.4" value="3:lib/jai/jai_codec.jar"/>
+<property category="archiving" name="libraryStates.5" value="3:lib/jai/jai_core.jar"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.applet.thesis.PsychophysicsExperiment"/>
+<property category="archiving" name="obfuscator" value="RetroGuard for J2ME"/>
+<property category="archiving" name="targetCompressed" value="1"/>
+<property category="archiving" name="targetPath" value="Psychophysics.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="RemoteMeterServer" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:shu/cms/measure/remote/RemoteMeterServer.class"/>
+<property category="archiving" name="contentRules.2" value="I:shu/cms/measure/remote/kllckety.png"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="2:JBCL"/>
+<property category="archiving" name="libraryStates.2" value="2:lib/jacob/jacob.jar"/>
+<property category="archiving" name="libraryStates.3" value="3:commons-logging"/>
+<property category="archiving" name="libraryStates.4" value="1:lib/CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.measure.remote.RemoteMeterServer"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="RemoteMeterServer.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="Spectra2XYZ" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:**/*.*"/>
+<property category="archiving" name="contentRules.2" value="I:shu/cms/Spectra.class"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="2:module/CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.Spectra"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="Spectra2XYZ.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="SpotreadWrapper" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:shu/cms/measure/meterapi/argyll/SpotreadWrapper.class"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.measure.meterapi.argyll.SpotreadWrapper"/>
+<property category="archiving" name="obfuscator" value="RetroGuard for J2ME"/>
+<property category="archiving" name="targetPath" value="SpotreadWrapper.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="UtilApp" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="F:classes/shu/cms/applet/UtilFrame.class;shu/cms/applet/UtilFrame.class"/>
+<property category="archiving" name="contentRules.2" value="F:classes/shu/cms/applet/measure/autovvv/readme.txt;shu/cms/applet/measure/autovvv/readme.txt"/>
+<property category="archiving" name="includeDeps" value="1"/>
+<property category="archiving" name="libraryStates.1" value="3:JBCL"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.applet.util.UtilFrame"/>
+<property category="archiving" name="targetCompressed" value="1"/>
+<property category="archiving" name="targetPath" value="UtilApp.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<node name="WPCalibrator" type="Archive">
+<property category="archiving" name="archiverClass" value="com.borland.jbuilder.wizard.archive.ApplicationArchiver"/>
+<property category="archiving" name="buildWithProject" value="0"/>
+<property category="archiving" name="contentRules.1" value="I:**/*.*"/>
+<property category="archiving" name="includeAll" value="1"/>
+<property category="archiving" name="libraryStates.1" value="2:JBCL"/>
+<property category="archiving" name="libraryStates.2" value="3:commons-logging"/>
+<property category="archiving" name="libraryStates.3" value="2:Jama"/>
+<property category="archiving" name="libraryStates.4" value="3:module/CMSJava-static/CMSJava-static.jpx"/>
+<property category="archiving" name="manifestMainClass" value="shu.cms.applet.calibrate.WPCalibratorFrame"/>
+<property category="archiving" name="obfuscator" value="RetroGuard"/>
+<property category="archiving" name="targetPath" value="WPCalibrator.jar"/>
+<property category="archiving" name="usingRules" value="1"/>
+</node>
+<file path="module/CMSJava-static/jmathplot.jar"/>
+<file path="src/shu/cms/reference/cie2007/linss10e_1_8dp.txt"/>
+<file path="src/shu/cms/reference/cie2007/linss2_10e_1_8dp.txt"/>
+</project>

@@ -1,0 +1,34 @@
+[PropertyInfo]
+AcceptDifference,int,false,false, , ,false,<default>
+accumulateMeasureCount,int,false,false, , ,true,<default>
+buffer,shu.cms.measure.cp.MeasureBuffer,false,false, , ,false,<default>
+bufferMeasure,boolean,false,false, , ,true,<default>
+dummyMode,boolean,false,false, , ,false,<default>
+fashion,shu.cms.measure.cp.CPCodeMeasurement.Fashion,false,false, , ,false,<default>
+filler,shu.cms.measure.cp.CPCodeMeasurement.Filler,false,false, , ,false,<default>
+halfMeasureRatio,boolean,false,false, , ,false,<default>
+ic,shu.cms.colorspace.depend.RGBBase.MaxValue,false,false, , ,false,<default>
+instanceList,java.util.List,false,false, , ,false,<default>
+jdk14log,java.util.logging.Logger,false,false, , ,false,<default>
+MaxWaitTime,long,false,false, , ,false,<default>
+measureCount,int[],false,false, , ,true,<default>
+measureCountList,org.apache.commons.collections.primitives.IntList,false,false, , ,false,<default>
+measureHistory,java.util.List,false,false, , ,false,<default>
+measureIndex,int,false,false, , ,false,<default>
+meterBackground,shu.cms.colorspace.depend.RGB,false,false, , ,false,<default>
+meterBlank,shu.cms.colorspace.depend.RGB,false,false, , ,false,<default>
+mm,shu.cms.measure.MeterMeasurement,false,false, , ,false,<default>
+nearestRequestTime,long,false,false, , ,false,<default>
+nonMeasureWhenNoCount,boolean,false,false, , ,false,<default>
+nonTriggerMode,boolean,false,false, , ,false,<default>
+oldFashion,shu.cms.measure.cp.CPCodeMeasurement.OldFashion,false,false, , ,false,<default>
+taskEmpty,boolean,false,false, , ,true,<default>
+totalRequestTime,long,false,false, , ,true,<default>
+tray,shu.cms.measure.cp.CPCodeMeasurement.Tray,false,false, , ,false,<default>
+useDifferenceMeasure,boolean,false,false, , ,false,<default>
+waitTaskList,java.util.List,false,false, , ,false,<default>
+[IconNames]
+
+
+
+
