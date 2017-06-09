@@ -10,7 +10,7 @@ import java.awt.image.*;
 import javax.swing.*;
 
 import org.apache.commons.io.*;
-import com.sun.image.codec.jpeg.*;
+//import com.sun.image.codec.jpeg.*;
 import java.net.URL;
 import com.sun.media.jai.codec.ImageCodec;
 import com.sun.media.jai.codec.ImageEncoder;
@@ -177,10 +177,12 @@ public final class ImageUtils {
                                           BufferedImage image) throws
       IOException {
     FileOutputStream fs = new FileOutputStream(filename);
-    JPEGEncodeParam jpe = JPEGCodec.getDefaultJPEGEncodeParam(image);
-    jpe.setQuality(1.0f, false);
-    JPEGImageEncoder o = JPEGCodec.createJPEGEncoder(fs, jpe);
-    o.encode(image);
+//    JPEGEncodeParam jpe = JPEGCodec.getDefaultJPEGEncodeParam(image);
+//    jpe.setQuality(1.0f, false);
+//    JPEGImageEncoder o = JPEGCodec.createJPEGEncoder(fs, jpe);
+//    o.encode(image);
+    
+    ImageIO.write(image, ".jpg", fs);
     fs.flush();
     fs.close();
   }

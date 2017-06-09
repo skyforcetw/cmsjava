@@ -492,7 +492,7 @@ public abstract class DoubleArray
     return doubleArray;
   }
 
-  public static double[] list2DoubleArray(List<Double> list) {
+  public static double[] doubleList2DoubleArray(List<Double> list) {
     int size = list.size();
     double[] result = new double[size];
     for (int x = 0; x < size; x++) {

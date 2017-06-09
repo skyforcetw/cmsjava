@@ -21,19 +21,19 @@ public class FRCPatternProducer {
     private final int length = 8;
     private final int frame = 4;
 
-//    public FRCPattern[] getCheckedFRCPattern(int level) {
-//        switch (level) {
-//        case 1:
-//            return getCheckedFRCPatternLv1();
-//        case 2:
-//            return getCheckedFRCPatternLv2();
-//        case 3:
-//            return getCheckedFRCPatternLv3();
-//        default:
-//            return null;
-//        }
-//
-//    }
+    public FRCPattern[] getCheckedFRCPattern(int level) {
+        switch (level) {
+        case 1:
+            return getCheckedFRCPatternLv1();
+        case 2:
+            return getCheckedFRCPatternLv2();
+        case 3:
+            return getCheckedFRCPatternLv3();
+        default:
+            return null;
+        }
+
+    }
 
     private FRCPattern[] getCheckedFRCPatternLv1() {
         ArrayList<FRCPattern> list = new ArrayList<FRCPattern>();
@@ -52,7 +52,7 @@ public class FRCPatternProducer {
                         for (Mapping mapping : mappings) {
                             FRCPattern p = block24ToFRCPattern(
                                     basepattern, 2, 4, mapping);
-                            if (CheckTool.checkArtifacts(p, ArtifactsAnalyzer.InversionMode._1V1H, false, true)) {
+                            if (CheckTool.checkArtifacts(p, false, true)) {
                                 list.add(p);
                             }
 
@@ -100,13 +100,6 @@ public class FRCPatternProducer {
         return buf.toString();
     }
 
-    /**
-     * 一個line中, 相鄰的兩個green是否+1.
-     * 若相鄰Green+1就return false
-     *
-     * @param based boolean[][]
-     * @return boolean
-     */
     static boolean checkGreen(boolean[][] based) {
         int height = based.length;
         for (int h = 0; h < height; h++) {
@@ -214,7 +207,6 @@ public class FRCPatternProducer {
                         if (CheckTool.checkVerticalCount(frame, 2) &&
                             (checkAdjoin && CheckTool.checkAdjoin(frame)) &&
                             (checkSlash && CheckTool.checkSlash(frame, checkSlashLength)) &&
-                            //檢查四個象限的+1數量是否相等
                             CheckTool.checkQuadrantCount(frame)) {
                             result.add(FRCUtil.copy(frame));
                             System.out.println((count++) + "\n" + toString(frame));
@@ -229,16 +221,15 @@ public class FRCPatternProducer {
         return result;
     }
 
-    public ArrayList<FRCPattern> getCheckedFRCPatternLv2_2(ArtifactsAnalyzer.InversionMode mode, boolean checkGreen,
-            boolean checkFrameSlash,
-            int _FrameSlashLength, boolean checkSumSlash, int sumSlashLength) {
+    public ArrayList<FRCPattern> getCheckedFRCPatternLv2_2(boolean checkGreen) {
 
-        ArrayList<boolean[][]> frame = getFrameFRCPatternLv2(checkGreen, true, checkFrameSlash, _FrameSlashLength);
+        ArrayList<boolean[][]> frame = getFrameFRCPatternLv2(checkGreen, true, true, 4);
         int size = frame.size();
 
-        int findcount = 0;
+        int count = 0;
         ArrayList<FRCPattern> list = new ArrayList<FRCPattern>();
         boolean doCheckSame = false;
+        boolean doCheckSlash = true;
         long index = 0;
 
         for (int f1 = 0; f1 < size; f1++) {
@@ -255,6 +246,10 @@ public class FRCPatternProducer {
                             continue;
                         }
                         index++;
+//                        if (index < 2833967296L) {
+                        if (index < 1826000000) {
+                            continue;
+                        }
 
                         boolean[][] f1_ = frame.get(f1);
                         boolean[][] f2_ = frame.get(f2);
@@ -267,19 +262,19 @@ public class FRCPatternProducer {
                         FRCPattern frc = new FRCPattern(p);
 
                         if ((index) % 1000000 == 0) {
-                            System.out.println("(index)" + index + " (find)" + findcount + " : (sim ratio)" +
-                                               (((double) index) / 98344960000L) + "%");
+                            System.out.println(index + " " + count + " - " +
+                                               ((double) index) / 98344960000L);
                         }
                         if (CheckTool.checkPolarityNonZero(frc) &&
                             CheckTool.checkAdjoin(frc) &&
-                            (!checkSumSlash || CheckTool.checkSlash(frc, sumSlashLength)) &&
+                            (!doCheckSlash || CheckTool.checkSlash(frc, 5)) &&
                             (!doCheckSame || !CheckTool.checkSame(frc, list)) &&
-                            CheckTool.checkArtifacts(frc, mode, true, true)
+                            CheckTool.checkArtifacts(frc, true, true)
                                 ) {
-
+//
                             frc = new FRCPattern(FRCUtil.copy(p), frc.artifacts);
                             list.add(frc);
-                            System.out.println(findcount++);
+                            System.out.println(count++);
                             System.out.println(frc.toString());
                         }
                     }
@@ -287,12 +282,12 @@ public class FRCPatternProducer {
             }
 
         }
-        System.out.println(findcount);
+        System.out.println(count);
         return list;
     }
 
 
-    private FRCPattern[] getCheckedFRCPatternLv2(ArtifactsAnalyzer.InversionMode mode) {
+    private FRCPattern[] getCheckedFRCPatternLv2() {
         ArrayList<FRCPattern> list = new ArrayList<FRCPattern>();
 
         int count = 0;
@@ -329,25 +324,25 @@ public class FRCPatternProducer {
                                             FRCPattern p = blockToFRCPattern(
                                                     basepattern, 2, 4,
                                                     mapping);
-                                            if (CheckTool.checkArtifacts(p, mode, true, true)) {
+                                            if (CheckTool.checkArtifacts(p, true, true)) {
                                                 list.add(p);
                                             }
                                             p = blockToFRCPattern(
                                                     basepattern, 4, 2,
                                                     mapping);
-                                            if (CheckTool.checkArtifacts(p, mode, true, true)) {
+                                            if (CheckTool.checkArtifacts(p, true, true)) {
                                                 list.add(p);
                                             }
                                             p = blockToFRCPattern(
                                                     basepattern, 1, 8,
                                                     mapping);
-                                            if (CheckTool.checkArtifacts(p, mode, true, true)) {
+                                            if (CheckTool.checkArtifacts(p, true, true)) {
                                                 list.add(p);
                                             }
                                             p = blockToFRCPattern(
                                                     basepattern, 8, 1,
                                                     mapping);
-                                            if (CheckTool.checkArtifacts(p, mode, true, true)) {
+                                            if (CheckTool.checkArtifacts(p, true, true)) {
                                                 list.add(p);
                                             }
 
@@ -495,7 +490,7 @@ public class FRCPatternProducer {
                             //======================================================
                             FRCPattern frc = new FRCPattern(p.pattern, false);
                             ArtifactsAnalyzer analyzer = new ArtifactsAnalyzer(
-                                    ArtifactsAnalyzer.InversionMode._1V1H, frc);
+                                    ArtifactsAnalyzer.Inversion.Dot, frc);
                             boolean ok = false;
                             /*if (analyzer.checkSubpixelBaseArtifacts(1)) {
                                 System.out.print("All ok: " + count);

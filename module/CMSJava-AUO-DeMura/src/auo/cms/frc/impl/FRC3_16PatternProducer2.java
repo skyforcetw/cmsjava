@@ -144,6 +144,8 @@ public class FRC3_16PatternProducer2 {
                         frc[L3h][L3pos] = true;
                         frc[L4h][L4pos] = true;
 
+
+
                         result.add(frc);
                     }
                 }
@@ -164,26 +166,8 @@ public class FRC3_16PatternProducer2 {
 
 
     public static void main(String[] args) throws IOException {
-        //資源所在的目錄
         String dir = "FRC/FRC 3-16_2/";
-        BaseOn baseon = BaseOn.FRC1_8; //建議用1/8去找3/16. 因為1/16的pattern很不規則, 造出來的3/16相對也不具規則性
-        //==============================================================================================================
-        // 基於甚麼方式去+1
-        // AB : 每個frame +1數量相同. 同一個frame, 奇偶行不同數量+1, 達到n/16的解析度
-        // Eight16 : 每個frame +1數量不同. 以1/8和2/8穿插不同frame, 模擬出3/16的效果
-        //
-        // AB效果不佳, 不建議使用
-        //==============================================================================================================
-        Method method = Method.Eight16;
-//        Method method = Method.AB;
-        //==============================================================================================================
-
-        //==============================================================================================================
-        boolean choiceFirstFor16 = false; //第一個frame是否就加成16
-        boolean plusAdjoin = true; //+1是否要放在相鄰的frame. 相鄰: 0++0, 不相鄰0+0+
-        ArtifactsAnalyzer.InversionMode inversion = ArtifactsAnalyzer.InversionMode._1V1H;
-        //==============================================================================================================
-
+        BaseOn baseon = BaseOn.FRC1_8;
         FRCPattern frcPattern = null;
         switch (baseon) {
         case FRC1_8:
@@ -194,32 +178,28 @@ public class FRC3_16PatternProducer2 {
             break;
         }
         System.out.println(frcPattern);
-
-        //==============================================================================================================
-        // 找到ok pos
-        //==============================================================================================================
         boolean[][][] ok4frame = FRCUtil.getOkPosition(frcPattern);
         System.out.println("ok frame");
         for (boolean[][] o : ok4frame) {
             System.out.println(FRCUtil.toString(o));
         }
-        //==============================================================================================================
-
         boolean[][][] frcpattern = frcPattern.pattern[0];
         int framecount = frcpattern.length;
 
+        Method method = Method.Eight16;
+//        Method method = Method.AB;
         LinkedList<Frame> frameList[] = new LinkedList[4];
+
+        boolean choiceFirstFor16 = false; //16要加在哪裡
+//        boolean choiceFirstFor16 = true; //16要加在哪裡
+        boolean plusAdjoin = true; //是否要+1在相鄰的frame
 
         String pickfilename = dir + "pick" + (choiceFirstFor16 ? "1" : "2") +
                               (plusAdjoin ? "_" : "") + ".obj";
         LinkedList<FRCPattern>
                 frcList = null;
 
-        //==============================================================================================================
-        // 找出每個frame的所有+1組合
-        //==============================================================================================================
         if (new File(pickfilename).exists()) {
-            //若已經有pick出來的結果, 直接load檔案
             try {
                 ObjectInputStream f = new ObjectInputStream(new BufferedInputStream(new
                         FileInputStream(pickfilename)));
@@ -231,10 +211,8 @@ public class FRC3_16PatternProducer2 {
                 ex.printStackTrace();
             }
         } else {
-            //否則重新造
 
             if (method == Method.AB) {
-                //AB法效果不好, 略過不用
 //            int[][] check = { {2, 1}, {1, 2}
 //            };
                 int[][] check = { {1, 2}, {2, 1}
@@ -249,7 +227,6 @@ public class FRC3_16PatternProducer2 {
                     }
                 }
             } else if (method == Method.Eight16) {
-                //8+16推薦使用
 
                 for (int f = 0; f < framecount; f++) {
                     frameList[f] = new LinkedList<Frame>();
@@ -270,13 +247,7 @@ public class FRC3_16PatternProducer2 {
             }
 
             try {
-                //造好就儲存成檔案, 以備以後需要
-                boolean checkingOverlapping = true;
-                boolean skipSameFrame = false;
-                int f1_start = 0;
-                int pickmethod = 2;
-                frcList = FRC3_16PatternProducer.frcPicker3(frameList, f1_start, pickmethod, dir, checkingOverlapping,
-                        skipSameFrame, inversion);
+                frcList = FRC3_16PatternProducer.frcPicker3(frameList, 0, 2, dir, false, true, false);
                 System.out.println(frcList.size());
 
                 ObjectOutputStream f = new ObjectOutputStream(new BufferedOutputStream(new
@@ -289,15 +260,10 @@ public class FRC3_16PatternProducer2 {
             }
 
         }
-        //==============================================================================================================
 
-        //==============================================================================================================
-        // 上述所有組合中, 依據rule過濾出合理的FRC Pattern
-        //==============================================================================================================
         LinkedList<FRCPattern> filterFRCList = new LinkedList<FRCPattern>();
         int index = 0;
         for (FRCPattern frc : frcList) {
-            //計算rule所需要的資訊
             frc.caculateInfo();
             int[] Lcount = frc.Lcount;
             int[] hcount = frc.twohcount;
@@ -305,23 +271,16 @@ public class FRC3_16PatternProducer2 {
             int[][] greenPixel = frc.greenPixel;
 
             boolean ok = true;
-            //====================================================================
-            //H V L是否符合規則
-            //====================================================================
             for (int f = 0; f < 4; f++) {
-                if (!(hcount[f] >= vcount[f] && vcount[f] >= Lcount[f]) || // H>V>L
+                if (!(hcount[f] >= vcount[f] && vcount[f] >= Lcount[f]) ||
                     frc.maxSlash > 4 || Lcount[f] > 0
-                        /*|| vcount[f] != 0*/) {
+                        /*||
+                                                                 vcount[f] != 0*/) {
                     ok = false;
                     break;
                 }
             }
-            //====================================================================
-
             int size = greenPixel.length;
-            //====================================================================
-            //green是否符合規則
-            //====================================================================
             for (int x = 0; x < size; x++) {
                 for (int c = 0; c < 3; c++) {
                     if (0 == greenPixel[x][c]) {
@@ -330,15 +289,12 @@ public class FRC3_16PatternProducer2 {
                     }
                 }
             }
-            //====================================================================
-
             byte[][] balancedSum = frc.balancedSum;
             int height = balancedSum.length;
             int width = balancedSum[0].length;
+//            int[] adjoinPolarityArray = new int[8];
 
-            //====================================================================
             //鄰接都是0的狀況就去除
-            //====================================================================
             for (int h = 0; h < height; h++) {
                 for (int w = 0; w < width; w++) {
                     if (balancedSum[h][w] == 0) {
@@ -352,16 +308,12 @@ public class FRC3_16PatternProducer2 {
                     }
                 }
             }
-            //====================================================================
-
+//            int maxHLine = getMaxContinuePolarityHLine(frc);
             //橫線長度>=4就去除
             if (frc.maxHLine >= 4) {
                 ok = false;
             }
-
-            //====================================================================
-            //計算鄰接的數量
-            //====================================================================
+//            int[] adjoinPolarityCountArray = CheckTool.getAdjoinPolarityCountArray(frc);
             int[] posAdjoin = CheckTool.getAdjoinCount(frc, false);
             int[] neaAdjoin = CheckTool.getAdjoinCount(frc, true);
             int maxAdjoinPolarity = 0;
@@ -374,32 +326,24 @@ public class FRC3_16PatternProducer2 {
             if (maxAdjoinPolarity > 4) {
                 ok = false;
             }
-            //====================================================================
 
-            //====================================================================
-            // 計算相鄰G+1的數量(避免偏綠)
-            //====================================================================
             int[][] twovGcount = CheckTool.getTwovGcount(frc);
             int[] twovGsimplify = new int[twovGcount.length];
             for (int x = 0; x < twovGcount.length; x++) {
                 twovGsimplify[x] = IntArray.sum(twovGcount[x]);
             }
-            //twovG就僅是把twovGcount全部加總起來而已
             int twovG = IntArray.sum(twovGsimplify);
-            if (twovG > 12) { //twov不能超過12
+            if (twovG > 12) {
                 ok = false;
             }
-            //====================================================================
-
-            //到此已經跑完所有rule, 符合資格的Pattern儲存起來
 
             if (ok) {
                 filterFRCList.add(frc);
                 System.out.println((index++) + " " + "maxAdjoinPolarity: " + maxAdjoinPolarity);
-
+//                System.out.println("maxAdjoinPolarity: "+maxAdjoinPolarity);
                 System.out.println(frc);
                 boolean noinfo = true;
-
+//                boolean noinfo = false;
                 if (noinfo) {
                     frc.artifacts = null;
                     frc.balancedSum = null;
@@ -411,12 +355,11 @@ public class FRC3_16PatternProducer2 {
                     frc.maxSlash = 0;
                 }
                 System.out.println(frc);
+//                System.out.println(Arrays.toString(adjoinPolarityCountArray) + " " + frc.maxSlash);
 
             }
         }
-        //==============================================================================================================
-
-        System.out.println("final filter result: " + filterFRCList.size() + " / " + frcList.size());
+        System.out.println(filterFRCList.size() + " / " + frcList.size());
     }
 
 

@@ -18,25 +18,34 @@ import static auo.cms.frc.impl.FRC3_16Util.*;
 import auo.cms.frc.*;
 
 /**
- * <p>Title: </p>
+ * <p>
+ * Title: </p>
  *
- * <p>Description: </p>
+ * <p>
+ * Description: </p>
  *
- * <p>Copyright: Copyright (c) 2013</p>
+ * <p>
+ * Copyright: Copyright (c) 2013</p>
  *
- * <p>Company: </p>
+ * <p>
+ * Company: </p>
  *
  * @author not attributable
  * @version 1.0
  */
-public class FRC7_16PatternProducer {
+public class FRC7_16PatternProducerNew {
 
     public static void main(String[] args) throws IOException {
         String dir = "FRC/FRC 7-16/";
 //        String filename = "3_8frc-auo.txt";
-        String filename = "New 3_8frc.txt";
-        for (int x = 0; x < 1; x++) {
-            main(dir, filename, 0, true, true, true, x);
+//        String filename = "New 3_8frc.txt";
+
+//        String filename = "now3-8.txt";
+        String filename = "now_and_auo3-8.txt";
+//        String filename = "my3-8.txt";
+
+        for (int x = 0; x < 2; x++) {
+            main(dir, filename, x, true, true, true);
         }
 //        String filename = "my3-8.txt";
 //        for (int x = 0; x <= 48; x++) {
@@ -44,9 +53,7 @@ public class FRC7_16PatternProducer {
 //        }
     }
 
-    public static void main(String dir, String frcFilename, int indexOfFRC, boolean showBasicInfo,
-                            boolean showResult,
-                            boolean showNoInfoResult, int plusIndex) throws IOException {
+    public static void main(String dir, String frcFilename, int indexOfFRC, boolean showBasicInfo, boolean showResult, boolean showNoInfoResult) throws IOException {
 //        String dir = "FRC/FRC 7-16/";
         FRCPattern frcPattern = null;
 
@@ -73,20 +80,17 @@ public class FRC7_16PatternProducer {
 //        boolean choiceFirstFor16 = false; //16要加在哪裡
 //        boolean choiceFirstFor16 = true; //16要加在哪裡
 //        int plusIndex = 3;
-
 //        boolean plusAdjoin = true; //是否要+1在相鄰的frame
-
-        String pickfilename = dir + "pick" + plusIndex + "+" + frcPattern.sourceInfo + ".obj";
-        LinkedList<FRCPattern>
-                frcList = null;
+//        String pickfilename = dir + "pick" + plusIndex + "+" + frcPattern.sourceInfo + ".obj";
+        String pickfilename = dir + "pick" + "+" + frcPattern.sourceInfo + ".obj";
+        LinkedList<FRCPattern> frcList = null;
 
         //==========================================================================================
         // 生成基礎pattern
         //==========================================================================================
-        if (new File(pickfilename).exists()) {
+        if (new File(pickfilename).exists() && false) {
             try {
-                ObjectInputStream f = new ObjectInputStream(new BufferedInputStream(new
-                        FileInputStream(pickfilename)));
+                ObjectInputStream f = new ObjectInputStream(new BufferedInputStream(new FileInputStream(pickfilename)));
                 frcList = (LinkedList<FRCPattern>) f.readObject();
                 f.close();
             } catch (IOException ex) {
@@ -99,28 +103,25 @@ public class FRC7_16PatternProducer {
             for (int f = 0; f < framecount; f++) {
                 frameList[f] = new LinkedList<Frame>();
 
-                if (f == plusIndex || f == ((plusIndex + 1) % 4)) {
-
-                    LinkedList<boolean[][]>
-                            pickFrame = FRCUtil.eight16FramePicker(frcpattern[f],
-                            ok4frame[f]);
-                    for (boolean[][] pick : pickFrame) {
-                        Frame frame = new Frame(pick);
+//                LinkedList<boolean[][]> pickFrame8 = FRCUtil.eight16FramePicker(frcpattern[f], ok4frame[f]);
+                LinkedList<boolean[][]> pickFrame = FRCUtil.five16FramePicker(frcpattern[f], ok4frame[f]);
+                for (boolean[][] pick : pickFrame) {
+                    Frame frame = new Frame(pick);
+                    if (CheckTool.h_check16_n_even(frame, 7)
+                            && CheckTool.h_check16_n_odd(frame, 7)
+                            && CheckTool.v_check16_n(pick, 7) //                            && CheckTool.grid_check_n(pick, 7)
+                            ) {
                         frameList[f].add(frame);
                     }
-
-                } else {
-                    Frame frame = new Frame(frcpattern[f]);
-                    frameList[f].add(frame);
                 }
+
             }
 
             try {
-                frcList = frcPicker7(frameList, 0, 2, dir, false, false);
+                frcList = frcPicker7(frameList, 0, dir, false, false);
                 System.out.println(frcList.size());
 
-                ObjectOutputStream f = new ObjectOutputStream(new BufferedOutputStream(new
-                        FileOutputStream(pickfilename)));
+                ObjectOutputStream f = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(pickfilename)));
                 f.writeObject(frcList);
                 f.flush();
                 f.close();
@@ -134,7 +135,6 @@ public class FRC7_16PatternProducer {
         //==========================================================================================
         // 過濾FRC Pattern
         //==========================================================================================
-
         LinkedList<FRCPattern> filterFRCList = new LinkedList<FRCPattern>();
         int index = 1;
         for (FRCPattern frc : frcList) {
@@ -145,10 +145,20 @@ public class FRC7_16PatternProducer {
             int[][] greenPixel = frc.greenPixel;
 
             boolean ok = true;
+
+            if (get_artifacts_postive_max(frc.artifacts) >= 4) {
+                ok = false;
+            }
+            if (!check_artifacts(frc.artifacts)) {
+                ok = false;
+            }
+
+//            if (!CheckTool.check_plus_one_sum(frc.plusOneSum, 3)) {
+//                ok = false;
+//            }
             for (int f = 0; f < 4; f++) {
-                if (!(hcount[f] >= vcount[f] && vcount[f] >= Lcount[f]) ||
-                    frc.maxSlash > 4 || Lcount[f] > 0
-                        /*||
+                if (!(hcount[f] >= vcount[f] && vcount[f] >= Lcount[f])
+                        || frc.maxSlash > 4 || Lcount[f] > 0 /*||
                                                                  vcount[f] != 0*/) {
 //                    ok = false;
                     break;
@@ -181,10 +191,10 @@ public class FRC7_16PatternProducer {
             for (int h = 0; h < height; h++) {
                 for (int w = 0; w < width; w++) {
                     if (balancedSum[h][w] == 0) {
-                        if ((h > 0 && balancedSum[h - 1][w] == 0) ||
-                            (w > 0 && balancedSum[h][w - 1] == 0) ||
-                            (w < width - 1 && balancedSum[h][w + 1] == 0) ||
-                            (h < height - 1 && balancedSum[h + 1][w] == 0)) {
+                        if ((h > 0 && balancedSum[h - 1][w] == 0)
+                                || (w > 0 && balancedSum[h][w - 1] == 0)
+                                || (w < width - 1 && balancedSum[h][w + 1] == 0)
+                                || (h < height - 1 && balancedSum[h + 1][w] == 0)) {
 //                            ok = false;
                             break;
                         }
@@ -224,8 +234,6 @@ public class FRC7_16PatternProducer {
             int[][] plusAdjoin = null;
             //======================================================================================
 
-
-
             //======================================================================================
             // 結束判斷並且印出
             //======================================================================================
@@ -236,8 +244,8 @@ public class FRC7_16PatternProducer {
                 }
                 filterFRCList.add(frc);
                 if (showResult) {
-                    System.out.println("No." + (index++) + " " + "maxAdjoinPolarity: " +
-                                       maxAdjoinPolarity);
+                    System.out.println("No." + (index++) + " " + "maxAdjoinPolarity: "
+                            + maxAdjoinPolarity);
                     System.out.println("twovG: " + twovG);
                     System.out.println(frc);
                 }
@@ -260,11 +268,9 @@ public class FRC7_16PatternProducer {
 //        System.out.println(mintwovG);
     }
 
-    static LinkedList<FRCPattern> frcPicker7(LinkedList<Frame> frameList[], int f1_start,
-            int method, String dir,
-            boolean checkingOverlapping, boolean skipSameFrame) throws IOException {
+    static LinkedList<FRCPattern> frcPicker7(LinkedList<Frame>[] frameList, int f1_start, String dir, boolean checkingOverlapping, boolean skipSameFrame) throws IOException {
         return frcPicker7(frameList[0], frameList[1], frameList[2], frameList[3], f1_start, 1, false,
-                          0, method, dir, checkingOverlapping, skipSameFrame);
+                0, dir, checkingOverlapping, skipSameFrame);
     }
 
     /**
@@ -280,16 +286,12 @@ public class FRC7_16PatternProducer {
      * @param method int
      * @param dir String
      * @param checkingOverlapping boolean
-     * @param skipSameFrame boolean 如果frame01~04都是基於同一組來源, 應該要跳過相同frame,  避免閃爍
+     * @param skipSameFrame boolean 如果frame01~04都是基於同一組來源, 應該要跳過相同frame, 避免閃爍
      * @return LinkedList
      * @throws IOException
      */
-    private static LinkedList<FRCPattern> frcPicker7(final LinkedList<Frame> frame01,
-            final LinkedList<Frame> frame02, final LinkedList<Frame> frame03,
-            final LinkedList<Frame> frame04, int f1_start, int f1_step, boolean oneF1Only,
-            int f2_start, int method, String dir, boolean checkingOverlapping,
-            boolean skipSameFrame
-            ) throws
+    private static LinkedList<FRCPattern> frcPicker7(final LinkedList<Frame> frame01, final LinkedList<Frame> frame02, final LinkedList<Frame> frame03, final LinkedList<Frame> frame04,
+            int f1_start, int f1_step, boolean oneF1Only, int f2_start, String dir, boolean checkingOverlapping, boolean skipSameFrame) throws
             IOException {
         final int size1 = frame01.size();
         final int size2 = frame02.size();
@@ -298,11 +300,12 @@ public class FRC7_16PatternProducer {
 
         Calendar c = Calendar.getInstance();
         String time = c.get(Calendar.HOUR_OF_DAY) + "-" + c.get(Calendar.MINUTE);
-        String frame_filename = dir + time + "-frc3-16" + method + ".obj";
+//        String frame_filename = dir + time + "-frc3-16" + method + ".obj";
+        String frame_filename = dir + time + "-frc7-16" + ".obj";
 
-        final Writer log = new BufferedWriter(new FileWriter(dir + "frc" + method + ".log"));
-        final ObjectOutputStream obj = new ObjectOutputStream(new BufferedOutputStream(new
-                FileOutputStream(frame_filename)));
+//        final Writer log = new BufferedWriter(new FileWriter(dir + "frc" + method + ".log"));
+        final Writer log = new BufferedWriter(new FileWriter(dir + "frc" + ".log"));
+        final ObjectOutputStream obj = new ObjectOutputStream(new BufferedOutputStream(new FileOutputStream(frame_filename)));
 
         int f1_end = oneF1Only ? f1_start + 1 : size1;
         long start = 0, end = 0;
@@ -339,8 +342,8 @@ public class FRC7_16PatternProducer {
                         continue;
                     }
                     final Frame frame3 = frame03.get(f3);
-                    if (checkingOverlapping &&
-                        (isOverlapping(frame1, frame3) || isOverlapping(frame2, frame3))) {
+                    if (checkingOverlapping
+                            && (isOverlapping(frame1, frame3) || isOverlapping(frame2, frame3))) {
                         continue;
                     }
                     boolean[][] frame3_ = lineToFrame(frame3.frameIndex);
@@ -351,29 +354,30 @@ public class FRC7_16PatternProducer {
                         }
 
                         Frame frame4 = frame04.get(f4);
-                        if (checkingOverlapping &&
-                            (isOverlapping(frame1, frame4) ||
-                             isOverlapping(frame2, frame4) ||
-                             isOverlapping(frame3, frame4))) {
+                        if (checkingOverlapping
+                                && (isOverlapping(frame1, frame4)
+                                || isOverlapping(frame2, frame4)
+                                || isOverlapping(frame3, frame4))) {
                             continue;
                         }
 
                         boolean[][] frame4_ = lineToFrame(frame4.frameIndex);
-                        boolean[][][][] frcArray = { {frame1_, frame2_, frame3_,
-                                frame4_}
+                        boolean[][][][] frcArray = {{frame1_, frame2_, frame3_,
+                            frame4_}
                         };
 
                         FRCPattern frc = new FRCPattern(frcArray);
-                        boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc, false, true, true); //0
+//                        boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc, false, true, true); //0
+                        boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc, false, false, false); //0
 
                         if (overallAnalyze) {
                             result.add(frc);
                             boolean writeToFile = false;
                             if (writeToFile) {
                                 try {
-                                    String text = f1 + " " + f2 + " " + f3 + " " + f4 +
-                                                  "\n" +
-                                                  frc.toString();
+                                    String text = f1 + " " + f2 + " " + f3 + " " + f4
+                                            + "\n"
+                                            + frc.toString();
                                     log.write(text);
                                     obj.writeObject(frcArray);
                                 } catch (IOException ex) {
@@ -397,6 +401,47 @@ public class FRC7_16PatternProducer {
         log.flush();
         log.close();
         return result;
+    }
+
+    static boolean check_artifacts(byte[][] artifacts) {
+        final int height = artifacts.length;
+        final int width = artifacts[0].length;
+
+        for (int h = 0; h < height; h++) {
+            int first = artifacts[h][0];
+            boolean no_change = true;
+            for (int w = 1; w < width; w++) {
+                no_change = no_change && first == artifacts[h][w];
+            }
+            if (no_change) {
+                return false;
+            }
+
+        }
+        return true;
+    }
+
+    static int get_artifacts_postive_max(byte[][] artifacts) {
+        final int height = artifacts.length;
+        final int width = artifacts[0].length;
+
+        int max_plus_count = 0;
+        for (int h = 1; h < height - 1; h++) {
+            for (int w = 1; w < width - 1; w++) {
+                int plus_count = 0;
+                for (int h0 = -1; h0 < 2; h0++) {
+                    for (int w0 = -1; w0 < 2; w0++) {
+                        if (artifacts[h + h0][w + w0] > 0) {
+                            plus_count++;
+                        }
+                    }
+                }
+                max_plus_count = max_plus_count < plus_count ? plus_count : max_plus_count;
+            }
+
+        }
+
+        return max_plus_count;
     }
 
 }

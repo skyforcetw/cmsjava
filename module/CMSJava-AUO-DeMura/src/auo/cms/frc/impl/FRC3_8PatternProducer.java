@@ -129,50 +129,34 @@ public class FRC3_8PatternProducer {
     static final boolean F = false;
     static final boolean T = true;
     public static void main(String[] args) throws IOException {
-        //==============================================================================================================
-        // check rule
-        //==============================================================================================================
-        boolean checkPatternOnly = true; //只check pattern或者 pattern和Artifacts一併check?
-        boolean showImportantOnly = true; //只顯示pattern產生過程中的重要訊息
+        boolean checkPatternOnly = true;
+        boolean showImportantOnly = true;
+        boolean filterAllFRC = true;
+        boolean check38FRCMatch = false;
+        boolean checkSymmetry = false;
 
-        boolean check38FRCMatch = false; //check是否跟原本的3/8有重疊
-        boolean checkArtifactsSymmetry = false; //檢查Artifacts有沒有對稱性
-        boolean checkNone0Artifacts = false; //檢查Artifacts是不是都被極性中和
-
-        boolean checkArtifactsSymmetryAndReflect = true; //檢查Artifacts有沒有對稱性或者鏡射
-        boolean checkEqualsPolarity = true; //正負極性數量是否對稱
-        boolean checkLeftRightBalance = true; // 檢查左右的+1數量是否相同
-        boolean checkBalancedsum = true; //檢查正負極性的個數以及斜線
-
-        boolean filterAllFRCAtFinal = true; //將通過所有rule check的pattern, 再最後做Artifacts的check
-        //==============================================================================================================
-
-
-        //==============================================================================================================
-        // inversion type
-        //==============================================================================================================
-        ArtifactsAnalyzer.InversionMode inversion = ArtifactsAnalyzer.InversionMode._1V1H;
-        //==============================================================================================================
-
-        // 3/8是用2/8去找出來的, 所以要指定2/8的pattern
-        String sourcePatternFilename = "FRC/FRC 3-8/2_8frc-auo.txt";
-
-        for (int x = 0; x < 2; x++) { //sourcePatternFilename裡面的pattern數量
-            FRCPattern p = new FRCPattern(sourcePatternFilename, x);
+        for (int x = 0; x < 2; x++) {
             ArrayList<FRCPattern> filteredFRCList = new ArrayList<FRCPattern>();
+            FRCPattern p = new FRCPattern("FRC/2_8frc-auo.txt", x);
+
+            {
+//                p.caculateInfo();
+
+            }
 
             System.out.println("FRC pattern(" + x + "): ");
             System.out.println(p);
             boolean[][][][] bpattern = p.pattern;
             int height = bpattern[0][0].length;
             int width = bpattern[0][0][0].length;
-            int frame = bpattern[0].length;
+            int frame = 4;
+//            boolean[][][] check = new boolean[frame][height][width];
 
             //======================================================================================
             // 找到ok的position
             //======================================================================================
             boolean[][][] check = FRCUtil.getOkPosition(p);
-            int okcount = FRCUtil.okcount;
+            int ok = FRCUtil.ok;
 
             ArrayList<FRCPattern> [] comboarray = new ArrayList[height];
 
@@ -188,7 +172,7 @@ public class FRC3_8PatternProducer {
                 //======================================================================================
                 // 整理出ok的position
                 //======================================================================================
-                int[][] okpos = new int[frame][okcount];
+                int[][] okpos = new int[frame][ok];
                 for (int f = 0; f < frame; f++) {
                     int okindex = 0;
                     for (int w = 0; w < width; w++) {
@@ -212,11 +196,10 @@ public class FRC3_8PatternProducer {
                 }
                 ArrayList<FRCPattern> combo = new ArrayList<FRCPattern>();
 
-                //======================================================================================
-                for (int f1 = 0; f1 < okcount; f1++) {
-                    for (int f2 = 0; f2 < okcount; f2++) {
-                        for (int f3 = 0; f3 < okcount; f3++) {
-                            for (int f4 = 0; f4 < okcount; f4++) {
+                for (int f1 = 0; f1 < ok; f1++) {
+                    for (int f2 = 0; f2 < ok; f2++) {
+                        for (int f3 = 0; f3 < ok; f3++) {
+                            for (int f4 = 0; f4 < ok; f4++) {
                                 boolean[][][][] copyfrc = FRCUtil.copy(frc);
 
                                 copyfrc[0][0][0][okpos[0][f1]] = true;
@@ -226,24 +209,30 @@ public class FRC3_8PatternProducer {
 
                                 FRCPattern auofrc = new FRCPattern(copyfrc, false);
                                 ArtifactsAnalyzer analyzer = new
-                                        ArtifactsAnalyzer(inversion, auofrc);
-                                //此處的設定僅考慮到dot inv, 若要選擇別的驅動方式, 要重新思考此處的設計方式
+                                        ArtifactsAnalyzer(
+                                                ArtifactsAnalyzer.Inversion.Dot,
+                                                auofrc);
                                 if (h % 2 == 1) {
                                     analyzer.setInverse(true);
                                 }
-                                byte[][] artifacts = analyzer.getArtifactsArray(1);
+                                byte[][] artifacts = analyzer.getArtifactsArray(
+                                        1);
 
                                 FRCPattern frcpattern = new FRCPattern(copyfrc,
                                         artifacts);
-                                frcpattern.unbalancedSum = analyzer.analyzeSubpixelBaseUnbalancedSum(1);
+                                frcpattern.sum = analyzer.analyzeSubpixelBaseSum(1);
                                 frcpattern.balancedSum = analyzer.getBalancedSumArray(1);
+
+                                boolean checkArtifactsSymmetry = true;
+                                boolean checkEqualsPolarity = true;
+                                boolean checkLeftRightBalance = true;
 
                                 if ((checkPatternOnly ?
                                      !hasSamePattern(combo, frcpattern) :
                                      !hasSameArtifacts(combo, frcpattern)) &&
 
-                                    (!checkArtifactsSymmetryAndReflect ||
-                                     CheckTool.checkArtifactsSymmetryAndReflect(frcpattern)) &&
+                                    (!checkArtifactsSymmetry ||
+                                     CheckTool.checkArtifactsSymmetry(frcpattern)) &&
                                     (!checkEqualsPolarity || CheckTool.checkPolarityBalance(frcpattern)) &&
                                     (!checkLeftRightBalance ||
                                      CheckTool.checkLeftRightBalance(frcpattern))
@@ -267,7 +256,6 @@ public class FRC3_8PatternProducer {
                         }
                     }
                 }
-                //======================================================================================
 
                 //撈combo出來
                 boolean showocmbo = !showImportantOnly && true;
@@ -323,23 +311,25 @@ public class FRC3_8PatternProducer {
             //======================================================================================
             // 手工指定line的組合
             //======================================================================================
-//            boolean manualDecode = false;
-//            System.out.println("");
-//            if (manualDecode) {
-//                int[] frccode = {4, 5, 4, 5, 4, 5, 4, 5};
-//
-//                int size = frccode.length;
-//                for (int s = 0; s < size; s++) {
-//                    FRCPattern f = comboarray[s].get(frccode[s] - 1);
-//                    System.out.print(f);
-//                }
-//            }
+            boolean manualDecode = false;
+            System.out.println("");
+            if (manualDecode) {
+                int[] frccode = {4, 5, 4, 5, 4, 5, 4, 5};
+
+                int size = frccode.length;
+                for (int s = 0; s < size; s++) {
+                    FRCPattern f = comboarray[s].get(frccode[s] - 1);
+                    System.out.print(f);
+                }
+            }
+
             //======================================================================================
 
             //======================================================================================
             // 把每個line的所有組合乘起來
             //======================================================================================
             boolean loopdecode = true;
+            boolean checkBalancedsum = true;
 
             if (loopdecode) {
                 int index = 0;
@@ -442,15 +432,17 @@ public class FRC3_8PatternProducer {
                                                 }
 
                                                 if ((!checkBalancedsum ||
-                                                        CheckTool.checkBalancedSum(frc, inversion)) &&
-                                                        CheckTool.checkArtifacts(frc, inversion, checkNone0Artifacts,
-                                                        checkArtifactsSymmetry)
+                                                        CheckTool.checkBalancedSum(frc)) &&
+                                                        CheckTool.checkArtifacts(frc, false,
+                                                        checkSymmetry)
                                                         ) {
                                                     count++;
-                                                    if (filterAllFRCAtFinal) {
+                                                    if (filterAllFRC) {
                                                         if (!hasSameArtifacts(filteredFRCList, frc)) {
                                                             filteredFRCList.add(frc);
+
                                                             System.out.println(frc);
+
                                                         }
                                                     } else {
                                                         System.out.println(count);
@@ -470,11 +462,10 @@ public class FRC3_8PatternProducer {
 
             }
             //======================================================================================
-
             System.out.println("Filtered FRC List size: " + filteredFRCList.size());
-            for (FRCPattern frc : filteredFRCList) {
-                System.out.println(frc);
-            }
+//            for (FRCPattern frc : filteredFRCList) {
+//                System.out.println(frc);
+//            }
 
         }
 

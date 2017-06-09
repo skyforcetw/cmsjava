@@ -4,7 +4,7 @@ import java.io.File;
 import java.io.IOException;
 
 import shu.util.Utils;
-import auo.mura.verify.*;
+//import auo.mura.verify.*;
 import auo.mura.exec.*;
 
 /**

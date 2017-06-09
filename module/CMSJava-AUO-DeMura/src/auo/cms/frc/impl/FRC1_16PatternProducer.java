@@ -4,7 +4,6 @@ import java.util.ArrayList;
 
 /**
  * <p>Title: </p>
- * FRC 1/16的產生直接由人工依據舊有的rule設計
  *
  * <p>Description: </p>
  *
@@ -14,7 +13,6 @@ import java.util.ArrayList;
  *
  * @author not attributable
  * @version 1.0
- * @deprecated
  */
 public class FRC1_16PatternProducer {
     public FRC1_16PatternProducer() {

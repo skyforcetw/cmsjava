@@ -14,24 +14,29 @@ import shu.math.Maths;
 import auo.cms.frc.impl.*;
 
 /**
- * <p>Title: </p>
+ * <p>
+ * Title: </p>
  *
- * <p>Description: </p>
+ * <p>
+ * Description: </p>
  *
- * <p>Copyright: Copyright (c) 2013</p>
+ * <p>
+ * Copyright: Copyright (c) 2013</p>
  *
- * <p>Company: </p>
+ * <p>
+ * Company: </p>
  *
  * @author not attributable
  * @version 1.0
  */
 public class FRCPattern implements Serializable {
+
     private static final long serialVersionUID = -7987193038121787820L;
     //[level][frame][h][w]
     public boolean[][][][] pattern;
     public byte[][] artifacts;
-    public byte[][] balancedSum; //¥¿­tµø¬°¦P±j«×
-    public double[][] unbalancedSum; //¥¿­tµø¬°¤£¦P±j«×, ¥¿ªº´N¬O0.8, ­tªº¬O-1.1, ¥Î¨Ó¼ÒÀÀ¥¿­t·¥©Ê«G«×¤£¦Pªº¯S©Ê
+    public byte[][] balancedSum; //ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ï¿½ï¿½Pï¿½jï¿½ï¿½
+    public double[][] sum; //ï¿½ï¿½ï¿½tï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Pï¿½jï¿½ï¿½
     public byte[][][] polarityPattern;
     public byte[][] plusOneSum;
     public int[][] greenPixel;
@@ -45,7 +50,6 @@ public class FRCPattern implements Serializable {
     public boolean[][][] getFRCPattern(int level) {
         return pattern[level];
     }
-
 
     public int getFrameCount() {
         return pattern[0].length;
@@ -62,17 +66,17 @@ public class FRCPattern implements Serializable {
 //        StringBuilder buf2 = new StringBuilder();
         for (int f = 0; f < frame; f++) {
             if (polarityPattern[f][h][w] == 1) {
-                buf1.append('¡Â');
-//                buf1.append("¢z¢{");
-//                buf2.append("¢}¢|");
+//                buf1.append('ï¿½ï¿½');
+//                buf1.append("ï¿½zï¿½{");
+//                buf2.append("ï¿½}ï¿½|");
             } else if (polarityPattern[f][h][w] == -1) {
                 buf1.append('_');
-//                buf1.append("¢{¢z");
-//                buf2.append("¢|¢}");
+//                buf1.append("ï¿½{ï¿½z");
+//                buf2.append("ï¿½|ï¿½}");
             } else if (polarityPattern[f][h][w] == 0) {
                 buf1.append('-');
 //                buf1.append("    ");
-//                buf2.append("¢v¢v");
+//                buf2.append("ï¿½vï¿½v");
 
             }
         }
@@ -85,20 +89,20 @@ public class FRCPattern implements Serializable {
         this(pattern, null, false);
     }
 
-    public FRCPattern(boolean[][][][] pattern, boolean mirrorMapping) {
-        this(pattern, null, mirrorMapping);
+    public FRCPattern(boolean[][][][] pattern, boolean mapping) {
+        this(pattern, null, mapping);
     }
 
-    private static boolean[][][][] mirrorMapping(boolean[][][][] input) {
+    private static boolean[][][][] mapping(boolean[][][][] input) {
         int size = input.length;
         if (size == 4) {
             boolean[][][] FRC_5_8 = ArrayUtils.inverse(input[2]);
             boolean[][][] FRC_6_8 = ArrayUtils.inverse(input[1]);
             boolean[][][] FRC_7_8 = ArrayUtils.inverse(input[0]);
 
-            return new boolean[][][][] {
-                    input[0], input[1], input[2], input[3], FRC_5_8, FRC_6_8,
-                    FRC_7_8};
+            return new boolean[][][][]{
+                input[0], input[1], input[2], input[3], FRC_5_8, FRC_6_8,
+                FRC_7_8};
         } else if (size == 8) {
 
         }
@@ -109,15 +113,14 @@ public class FRCPattern implements Serializable {
         this(pattern, artifacts, false);
     }
 
-    private FRCPattern(boolean[][][][] pattern, byte[][] artifacts, boolean mirrorMapping) {
-        if (mirrorMapping) {
-            this.pattern = mirrorMapping(pattern);
+    private FRCPattern(boolean[][][][] pattern, byte[][] artifacts, boolean mapping) {
+        if (mapping) {
+            this.pattern = mapping(pattern);
         } else {
             this.pattern = pattern;
         }
         this.artifacts = artifacts;
     }
-
 
     public FRCPattern(String filename, int index) throws IOException {
 
@@ -170,8 +173,8 @@ public class FRCPattern implements Serializable {
             boolean[][][] FRC_2_8 = parseAUOFRC(15, csv);
             boolean[][][] FRC_3_8 = parseAUOFRC(28, csv);
             boolean[][][] FRC_4_8 = parseAUOFRC(42, csv);
-            pattern = mirrorMapping(new boolean[][][][] {FRC_1_8, FRC_2_8, FRC_3_8,
-                                    FRC_4_8});
+            pattern = mapping(new boolean[][][][]{FRC_1_8, FRC_2_8, FRC_3_8,
+                FRC_4_8});
         } else {
             boolean[][][] FRC_1_16 = parseAUOFRC(2, csv);
             boolean[][][] FRC_2_16 = parseAUOFRC(16, csv);
@@ -188,15 +191,15 @@ public class FRCPattern implements Serializable {
             boolean[][][] FRC_13_16 = ArrayUtils.inverse(FRC_3_16);
             boolean[][][] FRC_14_16 = ArrayUtils.inverse(FRC_2_16);
             boolean[][][] FRC_15_16 = ArrayUtils.inverse(FRC_1_16);
-            pattern = new boolean[][][][] {
-                      FRC_1_16, FRC_2_16, FRC_3_16, FRC_4_16, FRC_5_16, FRC_6_16,
-                      FRC_7_16, FRC_8_16, FRC_9_16, FRC_10_16, FRC_11_16, FRC_12_16,
-                      FRC_13_16, FRC_14_16, FRC_15_16};
+            pattern = new boolean[][][][]{
+                FRC_1_16, FRC_2_16, FRC_3_16, FRC_4_16, FRC_5_16, FRC_6_16,
+                FRC_7_16, FRC_8_16, FRC_9_16, FRC_10_16, FRC_11_16, FRC_12_16,
+                FRC_13_16, FRC_14_16, FRC_15_16};
         }
     }
 
-
     public String sourceInfo;
+
     public String getSourceInfo() {
         return sourceInfo;
     }
@@ -204,17 +207,16 @@ public class FRCPattern implements Serializable {
     public void caculateInfo() {
         FRCPattern p = this;
         p.twohcount = CheckTool.
-                      getContinueHorizontalCount(p, 2);
+                getContinueHorizontalCount(p, 2);
         p.twovcount = CheckTool.
-                      getContinueVerticalCount(p, 2);
+                getContinueVerticalCount(p, 2);
         p.greenPixel = CheckTool.
-                       getGreenPixelCount(p);
+                getGreenPixelCount(p);
         p.Lcount = CheckTool.checkLCount(p);
         p.maxSlash = CheckTool.getMaxSlash(p);
         p.maxHLine = CheckTool.getMaxContinuePolarityHLine(p);
         p.twovGcount = CheckTool.getTwovGcount(p);
     }
-
 
     private void parseFile(String filename) throws IOException {
         ASCIIFileFormatParser parser = new ASCIIFileFormatParser(filename);
@@ -267,12 +269,12 @@ public class FRCPattern implements Serializable {
             } else {
                 for (int w = 0; w < height; w++) {
                     pattern[0][0][x][w] = line.stringArray[w].equals("1") ? true : false;
-                    pattern[0][1][x][w] = line.stringArray[w +
-                                          9].equals("1") ? true : false;
-                    pattern[0][2][x][w] = line.stringArray[w +
-                                          18].equals("1") ? true : false;
-                    pattern[0][3][x][w] = line.stringArray[w +
-                                          27].equals("1") ? true : false;
+                    pattern[0][1][x][w] = line.stringArray[w
+                            + 9].equals("1") ? true : false;
+                    pattern[0][2][x][w] = line.stringArray[w
+                            + 18].equals("1") ? true : false;
+                    pattern[0][3][x][w] = line.stringArray[w
+                            + 27].equals("1") ? true : false;
                 }
 
             }
@@ -281,10 +283,14 @@ public class FRCPattern implements Serializable {
     }
 
     public String getArtifactsString() {
-        return artifactsToString(artifacts);
+        return artifactsToString(artifacts, false);
+    }
+    
+        public String getArtifactsString(boolean lineFeed) {
+        return artifactsToString(artifacts, lineFeed);
     }
 
-    public static String artifactsToString(byte[][] artifacts) {
+    public static String artifactsToString(byte[][] artifacts, boolean lineFeed) {
         StringBuilder b = new StringBuilder();
         int height = artifacts.length;
         int width = artifacts[0].length;
@@ -300,18 +306,19 @@ public class FRCPattern implements Serializable {
 //                b.append((artifacts[h][w] >= 0) ? artifacts[h][w] : "-");
                 b.append(' ');
             }
-//            b.append('\n');
+            if (lineFeed) {
+                b.append('\n');
+            }
         }
         return b.toString();
     }
-
 
     /**
      * Indicates whether some other object is "equal to" this one.
      *
      * @param obj the reference object with which to compare.
-     * @return <code>true</code> if this object is the same as the obj
-     *   argument; <code>false</code> otherwise.
+     * @return <code>true</code> if this object is the same as the obj argument;
+     * <code>false</code> otherwise.
      * @todo Implement this java.lang.Object method
      */
     public boolean equals(Object obj) {
@@ -394,7 +401,6 @@ public class FRCPattern implements Serializable {
 //        public boolean equalsArtifacts(Object obj) {
 //
 //        }
-
     public static String toString(boolean[][] pattern) {
         int height = pattern.length;
         int width = pattern[0].length;
@@ -411,7 +417,6 @@ public class FRCPattern implements Serializable {
         }
         return b.toString();
     }
-
 
     /**
      * Returns a string representation of the object.
@@ -471,8 +476,8 @@ public class FRCPattern implements Serializable {
                 }
                 if (null != artifacts) {
                     for (int w = 0; w < width; w++) {
-                        b.append(artifacts[h][w] > 0 ? '+' :
-                                 artifacts[h][w] == 0 ? '0' : '-');
+                        b.append(artifacts[h][w] > 0 ? '+'
+                                : artifacts[h][w] == 0 ? '0' : '-');
                         b.append(' ');
                     }
 
@@ -480,8 +485,8 @@ public class FRCPattern implements Serializable {
                 if (null != balancedSum) {
                     b.append("| ");
                     for (int w = 0; w < width; w++) {
-                        b.append(balancedSum[h][w] > 0 ? '+' :
-                                 balancedSum[h][w] == 0 ? '0' : '-');
+                        b.append(balancedSum[h][w] > 0 ? '+'
+                                : balancedSum[h][w] == 0 ? '0' : '-');
                         b.append(' ');
                     }
                 }
@@ -558,10 +563,10 @@ public class FRCPattern implements Serializable {
      * Creates and returns a copy of this object.
      *
      * @return a clone of this instance.
-     * @throws CloneNotSupportedException if the object's class does not
-     *   support the <code>Cloneable</code> interface. Subclasses that
-     *   override the <code>clone</code> method can also throw this
-     *   exception to indicate that an instance cannot be cloned.
+     * @throws CloneNotSupportedException if the object's class does not support
+     * the <code>Cloneable</code> interface. Subclasses that override the
+     * <code>clone</code> method can also throw this exception to indicate that
+     * an instance cannot be cloned.
      */
     protected Object clone() throws CloneNotSupportedException {
         boolean[][][][] newpattern = FRCUtil.copy(pattern);
@@ -571,7 +576,7 @@ public class FRCPattern implements Serializable {
     }
 
     public static void main(String[] args) throws FileNotFoundException, IOException {
-        String filename = "D:/My Documents/¤u§@/Project/FRC/FRC Research/NewFRC/AllNewFRC2.txt";
+        String filename = "D:/My Documents/ï¿½uï¿½@/Project/FRC/FRC Research/NewFRC/AllNewFRC2.txt";
 
 //         AUOFRC frc = new AUOFRC(filename, AUOFRC.PatternCount.FRC16);
         FRCPattern frc = new FRCPattern(filename);

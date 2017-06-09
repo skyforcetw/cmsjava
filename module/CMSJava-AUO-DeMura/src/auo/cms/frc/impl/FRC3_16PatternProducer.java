@@ -747,6 +747,7 @@ public class FRC3_16PatternProducer {
     }
 
 
+
     public static void main(String[] args) throws IOException, ClassNotFoundException {
         String dir = "FRC/FRC 3-16/";
         Type type = Type.FullFrame;
@@ -868,8 +869,7 @@ public class FRC3_16PatternProducer {
                 int startFrom = 1094;
 //                frcPicker2_MultiThread(frame1, frame2, frame3, frame4, startFrom, 1, false,
 //                                       0, method, dir);
-                frcPicker3(frame1, frame2, frame3, frame4, startFrom, 1, false, 0, method, dir, true, false,
-                           ArtifactsAnalyzer.InversionMode._1V1H);
+                frcPicker3(frame1, frame2, frame3, frame4, startFrom, 1, false, 0, method, dir, true, true, false);
 //                frcPicker4(frame1, frame2, frame3, frame4, startFrom, 1, false, 0, method, dir, false);
 //
             }
@@ -1044,8 +1044,7 @@ public class FRC3_16PatternProducer {
                         };
 
                         FRCPattern frc = new FRCPattern(frcArray);
-                        boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc,
-                                ArtifactsAnalyzer.InversionMode._1V1H);
+                        boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc);
                         if (overallAnalyze) {
                             String text = f1 + " " + f2 + " " + f3 + " " + f4 + "\n" +
                                           frc.toString();
@@ -1139,19 +1138,19 @@ public class FRC3_16PatternProducer {
     }
 
     static LinkedList<FRCPattern> frcPicker3(LinkedList<Frame> frameList[], int f1_start,
-            int method, String dir, boolean checkingOverlapping, boolean skipSameFrame,
-            ArtifactsAnalyzer.InversionMode inversion) throws IOException {
+            int method, String dir, boolean runWithThread,
+            boolean checkingOverlapping, boolean skipSameFrame) throws IOException {
         return frcPicker3(frameList[0], frameList[1], frameList[2], frameList[3], f1_start, 1, false,
-                          0, method, dir, checkingOverlapping, skipSameFrame, inversion);
+                          0, method, dir, runWithThread, checkingOverlapping, skipSameFrame);
     }
 
 
     private static LinkedList<FRCPattern> frcPicker3(final LinkedList<Frame> frame01,
             final LinkedList<Frame> frame02, final LinkedList<Frame> frame03,
             final LinkedList<Frame> frame04, int f1_start, int f1_step, boolean oneF1Only,
-            int f2_start, int method, String dir, boolean checkingOverlapping,
-            boolean skipSameFrame, ArtifactsAnalyzer.InversionMode inversion
-            ) throws
+            int f2_start, int method, String dir, boolean runWithThread,
+            boolean checkingOverlapping,
+            boolean skipSameFrame) throws
             IOException {
         final int size1 = frame01.size();
         final int size2 = frame02.size();
@@ -1170,26 +1169,26 @@ public class FRC3_16PatternProducer {
         // Thread Setting
         //==========================================================================================
         //        Executor executor = Executors.newFixedThreadPool(2 * 2);//11.328
-//        Executor executor = Executors.newSingleThreadExecutor(); //30.656
-//        ThreadPoolExecutor threadPool = null;
-//        if (executor instanceof ThreadPoolExecutor) {
-//            threadPool = ((ThreadPoolExecutor) executor);
-//        }
+        Executor executor = Executors.newSingleThreadExecutor(); //30.656
+        ThreadPoolExecutor threadPool = null;
+        if (executor instanceof ThreadPoolExecutor) {
+            threadPool = ((ThreadPoolExecutor) executor);
+        }
         //==========================================================================================
 
         int f1_end = oneF1Only ? f1_start + 1 : size1;
-//        long start = 0, end = 0;
+        long start = 0, end = 0;
         for (int f1 = f1_start; f1 < f1_end; f1 += f1_step) {
             if (f1 % 100 == 0) {
                 System.out.println("f1: " + f1);
             }
-//            if (start != 0) {
-//                long cost = (end - start);
-//                long totalcost = (f1_end - f1) * cost / 1000;
-////                System.out.println(getCostInfo(cost, totalcost));
-//            }
+            if (start != 0) {
+                long cost = (end - start);
+                long totalcost = (f1_end - f1) * cost / 1000;
+//                System.out.println(getCostInfo(cost, totalcost));
+            }
             System.gc();
-//            start = System.currentTimeMillis();
+            start = System.currentTimeMillis();
             final Frame frame1 = frame01.get(f1);
 
             for (int f2 = f2_start; f2 < size2; f2++) {
@@ -1203,84 +1202,83 @@ public class FRC3_16PatternProducer {
                 System.gc();
 
 //                if (!runWithRMI) {
-//                if (runWithThread) {
-//                    Runnable r = getRunnable(f1, f2, frame1, frame2, frame03, frame04,
-//                                             checkingOverlapping, obj, log);
-//                    executor.execute(r);
-//                } else {
+                if (runWithThread) {
+                    Runnable r = getRunnable(f1, f2, frame1, frame2, frame03, frame04,
+                                             checkingOverlapping, obj, log);
+                    executor.execute(r);
+                } else {
 
-                final boolean[][] frame1_ = lineToFrame(frame1.frameIndex);
+                    final boolean[][] frame1_ = lineToFrame(frame1.frameIndex);
 
-                int size3 = frame03.size();
-                int size4 = frame04.size();
-                boolean[][] frame2_ = lineToFrame(frame2.frameIndex);
-                for (int f3 = 0; f3 < size3; f3++) {
-                    if (skipSameFrame && f1 == f3) {
-                        continue;
-                    }
-                    final Frame frame3 = frame03.get(f3);
-                    if (checkingOverlapping &&
-                        (isOverlapping(frame1, frame3) || isOverlapping(frame2, frame3))) {
-                        continue;
-                    }
-                    boolean[][] frame3_ = lineToFrame(frame3.frameIndex);
-
-                    for (int f4 = 0; f4 < size4; f4++) {
-                        if (skipSameFrame && f2 == f4) {
+                    int size3 = frame03.size();
+                    int size4 = frame04.size();
+                    boolean[][] frame2_ = lineToFrame(frame2.frameIndex);
+                    for (int f3 = 0; f3 < size3; f3++) {
+                        if (skipSameFrame && f1 == f3) {
                             continue;
                         }
-
-                        Frame frame4 = frame04.get(f4);
+                        final Frame frame3 = frame03.get(f3);
                         if (checkingOverlapping &&
-                            (isOverlapping(frame1, frame4) ||
-                             isOverlapping(frame2, frame4) ||
-                             isOverlapping(frame3, frame4))) {
+                            (isOverlapping(frame1, frame3) || isOverlapping(frame2, frame3))) {
                             continue;
                         }
+                        boolean[][] frame3_ = lineToFrame(frame3.frameIndex);
 
-                        boolean[][] frame4_ = lineToFrame(frame4.frameIndex);
-                        boolean[][][][] frcArray = { {frame1_, frame2_, frame3_,
-                                frame4_}
-                        };
+                        for (int f4 = 0; f4 < size4; f4++) {
+                            if (skipSameFrame && f2 == f4) {
+                                continue;
+                            }
 
-                        FRCPattern frc = new FRCPattern(frcArray);
-                        //不同的設定會跑出不同數量的結果, 這邊直接以手動修改設定, 逐一得到FRC Pattern
+                            Frame frame4 = frame04.get(f4);
+                            if (checkingOverlapping &&
+                                (isOverlapping(frame1, frame4) ||
+                                 isOverlapping(frame2, frame4) ||
+                                 isOverlapping(frame3, frame4))) {
+                                continue;
+                            }
+
+                            boolean[][] frame4_ = lineToFrame(frame4.frameIndex);
+                            boolean[][][][] frcArray = { {frame1_, frame2_, frame3_,
+                                    frame4_}
+                            };
+
+                            FRCPattern frc = new FRCPattern(frcArray);
 //                                boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc);
 //                                boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc, true, true, true); //0
-                        boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc, false, true, true, inversion); //31104
+                            boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc, false, true, true); //31104
 //                                boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc, true, true, false); //0
 //                                  boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc, true, false, true); //0
 //                                boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc, true, false, false); //0
 //                                 boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(frc, false, false, false); //f6656
 
-                        if (overallAnalyze) {
-                            result.add(frc);
-                            frcPicker2Count++;
-                            boolean writeToFile = false;
-                            if (writeToFile) {
-                                try {
-                                    String text = f1 + " " + f2 + " " + f3 + " " + f4 +
-                                                  "\n" +
-                                                  frc.toString();
-                                    log.write(text);
-                                    obj.writeObject(frcArray);
-                                } catch (IOException ex) {
-                                    ex.printStackTrace();
+                            if (overallAnalyze) {
+                                result.add(frc);
+                                frcPicker2Count++;
+                                boolean writeToFile = false;
+                                if (writeToFile) {
+                                    try {
+                                        String text = f1 + " " + f2 + " " + f3 + " " + f4 +
+                                                "\n" +
+                                                frc.toString();
+                                        log.write(text);
+                                        obj.writeObject(frcArray);
+                                    } catch (IOException ex) {
+                                        ex.printStackTrace();
+                                    }
                                 }
                             }
-                        }
-                        frc = null;
-                        frcArray = null;
-                        frame4_ = null;
+                            frc = null;
+                            frcArray = null;
+                            frame4_ = null;
 
+                        }
                     }
+                    frame2_ = null;
                 }
-                frame2_ = null;
-//                }
 
 //                }
             }
-//            end = System.currentTimeMillis();
+            end = System.currentTimeMillis();
         }
 
         obj.flush();
@@ -1374,7 +1372,7 @@ public class FRC3_16PatternProducer {
 
                                         FRCPattern frc = new FRCPattern(frcArray);
                                         boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(
-                                                frc, ArtifactsAnalyzer.InversionMode._1V1H);
+                                                frc);
                                         if (overallAnalyze) {
                                             String text = f1_ + " " + f2_ + " " + f3 + " " + f4 +
                                                     "\n" +
@@ -1454,7 +1452,7 @@ public class FRC3_16PatternProducer {
 
                                 FRCPattern frc = new FRCPattern(frcArray);
                                 boolean overallAnalyze = ArtifactsAnalyzer.overallAnalyze(
-                                        frc, ArtifactsAnalyzer.InversionMode._1V1H);
+                                        frc);
                                 if (overallAnalyze) {
                                     String text = f1_ + " " + f2_ + " " + f3 + " " + f4 +
                                                   "\n" +
@@ -1501,8 +1499,8 @@ public class FRC3_16PatternProducer {
 }
 
 
-//class FRCThreadFactory implements ThreadFactory {
-//    public Thread newThread(Runnable r) {
-//        return new Thread(r);
-//    }
-//}
+class FRCThreadFactory implements ThreadFactory {
+    public Thread newThread(Runnable r) {
+        return new Thread(r);
+    }
+}

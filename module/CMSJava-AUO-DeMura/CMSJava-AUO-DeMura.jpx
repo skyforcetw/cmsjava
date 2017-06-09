@@ -63,7 +63,7 @@
 <property category="sys" name="JDK" value="java version 1.6.0_43-b01"/>
 <property category="sys" name="JvmVersion" value="1.5"/>
 <property category="sys" name="LastTag" value="0"/>
-<property category="sys" name="Libraries" value="../../lib/ImageJ/ij.jar;../../lib/junit-4.11.jar;../CMSJava-core/CMSJava-core.jar;jxl;opencsv;jai;flanagan;commons-logging;CMSJava-static;Jama;jython;commapi;rxtx;commons-math3"/>
+<property category="sys" name="Libraries" value="../../lib/ImageJ/ij.jar;jxl;opencsv;jai;flanagan;commons-logging;../../lib/junit-4.11.jar;CMSJava-static;Jama;jython;commapi;rxtx;../CMSJava-core/CMSJava-core.jar;commons-math3"/>
 <property category="sys" name="MakeStable" value="0"/>
 <property category="sys" name="OutPath" value="classes"/>
 <property category="sys" name="SourcePath" value="src;test"/>

@@ -85,8 +85,8 @@ public class TabbedAnimatingChangeListener
     // set oldLayer as a foreground
     painter.setComponent(oldLayer);
     // swap painters
-    oldLayer.setPainter(layer.getPainter());
-    layer.setPainter(painter);
+//    oldLayer.setPainter(layer.getPainter());
+//    layer.setPainter(painter);
 
     painter.update();
     timer.start();

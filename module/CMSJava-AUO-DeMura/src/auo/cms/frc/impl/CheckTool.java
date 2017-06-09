@@ -6,13 +6,17 @@ import auo.cms.frc.FRCPattern;
 import shu.math.Maths;
 
 /**
- * <p>Title: </p>
+ * <p>
+ * Title: </p>
  *
- * <p>Description: </p>
+ * <p>
+ * Description: </p>
  *
- * <p>Copyright: Copyright (c) 2013</p>
+ * <p>
+ * Copyright: Copyright (c) 2013</p>
  *
- * <p>Company: </p>
+ * <p>
+ * Company: </p>
  *
  * @author not attributable
  * @version 1.0
@@ -31,6 +35,7 @@ public class CheckTool {
 
     /**
      * 檢查左右的+1數量是否相同
+     *
      * @param frc FRCPattern
      * @return boolean
      */
@@ -67,11 +72,12 @@ public class CheckTool {
 
             }
         }
-        return new int[] {Q1, Q2, Q3, Q4};
+        return new int[]{Q1, Q2, Q3, Q4};
     }
 
     /**
      * 正負極性數量是否對稱
+     *
      * @param frc FRCPattern
      * @return boolean
      */
@@ -93,15 +99,13 @@ public class CheckTool {
         return pos == neg && pos != 0 && neg != 0;
     }
 
-
     /**
-     * artifacts是否左右對稱
-     * 1. 是否左右相同
-     * 2. 是否左右鏡射
+     * artifacts是否左右對稱 1. 是否左右相同 2. 是否左右鏡射
+     *
      * @param frc FRCPattern
      * @return boolean
      */
-    public static boolean checkArtifactsSymmetryAndReflect(FRCPattern frc) {
+    public static boolean checkArtifactsSymmetry(FRCPattern frc) {
         byte[][] artifacts = frc.artifacts;
         int height = artifacts.length;
         int width = artifacts[0].length;
@@ -114,8 +118,8 @@ public class CheckTool {
             boolean reflect = true;
             for (int w = 0; w < halfwidth; w++) {
                 equal = equal && artifacts[h][w] == artifacts[h][w + halfwidth];
-                reflect = reflect &&
-                          artifacts[h][w] == artifacts[h][width - w - 1];
+                reflect = reflect
+                        && artifacts[h][w] == artifacts[h][width - w - 1];
             }
             allequal = allequal && equal;
             allreflact = allreflact && reflect;
@@ -125,7 +129,8 @@ public class CheckTool {
     }
 
     /**
-     * 檢查是否有極性不平衡的case (sum必須介於 -2 ~ 1.75之間)
+     * 檢查是否有極性不平衡的case
+     *
      * @param sum double[][]
      * @return boolean
      */
@@ -165,9 +170,9 @@ public class CheckTool {
                 if (w < (width - 1) && sum[h][w] == sum[h + 1][w + 1]) { // \
                     int slash = 2;
                     for (;
-                         h + slash < height && w + slash < width &&
-                         sum[h][w] == sum[h + slash][w + slash];
-                         slash++) {
+                            h + slash < height && w + slash < width
+                            && sum[h][w] == sum[h + slash][w + slash];
+                            slash++) {
 
                     }
                     maxSlash = slash > maxSlash ? slash : maxSlash;
@@ -175,9 +180,9 @@ public class CheckTool {
                 if (w > 0 && sum[h][w] == sum[h + 1][w - 1]) { // /
                     int slash = 2;
                     for (;
-                         h + slash < height && w - slash >= 0 &&
-                         sum[h][w] == sum[h + slash][w - slash];
-                         slash++) {
+                            h + slash < height && w - slash >= 0
+                            && sum[h][w] == sum[h + slash][w - slash];
+                            slash++) {
 
                     }
                     maxSlash = slash > maxSlash ? slash : maxSlash;
@@ -196,8 +201,7 @@ public class CheckTool {
         for (int h = 0; h < height - 1; h++) {
             for (int w = 0; w < width - 1; w++) {
                 /**
-                 *  -+  +-
-                 *   |  |
+                 * -+ +- | |
                  */
 
                 if (pattern[h][w] && pattern[h][w + 1] && pattern[h + 1][w + 1]) {
@@ -217,10 +221,9 @@ public class CheckTool {
         }
 
         /**
-         *  |
+         * |
          * -+
          */
-
         for (int h = 1; h < height; h++) {
             for (int w = 0; w < width - 1; w++) {
                 if (pattern[h][w] && pattern[h][w + 1] && pattern[h - 1][w + 1]) {
@@ -232,8 +235,9 @@ public class CheckTool {
     }
 
     /**
-     * 計算所有Frame累積 的Green且為+1的pixel數量
-     * 由於RGB排列會有三種方式: RGB GBR BRG, 所以也有三種Green的計算結果
+     * 計算所有Frame累積 的Green且為+1的pixel數量 由於RGB排列會有三種方式: RGB GBR BRG,
+     * 所以也有三種Green的計算結果
+     *
      * @param frc FRCPattern
      * @return int[][]
      */
@@ -257,8 +261,8 @@ public class CheckTool {
     }
 
     /**
-     * 計算Green且為+1的pixel數量
-     * 由於RGB排列會有三種方式: RGB GBR BRG, 所以也有三種Green的計算結果
+     * 計算Green且為+1的pixel數量 由於RGB排列會有三種方式: RGB GBR BRG, 所以也有三種Green的計算結果
+     *
      * @param pattern boolean[][]
      * @return int[][]
      */
@@ -332,10 +336,10 @@ public class CheckTool {
     }
 
     public static boolean checkVerticalLessThanHorizontal(FRCPattern frc) {
-        frc.twohcount =
-                getContinueHorizontalCount(frc, 2);
-        frc.twovcount =
-                getContinueVerticalCount(frc, 2);
+        frc.twohcount
+                = getContinueHorizontalCount(frc, 2);
+        frc.twovcount
+                = getContinueVerticalCount(frc, 2);
         int hcount = Maths.sum(frc.twohcount);
         int vcount = Maths.sum(frc.twovcount);
         if (vcount > hcount) {
@@ -383,6 +387,7 @@ public class CheckTool {
 
     /**
      * 檢查斜線的長度
+     *
      * @param pattern boolean[][]
      * @param length int
      * @return boolean
@@ -397,8 +402,9 @@ public class CheckTool {
                 int x = 0;
                 // \
                 for (x = 0; x < length + 1; x++) {
-                    if ((h + x) < height && (w + x) < width &&
-                        pattern[h + x][w + x]) {
+                    if ((h + x) < height && (w + x) < width
+                            && pattern[h + x][w + x]) {
+                        int a = 1;
                     } else {
                         break;
                     }
@@ -408,8 +414,8 @@ public class CheckTool {
                 }
                 //  /
                 for (x = 0; x < length + 1; x++) {
-                    if ((h - x) >= 0 && (w + x) < width &&
-                        pattern[h - x][w + x]) {
+                    if ((h - x) >= 0 && (w + x) < width
+                            && pattern[h - x][w + x]) {
                     } else {
                         break;
                     }
@@ -423,7 +429,6 @@ public class CheckTool {
 
         return true;
     }
-
 
     public static boolean checkSlash(FRCPattern frc, int length) {
         boolean[][][][] pattern = frc.pattern;
@@ -439,8 +444,8 @@ public class CheckTool {
                         int x = 0;
                         // \
                         for (x = 0; x < (length + 1); x++) {
-                            if (h + x < height && w + x < width &&
-                                pattern[l][f][h + x][w + x]) {
+                            if (h + x < height && w + x < width
+                                    && pattern[l][f][h + x][w + x]) {
                             } else {
                                 break;
                             }
@@ -450,8 +455,8 @@ public class CheckTool {
                         }
                         //  /
                         for (x = 0; x < (length + 1); x++) {
-                            if (h - x >= 0 && w + x < width &&
-                                pattern[l][f][h - x][w + x]) {
+                            if (h - x >= 0 && w + x < width
+                                    && pattern[l][f][h - x][w + x]) {
                             } else {
                                 break;
                             }
@@ -468,7 +473,6 @@ public class CheckTool {
         return true;
     }
 
-
     public static boolean checkSame(FRCPattern frc, ArrayList<FRCPattern> list) {
         for (FRCPattern f : list) {
             if (f.equals(frc)) {
@@ -478,11 +482,6 @@ public class CheckTool {
         return false;
     }
 
-    /**
-     * 檢查四個象限的+1數量是否相等
-     * @param pattern boolean[][]
-     * @return boolean
-     */
     public static boolean checkQuadrantCount(boolean[][] pattern) {
         int height = pattern.length;
         int width = pattern[0].length;
@@ -504,6 +503,7 @@ public class CheckTool {
 
     /**
      * 檢查正負極性是否都不為0
+     *
      * @param frc FRCPattern
      * @return boolean
      */
@@ -518,11 +518,11 @@ public class CheckTool {
             for (int h = 0; h < height; h++) {
                 for (int w = 0; w < width; w++) {
                     if (pattern[0][f][h][w]) {
-                        if (h % 2 == 0 && w % 2 == 0 ||
-                            h % 2 == 1 && w % 2 == 1) {
+                        if (h % 2 == 0 && w % 2 == 0
+                                || h % 2 == 1 && w % 2 == 1) {
                             acount++;
-                        } else if (h % 2 == 0 && w % 2 == 1 ||
-                                   h % 2 == 1 && w % 2 == 0) {
+                        } else if (h % 2 == 0 && w % 2 == 1
+                                || h % 2 == 1 && w % 2 == 0) {
                             bcount++;
                         }
                     }
@@ -536,34 +536,23 @@ public class CheckTool {
         return true;
     }
 
-    public static boolean checkArtifacts(FRCPattern frcPattern, ArtifactsAnalyzer.InversionMode mode, boolean none0,
-                                         boolean symmetry) {
+    public static boolean checkArtifacts(FRCPattern frcPattern, boolean none0, boolean symmetry) {
         FRCPattern frc = new FRCPattern(frcPattern.pattern, false);
-        ArtifactsAnalyzer analyzer = new ArtifactsAnalyzer(mode, frc);
+        ArtifactsAnalyzer analyzer = new ArtifactsAnalyzer(
+                ArtifactsAnalyzer.Inversion.Dot, frc);
         boolean ok = true;
 
-        boolean illLv1 = true;
-        boolean illLv2 = true;
-        boolean healthy = false;
-        boolean none2 = true;
-
-        ok = ok && analyzer.checkSubpixelBaseArtifacts(1, illLv2, illLv1, healthy,
-                none0, none2, symmetry);
+        ok = ok && analyzer.checkSubpixelBaseArtifacts(1, true, true, false,
+                none0, true, symmetry);
         frcPattern.artifacts = analyzer.checkArtifacts;
         return ok;
 
     }
 
-
-    /**
-     * 正負極性的個數要依樣
-     * @param frcPattern FRCPattern
-     * @param inversion InversionMode
-     * @return boolean
-     */
-    public static boolean checkBalancedSum(FRCPattern frcPattern, ArtifactsAnalyzer.InversionMode inversion) {
+    public static boolean checkBalancedSum(FRCPattern frcPattern) {
         FRCPattern frc = new FRCPattern(frcPattern.pattern, false);
-        ArtifactsAnalyzer analyzer = new ArtifactsAnalyzer(inversion, frc);
+        ArtifactsAnalyzer analyzer = new ArtifactsAnalyzer(
+                ArtifactsAnalyzer.Inversion.Dot, frc);
         boolean ok = analyzer.checkBalancedSum(1);
         frcPattern.balancedSum = analyzer.checkBalancedSum;
         return ok;
@@ -603,6 +592,7 @@ public class CheckTool {
 
     /**
      * 檢查上下左右是否無相鄰
+     *
      * @param frc FRCPattern
      * @return boolean
      */
@@ -642,7 +632,6 @@ public class CheckTool {
         }
         return true;
     }
-
 
     public static boolean checkContinueVerticalCount(boolean[][] pattern, int windex, int starth,
             int count) {
@@ -705,9 +694,9 @@ public class CheckTool {
         return true;
     }
 
-
     /**
      * 檢查垂直的true數量非等於count
+     *
      * @param pattern boolean[][]
      * @param count int
      * @return boolean
@@ -740,9 +729,8 @@ public class CheckTool {
                 if (balancedSum[h][w] == balancedSum[h][w + 1]) {
                     int hline = 2;
                     for (;
-                         (w + hline) < width &&
-                         balancedSum[h][w] == balancedSum[h][w + hline]; hline++
-                            ) {
+                            (w + hline) < width
+                            && balancedSum[h][w] == balancedSum[h][w + hline]; hline++) {
                     }
                     maxHLine = hline > maxHLine ? hline : maxHLine;
                 }
@@ -754,6 +742,7 @@ public class CheckTool {
 
     /**
      * 計算八個鄰接pixel, 哪一些是同極性的
+     *
      * @param frc FRCPattern
      * @param negative boolean
      * @return int[]
@@ -773,11 +762,11 @@ public class CheckTool {
                         int hindex = x / 3 - 1;
                         int realw = windex + w;
                         int realh = hindex + h;
-                        if ((realh != h || realw != w) && realh >= 0 && realw >= 0 &&
-                            realh < height && realw < width &&
-                            balancedSum[realh][realw] == balancedSum[h][w] &&
-                            (negative ? balancedSum[realh][realw] < 0 :
-                             balancedSum[realh][realw] > 0)) {
+                        if ((realh != h || realw != w) && realh >= 0 && realw >= 0
+                                && realh < height && realw < width
+                                && balancedSum[realh][realw] == balancedSum[h][w]
+                                && (negative ? balancedSum[realh][realw] < 0
+                                        : balancedSum[realh][realw] > 0)) {
                             adjoinPolarityCount++;
                         }
                     }
@@ -788,11 +777,6 @@ public class CheckTool {
         return adjoinPolarityArray;
     }
 
-    /**
-     * 計算相鄰G都為+1的數量
-     * @param frc FRCPattern
-     * @return int[][]
-     */
     public static int[][] getTwovGcount(FRCPattern frc) {
         boolean[][][] pattern = frc.pattern[0];
         int framecount = pattern.length;
@@ -810,19 +794,11 @@ public class CheckTool {
         }
         int[][] result = new int[framecount][3];
         /**
-         * 因為FRC pattern block為8x8, 沒有與sub pixel 3整除, 所以會衍生出3種+1的狀況
+         * c=0 GBRGBRGB ^ ^ ^
          *
-         * c=0
-         * GBRGBRGB
-         * ^  ^  ^
-
-         * c=1
-         * RGBRGBRG
-         *  ^  ^  ^
-
-         * c=2
-         * BRGBRGBR
-         *   ^  ^
+         * c=1 RGBRGBRG ^ ^ ^
+         *
+         * c=2 BRGBRGBR ^ ^
          */
         for (int c = 0; c < 3; c++) {
             for (int h = 0; h < height; h++) {
@@ -830,13 +806,13 @@ public class CheckTool {
                     int w = c + m * 3;
                     for (int f = 0; f < framecount; f++) {
                         if (h < height - 1) {
-                            if (w < width && twoframePattern[f][h][w] &&
-                                twoframePattern[f][h + 1][w]) {
+                            if (w < width && twoframePattern[f][h][w]
+                                    && twoframePattern[f][h + 1][w]) {
                                 result[f][c]++;
                             }
                         } else {
-                            if (w < width && twoframePattern[f][h][w] &&
-                                twoframePattern[f][0][w]) {
+                            if (w < width && twoframePattern[f][h][w]
+                                    && twoframePattern[f][0][w]) {
                                 result[f][c]++;
                             }
                         }
@@ -863,8 +839,8 @@ public class CheckTool {
                 for (int x = 0; x < 9; x++) {
                     int realw = w - 1 + x % 3;
                     int realh = h - 1 + x / 3;
-                    if ((realw != w || realh != h) && realw >= 0 && realw < width && realh >= 0 &&
-                        realh < height) {
+                    if ((realw != w || realh != h) && realw >= 0 && realw < width && realh >= 0
+                            && realh < height) {
                         plusAdjoin[plus1sum[h][w]][plus1sum[realh][realw]]++;
                     }
                 }
@@ -874,5 +850,178 @@ public class CheckTool {
 
 //======================================================================================
         return plusAdjoin;
+    }
+
+    public static boolean h_check16_n_even(Frame frame, int n) {
+        //final int height = frame.frameIndex.length;
+        final int L01_size = frame.frameIndex[0].length + frame.frameIndex[1].length;
+        final int L23_size = frame.frameIndex[2].length + frame.frameIndex[3].length;
+        final int L45_size = frame.frameIndex[4].length + frame.frameIndex[5].length;
+        final int L67_size = frame.frameIndex[6].length + frame.frameIndex[7].length;
+        final boolean test = n == L01_size && n == L23_size && n == L45_size && n == L67_size;
+        return test;
+    }
+
+    public static boolean h_check16_n_odd(Frame frame, int n) {
+        //final int height = frame.frameIndex.length;
+        final int L12_size = frame.frameIndex[1].length + frame.frameIndex[2].length;
+        final int L34_size = frame.frameIndex[3].length + frame.frameIndex[4].length;
+        final int L56_size = frame.frameIndex[5].length + frame.frameIndex[6].length;
+        final int L07_size = frame.frameIndex[0].length + frame.frameIndex[7].length;
+        final boolean test = n == L12_size && n == L34_size && n == L56_size && n == L07_size;
+        return test;
+    }
+
+    public static boolean v_check16_n(boolean[][] frame, int n) {
+        final int height = frame.length;
+        final int width = frame[0].length;
+        int true_count_in_column[] = new int[width];
+        for (int w = 0; w < width; w++) {
+            for (int h = 0; h < height; h++) {
+                if (frame[h][w]) {
+                    true_count_in_column[w]++;
+                }
+            }
+        }
+        final int C01_true = true_count_in_column[0] + true_count_in_column[1];
+        final int C23_true = true_count_in_column[2] + true_count_in_column[3];
+        final int C45_true = true_count_in_column[4] + true_count_in_column[5];
+        final int C67_true = true_count_in_column[6] + true_count_in_column[7];
+
+        final int C12_true = true_count_in_column[1] + true_count_in_column[2];
+        final int C34_true = true_count_in_column[3] + true_count_in_column[4];
+        final int C56_true = true_count_in_column[5] + true_count_in_column[6];
+        final int C07_true = true_count_in_column[0] + true_count_in_column[7];
+
+        final boolean test = n == C01_true && n == C23_true && n == C45_true && n == C67_true;
+        final boolean test2 = n == C12_true && n == C34_true && n == C56_true && n == C07_true;
+        return test && test2;
+    }
+
+    public static boolean v_check8_n(boolean[][] frame, int n) {
+        final int height = frame.length;
+        final int width = frame[0].length;
+        int true_count_in_column[] = new int[width];
+        for (int w = 0; w < width; w++) {
+            for (int h = 0; h < height; h++) {
+                if (frame[h][w]) {
+                    true_count_in_column[w]++;
+                }
+            }
+        }
+        for (int x = 0; x < width; x++) {
+            if (true_count_in_column[x] != n) {
+                return false;
+            }
+        }
+        return true;
+
+    }
+
+    public static boolean grid_check16_n(boolean[][] frame, int n) {
+        final int height = frame.length;
+        final int width = frame[0].length;
+        int grid[] = new int[4];
+        for (int h = 0; h < height / 2; h++) {
+            for (int w = 0; w < width / 2; w++) {
+                grid[0] += frame[h][w] ? 1 : 0;
+                grid[1] += frame[h][w + width / 2] ? 1 : 0;
+                grid[2] += frame[h + height / 2][w] ? 1 : 0;
+                grid[3] += frame[h + height / 2][w + width / 2] ? 1 : 0;
+            }
+        }
+        return n == grid[0] && n == grid[1] && n == grid[2] && n == grid[3];
+    }
+
+    public static boolean grid_check16_n_overlap(boolean[][] frame, int n) {
+        final int height = frame.length;
+        final int width = frame[0].length;
+        int grid[][] = new int[5][5];
+        for (int h0 = 0; h0 < height - 3; h0++) {
+            for (int w0 = 0; w0 < width - 3; w0++) {
+                for (int h = h0; h < h0 + 4; h++) {
+                    for (int w = w0; w < w0 + 4; w++) {
+                        grid[h0][w0] += frame[h][w] ? 1 : 0;
+                    }
+                }
+            }
+        }
+
+        for (int h0 = 0; h0 < height - 3; h0++) {
+            for (int w0 = 0; w0 < width - 3; w0++) {
+                if (grid[0][0] != grid[h0][w0] && grid[0][0] != n) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+        public static boolean grid_check2x4_n_overlap(boolean[][] frame, int n) {
+        final int height = frame.length;
+        final int width = frame[0].length;
+        int grid[][] = new int[5][5];
+        for (int h0 = 0; h0 < height - 3; h0++) {
+            for (int w0 = 0; w0 < width - 3; w0++) {
+                for (int h = h0; h < h0 + 4; h++) {
+                    for (int w = w0; w < w0 + 4; w++) {
+                        grid[h0][w0] += frame[h][w] ? 1 : 0;
+                    }
+                }
+            }
+        }
+
+        for (int h0 = 0; h0 < height - 3; h0++) {
+            for (int w0 = 0; w0 < width - 3; w0++) {
+                if (grid[0][0] != grid[h0][w0] && grid[0][0] != n) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static boolean grid_check9_n_overlap(boolean[][] frame, int n) {
+        final int height = frame.length;
+        final int width = frame[0].length;
+        int grid[][] = new int[6][6];
+
+        for (int h0 = 0; h0 < height - 2; h0++) {
+            for (int w0 = 0; w0 < width - 2; w0++) {
+                for (int h = h0; h <= h0 + 2; h++) {
+                    for (int w = w0; w <= w0 + 2; w++) {
+                        grid[h0][w0] += frame[h][w] ? 1 : 0;
+                    }
+                }
+            }
+        }
+
+        for (int h0 = 0; h0 < height - 2; h0++) {
+            for (int w0 = 0; w0 < width - 2; w0++) {
+
+                if (grid[h0][w0] > n) {
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+
+    public static boolean check_plus_one_sum(byte[][] plus_one_sum, int n) {
+        final int height = plus_one_sum.length;
+        final int width = plus_one_sum[0].length;
+        for (int h = 1; h < height - 1; h++) {
+            for (int w = 1; w < width - 1; w++) {
+                if (plus_one_sum[h][w] == n) {
+                    boolean check = plus_one_sum[h - 1][w - 1] == n || plus_one_sum[h - 1][w] == n || plus_one_sum[h - 1][w + 1] == n
+                            || plus_one_sum[h][w - 1] == n || plus_one_sum[h][w + 1] == n
+                            || plus_one_sum[h + 1][w - 1] == n || plus_one_sum[h + 1][w] == n || plus_one_sum[h + 1][w + 1] == n;
+                    if (check) {
+                        return false;
+                    }
+                }
+            }
+        }
+        return true;
     }
 }

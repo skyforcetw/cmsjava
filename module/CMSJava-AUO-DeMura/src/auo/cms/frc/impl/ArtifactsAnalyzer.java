@@ -20,25 +20,26 @@ import shu.math.array.DoubleArray;
  */
 public class ArtifactsAnalyzer {
 
-    public static boolean overallAnalyze(FRCPattern frcpattern, ArtifactsAnalyzer.InversionMode inversion) {
-        return overallAnalyze(frcpattern, true, true, true, inversion);
+    public static boolean overallAnalyze(FRCPattern frcpattern) {
+        return overallAnalyze(frcpattern, true, true, true);
     }
 
-    public static void analyze(FRCPattern frcpattern, ArtifactsAnalyzer.InversionMode inversion) {
-        analyze(frcpattern, 1, inversion);
+    public static void analyze(FRCPattern frcpattern) {
+        analyze(frcpattern, 1);
     }
 
-    public static void analyze(FRCPattern frcpattern, int level, ArtifactsAnalyzer.InversionMode inversion) {
+    public static void analyze(FRCPattern frcpattern, int level) {
 //        boolean[][][][] pattern = frcpattern.pattern;
 //        AUOFRC auofrc = new AUOFRC(pattern, false);
         ArtifactsAnalyzer analyzer = new
-                                     ArtifactsAnalyzer(inversion,
-                frcpattern);
+                                     ArtifactsAnalyzer(
+                                             ArtifactsAnalyzer.Inversion.Dot,
+                                             frcpattern);
 
         byte[][] artifacts = analyzer.getArtifactsArray(level);
 
         frcpattern.artifacts = artifacts;
-        frcpattern.unbalancedSum = analyzer.analyzeSubpixelBaseUnbalancedSum(level);
+        frcpattern.sum = analyzer.analyzeSubpixelBaseSum(level);
         frcpattern.balancedSum = analyzer.getBalancedSumArray(level);
         frcpattern.plusOneSum = analyzer.analyzeSubpixelBasePlusOneSum(level);
         frcpattern.polarityPattern = analyzer.getPolarityPattern(level);
@@ -55,8 +56,8 @@ public class ArtifactsAnalyzer {
      */
     public static boolean overallAnalyze(FRCPattern frcpattern, boolean checkArtifactsSymmetry,
                                          boolean checkEqualsPolarity,
-                                         boolean checkLeftRightBalance, ArtifactsAnalyzer.InversionMode inversion) {
-        analyze(frcpattern, inversion);
+                                         boolean checkLeftRightBalance) {
+        analyze(frcpattern);
 //        boolean[][][][] pattern = frcpattern.pattern;
 //        AUOFRC auofrc = new AUOFRC(pattern, false);
 //        ArtifactsAnalyzer analyzer = new
@@ -73,7 +74,7 @@ public class ArtifactsAnalyzer {
 //        frcpattern.plusOneSum = analyzer.analyzeSubpixelBasePlusOneSum(1);
 //        frcpattern.caculateInfo();
 
-        boolean check1 = (!checkArtifactsSymmetry || CheckTool.checkArtifactsSymmetryAndReflect(frcpattern));
+        boolean check1 = (!checkArtifactsSymmetry || CheckTool.checkArtifactsSymmetry(frcpattern));
         boolean check2 = (!checkEqualsPolarity || CheckTool.checkPolarityBalance(frcpattern));
         boolean check3 = (!checkLeftRightBalance || CheckTool.checkLeftRightBalance(frcpattern));
         if (check1 && check2 && check3) {
@@ -84,161 +85,87 @@ public class ArtifactsAnalyzer {
 
     }
 
-
-    public static enum InversionMode {
-        _1V1H, _1V2H, _1V2Hp1, _1V8H, _2Vp1_1H, _2Vp1_2H, _2Vp1_2Hp1
+    public static enum Inversion {
+        Dot, Column
     }
 
 
-    private void setInversion(InversionMode mode) {
-        switch (mode) {
-        case _1V1H:
-            break;
-        case _1V2H:
-            this.NLineDotInversion = 2;
-            break;
-        case _1V2Hp1:
-            this.NLineDotInversion = 2;
-            this.NLinePlus1 = true;
-            break;
-        case _1V8H:
-            this.NLineDotInversion = 8;
-            break;
-        case _2Vp1_1H:
-            this.NColumnDotInversion = 2;
-            this.NColumnPlus1 = true;
-            break;
-        case _2Vp1_2H:
-            this.NLineDotInversion = 2;
-            this.NColumnDotInversion = 2;
-            this.NColumnPlus1 = true;
-            break;
-        case _2Vp1_2Hp1:
-            this.NLineDotInversion = 2;
-            this.NLinePlus1 = true;
-            this.NColumnDotInversion = 2;
-            this.NColumnPlus1 = true;
-
-            break;
-        default:
-            throw new IllegalArgumentException("");
-        }
-    }
-
-//    private Inversion inversion;
+    private Inversion inversion;
     private FRCPattern frc;
-    private int frameInversionCount = 1;
-    private int NLineDotInversion = 1; //n-line , H
-    private int NColumnDotInversion = 1; //n-column, V
-    private boolean NLinePlus1 = false; //nH+1
-    private boolean NColumnPlus1 = false; //nV+1
+    private int frameInversion = 1;
+    private int NLineDotInversion = 1; //n-line
+    private boolean NPlus1DotInversion = false; //n+1
     private boolean inverse = false;
 
 
-//    public ArtifactsAnalyzer(Inversion inversion, FRCPattern frc) {
-////        this.inversion = inversion;
-//        this.frc = frc;
-//    }
-
-    public ArtifactsAnalyzer(InversionMode inversionMode, FRCPattern frc) {
-        setInversion(inversionMode);
+    public ArtifactsAnalyzer(Inversion inversion, FRCPattern frc) {
+        this.inversion = inversion;
         this.frc = frc;
     }
+
 
     private boolean[][] getPolarity(int frame) {
         boolean[][][] frcPattern = frc.getFRCPattern(0);
         int height = frcPattern[0].length;
         int width = frcPattern[0][0].length;
 
-        boolean pstart = ((frame % (frameInversionCount * 2)) / frameInversionCount) <=
+        boolean pstart = ((frame % (frameInversion * 2)) / frameInversion) <=
                          0.5;
-        pstart = inverse ? !pstart : pstart;
+        boolean[][] polaritybase = null;
+        if (inversion == Inversion.Dot) {
+            int dotHeight = (NLineDotInversion * 2) +
+                            (NPlus1DotInversion ? 1 : 0);
+            polaritybase = new boolean[dotHeight][width];
+            boolean p = pstart;
 
-        boolean[][] polarity = new boolean[height][width];
-        final int nV = NColumnDotInversion;
-        final int nH = NLineDotInversion;
-        final boolean plusV = NColumnPlus1;
-        final boolean plusH = NLinePlus1;
-//        if (inversion == Inversion.Dot) {
-        for (int h = 0; h < height; h++) {
-
-            for (int w = 0; w < width; w++) {
-                polarity[h][w] = pstart;
-                if (w < width - 1) {
-                    pstart = ((w + 1 + (plusV ? -1 : 0)) % nV) == 0 ? !pstart : pstart;
+            if (NPlus1DotInversion) {
+                for (int w = 0; w < width; w++) {
+                    polaritybase[0][w] = p;
+                    p = !p;
+                }
+                p = !p;
+            }
+            int h0start = NPlus1DotInversion ? 1 : 0;
+            for (int h0 = 0; h0 < NLineDotInversion; h0++) {
+                for (int w = 0; w < width; w++) {
+                    polaritybase[h0 + h0start][w] = p;
+                    p = !p;
+                    polaritybase[h0 + h0start + NLineDotInversion][w] = p;
                 }
             }
-            pstart = ((h + 1 + (plusH ? -1 : 0)) % nH) == 0 ? pstart : !pstart;
-            pstart = (plusV) ? !pstart : pstart;
+
+        } else if (inversion == Inversion.Column) {
+            polaritybase = new boolean[1][width];
+            boolean p = pstart;
+            for (int w = 0; w < width; w++) {
+                polaritybase[0][w] = p;
+                p = !p;
+            }
+        }
+        boolean[][] polarity = new boolean[height][width];
+        if (null != polaritybase) {
+            int baseheight = polaritybase.length;
+            int count = (0 == height % baseheight) ? height / baseheight :
+                        height / baseheight + 1;
+
+            for (int x = 0; x < count; x++) {
+                for (int h0 = 0; h0 < baseheight; h0++) {
+                    int h = x * baseheight + h0;
+                    if (h >= height) {
+                        break;
+                    }
+                    for (int w = 0; w < width; w++) {
+                        polarity[h][w] = !inverse ? polaritybase[h0][w] :
+                                         !polaritybase[h0][w];
+                    }
+                }
+            }
+
+            return polarity;
+        } else {
+            return null;
         }
 
-        return polarity;
-    }
-
-
-    private boolean[][] getPolarity_(int frame) {
-//        boolean[][][] frcPattern = frc.getFRCPattern(0);
-//        int height = frcPattern[0].length;
-//        int width = frcPattern[0][0].length;
-//
-//        boolean pstart = ((frame % (frameInversionCount * 2)) / frameInversionCount) <=
-//                         0.5;
-//        boolean[][] polaritybase = null;
-//        if (inversion == Inversion.Dot) {
-////            int dotHeight = (NLineDotInversion * 2) +
-////                            (NPlus1DotInversion ? 1 : 0);
-//            int dotHeight = (NLineDotInversion * 2);
-//            polaritybase = new boolean[dotHeight][width];
-//            boolean p = pstart;
-//
-//            if (NPlus1DotInversion) {
-//                for (int w = 0; w < width; w++) {
-//                    polaritybase[0][w] = p;
-//                    p = !p;
-//                }
-//                p = !p;
-//            }
-//            int h0start = NPlus1DotInversion ? 1 : 0;
-//            for (int h0 = 0; h0 < NLineDotInversion; h0++) {
-//                for (int w = 0; w < width; w++) {
-//                    polaritybase[h0 + h0start][w] = p;
-//                    p = !p;
-//                    polaritybase[h0 + h0start + NLineDotInversion][w] = p;
-//                }
-//            }
-//
-//        } else if (inversion == Inversion.Column) {
-//            polaritybase = new boolean[1][width];
-//            boolean p = pstart;
-//            for (int w = 0; w < width; w++) {
-//                polaritybase[0][w] = p;
-//                p = !p;
-//            }
-//        }
-//        boolean[][] polarity = new boolean[height][width];
-//        if (null != polaritybase) {
-//            int baseheight = polaritybase.length;
-//            int count = (0 == height % baseheight) ? height / baseheight :
-//                        height / baseheight + 1;
-//
-//            for (int x = 0; x < count; x++) {
-//                for (int h0 = 0; h0 < baseheight; h0++) {
-//                    int h = x * baseheight + h0;
-//                    if (h >= height) {
-//                        break;
-//                    }
-//                    for (int w = 0; w < width; w++) {
-//                        polarity[h][w] = !inverse ? polaritybase[h0][w] :
-//                                         !polaritybase[h0][w];
-//                    }
-//                }
-//            }
-//
-//            return polarity;
-//        } else {
-//            throw new IllegalStateException("null == polaritybase");
-//        }
-        return null;
     }
 
     /**
@@ -319,16 +246,16 @@ public class ArtifactsAnalyzer {
 
     public boolean checkSubpixelBaseArtifacts(int level, boolean illLv2,
                                               boolean illLv1, boolean healthy,
-                                              boolean none0Artifacts, boolean none2Artifacts, boolean symmetry) {
-        double[][] unbalancedSum = analyzeSubpixelBaseUnbalancedSum(
+                                              boolean none0, boolean none2, boolean symmetry) {
+        double[][] sum = analyzeSubpixelBaseSum(
                 level);
 
         boolean check = true;
-        if (none2Artifacts) {
-            check = check && CheckTool.checkNoneTwoArtifacts(unbalancedSum);
+        if (none2) {
+            check = check && CheckTool.checkNoneTwoArtifacts(sum);
         }
-        checkArtifacts = sumToArtifactsArray(unbalancedSum);
-        if (check && none0Artifacts) {
+        checkArtifacts = sumToArtifactsArray(sum);
+        if (check && none0) {
             check = check && checkNone0Artifacts(checkArtifacts);
         }
         if (check && symmetry) {
@@ -386,8 +313,8 @@ public class ArtifactsAnalyzer {
     }
 
 
-    public double[][] analyzeSubpixelBaseUnbalancedSum(int level) {
-        return getSubpixelBaseUnbalancedSum(frc.getFRCPattern(level - 1));
+    public double[][] analyzeSubpixelBaseSum(int level) {
+        return getSubpixelBaseSum(frc.getFRCPattern(level - 1));
     }
 
     public double[][] analyzeSubpixelBaseBalancedSum(int level) {
@@ -397,8 +324,8 @@ public class ArtifactsAnalyzer {
 
     public byte[][] getArtifactsArray(int level) {
         //Artifacts的算法: 先算出sum(非balance), 再由sum轉成Artifacts
-        double[][] unbalancedSum = analyzeSubpixelBaseUnbalancedSum(level);
-        return sumToArtifactsArray(unbalancedSum);
+        double[][] sum = analyzeSubpixelBaseSum(level);
+        return sumToArtifactsArray(sum);
     }
 
     public byte[][] getBalancedSumArray(int level) {
@@ -476,11 +403,11 @@ public class ArtifactsAnalyzer {
         return sum;
     }
 
-    private double[][] getSubpixelBaseUnbalancedSum(boolean[][][] frcPattern) {
+    private double[][] getSubpixelBaseSum(boolean[][][] frcPattern) {
         int framecount = frc.getFrameCount();
         int height = frcPattern[0].length;
         int width = frcPattern[0][0].length;
-        double[][] unbalancedSum = new double[height][width];
+        double[][] sum = new double[height][width];
         for (int x = 0; x < framecount; x++) {
             boolean[][] frame = frcPattern[x];
             boolean[][] polarity = getPolarity(x);
@@ -488,15 +415,15 @@ public class ArtifactsAnalyzer {
             for (int h = 0; h < height; h++) {
                 for (int w = 0; w < width; w++) {
 
-                    unbalancedSum[h][w] = unbalancedSum[h][w] +
-                                          (polarity[h][w] ? 0.875 : -1.125) * //正的就是0.8, 負的是-1.1
-                                          (frame[h][w] ? 1 : 0); //有pattern就是1, 沒有就是0
+                    sum[h][w] = sum[h][w] +
+                                (polarity[h][w] ? 0.875 : -1.125) * //正的就是0.8, 負的是-1.1
+                                (frame[h][w] ? 1 : 0); //有pattern就是1, 沒有就是0
 
                 }
 
             }
         }
-        return unbalancedSum;
+        return sum;
     }
 
 
@@ -779,39 +706,39 @@ public class ArtifactsAnalyzer {
 
     public static void main(String[] args) throws FileNotFoundException,
             IOException {
-        for (ArtifactsAnalyzer.InversionMode mode : ArtifactsAnalyzer.InversionMode.values()) {
-            ArtifactsAnalyzer analyzer = new ArtifactsAnalyzer(mode,
-                    new FRCPattern("frc/auofrc.csv"));
-            System.out.println(mode);
-            System.out.println(FRCUtil.toString(analyzer.getPolarity(0)));
-            System.out.println("");
-        }
+        ArtifactsAnalyzer analyzer = new ArtifactsAnalyzer(ArtifactsAnalyzer.
+                Inversion.Dot,
+//                new AUOFRC("frc/auofrc.csv", AUOFRC.PatternCount.FRC8));
+                new FRCPattern("frc/auofrc.csv"));
 
+//        analyzer.setInverse(true);
+//        analyzer.setNPlus1DotInversion(true);
+//        analyzer.setNLineDotInversion(2);
+        System.out.println(FRCUtil.toString(analyzer.getPolarity(0)));
     }
 
-    public void setFrameInversionCount(int frameInversionCount) {
-        this.frameInversionCount = frameInversionCount;
+    public void setFrameInversion(int frameInversion) {
+        this.frameInversion = frameInversion;
     }
-
 
     public void setInverse(boolean inverse) {
         this.inverse = inverse;
     }
 
 
-//    public void setNLineDotInversion(int NLineDotInversion) {
-//        this.NLineDotInversion = NLineDotInversion;
-//    }
-//
-//    public void setNPlus1DotInversion(boolean NPlus1DotInversion) {
-//        this.NPlus1DotInversion = NPlus1DotInversion;
-//    }
+    public void setNLineDotInversion(int NLineDotInversion) {
+        this.NLineDotInversion = NLineDotInversion;
+    }
+
+    public void setNPlus1DotInversion(boolean NPlus1DotInversion) {
+        this.NPlus1DotInversion = NPlus1DotInversion;
+    }
 
 
     byte[][] checkBalancedSum;
 
     /**
-     * 檢查正負極性的個數以及斜線
+     * 正負極性的個數要依樣
      *
      * @param level int
      * @return boolean

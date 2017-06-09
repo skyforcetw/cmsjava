@@ -161,7 +161,7 @@ public final class Utils {
   }
 
   public static double[] list2DoubleArray(List<Double> list) {
-    return DoubleArray.list2DoubleArray(list);
+    return DoubleArray.doubleList2DoubleArray(list);
   }
 
   public static int[] list2IntArray(List<Integer> list) {
