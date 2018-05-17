@@ -6,7 +6,7 @@
 /*
  * HueSimulationFrame.java
  *
- * Created on 2010/12/22, §W§» 09:46:45
+ * Created on 2010/12/22, ‰∏äÂçà 09:46:45
  */
 package auo.cms.applet.hue;
 
@@ -721,7 +721,7 @@ public class HueSimulationFrame
 //            System.out.println(v + " " + vp);
 //        }
 
-        String dirname = "D:\\≥n≈È\\nobody zone\\Pattern\\skyforce Pattern Collect\\Fruits\\small";
+        String dirname = "D:\\ËªüÈ´î\\nobody zone\\Pattern\\skyforce Pattern Collect\\Fruits\\small";
         File file = new File(dirname);
 //        try {
 //            for (String filename : file.list()) {
@@ -775,7 +775,7 @@ public class HueSimulationFrame
     private javax.swing.JToggleButton jToggleButton1;
     private org.jdesktop.beansbinding.BindingGroup bindingGroup;
     // End of variables declaration//GEN-END:variables
-    private PlanarImage image = JAI.create("fileload", "014_Ω’æ„§j§p.jpg");
+    private PlanarImage image = JAI.create("fileload", "014_Ë™øÊï¥Â§ßÂ∞è.jpg");
     private BufferedImage bimage;
     private DisplayJAI jai = new DisplayJAI(image);
     private Object[][] data = new Object[24][3];

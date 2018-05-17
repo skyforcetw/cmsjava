@@ -122,7 +122,7 @@ public class IntensityModel extends LCDModel {
     }
 
     /**
-     * ­pºâRGB,¤Ï±À¼Ò¦¡
+     * è¨ˆç®—RGB,åæ¨æ¨¡å¼
      *
      * @param relativeXYZ CIEXYZ
      * @param factor Factor[]
@@ -138,7 +138,7 @@ public class IntensityModel extends LCDModel {
     }
 
     /**
-     * ­pºâXYZ,«e¾É¼Ò¦¡
+     * è¨ˆç®—XYZ,å‰å°æ¨¡å¼
      *
      * @param rgb RGB
      * @param factor Factor[]
@@ -170,7 +170,7 @@ public class IntensityModel extends LCDModel {
     }
 
     /**
-     * ¨D«Y¼Æ
+     * æ±‚ä¿‚æ•¸
      *
      * @return Factor[]
      */

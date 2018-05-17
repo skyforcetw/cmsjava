@@ -74,7 +74,7 @@ public class GrayChromaticityLinearity
 
   public static void main(String[] args) {
     LCDTarget ramp = LCDTarget.Instance.getFromAUORampXLS(
-        "D:\\My Documents\\¤u§@\\µØ¤s­pµe\\LG 42SL90QD\\Standard\\ramp.xls");
+        "D:\\My Documents\\å·¥ä½œ\\è¯å±±è¨ˆç•«\\LG 42SL90QD\\Standard\\ramp.xls");
     LCDTarget.Operator.gradationReverseFix(ramp);
 
     GrayChromaticityLinearity report = new GrayChromaticityLinearity(ramp);

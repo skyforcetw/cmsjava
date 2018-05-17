@@ -19,9 +19,9 @@ import shu.io.files.ExcelFile;
  * @author not attributable
  * @version 1.0
  *
- * «ü©w¥ª¤W©M¥k¤U, ¼´¥X©Ò¦³Äæ¦ì.
- * ¤£ºŞ¦³¨S¦³merge, ¥ı¥H©Ò¦bªºÄæ¦ì´«ºâªº¦ì§}¬°¥D
- * ¥h¹ïÀ³merge cells, ­Y¦³¹ïÀ³¨ì, ®Ú¾Úmerge´«ºâ¹ê»Ú©Ò¦û¦ì¸mªø«×
+ * æŒ‡å®šå·¦ä¸Šå’Œå³ä¸‹, æ’ˆå‡ºæ‰€æœ‰æ¬„ä½.
+ * ä¸ç®¡æœ‰æ²’æœ‰merge, å…ˆä»¥æ‰€åœ¨çš„æ¬„ä½æ›ç®—çš„ä½å€ç‚ºä¸»
+ * å»å°æ‡‰merge cells, è‹¥æœ‰å°æ‡‰åˆ°, æ ¹æ“šmergeæ›ç®—å¯¦éš›æ‰€ä½”ä½ç½®é•·åº¦
  */
 public class EEPROMAnalyzer {
   public final static int[] findTopLeft(ExcelFile xls, String settingMapName) {
@@ -83,7 +83,7 @@ public class EEPROMAnalyzer {
     mergedArray = new boolean[totalSize];
 
     /*
-         range¬O¤@­Ó½d³ò, ¤£¨£±o¨C­Óregister³£·|¸¨¦bbound
+         rangeæ˜¯ä¸€å€‹ç¯„åœ, ä¸è¦‹å¾—æ¯å€‹registeréƒ½æœƒè½åœ¨bound
      */
     Range[] ranges = xls.getMergedCells();
     for (Range range : ranges) {
@@ -203,7 +203,7 @@ public class EEPROMAnalyzer {
       String regname = getRegisterNameOnly(reg0.contents);
 
       if (1 == list.size()) {
-        //ÁöµM¦³µù©ústart and end, ¦ı¬O¨S¦³¸óbyte, ¤£¥Î¯S§O³B²z
+        //é›–ç„¶æœ‰è¨»æ˜start and end, ä½†æ˜¯æ²’æœ‰è·¨byte, ä¸ç”¨ç‰¹åˆ¥è™•ç†
 
         int[] startAndEnd = getStartAndEndBit(reg0.contents);
 
@@ -218,7 +218,7 @@ public class EEPROMAnalyzer {
 
       }
       else {
-        //end¤Öªº¦b«e­±
+        //endå°‘çš„åœ¨å‰é¢
         Collections.sort(list, comparator);
         StringBuilder buf = new StringBuilder();
         buf.append(regname);
@@ -293,9 +293,9 @@ public class EEPROMAnalyzer {
 
           if (true == hasMerge(cell)) {
             int bitCount = getBitCount(cellInRange.getBottomRight());
-            //¥i¯à¬O8bit, ¬Æ¦Ü¬O¸óbyte
+            //å¯èƒ½æ˜¯8bit, ç”šè‡³æ˜¯è·¨byte
             if (hasStartAndEndBit(contents)) {
-              //¦³¼Ğµùbit½d³ò, ¬O¸óbyteªº
+              //æœ‰æ¨™è¨»bitç¯„åœ, æ˜¯è·¨byteçš„
               String registerName = getRegisterNameOnly(contents);
               List<TemporaryRegister>
                   registerList = crossByteMap.get(registerName);
@@ -309,7 +309,7 @@ public class EEPROMAnalyzer {
               crossByteMap.put(registerName, registerList);
             }
             else {
-              //1byte¥H¤º, ¦¹³B­pºâªºlength§Y¬°¥¿½T­È
+              //1byteä»¥å…§, æ­¤è™•è¨ˆç®—çš„lengthå³ç‚ºæ­£ç¢ºå€¼
               int length = cellInRange.getBottomRight().getColumn() -
                   cellInRange.getTopLeft().getColumn() + 1;
               int bit = getBitInByte(cellInRange.getBottomRight());
@@ -320,7 +320,7 @@ public class EEPROMAnalyzer {
             }
           }
           else {
-            //¤@©w¬O1bit
+            //ä¸€å®šæ˜¯1bit
             int bitCount = getBitCount(cell);
             int bit = getBitInByte(cell);
             String result = String.format("%s,%d,%d,%d", contents,

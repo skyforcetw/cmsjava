@@ -33,7 +33,7 @@ public class MeasureUtils {
     }
     else {
       if (measureWindow != null) {
-        //show¥X¶Â¹õ, Á×§K¼vÅT®Õ¥¿
+        //showå‡ºé»‘å¹•, é¿å…å½±éŸ¿æ ¡æ­£
         measureWindow.setColor(Color.black);
         measureWindow.setVisible(true);
       }
@@ -44,7 +44,7 @@ public class MeasureUtils {
       meter.calibrate();
 
       if (measureWindow != null) {
-        //Ãö³¬¶Â¹õ
+        //é—œé–‰é»‘å¹•
         measureWindow.setVisible(false);
       }
       JOptionPane.showMessageDialog(parentComponent,

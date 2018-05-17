@@ -16,9 +16,9 @@ import shu.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * LCD¾Éªí,¤º³¡Àx¦sXYZRGBªºPatch
- * ¤ä´©i1pro/spectrolino¥H¥úÃĞ¯à¶q¤À§G­Èªº©ÒÀx¦sªº®æ¦¡²£¥Í
- * ¤ä´©i1display2¥HLab©ÒÀx¦sªº®æ¦¡²£¥Í
+ * LCDå°è¡¨,å…§éƒ¨å„²å­˜XYZRGBçš„Patch
+ * æ”¯æ´i1pro/spectrolinoä»¥å…‰è­œèƒ½é‡åˆ†ä½ˆå€¼çš„æ‰€å„²å­˜çš„æ ¼å¼ç”¢ç”Ÿ
+ * æ”¯æ´i1display2ä»¥Labæ‰€å„²å­˜çš„æ ¼å¼ç”¢ç”Ÿ
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -31,7 +31,7 @@ public final class LCDTarget
     extends LCDTargetBase {
 
   /**
-   * ¨C¸õ¤@­Ócode,­n¥[¦h¤Ö
+   * æ¯è·³ä¸€å€‹code,è¦åŠ å¤šå°‘
    * @return double
    */
   public double getStep() {
@@ -65,7 +65,7 @@ public final class LCDTarget
   }
 
   /**
-   * Á`¦@¦³´X­ÓcodeªºÅÜ¤Æ
+   * ç¸½å…±æœ‰å¹¾å€‹codeçš„è®ŠåŒ–
    * @return double
    */
   public int getLevel() {
@@ -167,7 +167,7 @@ public final class LCDTarget
   protected boolean isRGBPatchOnly = false;
 
   /**
-   * ­pºâ©Ò¦³PatchªºLab,¥Hwhite¬°°Ñ¦Ò¥Õ
+   * è¨ˆç®—æ‰€æœ‰Patchçš„Lab,ä»¥whiteç‚ºåƒè€ƒç™½
    * @param white CIEXYZ
    */
   public void calculatePatchLab(CIEXYZ white) {
@@ -175,34 +175,34 @@ public final class LCDTarget
   }
 
   public static void example(String[] args) {
-    //¸ü¤Jlcd¾Éªí
+    //è¼‰å…¥lcdå°è¡¨
     LCDTarget lcdTarget = LCDTarget.Instance.get("Dell_M1210",
                                                  Source.i1display2, Room.Dark,
                                                  TargetIlluminant.D65,
                                                  Number.Ramp1021, null, null);
 
-    //±q¾Éªí¨ú±o¦â¶ô
+    //å¾å°è¡¨å–å¾—è‰²å¡Š
     List<Patch> patchList = lcdTarget.getPatchList();
-    //­pºâ¾ÉªíªºLab­È
+    //è¨ˆç®—å°è¡¨çš„Labå€¼
     List<Patch> LabPatchList = lcdTarget.getLabPatchList();
     for (int x = 0; x < patchList.size(); x++) {
       Patch p1 = patchList.get(x);
       Patch p2 = LabPatchList.get(x);
-      //Åã¥Ü¾ÉªíªºXYZ¤ÎLab
+      //é¡¯ç¤ºå°è¡¨çš„XYZåŠLab
       System.out.println(p1.getRGB() + " " + p1.getXYZ() + " " + p2.getLab());
     }
 
-    //±q­ì¥»ªº¾Éªí´î¤Ö¦â¶ô¼Æ¶q,¦¨¬°¤@­Ó·sªº¾Éªí
+    //å¾åŸæœ¬çš„å°è¡¨æ¸›å°‘è‰²å¡Šæ•¸é‡,æˆç‚ºä¸€å€‹æ–°çš„å°è¡¨
     LCDTarget lcdTarget509 = lcdTarget.targetFilter.getRamp509From1021();
     List<Patch> patches = lcdTarget509.getLabPatchList();
     for (Patch p : patches) {
-      //Åã¥Ürgb­È
+      //é¡¯ç¤ºrgbå€¼
       System.out.println(p.getRGB());
     }
   }
 
   /**
-   * ¨ú¥Xchannel¸Ì¹¡©Mªº¦â¶ô
+   * å–å‡ºchannelè£¡é£½å’Œçš„è‰²å¡Š
    * @param channel Channel
    * @return Patch
    */
@@ -511,8 +511,8 @@ public final class LCDTarget
     }
 
     /**
-     * ±q125¦â¶ô¹LÂo¥X62¦â¶ô
-     * (³æ¤@ÀW¹D¬°0»P¨â¨âÀW¹D¤¬¬Û²V¦X & ¥Õ)
+     * å¾125è‰²å¡Šéæ¿¾å‡º62è‰²å¡Š
+     * (å–®ä¸€é »é“ç‚º0èˆ‡å…©å…©é »é“äº’ç›¸æ··åˆ & ç™½)
      * @return LCDPatch
      */
     public LCDTarget getPatch62From125() {
@@ -602,8 +602,8 @@ public final class LCDTarget
     }
 
     /**
-     * ±q729¦â¶ô¹LÂo¥X218¦â¶ô
-     * (³æ¤@ÀW¹D¬°0»P¨â¨âÀW¹D¤¬¬Û²V¦X & ¥Õ)
+     * å¾729è‰²å¡Šéæ¿¾å‡º218è‰²å¡Š
+     * (å–®ä¸€é »é“ç‚º0èˆ‡å…©å…©é »é“äº’ç›¸æ··åˆ & ç™½)
      * @return LCDPatch
      */
     public LCDTarget getPatch218From729() {
@@ -693,7 +693,7 @@ public final class LCDTarget
     }
 
     /**
-     * ¨ú±o³¡¤Àªºpatch¦¨¬°·sªºLCDTarget
+     * å–å¾—éƒ¨åˆ†çš„patchæˆç‚ºæ–°çš„LCDTarget
      * @param partNumber Number
      * @param newdescription String
      * @param index int[]
@@ -769,7 +769,7 @@ public final class LCDTarget
   public final class Filter {
 
     /**
-     * ¹LÂo¥XRGB¬°grayªº¦â¶ô(R=G=B)
+     * éæ¿¾å‡ºRGBç‚ºgrayçš„è‰²å¡Š(R=G=B)
      * @return List
      */
     public final List<Patch> grayPatch() {
@@ -795,7 +795,7 @@ public final class LCDTarget
     }
 
     /**
-     * ¹LÂo¥XRGB¬°grayªº¦â¶ô(R=G=B), ¥B½T«O«G«×¬O»¼¼Wªº
+     * éæ¿¾å‡ºRGBç‚ºgrayçš„è‰²å¡Š(R=G=B), ä¸”ç¢ºä¿äº®åº¦æ˜¯éå¢çš„
      * @return List
      */
     public final List<Patch> grayScalePatch() {
@@ -875,7 +875,7 @@ public final class LCDTarget
     }
 
     /**
-     * ¹LÂo¥X ¦Ü¤Ö¤@­ÓÀW¹D¬°0ªº
+     * éæ¿¾å‡º è‡³å°‘ä¸€å€‹é »é“ç‚º0çš„
      * @return List
      */
     public final List<Patch> leastOneZeroChannel() {
@@ -886,7 +886,7 @@ public final class LCDTarget
     }
 
     /**
-     * ¹LÂo¥X ¦Ü¤ÖChannelÀW¹D¬°0ªº
+     * éæ¿¾å‡º è‡³å°‘Channelé »é“ç‚º0çš„
      * @param zeroChannel Channel
      * @return List
      */
@@ -895,7 +895,7 @@ public final class LCDTarget
     }
 
     /**
-     * ±N³æ¤@ÀW¹D¦³­Èªº¹LÂo¥X¨Ó
+     * å°‡å–®ä¸€é »é“æœ‰å€¼çš„éæ¿¾å‡ºä¾†
      * @param channel Channel
      * @return List
      */
@@ -915,7 +915,7 @@ public final class LCDTarget
   public transient TargetFilter targetFilter = new TargetFilter(this);
 
   /**
-   * Âà¦¨LabªºPatch List
+   * è½‰æˆLabçš„Patch List
    * @param whitePatch Patch
    * @return List
    */
@@ -925,7 +925,7 @@ public final class LCDTarget
   }
 
   /**
-   * Âà¦¨LabªºPatch List
+   * è½‰æˆLabçš„Patch List
    * @param whitePoint CIEXYZ
    * @return List
    */
@@ -937,7 +937,7 @@ public final class LCDTarget
   }
 
   /**
-   * Âà¦¨LabªºPatch List
+   * è½‰æˆLabçš„Patch List
    * @return List
    */
   public List<Patch> getLabPatchList() {
@@ -945,9 +945,9 @@ public final class LCDTarget
   }
 
   /**
-   * ÅçÃÒPatchªº«¬ºA¬O§_¥¿½T
-   * (LCDPatch¥u¯à±µ¨üPatch.TYPE.XYZRGB)
-   * (ps:¬éÅçÃÒ²Ä¤@­Ó¦â¶ô¦Ó¤w)
+   * é©—è­‰Patchçš„å‹æ…‹æ˜¯å¦æ­£ç¢º
+   * (LCDPatchåªèƒ½æ¥å—Patch.TYPE.XYZRGB)
+   * (ps:ç¥‡é©—è­‰ç¬¬ä¸€å€‹è‰²å¡Šè€Œå·²)
    * @return boolean
    */
   private boolean checkPatchTypeRight() {
@@ -962,7 +962,7 @@ public final class LCDTarget
   boolean inverseModeMeasure = false;
 
   /**
-   * ¶q´ú®É¬O§_¥H¤ÏÂà¼Ò¦¡´ú¶q?
+   * é‡æ¸¬æ™‚æ˜¯å¦ä»¥åè½‰æ¨¡å¼æ¸¬é‡?
    * @return boolean
    */
   public final boolean isInverseModeMeasure() {
@@ -976,7 +976,7 @@ public final class LCDTarget
   private double[][] calibrationMatrix;
 
   /**
-   * ¨ú±o¶Â¦â¶ô(¥HRGB¬°°ò·Ç)
+   * å–å¾—é»‘è‰²å¡Š(ä»¥RGBç‚ºåŸºæº–)
    * @return Patch
    */
   public Patch getBlackPatch() {
@@ -993,7 +993,7 @@ public final class LCDTarget
   }
 
   /**
-   * ¨ú±oY³Ì¤pªºpatch
+   * å–å¾—Yæœ€å°çš„patch
    * @return Patch
    */
   public Patch getDarkestPatch() {
@@ -1012,7 +1012,7 @@ public final class LCDTarget
   }
 
   /**
-   * ¨ú±o¥Õ¦â¶ô(¥HXYZªºY¬°°ò·Ç)
+   * å–å¾—ç™½è‰²å¡Š(ä»¥XYZçš„Yç‚ºåŸºæº–)
    * @return Patch
    */
   public Patch getBrightestPatch() {
@@ -1031,7 +1031,7 @@ public final class LCDTarget
   }
 
   /**
-   * ¨ú±o¥Õ¦â¶ô(¥HRGB¬°°ò·Ç)
+   * å–å¾—ç™½è‰²å¡Š(ä»¥RGBç‚ºåŸºæº–)
    * @return Patch
    */
   public Patch getWhitePatch() {
@@ -1060,7 +1060,7 @@ public final class LCDTarget
   }
 
   /**
-   * §ä¨ì«G«×¤ÏÂàÂI
+   * æ‰¾åˆ°äº®åº¦åè½‰é»
    * @return double
    */
   public final double getInverseLuminanceCode() {

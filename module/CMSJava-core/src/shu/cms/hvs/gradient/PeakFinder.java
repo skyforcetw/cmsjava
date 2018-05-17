@@ -9,7 +9,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * §ä¥X¸ê®Æªº®p­È, ¤Î®p­È¤§¶¡ªº¤s¨¦
+ * æ‰¾å‡ºè³‡æ–™çš„å³°å€¼, åŠå³°å€¼ä¹‹é–“çš„å±±è°·
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -193,7 +193,7 @@ public class PeakFinder {
       -12.353236425728369};
 
   /**
-   * §ä¨â­Ópeaek¤§¶¡ªº³Ì¤p­È(¤s¨¦)
+   * æ‰¾å…©å€‹peaekä¹‹é–“çš„æœ€å°å€¼(å±±è°·)
    * @param data double[]
    * @param peak1Index int
    * @param peak2Index int
@@ -207,7 +207,7 @@ public class PeakFinder {
   }
 
   /**
-   * ±qdata¤¤§ä¥X¨â­Ó°ª®p¥H¤Î¤s¨¦
+   * å¾dataä¸­æ‰¾å‡ºå…©å€‹é«˜å³°ä»¥åŠå±±è°·
    * @param data double[]
    * @param fix boolean
    * @return int[]
@@ -224,10 +224,10 @@ public class PeakFinder {
   }
 
   /**
-   * ±qdata¤¤§ä¥X¨â­Ó°ª®p¥H¤Î¤s¨¦
+   * å¾dataä¸­æ‰¾å‡ºå…©å€‹é«˜å³°ä»¥åŠå±±è°·
    * @param data double[]
-   * @return int[] {°ª®p1, ¤s¨¦, °ª®p2}
-   * @todo H ºâ¥X¨Ó·|¦³»~
+   * @return int[] {é«˜å³°1, å±±è°·, é«˜å³°2}
+   * @todo H ç®—å‡ºä¾†æœƒæœ‰èª¤
    */
   public final static int[] getMaxAndMinIndex(double[] data) {
     int maxIndex1 = Maths.maxIndex(data);
@@ -249,7 +249,7 @@ public class PeakFinder {
   }
 
   /**
-   * §ä¨ì²Ä¤@­Ó°ª®p
+   * æ‰¾åˆ°ç¬¬ä¸€å€‹é«˜å³°
    * @param data double[]
    * @param secondPeakIndex int
    * @return int
@@ -271,7 +271,7 @@ public class PeakFinder {
   }
 
   /**
-   * §ä¨ì²Ä¤G­Ó°ª®p
+   * æ‰¾åˆ°ç¬¬äºŒå€‹é«˜å³°
    * @param data double[]
    * @return int
    * @deprecated
@@ -280,15 +280,15 @@ public class PeakFinder {
     int size = data.length;
     int lastMaxIndex = -1;
     for (int x = 0; x < size - 1; x++) {
-      // ¤£Â_ªº§â¸ê®Æªº§Àºİ¥h±¼
+      // ä¸æ–·çš„æŠŠè³‡æ–™çš„å°¾ç«¯å»æ‰
       double[] copy = DoubleArray.getRangeCopy(data, 0, size - 1 - x);
-      // ¦A§ä¨ì³Ì¤j­È
+      // å†æ‰¾åˆ°æœ€å¤§å€¼
       int maxIndex = Maths.maxIndex(copy);
-      // ­pºâ¸ò¤W¦¸maxIndexªº®t²§
+      // è¨ˆç®—è·Ÿä¸Šæ¬¡maxIndexçš„å·®ç•°
       int indexDiff = Math.abs(lastMaxIndex - maxIndex);
 
       if (lastMaxIndex != -1 && indexDiff != 1 && indexDiff != 0) {
-        // ²Ä¤@¦¸ªº¤£ºâ && ®t²§¤£¯à¬° 0 ©M 1
+        // ç¬¬ä¸€æ¬¡çš„ä¸ç®— && å·®ç•°ä¸èƒ½ç‚º 0 å’Œ 1
         return maxIndex;
       }
       lastMaxIndex = maxIndex;
@@ -300,15 +300,15 @@ public class PeakFinder {
 //  int size = data.length;
     int lastMaxIndex = -1;
     for (int x = 0; x < firstPeakIndex - 1; x++) {
-      // ¤£Â_ªº§â¸ê®Æªº§Àºİ¥h±¼
+      // ä¸æ–·çš„æŠŠè³‡æ–™çš„å°¾ç«¯å»æ‰
       double[] copy = DoubleArray.getRangeCopy(data, 0, firstPeakIndex - 1 - x);
-      // ¦A§ä¨ì³Ì¤j­È
+      // å†æ‰¾åˆ°æœ€å¤§å€¼
       int maxIndex = Maths.maxIndex(copy);
-      // ­pºâ¸ò¤W¦¸maxIndexªº®t²§
+      // è¨ˆç®—è·Ÿä¸Šæ¬¡maxIndexçš„å·®ç•°
       int indexDiff = Math.abs(lastMaxIndex - maxIndex);
 
       if (lastMaxIndex != -1 && indexDiff != 1 && indexDiff != 0) {
-        // ²Ä¤@¦¸ªº¤£ºâ && ®t²§¤£¯à¬° 0 ©M 1
+        // ç¬¬ä¸€æ¬¡çš„ä¸ç®— && å·®ç•°ä¸èƒ½ç‚º 0 å’Œ 1
         return maxIndex;
       }
       lastMaxIndex = maxIndex;

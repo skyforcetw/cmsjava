@@ -1,4 +1,4 @@
-package auo.cms.frc.impl;
+package fiti.cms.frc.impl;
 
 import java.util.ArrayList;
 
@@ -75,6 +75,7 @@ public class FRC1_16PatternProducer {
 
 
     public static void main(String[] args) {
+//        System.out.println("11111112222");
         System.out.println("Start");
         method1();
         System.out.println("End");

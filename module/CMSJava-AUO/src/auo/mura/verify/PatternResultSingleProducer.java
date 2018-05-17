@@ -67,7 +67,7 @@ public class PatternResultSingleProducer {
         parameter);
     String outputdirname = inputdir + Integer.toString(grayLevel);
     new File(outputdirname).mkdir();
-//        "D:/³nÅé/nobody zone/Mura/Verify Simulation Experiment/";
+//        "D:/è»Ÿé«”/nobody zone/Mura/Verify Simulation Experiment/";
 //        "Y:/Verify Items/Verify LUT/Special Case/No.3 real_8x8 - 4";
 //        inputdir;
 
@@ -120,8 +120,8 @@ public class PatternResultSingleProducer {
     String basedir = "Y:/Verify Items/Simulation Result/";
     String inputdir =
         basedir + "(0014) - 2Vertical";
-//        "Y:/¹êÅç¼Æ¾Ú/Item4 - Plane Number(ºëÂ²Plane¼Æ¥H¤Î´ú¸Õ¹ïÀ³Level­È)/STEP2 - DeMura/10+50+50(1)_data(final)/";
-//    "Y:/¹êÅç¼Æ¾Ú/Item4 - Plane Number(ºëÂ²Plane¼Æ¥H¤Î´ú¸Õ¹ïÀ³Level­È)/STEP2 - DeMura/10+10+10(1)_data(final)/";
+//        "Y:/å¯¦é©—æ•¸æ“š/Item4 - Plane Number(ç²¾ç°¡Planeæ•¸ä»¥åŠæ¸¬è©¦å°æ‡‰Levelå€¼)/STEP2 - DeMura/10+50+50(1)_data(final)/";
+//    "Y:/å¯¦é©—æ•¸æ“š/Item4 - Plane Number(ç²¾ç°¡Planeæ•¸ä»¥åŠæ¸¬è©¦å°æ‡‰Levelå€¼)/STEP2 - DeMura/10+10+10(1)_data(final)/";
 //        "Y:/Verify Items/Verify LUT/Limit Case/1920x1080/7.limit2_8 8(X2-1-0)";
 //         "Y:/Verify Items/Verify LUT/Special Case/No.3 real_8x8 - 4";
 //        "Y:/Verify Items/Simulation Result/1.Real 8x8 - 11Level";
@@ -535,7 +535,7 @@ public class PatternResultSingleProducer {
     CorrectionData correctiondata = new CorrectionData(correctFilename,
         parameter);
 //    String outputdirname =
-//        "D:/³nÅé/nobody zone/Mura/Verify Simulation Experiment/";
+//        "D:/è»Ÿé«”/nobody zone/Mura/Verify Simulation Experiment/";
 
     MuraCompensationExecuter.execute(correctiondata, patternFilename, outputdir,
                                      MuraCompensationProducer.DitheringType.

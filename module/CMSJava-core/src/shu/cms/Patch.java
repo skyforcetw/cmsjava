@@ -14,7 +14,7 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * patch¥Nªí¤@­Ó¦â¶ô
+ * patchä»£è¡¨ä¸€å€‹è‰²å¡Š
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -54,7 +54,7 @@ public final class Patch
     }
 
     /**
-     * ±q¥úÃĞ¯à¶q¤À§G°t¦X¤H²´°t¦â¨ç¼Æ,­pºâ¥XXYZ,¦A¶ñ¤JrgbList¤ºªº¼Æ­È¨ìPatch
+     * å¾å…‰è­œèƒ½é‡åˆ†ä½ˆé…åˆäººçœ¼é…è‰²å‡½æ•¸,è¨ˆç®—å‡ºXYZ,å†å¡«å…¥rgbListå…§çš„æ•¸å€¼åˆ°Patch
      * @param powerSpectraList List
      * @param reflectSpectraList List
      * @param rgbList List
@@ -72,7 +72,7 @@ public final class Patch
       List<Patch>
           patchList = XYZPatches(powerSpectraList, reflectSpectraList, cmf);
 
-      //³]©wRGB
+      //è¨­å®šRGB
       for (int x = 0; x < size; x++) {
         RGB rgb = rgbList.get(x);
         Patch p = patchList.get(x);
@@ -84,7 +84,7 @@ public final class Patch
     }
 
     /**
-     * ±NXYZ©Mrgb¦X¨Ö¨ìPatch¸Ì
+     * å°‡XYZå’Œrgbåˆä½µåˆ°Patchè£¡
      * @param XYZList List
      * @param rgbList List
      * @return List
@@ -96,7 +96,7 @@ public final class Patch
       }
       int size = rgbList.size();
       List<Patch> patchList = new ArrayList<Patch> (size);
-      //³]©wRGB
+      //è¨­å®šRGB
       for (int x = 0; x < size; x++) {
         CIEXYZ XYZ = XYZList.get(x);
         RGB RGB = rgbList.get(x);
@@ -108,7 +108,7 @@ public final class Patch
     }
 
     /**
-     * ±q¥úÃĞ¯à¶q¤À§G°t¦X¤H²´°t¦â¨ç¼Æ,­pºâ¥XXYZ
+     * å¾å…‰è­œèƒ½é‡åˆ†ä½ˆé…åˆäººçœ¼é…è‰²å‡½æ•¸,è¨ˆç®—å‡ºXYZ
      * @param powerSpectraList List
      * @param reflectSpectraList List
      * @param cmf ColorMatchingFunction
@@ -144,10 +144,10 @@ public final class Patch
     }
 
     /**
-     * ­pºâ¥ÕÂI
-     * ±N¥ú·½¥ÕÂIªºY½Õ¾ã¨ì¸òwhite¤@­P
-     * ²£¥Í¥X¨ÓªºL­È´N·|¥HLCD¦â¶ôªº¥ÕÂI¬°100
-     * ¦ı¬Oab«o¤£·|¨ü¨ì¼vÅT
+     * è¨ˆç®—ç™½é»
+     * å°‡å…‰æºç™½é»çš„Yèª¿æ•´åˆ°è·Ÿwhiteä¸€è‡´
+     * ç”¢ç”Ÿå‡ºä¾†çš„Lå€¼å°±æœƒä»¥LCDè‰²å¡Šçš„ç™½é»ç‚º100
+     * ä½†æ˜¯abå»ä¸æœƒå—åˆ°å½±éŸ¿
      * @param cmf ColorMatchingFunction
      * @param illuminant CIEIlluminant
      * @param white CIEXYZ
@@ -172,7 +172,7 @@ public final class Patch
       int size = rgbList.size();
       List<Patch> patchList = new ArrayList<Patch> (rgbList.size());
 
-      //³]©wRGB
+      //è¨­å®šRGB
       for (int x = 0; x < size; x++) {
         RGB RGB = rgbList.get(x);
         Patch p = new Patch(null, null, null, RGB);
@@ -183,7 +183,7 @@ public final class Patch
     }
 
     /**
-     * ·|¥HwhiteSpectra§@¥ÕÂI°ò·Ç§@Labªº­pºâ
+     * æœƒä»¥whiteSpectraä½œç™½é»åŸºæº–ä½œLabçš„è¨ˆç®—
      * @param spectraList List
      * @param cmf ColorMatchingFunction
      * @param whiteSpectra Spectra
@@ -200,7 +200,7 @@ public final class Patch
     }
 
     /**
-     * ±qXYZ Patch­pºâLab
+     * å¾XYZ Patchè¨ˆç®—Lab
      * @param XYZPatchList List
      * @param white CIEXYZ
      * @return List
@@ -225,7 +225,7 @@ public final class Patch
     }
 
     /**
-     * ·|¥Hilluminant¬°¥ÕÂI°ò·Ç,¦ı¬O¥HwhiteSpectra¬°L=100§@Labªº­pºâ
+     * æœƒä»¥illuminantç‚ºç™½é»åŸºæº–,ä½†æ˜¯ä»¥whiteSpectraç‚ºL=100ä½œLabçš„è¨ˆç®—
      * @param spectraList List
      * @param cmf ColorMatchingFunction
      * @param illuminant CIEIlluminant
@@ -425,7 +425,7 @@ public final class Patch
   }
 
   /**
-   * ±N¦â¶ô§@Âà¸mªº³B²z
+   * å°‡è‰²å¡Šä½œè½‰ç½®çš„è™•ç†
    * @param patchList List
    * @param lgorowLength int
    * @return List
@@ -508,7 +508,7 @@ public final class Patch
   public static class Filter {
 
     /**
-     * ±Nrgb½d³ò¦bstartRange~endRange¤§¶¡ªÌ¹LÂo¥X¨Ó
+     * å°‡rgbç¯„åœåœ¨startRange~endRangeä¹‹é–“è€…éæ¿¾å‡ºä¾†
      * @param source List
      * @param filtered Set
      * @param channel Channel
@@ -520,8 +520,8 @@ public final class Patch
         double endRange) {
       for (Patch p : source) {
         RGB rgb = p.getRGB();
-        //¬O¦Ç¦â,¨ºch¤]­n¬OW
-        //¤£¬O¦Ç¦â,¨ºch¤£¯à¬OW
+        //æ˜¯ç°è‰²,é‚£chä¹Ÿè¦æ˜¯W
+        //ä¸æ˜¯ç°è‰²,é‚£chä¸èƒ½æ˜¯W
         if ( ( (rgb.isGray() && channel == RGBBase.Channel.W) ||
               (!rgb.isGray() && channel != RGBBase.Channel.W &&
                rgb.isPrimaryChannel())) &&
@@ -532,7 +532,7 @@ public final class Patch
           RGB cloneRGB = (RGB) rgb.clone();
 
           //======================================================================
-          // ­«·s¥¿³W¤Æ
+          // é‡æ–°æ­£è¦åŒ–
           //======================================================================
 //          double value = cloneRGB.getValue(channel);
 //          value = ( (value - startRange) / (endRange - startRange)) *
@@ -591,7 +591,7 @@ public final class Patch
     }
 
     /**
-     * ±N ³æ¤@ÀW¹D ¦³­Èªº¦â¶ô¹LÂo¥X¨Ó
+     * å°‡ å–®ä¸€é »é“ æœ‰å€¼çš„è‰²å¡Šéæ¿¾å‡ºä¾†
      * @param patchList List
      * @param filtered List
      * @param channel Channel
@@ -607,10 +607,10 @@ public final class Patch
     }
 
     /**
-     * ±N ³æ¤@ÀW¹D¬°0(¨â¨âÀW¹D¤¬¬Û²V¦X)
+     * å°‡ å–®ä¸€é »é“ç‚º0(å…©å…©é »é“äº’ç›¸æ··åˆ)
      * @param source List
      * @param filtered List
-     * @param withWhite boolean ¥Õ¤@¨Ö¹LÂo¥X¨Ó
+     * @param withWhite boolean ç™½ä¸€ä½µéæ¿¾å‡ºä¾†
      */
     public final static void leastOneZero(List<Patch> source,
         List<Patch> filtered, boolean withWhite) {
@@ -673,7 +673,7 @@ public final class Patch
     }
 
     /**
-     * ¹LÂo¥X¦Ç¶¥(¤£§t¶Â)
+     * éæ¿¾å‡ºç°éš(ä¸å«é»‘)
      * @param patchList List
      * @param filtered Collection
      */
@@ -690,7 +690,7 @@ public final class Patch
   }
 
   /**
-   * ¬O§_¦³ ¦Ü¤Ö³æ¤@ÀW¹D¬°0
+   * æ˜¯å¦æœ‰ è‡³å°‘å–®ä¸€é »é“ç‚º0
    * @param patch Patch
    * @return boolean
    * @deprecated
@@ -706,7 +706,7 @@ public final class Patch
   }
 
   /**
-   * ¥u¦³³æ¤@ÀW¹Dªº­È (note:{0,0,0} ¤]¥]¬A)
+   * åªæœ‰å–®ä¸€é »é“çš„å€¼ (note:{0,0,0} ä¹ŸåŒ…æ‹¬)
    * @param patch Patch
    * @return boolean
    */

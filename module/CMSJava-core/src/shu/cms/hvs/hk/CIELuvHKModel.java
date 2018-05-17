@@ -17,13 +17,13 @@ import shu.cms.colorspace.independ.*;
 public class CIELuvHKModel {
   public static enum Type {
     /**
-     * ╬A╔н╘С╟╙╚G╚в 1000 lx
-     * ╔убI╛Ы318.3 nits, ╓╓╘й╕г╛Ы63.7 nits
+     * И│╘Г■╗Ф√╪И╚≤Д╨╝Е╨╕ 1000 lx
+     * Г≥╫И╩·Г╢└318.3 nits, Д╦╜Ф─╖Г│╟Г╢└63.7 nits
      */
     Wyszecki,
     /**
-     * ╬A╔н╘С╖C╚G╚в 30-100 lx
-     * ╔убI╛Ы9.5~31.8 nits
+     * И│╘Г■╗Ф√╪Д╫▌Д╨╝Е╨╕ 30-100 lx
+     * Г≥╫И╩·Г╢└9.5~31.8 nits
      */
     SandersWyszecki;
   }

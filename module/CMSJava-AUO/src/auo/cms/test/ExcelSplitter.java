@@ -22,7 +22,7 @@ import java.util.List;
  */
 public class ExcelSplitter {
   public static void main(String[] args) throws Exception {
-    File dir = new File("D:\\My Documents\\¤u§@\\µØ¤s­pµe\\Sharp LC-46LX1\\Modes");
+    File dir = new File("D:\\My Documents\\å·¥ä½œ\\è¯å±±è¨ˆç•«\\Sharp LC-46LX1\\Modes");
     for (File f : dir.listFiles()) {
       if (f.isDirectory()) {
         for (File f2 : f.listFiles()) {

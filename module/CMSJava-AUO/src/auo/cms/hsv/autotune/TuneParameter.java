@@ -27,11 +27,11 @@ public class TuneParameter {
       int hueIndex0 = (int) hue / 15;
       int hueIndex1 = hueIndex0 + 1;
       tagArray[hueIndex0] = true;
-      //¼Ğ°O¥X©Ò¦³¦bhueOfHSVArray¸Ìªº°Ï¶¡
+      //æ¨™è¨˜å‡ºæ‰€æœ‰åœ¨hueOfHSVArrayè£¡çš„å€é–“
       tagArray[hueIndex1] = true;
     }
     //==========================================================================
-    //­pºâ©Ò¦³³Q¼Ğ°Oªº°Ï¶¡Á`¶q
+    //è¨ˆç®—æ‰€æœ‰è¢«æ¨™è¨˜çš„å€é–“ç¸½é‡
     //==========================================================================
     int tagCount = 2;
     for (boolean tag : tagArray) {
@@ -50,7 +50,7 @@ public class TuneParameter {
     for (int x = 0; x < HUE_COUNT; x++) {
       boolean tag = tagArray[x];
       if (tag) {
-        //¤Z¬O³Q¼Ğ°O¨ìªº¦a¤è
+        //å‡¡æ˜¯è¢«æ¨™è¨˜åˆ°çš„åœ°æ–¹
         hueIndex[index] = x;
         huePrime[index] = hueAdjustValue[x];
         saturationPrime[index] = saturationAdjustValue[x];
@@ -60,7 +60,7 @@ public class TuneParameter {
     }
 
     //==========================================================================
-    // ²Ä¤@­Ó¤¸¯Àªº³B²z
+    // ç¬¬ä¸€å€‹å…ƒç´ çš„è™•ç†
     //==========================================================================
     hueIndex[0] = -1;
     huePrime[0] = huePrime[tagCount - 2];
@@ -68,7 +68,7 @@ public class TuneParameter {
     saturationPrime[0] = saturationPrime[tagCount - 2];
     valuePrime[0] = valuePrime[tagCount - 2];
     //==========================================================================
-    // ³Ì«á¤@­Ó¤¸¯Àªº³B²z
+    // æœ€å¾Œä¸€å€‹å…ƒç´ çš„è™•ç†
     //==========================================================================
     hueIndex[tagCount - 1] = 24;
     huePrime[tagCount - 1] = huePrime[1];
@@ -78,7 +78,7 @@ public class TuneParameter {
     valuePrime[tagCount - 1] = valuePrime[1];
     //==========================================================================
 
-    //°µ¦¨¹ï·Óªí
+    //åšæˆå°ç…§è¡¨
     Interpolation1DLUT saturationLut = new Interpolation1DLUT(hueIndex,
         saturationPrime, Interpolation1DLUT.Algo.LINEAR);
     Interpolation1DLUT valueLut = new Interpolation1DLUT(hueIndex, valuePrime,

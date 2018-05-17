@@ -127,9 +127,9 @@ public class BlurDetector {
   }
 
   public static void main(String[] args) {
-    String dir = "D:\\≥n≈È\\nobody zone\\Pattern\\Sharpness Pattern\\From Iting";
+    String dir = "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\Pattern\\Sharpness Pattern\\From Iting";
     String output =
-        "D:\\≥n≈È\\nobody zone\\Pattern\\Sharpness Pattern\\From Iting\\Blue Image";
+        "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\Pattern\\Sharpness Pattern\\From Iting\\Blue Image";
     try {
       for (File f : new File(dir).listFiles()) {
         if (f.isFile()) {

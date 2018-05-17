@@ -1,8 +1,8 @@
-package auo.cms.frc.impl;
+package fiti.cms.frc.impl;
 
 import java.util.ArrayList;
 
-import auo.cms.frc.FRCPattern;
+import fiti.cms.frc.FRCPattern;
 import shu.math.Maths;
 
 /**

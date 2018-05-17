@@ -60,13 +60,13 @@ public class MaxRGB
     double[] pixel = new double[3];
 
     short[][] histogram = new short[3][101];
-    //¦]¬°¬Olocal variable,¤£·|¶i¦æinit,¤â°ÊÂk¹s
+    //å› ç‚ºæ˜¯local variable,ä¸æœƒé€²è¡Œinit,æ‰‹å‹•æ­¸é›¶
     Arrays.fill(histogram[0], (short) 0);
     Arrays.fill(histogram[1], (short) 0);
     Arrays.fill(histogram[2], (short) 0);
 
     //==========================================================================
-    // ²£¥Íª½¤è¹Ï
+    // ç”¢ç”Ÿç›´æ–¹åœ–
     //==========================================================================
     for (int i = 0; i < width; i++) {
       for (int j = 0; j < height; j++) {
@@ -86,12 +86,12 @@ public class MaxRGB
     }
     //==========================================================================
 
-    //­n¨ú¼Ëªº¹³¯À¼Æ¶q
+    //è¦å–æ¨£çš„åƒç´ æ•¸é‡
     int pickCount = (int) (width * height * SAMPLE_RATE);
     double[] coefs = new double[3];
 
     //==========================================================================
-    // ¶i¦æ¥ÕÂI¦ô´ú
+    // é€²è¡Œç™½é»ä¼°æ¸¬
     //==========================================================================
     for (int x = 0; x < histogram.length; x++) {
       int count = 0;

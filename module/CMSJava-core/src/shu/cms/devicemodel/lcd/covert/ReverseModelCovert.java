@@ -16,7 +16,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Î«e¾É¼Ò¦¡¥h¹w´ú(¤º´¡)¤Ï±À¼Ò¦¡¡A«Ú¸É¤Ï±À¼Ò¦¡ªº¤£·Ç½T©Ê.
+ * ãƒç¡æ—§å®¶Î‘î™®ç®‡ä»£(ãšç¡€)ã¯å´©å®¶Î‘î“‡î‚—å¹²ã¯å´©å®¶Î‘î€™ãƒéçµ‹â”¦.
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -65,9 +65,9 @@ public class ReverseModelCovert {
     if (lcdModel instanceof ChannelDependentModel) {
       double[] elements = adapter.
           getXTalkElementValues(RGBBase.Channel.G);
-      //xtalk¤@­Óstepªº®t²§
+      //xtalkî—¦î…Œstepî€™ç•‰é’µ
       double diff = Math.abs(elements[0] - elements[1]);
-      //rgbªºsteps¥Ñstep²Õ¦¨
+      //rgbî€™stepsãƒ‘stepèˆ±Î˜
       steps = DoubleArray.fill(1, 3, diff)[0];
     }
     else {
@@ -154,9 +154,9 @@ public class ReverseModelCovert {
 
     public final CovertResult getRGB(final CIEXYZ XYZ,
                                      final boolean relativeXYZ) {
-      //³]©w¥Ø¼ĞXYZ
+      //ç ï¹šãƒ˜å¤¹XYZ
       this.setTargetXYZ(XYZ, relativeXYZ);
-      //°_©lRGB
+      //ç™¬ï¹RGB
       RGB initRGB = adapter.getRGB(XYZ, relativeXYZ);
       double[] initRGBValues = initRGB.getValues(new double[3],
                                                  RGB.MaxValue.Double255);
@@ -173,9 +173,9 @@ public class ReverseModelCovert {
       min.addConstraint(2, -1, 0);
 
       min.nelderMead(this, start, steps, step);
-      //»~®t³Ì¤pªºRGB­È
+      //ç²‡ç•‰ç¨‹î˜–î€™RGBî…
       double[] param = min.getParamValues();
-      //¬O§_°_¨ì¤Fcoverªº¥Î³~
+      //çŒîœ¥ç™¬îŸî—¬coverî€™ãƒç¡š
       boolean coverting = isCoverting(param, initRGBValues);
       RGB rgb = (RGB) initRGB.clone();
       rgb.setValues(param, RGB.MaxValue.Double255);
@@ -214,7 +214,7 @@ public class ReverseModelCovert {
   }
 
   /**
-   * ±Ä¥Î¾ã¼Æ¼Ò¦¡?
+   * è¹¦ãƒä¿±è®¡å®¶Î‘?
    */
   private boolean integerMode = false;
 
@@ -288,7 +288,7 @@ public class ReverseModelCovert {
   }
 
   /**
-   * ¬O§_°_¨ì¤Fcoverªº¥Î³~
+   * çŒîœ¥ç™¬îŸî—¬coverî€™ãƒç¡š
    * @return boolean
    */
   public final boolean isCoverting() {
@@ -304,8 +304,8 @@ public class ReverseModelCovert {
   }
 
   /**
-   * ¬O§_±Ä¥Î¾ã¼Æ¼Ò¦¡?
-   * ¦b¾ã¼Æ¼Ò¦¡¤U, ¶È·|§ä¨ì³Ì±µªñªº¾ã¼ÆRGB
+   * çŒîœ¥è¹¦ãƒä¿±è®¡å®¶Î‘?
+   * î›ˆä¿±è®¡å®¶Î‘î—», åº¦ç©¦Ñ‚îŸç¨‹é’¡îî€™ä¿±è®¡RGB
    *
    * @param integerMode boolean
    */
@@ -318,7 +318,7 @@ public class ReverseModelCovert {
   }
 
   /**
-   * °_¨ì¤Fcoverªº¥Î³~?
+   * ç™¬îŸî—¬coverî€™ãƒç¡š?
    */
   private boolean coverting = false;
   private Mode bestMode;

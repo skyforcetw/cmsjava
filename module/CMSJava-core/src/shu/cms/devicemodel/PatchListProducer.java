@@ -18,7 +18,7 @@ import shu.cms.*;
  */
 public interface PatchListProducer {
   /**
-   * ±NRGBpatchListªº¦â¶ô,¸g¥Ñ«e¾É¼Ò¦¡­pºâ¥XXYZ,¦^¶Ç¦¨List<Patch>
+   * å°‡RGBpatchListçš„è‰²å¡Š,ç¶“ç”±å‰å°æ¨¡å¼è¨ˆç®—å‡ºXYZ,å›å‚³æˆList<Patch>
    * @param RGBpatchList List
    * @return List
    */
@@ -26,7 +26,7 @@ public interface PatchListProducer {
                                                   RGBpatchList);
 
   /**
-   * ±NXYZpatchListªº¦â¶ô,¸g¥Ñ¤Ï±À¼Ò¦¡­pºâ¥XRGB,¦^¶Ç¦¨List<Patch>
+   * å°‡XYZpatchListçš„è‰²å¡Š,ç¶“ç”±åæ¨æ¨¡å¼è¨ˆç®—å‡ºRGB,å›å‚³æˆList<Patch>
    * @param XYZpatchList List
    * @return List
    */

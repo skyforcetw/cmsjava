@@ -62,7 +62,7 @@ public class WHQLReport
          "Standard", "Movie", "Game", "PC", "USER","Photo"};
 
     for (String mode : modes) {
-      String filename = "D:\\My Documents\\§uß@\\µÿ§s≠pµe\\Sharp LC-46LX1\\Modes\\" + mode +
+      String filename = "D:\\My Documents\\Â∑•‰Ωú\\ËèØÂ±±Ë®àÁï´\\Sharp LC-46LX1\\Modes\\" + mode +
           "\\871.xls";
 
       LCDTarget lcdTarget = LCDTarget.Instance.getFromAUOXLS(filename);

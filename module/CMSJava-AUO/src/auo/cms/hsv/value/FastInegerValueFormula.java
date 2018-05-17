@@ -39,21 +39,21 @@ public class FastInegerValueFormula
     boolean negative = offset < 0;
     offset10 = Math.abs(offset10);
     int max_min10 = max - min; //10bit
-    int max_bar10 = minusMax - max; //10bit barªº¨úªk·|¾É­P³Ì«áµ²ªG¬°10 or 11bit
+    int max_bar10 = minusMax - max; //10bit barçš„å–æ³•æœƒå°è‡´æœ€å¾Œçµæœç‚º10 or 11bit
 
     // V * (1 + offset*(max-min)*V)
 
     long offsetXmax_min20 = (offset10 * max_min10) >> bit3; // 20 - bit3 bit
 
-    long offsetXmax_min20Xmax_bar10 = offsetXmax_min20 * max_bar10; //³Ì¤j¥u¨ì 20 - bit3 + 7 bit
+    long offsetXmax_min20Xmax_bar10 = offsetXmax_min20 * max_bar10; //æœ€å¤§åªåˆ° 20 - bit3 + 7 bit
     _offsetXmax_min20Xmax_bar10 = offsetXmax_min20Xmax_bar10 >
         _offsetXmax_min20Xmax_bar10 ? offsetXmax_min20Xmax_bar10 :
-        _offsetXmax_min20Xmax_bar10; //¥Hbit3=10¨Ó»¡, ¬°17bit
+        _offsetXmax_min20Xmax_bar10; //ä»¥bit3=10ä¾†èªª, ç‚º17bit
 
     long offsetXmax_minXmax_bar30 = (offsetXmax_min20Xmax_bar10) >> bit2; //28 - bit2 -bit3 bit
     _offsetXmax_minXmax_bar30 = offsetXmax_minXmax_bar30 >
         _offsetXmax_minXmax_bar30 ? offsetXmax_minXmax_bar30 :
-        _offsetXmax_minXmax_bar30; //¥Hbit2 = 8, bit3 = 10¨Ó»¡, ¬°9bit
+        _offsetXmax_minXmax_bar30; //ä»¥bit2 = 8, bit3 = 10ä¾†èªª, ç‚º9bit
 
     long theone = (long) Math.pow(2, 29 - bit2 - bit3); //29 - bit2 - bit3
 
@@ -66,8 +66,8 @@ public class FastInegerValueFormula
 
     final int totalBit = 29 - bit1 - bit2 - bit3;
 
-    //³Ì«á¿é¥Xbit¼Æ, ¨übit 1/2/3¼vÅT
-    //©T©w¿é¥X¬°10bit 0~1023
+    //æœ€å¾Œè¼¸å‡ºbitæ•¸, å—bit 1/2/3å½±éŸ¿
+    //å›ºå®šè¼¸å‡ºç‚º10bit 0~1023
     int shiftResult = (int) (result >> (totalBit));
 
     staticResult = (result > staticResult) ? result : staticResult;
@@ -76,7 +76,7 @@ public class FastInegerValueFormula
       _max = max;
       _min = min;
     }
-    return shiftResult; //¥i¥H¹F11bit
+    return shiftResult; //å¯ä»¥é”11bit
   }
 
   /**

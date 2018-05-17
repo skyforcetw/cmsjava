@@ -6,7 +6,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¦UºØ¦â¾AÀ³,¦â¥~¶T¼Ò¦¡ªº±`¼Æ
+ * å„ç¨®è‰²é©æ‡‰,è‰²å¤–è²¿æ¨¡å¼çš„å¸¸æ•¸
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

@@ -80,7 +80,7 @@ public class FRCResolutionTester {
   public static void test3(String[] args) {
     int[] bestRGB0 = getBestRGB(3, 1, 3, 1);
 
-    int nullcount = 0; //1&3¶H­­null³Ì¤Ö
+    int nullcount = 0; //1&3è±¡é™nullæœ€å°‘
     double totaldist = 0;
     for (int r = 0; r <= 3; r++) {
       for (int g = 0; g <= 3; g++) {

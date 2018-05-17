@@ -33,20 +33,20 @@ public final class Illuminant
     List<Illuminant> list = new ArrayList<Illuminant> ();
     //31
     for (int cct = 2500; cct <= 10000; cct += 250) {
-      //¶ÂÅé¿ç®g
+      //é»‘é«”è¼»å°„
       Spectra s = CorrelatedColorTemperature.getSpectraOfBlackbodyRadiator(cct);
       Illuminant i = new Illuminant(s);
       list.add(i);
     }
     //25
     for (int cct = 4000; cct <= 10000; cct += 250) {
-      //¤é¥ú
+      //æ—¥å…‰
       Illuminant i = Illuminant.getDaylightByTemperature(cct);
       list.add(i);
     }
     //12
     for (Illuminant i : getFluorescents()) {
-      //¿Ã¥ú¿O
+      //èž¢å…‰ç‡ˆ
       list.add(i);
     }
     //68
@@ -161,7 +161,7 @@ public final class Illuminant
   private CIEXYZ normalizeXYZ;
 
   /**
-   * ¨ú±o¸g¹LY­È¥¿³W¤Æ¬°100ªºXYZ
+   * å–å¾—ç¶“éŽYå€¼æ­£è¦åŒ–ç‚º100çš„XYZ
    * @return CIEXYZ
    */
   public CIEXYZ getNormalizeXYZ() {
@@ -195,7 +195,7 @@ public final class Illuminant
 
   private final static boolean InitFromCxF = false;
   /**
-   * ªì©l¤Æ±`¥ÎªºCIE·Ó©úÅé¸ê®Æ
+   * åˆå§‹åŒ–å¸¸ç”¨çš„CIEç…§æ˜Žé«”è³‡æ–™
    */
   static {
     if (InitFromCxF) {
@@ -220,7 +220,7 @@ public final class Illuminant
   }
 
   /**
-   * ±qXYZ§ä¨ì³Ì±µªñªºCIE·Ó©úÅé
+   * å¾žXYZæ‰¾åˆ°æœ€æŽ¥è¿‘çš„CIEç…§æ˜Žé«”
    * @param XYZ CIEXYZ
    * @return CIEIlluminant
    */
@@ -852,7 +852,7 @@ public final class Illuminant
       1, DoubleArray.fill(1, 401, 1)[0]));
 
   /**
-   * ¥i¸g¥Ñ¦â·Åªº«ü©w­pºâ¥X©Ò¦³ªºCIE D¥ú·½¥úÃÐ
+   * å¯ç¶“ç”±è‰²æº«çš„æŒ‡å®šè¨ˆç®—å‡ºæ‰€æœ‰çš„CIE Då…‰æºå…‰è­œ
    * @param tempK int
    * @return CIEIlluminant
    */

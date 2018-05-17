@@ -559,7 +559,7 @@ public class NewTargetScaner {
         getReadyAnalyzer(rXYZ, gXYZ, bXYZ, whiteXYZ);
 
     List<CIEXYZ> wXYZList = DeHook3Tester.getWXYZList(model);
-    Collections.reverse(wXYZList); //°f
+    Collections.reverse(wXYZList); //é€†
 
     ComponentFetcher fetcher = new ComponentFetcher(analyzer);
     List<Component> componentList = fetcher.fetchComponent(wXYZList);
@@ -574,7 +574,7 @@ public class NewTargetScaner {
 //    System.out.println(whiteRGB + " " + model.getXYZ(whiteRGB, false) + " " +
 //                       whiteXYZ);
 //    DeHook3Tester.drawGamma(rgbList, model, "r0");
-    if (fixFirstWhiteRGB) { //¦pªGmulti-gen + native white, ¦³¶}¤ñ¸û¦n
+    if (fixFirstWhiteRGB) { //å¦‚æžœmulti-gen + native white, æœ‰é–‹æ¯”è¼ƒå¥½
       whiteRGB.R = whiteRGB.G = whiteRGB.B = 255; //244.75 in B100
       if (drawGamma) {
         DeHook3Tester.drawGamma(rgbList, model, "r1");

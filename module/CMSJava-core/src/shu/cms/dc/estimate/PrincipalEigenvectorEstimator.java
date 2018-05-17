@@ -17,7 +17,7 @@ import shu.math.array.DoubleArray;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥H¥D¦¨¤À¯S¼x¦V¶q¹w´ú·P¥ú¤¸¥óªº¥úÃĞ¥ú¤Ï¬M¨ç¼Æ
+ * î™î™ŠÎ˜ã ç–­ç´‰îš¼ç§–ç®‡ä»£ç¨°î€ã˜ãƒ³î€™î€çœ¯î€ã¯çˆã„§è®¡
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -34,7 +34,7 @@ public class PrincipalEigenvectorEstimator
   protected DCTarget[] tagetArray;
 
   /**
-   * ¥Htarget¹w´ú¥úÃĞ¥ú¤Ï¬M¨ç¼Æ
+   * î™targetç®‡ä»£î€çœ¯î€ã¯çˆã„§è®¡
    * @param target DCTarget
    */
   public PrincipalEigenvectorEstimator(DCTarget target) {
@@ -43,7 +43,7 @@ public class PrincipalEigenvectorEstimator
   }
 
   /**
-   * ¥H¦h­Ótarget¹w´ú¥úÃĞ¥ú¤Ï¬M¨ç¼Æ
+   * î™î›î…Œtargetç®‡ä»£î€çœ¯î€ã¯çˆã„§è®¡
    * @param targetArray DCTarget[]
    */
   public PrincipalEigenvectorEstimator(DCTarget[] targetArray) {
@@ -52,7 +52,7 @@ public class PrincipalEigenvectorEstimator
   }
 
   /**
-   * ±NtagetArrayªº©Ò¦³¦â¶ôÂà¦¨List<Patch>
+   * ç›¢tagetArrayî€™â”®Î¤ï¸¹éé”£Î˜List<Patch>
    * @param tagetArray DCTarget[]
    * @return List
    */
@@ -124,8 +124,8 @@ public class PrincipalEigenvectorEstimator
   }
 
   /**
-   * ¹w´ú·P¥ú¤¸¥óªº¥úÃĞ¥ú¤Ï¬M¨ç¼Æ
-   * @param r int ±Ä¥Îªº°ò©³¦V¶qªº¼Æ¶q
+   * ç®‡ä»£ç¨°î€ã˜ãƒ³î€™î€çœ¯î€ã¯çˆã„§è®¡
+   * @param r int è¹¦ãƒî€™è†€â”îš¼ç§–î€™è®¡ç§–
    * @return Spectra[]
    */
   public Spectra[] estimate(int r) {
@@ -162,7 +162,7 @@ public class PrincipalEigenvectorEstimator
   }
 
   /**
-   * ±N¥úÃĞ§@¦X²z¤Æ
+   * ç›¢î€çœ¯îœ†îš¾ç¶ã¦
    * @param spectraArray Spectra[]
    * @return Spectra[]
    */

@@ -72,7 +72,7 @@ public class SpectraSuiteFile {
 
   public static void main(String[] args) throws IOException {
     SpectraSuiteFile file = new SpectraSuiteFile(
-        "C://Documents and Settings//skyforce//My Documents//Case//§»Ãu¬ì§Ş//LED.ProcSpec");
+        "C://Documents and Settings//skyforce//My Documents//Case//å®ç€¨ç§‘æŠ€//LED.ProcSpec");
     file.parse();
 
     for (Interpolation.Algo algo :

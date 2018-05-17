@@ -149,8 +149,8 @@ public class YYModelThread
                                   factorG.k * GS_RGBValue[1]));
 
       /**
-       * ¦pªG¬Y¤@ÀW¹D¤w¸g¹F¨ìmax,´N¤£¥Î¦Ò¼{ÀW¹D¥æ¤¬¼vÅTªº°İÃD¤F
-       * ¦]¬°¤w¸g¨ì³Ì¤j­È,¦A«ç»ò¼vÅT¤]¤£·|§ó¤j.
+       * å¦‚æœæŸä¸€é »é“å·²ç¶“é”åˆ°max,å°±ä¸ç”¨è€ƒæ…®é »é“äº¤äº’å½±éŸ¿çš„å•é¡Œäº†
+       * å› ç‚ºå·²ç¶“åˆ°æœ€å¤§å€¼,å†æ€éº¼å½±éŸ¿ä¹Ÿä¸æœƒæ›´å¤§.
        */
       double maxValue = rgb.getMaxValue().max;
       sR = rgb.R == maxValue ? 0 : sR;
@@ -168,7 +168,7 @@ public class YYModelThread
     }
 
     double[] modelRGBValues = new double[3];
-    //cross talk removal«áªºrgb
+    //cross talk removalå¾Œçš„rgb
     modelRGBValues[0] = RGBRationalize(resultRGBValues[0]);
     modelRGBValues[1] = RGBRationalize(resultRGBValues[1]);
     modelRGBValues[2] = RGBRationalize(resultRGBValues[2]);
@@ -188,7 +188,7 @@ public class YYModelThread
   }
 
   /**
-   * ­ì©lª©ªº
+   * åŸå§‹ç‰ˆçš„
    * @param rgb RGB
    * @param factor Factor[]
    * @param model1 SCurveModel1Thread
@@ -225,7 +225,7 @@ public class YYModelThread
     double deltaB = deltaRGBValues[2];
 
     double[] modelRGBValues = new double[3];
-    //cross talk removal«áªºrgb
+    //cross talk removalå¾Œçš„rgb
     modelRGBValues[0] = RGBRationalize(GS_RGBValue[0]);
     modelRGBValues[1] = RGBRationalize(GS_RGBValue[1]);
     modelRGBValues[2] = RGBRationalize(GS_RGBValue[2]);
@@ -237,7 +237,7 @@ public class YYModelThread
 //    modelRGBValues[0] = limit(rgbValues[0] + deltaR);
 //    modelRGBValues[1] = limit(rgbValues[1] + deltaG);
 //    modelRGBValues[2] = limit(rgbValues[2] + deltaB);
-    //gamma®Õ¥¿
+    //gammaæ ¡æ­£
 //    modelRGBValues = gammaCorrect(modelRGBValues);
 
 //    deltaRGBValues = gammaCorrect(deltaRGBValues);
@@ -278,7 +278,7 @@ public class YYModelThread
   }
 
   /**
-   * ±N¦â¶ôªºRGB­È¸gS-curveI³B²z
+   * å°‡è‰²å¡Šçš„RGBå€¼ç¶“S-curveIè™•ç†
    * @param singleChannelPatch Set
    * @param model1 SCurveModel1Thread
    */
@@ -293,30 +293,30 @@ public class YYModelThread
 
   protected Factor[] _produceFactor() {
     //==========================================================================
-    // ­pºâmodel1°Ñ¼Æ
+    // è¨ˆç®—model1åƒæ•¸
     //==========================================================================
     SCurveModel1Thread model1 = new SCurveModel1Thread(this.rCorrectorLCDTarget);
     model1.produceFactor();
     //==========================================================================
 
     //==========================================================================
-    // ­pºâ3x3 matrix
+    // è¨ˆç®—3x3 matrix
     //==========================================================================
 //    produceRGBSingleChannelPatch(); //ok
     produceRGBSingleChannelPatch(model1);
-    //­pºâgamma correction
+    //è¨ˆç®—gamma correction
     correct.produceGammaCorrector(); //ok
     Set<Patch> singleChannelPatchSet = singleChannel.getPatchSet();
     double[][] RGB2XYZ = produceRGB2XYZ_3x3(singleChannelPatchSet); //ok
     //==========================================================================
 
     /**
-     * k«Y¼Æªº¨Dªk
-     * ­º¥ı³z¹L¨â¨âÀW¹Dªº¦â¶ô,¤À§O¨D±o¤£¦PÀW¹Dªºk«Y¼Æ
-     * ©Ò¦³¦â¶ôªºk«Y¼Æ¨ú±o¨ä¥­§¡,¥H¦¹¬°±À¾Éªº°_ÂI
+     * kä¿‚æ•¸çš„æ±‚æ³•
+     * é¦–å…ˆé€éå…©å…©é »é“çš„è‰²å¡Š,åˆ†åˆ¥æ±‚å¾—ä¸åŒé »é“çš„kä¿‚æ•¸
+     * æ‰€æœ‰è‰²å¡Šçš„kä¿‚æ•¸å–å¾—å…¶å¹³å‡,ä»¥æ­¤ç‚ºæ¨å°çš„èµ·é»
      *
-     * ³]©w¦nk«Y¼Æªº½d³ò,¥H©Ò¦³ªº¦â¶ô¥hµû¦ôk«Y¼Æ
-     * §ä¨ì®t¶Z(rms)³Ì¤pªºk«Y¼Æ
+     * è¨­å®šå¥½kä¿‚æ•¸çš„ç¯„åœ,ä»¥æ‰€æœ‰çš„è‰²å¡Šå»è©•ä¼°kä¿‚æ•¸
+     * æ‰¾åˆ°å·®è·(rms)æœ€å°çš„kä¿‚æ•¸
      */
 //    double[][] kCoefs = produceKCoefficient(RGB2XYZ, model1); //ok
     double[][] kCoefs = new double[][] {
@@ -327,7 +327,7 @@ public class YYModelThread
     temporaryFactors = makeFactor(model1, new double[3], RGB2XYZ);
 
     //==========================================================================
-    // ¥Ñ¦¬¶°¨ìªºk½d³ò´M§ä³Ì¨Îk
+    // ç”±æ”¶é›†åˆ°çš„kç¯„åœå°‹æ‰¾æœ€ä½³k
     //==========================================================================
     double[] bestK = null;
     if (crossTalkRemove) {
@@ -366,17 +366,17 @@ public class YYModelThread
     return factors;
   }
 
-  //­t­Èªºdelta¦¸¼Æ(­t­È¶V¦h,¥Nªí3x3 matrix¶V¤£·Ç½T)
+  //è² å€¼çš„deltaæ¬¡æ•¸(è² å€¼è¶Šå¤š,ä»£è¡¨3x3 matrixè¶Šä¸æº–ç¢º)
   protected int negtiveDeltaCount;
 
-  //²£¥Í­t­Èk«Y¼Æªº¦¸¼Æ
+  //ç”¢ç”Ÿè² å€¼kä¿‚æ•¸çš„æ¬¡æ•¸
   protected int negtiveKCoefsCount;
 
   /**
-   * ²£¥Ík«Y¼Æ
-   * ¤À¬°1.¨â¨âÀW¹D 2.¤T­ÓÀW¹D ¦³­È
-   * ²Ä¤@ºØª¬ªp¥iª½±µ¨D±ok­È
-   * ²Ä¤GºØª¬ªp³z¹L¸ÑÁp¥ß¤èµ{¦¡§Y¥i¨D±ok­È
+   * ç”¢ç”Ÿkä¿‚æ•¸
+   * åˆ†ç‚º1.å…©å…©é »é“ 2.ä¸‰å€‹é »é“ æœ‰å€¼
+   * ç¬¬ä¸€ç¨®ç‹€æ³å¯ç›´æ¥æ±‚å¾—kå€¼
+   * ç¬¬äºŒç¨®ç‹€æ³é€éè§£è¯ç«‹æ–¹ç¨‹å¼å³å¯æ±‚å¾—kå€¼
    * @param RGB2XYZ double[][]
    * @param model1 SCurveModel1Thread
    * @return double[][]
@@ -401,13 +401,13 @@ public class YYModelThread
       RGB rgb = p.getRGB();
 
       if (rgb.isBlack() || rgb.isPrimaryChannel()) {
-        //¶Â¦â¥i¥H²¤¹L ¥u¦³³æ¤@ÀW¹D­Èªº¤]²¤¹L(¦]¬°¤£¦s¦b¹³¯À¶¡ªº¹q®e¥æ¤¬¼vÅT)
+        //é»‘è‰²å¯ä»¥ç•¥é åªæœ‰å–®ä¸€é »é“å€¼çš„ä¹Ÿç•¥é(å› ç‚ºä¸å­˜åœ¨åƒç´ é–“çš„é›»å®¹äº¤äº’å½±éŸ¿)
         continue;
       }
 
       //=====================================================================
-      // ±Ä¥Î¸ÑÁp¥ß¤èµ{¦¡ªº¤è¦¡¨Dk­È
-      // ¦ı¬O¥ı¨M±ø¥ó¬OR G B¬Ò«D0­È¤~¥i¨D?
+      // æ¡ç”¨è§£è¯ç«‹æ–¹ç¨‹å¼çš„æ–¹å¼æ±‚kå€¼
+      // ä½†æ˜¯å…ˆæ±ºæ¢ä»¶æ˜¯R G Bçš†é0å€¼æ‰å¯æ±‚?
       //=====================================================================
 //      double[] deltaRGB = calculateDeltaRGB(rgbValues,
 //                                            p.getXYZ().getValues(), aXYZ2RGB);
@@ -418,11 +418,11 @@ public class YYModelThread
           (deltaRGB[0] < -1. / 512 || deltaRGB[1] < -1. / 512 ||
            deltaRGB[2] < -1. / 512)) {
         /**
-         * deltaÀ³¸Ó¬°¥¿­È,¦]¬°¾Fªñ¹³¯Àªº¹q®e¼vÅT,²£¥ÍªºÀ³¸Ó¬O"¦h¾l"ªº®ÄÀ³,©Ò¥Hdelta¬°¥¿­È.
-         * «D¥¿­È¥i¯à¬O3x3 matrixªº»~®t
+         * deltaæ‡‰è©²ç‚ºæ­£å€¼,å› ç‚ºé„°è¿‘åƒç´ çš„é›»å®¹å½±éŸ¿,ç”¢ç”Ÿçš„æ‡‰è©²æ˜¯"å¤šé¤˜"çš„æ•ˆæ‡‰,æ‰€ä»¥deltaç‚ºæ­£å€¼.
+         * éæ­£å€¼å¯èƒ½æ˜¯3x3 matrixçš„èª¤å·®
          *
-         * »~®t¦b 1/512¤~­p¤J,¬O¦]¬°r/g/bªº½d³ò¬°0~255,¦@256¶¥
-         * »~®t¦b¤£¨¬0.5­Ó³æ¦ìªºr/g/b®É,¨ä¹ê¬O¨S¦³¼vÅTªº(·|³Q¥|±Ë¤­¤J¥h°£)
+         * èª¤å·®åœ¨ 1/512æ‰è¨ˆå…¥,æ˜¯å› ç‚ºr/g/bçš„ç¯„åœç‚º0~255,å…±256éš
+         * èª¤å·®åœ¨ä¸è¶³0.5å€‹å–®ä½çš„r/g/bæ™‚,å…¶å¯¦æ˜¯æ²’æœ‰å½±éŸ¿çš„(æœƒè¢«å››æ¨äº”å…¥å»é™¤)
          */
 //        System.out.println(rgb + " " + Arrays.toString(deltaRGB));
         negtiveDeltaHappen++;
@@ -432,7 +432,7 @@ public class YYModelThread
       //=======================================================================
 
       //=======================================================================
-      //¨ú±oGSªº¹Bºâµ²ªG
+      //å–å¾—GSçš„é‹ç®—çµæœ
       //=======================================================================
       double[] rgbValues = rgb.getValues();
       double[] GS_RGBValues = produceGSValue(rgbValues, model1);
@@ -457,7 +457,7 @@ public class YYModelThread
       else if (result[0] < 0 || result[1] < 0 || result[2] < 0 ||
                Double.isNaN(result[0]) || Double.isNaN(result[1]) ||
                Double.isNaN(result[2])) {
-        //kÀ³¸Ó¬°0 or ¥¿­È
+        //kæ‡‰è©²ç‚º0 or æ­£å€¼
         negtiveKHappen++;
         continue;
       }
@@ -474,8 +474,8 @@ public class YYModelThread
   }
 
   /**
-   * ¥ı¸g¹Lmodel1ªº¹Bºâ«á,¦A¸g¹Lgamma®Õ¥¿©Ò±oªº­È
-   * Â²ºÙ¬°GS­È
+   * å…ˆç¶“émodel1çš„é‹ç®—å¾Œ,å†ç¶“égammaæ ¡æ­£æ‰€å¾—çš„å€¼
+   * ç°¡ç¨±ç‚ºGSå€¼
    * @param rgbValue double[]
    * @param model1 SCurveModel1Thread
    * @return double[]
@@ -524,7 +524,7 @@ public class YYModelThread
   }
 
   /**
-   * ¸g¹LGamma¤Ï®Õ¥¿,µM«á¦A³z¹LSCurveI³B²z
+   * ç¶“éGammaåæ ¡æ­£,ç„¶å¾Œå†é€éSCurveIè™•ç†
    * @param rgbValue double[]
    * @param model1 SCurveModel1Thread
    * @return double[]
@@ -546,7 +546,7 @@ public class YYModelThread
   }
 
   /**
-   * ¸Ñkr kg kb
+   * è§£kr kg kb
    * @param originalRGB double[]
    * @param modelRGB double[]
    * @param answerRGB double[]
@@ -555,7 +555,7 @@ public class YYModelThread
   protected double[] solve(double[] originalRGB, double[] modelRGB,
                            double[] answerRGB) {
     //=========================================================================
-    // ´M§ä0­È©Ò¦bªºchannel
+    // å°‹æ‰¾0å€¼æ‰€åœ¨çš„channel
     //=========================================================================
     int zeroIndex = -1;
     for (int x = 0; x < originalRGB.length; x++) {
@@ -569,27 +569,27 @@ public class YYModelThread
     //==========================================================================
     if (zeroIndex != -1) {
       //=======================================================================
-      // ¨â¨âÀW¹D¦³ª½ªºª¬ªp: ª½±µ¥i±ok­È
+      // å…©å…©é »é“æœ‰ç›´çš„ç‹€æ³: ç›´æ¥å¯å¾—kå€¼
       //=======================================================================
       double kr = 0, kg = 0, kb = 0;
       switch (zeroIndex) {
         case 0:
 
-          //R¬°0
+          //Rç‚º0
           kr = 0;
           kg = answerRGB[2] / modelRGB[1];
           kb = answerRGB[1] / modelRGB[2];
           break;
         case 1:
 
-          //G¬°0
+          //Gç‚º0
           kr = answerRGB[2] / modelRGB[0];
           kg = 0;
           kb = answerRGB[0] / modelRGB[2];
           break;
         case 2:
 
-          //B¬°0
+          //Bç‚º0
           kr = answerRGB[1] / modelRGB[0];
           kg = answerRGB[0] / modelRGB[1];
           kb = 0;
@@ -602,7 +602,7 @@ public class YYModelThread
     }
     else {
       //=======================================================================
-      // ¤TÀW¹D¬Ò¦³­Èªºª¬ªp: ¸ÑÁp¥ß¤èµ{¦¡
+      // ä¸‰é »é“çš†æœ‰å€¼çš„ç‹€æ³: è§£è¯ç«‹æ–¹ç¨‹å¼
       //=======================================================================
       double[] funcR = new double[] {
           0, modelRGB[1], modelRGB[2]};
@@ -623,7 +623,7 @@ public class YYModelThread
       Matrix mFunc = new Matrix(func);
       Matrix mAns = new Matrix(ans);
       if (!mFunc.isNonsingular()) {
-        //singular matrixµLªk¨D¸Ñ
+        //singular matrixç„¡æ³•æ±‚è§£
         return null;
       }
       Matrix result = mFunc.solve(mAns).transpose();
@@ -719,7 +719,7 @@ public class YYModelThread
 
   protected void initCoefficientsRange(double[][] kCoefs) {
     //==========================================================================
-    // ­pºâ­¡¥N«Y¼Æ½d³ò
+    // è¨ˆç®—è¿­ä»£ä¿‚æ•¸ç¯„åœ
     //==========================================================================
     double krMax = Double.MIN_VALUE,
         kgMax = Double.MIN_VALUE,
@@ -738,23 +738,23 @@ public class YYModelThread
   }
 
   /**
-   * ¥H­¡¥Nªº¤è¦¡¨D³Ì¨Î¸Ñ
+   * ä»¥è¿­ä»£çš„æ–¹å¼æ±‚æœ€ä½³è§£
    * @param kCoefs double[][]
    * @return double[]
    */
   protected final double[] findBestKCoefficientByCoefRange(double[][] kCoefs) {
-    //ªì©l¤Æ­¡¥N«Y¼Æ
+    //åˆå§‹åŒ–è¿­ä»£ä¿‚æ•¸
     initCoefficientsRange(kCoefs);
 //    System.out.println(coefficientsRange);
 
     //==========================================================================
-    // ²£¥Í°V½m¥Î¦â¶ô
+    // ç”¢ç”Ÿè¨“ç·´ç”¨è‰²å¡Š
     //==========================================================================
     patchList = lcdTarget.getLabPatchList();
     whitePatch = lcdTarget.getWhitePatch();
     //==========================================================================
 
-    //»PThreadCalculator¦@§@­pºâ
+    //èˆ‡ThreadCalculatorå…±ä½œè¨ˆç®—
     IterativeReport bestIterativeReport = ThreadCalculator.
         produceBestIterativeReport(this);
 
@@ -786,7 +786,7 @@ public class YYModelThread
   }
 
   /**
-   * ±±¨î¹Bºâ°õ¦æºüªº¼Æ¥Ø
+   * æ§åˆ¶é‹ç®—åŸ·è¡Œç·’çš„æ•¸ç›®
    */
   protected int threadCount = 1; //ThreadCalculator.THREAD_COUNT;
 
@@ -823,7 +823,7 @@ public class YYModelThread
     IterateCoefficient coef = (IterateCoefficient) coefficient;
 
     //==========================================================================
-    //²£¥Í«Y¼Æ
+    //ç”¢ç”Ÿä¿‚æ•¸
     //==========================================================================
     double krS = coef.iterativeCoefficient.kr.start;
     double krE = coef.iterativeCoefficient.kr.end;
@@ -831,7 +831,7 @@ public class YYModelThread
     //==========================================================================
 
     //==========================================================================
-    //³]©w°õ¦æºü
+    //è¨­å®šåŸ·è¡Œç·’
     //==========================================================================
     ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
     List<Future<IterativeReport>>
@@ -839,19 +839,19 @@ public class YYModelThread
     //==========================================================================
 
     //==========================================================================
-    //¦h°õ¦æºü¹Bºâ
+    //å¤šåŸ·è¡Œç·’é‹ç®—
     //==========================================================================
     for (double kr = krS; kr <= krE; kr += krStep) {
       IterativeFactorThread task = new IterativeFactorThread(kr,
           coef.iterativeCoefficient, coef.tmpFactors, this);
-      //±N¹Bºâ¤u§@©ñ¨ìThread pool¤¤½ü´À°õ¦æ
+      //å°‡é‹ç®—å·¥ä½œæ”¾åˆ°Thread poolä¸­è¼ªæ›¿åŸ·è¡Œ
       Future<IterativeReport> future = executorService.submit(task);
-      //±N¹Bºâµ²ªG©ñ¨ìList¤¤
+      //å°‡é‹ç®—çµæœæ”¾åˆ°Listä¸­
       futureList.add(future);
     }
     //==========================================================================
     //==========================================================================
-    //±N©Ò¦³¹Bºâµ²ªG¤¤,§ä¥X³Ì¨Îµ²ªG
+    //å°‡æ‰€æœ‰é‹ç®—çµæœä¸­,æ‰¾å‡ºæœ€ä½³çµæœ
     //==========================================================================
     return ThreadCalculator.getBestIterativeReport(futureList, executorService);
   }
@@ -874,14 +874,14 @@ public class YYModelThread
       super(lcdModel);
 
       //=========================================================================
-      //¬°¤FÁ×§K°õ¦æºü¶¡¤¬¬Û·m¸ê·½ªº°İÃD,©Ò¥Hª½±µcopy¤@¥÷¤U¨Ó
+      //ç‚ºäº†é¿å…åŸ·è¡Œç·’é–“äº’ç›¸æ¶è³‡æºçš„å•é¡Œ,æ‰€ä»¥ç›´æ¥copyä¸€ä»½ä¸‹ä¾†
       //=========================================================================
       int size = tmpFactors.length;
       this.factors = new Factor[size];
       System.arraycopy(tmpFactors, 0, this.factors, 0, size);
 
       //=========================================================================
-      //³]©w«Y¼Æ
+      //è¨­å®šä¿‚æ•¸
       //=========================================================================
       this.kr = kr;
       this.kgS = iterativeCoefficient.kg.start;
@@ -898,13 +898,13 @@ public class YYModelThread
       factors[RGBBase.Channel.R.getArrayIndex()].k = kr;
 //      System.out.println(kgS + " " + kgE +" "+kgStep+ " " + kbS + " " + kbE+" "+kbStep);
       //=========================================================================
-      //°j°é­¡¥N
+      //è¿´åœˆè¿­ä»£
       //=========================================================================
       for (double kg = kgS; kg <= kgE; kg += kgStep) {
         for (double kb = kbS; kb <= kbE; kb += kbStep) {
 
           //==========================================================
-          //³]©w°Ñ¼Æ
+          //è¨­å®šåƒæ•¸
           //==========================================================
           factors[RGBBase.Channel.G.getArrayIndex()].k = kg;
           factors[RGBBase.Channel.B.getArrayIndex()].k = kb;
@@ -992,7 +992,7 @@ public class YYModelThread
     double[] bOutput = new double[256];
     LCDModel.Factor[] factors = model1.getModelFactors();
 
-    //¥H³æ¤@ÀW¹D¦³­Èªº¦â¶ô©ñ¨ìSCurveI,©Ò±o¨ìªºmodelµ²ªG
+    //ä»¥å–®ä¸€é »é“æœ‰å€¼çš„è‰²å¡Šæ”¾åˆ°SCurveI,æ‰€å¾—åˆ°çš„modelçµæœ
     for (int x = 0; x < 256; x++) {
       double d = (double) x / 255;
 
@@ -1022,7 +1022,7 @@ public class YYModelThread
   protected final double[][] produceRGB2XYZ_3x3(Collection<Patch>
       singleChannelPatch) {
     //==========================================================================
-    // Âà¦¨rgb©MXYZªºdouble°}¦C
+    // è½‰æˆrgbå’ŒXYZçš„doubleé™£åˆ—
     //==========================================================================
     int size = singleChannelPatch.size();
     double[][] rgbArray = new double[size][3];

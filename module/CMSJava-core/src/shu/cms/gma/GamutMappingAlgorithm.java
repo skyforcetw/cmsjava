@@ -9,7 +9,7 @@ import shu.cms.gma.gbp.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¦â°ì¹ïÀ³ºtºâªkªº©â¶HÃş§O
+ * è‰²åŸŸå°æ‡‰æ¼”ç®—æ³•çš„æŠ½è±¡é¡åˆ¥
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -44,7 +44,7 @@ public abstract class GamutMappingAlgorithm {
                                 BoundaryDescriptorType boundaryDescriptorType) {
 
     if (boundaryDescriptorType == BoundaryDescriptorType.BoundRGB) {
-      //±Ä¥ÎRGB§@¬°Boundary­pºâ
+      //æ¡ç”¨RGBä½œç‚ºBoundaryè¨ˆç®—
       this.gbd = GamutBoundaryRGBDescriptor.getInstance(
           GamutBoundaryRGBDescriptor.Style.Step, profileColorSpace);
     }
@@ -52,7 +52,7 @@ public abstract class GamutMappingAlgorithm {
 
     }
     else {
-      //Bound3D¸òBound2DPlus
+      //Bound3Dè·ŸBound2DPlus
       if (gbp == null) {
         this.gbp = new GamutBoundaryPoint(profileColorSpace);
       }
@@ -97,8 +97,8 @@ public abstract class GamutMappingAlgorithm {
   }
 
   /**
-   * Ãä¬É¤£½T©wªº¦¸¼Æ
-   * (§ì¨ìªºÃä¬É¨Ã¨S¦³¸¨¦b¤T¨¤§Î¤º)
+   * é‚Šç•Œä¸ç¢ºå®šçš„æ¬¡æ•¸
+   * (æŠ“åˆ°çš„é‚Šç•Œä¸¦æ²’æœ‰è½åœ¨ä¸‰è§’å½¢å…§)
    * @return double
    */
   public final int getUncertainBoundaryCount() {

@@ -34,7 +34,7 @@ public class DCTarget
 
     String dirname = "Measurement Files/camera/htc legend";
     String[] lightsources = new String[] {
-        "¤é¥ú", "³±¤Ñ", "¿Ã¥ú¿O", "Âëµ·¿O"};
+        "æ—¥å…‰", "é™°å¤©", "è¢å…‰ç‡ˆ", "é¢çµ²ç‡ˆ"};
     int size = lightsources.length;
     DCTarget[] targets = new DCTarget[size];
     for (int x = 0; x < size; x++) {
@@ -60,14 +60,14 @@ public class DCTarget
   }
 
   /**
-   * ©Ò¦³ªº¦â¶ô·|¨Ì·Ó¥ú·½ªºªº«G«×§@¥¿³W¤Æ
+   * æ‰€æœ‰çš„è‰²å¡Šæœƒä¾ç…§å…‰æºçš„çš„äº®åº¦ä½œæ­£è¦åŒ–
    * @param patchList List
    * @param illuminant Illuminant
    */
   protected DCTarget(List<Patch> patchList, Illuminant illuminant) {
     super(patchList);
     this.illuminant = illuminant;
-    //luminance¥H¥ú·½¬°¥Õ¤ñ¸û¾A·í, ­n¬O¥H¦â¶ô¥Õ·í°µ¥ú·½, ¨º·í©ç¨ì¤ñ¦â¶ô¥ÕÁÙ­n«Gªº¼v¹³, ¥i¯à·|³Qclip
+    //luminanceä»¥å…‰æºç‚ºç™½æ¯”è¼ƒé©ç•¶, è¦æ˜¯ä»¥è‰²å¡Šç™½ç•¶åšå…‰æº, é‚£ç•¶æ‹åˆ°æ¯”è‰²å¡Šç™½é‚„è¦äº®çš„å½±åƒ, å¯èƒ½æœƒè¢«clip
     this.luminance = illuminant.getSpectra().getXYZ();
     calculateNormalizedXYZ();
   }
@@ -86,8 +86,8 @@ public class DCTarget
   public Filter filter = new Filter();
   public final class Filter {
     /**
-     * ¨úÀôÂ¶¦b¾Éªí¥|©Pªº¦Ç¶¥¥H¥~ªº¦â¶ô
-     * ¬O¬°¤F»s§@Profile¨Ï¥Î.
+     * å–ç’°ç¹åœ¨å°è¡¨å››å‘¨çš„ç°éšä»¥å¤–çš„è‰²å¡Š
+     * æ˜¯ç‚ºäº†è£½ä½œProfileä½¿ç”¨.
      * @return List
      */
     public List<Patch> patchListWithoutSurroundingGrayScale() {
@@ -132,8 +132,8 @@ public class DCTarget
     }
 
     /**
-     * ¨ú±o¥i¥H¥Î¨Ó»s§@Profileªº¾Éªí
-     * (³q±`¨Ó»¡,CCDC©MCCSG¬O¥h±¼©P³òªº¦Ç¶¥¦â¶ô,¨ä¥L¾É¨ãªº¸Ü«h¬Oª½±µ±N©Ò¦³¦â¶ô¦^¶Ç)
+     * å–å¾—å¯ä»¥ç”¨ä¾†è£½ä½œProfileçš„å°è¡¨
+     * (é€šå¸¸ä¾†èªª,CCDCå’ŒCCSGæ˜¯å»æ‰å‘¨åœçš„ç°éšè‰²å¡Š,å…¶ä»–å°å…·çš„è©±å‰‡æ˜¯ç›´æ¥å°‡æ‰€æœ‰è‰²å¡Šå›å‚³)
      * @return List
      */
     public List<Patch> patchListForProfile() {
@@ -174,7 +174,7 @@ public class DCTarget
     private List<Patch> grayScale = null;
 
     /**
-     * ¨ú±o¦Ç¶¥¾Éªí
+     * å–å¾—ç°éšå°è¡¨
      * @return List
      */
     public List<Patch> grayScale() {
@@ -200,12 +200,12 @@ public class DCTarget
     /**
      *
      * @return boolean
-     * @todo L icc §¡¤Ã«×ÅçÃÒ
-     * ¥Õ¦â¦â¶ôªºRGB­È¬°210-245
-     * Á×§K¹LÃn
-     * ¶Â¦â¦â¶ô­n¤p©ó23
-     * ¤¤¶¡©M©PÃäªº¥Õ¦â¦â¶ô®t¶Z»İ¤p©ó12
-     * ©P³òªº¦â¶ô®t¶Z»İ¤p©ó15
+     * @todo L icc å‡å‹»åº¦é©—è­‰
+     * ç™½è‰²è‰²å¡Šçš„RGBå€¼ç‚º210-245
+     * é¿å…éæ›
+     * é»‘è‰²è‰²å¡Šè¦å°æ–¼23
+     * ä¸­é–“å’Œå‘¨é‚Šçš„ç™½è‰²è‰²å¡Šå·®è·éœ€å°æ–¼12
+     * å‘¨åœçš„è‰²å¡Šå·®è·éœ€å°æ–¼15
      */
     public boolean validateLightUniform() {
       List<Patch> surrounding = getSurroundingGrayScale();
@@ -214,8 +214,8 @@ public class DCTarget
     }
 
     /**
-     * ¥ş¤Ï®gÄµ§i
-     * ·|§PÂ_¦â¶ô¬O§_¦³¤TÀW¹D¬Òµ¥©ó255
+     * å…¨åå°„è­¦å‘Š
+     * æœƒåˆ¤æ–·è‰²å¡Šæ˜¯å¦æœ‰ä¸‰é »é“çš†ç­‰æ–¼255
      * @return boolean
      */
     public boolean totalInternalReflectionWarning() {
@@ -228,7 +228,7 @@ public class DCTarget
     }
 
     /**
-     * ¬O§_¦³¦â¶ô¤w¸g¦³ÀW¹D¹¡©M(¦³ÀW¹D¹F¨ì³Ì¤j­È)
+     * æ˜¯å¦æœ‰è‰²å¡Šå·²ç¶“æœ‰é »é“é£½å’Œ(æœ‰é »é“é”åˆ°æœ€å¤§å€¼)
      * @return boolean
      */
     public boolean validateChannelSaturation() {
@@ -242,7 +242,7 @@ public class DCTarget
     }
 
     /**
-     * ÅçÃÒGrayScale¬O§_¶¶ºZ¨S¦³¤ÏÂà
+     * é©—è­‰GrayScaleæ˜¯å¦é †æš¢æ²’æœ‰åè½‰
      * @return boolean
      */
     public boolean validateGrayScale() {
@@ -272,7 +272,7 @@ public class DCTarget
   }
 
   /**
-   * Âà¦¨LabªºPatch List
+   * è½‰æˆLabçš„Patch List
    * @return List
    */
   public List<Patch> getLabPatchList() {
@@ -283,8 +283,8 @@ public class DCTarget
   }
 
   /**
-   * ±NRGB¥¿³W¤Æ
-   * ¦]¬°IdealDigitalCameraªºRGB½d³ò¤£º¡¨¬0~1,¦]¦¹§ä´M¨ìR/G/B¦U¦Ûªºmaximum,¨Ï©Ò¦³RGB¥¿³W¤Æ.
+   * å°‡RGBæ­£è¦åŒ–
+   * å› ç‚ºIdealDigitalCameraçš„RGBç¯„åœä¸æ»¿è¶³0~1,å› æ­¤æ‰¾å°‹åˆ°R/G/Bå„è‡ªçš„maximum,ä½¿æ‰€æœ‰RGBæ­£è¦åŒ–.
    * @param camera IdealDigitalCamera
    */
   protected void normalizeIdealDigitalCameraRGB(IdealDigitalCamera camera) {
@@ -308,7 +308,7 @@ public class DCTarget
   }
 
   /**
-   * ±N¾Éªíªºrgb¥Hnormal¶i¦æ¥¿³W¤Æ
+   * å°‡å°è¡¨çš„rgbä»¥normalé€²è¡Œæ­£è¦åŒ–
    * @param normal double[]
    */
   public void normalizeRGB(double[] normal) {
@@ -335,7 +335,7 @@ public class DCTarget
   protected Patch brightestPatch;
 
   /**
-   *  ¨ú±o¾É¨ã¤¤³Ì«Gªº¦â¶ô
+   *  å–å¾—å°å…·ä¸­æœ€äº®çš„è‰²å¡Š
    * @return Patch
    */
   public Patch getBrightestPatch() {

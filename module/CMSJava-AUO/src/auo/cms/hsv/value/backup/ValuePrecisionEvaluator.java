@@ -57,7 +57,7 @@ public class ValuePrecisionEvaluator {
                                int bit2, int bit3) {
 
     int max_min10 = max - min; //10bit
-    int max_bar10 = minusMax - max; //10bit barªº¨úªk·|¾É­P³Ì«áµ²ªG¬°10 or 11bit
+    int max_bar10 = minusMax - max; //10bit barçš„å–æ³•æœƒå°è‡´æœ€å¾Œçµæœç‚º10 or 11bit
     final int totalBit = 29 - bit1 - bit2 - bit3;
 
     int originalResult = newValue << totalBit;
@@ -101,7 +101,7 @@ public class ValuePrecisionEvaluator {
     boolean negative = offset < 0;
     offset10 = Math.abs(offset10);
     int max_min10 = max - min; //10bit
-    int max_bar10 = minusMax - max; //10bit barªº¨úªk·|¾É­P³Ì«áµ²ªG¬°10 or 11bit
+    int max_bar10 = minusMax - max; //10bit barçš„å–æ³•æœƒå°è‡´æœ€å¾Œçµæœç‚º10 or 11bit
     if (showMessage) {
       System.out.println("offset10: " + offset10);
     }
@@ -113,10 +113,10 @@ public class ValuePrecisionEvaluator {
       System.out.println("offsetXmax_min20: " + offsetXmax_min20);
     }
 
-    long offsetXmax_min20Xmax_bar10 = offsetXmax_min20 * max_bar10; //³Ì¤j¥u¨ì 20 - bit3 + 7 bit
+    long offsetXmax_min20Xmax_bar10 = offsetXmax_min20 * max_bar10; //æœ€å¤§åªåˆ° 20 - bit3 + 7 bit
     _offsetXmax_min20Xmax_bar10 = offsetXmax_min20Xmax_bar10 >
         _offsetXmax_min20Xmax_bar10 ? offsetXmax_min20Xmax_bar10 :
-        _offsetXmax_min20Xmax_bar10; //¥Hbit3=10¨Ó»¡, ¬°17bit
+        _offsetXmax_min20Xmax_bar10; //ä»¥bit3=10ä¾†èªª, ç‚º17bit
     if (showMessage) {
       System.out.println("offsetXmax_min20Xmax_bar10: " +
                          offsetXmax_min20Xmax_bar10);
@@ -125,7 +125,7 @@ public class ValuePrecisionEvaluator {
     long offsetXmax_minXmax_bar30 = (offsetXmax_min20Xmax_bar10) >> bit2; //28 - bit2 -bit3 bit
     _offsetXmax_minXmax_bar30 = offsetXmax_minXmax_bar30 >
         _offsetXmax_minXmax_bar30 ? offsetXmax_minXmax_bar30 :
-        _offsetXmax_minXmax_bar30; //¥Hbit2 = 8, bit3 = 10¨Ó»¡, ¬°9bit
+        _offsetXmax_minXmax_bar30; //ä»¥bit2 = 8, bit3 = 10ä¾†èªª, ç‚º9bit
     if (showMessage) {
       System.out.println("offsetXmax_minXmax_bar30: " +
                          offsetXmax_minXmax_bar30);
@@ -157,8 +157,8 @@ public class ValuePrecisionEvaluator {
 
     final int totalBit = 29 - bit1 - bit2 - bit3;
 
-    //³Ì«á¿é¥Xbit¼Æ, ¨übit 1/2/3¼vÅT
-    //©T©w¿é¥X¬°10bit 0~1023
+    //æœ€å¾Œè¼¸å‡ºbitæ•¸, å—bit 1/2/3å½±éŸ¿
+    //å›ºå®šè¼¸å‡ºç‚º10bit 0~1023
     int shiftResult = (int) (result >> (totalBit));
     if (showMessage) {
       System.out.println("shiftResult: " + shiftResult);
@@ -172,7 +172,7 @@ public class ValuePrecisionEvaluator {
     }
 //    staticShiftResult = (shiftResult > staticShiftResult) ? shiftResult :
 //        staticShiftResult;
-    return shiftResult; //¥i¥H¹F11bit
+    return shiftResult; //å¯ä»¥é”11bit
 //    return (int) (max + ( (double) offset) * (max - min) / (Math.pow(2, 8) - 1));
   }
 
@@ -372,10 +372,10 @@ public class ValuePrecisionEvaluator {
 //          grid[min][max] = delta;
 
 
-                idealgrid[min][max] = v0; //½Õ¾ãµ²ªG
+                idealgrid[min][max] = v0; //èª¿æ•´çµæœ
                 acturalgrid[min][max] = v1;
-                deltagrid[min][max] = Math.abs(v0 - max); //½Õ¾ã¶q
-                deltagrid2[min][max] = Math.abs(v1 - v0); //¹ê»Ú»P²z·Q½Õ¾ã¶qªº®t²§
+                deltagrid[min][max] = Math.abs(v0 - max); //èª¿æ•´é‡
+                deltagrid2[min][max] = Math.abs(v1 - v0); //å¯¦éš›èˆ‡ç†æƒ³èª¿æ•´é‡çš„å·®ç•°
               }
             }
 //      Plot3D plot = Plot3D.getInstance("", 800, 800);

@@ -20,17 +20,17 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * «e¾É¼Ò¦¡:
- * ¥h°£±¼º|¥ú¼vÅT«á,°²³]LCD¥[¦¨©Ê¨ÌÂÂ¦¨¥ß,¶i¦æXYZªº¬Û¥[
- * ¤Ï±À¼Ò¦¡:
- * §Q¥Î¦h­Ó¤£¦PRGBªºXYZ­È©Ò²£¥Íªºmax matrix,¤£Â_ªº¤Ï±ÀRGB,ª½¨ì¥i®e³\¬°¤î
+ * å‰å°æ¨¡å¼:
+ * å»é™¤æ‰æ¼å…‰å½±éŸ¿å¾Œ,å‡è¨­LCDåŠ æˆæ€§ä¾èˆŠæˆç«‹,é€²è¡ŒXYZçš„ç›¸åŠ 
+ * åæ¨æ¨¡å¼:
+ * åˆ©ç”¨å¤šå€‹ä¸åŒRGBçš„XYZå€¼æ‰€ç”¢ç”Ÿçš„max matrix,ä¸æ–·çš„åæ¨RGB,ç›´åˆ°å¯å®¹è¨±ç‚ºæ­¢
  *
- * @note 1:FlareType°È¥²³]¬°Darkest,¬O¬°¤F«OÃÒ©Ò¦³relative XYZ³£¬O¥¿¼Æ.
- * ­n¬O¦³relative XYZ¬O­t¼Æ,getRGB­pºâ®É,²£¥ÍªºmaxInverMatrix·|¦³°İÃD,³y¦¨­pºâ»~®t«Ü¤j.
- * ¦]¦¹­n«OÃÒXYZ¬°¥¿¼Æ,°È¥²³]©w°Ñ¼Æ¬°Darkest.
+ * @note 1:FlareTypeå‹™å¿…è¨­ç‚ºDarkest,æ˜¯ç‚ºäº†ä¿è­‰æ‰€æœ‰relative XYZéƒ½æ˜¯æ­£æ•¸.
+ * è¦æ˜¯æœ‰relative XYZæ˜¯è² æ•¸,getRGBè¨ˆç®—æ™‚,ç”¢ç”Ÿçš„maxInverMatrixæœƒæœ‰å•é¡Œ,é€ æˆè¨ˆç®—èª¤å·®å¾ˆå¤§.
+ * å› æ­¤è¦ä¿è­‰XYZç‚ºæ­£æ•¸,å‹™å¿…è¨­å®šåƒæ•¸ç‚ºDarkest.
  *
- * @note 2:¨ì¥Ø«e¬°¤î(08/03/22)©Ò°µªº¦¸¦¸·Ç½TLCD Model
- * @note 3:±Æ¦WÅÜ§ó, ¬°¦¸·Ç½TLCD Model(08/05/16)
+ * @note 2:åˆ°ç›®å‰ç‚ºæ­¢(08/03/22)æ‰€åšçš„æ¬¡æ¬¡æº–ç¢ºLCD Model
+ * @note 3:æ’åè®Šæ›´, ç‚ºæ¬¡æº–ç¢ºLCD Model(08/05/16)
  * <p>Copyright: Copyright (c) 2008</p>
  *
  * <p>Company: </p>
@@ -46,8 +46,8 @@ public class MultiMatrixModel
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * gamma®Õ¥¿ªº¤èªk.
-   * (¤£«ØÄ³¥ÎByPower)
+   * gammaæ ¡æ­£çš„æ–¹æ³•.
+   * (ä¸å»ºè­°ç”¨ByPower)
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -65,7 +65,7 @@ public class MultiMatrixModel
       ByLuminance;
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    * @param factor LCDModelFactor
    */
   public MultiMatrixModel(LCDModelFactor factor) {
@@ -74,7 +74,7 @@ public class MultiMatrixModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * æ±‚å€¼æ¨¡å¼
    * @param lcdTarget LCDTarget
    */
   public MultiMatrixModel(LCDTarget lcdTarget) {
@@ -86,7 +86,7 @@ public class MultiMatrixModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * æ±‚å€¼æ¨¡å¼
    * @param lcdTarget LCDTarget
    * @param rCorrectLCDTarget LCDTarget
    * @param gammaCorrectMethod GammaCorrectMethod
@@ -107,20 +107,20 @@ public class MultiMatrixModel
 
   private LCDTargetInterpolator interpolator;
   /**
-   * ±Ä¥Îmulti-matrix¨D¸Ñ®É,³Ì¦hªº­¡¥N(¨D¸Ñ)¦¸¼Æ
+   * æ¡ç”¨multi-matrixæ±‚è§£æ™‚,æœ€å¤šçš„è¿­ä»£(æ±‚è§£)æ¬¡æ•¸
    */
   public final static int MAX_ITERATIVE_TIMES = 50;
   private boolean touchMaxIterativeTimes = false;
 
   /**
-   * ­«¸m touch max iterative¦¸¼Æ ªº­pºâ
+   * é‡ç½® touch max iterativeæ¬¡æ•¸ çš„è¨ˆç®—
    */
   protected void resetTouchMaxIterativeTimes() {
     touchMaxIterativeTimes = false;
   }
 
   /**
-   * ³]©wmax iterativeªº¦¸¼Æ
+   * è¨­å®šmax iterativeçš„æ¬¡æ•¸
    * @param times int
    */
   protected void setTouchMaxIterativeTimes(int times) {
@@ -128,11 +128,11 @@ public class MultiMatrixModel
   }
 
   public static enum GetRGBMode {
-    //³æ¯Â¨Ï¥Î¤UMode1¤ñMode2¨Óªº·Ç
+    //å–®ç´”ä½¿ç”¨ä¸‹Mode1æ¯”Mode2ä¾†çš„æº–
 
-    Mode1(true, false), //Mode1, ¤£¥ÎMatries2, §Y¬O¥Î³Ì¤j­ÈRGB¥h²Õ¦¨¯x°}
-    Mode2(false, true), //Mode2, ±Ä¥ÎMatries2, §Y¬O¥Î³Ì¬Ûªñªº«G«×ªº¥Õ¦â(R=G=B), ¥h²Õ¦¨¯x°}
-    //¦ı¬O¨âªÌ·f°t¨Ï¥Î¤S·|¤ñ³æ¿W¨Ï¥Î§ó¨Óªº·Ç, ¦ı¬O¨ä¼Æ­È·|¤ñ¸û¤£smooth
+    Mode1(true, false), //Mode1, ä¸ç”¨Matries2, å³æ˜¯ç”¨æœ€å¤§å€¼RGBå»çµ„æˆçŸ©é™£
+    Mode2(false, true), //Mode2, æ¡ç”¨Matries2, å³æ˜¯ç”¨æœ€ç›¸è¿‘çš„äº®åº¦çš„ç™½è‰²(R=G=B), å»çµ„æˆçŸ©é™£
+    //ä½†æ˜¯å…©è€…æ­é…ä½¿ç”¨åˆæœƒæ¯”å–®ç¨ä½¿ç”¨æ›´ä¾†çš„æº–, ä½†æ˜¯å…¶æ•¸å€¼æœƒæ¯”è¼ƒä¸smooth
     Mode12(true, true);
 
     private GetRGBMode(boolean mode1, boolean mode2) {
@@ -145,7 +145,7 @@ public class MultiMatrixModel
   }
 
   /**
-   * ³]©wgetRGB®É±Ä¥Îªº¼Ò¦¡, mode1¸û¬°Ã­©w
+   * è¨­å®šgetRGBæ™‚æ¡ç”¨çš„æ¨¡å¼, mode1è¼ƒç‚ºç©©å®š
    */
   private GetRGBMode getRGBMode = GetRGBMode.Mode1;
   /* GetRGBMode.valueOf(AutoCPOptions.getString(
@@ -156,7 +156,7 @@ public class MultiMatrixModel
   }
 
   /**
-   * ­pºâRGB,¤Ï±À¼Ò¦¡
+   * è¨ˆç®—RGB,åæ¨æ¨¡å¼
    * @param XYZ CIEXYZ
    * @param factor Factor[]
    * @return RGB
@@ -168,8 +168,8 @@ public class MultiMatrixModel
     RGB rgb1 = null, rgb2 = null;
 
     //==========================================================================
-    // §Q¥Î¨âºØ¤£¦Pªººtºâªk, ­pºâ¥X¦â®t³Ì¤pªÌ
-    // ³o¬O¤@­Ó 1+1 >2 ªº³Ì¦n¨Ò¤l, ¤¬¸É¯ÊÂI, µ½¥ÎÀuÂI
+    // åˆ©ç”¨å…©ç¨®ä¸åŒçš„æ¼”ç®—æ³•, è¨ˆç®—å‡ºè‰²å·®æœ€å°è€…
+    // é€™æ˜¯ä¸€å€‹ 1+1 >2 çš„æœ€å¥½ä¾‹å­, äº’è£œç¼ºé», å–„ç”¨å„ªé»
     //==========================================================================
     if (getRGBMode.mode1) {
       rgb1 = getRGBByMultiMatrixRange(rationalXYZ, false);
@@ -214,12 +214,12 @@ public class MultiMatrixModel
    *
    * @param luminanceRoughRGB RGB
    * @param XYZ CIEXYZ
-   * @return RGB ·sªºLuminance RGB
+   * @return RGB æ–°çš„Luminance RGB
    */
   protected RGB getRGBByMultiMatrix(final RGB luminanceRoughRGB,
                                     final CIEXYZ XYZ) {
     //==========================================================================
-    // ­×¥¿¬°DAC Value
+    // ä¿®æ­£ç‚ºDAC Value
     //==========================================================================
     RGB rgb = (RGB) luminanceRoughRGB.clone();
     double[] luminanceRGBValues = new double[3];
@@ -227,23 +227,23 @@ public class MultiMatrixModel
     correct.gammaUncorrect(rgb);
     //==========================================================================
 
-    //²£¥Í³Ì¤j­È¯x°}³Ì¦n¤£­n¦³0­È
+    //ç”¢ç”Ÿæœ€å¤§å€¼çŸ©é™£æœ€å¥½ä¸è¦æœ‰0å€¼
     avoidLessThenZero(rgb);
     double[][] inverseMatrix = getXYZInverseMatrix(rgb);
     if (inverseMatrix == null) {
-      //ª½±µ¦^¶Ç­ì¥»ªºluminanceRoughRGB§Y¥i
+      //ç›´æ¥å›å‚³åŸæœ¬çš„luminanceRoughRGBå³å¯
       return luminanceRoughRGB;
     }
     else {
-      //¦¹®É¦^¶ÇªºRGB¬°luminance RGBªº¤ñ­È
+      //æ­¤æ™‚å›å‚³çš„RGBç‚ºluminance RGBçš„æ¯”å€¼
       RGB newRGB = matries.XYZToRGBByMatrix(XYZ, inverseMatrix);
 
       if (newRGB == null) {
         return luminanceRoughRGB;
       }
       //========================================================================
-      // ³o¨â­Ó¨BÆJ·¥¬°­«­n! ­º¥ı­n±NRGB§@¥¿³W¤Æ¨ì0~1,¤~¯à­¼¤W­ì¥»ªºRGB luminance­È
-      // ­pºâ¥X¨Óªº¤~¬O¥¿½T·sªºRGB luminance
+      // é€™å…©å€‹æ­¥é©Ÿæ¥µç‚ºé‡è¦! é¦–å…ˆè¦å°‡RGBä½œæ­£è¦åŒ–åˆ°0~1,æ‰èƒ½ä¹˜ä¸ŠåŸæœ¬çš„RGB luminanceå€¼
+      // è¨ˆç®—å‡ºä¾†çš„æ‰æ˜¯æ­£ç¢ºæ–°çš„RGB luminance
       //========================================================================
 
       newRGB.changeMaxValue(RGB.MaxValue.Double1);
@@ -268,7 +268,7 @@ public class MultiMatrixModel
   }
 
   /**
-   * ±NluminanceRGBÂà¦^DAC Value RGB«á,¦A¶q¤Æ,¬İ¬O§_¬Ûµ¥
+   * å°‡luminanceRGBè½‰å›DAC Value RGBå¾Œ,å†é‡åŒ–,çœ‹æ˜¯å¦ç›¸ç­‰
    * @param luminanceRGB1 RGB
    * @param luminanceRGB2 RGB
    * @param maxValue MaxValue
@@ -292,7 +292,7 @@ public class MultiMatrixModel
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * §ä¨ì«G«×³Ì¬ÛªñªºwhiteªºXYZ, ¥H¦¹XYZ·í§@ ³Ì¤j­È¯x°} ¥h¶i¦æmatrix¹Bºâ, ±o¨ì²Ä¤@µ§RGB­È
+   * æ‰¾åˆ°äº®åº¦æœ€ç›¸è¿‘çš„whiteçš„XYZ, ä»¥æ­¤XYZç•¶ä½œ æœ€å¤§å€¼çŸ©é™£ å»é€²è¡Œmatrixé‹ç®—, å¾—åˆ°ç¬¬ä¸€ç­†RGBå€¼
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -314,7 +314,7 @@ public class MultiMatrixModel
     }
 
     /**
-     * §ä¨ì¬Û¦P«G«×ªº¥Õ¦âÀW¹Dcode
+     * æ‰¾åˆ°ç›¸åŒäº®åº¦çš„ç™½è‰²é »é“code
      * @param XYZ CIEXYZ
      * @return double
      */
@@ -350,10 +350,10 @@ public class MultiMatrixModel
   }
 
   /**
-   * ±NRGB¼Æ­È§@ÂX®i,¨ú±o³Ì¤pªº¦â®t§@¦^¶Ç
-   * (getRGBByMultiMatrixªº¶i¶¥ª©)
+   * å°‡RGBæ•¸å€¼ä½œæ“´å±•,å–å¾—æœ€å°çš„è‰²å·®ä½œå›å‚³
+   * (getRGBByMultiMatrixçš„é€²éšç‰ˆ)
    * @param XYZ CIEXYZ
-   * @param byMatries2 boolean ±Ä¥ÎbyMatries2­pºâ
+   * @param byMatries2 boolean æ¡ç”¨byMatries2è¨ˆç®—
    * @return RGB
    */
   protected RGB getRGBByMultiMatrixRange(final CIEXYZ XYZ, boolean byMatries2) {
@@ -373,12 +373,12 @@ public class MultiMatrixModel
 
       if ( (newRGB.equals(rgb) || newRGB.equals(oldrgb))
           && isRGBClosely(newRGB, rgb)) {
-        //RGB¬Ûµ¥,RGB¬O§_°÷±µªñ,newRGB¬O§_»P¤W¤W¦¸RGB¬Ûµ¥
+        //RGBç›¸ç­‰,RGBæ˜¯å¦å¤ æ¥è¿‘,newRGBæ˜¯å¦èˆ‡ä¸Šä¸Šæ¬¡RGBç›¸ç­‰
         break;
       }
 
       if (equalsAfterQuantization(newRGB, rgb, integerMaxValue)) {
-        //¶q¤Æ«á¬Ûµ¥
+        //é‡åŒ–å¾Œç›¸ç­‰
         break;
       }
 
@@ -388,7 +388,7 @@ public class MultiMatrixModel
     }
 
     correct.gammaUncorrect(rgb);
-    //±N¥¿³W¤ÆªºDAC RGBÂà¦^­ì©l¤j¤p
+    //å°‡æ­£è¦åŒ–çš„DAC RGBè½‰å›åŸå§‹å¤§å°
     changeMaxValue(rgb);
 
     rational.RGBRationalize(rgb);
@@ -396,7 +396,7 @@ public class MultiMatrixModel
   }
 
   /**
-   * stepªº¤@¥b
+   * stepçš„ä¸€åŠ
    */
   private final double halfStep = lcdTarget.getStep() / 2.;
 //  private boolean rangeRGBWork = false;
@@ -406,15 +406,15 @@ public class MultiMatrixModel
 //  }
 
   /**
-   * ÅçÃÒfirst»Psecond¨âªÌ¬O§_¬O¦X²zªºRGB(¬O§_¬Ûªñ)
+   * é©—è­‰firstèˆ‡secondå…©è€…æ˜¯å¦æ˜¯åˆç†çš„RGB(æ˜¯å¦ç›¸è¿‘)
    * @param first RGB
    * @param second RGB
    * @return boolean
    */
   private final boolean isRGBClosely(RGB first, RGB second) {
-    //¥¿­t¸¹¤£¦Pªº¦¸¼Æ
+    //æ­£è² è™Ÿä¸åŒçš„æ¬¡æ•¸
     int diffSignTimes = 0;
-    //®t²§¹F¨ì¨â­¿ªº¦¸¼Æ
+    //å·®ç•°é”åˆ°å…©å€çš„æ¬¡æ•¸
     int doubleTimes = 0;
 
     for (RGBBase.Channel c : RGBBase.Channel.RGBChannel) {
@@ -422,12 +422,12 @@ public class MultiMatrixModel
       double v2 = second.getValue(c);
       double t = v1 * v2;
       double min = Math.min(v1, v2);
-      //¥¿­t¸¹¤£¦Pªº¦¸¼Æ, ¥¿­t¸¹¤£¦P·|¨Ï t<0,
+      //æ­£è² è™Ÿä¸åŒçš„æ¬¡æ•¸, æ­£è² è™Ÿä¸åŒæœƒä½¿ t<0,
       diffSignTimes += (t < 0)
-          ? //¦pªG¦b¤@¥bªºstep¥H¤U¤S²§¸¹, ¥Nªí¨âªÌ¨ä¹ê«Ü±µªñ0, ¥i©¿²¤³o­Ó°İÃD
+          ? //å¦‚æœåœ¨ä¸€åŠçš„stepä»¥ä¸‹åˆç•°è™Ÿ, ä»£è¡¨å…©è€…å…¶å¯¦å¾ˆæ¥è¿‘0, å¯å¿½ç•¥é€™å€‹å•é¡Œ
           (Math.abs(min) < halfStep ? 0 : 1) : 0;
       t = (Math.max(v1, v2) / min);
-      //®t²§¹F¨ì¨â­¿
+      //å·®ç•°é”åˆ°å…©å€
       doubleTimes += (!Double.isInfinite(t) && t >= 2.) ? 1 : 0;
 
       if (diffSignTimes >= 1 && doubleTimes >= 1) {
@@ -439,9 +439,9 @@ public class MultiMatrixModel
   }
 
   /**
-   * ­pºâXYZ­Èªº¤Ï¯x°}
+   * è¨ˆç®—XYZå€¼çš„åçŸ©é™£
    * @param rgb RGB
-   * @return double[][] ¦^¶Ç
+   * @return double[][] å›å‚³
    */
   private final double[][] getXYZInverseMatrix(RGB rgb) {
     CIEXYZ rXYZ = this.getXYZ(rgb.R, 0, 0);
@@ -459,7 +459,7 @@ public class MultiMatrixModel
   }
 
   /**
-   * ­pºâXYZ,«e¾É¼Ò¦¡
+   * è¨ˆç®—XYZ,å‰å°æ¨¡å¼
    * @param rgb RGB
    * @param factor Factor[]
    * @return CIEXYZ
@@ -470,18 +470,18 @@ public class MultiMatrixModel
   }
 
   /**
-   * ®Ú¾Úr/g/b¤º´¡¥XXYZ
+   * æ ¹æ“šr/g/bå…§æ’å‡ºXYZ
    * @param r double
    * @param g double
    * @param b double
-   * @return CIEXYZ relative XYZ,¤è«K¤º³¡¹Bºâ¥Î
+   * @return CIEXYZ relative XYZ,æ–¹ä¾¿å…§éƒ¨é‹ç®—ç”¨
    */
   protected CIEXYZ getXYZ(double r, double g, double b) {
     return getXYZ(r, g, b, true);
   }
 
   protected CIEXYZ getXYZ(double r, double g, double b, boolean relativeXYZ) {
-    //interpolator©Ò­pºâ¥X¨ÓªºXYZ³£¬Oµ´¹ï­È
+    //interpolatoræ‰€è¨ˆç®—å‡ºä¾†çš„XYZéƒ½æ˜¯çµ•å°å€¼
     CIEXYZ rXYZ = interpolator.getPatch(RGBBase.Channel.R, r).getXYZ();
     CIEXYZ gXYZ = interpolator.getPatch(RGBBase.Channel.G, g).getXYZ();
     CIEXYZ bXYZ = interpolator.getPatch(RGBBase.Channel.B, b).getXYZ();
@@ -491,14 +491,14 @@ public class MultiMatrixModel
 
   public CIEXYZ getNeutralXYZ(double code, boolean relativeXYZ) {
     CIEXYZ XYZ = interpolator.getPatch(RGBBase.Channel.W, code).getXYZ();
-    //¦]¬°interpolator¥X¨Ó¬Oµ´¹ï­È, ©Ò¥H¤Ï¦Ó­n¬Û¤Ï³B²z
-    //©Ò¥H³oÃä­n±Ä¥ÎfromXYZ¦Ó«DtoXYZ, ¦Ó¥B­n§ârelativeXYZ¬I¥H­tÅŞ¿è
+    //å› ç‚ºinterpolatorå‡ºä¾†æ˜¯çµ•å°å€¼, æ‰€ä»¥åè€Œè¦ç›¸åè™•ç†
+    //æ‰€ä»¥é€™é‚Šè¦æ¡ç”¨fromXYZè€ŒétoXYZ, è€Œä¸”è¦æŠŠrelativeXYZæ–½ä»¥è² é‚è¼¯
     XYZ = fromXYZ(XYZ, !relativeXYZ);
     return XYZ;
   }
 
   /**
-   * ±NrXYZ+gXYZ+bXYZªºabsolute­ÈÂà¨ìrelative or absolute
+   * å°‡rXYZ+gXYZ+bXYZçš„absoluteå€¼è½‰åˆ°relative or absolute
    * @param rXYZ CIEXYZ
    * @param gXYZ CIEXYZ
    * @param bXYZ CIEXYZ
@@ -511,14 +511,14 @@ public class MultiMatrixModel
     CIEXYZ flare = this.flare.getFlare();
     CIEXYZ recover = LCDModelUtil.recover(rXYZ, gXYZ, bXYZ, flare);
     if (relativeXYZ) {
-      //recoverªºµ²ªG,·|³Ñ¤@²Õflare,¦A§â¥L¦©±¼,¦^¶Ç¬Û¹ï­Èµ¹LCDModel¥h³B²z
+      //recoverçš„çµæœ,æœƒå‰©ä¸€çµ„flare,å†æŠŠä»–æ‰£æ‰,å›å‚³ç›¸å°å€¼çµ¦LCDModelå»è™•ç†
       recover = CIEXYZ.minus(recover, flare);
     }
     return recover;
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    */
@@ -539,7 +539,7 @@ public class MultiMatrixModel
         break;
     }
 
-    //­pºâ³Ì¤p«G«×­È
+    //è¨ˆç®—æœ€å°äº®åº¦å€¼
     double minValue = lcdTarget.getStep() / lcdTarget.getMaxValue().max;
     double[] minValues = new double[] {
         minValue, minValue, minValue};
@@ -574,7 +574,7 @@ public class MultiMatrixModel
   }
 
   /**
-   * ¤W¤@¦¸ªºgetRGB­pºâ,¬O§_¹F¨ìMaxIterativeTimes
+   * ä¸Šä¸€æ¬¡çš„getRGBè¨ˆç®—,æ˜¯å¦é”åˆ°MaxIterativeTimes
    * @return boolean
    */
   public boolean isTouchMaxIterativeTimes() {

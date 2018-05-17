@@ -14,7 +14,7 @@ import shu.cms.lcd.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * excel®æ¦¡ªºcp table adapter
+ * excelæ ¼å¼çš„cp table adapter
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

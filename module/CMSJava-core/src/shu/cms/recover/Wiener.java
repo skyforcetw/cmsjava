@@ -39,7 +39,7 @@ public class Wiener
   }
 
   /**
-   * ¹w´ú¥úÃĞ¤Ï®g²v
+   * ç®‡ä»£î€çœ¯ã¯ç”®ç¯
    * @param RGBValues double[]
    * @return double[]
    */
@@ -48,16 +48,16 @@ public class Wiener
   }
 
   /**
-   * ¥HWiener¨ú±oRGBValues¹ïÀ³ªº¥úÃĞ­È
+   * î™WienerîŸçœ”RGBValuesç™¸è±î€™î€çœ¯î…
    * @param RGBValues double[]
    * @return double[]
    */
   public final double[] getSpectrumByWiener(double[] RGBValues) {
     if (_U == null) {
-      //¨ú¦^°ò©³¦V¶q
+      //îŸî›„è†€â”îš¼ç§–
       getUAndUk();
     }
-    //¨ú±oC«Y¼Æ
+    //îŸçœ”Cç’è®¡
     double[][] c = getC(RGBValues, k);
     double[][] R = DoubleArray.times(_Uk, c);
     R = DoubleArray.transpose(R);
@@ -66,7 +66,7 @@ public class Wiener
 
   public static void main(String[] args) {
     //==========================================================================
-    // ¼Æ¦ì¬Û¾÷
+    // è®¡î”îƒ¶è¯€
     //==========================================================================
     IdealDigitalCamera camera = IdealDigitalCamera.getInstance(
         IdealDigitalCamera.Source.CIEXYZ);
@@ -76,7 +76,7 @@ public class Wiener
     //==========================================================================
 
     //==========================================================================
-    // ¥ú·½
+    // î€æ–¹
     //==========================================================================
 //    Spectra illuminant = Illuminant.D65.getSpectra().reducedSpectra(400, 700,
 //        10);
@@ -86,7 +86,7 @@ public class Wiener
     //==========================================================================
 
     //==========================================================================
-    // Wienerªk
+    // WienerçŒ­
     //==========================================================================
     Wiener wiener = new Wiener(camera, SpectraDatabase.Content.MunsellGlossy, 3,
                                spectra);
@@ -133,7 +133,7 @@ public class Wiener
     }
 
     /**
-     * ²£¥Í«Y¼ÆÀÉ®×(¥u»İ­n²£¥Í¤@¦¸)
+     * ç»ãƒç’è®¡éƒî†®(î™»æƒ ç’¶ç»ãƒî—¦Î©)
      * @param k int
      */
     protected final void produceCDataFile(int k) {
@@ -175,7 +175,7 @@ public class Wiener
   }
 
   /**
-   * ¨ú±oc3°Ñ¼Æ
+   * îŸçœ”c3æŠŠè®¡
    * @param k int
    * @return double[][]
    */
@@ -189,7 +189,7 @@ public class Wiener
   }
 
   /**
-   * ¨ú±oc°Ñ¼Æ
+   * îŸçœ”cæŠŠè®¡
    * @param XYZValues double[]
    * @param k int
    * @return double[][]

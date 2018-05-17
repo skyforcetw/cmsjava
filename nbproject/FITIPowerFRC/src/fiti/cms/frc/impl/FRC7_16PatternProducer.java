@@ -1,5 +1,6 @@
-package auo.cms.frc.impl;
+package fiti.cms.frc.impl;
 
+import fiti.cms.frc.FRCPattern;
 import shu.math.array.IntArray;
 import java.io.ObjectOutputStream;
 import java.io.IOException;
@@ -14,8 +15,7 @@ import java.io.FileWriter;
 import java.io.Writer;
 import java.io.BufferedWriter;
 import java.util.Calendar;
-import static auo.cms.frc.impl.FRC3_16Util.*;
-import auo.cms.frc.*;
+import static fiti.cms.frc.impl.FRC3_16Util.*;
 
 /**
  * <p>Title: </p>

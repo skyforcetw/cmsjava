@@ -77,7 +77,7 @@ public class CameraSensorEstimator {
     Interpolation1DLUT rlut = rr.getLut();
     Interpolation1DLUT glut = gr.getLut();
     Interpolation1DLUT blut = br.getLut();
-    //key¬Û¦P, value¤£¦P
+    //keyç›¸åŒ, valueä¸åŒ
     double[] rValueArray = rlut.getValueArray();
     double[] gValueArray = glut.getValueArray();
     double[] bValueArray = blut.getValueArray();
@@ -88,10 +88,10 @@ public class CameraSensorEstimator {
     double gMaxValue = gValueArray[size - 2];
 
     /**
-     * §Q¥Îg¨Ó­««Ør©Mb, Á×§Kclipping³y¦¨ªºlost
-     * ³o»ò§@ªº«e´£°²³]¬O...R©MBªºgamma¬O¸òG¤@¼Ëªº
+     * åˆ©ç”¨gä¾†é‡å»ºrå’Œb, é¿å…clippingé€ æˆçš„lost
+     * é€™éº¼ä½œçš„å‰æå‡è¨­æ˜¯...Rå’ŒBçš„gammaæ˜¯è·ŸGä¸€æ¨£çš„
      *
-     * ´N¦h¤èªºÆ[¹î¨Ó¬İ, ½T¹ê¦p¦¹, ¦]¦¹¤~·|³o»ò°µ
+     * å°±å¤šæ–¹çš„è§€å¯Ÿä¾†çœ‹, ç¢ºå¯¦å¦‚æ­¤, å› æ­¤æ‰æœƒé€™éº¼åš
      */
     double rFactor = rValueArray[size - 2] / gMaxValue;
     double bFactor = bValueArray[size - 2] / gMaxValue;
@@ -103,7 +103,7 @@ public class CameraSensorEstimator {
     double[] newMaxValue = new double[] {
         newRValueArray[size - 1], gValueArray[size - 1],
         newBValueArray[size - 1]};
-    //§ä¨ì¤T­Óªº³Ì¤j­È, ¥H¸Ó³Ì¤j­È·í§@1, Á×§K¦³clipping ªº²{¶H
+    //æ‰¾åˆ°ä¸‰å€‹çš„æœ€å¤§å€¼, ä»¥è©²æœ€å¤§å€¼ç•¶ä½œ1, é¿å…æœ‰clipping çš„ç¾è±¡
     int maxIndex = DoubleArray.maxIndex(newMaxValue);
     double maxValue = newMaxValue[maxIndex];
     Maths.normalize(newRValueArray, maxValue);
@@ -388,7 +388,7 @@ public class CameraSensorEstimator {
 //    double[][] rgb2XYZMatrix = DCUtils.getRGB2XYZMatrix(illuminant,
 //        newcamera);
 //
-//    //§Q¥Î·sªºcamera, ¥h²£¥Í¸Ó¥ú·½¤Uªº¯x°}, µM«á­«·s²£¥ÍXYZ, ¬İ¸ò­ì¥»¬Û¾÷ªº¦â®t
+//    //åˆ©ç”¨æ–°çš„camera, å»ç”¢ç”Ÿè©²å…‰æºä¸‹çš„çŸ©é™£, ç„¶å¾Œé‡æ–°ç”¢ç”ŸXYZ, çœ‹è·ŸåŸæœ¬ç›¸æ©Ÿçš„è‰²å·®
 //    DCTarget newTarget = DCTarget.Instance.get(newcamera, illuminant, chart);
 //    DCUtils.replaceXYZByRGB2XYZMatrix(newTarget.getPatchList(),
 //                                      rgb2XYZMatrix, luminance);
@@ -483,8 +483,8 @@ public class CameraSensorEstimator {
     int gpeak = sensors[1].getPeak();
     int bpeak = sensors[2].getPeak();
 
-    //P¨M©w¦ì¸m
-    //rho¨M©w´T«×
+    //Pæ±ºå®šä½ç½®
+    //rhoæ±ºå®šå¹…åº¦
     double rrho = params[0];
     double rt = params[1];
     double grho = params[2];
@@ -517,8 +517,8 @@ public class CameraSensorEstimator {
     int gpeak = sensors[1].getPeak();
     int bpeak = sensors[2].getPeak();
 
-    //P¨M©w¦ì¸m
-    //rho¨M©w´T«×
+    //Pæ±ºå®šä½ç½®
+    //rhoæ±ºå®šå¹…åº¦
     double rLeftRho = params[0];
     double rRightRho = params[1];
     double gLeftRho = params[2];
@@ -543,7 +543,7 @@ public class CameraSensorEstimator {
 
     String dirname = "Measurement Files/camera/htc legend/test3";
     String[] lightsources = new String[] {
-        "¤é", "³±", "¿Ã"}; //, "Âë"};
+        "æ—¥", "é™°", "è¢"}; //, "é¢"};
     int size = lightsources.length;
     Plot2D gammaPlot = plotting ? Plot2D.getInstance() : null;
 

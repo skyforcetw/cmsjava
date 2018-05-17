@@ -9,7 +9,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * S-CIELAB©Ò¨Ï¥ÎªºOPP¹ï¥ß¦âªÅ¶¡
+ * S-CIELABæ‰€ä½¿ç”¨çš„OPPå°ç«‹è‰²ç©ºé–“
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -78,7 +78,7 @@ public final class OPP
     double[][] M_OPP2LMS = new Matrix(M_LMS2OPP).inverse().getArray();
 
     /**
-     * from S-CIELabªºmatlabµ{¦¡½X
+     * from S-CIELabçš„matlabç¨‹å¼ç¢¼
      */
     double[][] M_XYZ2OPP = new double[][] {
         {

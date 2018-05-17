@@ -36,9 +36,9 @@ public class CIECAM02Vendor
   private CIECAM02 cam02;
 
   public double[] getLChValues(double[] rgbValues) {
-    //¥ı±qpcs¼´¥Xd50 (or d65?) ªºdata
-    //Âà¶icam, ±o¨ìJCh
-    //XYZªºdataÀ³¸Ó¹ï»ôcamªº¥ÕÂI§a¡I
+    //å…ˆå¾pcsæ’ˆå‡ºd50 (or d65?) çš„data
+    //è½‰é€²cam, å¾—åˆ°JCh
+    //XYZçš„dataæ‡‰è©²å°é½Šcamçš„ç™½é»å§ï¼
     double[] XYZValues = pcs.toCIEXYZValues(rgbValues);
     CIEXYZ XYZ = new CIEXYZ(XYZValues, white);
     XYZ.normalizeWhite();

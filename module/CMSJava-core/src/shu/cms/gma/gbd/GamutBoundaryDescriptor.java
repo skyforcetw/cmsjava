@@ -13,7 +13,7 @@ import shu.cms.gma.gbp.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó±Ô­z¦â°ìªí­±ªºÃä¬É
+ * ç”¨ä¾†æ•˜è¿°è‰²åŸŸè¡¨é¢çš„é‚Šç•Œ
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -60,14 +60,14 @@ public abstract class GamutBoundaryDescriptor {
   }
 
   /**
-   * ­pºâ¸ÓÂI©Ò¹ï¬M¨ìªºÃä¬É
+   * è¨ˆç®—è©²é»æ‰€å°æ˜ åˆ°çš„é‚Šç•Œ
    * @param LCh CIELCh
    * @return CIELCh
    */
   public abstract CIELCh getBoundaryLCh(CIELCh LCh);
 
   /**
-   * ¬O§_¦b¦â°ì¤§¥~
+   * æ˜¯å¦åœ¨è‰²åŸŸä¹‹å¤–
    * @param LCh CIELCh
    * @param boundary CIELCh
    * @return boolean

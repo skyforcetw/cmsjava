@@ -10,7 +10,7 @@ import auo.cms.hsv.saturation.*;
 /**
  *
  * <p>Title: Colour Management System</p>
- * RichardFormula Âùgain
+ * RichardFormula é›™gain
  *
  * <p>Description: a Colour Management System by Java</p>
  *

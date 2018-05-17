@@ -15,9 +15,9 @@ import shu.math.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ³o­ÓmodelªºÃa³B¦b©ó,¨D­È®É§¹¥ş¥H³æ¤@channel°µdeltaEªº¦Ò¶q
- * ¦ı¬O³æ¤@channelªºdeltaE§C¤£¥Nªí¾ãÅéªº´N·|¸òªº§C,¦³®É­ÔÁÙ·|¬Û¤Ï¹L¨Ó!
- * ³o¬O»İ­n§ï¶iªº¦a¤è!(¦]¬°¨S¦³¦Ò¼{¨ìÀW¹D¬Û¨Ì©Ê)
+ * é€™å€‹modelçš„å£è™•åœ¨æ–¼,æ±‚å€¼æ™‚å®Œå…¨ä»¥å–®ä¸€channelåšdeltaEçš„è€ƒé‡
+ * ä½†æ˜¯å–®ä¸€channelçš„deltaEä½ä¸ä»£è¡¨æ•´é«”çš„å°±æœƒè·Ÿçš„ä½,æœ‰æ™‚å€™é‚„æœƒç›¸åéä¾†!
+ * é€™æ˜¯éœ€è¦æ”¹é€²çš„åœ°æ–¹!(å› ç‚ºæ²’æœ‰è€ƒæ…®åˆ°é »é“ç›¸ä¾æ€§)
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -38,7 +38,7 @@ public class SCurveModel1Thread
   }
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    * @param factor LCDModelFactor
    */
   public SCurveModel1Thread(LCDModelFactor factor) {
@@ -58,12 +58,12 @@ public class SCurveModel1Thread
   protected CoefficientsRange[] coefficientsRange = null;
 
   /**
-   * ªì©l¤Æ­¡±a«Y¼Æ
-   * ¥i¥Hµø±¡ªp½Õ¾ã¦¹«Y¼Æ­È,Åı¼Ò¦¡¦³§ó¦nªº¹Bºâªí²{
+   * åˆå§‹åŒ–è¿­å¸¶ä¿‚æ•¸
+   * å¯ä»¥è¦–æƒ…æ³èª¿æ•´æ­¤ä¿‚æ•¸å€¼,è®“æ¨¡å¼æœ‰æ›´å¥½çš„é‹ç®—è¡¨ç¾
    */
   public void initCoefficientsRange() {
     if (coefficientsRange == null) {
-      //dell 1st 4096 & 729(³Ì¨Îµ²ªG)
+      //dell 1st 4096 & 729(æœ€ä½³çµæœ)
       CoefficientsRange coefR = new CoefficientsRange(1.1, 10, 1, 4, 0, 8,
           RGBBase.Channel.R);
       CoefficientsRange coefG = new CoefficientsRange(1.1, 10, 1, 6, 0, 8,
@@ -96,7 +96,7 @@ public class SCurveModel1Thread
     initCoefficientsRange();
 
     //==========================================================================
-    //¦h°õ¦æºü¹Bºâ
+    //å¤šåŸ·è¡Œç·’é‹ç®—
     //==========================================================================
     IterativeReport[] reports = SimpleThreadCalculator.
         produceBestIterativeReport(
@@ -121,8 +121,8 @@ public class SCurveModel1Thread
                                                  Native,
                                                  LCDTargetBase.Number.Ramp7147, null, null);
 
-    //dell¥Î1021¨D±oªº®Ä¹L¸û®t,¤]ºC«Ü¦h(²Å¦X±ø¥óªº¦â¶ô¸û¦h)
-    //729¦³³Ì¨Îµ²ªG
+    //dellç”¨1021æ±‚å¾—çš„æ•ˆéè¼ƒå·®,ä¹Ÿæ…¢å¾ˆå¤š(ç¬¦åˆæ¢ä»¶çš„è‰²å¡Šè¼ƒå¤š)
+    //729æœ‰æœ€ä½³çµæœ
 
 
     SCurveModel1Thread model = new SCurveModel1Thread(
@@ -132,8 +132,8 @@ public class SCurveModel1Thread
     LCDModelFactor lcdModelFactor = model.produceLCDModelFactor(factors);
 
     /**
-     * ¦¹³B«Y¼Æ¥H §Ç¦C¤Æ ³B²z,¤£¨Ï¥ÎXMLÀx¦s¬O¦]¬°Ãiªº³B²ztag :P
-     * ¥[¤WFactor¶¡¦³Ä~©ÓÃö«Y,¥Ø«e¤£ª¾¹DXML-Java¤u¨ã¬O§_¥i¥H«Ü¦nªº³B²z.
+     * æ­¤è™•ä¿‚æ•¸ä»¥ åºåˆ—åŒ– è™•ç†,ä¸ä½¿ç”¨XMLå„²å­˜æ˜¯å› ç‚ºæ‡¶çš„è™•ç†tag :P
+     * åŠ ä¸ŠFactoré–“æœ‰ç¹¼æ‰¿é—œä¿‚,ç›®å‰ä¸çŸ¥é“XML-Javaå·¥å…·æ˜¯å¦å¯ä»¥å¾ˆå¥½çš„è™•ç†.
      */
     model.store.modelFactorFile(lcdModelFactor, "scurve1.factor");
 
@@ -261,7 +261,7 @@ public class SCurveModel1Thread
     RGB rgb = matries.XYZToRGBByMaxMatrix(XYZ);
     rgb = rational.RGBRationalize(rgb);
     if (rgb.isLegal()) {
-      //¦pªGrgb¦X²z,¤~¥i¥H±À¥X­ì©lªºRGB­È
+      //å¦‚æœrgbåˆç†,æ‰å¯ä»¥æ¨å‡ºåŸå§‹çš„RGBå€¼
       return getOriginalRGB(rgb, factor);
     }
     else {
@@ -278,7 +278,7 @@ public class SCurveModel1Thread
   }
 
   /**
-   * ´£¨Ñµ¹YY¼Ò¦¡©I¥s¨Ï¥Î
+   * æä¾›çµ¦YYæ¨¡å¼å‘¼å«ä½¿ç”¨
    * @param rgb RGB
    * @param factor Factor[]
    * @return RGB
@@ -306,7 +306,7 @@ public class SCurveModel1Thread
   }
 
   /**
-   * §Q¥Î¤û¹yªk¤Ï±À¦^­ì©lRGB
+   * åˆ©ç”¨ç‰›é “æ³•åæ¨å›åŸå§‹RGB
    * @param luminanceRGB RGB
    * @param factor Factor[]
    * @return RGB

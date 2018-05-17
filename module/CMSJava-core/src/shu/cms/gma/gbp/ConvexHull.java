@@ -13,7 +13,7 @@ import shu.cms.plot.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Y¥]ºtºâªk
+ * å‡¸åŒ…æ¼”ç®—æ³•
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

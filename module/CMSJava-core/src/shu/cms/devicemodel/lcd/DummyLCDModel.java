@@ -8,7 +8,7 @@ import shu.cms.lcd.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * °°¸ËªºLCDModel,¤è«K¥Î¨Ó¾Ş§@LCDModelªºª«¥ó¤èªk®É¨Ï¥Î
+ * å½è£çš„LCDModel,æ–¹ä¾¿ç”¨ä¾†æ“ä½œLCDModelçš„ç‰©ä»¶æ–¹æ³•æ™‚ä½¿ç”¨
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -24,7 +24,7 @@ public class DummyLCDModel
   }
 
   /**
-   * ­pºâRGB,¤Ï±À¼Ò¦¡
+   * è¨ˆç®—RGB,åæ¨æ¨¡å¼
    *
    * @param XYZ CIEXYZ
    * @param factor Factor[]
@@ -35,7 +35,7 @@ public class DummyLCDModel
   }
 
   /**
-   * ­pºâXYZ,«e¾É¼Ò¦¡
+   * è¨ˆç®—XYZ,å‰å°æ¨¡å¼
    *
    * @param rgb RGB
    * @param factor Factor[]
@@ -46,7 +46,7 @@ public class DummyLCDModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    */

@@ -85,7 +85,7 @@ public class CorrectionData {
 //    for (int y = 0; y < hblock; y++) {
 //      for (int x = 0; x < wblock; x++) {
 //        double doubledata = data[indexOfLevel][ch.getArrayIndex()][y][x];
-//        short intdata = (short) (doubledata * gain); //µL±ø¥ó±Ë¥h
+//        short intdata = (short) (doubledata * gain); //ç„¡æ¢ä»¶æ¨åŽ»
 //        integerData[y][x] = intdata;
 //      }
 //    }
@@ -201,7 +201,7 @@ public class CorrectionData {
       for (int y = 0; y < hblock; y++) {
         for (int x = 0; x < wblock; x++) {
           double doubledata = data[levelcount][ch.getArrayIndex()][y][x];
-          short intdata = (short) (doubledata * gain); //µL±ø¥ó±Ë¥h
+          short intdata = (short) (doubledata * gain); //ç„¡æ¢ä»¶æ¨åŽ»
           integerData[levelcount + 1][y][x] = intdata;
         }
       }
@@ -210,7 +210,7 @@ public class CorrectionData {
     //255
     for (int y = 0; y < hblock; y++) {
       for (int x = 0; x < wblock; x++) {
-//        short intdata = (short) (255 * gain); //µL±ø¥ó±Ë¥h
+//        short intdata = (short) (255 * gain); //ç„¡æ¢ä»¶æ¨åŽ»
         integerData[level - 1][y][x] = maxOutput; //intdata;
       }
     }
@@ -643,7 +643,7 @@ public class CorrectionData {
 //    CorrectionData correctiondata = new CorrectionData(correctFilename,CorrectionData.Type.Floating);
 
 //    String correctFilename = "24inch No2/MuraData Mode1 Type1.csv";
-    String correctFilename = "24inch No2/½Æ»s -MuraData Mode1 Type1.csv";
+    String correctFilename = "24inch No2/è¤‡è£½ -MuraData Mode1 Type1.csv";
 
     CorrectionData correctiondata = new CorrectionData(correctFilename,
         CorrectionData.Type.Integer1);

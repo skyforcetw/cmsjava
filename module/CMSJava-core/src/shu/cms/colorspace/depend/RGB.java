@@ -126,7 +126,7 @@ public final class RGB
   }
 
   /**
-   * ±NRGB¦P®É¥[¤Waddvalue. addvalueªºMaxValue«¬ºA¬O»PRGBªºMaxValue¬Û¦P.
+   * å°‡RGBåŒæ™‚åŠ ä¸Šaddvalue. addvalueçš„MaxValueåž‹æ…‹æ˜¯èˆ‡RGBçš„MaxValueç›¸åŒ.
    * @param addvalue double
    */
   public void addValues(double addvalue) {
@@ -136,8 +136,8 @@ public final class RGB
   }
 
   /**
-   * ±NRGB¦P®É¥[¤Waddvalue
-   * ¥i«ü©waddvalueªºMaxValue«¬ºA.
+   * å°‡RGBåŒæ™‚åŠ ä¸Šaddvalue
+   * å¯æŒ‡å®šaddvalueçš„MaxValueåž‹æ…‹.
    * @param addvalue double
    * @param maxValue MaxValue
    */
@@ -305,7 +305,7 @@ public final class RGB
   }
 
   /**
-   * ÀW¹D¤¤§t¦³0­È
+   * é »é“ä¸­å«æœ‰0å€¼
    * @return boolean
    */
   public boolean hasZeroChannel() {
@@ -313,7 +313,7 @@ public final class RGB
   }
 
   /**
-   * ¥u¦³¤@­ÓÀW¹D¦³­È
+   * åªæœ‰ä¸€å€‹é »é“æœ‰å€¼
    * @return boolean
    */
   public boolean isPrimaryChannel() {
@@ -328,7 +328,7 @@ public final class RGB
   }
 
   /**
-   * ¬O§_¥u¦³¸É¦âÀW¹D¦³­È
+   * æ˜¯å¦åªæœ‰è£œè‰²é »é“æœ‰å€¼
    * @return boolean
    */
   public boolean isSecondaryChannel() {
@@ -351,7 +351,7 @@ public final class RGB
     return getZeroChannelCount() == 2;
   }
   /**
-   * ¬O§_¦³ÀW¹D¤w¸g¹¡©M
+   * æ˜¯å¦æœ‰é »é“å·²ç¶“é£½å’Œ
    * @return boolean
    */
   public final boolean hasChannelSaturation() {
@@ -360,7 +360,7 @@ public final class RGB
   }
 
   /**
-   * ¨ì¹F¹¡©MªºÀW¹D¼Æ¶q
+   * åˆ°é”é£½å’Œçš„é »é“æ•¸é‡
    * @return int
    */
   public final int getSaturationChannelCount() {
@@ -433,7 +433,7 @@ public final class RGB
   }
 
   /**
-   * ¤£¦X²z­ÈªºÁ`©M
+   * ä¸åˆç†å€¼çš„ç¸½å’Œ
    * @return double
    */
   public double irrationalValueSum() {
@@ -481,7 +481,7 @@ public final class RGB
   }
 
   /**
-   * ¨ú±o¸É¼Æ
+   * å–å¾—è£œæ•¸
    * @return RGB
    */
   public RGB getComplementary() {
@@ -494,7 +494,7 @@ public final class RGB
   }
 
   /**
-   * ¬O§_¬O¥D¦â¬Û
+   * æ˜¯å¦æ˜¯ä¸»è‰²ç›¸
    * @return boolean
    */
   public final boolean isPrimaryHue() {
@@ -502,12 +502,12 @@ public final class RGB
   }
 
   /**
-   * ¼Ð¥Ü¬O§_°µ¹L­×¥¿
+   * æ¨™ç¤ºæ˜¯å¦åšéŽä¿®æ­£
    */
   protected boolean fixed = false;
 
   /**
-   * ¬O§_°µ¹L­×¥¿
+   * æ˜¯å¦åšéŽä¿®æ­£
    * @return boolean
    */
   public final boolean isFixed() {
@@ -556,7 +556,7 @@ public final class RGB
   }
 
   /**
-   * ©I¥sªº¹êÅé»P³Q¶q¤Æ«á¬O§_¬Ûµ¥
+   * å‘¼å«çš„å¯¦é«”èˆ‡è¢«é‡åŒ–å¾Œæ˜¯å¦ç›¸ç­‰
    * @param maxValue MaxValue
    * @return boolean
    */
@@ -567,7 +567,7 @@ public final class RGB
   }
 
   /**
-   * ©I¥sªº¹êÅé»Prgb³£°µ¶q¤Æ¤§«á¬O§_¬Ûµ¥
+   * å‘¼å«çš„å¯¦é«”èˆ‡rgbéƒ½åšé‡åŒ–ä¹‹å¾Œæ˜¯å¦ç›¸ç­‰
    * @param rgb RGB
    * @param maxValue MaxValue
    * @return boolean
@@ -621,7 +621,7 @@ public final class RGB
 //  }
 
   /**
-   * RGB¼Æ­È¬O§_¦Xªk
+   * RGBæ•¸å€¼æ˜¯å¦åˆæ³•
    * @return boolean
    */
   public boolean isLegal() {
@@ -629,7 +629,7 @@ public final class RGB
   }
 
   /**
-   * ¼Æ­È¬O§_¦Xªk
+   * æ•¸å€¼æ˜¯å¦åˆæ³•
    * @param value double
    * @return boolean
    */
@@ -638,7 +638,7 @@ public final class RGB
   }
 
   /**
-   * ¼Æ­È¬O§_¦Xªk(>0¥B<³Ì¤j­È)
+   * æ•¸å€¼æ˜¯å¦åˆæ³•(>0ä¸”<æœ€å¤§å€¼)
    * @param value double
    * @param maxValue MaxValue
    * @return boolean
@@ -648,7 +648,7 @@ public final class RGB
   }
 
   /**
-   * ¥HmaxValue¶q¤Æ¤§«á¬O§_¦Xªk
+   * ä»¥maxValueé‡åŒ–ä¹‹å¾Œæ˜¯å¦åˆæ³•
    * @param maxValue MaxValue
    * @return boolean
    */
@@ -661,7 +661,7 @@ public final class RGB
   }
 
   /**
-   * 8bit¶q¤Æ¤§«á¬O§_¦Xªk
+   * 8bité‡åŒ–ä¹‹å¾Œæ˜¯å¦åˆæ³•
    * @return boolean
    */
   public boolean isLegalAfter8BitQuantization() {
@@ -669,7 +669,7 @@ public final class RGB
   }
 
   /**
-   * 16bit¶q¤Æ¤§«á¬O§_¦Xªk
+   * 16bité‡åŒ–ä¹‹å¾Œæ˜¯å¦åˆæ³•
    * @return boolean
    */
   public boolean isLegalAfter16BitQuantization() {
@@ -677,7 +677,7 @@ public final class RGB
   }
 
   /**
-   * 10bit¶q¤Æ¤§«á¬O§_¦Xªk
+   * 10bité‡åŒ–ä¹‹å¾Œæ˜¯å¦åˆæ³•
    * @return boolean
    */
   public boolean isLegalAfter10BitQuantization() {
@@ -693,7 +693,7 @@ public final class RGB
   }
 
   /**
-   * ¹ïrgb¶i¦æ¦X²z¤Æ
+   * å°rgbé€²è¡Œåˆç†åŒ–
    * @param rgb RGB
    * @return RGB
    */
@@ -709,15 +709,15 @@ public final class RGB
   }
 
   /**
-   * ¹ïrgb¶i¦æ¦X²z¤Æ
-   * @return boolean §_¯u¥¿¶i¦ærational
+   * å°rgbé€²è¡Œåˆç†åŒ–
+   * @return boolean å¦çœŸæ­£é€²è¡Œrational
    */
   public boolean rationalize() {
     return rationalize(this);
   }
 
   /**
-   * ±NRGB¦X²z¤Æ,R/G/BÀ³¸Ó¸¨¦b0~1¶¡,¦pªG¶W¥X¦¹½d³ò,¥Nªí¤£¦s¦b¸Ó­È
+   * å°‡RGBåˆç†åŒ–,R/G/Bæ‡‰è©²è½åœ¨0~1é–“,å¦‚æžœè¶…å‡ºæ­¤ç¯„åœ,ä»£è¡¨ä¸å­˜åœ¨è©²å€¼
    * @param RGBValuesArray double[][]
    * @param maxValue MaxValue
    * @return double[][]

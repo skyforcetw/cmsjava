@@ -9,7 +9,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * Hunt¦â¥~»ª¼Ò¦¡
+ * Huntè‰²å¤–è²Œæ¨¡å¼
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

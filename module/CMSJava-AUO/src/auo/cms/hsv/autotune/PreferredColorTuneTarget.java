@@ -45,8 +45,8 @@ public class PreferredColorTuneTarget
   /**
    * PreferredColorTuneTarget
    * @param prefferedColorSpace ProfileColorSpace
-   * @param prefferedCLUT ColorSpaceConnectedLUT ¨ÑCLUTOptimizeReverseModel­pºâ¨Ï¥Î
-   * ­Y¨S¦³­n¨Ï¥ÎLChGrid, «h¨S¦³¥²­n¨Ï¥Î¦¹«Øºc¦¡, «h¦¹ÅÜ¼Æ¥i¬°null
+   * @param prefferedCLUT ColorSpaceConnectedLUT ä¾›CLUTOptimizeReverseModelè¨ˆç®—ä½¿ç”¨
+   * è‹¥æ²’æœ‰è¦ä½¿ç”¨LChGrid, å‰‡æ²’æœ‰å¿…è¦ä½¿ç”¨æ­¤å»ºæ§‹å¼, å‰‡æ­¤è®Šæ•¸å¯ç‚ºnull
    * @param limitColorSpace ProfileColorSpace
    */
   private PreferredColorTuneTarget(ProfileColorSpace prefferedColorSpace,
@@ -63,9 +63,9 @@ public class PreferredColorTuneTarget
   }
 
   /**
-   * ­Y¤£¨Ï¥ÎLChGrid, "Àu¥ı«ØÄ³"¨Ï¥Î¦¹«Øºc¦¡
+   * è‹¥ä¸ä½¿ç”¨LChGrid, "å„ªå…ˆå»ºè­°"ä½¿ç”¨æ­¤å»ºæ§‹å¼
    * @param prefferedColorSpace ProfileColorSpace
-   * @param limitColorSpace ProfileColorSpace ¥Î¨Ó©ú©w¥i½Õ¾ãªº°Ï°ì, ¤è«KÀu¤Æ¥Î
+   * @param limitColorSpace ProfileColorSpace ç”¨ä¾†æ˜å®šå¯èª¿æ•´çš„å€åŸŸ, æ–¹ä¾¿å„ªåŒ–ç”¨
    */
   public PreferredColorTuneTarget(ProfileColorSpace prefferedColorSpace,
                                   ProfileColorSpace limitColorSpace) {
@@ -73,7 +73,7 @@ public class PreferredColorTuneTarget
   }
 
   /**
-   * ­Y¤£¨Ï¥ÎLChGrid, «h¨S¦³¥²­n¨Ï¥Î¦¹«Øºc¦¡
+   * è‹¥ä¸ä½¿ç”¨LChGrid, å‰‡æ²’æœ‰å¿…è¦ä½¿ç”¨æ­¤å»ºæ§‹å¼
    * @param preferredColorSpace PreferredColorSpace
    * @param limitColorSpace ProfileColorSpace
    * @deprecated
@@ -101,9 +101,9 @@ public class PreferredColorTuneTarget
   private CLUTOptimizeReverseModel reverseModel;
   private ProfileColorSpace prefferedColorSpace;
   private ProfileColorSpace limitColorSpace;
-  private GamutBoundaryPoint prefferedGBP; //­pºâ¥X¦â°ìÃä»Ú
+  private GamutBoundaryPoint prefferedGBP; //è¨ˆç®—å‡ºè‰²åŸŸé‚Šéš›
   private GamutBoundaryPoint limitGBP;
-  private GamutBoundaryDescriptor prefferedGBD; //¥Î¨Ó§PÂ_¬O§_¶W¥X¦â°ì
+  private GamutBoundaryDescriptor prefferedGBD; //ç”¨ä¾†åˆ¤æ–·æ˜¯å¦è¶…å‡ºè‰²åŸŸ
   private GamutBoundaryDescriptor limitGBD;
 
   /**
@@ -168,14 +168,14 @@ public class PreferredColorTuneTarget
 
     switch (type) {
 
-      case LChGrid: //¦³¥i¯à¹J¨ìHue°fÂà°İÃD, ¤£«ØÄ³¨Ï¥Î
+      case LChGrid: //æœ‰å¯èƒ½é‡åˆ°Hueé€†è½‰å•é¡Œ, ä¸å»ºè­°ä½¿ç”¨
         System.err.println("No recommend use \"LChGrid\"");
         tuneSpots = getTuneSpotsFromLChDomain(hue);
         break;
       case HSV2LCHGrid:
         tuneSpots = getTuneSpotsFromHSV2LChDomain(hue);
         break;
-      case HSVGrid: //Àu¥ı¨Ï¥Î
+      case HSVGrid: //å„ªå…ˆä½¿ç”¨
         tuneSpots = getTuneSpotsFromHSVDomain(hue);
         break;
     }
@@ -208,7 +208,7 @@ public class PreferredColorTuneTarget
   }
 
   /**
-   * ¬O§_¦bÀu¤Æªº½d³ò¤º
+   * æ˜¯å¦åœ¨å„ªåŒ–çš„ç¯„åœå…§
    * @param hsv HSV
    * @return boolean
    */
@@ -267,16 +267,16 @@ public class PreferredColorTuneTarget
   }
 
   private HSV[] getTuneSpotsFromLChDomain(double hue) {
-    // ¥Ñ©óHSV»PLChªºhue¨Ã«D§¹¥ş¬ÛÃö, ©Ò¥H¥u¦n¥H¤¤¶¡­ÈªºHSV¥h§ä¨ìLCh©Ò¹ïÀ³ªºhue
-    // ¨Ã¥B¦A¥H¦¹hue¥h´M§äLChªºplane
-    // ¤¤¶¡­ÈHSV : S=50, V=50
+    // ç”±æ–¼HSVèˆ‡LChçš„hueä¸¦éå®Œå…¨ç›¸é—œ, æ‰€ä»¥åªå¥½ä»¥ä¸­é–“å€¼çš„HSVå»æ‰¾åˆ°LChæ‰€å°æ‡‰çš„hue
+    // ä¸¦ä¸”å†ä»¥æ­¤hueå»å°‹æ‰¾LChçš„plane
+    // ä¸­é–“å€¼HSV : S=50, V=50
     HSV center = new HSV(RGB.ColorSpace.unknowRGB, new double[] {hue, 50, 50});
     double[] centerRGBValues = center.toRGB().getValues();
     double[] centerPCSLChValues = prefferedColorSpace.toPCSCIELChValues(
         centerRGBValues);
     double hueOfLCh = centerPCSLChValues[2];
 
-    //°ò¥»¤W·|¦³101­ÓCIELCh, L=0~100
+    //åŸºæœ¬ä¸Šæœƒæœ‰101å€‹CIELCh, L=0~100
     double[] boundaryLCArray = getBoundaryLCArray(hueOfLCh);
     List<CIELCh> LChGridList = toLChGridList(boundaryLCArray, hueOfLCh);
     HSV[] tuneSpots = toPrefferedHSVArray(LChGridList);
@@ -285,12 +285,12 @@ public class PreferredColorTuneTarget
   }
 
   /**
-   * ºâ¥XhueOfLCh¤Uhue plane¨â­Ó¦â°ìªº¥æ¶°Ãä¬É
+   * ç®—å‡ºhueOfLChä¸‹hue planeå…©å€‹è‰²åŸŸçš„äº¤é›†é‚Šç•Œ
    * @param hueOfLCh double
    * @return double[]
    */
   private double[] getBoundaryLCArray(double hueOfLCh) {
-    //°ò¥»¤W·|¦³101­ÓCIELCh, L=0~100
+    //åŸºæœ¬ä¸Šæœƒæœ‰101å€‹CIELCh, L=0~100
     List<CIELCh>
         prefferedHuePlane = prefferedGBP.getHuePlane(hueOfLCh);
     List<CIELCh> limitHuePlane = limitGBP.getHuePlane(hueOfLCh);
@@ -301,8 +301,8 @@ public class PreferredColorTuneTarget
   }
 
   /**
-   * ±qlightness 100~0ªº½d³ò¸Ì, §¡¤Ã´²§GLCªºgrid.
-   * µM«á¥HÀu¤Æ­¡¥Nªº¤è¦¡§ä¨ì¹ïÀ³¸ÓLCªºHSV
+   * å¾lightness 100~0çš„ç¯„åœè£¡, å‡å‹»æ•£ä½ˆLCçš„grid.
+   * ç„¶å¾Œä»¥å„ªåŒ–è¿­ä»£çš„æ–¹å¼æ‰¾åˆ°å°æ‡‰è©²LCçš„HSV
    * @param chromaBoundaryLUT Interpolation1DLUT
    * @param hueOfHSV double
    * @return HSV[]
@@ -318,7 +318,7 @@ public class PreferredColorTuneTarget
            chroma += chromaStep) {
         HSV hsv = findHSV(lightness, chroma, hueOfHSV, preHSV);
         if (isInRange(hsv)) {
-          //§ä¨ìªºhsv­Y¦b½d³ò¤º´N©ñ¨ìlist
+          //æ‰¾åˆ°çš„hsvè‹¥åœ¨ç¯„åœå…§å°±æ”¾åˆ°list
           hsvGridList.add(hsv);
           preHSV = hsv;
         }
@@ -330,8 +330,8 @@ public class PreferredColorTuneTarget
   }
 
   /**
-   * ±qµ¹©wªºlightness/chroma §ä¨ì¹ïÀ³ªºHSV.
-   * ¨ä¤¤hue¤wª¾, ¥B¹ï¬MµÛ¦¹³Bµ¹ªºlightness/chroma, ©Ò¥H¤£·|¦³hue¿ù»~ªººÃ¼{.
+   * å¾çµ¦å®šçš„lightness/chroma æ‰¾åˆ°å°æ‡‰çš„HSV.
+   * å…¶ä¸­hueå·²çŸ¥, ä¸”å°æ˜ è‘—æ­¤è™•çµ¦çš„lightness/chroma, æ‰€ä»¥ä¸æœƒæœ‰hueéŒ¯èª¤çš„ç–‘æ…®.
    * @param lightness double
    * @param chroma double
    * @param hueOfHSV double
@@ -343,7 +343,7 @@ public class PreferredColorTuneTarget
     hsvFinder.setParameter(hueOfHSV, lightness, chroma);
     double[] initSVValues = new double[] {
         initHSV.S, initHSV.V};
-    //³]©wS©MVªº­­¨î
+    //è¨­å®šSå’ŒVçš„é™åˆ¶
     min.addConstraint(0, -1, 0);
     min.addConstraint(0, 1, 100);
     min.addConstraint(1, -1, 0);
@@ -363,7 +363,7 @@ public class PreferredColorTuneTarget
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * ¥Î¨Ó´M§ä³Ì±µªñ hue/lightnessOfCIELCh/chromaOfCIELChªºHSV
+   * ç”¨ä¾†å°‹æ‰¾æœ€æ¥è¿‘ hue/lightnessOfCIELCh/chromaOfCIELChçš„HSV
    *
    * <p>Copyright: Copyright (c) 2009</p>
    *
@@ -403,7 +403,7 @@ public class PreferredColorTuneTarget
   }
 
   /**
-   * ­pºâ¥X¨â­ÓProfileColorSpace¥æ¶°ªº¦â°ìÃä»Ú¹ï·Óªí(lightness->chroma)
+   * è¨ˆç®—å‡ºå…©å€‹ProfileColorSpaceäº¤é›†çš„è‰²åŸŸé‚Šéš›å°ç…§è¡¨(lightness->chroma)
    * @param hue double
    * @param colorSpace1 ProfileColorSpace
    * @param colorSpace2 ProfileColorSpace
@@ -420,7 +420,7 @@ public class PreferredColorTuneTarget
       double prefferedBoundary = prefferedLut.getValue(x);
       double fixKey = limitLut.correctKeyInRange(x);
       double limitBoundary = limitLut.getValue(fixKey);
-      //¨ú³Ì¤p­È, ¬°¥æ¶°
+      //å–æœ€å°å€¼, ç‚ºäº¤é›†
       boundaryArray[x] = Math.min(prefferedBoundary, limitBoundary);
     }
     Interpolation1DLUT result = new Interpolation1DLUT(lightnessArray,
@@ -429,7 +429,7 @@ public class PreferredColorTuneTarget
   }
 
   /**
-   * ±NcolorSpace©â¥X«ü©whueªº¦â°ìÃä»Ú¹ï·Óªí(lightness->chroma)
+   * å°‡colorSpaceæŠ½å‡ºæŒ‡å®šhueçš„è‰²åŸŸé‚Šéš›å°ç…§è¡¨(lightness->chroma)
    * @param hue int
    * @param colorSpace ProfileColorSpace
    * @return Interpolation1DLUT
@@ -467,7 +467,7 @@ public class PreferredColorTuneTarget
       chromaArray[index] = pcsLChValues[1];
       index++;
     }
-    //²£¥Í lightness©Mchromaªº¹ï·Óªí, ¬°¦â°ìÃä»Ú
+    //ç”¢ç”Ÿ lightnesså’Œchromaçš„å°ç…§è¡¨, ç‚ºè‰²åŸŸé‚Šéš›
     Interpolation1DLUT lut = new Interpolation1DLUT(lightnessArray, chromaArray,
         Interpolation1DLUT.Algo.LINEAR);
     return lut;
@@ -478,27 +478,27 @@ public class PreferredColorTuneTarget
     int sizeOfHuePlane = prefferedHuePlane.size();
     double[] boundaryLCArray = new double[sizeOfHuePlane];
     for (int x = 0; x < sizeOfHuePlane; x++) {
-      //¼´¥Xpreffered©Mlimit
+      //æ’ˆå‡ºprefferedå’Œlimit
       CIELCh preffered = prefferedHuePlane.get(x);
       CIELCh limit = limitHuePlane.get(x);
-      //§ä¨ì©¼¦¹¥æ¶°ªº³¡¥÷, ©w¸q¬°­ntuneªº¦â°ìÃä»Ú
+      //æ‰¾åˆ°å½¼æ­¤äº¤é›†çš„éƒ¨ä»½, å®šç¾©ç‚ºè¦tuneçš„è‰²åŸŸé‚Šéš›
       boundaryLCArray[x] = Math.min(preffered.C, limit.C);
     }
     return boundaryLCArray;
   }
 
   /**
-   * ¦â°ìÃä»ÚÂà¬°CIELCh grid
+   * è‰²åŸŸé‚Šéš›è½‰ç‚ºCIELCh grid
    * @param boundaryLCArray double[]
    * @param hueOfLCh double
    * @return List
    */
   private List<CIELCh> toLChGridList(double[] boundaryLCArray, double hueOfLCh) {
-    //±N¦â°ìÃä»Ú¥Î¬°¤º´¡
+    //å°‡è‰²åŸŸé‚Šéš›ç”¨ç‚ºå…§æ’
     Interpolation1DLUT lut = new Interpolation1DLUT(DoubleArray.increment(101,
         0., 1.), boundaryLCArray, Interpolation1DLUT.Algo.LINEAR);
     List<CIELCh> LChGridList = new LinkedList<CIELCh> ();
-    //¨C¹j¤@­Óstep³]¸m¤@­ÓLCh
+    //æ¯éš”ä¸€å€‹stepè¨­ç½®ä¸€å€‹LCh
     for (int lightness = 100; lightness >= 0; lightness -= lightnessStep) {
       double boundaryChroma = lut.getValue(lightness);
       for (int chroma = chromaStep; chroma <= boundaryChroma;
@@ -514,7 +514,7 @@ public class PreferredColorTuneTarget
     if (null == reverseModel) {
       throw new IllegalArgumentException("null == reverseModel");
     }
-    //±NLCh gridÂà´«¬°HSV
+    //å°‡LCh gridè½‰æ›ç‚ºHSV
     int sizeOfGrid = LChGridList.size();
     HSV[] tuneSpots = new HSV[sizeOfGrid];
     for (int x = 0; x < sizeOfGrid; x++) {

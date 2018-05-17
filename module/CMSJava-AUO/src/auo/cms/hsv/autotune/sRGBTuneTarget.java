@@ -36,7 +36,7 @@ public class sRGBTuneTarget
 
   private void initTestPatchesMap() {
     //==========================================================================
-    // ³æ¤@¦â¶ô
+    // å–®ä¸€è‰²å¡Š
     //==========================================================================
     int testSize = testPatches.size();
     double[][] hsvLut = new double[3][testSize];
@@ -51,7 +51,7 @@ public class sRGBTuneTarget
     //==========================================================================
 
     //==========================================================================
-    // ¦h­Ó¦â¶ô
+    // å¤šå€‹è‰²å¡Š
     //==========================================================================
     int size = totalPatches.size();
     HSV[] totalHSVArray = new HSV[size];
@@ -163,7 +163,7 @@ public class sRGBTuneTarget
    * @return HSV
    */
   public HSV getTuneSpot(double hue) {
-    //§Q¥Î¤º´¡¥X¨Óªº­È²£¥Í¥X½Õ¾ã¦â¶ô
+    //åˆ©ç”¨å…§æ’å‡ºä¾†çš„å€¼ç”¢ç”Ÿå‡ºèª¿æ•´è‰²å¡Š
     double saturation = singlePatchesInterpolator.getSaturationAdjustDouble(
         hue);
     double value = singlePatchesInterpolator.getValueAdjustDouble(hue);

@@ -7,7 +7,7 @@ import shu.cms.hvs.cam.ciecam02.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Hclipµ{«×·í§@index
+ * ä»¥clipç¨‹åº¦ç•¶ä½œindex
  *
  * <p>Copyright: Copyright (c) 2009</p>
  *

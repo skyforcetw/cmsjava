@@ -19,11 +19,11 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó±Ô­z¦â°ìªí­±ªºÂI
+ * ç”¨ä¾†æ•˜è¿°è‰²åŸŸè¡¨é¢çš„é»
  *
- * ¥i¥H ¿W¥ß¦â¼v¹³ ©ÎªÌ ProfileColorSpace
- * ¶i¦æ¦â°ìÂIªº­pºâ.
- * ¦â°ìªº¤j¤p±N¥HD50¤UªºXYZ¬°­pºâ°ò·Ç.
+ * å¯ä»¥ ç¨ç«‹è‰²å½±åƒ æˆ–è€… ProfileColorSpace
+ * é€²è¡Œè‰²åŸŸé»çš„è¨ˆç®—.
+ * è‰²åŸŸçš„å¤§å°å°‡ä»¥D50ä¸‹çš„XYZç‚ºè¨ˆç®—åŸºæº–.
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -40,7 +40,7 @@ public class GamutBoundaryPoint
   }
 
   /**
-   * hue¬O§_­è¦n¦ì¦b¨ã¦³¸ê®ÆÂIªºhue¤§¤W
+   * hueæ˜¯å¦å‰›å¥½ä½åœ¨å…·æœ‰è³‡æ–™é»çš„hueä¹‹ä¸Š
    * @param hue double
    * @return boolean
    */
@@ -108,17 +108,17 @@ public class GamutBoundaryPoint
   public int HLevel = DEFAULT_H_LEVEL;
 
   /**
-   * ¦â°ìÃä¬É¤WªºÂIªºC­È
+   * è‰²åŸŸé‚Šç•Œä¸Šçš„é»çš„Cå€¼
    */
 //  protected double[][] boundaryHLCArray;
 
   /**
-   * ¨D¦â°ìÃä¬É®É,¥Î¨Ó¼È¦sRGB¥Î
+   * æ±‚è‰²åŸŸé‚Šç•Œæ™‚,ç”¨ä¾†æš«å­˜RGBç”¨
    */
 //  protected int[][][] boundaryRGBArray;
 
   /**
-   * ­pºâ¼v¹³¦â°ì®É,¦b¤@­Ó¦â¬Û­¶¤W¤£¦P«G«×ªº¹³¯À¼Æ¶q
+   * è¨ˆç®—å½±åƒè‰²åŸŸæ™‚,åœ¨ä¸€å€‹è‰²ç›¸é ä¸Šä¸åŒäº®åº¦çš„åƒç´ æ•¸é‡
    */
 //  protected int[][] amountArray;
 
@@ -126,13 +126,13 @@ public class GamutBoundaryPoint
   protected double maxLightness = Double.MIN_VALUE;
 
   /**
-   * ­pºâ¬O¬O§_¥H³Ì±µªñªºLightnes¶i¦æ
+   * è¨ˆç®—æ˜¯æ˜¯å¦ä»¥æœ€æ¥è¿‘çš„Lightnesé€²è¡Œ
    */
   protected boolean useNearestLightnessIndex = true;
 //  protected ChromaticAdaptation chromaticAdaptation;
 
   /**
-   * Ã¸¹Ï¥Î,¤£«ØÄ³¨Ï¥Î,¦]¬°®ö¶OªÅ¶¡
+   * ç¹ªåœ–ç”¨,ä¸å»ºè­°ä½¿ç”¨,å› ç‚ºæµªè²»ç©ºé–“
    * @return double[][]
    * @deprecated
    */
@@ -148,18 +148,18 @@ public class GamutBoundaryPoint
   }
 
   /**
-   * ¨ú±o»Phue³Ì±µªñªºHuePlane
+   * å–å¾—èˆ‡hueæœ€æ¥è¿‘çš„HuePlane
    * @param hue double
    * @return List
    */
   public List<CIELCh> getHuePlane(double hue) {
     List<CIELCh> [] LChList = getNearestHuePlane(hue);
     if (LChList.length == 2) {
-      //¨S¦³¸¨¦b¥­­±¤W, ¦^¶Ç¤F¨â­Ó¥­­±ªºdata
+      //æ²’æœ‰è½åœ¨å¹³é¢ä¸Š, å›å‚³äº†å…©å€‹å¹³é¢çš„data
       return interpolate(LChList[0], LChList[1], hue);
     }
     else if (LChList.length == 1) {
-      //¸¨¦b¥­­±¤W, ¦^¶Ç¤F¤@­Ó¥­­±ªºdata
+      //è½åœ¨å¹³é¢ä¸Š, å›å‚³äº†ä¸€å€‹å¹³é¢çš„data
 //      return getHuePlane(hue, getHueLCArray(hue));
       return LChList[0];
     }
@@ -186,7 +186,7 @@ public class GamutBoundaryPoint
   }
 
   /**
-   * ¨ú±o»Phue³Ì±µªñªº¨â­ÓHuePlane
+   * å–å¾—èˆ‡hueæœ€æ¥è¿‘çš„å…©å€‹HuePlane
    * @param hue double
    * @return List[]
    */
@@ -194,12 +194,12 @@ public class GamutBoundaryPoint
   public List<CIELCh>[] getNearestHuePlane(double hue) {
     return boundary.getNearestHuePlane(hue);
 //    if (isAtPointPlane(hue)) {
-//      //­Y­è¦n¸¨¦b¥­­±¤W, ¦^¶Ç¤@­Ó¥­­±ªº­È(¾÷²v¤Ö¤§¤S¤Ö§a)
+//      //è‹¥å‰›å¥½è½åœ¨å¹³é¢ä¸Š, å›å‚³ä¸€å€‹å¹³é¢çš„å€¼(æ©Ÿç‡å°‘ä¹‹åˆå°‘å§)
 //      return new List[] {
 //          getHuePlane(hue, getHueLCArray(hue))};
 //    }
 //    else {
-//      //­Y¨S¦³¸¨¦b¥­­±¤W, ´N¦^¶Ç¨â­Ó¥­­±ªº­È
+//      //è‹¥æ²’æœ‰è½åœ¨å¹³é¢ä¸Š, å°±å›å‚³å…©å€‹å¹³é¢çš„å€¼
 //      double[] nearestHue = getNearestHue(hue);
 //      double lowerHue = nearestHue[0];
 //      double upperHue = nearestHue[1];
@@ -272,7 +272,7 @@ public class GamutBoundaryPoint
 //  }
 
   /**
-   * §ä¨ì³Ì¤j±m«×
+   * æ‰¾åˆ°æœ€å¤§å½©åº¦
    * @param pcs ProfileColorSpace
    * @return double
    */
@@ -294,8 +294,8 @@ public class GamutBoundaryPoint
   }
 
   /**
-   * ¥HRGB­pºâ¦â°ì¤j¤p,¦â°ìÃä¬É±N¥i¯à¤£smooth.
-   * ¤£«ØÄ³¨Ï¥Î
+   * ä»¥RGBè¨ˆç®—è‰²åŸŸå¤§å°,è‰²åŸŸé‚Šç•Œå°‡å¯èƒ½ä¸smooth.
+   * ä¸å»ºè­°ä½¿ç”¨
    */
   public void calculateGamut() {
     boundary.calculate();
@@ -321,13 +321,13 @@ public class GamutBoundaryPoint
   }
 
   /**
-   * ¬O§_­×¥¿boundary
+   * æ˜¯å¦ä¿®æ­£boundary
    */
   protected final static boolean PATCH_BOUNDARY = true;
   protected final static boolean PATCH_BOUNDARY_IN_CONVEX_HULL = false;
 
   /**
-   * ¨ú±o¤@±i¼v¹³,¦b¤@­Ó¦â¬Û­¶¤W¤£¦P«G«×ªº¹³¯À¼Æ¶q
+   * å–å¾—ä¸€å¼µå½±åƒ,åœ¨ä¸€å€‹è‰²ç›¸é ä¸Šä¸åŒäº®åº¦çš„åƒç´ æ•¸é‡
    * @param hue double
    * @return int[]
    */
@@ -380,7 +380,7 @@ abstract class Boundary {
   /**
    *
    * @return double
-   * @todo ¥Ø«eªºvolumnªº­pºâ¬O¿ù»~ªº
+   * @todo ç›®å‰çš„volumnçš„è¨ˆç®—æ˜¯éŒ¯èª¤çš„
    */
   protected double getVolume() {
     return DoubleArray.sum(DoubleArray.sum(boundaryHLCArray));
@@ -423,7 +423,7 @@ abstract class Boundary {
   }
 
   /**
-   * °w¹ï±×²v,±Nboundary°µ¥­·Æ³B²z
+   * é‡å°æ–œç‡,å°‡boundaryåšå¹³æ»‘è™•ç†
    */
   protected void smoothHuePlaneBoundaryBySlope() {
     for (int H = 0; H < HLevel; H++) {
@@ -431,24 +431,24 @@ abstract class Boundary {
       int changeLIndex = -1;
       //==================================================================
       for (int L = 1; L < LLevel - 1; L++) {
-        //­pºâ±×²v
+        //è¨ˆç®—æ–œç‡
         double slope = boundaryHLCArray[H][L] - boundaryHLCArray[H][L -
             1];
         if (Double.isNaN(lastSlope)) {
           lastSlope = slope;
-          //­Y±×²v¤£¦X²z«h¸õ¹L
+          //è‹¥æ–œç‡ä¸åˆç†å‰‡è·³é
           continue;
         }
 
         if (slope * lastSlope < 0 && changeLIndex == -1) {
-          //¤W¤É¬ğµMÅÜ¤U­°©ÎªÌ¤U­°¬ğµMÅÜ¤W¤É
+          //ä¸Šå‡çªç„¶è®Šä¸‹é™æˆ–è€…ä¸‹é™çªç„¶è®Šä¸Šå‡
           changeLIndex = L;
         }
         else if (changeLIndex != -1) {
           if (boundaryHLCArray[H][L] >
               boundaryHLCArray[H][changeLIndex]) {
             double[] xn = new double[] {
-                //¤W¤É
+                //ä¸Šå‡
                 changeLIndex - 2, changeLIndex - 1, L,
                 L + 1};
             double[] yn = new double[] {
@@ -480,7 +480,7 @@ abstract class Boundary {
         }
 
         if (slope * lastSlope < 0 && changeLIndex == -1) {
-          //¤W¤É¬ğµMÅÜ¤U­°©ÎªÌ¤U­°¬ğµMÅÜ¤W¤É
+          //ä¸Šå‡çªç„¶è®Šä¸‹é™æˆ–è€…ä¸‹é™çªç„¶è®Šä¸Šå‡
           changeLIndex = L;
         }
         else if (changeLIndex != -1) {
@@ -512,7 +512,7 @@ abstract class Boundary {
   }
 
   /**
-   * ³s°µ¨â¦¸Ãä¬É¥­·Æ
+   * é€£åšå…©æ¬¡é‚Šç•Œå¹³æ»‘
    */
   protected void smoothHuePlaneBoundaryDouble() {
     smoothHuePlaneBoundary();
@@ -520,13 +520,13 @@ abstract class Boundary {
   }
 
   /**
-   * ±Nboundary°µ¥­·Æ³B²z
+   * å°‡boundaryåšå¹³æ»‘è™•ç†
    */
   protected void smoothHuePlaneBoundary() {
     for (int H = 0; H < HLevel; H++) {
       for (int L = 1; L < LLevel - 1; L++) {
         double[] xn = new double[] {
-            //¤W¤É
+            //ä¸Šå‡
             L - 1, L + 1};
         double[] yn = new double[] {
             boundaryHLCArray[H][ (int) xn[0]],
@@ -562,37 +562,37 @@ abstract class Boundary {
 //    }
 
   /**
-   * ¹ïboundary°µhueªºlinear´¡­È³B²z
+   * å°boundaryåšhueçš„linearæ’å€¼è™•ç†
    */
   protected void interpolateBoundaryByHue() {
     for (int L = 1; L < LLevel - 1; L++) {
       for (int H = 1; H < HLevel - 2; H++) {
         short[] rgb = boundaryRGBArray[H][L];
-        //§ä¨ìRGB¬°0ªº¼Æ­È
+        //æ‰¾åˆ°RGBç‚º0çš„æ•¸å€¼
         if (rgb[0] == 0 && rgb[1] == 0 && rgb[2] == 0) {
           //====================================================================
-          //´M§ätail
+          //å°‹æ‰¾tail
           int tail = H + 1;
           for (; tail < HLevel - 1; tail++) {
             short[] rgb2 = boundaryRGBArray[tail][L];
-            //§ä¨ì²Ä¤@µ§RGB¤£¬°0ªº¼Æ­È
+            //æ‰¾åˆ°ç¬¬ä¸€ç­†RGBä¸ç‚º0çš„æ•¸å€¼
             if (rgb2[0] != 0 && rgb2[1] != 0 && rgb2[2] != 0) {
               break;
             }
           }
           //====================================================================
 
-          //¥H²Ä¤@µ§RGB¤£¬°0ªº¼Æ­È¥H¤Î«e¤@­Ó¼Æ­È¶i¦æ¤º´¡,¸É»ô³o­ÓªÅ¯Ê
-          //¥Ñ©ó¬O¦bL¶b¤W´M§ä, ©Ò¥H¬O¤@ºûªº½u©Ê¤º´¡
+          //ä»¥ç¬¬ä¸€ç­†RGBä¸ç‚º0çš„æ•¸å€¼ä»¥åŠå‰ä¸€å€‹æ•¸å€¼é€²è¡Œå…§æ’,è£œé½Šé€™å€‹ç©ºç¼º
+          //ç”±æ–¼æ˜¯åœ¨Lè»¸ä¸Šå°‹æ‰¾, æ‰€ä»¥æ˜¯ä¸€ç¶­çš„ç·šæ€§å…§æ’
 
-          //¬°¤F¨ú±o§ó¥­¶¶ªºµ²ªG, ¥i¥H¥[¤JHue¶b¤W¤º´¡, µM«á±N¨â­Ó¤º´¡µ²ªG¦A¤º´¡,
-          //À³¸Ó¥i¥H¨ú±o³Ì¾A·íªºµ²ªG
+          //ç‚ºäº†å–å¾—æ›´å¹³é †çš„çµæœ, å¯ä»¥åŠ å…¥Hueè»¸ä¸Šå…§æ’, ç„¶å¾Œå°‡å…©å€‹å…§æ’çµæœå†å…§æ’,
+          //æ‡‰è©²å¯ä»¥å–å¾—æœ€é©ç•¶çš„çµæœ
           double[] xn = new double[] {
               H - 1, tail};
           double[] yn = new double[] {
               boundaryHLCArray[H - 1][L],
               boundaryHLCArray[tail][L]};
-          //¤º´¡
+          //å…§æ’
           for (int x = H; x < tail; x++) {
             boundaryHLCArray[x][L] = Interpolation.linear(xn, yn, x);
             boundaryRGBArray[x][L][0] = -1;
@@ -606,37 +606,37 @@ abstract class Boundary {
   }
 
   /**
-   * ¹ïboundary°µlightnessªºlinear´¡­È³B²z
+   * å°boundaryåšlightnessçš„linearæ’å€¼è™•ç†
    */
   protected void interpolateBoundaryByLightness() {
     for (int H = 0; H < HLevel; H++) {
       for (int L = 1; L < LLevel - 1; L++) {
         short[] rgb = boundaryRGBArray[H][L];
-        //§ä¨ìRGB¬°0ªº¼Æ­È
+        //æ‰¾åˆ°RGBç‚º0çš„æ•¸å€¼
         if (rgb[0] == 0 && rgb[1] == 0 && rgb[2] == 0) {
           //====================================================================
-          //´M§ätail
+          //å°‹æ‰¾tail
           int tail = L + 1;
           for (; tail < LLevel - 1; tail++) {
             short[] rgb2 = boundaryRGBArray[H][tail];
-            //§ä¨ì²Ä¤@µ§RGB¤£¬°0ªº¼Æ­È
+            //æ‰¾åˆ°ç¬¬ä¸€ç­†RGBä¸ç‚º0çš„æ•¸å€¼
             if (rgb2[0] != 0 && rgb2[1] != 0 && rgb2[2] != 0) {
               break;
             }
           }
           //====================================================================
 
-          //¥H²Ä¤@µ§RGB¤£¬°0ªº¼Æ­È¥H¤Î«e¤@­Ó¼Æ­È¶i¦æ¤º´¡,¸É»ô³o­ÓªÅ¯Ê
-          //¥Ñ©ó¬O¦bL¶b¤W´M§ä, ©Ò¥H¬O¤@ºûªº½u©Ê¤º´¡
+          //ä»¥ç¬¬ä¸€ç­†RGBä¸ç‚º0çš„æ•¸å€¼ä»¥åŠå‰ä¸€å€‹æ•¸å€¼é€²è¡Œå…§æ’,è£œé½Šé€™å€‹ç©ºç¼º
+          //ç”±æ–¼æ˜¯åœ¨Lè»¸ä¸Šå°‹æ‰¾, æ‰€ä»¥æ˜¯ä¸€ç¶­çš„ç·šæ€§å…§æ’
 
-          //¬°¤F¨ú±o§ó¥­¶¶ªºµ²ªG, ¥i¥H¥[¤JHue¶b¤W¤º´¡, µM«á±N¨â­Ó¤º´¡µ²ªG¦A¤º´¡,
-          //À³¸Ó¥i¥H¨ú±o³Ì¾A·íªºµ²ªG
+          //ç‚ºäº†å–å¾—æ›´å¹³é †çš„çµæœ, å¯ä»¥åŠ å…¥Hueè»¸ä¸Šå…§æ’, ç„¶å¾Œå°‡å…©å€‹å…§æ’çµæœå†å…§æ’,
+          //æ‡‰è©²å¯ä»¥å–å¾—æœ€é©ç•¶çš„çµæœ
           double[] xn = new double[] {
               L - 1, tail};
           double[] yn = new double[] {
               boundaryHLCArray[H][L - 1],
               boundaryHLCArray[H][tail]};
-          //¤º´¡
+          //å…§æ’
           for (int x = L; x < tail; x++) {
             boundaryHLCArray[H][x] = Interpolation.linear(xn, yn, x);
             boundaryRGBArray[H][x][0] = -1;
@@ -656,7 +656,7 @@ abstract class Boundary {
   }
 
   /**
-   * ¨ú±o¤@±i¼v¹³,¦b¤@­Ó¦â¬Û­¶¤W¤£¦P«G«×ªº¹³¯À¼Æ¶q
+   * å–å¾—ä¸€å¼µå½±åƒ,åœ¨ä¸€å€‹è‰²ç›¸é ä¸Šä¸åŒäº®åº¦çš„åƒç´ æ•¸é‡
    * @param hue double
    * @return int[]
    */
@@ -665,19 +665,19 @@ abstract class Boundary {
   }
 
   /**
-   * ¨ú±o»Phue³Ì±µªñªº¨â­ÓHuePlane
+   * å–å¾—èˆ‡hueæœ€æ¥è¿‘çš„å…©å€‹HuePlane
    * @param hue double
    * @return List[]
    */
   @SuppressWarnings( {"unchecked"})
   protected List<CIELCh>[] getNearestHuePlane(double hue) {
     if (parent.isAtPointPlane(hue)) {
-      //­Y­è¦n¸¨¦b¥­­±¤W, ¦^¶Ç¤@­Ó¥­­±ªº­È(¾÷²v¤Ö¤§¤S¤Ö§a)
+      //è‹¥å‰›å¥½è½åœ¨å¹³é¢ä¸Š, å›å‚³ä¸€å€‹å¹³é¢çš„å€¼(æ©Ÿç‡å°‘ä¹‹åˆå°‘å§)
       return new List[] {
           getHuePlane(hue, getHueLCArray(hue))};
     }
     else {
-      //­Y¨S¦³¸¨¦b¥­­±¤W, ´N¦^¶Ç¨â­Ó¥­­±ªº­È
+      //è‹¥æ²’æœ‰è½åœ¨å¹³é¢ä¸Š, å°±å›å‚³å…©å€‹å¹³é¢çš„å€¼
       double[] nearestHue = parent.getNearestHue(hue);
       double lowerHue = nearestHue[0];
       double upperHue = nearestHue[1];
@@ -704,7 +704,7 @@ abstract class Boundary {
   }
 
   /**
-   * Ã¸¹Ï¥Î,¤£«ØÄ³¨Ï¥Î,¦]¬°®ö¶OªÅ¶¡:P
+   * ç¹ªåœ–ç”¨,ä¸å»ºè­°ä½¿ç”¨,å› ç‚ºæµªè²»ç©ºé–“:P
    * @return double[][]
    * @deprecated
    */
@@ -738,7 +738,7 @@ abstract class Boundary {
    * @deprecated
    */
   protected void doBoundaryConvexHull() {
-    //¥ı²£¥Í®y¼ĞÂI
+    //å…ˆç”¢ç”Ÿåº§æ¨™é»
     double[][] boundaryLab = getBoundaryLabValues();
     ConvexHull convexHull = new ConvexHull(boundaryLab);
     boundaryHLCArray = convexHull.getBoundaryHLCArray(this);
@@ -778,7 +778,7 @@ abstract class Boundary {
    *
    * @param hue double
    * @return double[]
-   * @todo L gma ³B¦b¨â­Óhue¤§¶¡®É?
+   * @todo L gma è™•åœ¨å…©å€‹hueä¹‹é–“æ™‚?
    */
   protected double[] getHueLCArray(double hue) {
     int hueIndex = parent.getHueIndex(hue);
@@ -843,17 +843,17 @@ abstract class Boundary {
   }
 
   /**
-   * ¦â°ìÃä¬É¤WªºÂIªºC­È
+   * è‰²åŸŸé‚Šç•Œä¸Šçš„é»çš„Cå€¼
    */
   protected double[][] boundaryHLCArray;
 
   /**
-   * ¨D¦â°ìÃä¬É®É,¥Î¨Ó¼È¦sRGB¥Î
+   * æ±‚è‰²åŸŸé‚Šç•Œæ™‚,ç”¨ä¾†æš«å­˜RGBç”¨
    */
   protected short[][][] boundaryRGBArray;
 
   /**
-   * ­pºâ¼v¹³¦â°ì®É,¦b¤@­Ó¦â¬Û­¶¤W¤£¦P«G«×ªº¹³¯À¼Æ¶q
+   * è¨ˆç®—å½±åƒè‰²åŸŸæ™‚,åœ¨ä¸€å€‹è‰²ç›¸é ä¸Šä¸åŒäº®åº¦çš„åƒç´ æ•¸é‡
    */
   protected int[][] amountArray;
   protected final int HLevel, LLevel;
@@ -863,7 +863,7 @@ abstract class Boundary {
 
     this.HLevel = parent.HLevel;
     this.LLevel = parent.LLevel;
-    //ªì©l¤Æ
+    //åˆå§‹åŒ–
     boundaryHLCArray = new double[HLevel][LLevel];
     amountArray = new int[HLevel][LLevel];
     boundaryRGBArray = new short[HLevel][LLevel][3];

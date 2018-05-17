@@ -4,7 +4,7 @@ package auo.cms.hsv.autotune;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Î¨Ó°O¿ý¤@²ÕHueªº½Õ¾ã­È
+ * ç”¨ä¾†è¨˜éŒ„ä¸€çµ„Hueçš„èª¿æ•´å€¼
  *
  * <p>Copyright: Copyright (c) 2009</p>
  *

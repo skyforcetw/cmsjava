@@ -11,7 +11,7 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ±NSOCSªº­ì©l¸ê®Æ®æ¦¡Âà´«¨ìCxF
+ * å°‡SOCSçš„åŸå§‹è³‡æ–™æ ¼å¼è½‰æ›åˆ°CxF
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -104,7 +104,7 @@ public class SOCS2CxF {
   }
 
   public static void main(String[] args) {
-    //±NSOCSªº¤T­Ó¸ê®Æ¶°Âà´«¨ìCxF 1.SOCS 2.Typical 3. Difference
+    //å°‡SOCSçš„ä¸‰å€‹è³‡æ–™é›†è½‰æ›åˆ°CxF 1.SOCS 2.Typical 3. Difference
     SOCS2CxF socs2cxf = new SOCS2CxF();
 //    socs2cxf.processSOCS();
     socs2cxf.processTRDatabase(TRDatabase.Typical);

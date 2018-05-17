@@ -52,7 +52,7 @@ public class LowGrayReproduction
 
   public static void main(String[] args) {
     LCDTarget ramp = LCDTarget.Instance.getFromAUORampXLS(
-        "D:\\My Documents\\§uß@\\µÿ§s≠pµe\\LG 42SL90QD\\Standard\\ramp.xls");
+        "D:\\My Documents\\Â∑•‰Ωú\\ËèØÂ±±Ë®àÁï´\\LG 42SL90QD\\Standard\\ramp.xls");
     LCDTarget.Operator.gradationReverseFix(ramp);
 
     LowGrayReproduction report = new LowGrayReproduction(ramp);

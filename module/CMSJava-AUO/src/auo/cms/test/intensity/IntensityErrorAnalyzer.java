@@ -375,9 +375,9 @@ public class IntensityErrorAnalyzer {
     // setup
     //==========================================================================
     final boolean useBMax = false;
-    final boolean useNewWhite = false; //¸òuseBMax¨Ã¥Î¤~¦³®ÄªG
-    final boolean keepMaxWhite = false; //¥ÕÂI¬O§_ºû«ù255 255 255
-//    final boolean doRemap = false; //¶}¤FuseBMax©ÎuseNewWhite¥²¶}
+    final boolean useNewWhite = false; //è·ŸuseBMaxä¸¦ç”¨æ‰æœ‰æ•ˆæœ
+    final boolean keepMaxWhite = false; //ç™½é»æ˜¯å¦ç¶­æŒ255 255 255
+//    final boolean doRemap = false; //é–‹äº†useBMaxæˆ–useNewWhiteå¿…é–‹
     final int iterationTime = 0;
     int size = 256;
     //==========================================================================

@@ -9,7 +9,7 @@ import shu.cms.devicemodel.lcd.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥H¦â®t·í§@index
+ * ä»¥è‰²å·®ç•¶ä½œindex
  *
  * <p>Copyright: Copyright (c) 2009</p>
  *

@@ -38,7 +38,7 @@ public class TwoWayXTalkReconstructor
    */
   public RGB getXTalkRGB(CIEXYZ XYZ, RGB originalRGB, boolean relativeXYZ) {
     if (!originalRGB.isSecondaryChannel()) {
-      //originalRGB¤@©w¥u¯à¬O¤G¦¸¦â
+      //originalRGBä¸€å®šåªèƒ½æ˜¯äºŒæ¬¡è‰²
       return null;
     }
 

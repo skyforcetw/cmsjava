@@ -64,14 +64,14 @@ public class DGStabilityTester {
   public static void main(String[] args) {
     StringHelper.UNICODE_ENCODING = "utf-16LE";
     String dirname =
-        "D:\\³nÅé\\nobody zone\\exp data\\CCTv3\\2012\\120611\\500x1-2";
-//        "D:\\³nÅé\\nobody zone\\exp data\\CCTv3\\2012\\120611\\400x1";
-//        "D:\\³nÅé\\nobody zone\\exp data\\CCTv3\\2012\\120611\\500x1";
-//        "D:\\³nÅé\\nobody zone\\exp data\\CCTv3\\2012\\120608\\·s¸ê®Æ§¨ (5)(700x3)";
-//        "D:\\³nÅé\\nobody zone\\exp data\\CCTv3\\2012\\120608\\·s¸ê®Æ§¨ (4)(700x1)";
-//        "D:\\³nÅé\\nobody zone\\exp data\\CCTv3\\2012\\120608\\·s¸ê®Æ§¨ (3)(500x3)";
-//        "D:\\³nÅé\\nobody zone\\exp data\\CCTv3\\2012\\120608\\·s¸ê®Æ§¨ (2)(500x2)";
-//        "D:\\³nÅé\\nobody zone\\exp data\\CCTv3\\2012\\120608\\·s¸ê®Æ§¨ (400x1)";
+        "D:\\è»Ÿé«”\\nobody zone\\exp data\\CCTv3\\2012\\120611\\500x1-2";
+//        "D:\\è»Ÿé«”\\nobody zone\\exp data\\CCTv3\\2012\\120611\\400x1";
+//        "D:\\è»Ÿé«”\\nobody zone\\exp data\\CCTv3\\2012\\120611\\500x1";
+//        "D:\\è»Ÿé«”\\nobody zone\\exp data\\CCTv3\\2012\\120608\\æ–°è³‡æ–™å¤¾ (5)(700x3)";
+//        "D:\\è»Ÿé«”\\nobody zone\\exp data\\CCTv3\\2012\\120608\\æ–°è³‡æ–™å¤¾ (4)(700x1)";
+//        "D:\\è»Ÿé«”\\nobody zone\\exp data\\CCTv3\\2012\\120608\\æ–°è³‡æ–™å¤¾ (3)(500x3)";
+//        "D:\\è»Ÿé«”\\nobody zone\\exp data\\CCTv3\\2012\\120608\\æ–°è³‡æ–™å¤¾ (2)(500x2)";
+//        "D:\\è»Ÿé«”\\nobody zone\\exp data\\CCTv3\\2012\\120608\\æ–°è³‡æ–™å¤¾ (400x1)";
     List<RGB> [] dgArray = readDGArray(dirname);
     Plot2D plot = Plot2D.getInstance();
     int size = dgArray.length;

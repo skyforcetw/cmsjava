@@ -121,10 +121,10 @@ public final class ProfileUtils {
   }
 
   /**
-   * ±N¦â¥~»ªªºJab,Âà´«¨ìvc¤U¹ê»Ú¹ïÀ³ªºLab,¨Ã¥B¦^¶ÇÂà´«¿ù»~ªº¦¸¼Æ
+   * å°‡è‰²å¤–è²Œçš„Jab,è½‰æ›åˆ°vcä¸‹å¯¦éš›å°æ‡‰çš„Lab,ä¸¦ä¸”å›å‚³è½‰æ›éŒ¯èª¤çš„æ¬¡æ•¸
    * @param JabArray double[][]
    * @param vc ViewingConditions
-   * @return int Âà´«¿ù»~ªº¦¸¼Æ
+   * @return int è½‰æ›éŒ¯èª¤çš„æ¬¡æ•¸
    */
   protected final static int JabToXYZArray(double[][] JabArray,
                                            ViewingConditions vc) {
@@ -156,7 +156,7 @@ public final class ProfileUtils {
    *
    * @param XYZArray double[][]
    * @param vc ViewingConditions
-   * @return int Âà´«²£¥Í¿ù»~ªº¦¸¼Æ
+   * @return int è½‰æ›ç”¢ç”ŸéŒ¯èª¤çš„æ¬¡æ•¸
    */
   protected final static int XYZToJabArray(double[][] XYZArray,
                                            ViewingConditions vc) {
@@ -234,7 +234,7 @@ public final class ProfileUtils {
   }
 
   /**
-   * ±Ndouble array²Õ¦¨ªºA2BÂà¨ìColorSpaceConnectedLUT
+   * å°‡double arrayçµ„æˆçš„A2Bè½‰åˆ°ColorSpaceConnectedLUT
    * @param lcdModel LCDModel
    * @param input double[][]
    * @param output double[][]
@@ -314,7 +314,7 @@ public final class ProfileUtils {
 //  }
 
   /**
-   * ±N¤@¨ÇÂà´«¤§«á,³y¦¨¿ù»~ªº·t³¡ÃC¦â,­×¥¿¦¨¶Â¦â
+   * å°‡ä¸€äº›è½‰æ›ä¹‹å¾Œ,é€ æˆéŒ¯èª¤çš„æš—éƒ¨é¡è‰²,ä¿®æ­£æˆé»‘è‰²
    * @param LabArray double[][]
    * @return int
    */

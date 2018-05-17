@@ -17,7 +17,7 @@ import java.io.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¿é¤Jrgb¨ìLCDModel, ²£¥Í¥XXYZ
+ * è¼¸å…¥rgbåˆ°LCDModel, ç”¢ç”Ÿå‡ºXYZ
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

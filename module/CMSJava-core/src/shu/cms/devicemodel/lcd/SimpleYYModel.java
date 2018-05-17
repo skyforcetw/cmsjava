@@ -15,13 +15,13 @@ import shu.math.regress.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * Â^¨ú³¡¥÷YYºë¯«ªºÁY´îª©
- * 1.r/g/b¥ı¸g¹Ls-curve³B¸Ì
- * 2.¦A¸g¹Lgamma correct(¥i¿ï¾Ü¬O§_¤£­n,¸g¹êÅçµo²{µ²ªG,Ãö±¼¤ñ¸û¦n)
- * 3.®M¥Î³æ¤@ÀW¹D¦â¶ô²£¥Íªº3x3¯x°},±o¨ìXYZ.
- *   ³o­Ó¯x°}³Ì¥Dááªº¥Øªº,´N¬O­n²¾°£¥ú¾Çªºcrosstalk
+ * æ“·å–éƒ¨ä»½YYç²¾ç¥çš„ç¸®æ¸›ç‰ˆ
+ * 1.r/g/bå…ˆç¶“és-curveè™•è£¡
+ * 2.å†ç¶“égamma correct(å¯é¸æ“‡æ˜¯å¦ä¸è¦,ç¶“å¯¦é©—ç™¼ç¾çµæœ,é—œæ‰æ¯”è¼ƒå¥½)
+ * 3.å¥—ç”¨å–®ä¸€é »é“è‰²å¡Šç”¢ç”Ÿçš„3x3çŸ©é™£,å¾—åˆ°XYZ.
+ *   é€™å€‹çŸ©é™£æœ€ä¸»æ‘½çš„ç›®çš„,å°±æ˜¯è¦ç§»é™¤å…‰å­¸çš„crosstalk
  *
- * ­ì¥ıªº³]­p¤¤,s-curve«á¦A¸g¹L¤@¹Dlut,«á¨Óµo²{²¾°£¤§«á®ÄªG§ó¦n.
+ * åŸå…ˆçš„è¨­è¨ˆä¸­,s-curveå¾Œå†ç¶“éä¸€é“lut,å¾Œä¾†ç™¼ç¾ç§»é™¤ä¹‹å¾Œæ•ˆæœæ›´å¥½.
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -120,17 +120,17 @@ public class SimpleYYModel
 
   protected Factor[] _produceFactor() {
     //==========================================================================
-    // ­pºâmodel1°Ñ¼Æ
+    // è¨ˆç®—model1åƒæ•¸
     //==========================================================================
     SCurveModel = new SCurveModel1Thread(this.lcdTarget);
     SCurveModel.produceFactor();
     //==========================================================================
 
     //==========================================================================
-    // ­pºâ3x3 matrix
+    // è¨ˆç®—3x3 matrix
     //==========================================================================
     luminanceChannel.produceLuminancePatch(SCurveModel);
-    //­pºâgamma correction
+    //è¨ˆç®—gamma correction
     Set<Patch> singleChannelPatchSet = luminanceChannel.getLuminancePatchSet();
     double[][] RGB2XYZ = produceRGB2XYZ_3x3(singleChannelPatchSet); //ok
     //==========================================================================
@@ -164,8 +164,8 @@ public class SimpleYYModel
   }
 
   /**
-   * ¥ı¸g¹Lmodel1ªº¹Bºâ«á,¦A¸g¹Lgamma®Õ¥¿©Ò±oªº­È
-   * Â²ºÙ¬°GS­È,¦ı¦A¦¹¥i¥ÑdoGammaCorrect¨M©w¬O§_­n§@gammaCorrect
+   * å…ˆç¶“émodel1çš„é‹ç®—å¾Œ,å†ç¶“égammaæ ¡æ­£æ‰€å¾—çš„å€¼
+   * ç°¡ç¨±ç‚ºGSå€¼,ä½†å†æ­¤å¯ç”±doGammaCorrectæ±ºå®šæ˜¯å¦è¦ä½œgammaCorrect
    * @param rgbValue double[]
    * @param model1 LuminanceRGBModelIF
    * @return double[]
@@ -280,7 +280,7 @@ public class SimpleYYModel
   protected final double[][] produceRGB2XYZ_3x3(Collection<Patch>
       singleChannelPatch) {
     //==========================================================================
-    // Âà¦¨rgb©MXYZªºdouble°}¦C
+    // è½‰æˆrgbå’ŒXYZçš„doubleé™£åˆ—
     //==========================================================================
     int size = singleChannelPatch.size();
     double[][] rgbArray = new double[size][3];

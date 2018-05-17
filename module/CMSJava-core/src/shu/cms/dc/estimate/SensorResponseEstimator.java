@@ -9,7 +9,7 @@ import shu.cms.dc.ideal.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ·P¥ú¤¸¥óªº¥úÃĞ¥ú¤Ï¬M¨ç¼Æªº¹w´ú
+ * æ„Ÿå…‰å…ƒä»¶çš„å…‰è­œå…‰åæ˜ å‡½æ•¸çš„é æ¸¬
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -21,7 +21,7 @@ import shu.cms.dc.ideal.*;
 public abstract class SensorResponseEstimator {
 
   /**
-   * ¨Ì·ÓsensorResponse¤Îtarget, ±NsensorResponseªº¹w´úµ²ªG¨î§@¥X¹w´ú³ø§i
+   * ä¾ç…§sensorResponseåŠtarget, å°‡sensorResponseçš„é æ¸¬çµæœåˆ¶ä½œå‡ºé æ¸¬å ±å‘Š
    * @param sensorResponse Spectra[]
    * @param target DCTarget
    * @return EstimatorReport
@@ -36,13 +36,13 @@ public abstract class SensorResponseEstimator {
   }
 
   /**
-   * §Q¥ÎsensorResponseªº¯S©Ê, ¥H¤Îtargetªº¥úÃĞ, ­pºâ¥XRGB
+   * åˆ©ç”¨sensorResponseçš„ç‰¹æ€§, ä»¥åŠtargetçš„å…‰è­œ, è¨ˆç®—å‡ºRGB
    * R=responseR * SPD
    * G=responseG * SPD
    * B=responseB * SPD
    * @param sensorResponse Spectra[]
    * @param target DCTarget
-   * @return double[][] »Ptargetªºpatch¼Æ¶q¬Û¦PªºRGBValues
+   * @return double[][] èˆ‡targetçš„patchæ•¸é‡ç›¸åŒçš„RGBValues
    */
   private final static double[][] getEstimatedValues(Spectra[] sensorResponse,
       DCTarget target) {
@@ -65,7 +65,7 @@ public abstract class SensorResponseEstimator {
   }
 
   /**
-   * §ì¥Xtarget¨C¤@­ÓpatchªºRGB¹ê»Ú­È
+   * æŠ“å‡ºtargetæ¯ä¸€å€‹patchçš„RGBå¯¦éš›å€¼
    * @param target DCTarget
    * @return double[][]
    */

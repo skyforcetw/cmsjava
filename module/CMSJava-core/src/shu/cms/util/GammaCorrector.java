@@ -28,18 +28,18 @@ public class GammaCorrector
   protected GammaFinder exponent;
   protected Interpolation1DLUT lut;
   /**
-   * ¬O§_­×¥¿key©Mvalue¦b½d³ò¤º
+   * æ˜¯å¦ä¿®æ­£keyå’Œvalueåœ¨ç¯„åœå…§
    */
   protected boolean correctInRange = true;
   /**
-   * ¬ö¿ı³Ì¤j­È
+   * ç´€éŒ„æœ€å¤§å€¼
    */
   protected double maxValue;
   protected double minValue;
   protected boolean hasCorrectedInRange = false;
 
   /**
-   *  ÀË¬d¤W¤@¦¸©I¥scorrect®É(©Îuncorrect), ¬O§_¦³¶W¥X½d³òµM«á³Q­×¥¿ªºª¬ªp.
+   *  æª¢æŸ¥ä¸Šä¸€æ¬¡å‘¼å«correctæ™‚(æˆ–uncorrect), æ˜¯å¦æœ‰è¶…å‡ºç¯„åœç„¶å¾Œè¢«ä¿®æ­£çš„ç‹€æ³.
    * @return boolean
    */
   public boolean hasCorrectedInRange() {
@@ -57,7 +57,7 @@ public class GammaCorrector
   }
 
   /**
-   * ¬O§_¥i¥H°µuncorrect. ¤]´N¬OÀË¬d¬O§_¦b¥i­×¥¿ªº½d³ò¤º
+   * æ˜¯å¦å¯ä»¥åšuncorrect. ä¹Ÿå°±æ˜¯æª¢æŸ¥æ˜¯å¦åœ¨å¯ä¿®æ­£çš„ç¯„åœå…§
    * @param correct double
    * @return boolean
    */
@@ -71,7 +71,7 @@ public class GammaCorrector
   }
 
   /**
-   * ³]©w¤º´¡ªººtºâªk
+   * è¨­å®šå…§æ’çš„æ¼”ç®—æ³•
    * @param algo Algo
    */
   public void setLUTAlgo(Interpolation1DLUT.Algo algo) {
@@ -81,7 +81,7 @@ public class GammaCorrector
   }
 
   /**
-   * ±qoutput±À¨ìinput(¥hgamma¹Bºâ)
+   * å¾outputæ¨åˆ°input(å»gammaé‹ç®—)
    * @param correct double
    * @return double
    */
@@ -111,7 +111,7 @@ public class GammaCorrector
   }
 
   /**
-   * ¬O§_¥i¥H°µcorrect. ¤]´N¬OÀË¬d¬O§_¦b¥i­×¥¿ªº½d³ò¤º
+   * æ˜¯å¦å¯ä»¥åšcorrect. ä¹Ÿå°±æ˜¯æª¢æŸ¥æ˜¯å¦åœ¨å¯ä¿®æ­£çš„ç¯„åœå…§
    * @param original double
    * @return boolean
    */
@@ -125,7 +125,7 @@ public class GammaCorrector
   }
 
   /**
-   * ¨ú±oµ¥¶¡¶Zªºtable
+   * å–å¾—ç­‰é–“è·çš„table
    * @param level int
    * @return double[]
    */
@@ -139,10 +139,10 @@ public class GammaCorrector
   }
 
   /**
-   * ±Ncorrect¥Îªºªí¦^¶Ç
+   * å°‡correctç”¨çš„è¡¨å›å‚³
    * @param level int
    * @return double[]
-   * @todo H icc ¹J¨ì¼Æ¦ì¬Û¾÷ªº³õ¦X,·|¦³°İÃD»İ­n­×¥¿
+   * @todo H icc é‡åˆ°æ•¸ä½ç›¸æ©Ÿçš„å ´åˆ,æœƒæœ‰å•é¡Œéœ€è¦ä¿®æ­£
    */
   public double[] getCorrectTable(int level) {
     double[] table = new double[level];
@@ -154,10 +154,10 @@ public class GammaCorrector
   }
 
   /**
-   * ±Nuncorrect¥Îªºªí¦^¶Ç
+   * å°‡uncorrectç”¨çš„è¡¨å›å‚³
    * @param level int
    * @return double[]
-   * @todo H icc ¹J¨ì¼Æ¦ì¬Û¾÷ªº³õ¦X,·|¦³°İÃD»İ­n­×¥¿
+   * @todo H icc é‡åˆ°æ•¸ä½ç›¸æ©Ÿçš„å ´åˆ,æœƒæœ‰å•é¡Œéœ€è¦ä¿®æ­£
    */
   public double[] getUncorrectTable(int level) {
     double[] table = new double[level];
@@ -170,7 +170,7 @@ public class GammaCorrector
   }
 
   /**
-   * ±qinput±À¨ìoutput(¥[¤Wgamma¹Bºâ)
+   * å¾inputæ¨åˆ°output(åŠ ä¸Šgammaé‹ç®—)
    * @param original double
    * @return double
    */
@@ -196,7 +196,7 @@ public class GammaCorrector
         result = -result;
       }
       /**
-       * @note ¬°¤FÁ×§K¦³­t­Èªº¥X²{(gamma­pºâ¤£À³¸Ó­n¦³­t­È)
+       * @note ç‚ºäº†é¿å…æœ‰è² å€¼çš„å‡ºç¾(gammaè¨ˆç®—ä¸æ‡‰è©²è¦æœ‰è² å€¼)
        */
       result = RGB.rationalize(result, RGB.MaxValue.Double1);
       return result;
@@ -205,12 +205,12 @@ public class GammaCorrector
   }
 
   /**
-   * ¬O§_±Ä¥Î«ü¼Æ¶i¦æGamma®Õ¥¿
-   * (§_«h´N¬O±Ä¥ÎLUT)
+   * æ˜¯å¦æ¡ç”¨æŒ‡æ•¸é€²è¡ŒGammaæ ¡æ­£
+   * (å¦å‰‡å°±æ˜¯æ¡ç”¨LUT)
    */
   public final static boolean GAMMA_EXPONENT_CORRECTION = false;
   /**
-   * ¬O§_»İ­n°w¹ïcode=0ªº«G«×¤]­×¥¿¦¨0,¦A¶i¦æ¥¿³W¹ºªº­pºâ(¤@¯ë¨Ó»¡¬O¥²­nªº)
+   * æ˜¯å¦éœ€è¦é‡å°code=0çš„äº®åº¦ä¹Ÿä¿®æ­£æˆ0,å†é€²è¡Œæ­£è¦åŠƒçš„è¨ˆç®—(ä¸€èˆ¬ä¾†èªªæ˜¯å¿…è¦çš„)
    */
   public final static boolean BLACK_CORRECTION = true;
 
@@ -228,7 +228,7 @@ public class GammaCorrector
   }
 
   /**
-   * ¥H¹ï·Óªí(LUT)²£¥ÍGammaCorrector
+   * ä»¥å°ç…§è¡¨(LUT)ç”¢ç”ŸGammaCorrector
    * @param singleChannelPatch Set
    * @param ch Channel
    * @return GammaCorrector
@@ -239,7 +239,7 @@ public class GammaCorrector
   }
 
   /**
-   * ¥H¹ï·Óªí(LUT)²£¥ÍGammaCorrector
+   * ä»¥å°ç…§è¡¨(LUT)ç”¢ç”ŸGammaCorrector
    * @param singleChannelPatch Set
    * @param ch Channel
    * @param method Method
@@ -251,10 +251,10 @@ public class GammaCorrector
   }
 
   /**
-   * ÅçÃÒYªº¦X²z©Ê
-   * ¤£À³¸Ó¦³«G«×¤ÏÂàªºª¬ªp.
-   * ¦pªG¦³,¥i¯à¬O 1.»ö¾¹°İÃD 2.LCD¤£Ã­©w°İÃD
-   * ¼Ò¦¡ªº±ÀºtÀ³¸Ó©¿²¤³o¼Ëªº°İÃD
+   * é©—è­‰Yçš„åˆç†æ€§
+   * ä¸æ‡‰è©²æœ‰äº®åº¦åè½‰çš„ç‹€æ³.
+   * å¦‚æœæœ‰,å¯èƒ½æ˜¯ 1.å„€å™¨å•é¡Œ 2.LCDä¸ç©©å®šå•é¡Œ
+   * æ¨¡å¼çš„æ¨æ¼”æ‡‰è©²å¿½ç•¥é€™æ¨£çš„å•é¡Œ
    * @param input double[]
    * @param outputY double[]
    * @return double[][]
@@ -291,7 +291,7 @@ public class GammaCorrector
   }
 
   /**
-   * ÀË¬dvalues¬O»¼¼W
+   * æª¢æŸ¥valuesæ˜¯éå¢
    * @param values double[]
    * @return boolean
    */
@@ -316,12 +316,12 @@ public class GammaCorrector
   }
 
   /**
-   * ¨ú±oGammaCorrectorªº¹êÅé
-   * @param singleChannelPatch Set ³æ¤@ÀW¹Dªº¦â¶ô
-   * @param ch Channel ÀW¹D
-   * @param useGammaExponentCorrection boolean ¥H«ü¼Æ¹Bºâ°µ®Õ¥¿
-   * @param doYNormalize boolean ¬O§_­n¹ïY°µ¥¿³W¤Æ
-   * @param method Method ²£¥Í¤º´¡­Èªº¤èªk
+   * å–å¾—GammaCorrectorçš„å¯¦é«”
+   * @param singleChannelPatch Set å–®ä¸€é »é“çš„è‰²å¡Š
+   * @param ch Channel é »é“
+   * @param useGammaExponentCorrection boolean ä»¥æŒ‡æ•¸é‹ç®—åšæ ¡æ­£
+   * @param doYNormalize boolean æ˜¯å¦è¦å°Yåšæ­£è¦åŒ–
+   * @param method Method ç”¢ç”Ÿå…§æ’å€¼çš„æ–¹æ³•
    * @return GammaCorrector
    */
   protected final static GammaCorrector getInstance(Set<Patch>
@@ -334,7 +334,7 @@ public class GammaCorrector
     double YMax = Double.MIN_VALUE;
 
     //==========================================================================
-    // Set<Patch>Âà¨ìinput/output
+    // Set<Patch>è½‰åˆ°input/output
     //==========================================================================
     int x = 0;
     for (Patch p : singleChannelPatch) {
@@ -355,7 +355,7 @@ public class GammaCorrector
       YMax = Math.max(output[x], YMax);
       x++;
     }
-    //ÀË¬d¦³¨S¦³¤ÏÂà
+    //æª¢æŸ¥æœ‰æ²’æœ‰åè½‰
     int inputDecreaseIndex = checkDecreaseIndex(input);
     int outputDecreaseIndex = checkDecreaseIndex(output);
     if (inputDecreaseIndex != -1 || outputDecreaseIndex != -1) {
@@ -370,9 +370,9 @@ public class GammaCorrector
 
     double YMin = output[0];
 
-    //¹ï«G«×§@¥¿³W¤Æ
+    //å°äº®åº¦ä½œæ­£è¦åŒ–
     if (YMin != 0 && BLACK_CORRECTION) {
-      //¥ı¨Ï¶ÂÂIÂk¹s
+      //å…ˆä½¿é»‘é»æ­¸é›¶
       output = DoubleArray.minus(output, YMin);
     }
     if (doYNormalize) {
@@ -401,11 +401,11 @@ public class GammaCorrector
 
   public static enum Method {
     /**
-     * ±q«G«×²£¥Í­×¥¿
+     * å¾äº®åº¦ç”¢ç”Ÿä¿®æ­£
      */
     ByLuminance,
     /**
-     * ±qXYZ©Ò±oªºpower²£¥Í­×¥¿
+     * å¾XYZæ‰€å¾—çš„powerç”¢ç”Ÿä¿®æ­£
      */
     ByPowerXYZ,
 
@@ -416,7 +416,7 @@ public class GammaCorrector
   }
 
   /**
-   * correct¥Îªº¤º´¡¹ï·Óªí
+   * correctç”¨çš„å…§æ’å°ç…§è¡¨
    * @return Interpolation1DLUT
    */
   public Interpolation1DLUT getLut() {

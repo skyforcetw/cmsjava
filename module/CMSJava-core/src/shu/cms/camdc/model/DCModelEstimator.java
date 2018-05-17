@@ -40,8 +40,8 @@ public class DCModelEstimator {
   private int luminancePatchSkipCount = 1;
 
   /**
-   * «Øºcdg countÂà«G«×ªº¦±½u
-   * ¤À§O²£¥Í¬°gamma¥H¤Î¹ï·Óªí«¬¦¡
+   * å»ºæ§‹dg countè½‰äº®åº¦çš„æ›²ç·š
+   * åˆ†åˆ¥ç”¢ç”Ÿç‚ºgammaä»¥åŠå°ç…§è¡¨å‹å¼
    * @param dcTarget DCTarget
    */
   private void initLuminanceLUT(DCTarget dcTarget) {
@@ -118,7 +118,7 @@ public class DCModelEstimator {
   }
 
   /**
-   * ±Ndigit countªºrgbÂà¦^¬°»P«G«×½u©Êªºrgb
+   * å°‡digit countçš„rgbè½‰å›ç‚ºèˆ‡äº®åº¦ç·šæ€§çš„rgb
    * @param dcTarget DCTarget
    */
   private void initOriignalRGB(DCTarget dcTarget) {
@@ -162,21 +162,21 @@ public class DCModelEstimator {
 
   public static void main(String[] args) {
 //    IdealDigitalCamera camera = estimateHTCLegend(false, false);
-    String iccfilename = "Measurement Files/camera/htc legend/test3/¤é.icc";
+    String iccfilename = "Measurement Files/camera/htc legend/test3/æ—¥.icc";
     IdealDigitalCamera camera = CameraSensorEstimator.estimateCamera(
         iccfilename, false, false);
     Plot2D plot = Plot2D.getInstance();
 
-    //F8¤U±À¥Xªºsensor¹ïÀ³¨ìA¤U­±¨Ã¤£·Ç½T
+    //F8ä¸‹æ¨å‡ºçš„sensorå°æ‡‰åˆ°Aä¸‹é¢ä¸¦ä¸æº–ç¢º
 
 
 
     /**
-     * ¥Õ¥­¿Å
+     * ç™½å¹³è¡¡
      *
-     * ­º¥ıºâ¥X¬Y¥ÕÂI¤Uªºrgb2XYZ
-     * µM«á±NXYZÂà¨ìlms, lms¦A¦â¾AÀ³¨ìD65(¦]¬°­n¦s¦¨sRGB)
-     * ¦AÂà¦^XYZ, ¦AÂà¦¨sRGB
+     * é¦–å…ˆç®—å‡ºæŸç™½é»ä¸‹çš„rgb2XYZ
+     * ç„¶å¾Œå°‡XYZè½‰åˆ°lms, lmså†è‰²é©æ‡‰åˆ°D65(å› ç‚ºè¦å­˜æˆsRGB)
+     * å†è½‰å›XYZ, å†è½‰æˆsRGB
      */
   }
 

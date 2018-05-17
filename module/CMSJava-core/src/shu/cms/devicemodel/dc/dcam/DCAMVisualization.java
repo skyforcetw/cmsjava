@@ -205,7 +205,7 @@ public class DCAMVisualization {
     DCModel.Factor factor = model.produceFactor();
 
     //==========================================================================
-    // µøÄ±¤Æ
+    // è¦–è¦ºåŒ–
     //==========================================================================
     DCAMVisualization visual = new DCAMVisualization(model);
 //    visual.plotLightnessCorrection();

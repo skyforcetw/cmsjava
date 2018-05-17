@@ -38,7 +38,7 @@ public class TwoWayAdjacentXtalkModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    */
@@ -77,8 +77,8 @@ public class TwoWayAdjacentXtalkModel
   private XTalkEliminator[] eliminators;
 
   /**
-   * ¸ÑªR¥XselfChannel³Q¼vÅTªº¹ï·Óªí.
-   * ¦pªGselfChannel¬°G, «h¸ÑªR¥XR->G(selfChannel¤§¥ª)¥H¤ÎB->G(selfChannel¤§¥k)ªº¼vÅT©Ê.
+   * è§£æå‡ºselfChannelè¢«å½±éŸ¿çš„å°ç…§è¡¨.
+   * å¦‚æœselfChannelç‚ºG, å‰‡è§£æå‡ºR->G(selfChannelä¹‹å·¦)ä»¥åŠB->G(selfChannelä¹‹å³)çš„å½±éŸ¿æ€§.
    * @param selfChannel Channel
    * @param channelValues double[]
    * @return double[][][]
@@ -95,7 +95,7 @@ public class TwoWayAdjacentXtalkModel
     RGB keyRGB = xtalkLCDTarget.getKeyRGB();
 
     int size = channelValues.length;
-    //¦¹³BªºcorrectLutªº¦ì¸m»Ppatent¤Wªº¤£¦P, ¤w¸g¹ï½Õ¤F
+    //æ­¤è™•çš„correctLutçš„ä½ç½®èˆ‡patentä¸Šçš„ä¸åŒ, å·²ç¶“å°èª¿äº†
     double[][] leftCorrectLut = new double[size][size];
     double[][] rightCorrectLut = new double[size][size];
     double[][][] correctLut = new double[][][] {
@@ -112,7 +112,7 @@ public class TwoWayAdjacentXtalkModel
 
           Patch p = xtalkLCDTarget.getPatch(keyRGB);
           if (p == null || !p.getRGB().isSecondaryChannel()) {
-            //¦pªG¤£¬O¤G¦¸¦â, ¨S¿ìªk¨DXtalk RGB
+            //å¦‚æœä¸æ˜¯äºŒæ¬¡è‰², æ²’è¾¦æ³•æ±‚Xtalk RGB
             continue;
           }
           RGB rgb = p.getRGB();
@@ -196,7 +196,7 @@ public class TwoWayAdjacentXtalkModel
 
   protected final RGB getCorrectRGB(final RGB rgb, boolean uncorrect) {
     if (rgb.isPrimaryChannel() || !crosstalkCorrect) {
-      //¸`¬Ù®É¶¡
+      //ç¯€çœæ™‚é–“
       return rgb;
     }
 
@@ -221,7 +221,7 @@ public class TwoWayAdjacentXtalkModel
       RGBBase.Channel leftchannel = this.leftProperty.getAdjacentChannel(ch);
       RGBBase.Channel rightchannel = this.rightProperty.getAdjacentChannel(ch);
 
-      // R/G/B¦U®Õ¥¿¤@¦¸
+      // R/G/Bå„æ ¡æ­£ä¸€æ¬¡
       double selfValues = rgb.getValue(ch);
       double leftValues = rgb.getValue(leftchannel);
       double rightValues = rgb.getValue(rightchannel);
@@ -232,13 +232,13 @@ public class TwoWayAdjacentXtalkModel
           selfValues, rightValues);
 
       if (uncorrect) {
-        //²¾°£xtalk
+        //ç§»é™¤xtalk
         correctRGB.setValue(ch,
                             correctRGB.getValue(ch) - leftCorrectValues -
                             rightCorrectValues);
       }
       else {
-        //¹w´úxtalk(­×¥¿)
+        //é æ¸¬xtalk(ä¿®æ­£)
         correctRGB.setValue(ch,
                             correctRGB.getValue(ch) + leftCorrectValues +
                             rightCorrectValues);

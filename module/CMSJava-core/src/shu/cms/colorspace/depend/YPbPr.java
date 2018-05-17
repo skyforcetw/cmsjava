@@ -13,7 +13,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * from ªü´^
+ * from é˜¿å½­
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

@@ -32,7 +32,7 @@ public final class RecoverUtils {
     illuminant = illuminant.reduce(source.start, source.end, source.interval);
 
     //==========================================================================
-    // ¸ê®Æªì©l¤Æ
+    // è³‡æ–™åˆå§‹åŒ–
     //==========================================================================
     for (int x = 0; x < size; x++) {
       System.arraycopy(spectraData[x], 0, result[x], 0, width);
@@ -45,7 +45,7 @@ public final class RecoverUtils {
   }
 
   /**
-   * ÀË¬d¥Ø¿ı¬O§_¦s¦b, ¤£¦s¦b´N«Ø¥ß
+   * æª¢æŸ¥ç›®éŒ„æ˜¯å¦å­˜åœ¨, ä¸å­˜åœ¨å°±å»ºç«‹
    * @param dirName String
    * @return boolean
    */
@@ -60,7 +60,7 @@ public final class RecoverUtils {
   }
 
   /**
-   * ÀË¬d¥Ø¿ı¬O§_¦s¦b
+   * æª¢æŸ¥ç›®éŒ„æ˜¯å¦å­˜åœ¨
    * @param dirName String
    * @return boolean
    */

@@ -44,7 +44,7 @@ public class Util {
     double saturationAdjust = hsvAdjust[1];
     double valueAdjust = hsvAdjust[2];
     //====================================================================
-    // HSVªº½Õ¾ã
+    // HSVçš„èª¿æ•´
     //====================================================================
     HSV hsv2 = (HSV) hsv.clone();
     hsv2.H += hueAdjust;
@@ -88,9 +88,9 @@ public class Util {
   public static void main(String[] args) {
     produceHSVAdjustProducer();
 //    LCDTarget target = LCDTarget.Instance.getFromAUOXLS(
-//        "D:\\³nÅé\\nobody zone\\exp data\\HSV IP\\110418\\871-sRGB.xls");
+//        "D:\\è»Ÿé«”\\nobody zone\\exp data\\HSV IP\\110418\\871-sRGB.xls");
     LCDTarget target = LCDTarget.Instance.getFromAUOXLS(
-        "D:\\³nÅé\\nobody zone\\exp data\\HSV IP\\110418\\871-cc24.xls");
+        "D:\\è»Ÿé«”\\nobody zone\\exp data\\HSV IP\\110418\\871-cc24.xls");
 //    DeltaEReport de = DeltaEReport.Instance.CIELabReport()
 
     List<Patch> patchList = target.getPatchList();

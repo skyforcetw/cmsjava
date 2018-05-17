@@ -24,7 +24,7 @@ import shu.math.array.DoubleArray;
  * @version 1.0
  */
 public class sRGBAdjustmentEvaluator {
-//´ú¸Õ
+//à¸”à¹šà¸˜à¸µ
 
   public static void main(String[] args) {
     LCDTarget target = LCDTarget.Instance.getFromAUORampXLS(

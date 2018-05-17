@@ -1,4 +1,4 @@
-package auo.cms.frc;
+package fiti.cms.frc;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -74,8 +74,8 @@ public class AUOFRC {
 
     public static void main(String[] args) throws FileNotFoundException,
             IOException {
-
-//        String filename = "D:/My Documents/¤u§@/Project/FRC/FRC Research/NewFRC/AllNewFRC2.txt";
+//        System.out.println("1234");
+//        String filename = "D:/My Documents/å·¥ä½œ/Project/FRC/FRC Research/NewFRC/AllNewFRC2.txt";
         String filename = "frc/auofrc16.csv";
 //        AUOFRC frc = new AUOFRC(filename, PatternCount.FRC16);
         FRCPattern frc = new FRCPattern(filename);

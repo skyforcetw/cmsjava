@@ -33,13 +33,13 @@ public class ProfileColorSpaceUtils {
 //  }
 
   /**
-   * LCDTargetÂàPreferredColorSpace
+   * LCDTargetè½‰PreferredColorSpace
    * @param standardColorSpace ColorSpace
    * @param preferredTest729Target LCDTarget
    * @param percent double
    * @param whiteXYZ CIEXYZ
    * @return PreferredColorSpace
-   * @todo percent­n°µ­tªº
+   * @todo percentè¦åšè² çš„
    */
   public final static PreferredColorSpace getPreferredColorSpacee(
       RGB.ColorSpace standardColorSpace, LCDTarget preferredTest729Target,
@@ -50,29 +50,29 @@ public class ProfileColorSpaceUtils {
   }
 
   /**
-   * ColorSpaceConnectedLUTÂàPreferredColorSpace
-   * (PreferredColorSpace¥]§tPCS©Mclut)
+   * ColorSpaceConnectedLUTè½‰PreferredColorSpace
+   * (PreferredColorSpaceåŒ…å«PCSå’Œclut)
    * @param clut ColorSpaceConnectedLUT
    * @param whiteXYZ CIEXYZ
    * @return PreferredColorSpace
    */
   public final static PreferredColorSpace getPreferredColorSpacee(
       ColorSpaceConnectedLUT clut, CIEXYZ whiteXYZ) {
-    //3D LUTÂà¦¨¥|­±Åé¤º´¡ªí
+    //3D LUTè½‰æˆå››é¢é«”å…§æ’è¡¨
     TetrahedralInterpolation tetrahedral = clut.produceTetrahedralInterpolation();
 
     tetrahedral.registerCoordinateIF(getCoordinateInstance());
-    //¥|­±Åé¤º´¡ªí¦AÂà¦¨PCS
+    //å››é¢é«”å…§æ’è¡¨å†è½‰æˆPCS
     ProfileColorSpace pcs = ProfileColorSpace.Instance.get(tetrahedral, null,
         whiteXYZ, "");
-    //PreferredColorSpace§Y¬O¥]§tPCS©Mclut
+    //PreferredColorSpaceå³æ˜¯åŒ…å«PCSå’Œclut
     PreferredColorSpace prcs = new PreferredColorSpace(pcs, clut);
     return prcs;
 
   }
 
   /**
-   * Âà´«¬°¤@­Ó3D LUT (ColorSpaceConnectedLUT§Y¬°3D LUT)
+   * è½‰æ›ç‚ºä¸€å€‹3D LUT (ColorSpaceConnectedLUTå³ç‚º3D LUT)
    * @param standardColorSpace ColorSpace
    * @param preferredTest729Target LCDTarget
    * @param percent double
@@ -84,7 +84,7 @@ public class ProfileColorSpaceUtils {
       double percent, CIEXYZ whiteXYZ) {
     List<Patch> patchList = preferredTest729Target.getPatchList();
     int size = patchList.size();
-    //¥ÕÂI
+    //ç™½é»
     CIEXYZ preferredWhiteXYZ = preferredTest729Target.getWhitePatch().getXYZ();
     CIEXYZ standardWhiteXYZ = standardColorSpace.getReferenceWhiteXYZ();
     double[][] input = new double[size][];
@@ -209,7 +209,7 @@ public class ProfileColorSpaceUtils {
     TetrahedralInterpolation tetrahedral = lut.produceTetrahedralInterpolation();
 
     //==========================================================================
-    // CoordinateIF¦A³y
+    // CoordinateIFå†é€ 
     //==========================================================================
     TetrahedralInterpolation.CoordinateIF coordinateIF =
         getCoordinateInstance();

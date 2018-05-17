@@ -13,7 +13,7 @@ import shu.cms.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥ı¥Hgamma®Õ¥¿¹L«á,¦A¶i¤JGOG (¤£¥Î¥[¤J¤ñ¸û)
+ * å…ˆä»¥gammaæ ¡æ­£éå¾Œ,å†é€²å…¥GOG (ä¸ç”¨åŠ å…¥æ¯”è¼ƒ)
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -30,7 +30,7 @@ public class GGOGModelThread
   }
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    * @param factor LCDModelFactor
    */
   public GGOGModelThread(LCDModelFactor factor) {
@@ -47,7 +47,7 @@ public class GGOGModelThread
     initCoefficientsRange();
 
     //==========================================================================
-    //¦h°õ¦æºü¹Bºâ
+    //å¤šåŸ·è¡Œç·’é‹ç®—
     //==========================================================================
     IterativeReport[] reports = SimpleThreadCalculator.
         produceBestIterativeReport(
@@ -151,8 +151,8 @@ public class GGOGModelThread
                                                 LCDTarget.TargetIlluminant.D65,
      LCDTargetBase.Number.Patch58);*/
 
-    //dell¥Î1021¨D±oªº®Ä¹L¸û®t,¤]ºC«Ü¦h(²Å¦X±ø¥óªº¦â¶ô¸û¦h)
-    //729¦³³Ì¨Îµ²ªG
+    //dellç”¨1021æ±‚å¾—çš„æ•ˆéè¼ƒå·®,ä¹Ÿæ…¢å¾ˆå¤š(ç¬¦åˆæ¢ä»¶çš„è‰²å¡Šè¼ƒå¤š)
+    //729æœ‰æœ€ä½³çµæœ
 
     GGOGModelThread model = new GGOGModelThread(lcdTarget);
     double start = System.currentTimeMillis();
@@ -161,8 +161,8 @@ public class GGOGModelThread
     LCDModelFactor lcdModelFactor = model.produceLCDModelFactor(factors);
 
     /**
-     * ¦¹³B«Y¼Æ¥H §Ç¦C¤Æ ³B²z,¤£¨Ï¥ÎXMLÀx¦s¬O¦]¬°Ãiªº³B²ztag :P
-     * ¥[¤WFactor¶¡¦³Ä~©ÓÃö«Y,¥Ø«e¤£ª¾¹DXML-Java¤u¨ã¬O§_¥i¥H«Ü¦nªº³B²z.
+     * æ­¤è™•ä¿‚æ•¸ä»¥ åºåˆ—åŒ– è™•ç†,ä¸ä½¿ç”¨XMLå„²å­˜æ˜¯å› ç‚ºæ‡¶çš„è™•ç†tag :P
+     * åŠ ä¸ŠFactoré–“æœ‰ç¹¼æ‰¿é—œä¿‚,ç›®å‰ä¸çŸ¥é“XML-Javaå·¥å…·æ˜¯å¦å¯ä»¥å¾ˆå¥½çš„è™•ç†.
      */
     model.store.modelFactorFile(lcdModelFactor, "t.tmp");
 

@@ -41,26 +41,26 @@ public class SimpleXTalkReconstructor
    */
   public RGB getXTalkRGB(CIEXYZ XYZ, RGB originalRGB, boolean relativeXYZ) {
     if (!originalRGB.isSecondaryChannel()) {
-      //originalRGB¤@©w¥u¯à¬O¤G¦¸¦â
+      //originalRGBä¸€å®šåªèƒ½æ˜¯äºŒæ¬¡è‰²
       return null;
     }
 
-    //®Ú¾ÚrelativeXYZ³B²zXYZ
+    //æ ¹æ“šrelativeXYZè™•ç†XYZ
     CIEXYZ fromXYZ = adapter.fromXYZ(XYZ, relativeXYZ);
     /**
-     * @todo H acp ¬O§_­n¯d¦srationalize
+     * @todo H acp æ˜¯å¦è¦ç•™å­˜rationalize
      */
     fromXYZ.rationalize();
     return getXTalkRGBByMinimisation(fromXYZ, originalRGB);
   }
 
   /**
-   * ¤wª¾XYZ,ÁÙ­ìRGB,¥B½T©w¤FXTalkªºÀW¹D,§Q¥ÎÀu¤Æªº¤è¦¡¨D±o³Ì¨Î¸Ñ
+   * å·²çŸ¥XYZ,é‚„åŸRGB,ä¸”ç¢ºå®šäº†XTalkçš„é »é“,åˆ©ç”¨å„ªåŒ–çš„æ–¹å¼æ±‚å¾—æœ€ä½³è§£
    *
-   * ºtºâªk»¡©ú:
-   * (1)­pºâXtalk channel
-   * (2)§Q¥ÎÀu¤Æªº¤è¦¡¨D±o³Ì¨Î¸Ñ
-   * (3)­pºâ¾ã­Óºtºâªk»~®t©Ò³y¦¨ªº¦â®t
+   * æ¼”ç®—æ³•èªªæ˜:
+   * (1)è¨ˆç®—Xtalk channel
+   * (2)åˆ©ç”¨å„ªåŒ–çš„æ–¹å¼æ±‚å¾—æœ€ä½³è§£
+   * (3)è¨ˆç®—æ•´å€‹æ¼”ç®—æ³•èª¤å·®æ‰€é€ æˆçš„è‰²å·®
    * @param XYZ CIEXYZ
    * @param originalRGB RGB
    * @return RGB
@@ -73,7 +73,7 @@ public class SimpleXTalkReconstructor
     RGB rgb = recover.getXTalkRGB(XYZ, originalRGB, selfChannel, false);
 
     //==========================================================================
-    // ­pºâinverseLabªºdeltaE
+    // è¨ˆç®—inverseLabçš„deltaE
     //==========================================================================
     //(3)
     _getXTalkRGBDeltaE = mmModel.calculateGetRGBDeltaE(rgb, XYZ, true);
@@ -90,12 +90,12 @@ public class SimpleXTalkReconstructor
   }
 
   /**
-   * ¤wª¾XYZ,ÁÙ­ìRGB,¥B½T©w¤FXTalkªºÀW¹D,§Q¥ÎÀu¤Æªº¤è¦¡¨D±o³Ì¨Î¸Ñ
+   * å·²çŸ¥XYZ,é‚„åŸRGB,ä¸”ç¢ºå®šäº†XTalkçš„é »é“,åˆ©ç”¨å„ªåŒ–çš„æ–¹å¼æ±‚å¾—æœ€ä½³è§£
    *
-   * ºtºâªk»¡©ú:
-   * (1)­pºâXtalk channel
-   * (2)§Q¥ÎÀu¤Æªº¤è¦¡¨D±o³Ì¨Î¸Ñ
-   * (3)­pºâ¾ã­Óºtºâªk»~®t©Ò³y¦¨ªº¦â®t
+   * æ¼”ç®—æ³•èªªæ˜:
+   * (1)è¨ˆç®—Xtalk channel
+   * (2)åˆ©ç”¨å„ªåŒ–çš„æ–¹å¼æ±‚å¾—æœ€ä½³è§£
+   * (3)è¨ˆç®—æ•´å€‹æ¼”ç®—æ³•èª¤å·®æ‰€é€ æˆçš„è‰²å·®
    * @param XYZ CIEXYZ
    * @param originalRGB RGB
    * @return RGB
@@ -108,7 +108,7 @@ public class SimpleXTalkReconstructor
 //    RGB rgb = recover.getXTalkRGB(XYZ, originalRGB, selfChannel);
 //
 //    //==========================================================================
-//    // ­pºâinverseLabªºdeltaE
+//    // è¨ˆç®—inverseLabçš„deltaE
 //    //==========================================================================
 //    //(3)
 //    _getXTalkRGBDeltaE = mmModel.calculateGetRGBDeltaE(rgb, XYZ, true);

@@ -9,8 +9,8 @@ import shu.cms.colorspace.depend.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥i¥Î¨Óµe¦UºØ¤£¯S©wªº¦â±mªÅ¶¡, ¥u­n©w¸q¦n»PRGB¬Û¹ïÀ³Âà´««áªº¦â±mªÅ¶¡,
- *  GamutPlot´N¥i¥HÃ¸¥X
+ * å¯ç”¨ä¾†ç•«å„ç¨®ä¸ç‰¹å®šçš„è‰²å½©ç©ºé–“, åªè¦å®šç¾©å¥½èˆ‡RGBç›¸å°æ‡‰è½‰æ›å¾Œçš„è‰²å½©ç©ºé–“,
+ *  GamutPlotå°±å¯ä»¥ç¹ªå‡º
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -21,7 +21,7 @@ import shu.cms.colorspace.depend.*;
  */
 public abstract class RGB2ColorSpaceTransfer {
   /**
-   * Âà´«¥X»PRGB¹ïÀ³ªº¦â±mªÅ¶¡
+   * è½‰æ›å‡ºèˆ‡RGBå°æ‡‰çš„è‰²å½©ç©ºé–“
    * @param rgb RGB
    * @return ColorSpace
    */

@@ -6,7 +6,7 @@ import shu.cms.colorspace.depend.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * xtalk¼vÅT®ÄÀ³, ¨ã¦³ "¥ª¤èxtalk®ÄÀ³" ¤Î "¥k¤èxtalk®ÄÀ³" ¨âºØ.
+ * xtalkå½±éŸ¿æ•ˆæ‡‰, å…·æœ‰ "å·¦æ–¹xtalkæ•ˆæ‡‰" åŠ "å³æ–¹xtalkæ•ˆæ‡‰" å…©ç¨®.
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

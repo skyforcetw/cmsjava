@@ -4,7 +4,7 @@ package shu.cms.colorformat.cxf.attr;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Ø«eÁÙ¤£¤ä´©¦^¼gªº¥\¯à
+ * ç›®å‰é‚„ä¸æ”¯æ´å›å¯«çš„åŠŸèƒ½
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

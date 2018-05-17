@@ -53,7 +53,7 @@ public class JNDCalculator {
   }
 
   /**
-   * ¥Hcenter¬°¤¤¤ßÂI, ¨úpoints­ÓÂI, ¥HJND(u'v'=0.001)¬°¥b®|, §Î¦¨¶ê
+   * ä»¥centerç‚ºä¸­å¿ƒé», å–pointså€‹é», ä»¥JND(u'v'=0.001)ç‚ºåŠå¾‘, å½¢æˆåœ“
    * @param center CIExyY
    * @param points int
    * @return CIExyY[]
@@ -74,10 +74,10 @@ public class JNDCalculator {
   }
 
   /**
-   * ¥HuvPrime¬°¤¤¤ßÂI, ¨úpoints­ÓÂI, §Î¦¨¶ê.
+   * ä»¥uvPrimeç‚ºä¸­å¿ƒé», å–pointså€‹é», å½¢æˆåœ“.
    * @param uvPrime double[]
    * @param points int
-   * @param deltaJND double JNDªº©w¸q
+   * @param deltaJND double JNDçš„å®šç¾©
    * @return double[][]
    */
   public final static double[][] getJNDCircle(double[] uvPrime, int points,
@@ -106,7 +106,7 @@ public class JNDCalculator {
   }
 
   /**
-   * ¦bxy¤Îu'v'¤Wµe¥XJND¶ê
+   * åœ¨xyåŠu'v'ä¸Šç•«å‡ºJNDåœ“
    * @param args String[]
    */
   public static void example2(String[] args) {
@@ -135,7 +135,7 @@ public class JNDCalculator {
   }
 
   /**
-   * µe¥XJND¶ê¦bCIExy¤W
+   * ç•«å‡ºJNDåœ“åœ¨CIExyä¸Š
    * @param args String[]
    */
   public static void example1(String[] args) {

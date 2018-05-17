@@ -124,7 +124,7 @@ public class MuraCompensationExecuter {
     CorrectionData correctiondata = new CorrectionData(correctFilename,
         parameter);
     String outputdirname =
-//        "D:/³nÅé/nobody zone/Mura/Verify Simulation Experiment/";
+//        "D:/è»Ÿé«”/nobody zone/Mura/Verify Simulation Experiment/";
         "Y:/Verify Items/Verify LUT/Special Case/No.3 real_8x8 - 2";
 
     execute(correctiondata, filename, outputdirname,
@@ -147,7 +147,7 @@ public class MuraCompensationExecuter {
     CorrectionData correctiondata = new CorrectionData(correctFilename,
         parameter);
 //    String outputdirname =
-//        "D:/³nÅé/nobody zone/Mura/Verify Simulation Experiment/";
+//        "D:/è»Ÿé«”/nobody zone/Mura/Verify Simulation Experiment/";
 
     execute(correctiondata, patternFilename, outputdir,
             MuraCompensationProducer.DitheringType.
@@ -176,19 +176,19 @@ public class MuraCompensationExecuter {
 //    String correctFilename = "demura sim/0527_NO8/LUT_NO8.csv";
     DeMuraParameter parameter = new DeMuraParameter(
 //        "demura sim/Panel 50''/No1/LUT/par.csv");
-//        "d:/³nÅé/nobody zone/Mura/Dithering Experiment/par.csv");
+//        "d:/è»Ÿé«”/nobody zone/Mura/Dithering Experiment/par.csv");
         "\\\\auo/RD/Platform/EE/TCON/DeMura/Simulation Result/AUO Simulation Data/0530_NO3/par_NO3.csv");
 
 //    String correctFilename = "demura sim/Panel 50''/No1/LUT/lut.csv";
     String correctFilename =
         "\\\\auo/RD/Platform/EE/TCON/DeMura/Simulation Result/AUO Simulation Data/0530_NO3/LUT_NO3.csv";
-//        "d:/³nÅé/nobody zone/Mura/Dithering Experiment/lut.csv";
+//        "d:/è»Ÿé«”/nobody zone/Mura/Dithering Experiment/lut.csv";
 
     CorrectionData correctiondata = new CorrectionData(correctFilename,
         parameter);
 
 //    String cremoFlename =
-//        "D:/³nÅé/nobody zone/Mura/Dithering Experiment/20130603--0001(1)_data(final).csv";
+//        "D:/è»Ÿé«”/nobody zone/Mura/Dithering Experiment/20130603--0001(1)_data(final).csv";
 //        "Y:/Verify Items/Verify LUT/Limit Case/1920_1080/limit_2x32(X2)/limit_2x32(X2).csv";
 //    correctiondata = new CorrectionData(cremoFlename);
 
@@ -208,7 +208,7 @@ public class MuraCompensationExecuter {
     }
 
     String outputdirname =
-        "D:/³nÅé/nobody zone/Mura/Dithering Experiment/grayLevel_" + grayLevel;
+        "D:/è»Ÿé«”/nobody zone/Mura/Dithering Experiment/grayLevel_" + grayLevel;
     File dir = new File(outputdirname);
     if (!dir.exists()) {
       dir.mkdir();
@@ -228,9 +228,9 @@ public class MuraCompensationExecuter {
 //    execute(correctiondata, "demura sim/mouse/mouse2.bmp");
 
 //    BufferedImage img16 = ImageUtils.loadImageByJAI(
-//        "D:/³nÅé/nobody zone/Mura/Dithering Experiment/grayLevel_2/16bit.tiff");
+//        "D:/è»Ÿé«”/nobody zone/Mura/Dithering Experiment/grayLevel_2/16bit.tiff");
 //    BufferedImage img8 = ImageUtils.loadImageByJAI(
-////        "D:/³nÅé/nobody zone/Mura/Dithering Experiment/grayLevel_2/8bit.bmp");
+////        "D:/è»Ÿé«”/nobody zone/Mura/Dithering Experiment/grayLevel_2/8bit.bmp");
 //        "8bit.bmp");
 //    float[] f16 = new float[3];
 //    float[] f8 = new float[3];

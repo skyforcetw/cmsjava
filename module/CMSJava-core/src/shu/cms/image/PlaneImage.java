@@ -8,8 +8,8 @@ import shu.cms.hvs.cam.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * °t¦XS-CIELAB©MiCAMªº¼v¹³³B²z¤è¦¡ªºª«¥ó.
- * ¥H¥­­±ªº¤è¦¡¥hªí¥Ü¨C¤@ÀW¹Dªº¼v¹³.
+ * é…åˆS-CIELABå’ŒiCAMçš„å½±åƒè™•ç†æ–¹å¼çš„ç‰©ä»¶.
+ * ä»¥å¹³é¢çš„æ–¹å¼å»è¡¨ç¤ºæ¯ä¸€é »é“çš„å½±åƒ.
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -75,7 +75,7 @@ public class PlaneImage {
   }
 
   /**
-   * Âà´«¨ìplaneImage
+   * è½‰æ›åˆ°planeImage
    * @param image DeviceIndependentImageNew
    * @param type Type
    * @return double[][][]
@@ -180,7 +180,7 @@ public class PlaneImage {
   }
 
   /**
-   * Âà´«¨ìplaneImage
+   * è½‰æ›åˆ°planeImage
    * @param image DeviceIndependentImage
    * @param type Type
    * @return double[][][]

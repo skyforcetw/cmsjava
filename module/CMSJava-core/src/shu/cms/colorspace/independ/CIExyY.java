@@ -260,7 +260,7 @@ public final class CIExyY
 
   /**
    * for 65
-   * @return double[] W: ¥Õ«×,Tw: ²H¦â½Õ
+   * @return double[] W: ç™½åº¦,Tw: æ·¡è‰²èª¿
    */
   public double[] getWhitenessIndex() {
     double[] dxy = D65xyY.getDeltaxy(this);

@@ -98,9 +98,9 @@ public abstract class Plot3D
 
   private void addQuickHull3D(RGB2ColorSpaceTransfer transfer, Color c,
                               QuickHull3D hull, float alpha) {
-    //§ìÂI
+    //æŠ“é»
     Point3d[] vertices = hull.getVertices();
-    //§ì­± (ÂIºc¦¨ªº­±)
+    //æŠ“é¢ (é»æ§‹æˆçš„é¢)
     int[][] faceIndices = hull.getFaces();
 
     for (int[] index : faceIndices) {

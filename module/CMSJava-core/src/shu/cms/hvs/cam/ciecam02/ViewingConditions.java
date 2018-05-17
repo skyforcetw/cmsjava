@@ -41,7 +41,7 @@ public class ViewingConditions
    */
   protected double c;
   /**
-   * ChromaticInduction, ¦â»¤¾É«Y¼Æ, chromatic induction factor
+   * ChromaticInduction, è‰²èª˜å°ä¿‚æ•¸, chromatic induction factor
    */
   protected double _Nc;
   /**
@@ -78,9 +78,9 @@ public class ViewingConditions
 
   /**
    *
-   * @param white CIEXYZ Relative Tristimulus Values of the White, ¥ú·½¥»¨­ªº¤T¨ë¿E­È
-   * @param LA double Adapting Field Luminance in cd/m2 (often 20% of the luminance of white), ¾AÀ³°Ï«G«×(cd/m\u00B2)
-   * @param Yb double Relative Luminance of the Background, ­ì©lÀô¹Ò­I´º¬Û¹ï«G«×­È(cd/m\u00B2)
+   * @param white CIEXYZ Relative Tristimulus Values of the White, å…‰æºæœ¬èº«çš„ä¸‰åˆºæ¿€å€¼
+   * @param LA double Adapting Field Luminance in cd/m2 (often 20% of the luminance of white), é©æ‡‰å€äº®åº¦(cd/m\u00B2)
+   * @param Yb double Relative Luminance of the Background, åŸå§‹ç’°å¢ƒèƒŒæ™¯ç›¸å°äº®åº¦å€¼(cd/m\u00B2)
    * @param surround Surround
    * @param description String
    * @param d double Specifies the Degree of Adaptation:
@@ -109,7 +109,7 @@ public class ViewingConditions
   }
 
   /**
-   * ¨Ì·Ósurroundªº­È,µ¹©w¬Û¹ïÀ³ªº«Y¼Æªº­È,¥]¬AF/c/Ncµ¥
+   * ä¾ç…§surroundçš„å€¼,çµ¦å®šç›¸å°æ‡‰çš„ä¿‚æ•¸çš„å€¼,åŒ…æ‹¬F/c/Ncç­‰
    * @param surround Surround
    */
   protected void judgeSurround(Surround surround) {
@@ -121,10 +121,10 @@ public class ViewingConditions
       case Dim:
         this.c = 0.59;
 
-        //The CIECAM02 Color Apperance Model½×¤å¤¤¬O0.95, wiki¤]¬O0.95
+        //The CIECAM02 Color Apperance Modelè«–æ–‡ä¸­æ˜¯0.95, wikiä¹Ÿæ˜¯0.95
 //        this._Nc = 0.95;
-        //ºô¯¸ http://www.hpl.hp.com/personal/Nathan_Moroney/ciecam02/ciecam02.html ¬O±Ä¥Î0.9
-        //FailrchildªºColor Appearance Models¤]¬O0.9
+        //ç¶²ç«™ http://www.hpl.hp.com/personal/Nathan_Moroney/ciecam02/ciecam02.html æ˜¯æ¡ç”¨0.9
+        //Failrchildçš„Color Appearance Modelsä¹Ÿæ˜¯0.9
         this._Nc = 0.9;
         break;
       case Dark:
@@ -241,7 +241,7 @@ public class ViewingConditions
   }
 
   /**
-   * Munsell«ØÄ³°Ñ¦ÒÀô¹Ò
+   * Munsellå»ºè­°åƒè€ƒç’°å¢ƒ
    * C, 80 (when abs white is 400nits), 20, ViewingConditions.Surround.Average
    */
   public final static ViewingConditions MunsellReferenceViewingConditions = new
@@ -249,7 +249,7 @@ public class ViewingConditions
                         "CIE Reference Viewing Conditions");
 
   /**
-   * sRGB«ØÄ³Æ[´úÀô¹Ò
+   * sRGBå»ºè­°è§€æ¸¬ç’°å¢ƒ
    * D65, 4.07, 20, ViewingConditions.Surround.Average
    */
   public final static ViewingConditions sRGBReferenceViewingConditions =
@@ -258,7 +258,7 @@ public class ViewingConditions
 //                        "sRGB Reference Viewing Conditions", 1.);
 
   /**
-   * sRGB°O¸ü¨å«¬ªºÆ[´úÀô¹Ò(¤@¯ëoffice)
+   * sRGBè¨˜è¼‰å…¸å‹çš„è§€æ¸¬ç’°å¢ƒ(ä¸€èˆ¬office)
    * D65, 12.73, 20, ViewingConditions.Surround.Average
    */
   public final static ViewingConditions TypicalViewingConditions =
@@ -267,7 +267,7 @@ public class ViewingConditions
 //                            "sRGB Typical Viewing Conditions", 1.);
 
   /**
-   * ICCProfile«ØÄ³ªºperceptual intentÆ[´úÀô¹Ò
+   * ICCProfileå»ºè­°çš„perceptual intentè§€æ¸¬ç’°å¢ƒ
    * D50, 31.83, 20, ViewingConditions.Surround.Average
    */
   public final static ViewingConditions PerceptualIntentViewingConditions = new
@@ -326,7 +326,7 @@ public class ViewingConditions
 
   public final static ViewingConditions getDarkViewingConditions(CIEXYZ white,
       double whiteLuminance) {
-    double La = whiteLuminance / Math.PI; //from ²{¥NÃC¦â§Ş³N­ì²z¤ÎÀ³¥Î p158
+    double La = whiteLuminance / Math.PI; //from ç¾ä»£é¡è‰²æŠ€è¡“åŸç†åŠæ‡‰ç”¨ p158
     ViewingConditions vc = new ViewingConditions(white, La, 20, Surround.Dark,
                                                  "Dark");
     return vc;

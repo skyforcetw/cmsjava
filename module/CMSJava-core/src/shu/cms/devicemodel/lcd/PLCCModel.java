@@ -30,7 +30,7 @@ public class PLCCModel
   }
 
   /**
-   * �ϥμҦ�
+   * 使用模式
    * @param factor LCDModelFactor
    */
   public PLCCModel(LCDModelFactor factor) {

@@ -53,9 +53,9 @@ public class CIECAM02Color
 
   public double J, C, h; //lightness, chroma, hue angle
   public double Q, M, s, H; //brightness, colorfulness, saturation, hue quadrature
-  public double ac, bc; //chromaªº®y¼Ð
-  public double as, bs; //saturationªº®y¼Ð
-  public double am, bm; //colorfulnessªº®y¼Ð
+  public double ac, bc; //chromaçš„åº§æ¨™
+  public double as, bs; //saturationçš„åº§æ¨™
+  public double am, bm; //colorfulnessçš„åº§æ¨™
   public CIEXYZ white;
 
   public double[] getJChValues() {

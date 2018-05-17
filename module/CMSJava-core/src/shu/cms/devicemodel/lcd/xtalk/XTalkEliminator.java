@@ -9,7 +9,7 @@ import shu.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * xtalk®ÄÀ³ªº®ø°£¾¹, ¥Î¨Ó°O¿ıxtalkªº¼vÅT
+ * xtalkæ•ˆæ‡‰çš„æ¶ˆé™¤å™¨, ç”¨ä¾†è¨˜éŒ„xtalkçš„å½±éŸ¿
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -32,11 +32,11 @@ public class XTalkEliminator {
 
     /**
      *
-     * @param adjacentValues double[] ©Ò¦³¾F±µ­È
-     * @param selfValues double[] ©Ò¦³¦Û¨­­È
-     * @param rCorrectionValues double[][] r­×¥¿­È
-     * @param gCorrectionValues double[][] g­×¥¿­È
-     * @param bCorrectionValues double[][] b­×¥¿­È
+     * @param adjacentValues double[] æ‰€æœ‰é„°æ¥å€¼
+     * @param selfValues double[] æ‰€æœ‰è‡ªèº«å€¼
+     * @param rCorrectionValues double[][] rä¿®æ­£å€¼
+     * @param gCorrectionValues double[][] gä¿®æ­£å€¼
+     * @param bCorrectionValues double[][] bä¿®æ­£å€¼
      */
     protected XTalkEliminator(double[] adjacentValues, double[] selfValues,
             double[][] rCorrectionValues,
@@ -70,7 +70,7 @@ public class XTalkEliminator {
 //         bCorrectionValues, fixLUT);
 //  }
     /**
-     * ¨Ï¥ÎRGB¹ï·Óªíªº§Î¦¡
+     * ä½¿ç”¨RGBå°ç…§è¡¨çš„å½¢å¼
      * @param rAdjacentValues double[]
      * @param rSelfValues double[]
      * @param rCorrectionValues double[][]
@@ -95,8 +95,8 @@ public class XTalkEliminator {
         this.correctLut = new double[][][]{
                     rCorrectionValues, gCorrectionValues, bCorrectionValues};
         /**
-         * ¤º´¡ªk±Ä¥Îbicubic®ÄªG¤ñbilinear¦n«Ü¦h
-         * adjacent¬Ox(¾î), self¬Oy(ª½)
+         * å…§æ’æ³•æ¡ç”¨bicubicæ•ˆæœæ¯”bilinearå¥½å¾ˆå¤š
+         * adjacentæ˜¯x(æ©«), selfæ˜¯y(ç›´)
          */
         rLut = new Interpolation2DLUT(rAdjacentValues, rSelfValues,
                 rCorrectionValues, interpAlgo);
@@ -185,9 +185,9 @@ public class XTalkEliminator {
                 double adjacentValue) {
             double[][] values = getValues(selfChannel);
 
-            //xªº®Ú
+            //xçš„æ ¹
             int xIndex = Searcher.leftBinarySearch(values[0], adjacentValue);
-            //yªº®Ú
+            //yçš„æ ¹
             int yIndex = Searcher.leftBinarySearch(values[1], selfValue);
             int[][] lut = getLut(selfChannel);
             if (xIndex == -1 || yIndex == -1) {
@@ -201,7 +201,7 @@ public class XTalkEliminator {
     }
 
     /**
-     * ¶È¨Ï¥Î³æ¤@¹ï·Óªíªº§Î¦¡
+     * åƒ…ä½¿ç”¨å–®ä¸€å°ç…§è¡¨çš„å½¢å¼
      * @param adjacentValues double[]
      * @param selfValues double[]
      * @param correctionValues double[][]
@@ -214,22 +214,22 @@ public class XTalkEliminator {
         this.correctLut = new double[][][]{
                     correctionValues};
         /**
-         * ¤º´¡ªk±Ä¥Îbicubic®ÄªG¤ñbilinear¦n«Ü¦h
+         * å…§æ’æ³•æ¡ç”¨bicubicæ•ˆæœæ¯”bilinearå¥½å¾ˆå¤š
          */
         rLut = new Interpolation2DLUT(adjacentValues, selfValues,
                 correctionValues, interpAlgo);
         fixLUT(correctionValues, fix, false);
     }
     /**
-     * ±N¹ï·Óªí­×¥¿¬°¥ş¥¿­È
+     * å°‡å°ç…§è¡¨ä¿®æ­£ç‚ºå…¨æ­£å€¼
      */
     protected final static boolean positiveFixLUT = true;
 
     /**
-     * ­×¥¿¤£¦X²zªº­×¥¿­È
+     * ä¿®æ­£ä¸åˆç†çš„ä¿®æ­£å€¼
      * @param values double[][]
-     * @param positiveFix boolean ­×¥¿«á¥u¯d¤U¥¿­È
-     * @param negativeFix boolean ­×¥¿«á¥u¯d¤U­t­È
+     * @param positiveFix boolean ä¿®æ­£å¾Œåªç•™ä¸‹æ­£å€¼
+     * @param negativeFix boolean ä¿®æ­£å¾Œåªç•™ä¸‹è² å€¼
      */
     protected final static void fixLUT(double[][] values, boolean positiveFix,
             boolean negativeFix) {
@@ -241,7 +241,7 @@ public class XTalkEliminator {
         }
 
         /**
-         * @note ¥Ø«e±Ä¥Î³ÌÂ²³æªº­×¥¿¤è¦¡, §â­t­×¥¿ªº³¡¥÷²¾°£±¼, ¤£´±«OÃÒ¨ä¥¿½T©Ê, ¦³¥²­n¦AÅçÃÒ
+         * @note ç›®å‰æ¡ç”¨æœ€ç°¡å–®çš„ä¿®æ­£æ–¹å¼, æŠŠè² ä¿®æ­£çš„éƒ¨ä»½ç§»é™¤æ‰, ä¸æ•¢ä¿è­‰å…¶æ­£ç¢ºæ€§, æœ‰å¿…è¦å†é©—è­‰
          */
         for (int x = 0; x < height; x++) {
             for (int y = 0; y < width; y++) {
@@ -256,7 +256,7 @@ public class XTalkEliminator {
 
     }
     /**
-     * linearªº¤Gºû¤º®tµ²ªG³Ì¨Î
+     * linearçš„äºŒç¶­å…§å·®çµæœæœ€ä½³
      */
     protected final static Interpolation2DLUT.Algo interpAlgo =
             Interpolation2DLUT.Algo.BILINEAR;

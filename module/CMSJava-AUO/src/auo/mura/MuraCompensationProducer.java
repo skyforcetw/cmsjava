@@ -93,7 +93,7 @@ public class MuraCompensationProducer {
     }
 
     //==========================================================================
-    //¤º´¡¹w³Æ
+    //å…§æ’é å‚™
     //==========================================================================
     if (use3DInterpolation) {
 
@@ -322,7 +322,7 @@ public class MuraCompensationProducer {
       throw new IllegalStateException("");
     }
     if (null == ditheringImage10Bit) {
-      //ÁöµMditheringµ²ªG¬°8bit, ¦ı¬O³Ì²×¿é¥X¬°10bit, ¦]¦¹»İ­n¤ÉÂà¨ì10bit¦AÀx¦s
+      //é›–ç„¶ditheringçµæœç‚º8bit, ä½†æ˜¯æœ€çµ‚è¼¸å‡ºç‚º10bit, å› æ­¤éœ€è¦å‡è½‰åˆ°10bitå†å„²å­˜
       ditheringImage10Bit = copy(ditheringImage8Bit);
       convert8BitTo10Bit(ditheringImage10Bit);
     }
@@ -364,8 +364,8 @@ public class MuraCompensationProducer {
     Writer frameR = new BufferedWriter(new FileWriter(filename));
     double base = Math.pow(2, shrinkBit);
 
-    for (int h = 0; h < height; h++) { //°ª
-      for (int w = 0; w < width; w++) { //¼e
+    for (int h = 0; h < height; h++) { //é«˜
+      for (int w = 0; w < width; w++) { //å¯¬
         short value = (short) (imageData[h][w] / base);
         String dec = Integer.toString(value);
 //        String hex = Integer.toHexString(value);
@@ -413,8 +413,8 @@ public class MuraCompensationProducer {
           ".txt"));
     }
 
-    for (int h = 0; h < height; h++) { //°ª
-      for (int w = 0; w < width; w++) { //¼e
+    for (int h = 0; h < height; h++) { //é«˜
+      for (int w = 0; w < width; w++) { //å¯¬
 
         int p = w % port;
 
@@ -480,7 +480,7 @@ public class MuraCompensationProducer {
   private void produceDitheringImage(String image8bitFilename) throws
       IOException {
     if (SingleChannelProcess) {
-      //12bit dithering¦¨8bit
+      //12bit ditheringæˆ8bit
       getDitheringCompensationData(ditheringImage8Bit[0]);
       copy(ditheringImage8Bit[0], ditheringImage8Bit[1]);
       copy(ditheringImage8Bit[0], ditheringImage8Bit[2]);
@@ -490,7 +490,7 @@ public class MuraCompensationProducer {
       getDitheringCompensationData(ditheringImage8Bit[1]);
       getDitheringCompensationData(ditheringImage8Bit[2]);
     }
-//¦s8bit
+//å­˜8bit
     BufferedImage image = muraImageUtils.getBufferedImage(ditheringImage8Bit);
     ImageUtils.storeTIFFImage(image8bitFilename, image);
   }
@@ -578,7 +578,7 @@ public class MuraCompensationProducer {
       //store 16bit
       int[][][] compensationData16Bit = copyToInt(compensationImage12Bit);
       convert12BitTo16Bit(compensationData16Bit);
-      //§â12bit¦s¦¨16bit
+      //æŠŠ12bitå­˜æˆ16bit
       muraImageUtils.store16BitImage(compensationData16Bit, image16bitFilename);
     }
 //    muraImageUtils.getBufferedImage()
@@ -652,7 +652,7 @@ public class MuraCompensationProducer {
                                                 TetrahedralInterpolation interp) {
 
     //==========================================================================
-    //ÅÜ¼Æ·Ç³Æ
+    //è®Šæ•¸æº–å‚™
     //==========================================================================
     int blockHCount = correctionData.getBlockHCount();
     int blockWCount = correctionData.getBlockWCount();
@@ -692,7 +692,7 @@ public class MuraCompensationProducer {
                                                 ThreeDInterpolation interp) {
 
     //==========================================================================
-    //ÅÜ¼Æ·Ç³Æ
+    //è®Šæ•¸æº–å‚™
     //==========================================================================
     int blockHCount = correctionData.getBlockHCount();
     int blockWCount = correctionData.getBlockWCount();
@@ -776,7 +776,7 @@ public class MuraCompensationProducer {
       cubeTable.setLeftNearSearch(false);
     }
     //==========================================================================
-    //¤º´¡¹w³Æ
+    //å…§æ’é å‚™
     //==========================================================================
     TetrahedralInterpolation interp = new TetrahedralInterpolation(cubeTable, false);
     interp.setValueCounts(1);
@@ -787,7 +787,7 @@ public class MuraCompensationProducer {
       interp.registerBlockInterpolation3DIF(block);
     }
     //==========================================================================
-    //ÅÜ¼Æ·Ç³Æ
+    //è®Šæ•¸æº–å‚™
     //==========================================================================
     int blockHCount = correctionData.getBlockHCount();
     int blockWCount = correctionData.getBlockWCount();

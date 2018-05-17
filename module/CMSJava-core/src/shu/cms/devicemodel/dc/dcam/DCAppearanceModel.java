@@ -66,7 +66,7 @@ public class DCAppearanceModel
     return null;
   }
 
-  //Âà¨ì¦â¥~»ªªÅ¶¡¤U©Ò¨Ï¥ÎªºÀô¹Ò°Ñ¼Æ
+  //è½‰åˆ°è‰²å¤–è²Œç©ºé–“ä¸‹æ‰€ä½¿ç”¨çš„ç’°å¢ƒåƒæ•¸
   protected ViewingConditions targetVC;
   protected ViewingConditions vc;
 
@@ -161,7 +161,7 @@ public class DCAppearanceModel
     private LChPair[][] LChPairHuePlane;
     private LChPair[][] circularLChPairHuePlane;
     /**
-     * ±NcameraHue¿W¥ß©â¨ú¥X¨Ó, ¤è«K·j´M
+     * å°‡cameraHueç¨ç«‹æŠ½å–å‡ºä¾†, æ–¹ä¾¿æœå°‹
      */
     private double[] cameraHue;
     private int[] ignoreIndex = null;
@@ -176,7 +176,7 @@ public class DCAppearanceModel
     }
 
     /**
-     * §ä¨ìcameraHue¸Ì³Ì±µªñªºhue¨äindex
+     * æ‰¾åˆ°cameraHueè£¡æœ€æ¥è¿‘çš„hueå…¶index
      * @param cameraLCh CIELCh
      * @return int
      */
@@ -185,7 +185,7 @@ public class DCAppearanceModel
     }
 
     /**
-     * ¬Û¾F¨â­ÓhueªºLChPair
+     * ç›¸é„°å…©å€‹hueçš„LChPair
      * @param cameraLCh CIELCh
      * @return LChPair[][]
      */
@@ -198,7 +198,7 @@ public class DCAppearanceModel
     }
 
     /**
-     * targetªºL­×¥¿, ­×¥¿¬°camera L(¤£§¹¥ş)
+     * targetçš„Lä¿®æ­£, ä¿®æ­£ç‚ºcamera L(ä¸å®Œå…¨)
      * @param lightnessCorrector Interpolation1DLUT
      */
     protected void targetLightnessCorrect(Interpolation1DLUT lightnessCorrector) {
@@ -242,7 +242,7 @@ public class DCAppearanceModel
      * @param grayScaleIndex int[]
      * @param sameHueIndex int[][]
      * @param ignoreIndex int[]
-     * @param onlySameHue boolean ¬O§_¥u³B²z¦P¤@¦â¬Û°Ïªº¸ê°T
+     * @param onlySameHue boolean æ˜¯å¦åªè™•ç†åŒä¸€è‰²ç›¸å€çš„è³‡è¨Š
      */
     protected HuePlane(LChPair[] LChPairArray, int[] grayScaleIndex,
                        int[][] sameHueIndex, int[] ignoreIndex,
@@ -288,7 +288,7 @@ public class DCAppearanceModel
     }
 
     /**
-     * ªì©l¤ÆHuePlane
+     * åˆå§‹åŒ–HuePlane
      * @param LChPairArray LChPair[]
      * @param grayScaleIndex int[]
      * @param sameHueIndex int[][]
@@ -301,13 +301,13 @@ public class DCAppearanceModel
       boolean[] used = new boolean[pairSize];
       List<LChPair[]> pairArray = new ArrayList<LChPair[]> ();
 
-      //¥ı§â¦Ç¶¥¥h±¼
+      //å…ˆæŠŠç°éšå»æ‰
       for (int x = 0; x < grayScaleSize; x++) {
         int index = grayScaleIndex[x];
         used[index] = true;
       }
 
-      //¹w´Á­n²¤¹Lªº
+      //é æœŸè¦ç•¥éçš„
       if (ignoreIndex != null) {
         int size = ignoreIndex.length;
         for (int x = 0; x < size; x++) {
@@ -318,7 +318,7 @@ public class DCAppearanceModel
 
       for (int x = 0; x < pairSize; x++) {
         if (used[x] == true) {
-          //³B²z¹L¥H¤Î¦Ç¶¥ ²¤¹L
+          //è™•ç†éä»¥åŠç°éš ç•¥é
           continue;
         }
 
@@ -326,7 +326,7 @@ public class DCAppearanceModel
         for (int y = 0; y < sameHueSize; y++) {
           int[] sameHue = sameHueIndex[y];
           if (Searcher.sequentialSearch(sameHue, x) >= 0) {
-            //¦³¨ä¥L¦â¶ô¤]¬O¦P¤@­Óhue
+            //æœ‰å…¶ä»–è‰²å¡Šä¹Ÿæ˜¯åŒä¸€å€‹hue
             int size = sameHue.length;
             LChPair[] sameHuePlane = new LChPair[size];
 
@@ -337,11 +337,11 @@ public class DCAppearanceModel
 
             }
 
-            //·Ó±m«×±Æ§Ç
+            //ç…§å½©åº¦æ’åº
             Arrays.sort(sameHuePlane, chromaComparator);
 
             //==================================================================
-            // ±N¶W¥X¦â°ìªºcut±¼
+            // å°‡è¶…å‡ºè‰²åŸŸçš„cutæ‰
             //==================================================================
             List<LChPair> pairList = new ArrayList<LChPair> (size);
             double cameraHue = 0;
@@ -368,7 +368,7 @@ public class DCAppearanceModel
             pairList.toArray(filter);
 
             //==================================================================
-            // ¨ú¦â¬Ûªº¥­§¡¨Ó²Î¤@¦â¬Û
+            // å–è‰²ç›¸çš„å¹³å‡ä¾†çµ±ä¸€è‰²ç›¸
             //==================================================================
             cameraHue /= filterSize;
             targetHue /= filterSize;
@@ -383,7 +383,7 @@ public class DCAppearanceModel
           }
         }
         if (!hasSameHue && !onlySameHue) {
-          //¨S¦³»P¨ä¥L¦â¶ô¦P¤@­Óhue
+          //æ²’æœ‰èˆ‡å…¶ä»–è‰²å¡ŠåŒä¸€å€‹hue
           LChPair[] sameHuePlane = new LChPair[1];
           sameHuePlane[0] = (LChPair) LChPairArray[x].clone();
           pairArray.add(sameHuePlane);
@@ -409,7 +409,7 @@ public class DCAppearanceModel
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * °O¸ücamera©MtargetªºLCh
+   * è¨˜è¼‰cameraå’Œtargetçš„LCh
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -441,7 +441,7 @@ public class DCAppearanceModel
       LChPair[] nonGrayLChPairArray = new LChPair[nonGraySize];
       int index = 0;
 
-      //¨ú¥X°£¤F¤¤©Ê¦â¶ôªºhue
+      //å–å‡ºé™¤äº†ä¸­æ€§è‰²å¡Šçš„hue
       for (int x = 0; x < size; x++) {
         if (Searcher.sequentialSearch(grayScaleIndex,
                                       IGNORE_DARK_SKIN ? x + 1 : x) <
@@ -507,7 +507,7 @@ public class DCAppearanceModel
     if (index < 1) {
       System.arraycopy(hueSortLChPairArray, index, clorseLChPair, 1, 3);
 
-      //²Ä¤@­Ó¥Î³Ì«á¤@­Ó¸É
+      //ç¬¬ä¸€å€‹ç”¨æœ€å¾Œä¸€å€‹è£œ
       clorseLChPair[0] = (LChPair) hueSortLChPairArray[size - 1].clone();
     }
     else {
@@ -608,7 +608,7 @@ public class DCAppearanceModel
   protected CIECAM02 cam = null;
 
   /**
-   * ¨ú±otargetªºXYZ¹ï¬MªºLCh
+   * å–å¾—targetçš„XYZå°æ˜ çš„LCh
    * @param XYZ CIEXYZ
    * @return LChConvertible
    */
@@ -692,7 +692,7 @@ public class DCAppearanceModel
 
   /**
    * _getRGB
-   * ±qtarget XYZ->camera RGB
+   * å¾target XYZ->camera RGB
    *
    * @param XYZ CIEXYZ
    * @return RGB
@@ -707,36 +707,36 @@ public class DCAppearanceModel
     //==========================================================================
     // correct
     //==========================================================================
-    //ICh->I'Ch ,cameraªºL(¤£§¹¥ş)
-    //­×¥¿1 ©ú«×
+    //ICh->I'Ch ,cameraçš„L(ä¸å®Œå…¨)
+    //ä¿®æ­£1 æ˜åº¦
     if (doLightnessCorrect) {
       LCh.L = lightnessCorrector.correctKeyInRange(LCh.L);
       LCh.L = lightnessCorrector.getValue(LCh.L);
     }
     if (doHueCorrect) {
-      //I'Ch->I'Ch' , cameraªºh
-      //­×¥¿2 ¦â¬Û
+      //I'Ch->I'Ch' , cameraçš„h
+      //ä¿®æ­£2 è‰²ç›¸
       LCh.h = hueCorrector.getValue(LCh.h);
       LCh.h %= 360;
       LCh.h = (LCh.h < 0) ? LCh.h + 360 : LCh.h;
     }
 
     if (BY_HUE_PLANE) {
-      //¥Hcamera LChªºh¥h§ä
+      //ä»¥camera LChçš„hå»æ‰¾
       LChPair[][] closed = huePlane.getCloseLChPair(LCh);
       if (doLightnessCorrectInHue) {
         //I'Ch'->I"Ch'
-        //­×¥¿3 ¯S©w¦â¬Ûªº©ú«×
+        //ä¿®æ­£3 ç‰¹å®šè‰²ç›¸çš„æ˜åº¦
         LCh.L = getForwardLightnessInHue(LCh, closed);
       }
       if (doChromaCorrect) {
         //I"Ch'->I"C'h' , target.C->camera.C
-        //­×¥¿4 ¯S©Ê¦â¬Ûªº±m«×
+        //ä¿®æ­£4 ç‰¹æ€§è‰²ç›¸çš„å½©åº¦
         LCh.C = getForwardChromaInHue(LCh, closed);
       }
     }
     else {
-      //¥Hcamera LChªºh¥h§ä
+      //ä»¥camera LChçš„hå»æ‰¾
       LChPair[] closed4LCh = getColosedLCh(LCh);
       //I"Ch'->I"C'h'
       LCh.C = getForwardChromaInHue(LCh, closed4LCh);
@@ -744,7 +744,7 @@ public class DCAppearanceModel
 
     //==========================================================================
 
-    //Âà´«¬°camera XYZ
+    //è½‰æ›ç‚ºcamera XYZ
     CIEXYZ cameraXYZ = getXYZ(LCh);
     cameraXYZ.normalize(NormalizeY.Normal1);
     RGB result = RGB.fromXYZ(cameraXYZ, rgbColorSpace);
@@ -756,8 +756,8 @@ public class DCAppearanceModel
   }
 
   /**
-   * ¨Ì·Óhue§½³¡½Õ¾ã©ú«× (for HuePlaneª©)
-   * @param LCh CIELCh cameraªºhue,cameraªºL(³¡¤À/ºâtarget)
+   * ä¾ç…§hueå±€éƒ¨èª¿æ•´æ˜åº¦ (for HuePlaneç‰ˆ)
+   * @param LCh CIELCh cameraçš„hue,cameraçš„L(éƒ¨åˆ†/ç®—target)
    * @param colosedLCh LChPair[][]
    * @return double
    */
@@ -788,8 +788,8 @@ public class DCAppearanceModel
   }
 
   /**
-   * ¨Ì·Óhue§½³¡¤Ï½Õ¾ã©ú«× (for HuePlaneª©)
-   * @param LCh CIELCh cameraªºL/h
+   * ä¾ç…§hueå±€éƒ¨åèª¿æ•´æ˜åº¦ (for HuePlaneç‰ˆ)
+   * @param LCh CIELCh cameraçš„L/h
    * @param colosedLCh LChPair[][]
    * @return double
    */
@@ -820,7 +820,7 @@ public class DCAppearanceModel
   }
 
   /**
-   * ±Nchroma¤Ï¦V³B²z
+   * å°‡chromaåå‘è™•ç†
    * @param LCh CIELCh
    * @param colosedLCh LChPair[]
    * @return double
@@ -855,8 +855,8 @@ public class DCAppearanceModel
   }
 
   /**
-   * ¨Ì¦â¬Û­×¥¿±m«×ªº«e¾É¼Ò¦¡ (for HuePlaneª©)
-   * @param LCh CIELCh targetªºC, cameraªºh
+   * ä¾è‰²ç›¸ä¿®æ­£å½©åº¦çš„å‰å°æ¨¡å¼ (for HuePlaneç‰ˆ)
+   * @param LCh CIELCh targetçš„C, cameraçš„h
    * @param colosedLCh LChPair[][]
    * @return double
    */
@@ -864,7 +864,7 @@ public class DCAppearanceModel
     double[] predictChroma = new double[2];
     double[] hue = new double[2];
 
-    //chroma±N·|¦]hue¦Ó²§, ¥Hcamera.h§ä¨ìmax Chroma
+    //chromaå°‡æœƒå› hueè€Œç•°, ä»¥camera.hæ‰¾åˆ°max Chroma
     double maxChroma = gbd.getBoundaryLCh(LCh).C;
     double chromaRatio = LCh.C / maxChroma;
     chromaRatio = chromaRatio > 1 ? 1 : chromaRatio;
@@ -890,8 +890,8 @@ public class DCAppearanceModel
   }
 
   /**
-   * ¨Ì¦â¬Û­×¥¿±m«×ªº¤Ï¾É¼Ò¦¡ (for HuePlaneª©)
-   * @param LCh CIELCh cameraªºLCh
+   * ä¾è‰²ç›¸ä¿®æ­£å½©åº¦çš„åå°æ¨¡å¼ (for HuePlaneç‰ˆ)
+   * @param LCh CIELCh cameraçš„LCh
    * @param colosedLCh LChPair[][]
    * @return double
    */
@@ -899,7 +899,7 @@ public class DCAppearanceModel
     double[] predictChroma = new double[2];
     double[] hue = new double[2];
 
-    //chroma±N·|¦]hue¦Ó²§, ¥Hcamera.h§ä¨ìmax Chroma
+    //chromaå°‡æœƒå› hueè€Œç•°, ä»¥camera.hæ‰¾åˆ°max Chroma
     double maxChroma = gbd.getBoundaryLCh(LCh).C;
     double chromaRatio = LCh.C / maxChroma;
     chromaRatio = chromaRatio > 1 ? 1 : chromaRatio;
@@ -925,7 +925,7 @@ public class DCAppearanceModel
   }
 
   /**
-   * ¨Ì¦â¬Û­×¥¿±m«×ªº«e¾É¼Ò¦¡ (forÂÂª©)
+   * ä¾è‰²ç›¸ä¿®æ­£å½©åº¦çš„å‰å°æ¨¡å¼ (forèˆŠç‰ˆ)
    * @param LCh CIELCh
    * @param colosedLCh LChPair[]
    * @return double
@@ -960,8 +960,8 @@ public class DCAppearanceModel
   }
 
   /**
-   * ­pºâXYZ
-   * ±qcamera RGB->target XYZ
+   * è¨ˆç®—XYZ
+   * å¾camera RGB->target XYZ
    *
    * @param rgb RGB
    * @return CIEXYZ
@@ -982,19 +982,19 @@ public class DCAppearanceModel
     // uncorrect
     //==========================================================================
     if (BY_HUE_PLANE) {
-      //¥Hcamera LChªºh¥h§ä
+      //ä»¥camera LChçš„hå»æ‰¾
       LChPair[][] closed = huePlane.getCloseLChPair(LCh);
       if (doChromaCorrect) {
-        //I"C'h'->I"Ch' , cameraªºh/L,targetªºC
+        //I"C'h'->I"Ch' , cameraçš„h/L,targetçš„C
         LCh.C = getInverseChromaInHue(LCh, closed);
       }
       if (doLightnessCorrectInHue) {
-        //I"Ch'->I'Ch' , cameraªºh/L
+        //I"Ch'->I'Ch' , cameraçš„h/L
         LCh.L = getInverseLightnessInHue(LCh, closed);
       }
     }
     else {
-      //¥Hcamera LChªºh§ä
+      //ä»¥camera LChçš„hæ‰¾
       LChPair[] closed4LCh = getColosedLCh(LCh);
       //I"C'h'->I"Ch'
       LCh.C = getInverseChromaInHue(LCh, closed4LCh);
@@ -1013,30 +1013,30 @@ public class DCAppearanceModel
     }
     //==========================================================================
 
-    //Âà´«¬°target XYZ
+    //è½‰æ›ç‚ºtarget XYZ
     CIEXYZ result = getXYZ(LCh);
     return result;
   }
 
-  //¥Hhue¥­­±¬°³æ¦ì¶i¦æÂà´«
+  //ä»¥hueå¹³é¢ç‚ºå–®ä½é€²è¡Œè½‰æ›
   protected final static boolean BY_HUE_PLANE = true;
-  //¬O§_¬Ù²¤²Ä¤@­Ó¦â¶ô(²`¦â½§¦â)
+  //æ˜¯å¦çœç•¥ç¬¬ä¸€å€‹è‰²å¡Š(æ·±è‰²è†šè‰²)
   protected final static boolean IGNORE_DARK_SKIN = BY_HUE_PLANE ? false : false;
-  //gray balance¬O§_À³¥Î¦bÂà´«¤W
+  //gray balanceæ˜¯å¦æ‡‰ç”¨åœ¨è½‰æ›ä¸Š
   protected final static boolean GRAY_BALANCE_WITH_CONVERT = false;
-  //¬O§_¶i¦æ¦Ç¥­¿Å
+  //æ˜¯å¦é€²è¡Œç°å¹³è¡¡
   protected boolean doGrayBalance = true;
-  //¬O§_½Õ¾ã©ú«×
+  //æ˜¯å¦èª¿æ•´æ˜åº¦
   protected boolean doLightnessCorrect = true;
-  //¬O§_¨Ì·Ó¦â¬Ûªº§½³¡©ú«×½Õ¾ã
+  //æ˜¯å¦ä¾ç…§è‰²ç›¸çš„å±€éƒ¨æ˜åº¦èª¿æ•´
   protected boolean doLightnessCorrectInHue = true;
-  //¬O§_½Õ¾ã±m«×
+  //æ˜¯å¦èª¿æ•´å½©åº¦
   protected boolean doChromaCorrect = true;
-  //¬O§_½Õ¾ã¦â¬Û
+  //æ˜¯å¦èª¿æ•´è‰²ç›¸
   protected boolean doHueCorrect = true;
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    */
@@ -1044,8 +1044,8 @@ public class DCAppearanceModel
 
     List<Patch> profilePatchList = dcTarget.filter.patchListForProfile();
     //==========================================================================
-    // RGB°ì gray balance­×¥¿
-    // ­×¥¿¶µ1 : ¦Ç¥­¿Å
+    // RGBåŸŸ gray balanceä¿®æ­£
+    // ä¿®æ­£é …1 : ç°å¹³è¡¡
     //==========================================================================
     if (doGrayBalance) {
       grayBalancer = new GrayBalancer(dcTarget.filter.grayScale(),
@@ -1054,7 +1054,7 @@ public class DCAppearanceModel
     }
     //==========================================================================
 
-    //LChPairArray¥]§t©Ò¦³24¦â¶ô
+    //LChPairArrayåŒ…å«æ‰€æœ‰24è‰²å¡Š
     LChPairArray = produceLChPairArray(profilePatchList);
 
     final int[] grayIndex = dcTarget.getGrayScaleIndex();
@@ -1062,8 +1062,8 @@ public class DCAppearanceModel
         grayIndex);
 
     //==========================================================================
-    // ©ú«×­×¥¿¶µ
-    // ­×¥¿¶µ2 : ¨Ì¤¤©Ê¦â¶ô­×¥¿©ú«×
+    // æ˜åº¦ä¿®æ­£é …
+    // ä¿®æ­£é …2 : ä¾ä¸­æ€§è‰²å¡Šä¿®æ­£æ˜åº¦
     //==========================================================================
     produceLightnessCorrector(grayLChPairArray);
     //==========================================================================
@@ -1072,7 +1072,7 @@ public class DCAppearanceModel
       if (IGNORE_DARK_SKIN == true) {
         throw new IllegalArgumentException("IGNORE_DARK_SKIN == true");
       }
-      //¦pªG¬Oit8 target, ¥u³B²z¬Û¦P¦â¬Û°Ï°ì
+      //å¦‚æœæ˜¯it8 target, åªè™•ç†ç›¸åŒè‰²ç›¸å€åŸŸ
       boolean onlySameHue = dcTarget.getChart() == DCTarget.Chart.IT8;
       huePlane = new HuePlane(LChPairArray, grayIndex,
                               dcTarget.getTargetData().sameHueIndexInProfile,
@@ -1080,8 +1080,8 @@ public class DCAppearanceModel
       huePlane.targetLightnessCorrect(lightnessCorrector);
 
       //==========================================================================
-      //¦â¬Û­×¥¿¶µ
-      //­×¥¿¶µ3 : ¦â¬Û­×¥¿
+      //è‰²ç›¸ä¿®æ­£é …
+      //ä¿®æ­£é …3 : è‰²ç›¸ä¿®æ­£
       //==========================================================================
       produceHueCorrector(huePlane);
       //==========================================================================
@@ -1093,9 +1093,9 @@ public class DCAppearanceModel
     else {
       LChPair[] nonGrayLChPairArray = LChPair.filterNonGrayScale(LChPairArray,
           grayIndex);
-      //¦â¬Û­×¥¿¶µ
+      //è‰²ç›¸ä¿®æ­£é …
       produceHueCorrector(nonGrayLChPairArray);
-      //²£¥Í¨Ì¦â¬Û±Æ¦C¦â¶ô
+      //ç”¢ç”Ÿä¾è‰²ç›¸æ’åˆ—è‰²å¡Š
       produceHueSortLChArray(nonGrayLChPairArray);
       if (!checkHueSortLChArray()) {
         Logger.log.info("hue is reverse!");
@@ -1144,7 +1144,7 @@ public class DCAppearanceModel
   protected int minHueIndex, maxHueIndex;
 
   /**
-   * ²£¥Í«ö·Óhue±Æ§ÇªºL'Ch' Array
+   * ç”¢ç”ŸæŒ‰ç…§hueæ’åºçš„L'Ch' Array
    * @param nonGrayLChPairArray LChPair[]
    */
   protected void produceHueSortLChArray(final LChPair[] nonGrayLChPairArray) {
@@ -1152,13 +1152,13 @@ public class DCAppearanceModel
     int huePatchSize = size + 2;
     hueSortLChPairArray = new LChPair[huePatchSize];
 
-    //¨ú¥X°£¤F¤¤©Ê¦â¶ôªºhue
+    //å–å‡ºé™¤äº†ä¸­æ€§è‰²å¡Šçš„hue
     for (int x = 0; x < size; x++) {
       hueSortLChPairArray[x + 1] = (LChPair) nonGrayLChPairArray[x].clone();
     }
 
     //==========================================================================
-    // ³]©wÀY§À
+    // è¨­å®šé ­å°¾
     //==========================================================================
     hueSortLChPairArray[0] = (LChPair) hueSortLChPairArray[maxHueIndex].clone();
     hueSortLChPairArray[0].targetLCh.h -= 360;
@@ -1173,13 +1173,13 @@ public class DCAppearanceModel
     Arrays.sort(hueSortLChPairArray, hueComparator);
 
     //==========================================================================
-    // ­×¥¿h/L
+    // ä¿®æ­£h/L
     //==========================================================================
     for (LChPair pair : hueSortLChPairArray) {
       CIELCh LCh = pair.targetLCh;
-      //¦â¬Û­×¥¿
+      //è‰²ç›¸ä¿®æ­£
       LCh.h = hueCorrector.getValue(LCh.h);
-      //©ú«×­×¥¿
+      //æ˜åº¦ä¿®æ­£
       LCh.L = lightnessCorrector.getValue(LCh.L);
     }
     //==========================================================================
@@ -1197,7 +1197,7 @@ public class DCAppearanceModel
     double[] output = new double[huePatchSize];
     int index = 0;
 
-    //¨ú¥X°£¤F¤¤©Ê¦â¶ôªºhue
+    //å–å‡ºé™¤äº†ä¸­æ€§è‰²å¡Šçš„hue
     for (int x = 0; x < size; x++) {
       input[index + 1] = nonGrayLChPairArray[x].targetLCh.h;
       output[index + 1] = nonGrayLChPairArray[x].cameraLCh.h;
@@ -1211,13 +1211,13 @@ public class DCAppearanceModel
     output[0] = output[huePatchSize - 1] = Double.MIN_VALUE;
     maxHueIndex = Maths.maxIndex(input);
 
-    //³]©wÀY§À <0¥H¤Î>360ªº³¡¤À
+    //è¨­å®šé ­å°¾ <0ä»¥åŠ>360çš„éƒ¨åˆ†
     input[0] = input[maxHueIndex] - 360;
     output[0] = output[maxHueIndex] - 360;
     input[huePatchSize - 1] = input[minHueIndex] + 360;
     output[huePatchSize - 1] = output[minHueIndex] + 360;
 
-    //·Óhue±Æ§Ç, ¤è«K¤º´¡
+    //ç…§hueæ’åº, æ–¹ä¾¿å…§æ’
     Arrays.sort(input);
     Arrays.sort(output);
 
@@ -1251,7 +1251,7 @@ public class DCAppearanceModel
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * LChPairªº¤ñ¸û¾¹
+   * LChPairçš„æ¯”è¼ƒå™¨
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -1478,7 +1478,7 @@ public class DCAppearanceModel
     List<Patch> test = model.getHuePlanePatchList();
 
     //==========================================================================
-    // ¦â®t­pºâ
+    // è‰²å·®è¨ˆç®—
     //==========================================================================
     DeltaEReport[] report = model.testForwardModel(test, false);
     System.out.println(report[0]);
@@ -1489,7 +1489,7 @@ public class DCAppearanceModel
     //==========================================================================
 
     //==========================================================================
-    // »~®t­pºâ
+    // èª¤å·®è¨ˆç®—
     //==========================================================================
     int size = model.LChPairArray.length;
 
@@ -1506,7 +1506,7 @@ public class DCAppearanceModel
     //==========================================================================
 
     //==========================================================================
-    // Âà¹Ï´ú¸Õ
+    // è½‰åœ–æ¸¬è©¦
     //==========================================================================
 //    try {
 //      BufferedImage img = ImageUtils.loadImage(
@@ -1523,7 +1523,7 @@ public class DCAppearanceModel
   }
 
   /**
-   * ³]©w­n²¤¹Lªº¦â¶ô¯Á¤Ş­È
+   * è¨­å®šè¦ç•¥éçš„è‰²å¡Šç´¢å¼•å€¼
    * @param ignoreIndex int[]
    */
   public void setIgnoreIndex(int[] ignoreIndex) {
@@ -1531,7 +1531,7 @@ public class DCAppearanceModel
   }
 
   /**
-   * ¬O§_¹ïRGB°µ¦Ç¥­¿Å
+   * æ˜¯å¦å°RGBåšç°å¹³è¡¡
    * @param doGrayBalance boolean
    */
   public void setDoGrayBalance(boolean doGrayBalance) {
@@ -1539,7 +1539,7 @@ public class DCAppearanceModel
   }
 
   /**
-   * ¬O§_¶i¦æ©ú«×ªº­×¥¿
+   * æ˜¯å¦é€²è¡Œæ˜åº¦çš„ä¿®æ­£
    * @param doLightnessCorrect boolean
    */
   public void setDoLightnessCorrect(boolean doLightnessCorrect) {
@@ -1547,7 +1547,7 @@ public class DCAppearanceModel
   }
 
   /**
-   * ¬O§_¶i¦æ¦â¬Ûªº­×¥¿
+   * æ˜¯å¦é€²è¡Œè‰²ç›¸çš„ä¿®æ­£
    * @param doHueCorrect boolean
    */
   public void setDoHueCorrect(boolean doHueCorrect) {
@@ -1555,7 +1555,7 @@ public class DCAppearanceModel
   }
 
   /**
-   * ¬O§_¶i¦æ±m«×ªº­×¥¿
+   * æ˜¯å¦é€²è¡Œå½©åº¦çš„ä¿®æ­£
    * @param doChromaCorrect boolean
    */
   public void setDoChromaCorrect(boolean doChromaCorrect) {
@@ -1563,7 +1563,7 @@ public class DCAppearanceModel
   }
 
   /**
-   * ¬O§_¶i¦æ¨Ì¦â¬Û§@©ú«×ªº­×¥¿
+   * æ˜¯å¦é€²è¡Œä¾è‰²ç›¸ä½œæ˜åº¦çš„ä¿®æ­£
    * @param doLightnessCorrectInHue boolean
    */
   public void setDoLightnessCorrectInHue(boolean doLightnessCorrectInHue) {

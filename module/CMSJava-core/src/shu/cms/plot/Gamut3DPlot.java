@@ -22,7 +22,7 @@ import shu.math.array.DoubleArray;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Î¨ÓÅã¥ÜGamutªºÃş§O
+ * ç”¨ä¾†é¡¯ç¤ºGamutçš„é¡åˆ¥
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -43,10 +43,10 @@ public class Gamut3DPlot {
     private Shape shape = Shape.Quadrangle;
 
     /**
-     * ±N¤»­±µe§¹(RG GB RB CM MY YC)
+     * å°‡å…­é¢ç•«å®Œ(RG GB RB CM MY YC)
      * @param step int
      * @param transfer RGB2ColorSpaceTransfer
-     * @param skipBlack boolean ¶Â¦â¬O§_²¤¹L¤£µe
+     * @param skipBlack boolean é»‘è‰²æ˜¯å¦ç•¥éä¸ç•«
      */
     protected void drawRGB2ColorSpace(int step, RGB2ColorSpaceTransfer transfer,
                                       boolean skipBlack) {
@@ -85,7 +85,7 @@ public class Gamut3DPlot {
     }
 
     /**
-     * GamutÃ¸¹Ïµøµ¡ªº«Øºc
+     * Gamutç¹ªåœ–è¦–çª—çš„å»ºæ§‹
      * @param title String
      * @param width int
      * @param height int
@@ -130,14 +130,14 @@ public class Gamut3DPlot {
 //
 //    switch (shape) {
 //      case Triangle: {
-//        //²Ä¤@­Ópolygon
+//        //ç¬¬ä¸€å€‹polygon
 //        PolygonPlot polygon = new PolygonPlot(null, c, alpha,
 //                                              lastValues, values, preValues);
 //        polygon.fill_shape = fillShape;
 //        polygon.draw_lines = polygonDrawLine;
 //        polygon.lineColor = fillShape ? Color.gray : c;
 //        p.addPlot(polygon);
-//        //²Ä¤G­Ópolygon
+//        //ç¬¬äºŒå€‹polygon
 //        polygon = new PolygonPlot(null, c, alpha, preValues, values,
 //                                  nextPreValues);
 //        polygon.fill_shape = fillShape;
@@ -215,14 +215,14 @@ public class Gamut3DPlot {
                         Color.gray : c));
                 pjzy.addDrawable(polygon);
             } else {
-                //²Ä¤@­Ópolygon
+                //ç¬¬ä¸€å€‹polygon
                 PolygonPlot polygon = new PolygonPlot(null, c, alpha,
                         lastValues, values, preValues);
                 polygon.fill_shape = fillShape;
                 polygon.draw_lines = polygonDrawLine;
                 polygon.lineColor = fillShape ? Color.gray : c;
                 p.addPlot(polygon);
-                //²Ä¤G­Ópolygon
+                //ç¬¬äºŒå€‹polygon
                 polygon = new PolygonPlot(null, c, alpha, preValues, values,
                                           nextPreValues);
                 polygon.fill_shape = fillShape;
@@ -273,14 +273,14 @@ public class Gamut3DPlot {
     }
 
     /**
-     * ¤@¦¸µe¤@­±
+     * ä¸€æ¬¡ç•«ä¸€é¢
      * @param p Plot3D
-     * @param first Channel ²Ä¤@­Óchannel
-     * @param second Channel ²Ä¤G­Óchannel
-     * @param thirdValue int ²Ä¤T­Óchannelªº¼Æ­È
+     * @param first Channel ç¬¬ä¸€å€‹channel
+     * @param second Channel ç¬¬äºŒå€‹channel
+     * @param thirdValue int ç¬¬ä¸‰å€‹channelçš„æ•¸å€¼
      * @param step int
      * @param transfer RGB2ColorSpaceTransfer
-     * @param skipBlack boolean ¶Â¦â¬O§_²¤¹L¤£µe
+     * @param skipBlack boolean é»‘è‰²æ˜¯å¦ç•¥éä¸ç•«
      */
     protected void drawRGB2ColorSpace0(Plot3D p, RGBBase.Channel first,
                                        RGBBase.Channel second,
@@ -316,7 +316,7 @@ public class Gamut3DPlot {
 
                     if (!(checkPoint(last) && checkPoint(now) && checkPoint(pre)
                           && checkPoint(nextPre))) {
-                        //¦³¤£¦X²zªºÂI´N²¤¹L
+                        //æœ‰ä¸åˆç†çš„é»å°±ç•¥é
                         continue;
                     }
 
@@ -340,7 +340,7 @@ public class Gamut3DPlot {
     private double[] tmpValues = new double[3];
 
     /**
-     * ÀË¬d¸Ó¦â±mªÅ¶¡ÂI¬O§_¥¿±`
+     * æª¢æŸ¥è©²è‰²å½©ç©ºé–“é»æ˜¯å¦æ­£å¸¸
      * @param colorSpace ColorSpace
      * @return boolean
      */
@@ -363,7 +363,7 @@ public class Gamut3DPlot {
         private ProfileColorSpace pcs;
 
         /**
-         * Âà´«¥X»PRGB¹ïÀ³ªº¦â±mªÅ¶¡
+         * è½‰æ›å‡ºèˆ‡RGBå°æ‡‰çš„è‰²å½©ç©ºé–“
          *
          * @param rgb RGB
          * @return ColorSpace
@@ -423,7 +423,7 @@ public class Gamut3DPlot {
             OpponentColorAttribute last = null;
             int index = 0;
 
-            //µe¬W¤l, s=100
+            //ç•«æŸ±å­, s=100
             for (int v = 0; v <= 100; v += vStep) {
                 HSV hsv = new HSV(RGB.ColorSpace.sRGB, new double[] {h % 360,
                                   100, v});
@@ -449,7 +449,7 @@ public class Gamut3DPlot {
             OpponentColorAttribute last2 = null;
             int index2 = 0;
 
-            //µe»\¤l, v=100
+            //ç•«è“‹å­, v=100
             for (int s = 0; s <= 100; s += sStep) {
                 HSV hsv = new HSV(RGB.ColorSpace.sRGB, new double[] {h % 360, s,
                                   100});
@@ -459,7 +459,7 @@ public class Gamut3DPlot {
                     OpponentColorAttribute pre = preArray2.get(index2);
                     OpponentColorAttribute nextPre = preArray2.get(index2 + 1);
                     index2++;
-                    //µe¤W»\
+                    //ç•«ä¸Šè“‹
                     drawShape(p, last2.toRGB().getColor(), now.toRGB().getColor(),
                               pre.toRGB().getColor(), nextPre.toRGB().getColor(),
                               last2, now, pre, nextPre);
@@ -490,7 +490,7 @@ public class Gamut3DPlot {
                     values[0] = 0;
                     c3.setValues(values);
 
-                    //µe¤U»\, Luma³£¬O¶Âªº
+                    //ç•«ä¸‹è“‹, Lumaéƒ½æ˜¯é»‘çš„
                     drawShape(p, Color.black, Color.black, Color.black,
                               Color.black,
                               c0, c1, c2, c3);
@@ -564,12 +564,12 @@ public class Gamut3DPlot {
     }
 
     public static enum Shape {
-        //¤T¨¤§Î
+        //ä¸‰è§’å½¢
 
         Triangle,
-        //ÂI
+        //é»
         Dot,
-        //¥|Ãä§Î
+        //å››é‚Šå½¢
         Quadrangle
     }
 
@@ -637,7 +637,7 @@ public class Gamut3DPlot {
     }
 
     /**
-     * ¬O¤£¬O­nµe½u
+     * æ˜¯ä¸æ˜¯è¦ç•«ç·š
      * @param drawLine boolean
      */
     public void setPolygonDrawLine(boolean drawLine) {
@@ -645,7 +645,7 @@ public class Gamut3DPlot {
     }
 
     /**
-     * ¨C­Ó­±¬O§_­n¥HÃC¦â¶ñº¡
+     * æ¯å€‹é¢æ˜¯å¦è¦ä»¥é¡è‰²å¡«æ»¿
      * @param fillShape boolean
      */
     public void setFillShape(boolean fillShape) {
@@ -653,7 +653,7 @@ public class Gamut3DPlot {
     }
 
     /**
-     * ¶ñ¤WªºÃC¦â
+     * å¡«ä¸Šçš„é¡è‰²
      * @param paintColor Color
      */
     public void setPaintColor(Color paintColor) {
@@ -661,7 +661,7 @@ public class Gamut3DPlot {
     }
 
     /**
-     * ¬O§_­n¥H¨C­Ó­±¥»¨­ªºÃC¦â¥h¶ñº¡
+     * æ˜¯å¦è¦ä»¥æ¯å€‹é¢æœ¬èº«çš„é¡è‰²å»å¡«æ»¿
      * @param paintRGBColor boolean
      */
     public void setPaintRGBColor(boolean paintRGBColor) {
@@ -669,7 +669,7 @@ public class Gamut3DPlot {
     }
 
     /**
-     * RGBÅÜ¤Æªºstep
+     * RGBè®ŠåŒ–çš„step
      * @param step int
      */
     public void setStep(int step) {
@@ -681,7 +681,7 @@ public class Gamut3DPlot {
     }
 
     /**
-     * ³]©w³z©úµ{«×
+     * è¨­å®šé€æ˜ç¨‹åº¦
      * @param alpha float
      */
     public void setAlpha(float alpha) {

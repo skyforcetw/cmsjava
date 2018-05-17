@@ -13,7 +13,7 @@ import shu.math.*;
 
 /**
  * <p>Title: Colour Management System</p>
- * ¦]¬°¤£§¡¤Ã¤À¥¬, ¤£«ØÄ³¨Ï¥Î
+ * å› ç‚ºä¸å‡å‹»åˆ†å¸ƒ, ä¸å»ºè­°ä½¿ç”¨
  *
  * <p>Description: a Colour Management System by Java</p>
  *
@@ -92,7 +92,7 @@ public class CC24TuneTarget
     for (Patch p : patchList) {
       RGB rgb = p.getRGB();
       HSV hsv = new HSV(rgb);
-      if (hsv.S > 3) { //§ì3¶È¶È¬O¸gÅç­È
+      if (hsv.S > 3) { //æŠ“3åƒ…åƒ…æ˜¯ç¶“é©—å€¼
         if (hsv.S > 100) {
           hsv.S = 100;
           Patch.Operator.setRGB(p, hsv.toRGB());
@@ -268,7 +268,7 @@ public class CC24TuneTarget
     interpolateMultiPatchesMap(300, 285, 315);
     interpolateMultiPatchesMap(330, 315, 345);
 
-//³Ì½ÆÂøªºHue 60«×
+//æœ€è¤‡é›œçš„Hue 60åº¦
     HSV[] hue450HSVArray = multiPatchesMap.get(45.);
     double hue45S = Interpolation.linear(0, 1, hue450HSVArray[0].S,
                                          hue450HSVArray[1].S, 0.5);

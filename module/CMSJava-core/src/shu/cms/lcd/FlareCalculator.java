@@ -13,7 +13,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥H³Ì¨Î¤Æªº¤è¦¡§ä¨ì³Ì¦X²zªºº|¥ú­È(flare)
+ * ä»¥æœ€ä½³åŒ–çš„æ–¹å¼æ‰¾åˆ°æœ€åˆç†çš„æ¼å…‰å€¼(flare)
  * Ref: Estimating Black-Level Emissions of computer-controlled Displays,
  * Roy S.Berns et al(2002).
  *

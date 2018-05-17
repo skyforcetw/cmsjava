@@ -6,7 +6,7 @@ import shu.cms.colorspace.independ.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó±NGretagMacbethAsciiFileªºLab¦C¥X
+ * ç”¨ä¾†å°‡GretagMacbethAsciiFileçš„Labåˆ—å‡º
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

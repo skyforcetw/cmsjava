@@ -21,9 +21,9 @@ import shu.cms.plot.*;
 public class ColorShiftVerifier {
   public static void main(String[] args) {
     LCDTarget lcdTarget1 = LCDTarget.Instance.getFromAUOXLS(
-        "D:\\My Documents\\\\地璸礶\\LG 42SL90QD\\Standard\\2223.xls");
+        "D:\\My Documents\\宸ヤ綔\\鑿北瑷堢暙\\LG 42SL90QD\\Standard\\2223.xls");
     LCDTarget lcdTarget2 = LCDTarget.Instance.getFromAUOXLS(
-        "D:\\My Documents\\\\地璸礶\\LG 42SL90QD\\Standard\\2223-standard gamut.xls");
+        "D:\\My Documents\\宸ヤ綔\\鑿北瑷堢暙\\LG 42SL90QD\\Standard\\2223-standard gamut.xls");
 
     LCDTarget test1 = lcdTarget1.targetFilter.getSurface1352From2223();
     LCDTarget test2 = lcdTarget2.targetFilter.getSurface1352From2223();

@@ -9,7 +9,7 @@ import shu.cms.plot.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¸g¥Ñ¤ß²zª«²z¹êÅç©Ò±o¨ìªºµ²ªG
+ * ç¶“ç”±å¿ƒç†ç‰©ç†å¯¦é©—æ‰€å¾—åˆ°çš„çµæœ
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -20,18 +20,18 @@ import shu.cms.plot.*;
  */
 public class GSDFThresholdModel {
   public static enum Threshold {
-    //¥i·Pª¾
+    //å¯æ„ŸçŸ¥
     Perceptible,
-    //¥i±µ¨ü
+    //å¯æ¥å—
     Acceptable
   }
 
   /**
-   * ¿é¤J¬ÛÃöªº°Ñ¼Æ, ­pºâ¥XìH­È (¥i±µ¨ü©Î¥i·Pª¾)
-   * @param thresholdType Threshold ¥i±µ¨ü©Î¥i·Pª¾
-   * @param JNDIndex double ¸Ó«G«×¹ïÀ³¨ì¤H²´ªºJNDI
-   * @param meanLuminance double ¥­§¡«G«×(in nits)
-   * @param percent double ìH­È«Ø¥ß°ò·Çªº¦Ê¤À¤ñ
+   * è¼¸å…¥ç›¸é—œçš„åƒæ•¸, è¨ˆç®—å‡ºé–¾å€¼ (å¯æ¥å—æˆ–å¯æ„ŸçŸ¥)
+   * @param thresholdType Threshold å¯æ¥å—æˆ–å¯æ„ŸçŸ¥
+   * @param JNDIndex double è©²äº®åº¦å°æ‡‰åˆ°äººçœ¼çš„JNDI
+   * @param meanLuminance double å¹³å‡äº®åº¦(in nits)
+   * @param percent double é–¾å€¼å»ºç«‹åŸºæº–çš„ç™¾åˆ†æ¯”
    * @return double
    */
   public final static double getThreshold(Threshold thresholdType,
@@ -50,10 +50,10 @@ public class GSDFThresholdModel {
   }
 
   /**
-   * ¿é¤J¬ÛÃöªº°Ñ¼Æ, ­pºâ¥X¥i±µ¨üªºìH­È
-   * @param JNDIndex double ¸Ó«G«×¹ïÀ³¨ì¤H²´ªºJNDI
-   * @param meanLuminance double ¥­§¡«G«×(in nits)
-   * @param percent double ìH­È«Ø¥ß°ò·Çªº¦Ê¤À¤ñ
+   * è¼¸å…¥ç›¸é—œçš„åƒæ•¸, è¨ˆç®—å‡ºå¯æ¥å—çš„é–¾å€¼
+   * @param JNDIndex double è©²äº®åº¦å°æ‡‰åˆ°äººçœ¼çš„JNDI
+   * @param meanLuminance double å¹³å‡äº®åº¦(in nits)
+   * @param percent double é–¾å€¼å»ºç«‹åŸºæº–çš„ç™¾åˆ†æ¯”
    * @return double
    */
   public final static double getAcceptableThreshold(double JNDIndex,
@@ -67,9 +67,9 @@ public class GSDFThresholdModel {
   }
 
   /**
-   * ¿é¤J¬ÛÃöªº°Ñ¼Æ, ­pºâ¥X¥i·Pª¾ªºìH­È
-   * @param JNDIndex double ¸Ó«G«×¹ïÀ³¨ì¤H²´ªºJNDI
-   * @param percent double ìH­È«Ø¥ß°ò·Çªº¦Ê¤À¤ñ
+   * è¼¸å…¥ç›¸é—œçš„åƒæ•¸, è¨ˆç®—å‡ºå¯æ„ŸçŸ¥çš„é–¾å€¼
+   * @param JNDIndex double è©²äº®åº¦å°æ‡‰åˆ°äººçœ¼çš„JNDI
+   * @param percent double é–¾å€¼å»ºç«‹åŸºæº–çš„ç™¾åˆ†æ¯”
    * @return double
    */
   public final static double getPerceptibleThreshold(double JNDIndex,

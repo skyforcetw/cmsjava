@@ -263,9 +263,9 @@ public class HSVLUTInterpolator {
 //    HSV hsv = new HSV(rgb);
     AUOHSV hsv = new AUOHSV(rgb);
     //======================================================================
-    // ­ì©lHSV
+    // åŸå§‹HSV
     //======================================================================
-    //Âà¦¨auoªºhsv®æ¦¡
+    //è½‰æˆauoçš„hsvæ ¼å¼
     short[] auoHSVValues = hsv.getValues();
 
 //    HSV.AUO.toHSVValues(hsv, auoHSVValues);
@@ -303,7 +303,7 @@ public class HSVLUTInterpolator {
       }
 
     }
-    //³Ì«á¤@µ§¶ñ²Ä¤@µ§ªº­È
+    //æœ€å¾Œä¸€ç­†å¡«ç¬¬ä¸€ç­†çš„å€¼
     original[size] = reverse ? processAdjustValue[0] + 768 :
         processAdjustValue[0];
 

@@ -14,7 +14,7 @@ package shu.cms.util;
  */
 public class ViewingParameters {
   /**
-   * ¨ú±o¼v¹³§e²{©Ò»İ­nªºdpi
+   * å–å¾—å½±åƒå‘ˆç¾æ‰€éœ€è¦çš„dpi
    * @param numpixels double
    * @param viewdist double
    * @param viewangle double
@@ -26,7 +26,7 @@ public class ViewingParameters {
   }
 
   /**
-   * ¼v¹³©Ò»İ­nªº¹³¯À
+   * å½±åƒæ‰€éœ€è¦çš„åƒç´ 
    * @param viewdist double
    * @param dpi double
    * @param viewangle double
@@ -39,7 +39,7 @@ public class ViewingParameters {
   }
 
   /**
-   * ¨ú±o¼v¹³§e²{©Ò»İ­nªº¶ZÂ÷
+   * å–å¾—å½±åƒå‘ˆç¾æ‰€éœ€è¦çš„è·é›¢
    * @param numpixels double
    * @param dpi double Dpi is the dot-per-inch of the monitor.
    * @param viewangle double viewangle is in degrees (of angle).
@@ -70,7 +70,7 @@ public class ViewingParameters {
   }
 
   /**
-   * ¨ú±oµø¨¤
+   * å–å¾—è¦–è§’
    * @param numpixels double
    * @param viewdist double
    * @param dpi double

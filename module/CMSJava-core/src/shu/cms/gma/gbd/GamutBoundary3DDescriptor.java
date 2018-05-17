@@ -12,8 +12,8 @@ import shu.cms.gma.gbp.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó´y­z¦â¥ßÅé¤Wªº¦â°ìÃä¬É
- * ¬O¥HGamutBoundary2DDescriptor¥[¤W3D¹ï¬M¦Ó±o
+ * ç”¨ä¾†æè¿°è‰²ç«‹é«”ä¸Šçš„è‰²åŸŸé‚Šç•Œ
+ * æ˜¯ä»¥GamutBoundary2DDescriptoråŠ ä¸Š3Då°æ˜ è€Œå¾—
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -27,7 +27,7 @@ public class GamutBoundary3DDescriptor
 
   public GamutBoundary3DDescriptor(GamutBoundaryPoint gbp,
                                    FocalPoint.FocalType focalType) {
-    //(1)¸gMFP±o¨ì¤T¤À°Ï
+    //(1)ç¶“MFPå¾—åˆ°ä¸‰åˆ†å€
     super(gbp, focalType);
   }
 
@@ -45,7 +45,7 @@ public class GamutBoundary3DDescriptor
       return boundaryLCh;
     }
     else if (gbp.isAtPointPlane(hue)) {
-      //¥Nªí¦b¦s¦b¼Æ­Èªºhue¥­­±¤W,¥u­n¥H2Dªº¤è¦¡¸ÑªR§Y¥i
+      //ä»£è¡¨åœ¨å­˜åœ¨æ•¸å€¼çš„hueå¹³é¢ä¸Š,åªè¦ä»¥2Dçš„æ–¹å¼è§£æå³å¯
       return super.getBoundaryLCh(LCh);
     }
     else {
@@ -82,7 +82,7 @@ public class GamutBoundary3DDescriptor
   }
 
   /**
-   * ¨ú±o¤T¨¤§Î
+   * å–å¾—ä¸‰è§’å½¢
    * @param min3DistIndex int[]
    * @param leftHuePlane List
    * @param rightHuePlane List
@@ -124,7 +124,7 @@ public class GamutBoundary3DDescriptor
         tri0, tri1, tri2, tri3};
     CIELCh[] crosspoints = new CIELCh[4];
     boolean[] inTriangle = new boolean[4];
-    //§PÂ_¬O§_¥ş­xÂĞ¨S
+    //åˆ¤æ–·æ˜¯å¦å…¨è»è¦†æ²’
     boolean hasInside = false;
 
     for (int x = 0; x < 4; x++) {
@@ -136,8 +136,8 @@ public class GamutBoundary3DDescriptor
 
     double[] dist = getDistance(point, crosspoints);
     if (hasInside) {
-      //¦pªG¦³¸¨¦b¤T¨¤«¬¤WªºÂI,¨º§â¨ä¥L¨S¦³¸¨ªº±Æ°£±¼
-      //³Ì§Öªº¤è¦¡´N¬O§â¶ZÂ÷§ï¦¨¶W¯Å¤j
+      //å¦‚æœæœ‰è½åœ¨ä¸‰è§’å‹ä¸Šçš„é»,é‚£æŠŠå…¶ä»–æ²’æœ‰è½çš„æ’é™¤æ‰
+      //æœ€å¿«çš„æ–¹å¼å°±æ˜¯æŠŠè·é›¢æ”¹æˆè¶…ç´šå¤§
       for (int x = 0; x < 4; x++) {
         dist[x] = inTriangle[x] ? dist[x] : Double.MAX_VALUE;
       }
@@ -150,7 +150,7 @@ public class GamutBoundary3DDescriptor
   protected int uncertainBoundaryCount = 0;
 
   /**
-   * §ä¨ìleftNearest©MrightNearest²Õ¦¨ªº¤T¨¤§Î¤¤,§Î¦¨»Ppoint©Mfocalpoint³s½uªº³Ì¾A¥æÂI
+   * æ‰¾åˆ°leftNearestå’ŒrightNearestçµ„æˆçš„ä¸‰è§’å½¢ä¸­,å½¢æˆèˆ‡pointå’Œfocalpointé€£ç·šçš„æœ€é©äº¤é»
    * @param point CIELCh
    * @param focalpoint CIELCh
    * @param twoLeftNearest CIELCh[]
@@ -173,7 +173,7 @@ public class GamutBoundary3DDescriptor
         tri0, tri1, tri2, tri3};
     CIELCh[] crosspoints = new CIELCh[4];
     boolean[] inTriangle = new boolean[4];
-    //§PÂ_¬O§_¥ş­xÂĞ¨S
+    //åˆ¤æ–·æ˜¯å¦å…¨è»è¦†æ²’
     boolean hasInside = false;
 
     for (int x = 0; x < 4; x++) {
@@ -185,8 +185,8 @@ public class GamutBoundary3DDescriptor
 
     double[] dist = getDistance(point, crosspoints);
     if (hasInside) {
-      //¦pªG¦³¸¨¦b¤T¨¤«¬¤WªºÂI,¨º§â¨ä¥L¨S¦³¸¨ªº±Æ°£±¼
-      //³Ì§Öªº¤è¦¡´N¬O§â¶ZÂ÷§ï¦¨¶W¯Å¤j
+      //å¦‚æœæœ‰è½åœ¨ä¸‰è§’å‹ä¸Šçš„é»,é‚£æŠŠå…¶ä»–æ²’æœ‰è½çš„æ’é™¤æ‰
+      //æœ€å¿«çš„æ–¹å¼å°±æ˜¯æŠŠè·é›¢æ”¹æˆè¶…ç´šå¤§
       for (int x = 0; x < 4; x++) {
         dist[x] = inTriangle[x] ? dist[x] : Double.MAX_VALUE;
       }
@@ -200,7 +200,7 @@ public class GamutBoundary3DDescriptor
   }
 
   /**
-   * ¨Dpoint»Ppointsªº¶ZÂ÷
+   * æ±‚pointèˆ‡pointsçš„è·é›¢
    * @param point CIELCh
    * @param points CIELCh[]
    * @return double[]
@@ -262,7 +262,7 @@ public class GamutBoundary3DDescriptor
   }
 
   /**
-   * ³Ì¤pªº¤T­Ó¶ZÂ÷ªº¯Á¤Ş­È
+   * æœ€å°çš„ä¸‰å€‹è·é›¢çš„ç´¢å¼•å€¼
    * @param leftDist double[]
    * @param rightDist double[]
    * @return int[]

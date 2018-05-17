@@ -144,14 +144,14 @@ public abstract class HSBImageUtil {
       for (int y = 0; y < yEnd; y++) {
         LabValues[1] = x - xHalf;
         LabValues[2] = - (y - half);
-        //¥b®|
+        //ÐµbÐ¾|
         radial = ColorSpace.fastCartesian2RadialValues(LabValues);
         if (radial <= maxRadial) {
 
           //====================================================================
           // part1
           //====================================================================
-          //¨¤«×
+          //Ð¸Ð´Ð»â•«
 
           hsbValues[0] = ColorSpace.fastCartesian2AngularValues(LabValues);
           hsbValues[1] = radial / maxRadial;

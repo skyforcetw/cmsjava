@@ -45,7 +45,7 @@ public class DCChartAdapter
   }
 
   /**
-   * ¥Ñchart¨ú±o¥úÃĞ¤Ï®g²v, ¨Ã¥B¥HlightSource¬°¥ú·½­pºâ¥X¥úÃĞ¯à¶q­È
+   * ç”±chartå–å¾—å…‰è­œåå°„ç‡, ä¸¦ä¸”ä»¥lightSourceç‚ºå…‰æºè¨ˆç®—å‡ºå…‰è­œèƒ½é‡å€¼
    * @param chart Chart
    * @param lightSource Type
    */
@@ -65,7 +65,7 @@ public class DCChartAdapter
   }
 
   /**
-   * ¥ÑLabªºCxFÀÉ(Labªº¥ÕÂI¹w³]¬OD50), ²£¥ÍXYZ, ¥B¦â¾AÀ³¨ìlightSource¥ú·½¤U.
+   * ç”±Labçš„CxFæª”(Labçš„ç™½é»é è¨­æ˜¯D50), ç”¢ç”ŸXYZ, ä¸”è‰²é©æ‡‰åˆ°lightSourceå…‰æºä¸‹.
    * @param LabCxFFilename String
    * @param lightSource Type
    */
@@ -86,7 +86,7 @@ public class DCChartAdapter
   }
 
   /**
-   * ¥ÑD50ªºLab, Âà¦^¨ìD50ªºXYZ, µM«á¦A¦â¾AÀ³¨ìwhite¤U, ±o¨ìwhite¤UªºXYZ
+   * ç”±D50çš„Lab, è½‰å›åˆ°D50çš„XYZ, ç„¶å¾Œå†è‰²é©æ‡‰åˆ°whiteä¸‹, å¾—åˆ°whiteä¸‹çš„XYZ
    * @param D50LabList List
    * @param white CIEXYZ
    * @return List

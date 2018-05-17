@@ -16,8 +16,8 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * §Q¥ÎIdealDigitalCameraªº¥úÃĞ¥ú¤ÏÀ³¨ç¼Æªº¯S©Ê, ±qRGB¹w´ú¥úÃĞ­È.
- * ¥úÃĞªº¤Ï±À¬O°ò©óMunsell Book
+ * åˆ©ç”¨IdealDigitalCameraçš„å…‰è­œå…‰åæ‡‰å‡½æ•¸çš„ç‰¹æ€§, å¾RGBé æ¸¬å…‰è­œå€¼.
+ * å…‰è­œçš„åæ¨æ˜¯åŸºæ–¼Munsell Book
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -38,10 +38,10 @@ public abstract class SpectraEstimator {
   protected int interval = 10;
 
   /**
-   * ¤£¦Ò¼{¨ì·Ó©ú¥ú·½ªº¨Ï¥Î¤è¦¡, ¦¹®É°²³]¥ú·½¬°E¥ú·½
+   * ä¸è€ƒæ…®åˆ°ç…§æ˜å…‰æºçš„ä½¿ç”¨æ–¹å¼, æ­¤æ™‚å‡è¨­å…‰æºç‚ºEå…‰æº
    * @param camera IdealDigitalCamera
-   * @param source Content ¥HMunsell°µ¥úÃĞ°ò©³¦V¶q®É,±Ä¥ÎªºEdition
-   * @param k int °ò©³¦V¶qªº­Ó¼Æ
+   * @param source Content ä»¥Munsellåšå…‰è­œåŸºåº•å‘é‡æ™‚,æ¡ç”¨çš„Edition
+   * @param k int åŸºåº•å‘é‡çš„å€‹æ•¸
    */
   public SpectraEstimator(IdealDigitalCamera camera,
                           SpectraDatabase.Content source,
@@ -50,11 +50,11 @@ public abstract class SpectraEstimator {
   }
 
   /**
-   * ¦Ò¼{·Ó©ú¥ú·½¹ï©óª«Åé¦â¼vÅTªº¨Ï¥Î¤è¦¡
+   * è€ƒæ…®ç…§æ˜å…‰æºå°æ–¼ç‰©é«”è‰²å½±éŸ¿çš„ä½¿ç”¨æ–¹å¼
    * @param camera IdealDigitalCamera
-   * @param source Content ¥HMunsell°µ¥úÃĞ°ò©³¦V¶q®É,±Ä¥ÎªºEdition
-   * @param k int °ò©³¦V¶qªº­Ó¼Æ
-   * @param illuminant Spectra ·Ó©ú¥ú·½ªº¥úÃĞ
+   * @param source Content ä»¥Munsellåšå…‰è­œåŸºåº•å‘é‡æ™‚,æ¡ç”¨çš„Edition
+   * @param k int åŸºåº•å‘é‡çš„å€‹æ•¸
+   * @param illuminant Spectra ç…§æ˜å…‰æºçš„å…‰è­œ
    */
   public SpectraEstimator(IdealDigitalCamera camera,
                           SpectraDatabase.Content source,
@@ -64,7 +64,7 @@ public abstract class SpectraEstimator {
     this.k = k;
 
     //==========================================================================
-    // ¾ã­ÓEstimatorªº¹B§@±Ä¥Î»P source ¬Û¦Pªº³]©w
+    // æ•´å€‹Estimatorçš„é‹ä½œæ¡ç”¨èˆ‡ source ç›¸åŒçš„è¨­å®š
     //==========================================================================
     this.start = source.start;
     this.end = source.end;
@@ -79,16 +79,16 @@ public abstract class SpectraEstimator {
   }
 
   /**
-   * ±qRGB­È¹w´ú¥úÃĞ
+   * å¾RGBå€¼é æ¸¬å…‰è­œ
    * @param RGBValues double[]
    * @return double[]
    */
   public abstract double[] estimateSpectraData(double[] RGBValues);
 
   public Spectra estimateSpectra(double[] RGBValues) {
-    //¹w´ú¥X¨Óªº¥úÃĞ¸ê®Æ
+    //é æ¸¬å‡ºä¾†çš„å…‰è­œè³‡æ–™
     double[] spectraData = estimateSpectraData(RGBValues);
-    //Âà¦¨¥úÃĞª«¥ó
+    //è½‰æˆå…‰è­œç‰©ä»¶
     Spectra sw = new Spectra(null, Spectra.SpectrumType.EMISSION, start,
                              end, interval, spectraData);
     return sw;
@@ -98,7 +98,7 @@ public abstract class SpectraEstimator {
   protected double[][] _Uk;
 
   /**
-   * ¨ú±o°ò©³¦V¶qU¥H¤Î³¡¤À°ò©³¦V¶qUk
+   * å–å¾—åŸºåº•å‘é‡Uä»¥åŠéƒ¨åˆ†åŸºåº•å‘é‡Uk
    */
   protected void getUAndUk() {
     _U = svd.getU();
@@ -106,7 +106,7 @@ public abstract class SpectraEstimator {
   }
 
   /**
-   * ±N¥úÃĞ¤Ï®g²vªº¼Æ­È¦X²z¤Æ (­­¨î¨ä¬°0~1)
+   * å°‡å…‰è­œåå°„ç‡çš„æ•¸å€¼åˆç†åŒ– (é™åˆ¶å…¶ç‚º0~1)
    * @param reflective double[]
    * @return double[]
    */
@@ -120,7 +120,7 @@ public abstract class SpectraEstimator {
   }
 
   /**
-   * ³¡¤À°ò©³¦V¶q,«ek­Ó°ò©³¦V¶q²Õ¦¨
+   * éƒ¨åˆ†åŸºåº•å‘é‡,å‰kå€‹åŸºåº•å‘é‡çµ„æˆ
    * @param U double[][]
    * @param k int
    * @return double[][]
@@ -130,10 +130,10 @@ public abstract class SpectraEstimator {
   }
 
   /**
-   * »~®t
-   * @param k int °ò¦V¶q«Y¼Æ
-   * @param sv double[] ©_²§­È
-   * @return double ¯S©Ê¥Í¦s¤ñ
+   * èª¤å·®
+   * @param k int åŸºå‘é‡ä¿‚æ•¸
+   * @param sv double[] å¥‡ç•°å€¼
+   * @return double ç‰¹æ€§ç”Ÿå­˜æ¯”
    */
   protected final static double e(int k, double[] sv) {
     double sum = 0.0;
@@ -144,7 +144,7 @@ public abstract class SpectraEstimator {
   }
 
   /**
-   * ¬Û¹ï»~®t
+   * ç›¸å°èª¤å·®
    * @param k int
    * @param sv double[]
    * @return double
@@ -154,7 +154,7 @@ public abstract class SpectraEstimator {
   }
 
   /**
-   * ¯S©Ê¥Í¦s¤ñ
+   * ç‰¹æ€§ç”Ÿå­˜æ¯”
    * @param k int
    * @param sv double[]
    * @return double
@@ -164,7 +164,7 @@ public abstract class SpectraEstimator {
   }
 
   /**
-   * ¨ú±o¥úÃĞweight function, §Y¬°cameraªº¥úÃĞ¥ú¤ÏÀ³¨ç¼Æ
+   * å–å¾—å…‰è­œweight function, å³ç‚ºcameraçš„å…‰è­œå…‰åæ‡‰å‡½æ•¸
    * @param camera IdealDigitalCamera
    * @return double[][]
    */
@@ -183,7 +183,7 @@ public abstract class SpectraEstimator {
   }
 
   /**
-   * §Q¥ÎRGBpatchList¹w´ú¥úÃĞ,¨Ã¥B¥Hilluminant¬°¥ÕÂI­pºâLab,¨Ã¦^¶Ç
+   * åˆ©ç”¨RGBpatchListé æ¸¬å…‰è­œ,ä¸¦ä¸”ä»¥illuminantç‚ºç™½é»è¨ˆç®—Lab,ä¸¦å›å‚³
    * @param RGBpatchList List
    * @param illuminant Spectra
    * @return List

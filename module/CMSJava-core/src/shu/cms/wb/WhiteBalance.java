@@ -48,7 +48,7 @@ public abstract class WhiteBalance {
   }
 
   /**
-   * ¶Ç²ÎRGB°òÂ¦ªºWB
+   * å‚³çµ±RGBåŸºç¤Žçš„WB
    * @param image BufferedImage
    * @return BufferedImage
    */
@@ -56,18 +56,18 @@ public abstract class WhiteBalance {
     BufferedImage cloneImage = ImageUtils.cloneBufferedImage(image);
 
     ImageSkeleton imageSkeleton = ImageSkeleton.getInstance(cloneImage);
-    //­pºâwb«Y¼Æ
+    //è¨ˆç®—wbä¿‚æ•¸
     double[] whiteBalanceCoefficients = processWhiteBalanceCoefficients(
         imageSkeleton);
-    //­pºâ¦â¾AÀ³«Y¼Æ
+    //è¨ˆç®—è‰²é©æ‡‰ä¿‚æ•¸
     double[] CATCoefficients = processRGBCATCoefficients(
         whiteBalanceCoefficients);
-    //­pºâ«Y¼Æ
+    //è¨ˆç®—ä¿‚æ•¸
     return RGBChromaticAdaptationTransform(CATCoefficients, cloneImage);
   }
 
   /**
-   * ­pµe®Ñ¤¤©Ò´£¥XªºCIE¦â«×¾Ç°òÂ¦¤§WB
+   * è¨ˆç•«æ›¸ä¸­æ‰€æå‡ºçš„CIEè‰²åº¦å­¸åŸºç¤Žä¹‹WB
    * @param image BufferedImage
    * @return BufferedImage
    */
@@ -76,27 +76,27 @@ public abstract class WhiteBalance {
   }
 
   /**
-   * §¹¥þ¨Ì·ÓCIE¦â«×¾Çªº°òÂ¦ªºWB
+   * å®Œå…¨ä¾ç…§CIEè‰²åº¦å­¸çš„åŸºç¤Žçš„WB
    * @param image BufferedImage
    * @param catType CATType
    * @return BufferedImage
    */
   public BufferedImage CIEWhiteBalanceByLMS(BufferedImage image,
                                             CAMConst.CATType catType) {
-    //¨ú±o³]³ÆD65¤U¤§Profile
+    //å–å¾—è¨­å‚™D65ä¸‹ä¹‹Profile
     Profile D65Profile = getDeviceProfile(Illuminant.D65);
-    //¨ú±oD65¤U¤§LMS¼v¹³
+    //å–å¾—D65ä¸‹ä¹‹LMSå½±åƒ
     DeviceIndependentImage DIImage = DeviceIndependentImage.getInstance(image,
         ProfileColorSpace.Instance.get(D65Profile, ""), catType);
     ImageSkeleton imageSkeleton = ImageSkeleton.getInstance(DIImage, true);
-    //­pºâwb«Y¼Æ
+    //è¨ˆç®—wbä¿‚æ•¸
     double[] whiteBalanceCoefficients = processWhiteBalanceCoefficients(
         imageSkeleton);
-    //­pºâ¥ÕÂIXYZ
+    //è¨ˆç®—ç™½é»žXYZ
     CIEXYZ wp = processEstimativeWhitePoint(whiteBalanceCoefficients, catType);
-    //­pºâ³Ì±µªñ¤§¥ú·½
+    //è¨ˆç®—æœ€æŽ¥è¿‘ä¹‹å…‰æº
     Illuminant ls = processLightSource(wp);
-    //­pºâ¥ú·½¤UProfile
+    //è¨ˆç®—å…‰æºä¸‹Profile
     Profile profile = getDeviceProfile(ls);
 
     DeviceIndependentImage realDIImage = DeviceIndependentImage.getInstance(
@@ -105,7 +105,7 @@ public abstract class WhiteBalance {
   }
 
   /**
-   * §¹¥þ¨Ì·ÓCIE¦â«×¾Çªº°òÂ¦ªºWB
+   * å®Œå…¨ä¾ç…§CIEè‰²åº¦å­¸çš„åŸºç¤Žçš„WB
    * @param image BufferedImage
    * @param catType CATType
    * @return BufferedImage
@@ -113,22 +113,22 @@ public abstract class WhiteBalance {
   public BufferedImage CIEWhiteBalanceByCAT(BufferedImage image,
                                             CAMConst.CATType catType) {
     BufferedImage cloneImage = ImageUtils.cloneBufferedImage(image);
-    //¨ú±o³]³ÆD65¤U¤§Profile
+    //å–å¾—è¨­å‚™D65ä¸‹ä¹‹Profile
     Profile D65Profile = getDeviceProfile(Illuminant.D65);
-    //¨ú±oD65¤U¤§lms¼v¹³
+    //å–å¾—D65ä¸‹ä¹‹lmså½±åƒ
     DeviceIndependentImage lmsImage = DeviceIndependentImage.getInstance(
         cloneImage, ProfileColorSpace.Instance.get(D65Profile, ""), catType);
     ImageSkeleton imageSkeleton = ImageSkeleton.getInstance(lmsImage, true);
-    //­pºâwb«Y¼Æ
+    //è¨ˆç®—wbä¿‚æ•¸
     double[] whiteBalanceCoefficients = processWhiteBalanceCoefficients(
         imageSkeleton);
-    //­pºâ¥ÕÂIXYZ
+    //è¨ˆç®—ç™½é»žXYZ
     CIEXYZ wp = processEstimativeWhitePoint(whiteBalanceCoefficients, catType);
 
-    //­pºâ³Ì±µªñ¤§¥ú·½
+    //è¨ˆç®—æœ€æŽ¥è¿‘ä¹‹å…‰æº
     Illuminant ls = processLightSource(wp);
 
-    //­pºâ¥ú·½¤UProfile
+    //è¨ˆç®—å…‰æºä¸‹Profile
     Profile profile = getDeviceProfile(ls);
 
     DeviceIndependentImage DIImage = DeviceIndependentImage.getInstance(
@@ -221,7 +221,7 @@ public abstract class WhiteBalance {
   }
 
   /**
-   * ¥H¦h°õ¦æºü¶i¦æ¦â¾AÀ³Âà´«,°t¦XHT©ÎÂù®Ö¤ß±N¥i´£¤É¹Bºâ³t«×
+   * ä»¥å¤šåŸ·è¡Œç·’é€²è¡Œè‰²é©æ‡‰è½‰æ›,é…åˆHTæˆ–é›™æ ¸å¿ƒå°‡å¯æå‡é‹ç®—é€Ÿåº¦
    * @param XYZImage DeviceIndependentImage
    * @param sourceWhite CIEXYZ
    * @param catType CATType
@@ -241,7 +241,7 @@ public abstract class WhiteBalance {
     int heightStart = 0;
 
     //==========================================================================
-    //³]©w°õ¦æºü
+    //è¨­å®šåŸ·è¡Œç·’
     //==========================================================================
     ExecutorService executorService = Executors.newFixedThreadPool(
         XYZCATThread_COUNT);
@@ -272,7 +272,7 @@ public abstract class WhiteBalance {
       Logger.log.error("", ex);
     }
     finally {
-      //Ãö³¬°õ¦æºü¦À
+      //é—œé–‰åŸ·è¡Œç·’æ± 
       executorService.shutdown();
     }
   }
@@ -349,7 +349,7 @@ public abstract class WhiteBalance {
         pixel[2] *= coefficients[2];
 
         //====================================================================
-        //¶W¥X255®É·|¸õ¦^0,©Ò¥H­n¥[¥H­­¨î¨ä­È
+        //è¶…å‡º255æ™‚æœƒè·³å›ž0,æ‰€ä»¥è¦åŠ ä»¥é™åˆ¶å…¶å€¼
         //====================================================================
         if (pixel[0] > 255) {
           pixel[0] = 255;

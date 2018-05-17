@@ -31,7 +31,7 @@ public class MeasurementAverager {
       rgbList.add(rgb);
     }
 
-    String dir = "D:/≥n≈È/nobody zone/exp data/CCTv3/111118/probility test/";
+    String dir = "D:/‡∏ìn‡∏•‡πâ/nobody zone/exp data/CCTv3/111118/probility test/";
 //    String[] filenames = new String[] {
 //        "Measurement01.xls", "Measurement02.xls", "Measurement03.xls"};
     try {

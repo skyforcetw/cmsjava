@@ -13,10 +13,10 @@ import shu.math.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * §Q¥ÎMaskingªº­ì²z,¥H©³¦â¸m´«ªº¤è¦¡­pºâ
+ * îœ—ãƒMaskingî€™î…¥ç¶,î™â”ï¸¹ç«šä¼ î€™ã‚ˆÎ‘ç’¸è¡¡
  *
- * @note ¨ì¥Ø«e¬°¤î(08/03/22)©Ò°µªº¦¸·Ç½TLCD Model.
- * ¦]¬°¦Ò¼{¨ì¸É¦â,©Ò¥H¹w´ú·|§ó·Ç½T.
+ * @note îŸãƒ˜ç¡îƒ‹ã‚(08/03/22)â”®æš—î€™Î©éçµ‹LCD Model.
+ * î›ƒîƒ‹Ïƒç´îŸå¹²ï¸¹,â”®î™ç®‡ä»£ç©¦î°éçµ‹.
  * <p>Copyright: Copyright (c) 2008</p>
  *
  * <p>Company: skygroup</p>
@@ -28,7 +28,7 @@ public class MaskingPLCCModel
     extends ChannelDependentModel {
 
   /**
-   * ¨D­È¼Ò¦¡
+   * â€•î…å®¶Î‘
    * @param lcdTarget LCDTarget
    */
   public MaskingPLCCModel(LCDTarget lcdTarget) {
@@ -47,7 +47,7 @@ public class MaskingPLCCModel
   protected LCDTargetInterpolator grayInterpolator;
 
 //  /**
-//   * ¨D­È¼Ò¦¡
+//   * â€•î…å®¶Î‘
 //   * @param lcdTarget LCDTarget
 //   * @param rCorrectLCDTarget LCDTarget
 //   * @param cooperateWithLCDTargetInterpolator boolean
@@ -62,7 +62,7 @@ public class MaskingPLCCModel
 //  }
 
   /**
-   * ­pºâRGB,¤Ï±À¼Ò¦¡
+   * ç’¸è¡¡RGB,ã¯å´©å®¶Î‘
    *
    * @param XYZ CIEXYZ
    * @param factor Factor[]
@@ -73,7 +73,7 @@ public class MaskingPLCCModel
   }
 
   /**
-   * ­pºâXYZ,«e¾É¼Ò¦¡
+   * ç’¸è¡¡XYZ,ç¡æ—§å®¶Î‘
    *
    * @param rgb RGB
    * @param factor Factor[]
@@ -163,7 +163,7 @@ public class MaskingPLCCModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * â€•ç’è®¡
    *
    * @return Factor[]
    */

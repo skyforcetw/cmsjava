@@ -15,7 +15,7 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¹ïÀW¹D¿W¥ßªºLCD¼Ò¦¡,´£¨Ñ¦h°õ¦æºü¹Bºâªº¤¶­±¥H¤Î¨ç¦¡
+ * å°é »é“ç¨ç«‹çš„LCDæ¨¡å¼,æä¾›å¤šåŸ·è¡Œç·’é‹ç®—çš„ä»‹é¢ä»¥åŠå‡½å¼
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -33,15 +33,15 @@ public class SimpleThreadCalculator {
    * @param coefficientsRange CoefficientsRange[]
    * @param c Cooperation
    * @return Factor[]
-   * @deprecated §ï¥ÎproduceIterativeReport
+   * @deprecated æ”¹ç”¨produceIterativeReport
    */
   public final static LCDModelBase.Factor[] produceFactor(CoefficientsRange[]
       coefficientsRange,
       Cooperation c) {
     //==========================================================================
-    //¦h°õ¦æºü¹Bºâ
+    //å¤šåŸ·è¡Œç·’é‹ç®—
     //==========================================================================
-    //³]©w°õ¦æºü
+    //è¨­å®šåŸ·è¡Œç·’
     ExecutorService executorService = Executors.newFixedThreadPool(3);
 
     IterativeFactorThreadOld taskR = new
@@ -78,7 +78,7 @@ public class SimpleThreadCalculator {
   }
 
   /**
-   * ¥[±jª©
+   * åŠ å¼·ç‰ˆ
    * @param coefficientsRange CoefficientsRange[]
    * @param model ChannelIndependentModel
    * @return IterativeReport[]
@@ -87,9 +87,9 @@ public class SimpleThreadCalculator {
       CoefficientsRange[]
       coefficientsRange, ChannelIndependentModel model) {
     //==========================================================================
-    //¦h°õ¦æºü¹Bºâ
+    //å¤šåŸ·è¡Œç·’é‹ç®—
     //==========================================================================
-    //³]©w°õ¦æºü
+    //è¨­å®šåŸ·è¡Œç·’
     ExecutorService executorService = Executors.newFixedThreadPool(3);
 
     IterativeFactorThread taskR = new
@@ -164,7 +164,7 @@ public class SimpleThreadCalculator {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ­¡¥N®É©Ò¨Ï¥Îªº«Y¼Æ½d³ò
+   * è¿­ä»£æ™‚æ‰€ä½¿ç”¨çš„ä¿‚æ•¸ç¯„åœ
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -191,7 +191,7 @@ public class SimpleThreadCalculator {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * §ï¨}ª©
+   * æ”¹è‰¯ç‰ˆ
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -229,7 +229,7 @@ public class SimpleThreadCalculator {
       IterativeReport iReport = null;
       int times = model.getMaxIterativeTimes();
       double previousMeasuredDeltaE = 0;
-      //¨S¦³ÅãµÛ·N¸qªº¶i¨B
+      //æ²’æœ‰é¡¯è‘—æ„ç¾©çš„é€²æ­¥
       boolean uselessAdvance = false;
 
       for (int x = 0; x < times; x++) {
@@ -321,7 +321,7 @@ public class SimpleThreadCalculator {
 
     public LCDModelBase.Factor call() {
       //=======================================================================
-      // ¸ê®Æ¹w³Æ
+      // è³‡æ–™é å‚™
       //=======================================================================
       LCDTarget lcdTargetPatch = cooperation.getLCDTarget();
       List<Patch>
@@ -376,9 +376,9 @@ public class SimpleThreadCalculator {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ÅÜ¼Æ±µ¦¬¾¹,»PVariablesIterator¨ó¦P¨Ï¥Î.
-   * VariablesIterator¨C¤@¦¸ªº­¡¥NÅÜ¼Æ³£·|¶Ç°eµ¹VariablesReceptor
-   * VariablesReceptor¦A§Q¥Îvariables¶i¦æ¥²­nªº¹Bºâ
+   * è®Šæ•¸æ¥æ”¶å™¨,èˆ‡VariablesIteratorå”åŒä½¿ç”¨.
+   * VariablesIteratoræ¯ä¸€æ¬¡çš„è¿­ä»£è®Šæ•¸éƒ½æœƒå‚³é€çµ¦VariablesReceptor
+   * VariablesReceptorå†åˆ©ç”¨variablesé€²è¡Œå¿…è¦çš„é‹ç®—
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -406,7 +406,7 @@ public class SimpleThreadCalculator {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ÅÜ¼Æ­¡¥N¾¹
+   * è®Šæ•¸è¿­ä»£å™¨
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -444,7 +444,7 @@ public class SimpleThreadCalculator {
     }
 
     /**
-     * »¼°j,³t«×³Ì§Ö
+     * éè¿´,é€Ÿåº¦æœ€å¿«
      * @param index int
      */
     private void iterative(int index) {

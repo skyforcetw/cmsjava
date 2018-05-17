@@ -30,7 +30,7 @@ public class LCDPolynomialRegressionModel
     extends LCDModel {
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ã„ãƒå®¶Î‘
    *
    * @param factor LCDModelFactor
    */
@@ -40,7 +40,7 @@ public class LCDPolynomialRegressionModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * â€•î…å®¶Î‘
    * @param lcdTarget LCDTarget
    */
   public LCDPolynomialRegressionModel(LCDTarget lcdTarget) {
@@ -48,7 +48,7 @@ public class LCDPolynomialRegressionModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * â€•î…å®¶Î‘
    * @param lcdTarget LCDTarget
    * @param coefficientCount COEF_3
    */
@@ -59,7 +59,7 @@ public class LCDPolynomialRegressionModel
   }
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ã„ãƒå®¶Î‘
    * @param modelFactorFilename String
    */
   public LCDPolynomialRegressionModel(String modelFactorFilename) {
@@ -67,7 +67,7 @@ public class LCDPolynomialRegressionModel
   }
 
   /**
-   * ©Ò±Ä¥Îªº«Y¼Æ¶µ
+   * â”®è¹¦ãƒî€™ç’è®¡å…œ
    */
   protected Polynomial.COEF coefficientCount;
 
@@ -76,7 +76,7 @@ public class LCDPolynomialRegressionModel
   }
 
   /**
-   * ­pºâXYZ
+   * ç’¸è¡¡XYZ
    * @param rgb RGB
    * @param factor Factor[]
    * @return CIEXYZ
@@ -114,7 +114,7 @@ public class LCDPolynomialRegressionModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * â€•ç’è®¡
    *
    * @return Factor[]
    */
@@ -128,7 +128,7 @@ public class LCDPolynomialRegressionModel
     double[][] outputArray = new double[size][3];
 
     //==========================================================================
-    // «e¾É(A2B)
+    // ç¡æ—§(A2B)
     //==========================================================================
     for (int x = 0; x < size; x++) {
       Patch p = patchList.get(x);
@@ -154,7 +154,7 @@ public class LCDPolynomialRegressionModel
     //==========================================================================
 
     //==========================================================================
-    // ¤Ï±À(B2A)
+    // ã¯å´©(B2A)
     //==========================================================================
     //XYZ->linear
     PolynomialRegression reverseRegression = new PolynomialRegression(

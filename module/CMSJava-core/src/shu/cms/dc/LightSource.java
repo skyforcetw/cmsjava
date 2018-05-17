@@ -15,8 +15,8 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¨ú¥X´ú¶q¦Ó±oªº¥ú·½¥úÃĞ¯à¶q¤À¥¬,¦A°£¤W´ú¶q¥ú·½©Ò¥Îªº¾Éªí¤Ï®g²v,
- * ©Ò±oªº¥úÃĞ­È¤~¬O³Ì±µªñ¥ú·½ªº¥úÃĞ¯à¶q­È
+ * å–å‡ºæ¸¬é‡è€Œå¾—çš„å…‰æºå…‰è­œèƒ½é‡åˆ†å¸ƒ,å†é™¤ä¸Šæ¸¬é‡å…‰æºæ‰€ç”¨çš„å°è¡¨åå°„ç‡,
+ * æ‰€å¾—çš„å…‰è­œå€¼æ‰æ˜¯æœ€æ¥è¿‘å…‰æºçš„å…‰è­œèƒ½é‡å€¼
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -31,7 +31,7 @@ public class LightSource {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ¥Î¨Ó§@¬°´ú¶q´C¤¶ªº¨âºØ¾Éªí
+   * ç”¨ä¾†ä½œç‚ºæ¸¬é‡åª’ä»‹çš„å…©ç¨®å°è¡¨
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -49,7 +49,7 @@ public class LightSource {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ¥ú·½ªººØÃş
+   * å…‰æºçš„ç¨®é¡
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -88,7 +88,7 @@ public class LightSource {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * CIEªº¼Ğ·Ç¥ú·½
+   * CIEçš„æ¨™æº–å…‰æº
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -262,7 +262,7 @@ public class LightSource {
   }
 
   /**
-   * ±qIlluminant§PÂ_¬°¦óºØLightSource
+   * å¾Illuminantåˆ¤æ–·ç‚ºä½•ç¨®LightSource
    * @param illuminant Illuminant
    * @return Source
    */
@@ -299,7 +299,7 @@ public class LightSource {
   }
 
   /**
-   * ¥Hi1´ú¶q¦Ó±oªº¥ú·½¥úÃĞ­È
+   * ä»¥i1æ¸¬é‡è€Œå¾—çš„å…‰æºå…‰è­œå€¼
    * @param type i1Pro
    * @return Illuminant
    */
@@ -315,7 +315,7 @@ public class LightSource {
   public final static Illuminant getIlluminant(WhitePatchType whitePatch,
                                                Source lightSource) {
     /**
-     * CIE·Ó©úÅé¯S§O³B²z
+     * CIEç…§æ˜é«”ç‰¹åˆ¥è™•ç†
      */
     if (lightSource instanceof CIE) {
       Illuminant illuminant = getIlluminant( (CIE) lightSource);
@@ -336,12 +336,12 @@ public class LightSource {
         String filename = "Reference Files/Camera/ColorChecker DC.cxf";
         CXFOperator cxf = new CXFOperator(filename);
         List<Spectra> targetReflectSpectra = cxf.getSpectraList();
-        //CCDCªº¤¤¥¡¥Õ
+        //CCDCçš„ä¸­å¤®ç™½
         Spectra[] whiteSpectra = new Spectra[] {
             targetReflectSpectra.get(113), targetReflectSpectra.get(114),
             targetReflectSpectra.get(125), targetReflectSpectra.get(126)};
         white = Spectra.average(whiteSpectra);
-        //¦¹¤D¦]¬°¥ú·½ªºCxFÀÉ¸Ì,²Ä¤Gµ§¸ê®Æ¬OCCDC White©Ò´ú¶q¦Ó±o
+        //æ­¤ä¹ƒå› ç‚ºå…‰æºçš„CxFæª”è£¡,ç¬¬äºŒç­†è³‡æ–™æ˜¯CCDC Whiteæ‰€æ¸¬é‡è€Œå¾—
         light = illuminantSpectra.get(1);
       }
       break;
@@ -349,11 +349,11 @@ public class LightSource {
         String filename = "Reference Files/Camera/Gray Card.cxf";
         CXFOperator cxf = new CXFOperator(filename);
         List<Spectra> targetReflectSpectra = cxf.getSpectraList();
-        //¦Ç¥dªº¤¤¥¡,¦Ç¥d¥H4x5ªº°Ï¶ô´ú¶q¤¤¥¡,¦]¦¹¥H¤¤¥¡¨â®æ¥­§¡·í°ò·Ç
+        //ç°å¡çš„ä¸­å¤®,ç°å¡ä»¥4x5çš„å€å¡Šæ¸¬é‡ä¸­å¤®,å› æ­¤ä»¥ä¸­å¤®å…©æ ¼å¹³å‡ç•¶åŸºæº–
         Spectra[] whiteSpectra = new Spectra[] {
             targetReflectSpectra.get(9), targetReflectSpectra.get(10)};
         white = Spectra.average(whiteSpectra);
-        //¦¹¤D¦]¬°¥ú·½ªºCxFÀÉ¸Ì,²Ä¤@µ§¸ê®Æ¬O¦Ç¥d©Ò´ú¶q¦Ó±o
+        //æ­¤ä¹ƒå› ç‚ºå…‰æºçš„CxFæª”è£¡,ç¬¬ä¸€ç­†è³‡æ–™æ˜¯ç°å¡æ‰€æ¸¬é‡è€Œå¾—
         light = illuminantSpectra.get(0);
       }
       break;
@@ -363,7 +363,7 @@ public class LightSource {
   }
 
   /**
-   * ÂÇ¥Ñ°Ñ¦Ò¥Õªº¥úÃĞ¤Ï®g²v©M±q°Ñ¦Ò¥Õ´ú¶q¦Ó±oªº¥úÃĞ¯à¶q­È,±Àºâ¥ú·½ªº¥úÃĞ¯à¶q­È
+   * è—‰ç”±åƒè€ƒç™½çš„å…‰è­œåå°„ç‡å’Œå¾åƒè€ƒç™½æ¸¬é‡è€Œå¾—çš„å…‰è­œèƒ½é‡å€¼,æ¨ç®—å…‰æºçš„å…‰è­œèƒ½é‡å€¼
    * @param light Spectra
    * @param whiteReflection Spectra
    * @return Spectra

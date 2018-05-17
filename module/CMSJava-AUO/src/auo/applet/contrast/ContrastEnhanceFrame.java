@@ -613,7 +613,7 @@ public class ContrastEnhanceFrame
     if (clipData != null) {
       if (clipData.isDataFlavorSupported(java.awt.datatransfer.DataFlavor.
                                          imageFlavor)) {
-        // ±q clipboard ¨ÓªºÀ³¸Ó¬O BufferedImage¡A©Ò¥H¤]¥i cast ¦¨ BufferedImage
+        // å¾ clipboard ä¾†çš„æ‡‰è©²æ˜¯ BufferedImageï¼Œæ‰€ä»¥ä¹Ÿå¯ cast æˆ BufferedImage
         try {
           img = (Image) clipData.getTransferData(java.awt.
                                                  datatransfer.DataFlavor.

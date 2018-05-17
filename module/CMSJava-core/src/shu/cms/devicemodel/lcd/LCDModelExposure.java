@@ -8,7 +8,7 @@ import shu.cms.colorspace.independ.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Î¨Ó¥]¸ËLCDModel¨ç¦¡ªºª«¥ó, ¤è«K¼ÉÅS«Dpublicªº¨ç¦¡µ¹¥~³¡©I¥s.
+ * ç”¨ä¾†åŒ…è£LCDModelå‡½å¼çš„ç‰©ä»¶, æ–¹ä¾¿æš´éœ²épublicçš„å‡½å¼çµ¦å¤–éƒ¨å‘¼å«.
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

@@ -105,8 +105,8 @@ public abstract class ContrastSensitivityFunction {
   }
 
   /**
-   * �^�ǥ����W�v�U���L�k��ı���W�v�ι��
-   * @return double[] {�W�v,���}
+   * 回傳任何頻率下都無法察覺的頻率及對比
+   * @return double[] {頻率,對比}
    */
   public final double[] getAchromaticInvisible() {
     //Create instance of Maximisation
@@ -152,9 +152,9 @@ public abstract class ContrastSensitivityFunction {
   }
 
   /**
-   * �Q��ı���i���
+   * 被察覺的可能性
    * @param contrast double
-   * @return double >1�h�i��Q�ݨ�, <1�h�i��ݤ���
+   * @return double >1則可能被看見, <1則可能看不見
    */
   public final double visibleRatio(double contrast) {
     double s = 1. / contrast;
@@ -180,13 +180,13 @@ public abstract class ContrastSensitivityFunction {
   public abstract double byChromaticCSF(double f);
 
   public enum Instance {
-    //��²�檺model
+    //最簡單的model
     Movshon(movshon),
-    //�Ҷq�G�פ�size
+    //考量亮度及size
     Barten(barten),
-    //�Ҷq�G�סBsize�έI�������
+    //考量亮度、size及背景的色度
     Stephen(stephen),
-    //�����D���̨Ӫ�data
+    //不知道哪裡來的data
     Dusan(dusan);
 
     Instance(ContrastSensitivityFunction csf) {
@@ -228,13 +228,13 @@ public abstract class ContrastSensitivityFunction {
   }
 
   /**
-   * ��E���j�p(sizeInDegrees)
+   * 刺激的大小(sizeInDegrees)
    */
   protected double w = 10;
-  //�G��
+  //亮度
   protected double L = 50;
   /**
-   * CIEu'v'�Ŷ��W���Z��
+   * CIEu'v'空間上的距離
    */
   protected double d = 0;
   public void setStimulusSize(double sizeInDegrees) {
@@ -383,9 +383,9 @@ public abstract class ContrastSensitivityFunction {
 //  }
 
   /**
-   * �O�_�i�Q�H���ҹ�ı
-   * @param contrast double ���
-   * @param frequence double �W�v
+   * 是否可被人眼所察覺
+   * @param contrast double 對比
+   * @param frequence double 頻率
    * @return boolean
    */
 //  public static boolean isAchromaticVisible(double contrast, double frequence) {

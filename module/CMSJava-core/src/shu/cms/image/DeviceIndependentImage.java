@@ -13,7 +13,7 @@ import shu.image.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¿W¥ß¦âªÅ¶¡ªº¼v¹³
+ * ç¨ç«‹è‰²ç©ºé–“çš„å½±åƒ
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -138,7 +138,7 @@ public abstract class DeviceIndependentImage {
 
       this.bufferedImage = image;
       source = Source.BufferedImage;
-      //R+G+Bªºbit¼Æ¶q
+      //R+G+Bçš„bitæ•¸é‡
       int pixelSize = bufferedImage.getColorModel().getPixelSize();
       this.normal = Math.pow(2, pixelSize / 3) - 1;
 
@@ -237,7 +237,7 @@ public abstract class DeviceIndependentImage {
 //                                   CAMConst.CATType catType) {
 //    this.bufferedImage = image;
 //    source = Source.BufferedImage;
-//    //R+G+Bªºbit¼Æ¶q
+//    //R+G+Bçš„bitæ•¸é‡
 //    int pixelSize = bufferedImage.getColorModel().getPixelSize();
 //    this.normal = Math.pow(2, pixelSize / 3) - 1;
 //
@@ -264,7 +264,7 @@ public abstract class DeviceIndependentImage {
    *
    * @param original DeviceIndependentImage
    * @return DeviceIndependentImage
-   * @todo H ¨ä¥LºØDIªºclone
+   * @todo H å…¶ä»–ç¨®DIçš„clone
    */
   public final static DeviceIndependentImage cloneDeviceIndependentImage(
       DeviceIndependentImage

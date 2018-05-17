@@ -155,17 +155,17 @@ public class SaturationImageAdjustor {
         rgb.setValues(dpixel);
         HSV hsv = new HSV(rgb);
 
-        //¸g¹L½Õ¾ã«áªºHue
+        //ç¶“éèª¿æ•´å¾Œçš„Hue
         if (hueProcess) {
-          //½Õ¾ãªºhue
+          //èª¿æ•´çš„hue
           double adjustHue = hueAdjustmentLUT.getValue(hsv.H);
 
 //          adjustHue = ( (int) (adjustHue / 360. * 768)) / 768. * 360;
           hsv.H = adjustHue;
         }
-        //¸g¹L½Õ¾ã«áªºSaturation
+        //ç¶“éèª¿æ•´å¾Œçš„Saturation
         if (saturationProcess) {
-          //½Õ¾ãªºsaturation
+          //èª¿æ•´çš„saturation
           double adjustSaturation = saturationAdjustmentLUT.getValue(hsv.H);
           hsv.S = formula.getSaturartion(hsv.S, adjustSaturation);
           //HSV clipping
@@ -175,7 +175,7 @@ public class SaturationImageAdjustor {
           }
         }
         if (valueProcess) {
-          //½Õ¾ãªºvalue
+          //èª¿æ•´çš„value
           double adjustValue = valueAdjustmentLUT.getValue(hsv.H);
           short max = (short) (Maths.max(dpixel) * 4);
           short min = (short) (Maths.min(dpixel) * 4);
@@ -196,7 +196,7 @@ public class SaturationImageAdjustor {
 
         if (simulation && model != null) {
           //====================================================================
-          // ½Õ¾ã§¹«á¶i¦æ¼ÒÀÀ
+          // èª¿æ•´å®Œå¾Œé€²è¡Œæ¨¡æ“¬
           //====================================================================
           CIEXYZ XYZ = model.getXYZ(rgb2, false);
           XYZ.times(1. / luminance);
@@ -377,11 +377,11 @@ public class SaturationImageAdjustor {
 //    double[][] saturationAdjustArray = new double[size][];
 //    double[] valueAdjustArray = null;
 //    double[] hueAdjustArray = null;
-//    String dirname = "D:\\³nÅé\\nobody zone\\Pattern\\skyforce Pattern Collect\\Saturation Evaluation Picture\\Duplicate";
-//    String dirname = "D:\\³nÅé\\nobody zone\\Pattern\\skyforce Pattern Collect\\Saturation Evaluation Picture2\\Duplicate";
-//    String dirname = "D:\\³nÅé\\nobody zone\\Pattern\\skyforce Pattern Collect";
-//    String dirname = "D:\\³nÅé\\nobody zone\\Pattern\\skyforce Pattern Collect\\Saturation Evaluation Picture4\\Duplicate";
-    String dirname = "D:\\³nÅé\\nobody zone\\Pattern\\skyforce Pattern Collect\\Saturation  Test Picture\\Duplicate";
+//    String dirname = "D:\\è»Ÿé«”\\nobody zone\\Pattern\\skyforce Pattern Collect\\Saturation Evaluation Picture\\Duplicate";
+//    String dirname = "D:\\è»Ÿé«”\\nobody zone\\Pattern\\skyforce Pattern Collect\\Saturation Evaluation Picture2\\Duplicate";
+//    String dirname = "D:\\è»Ÿé«”\\nobody zone\\Pattern\\skyforce Pattern Collect";
+//    String dirname = "D:\\è»Ÿé«”\\nobody zone\\Pattern\\skyforce Pattern Collect\\Saturation Evaluation Picture4\\Duplicate";
+    String dirname = "D:\\è»Ÿé«”\\nobody zone\\Pattern\\skyforce Pattern Collect\\Saturation  Test Picture\\Duplicate";
 
     //==========================================================================
     // setting
@@ -504,12 +504,12 @@ public class SaturationImageAdjustor {
 
           for (int x = 0; x < formulaLength; x++) {
             if (panelSimulation) {
-              //­±ªO¼ÒÀÀ
+              //é¢æ¿æ¨¡æ“¬
               adjustors[x] = new SaturationImageAdjustor(
                   saturationAdjustArray[x], model, targetColorspace, formulas[x]);
             }
             else {
-              //¶È³B²z¹Ï¹³
+              //åƒ…è™•ç†åœ–åƒ
               adjustors[x] = new SaturationImageAdjustor(
                   hueAdjustArray[x], saturationAdjustArray[x],
                   valueAdjustArray[x], formulas[x]);

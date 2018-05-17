@@ -33,7 +33,7 @@ public class DCUtils {
   }
 
   /**
-   * ¨Ï©Ò¦³¥ú·½ªºpeak³£¥¿³W¤Æ¨ì­è¦n1
+   * ã„â”®Î¤î€æ–¹î€™peakå¸¸ã‚¿ç ã¦îŸî…¡î›”1
    * @param lightSource i1Pro[]
    * @return double[]
    * @deprecated
@@ -76,19 +76,19 @@ public class DCUtils {
     Illuminant[] illuminants = new Illuminant[size];
     double[] peakPower = new double[size];
 
-    //¥ı¨ú±o­Ó¥ú·½peakªº¯à¶q­È
+    //îƒîŸçœ”î…Œî€æ–¹peakî€™îˆ•ç§–î…
     for (int x = 0; x < size; x++) {
       illuminants[x] = LightSource.getIlluminant(lightSource[x]);
       Spectra s = illuminants[x].getSpectra();
       int peak = s.getPeak();
       peakPower[x] = s.getData(peak);
     }
-    //§ä¨ì³Ì¤j­È
+    //Ñ‚îŸç¨‹î˜î…
     double max = Maths.max(peakPower);
     double normal = max;
 
     double[] factor = new double[size];
-    //¥HwaveLength¯à¶q­È³Ì¤jªº¥ú·½¬°1,²£¥Í¨t¼Æ
+    //î™waveLengthîˆ•ç§–î…ç¨‹î˜î€™î€æ–¹îƒ‹1,ç»ãƒâ•°è®¡
     for (int x = 0; x < size; x++) {
       factor[x] = illuminants[x].getSpectra().getXYZ().Y / Maths.sqr(normal);
     }
@@ -96,7 +96,7 @@ public class DCUtils {
   }
 
   /**
-   * ²£¥Í¥¿³W¤Æ«Y¼Æ,¨ÏlightSource©Ò¦³¥ú·½ªº«G«×¬Ò¤@­P
+   * ç»ãƒã‚¿ç ã¦ç’è®¡,ã„lightSourceâ”®Î¤î€æ–¹î€™ç¹î‚”îƒ­î—¦ç’“
    * @param lightSource i1Pro[]
    * @return double[]
    * @deprecated
@@ -194,7 +194,7 @@ public class DCUtils {
   }
 
   /**
-   * ¥Hpeak³Ì¤jªÌ¬°normal,­pºâ¥¿³W¤Æ«Y¼Æ
+   * î™peakç¨‹î˜î€«îƒ‹normal,ç’¸è¡¡ã‚¿ç ã¦ç’è®¡
    * @param lightSource i1Pro[]
    * @return double
    * @deprecated
@@ -204,7 +204,7 @@ public class DCUtils {
     Illuminant[] illuminants = getIlluminant(lightSource);
     double[] peakPower = getPeakPower(illuminants);
 
-    //§ä¨ì³Ì¤j­È
+    //Ñ‚îŸç¨‹î˜î…
     double max = Maths.max(peakPower);
     return 1. / max;
   }
@@ -213,7 +213,7 @@ public class DCUtils {
 //  Illuminant[] illuminants = getIlluminant(lightSource);
     double[] peakPower = getPeakPower(spectras);
 
-    //§ä¨ì³Ì¤j­È
+    //Ñ‚îŸç¨‹î˜î…
     double max = Maths.max(peakPower);
     return 1. / max;
   }

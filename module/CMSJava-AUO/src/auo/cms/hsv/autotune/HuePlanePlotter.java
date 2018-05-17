@@ -87,7 +87,7 @@ public class HuePlanePlotter {
   private static void plotPlane(double hue, Plot3D plot3D,
                                 String name, java.awt.Color c,
                                 double[][][] LChValuesArray) {
-    //hueªº­×¥¿
+    //hueçš„ä¿®æ­£
     for (int x = 0; x < LChValuesArray.length; x++) {
       for (int y = 0; y < LChValuesArray[0].length; y++) {
         double[] LChValues = LChValuesArray[x][y];
@@ -101,7 +101,7 @@ public class HuePlanePlotter {
         }
       }
     }
-//targetªºplot©M³]©w
+//targetçš„plotå’Œè¨­å®š
 
     int num = plot3D.addPlanePlot(name, c, LChValuesArray);
     Plot3DPanel panel = (Plot3DPanel) plot3D.getPlotPanel();

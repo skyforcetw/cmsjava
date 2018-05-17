@@ -14,14 +14,14 @@ import shu.math.regress.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * HK®ÄÀ³ªº¼Ò«¬
- * ¹ê§@­ì²z½Ğ¨£
- *  Simple Estimation Methods for the Helmholtz¡VKohlrausch Effect,
+ * HKæ•ˆæ‡‰çš„æ¨¡å‹
+ * å¯¦ä½œåŸç†è«‹è¦‹
+ *  Simple Estimation Methods for the Helmholtzâ€“Kohlrausch Effect,
  *  Yoshinobu Nayatani(1997)
  *
- * VAC(Variable-Achromatic-Color): §ïÅÜ¤¤©Ê¦âªº«G«×, ¥h²Å¦X¦³±m¦âªº«G«×
- * VCC (Variable-Chromatic-Color): §ïÅÜ¦³±m¦âªº«G«×, ¥h²Å¦X¤¤©Ê¦âªº«G«×
- * ¤@¯ë¨Ó»¡VCC¸û¬°¦³¥Î, ¦]¦¹¦b¦¹«ØÄ³±Ä¥ÎVCC
+ * VAC(Variable-Achromatic-Color): æ”¹è®Šä¸­æ€§è‰²çš„äº®åº¦, å»ç¬¦åˆæœ‰å½©è‰²çš„äº®åº¦
+ * VCC (Variable-Chromatic-Color): æ”¹è®Šæœ‰å½©è‰²çš„äº®åº¦, å»ç¬¦åˆä¸­æ€§è‰²çš„äº®åº¦
+ * ä¸€èˆ¬ä¾†èªªVCCè¼ƒç‚ºæœ‰ç”¨, å› æ­¤åœ¨æ­¤å»ºè­°æ¡ç”¨VCC
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -53,7 +53,7 @@ public class NayataniHKModel {
   /**
    *
    * @param XYZArray CIEXYZ[]
-   * @return double[][] input¬OY,output¬OHK¤§«áªºY
+   * @return double[][] inputæ˜¯Y,outputæ˜¯HKä¹‹å¾Œçš„Y
    */
   protected double[][] getRegressionInputAndOutput(CIEXYZ[] XYZArray) {
     int size = XYZArray.length;
@@ -161,7 +161,7 @@ public class NayataniHKModel {
   }
 
   /**
-   * ¥HXYZArray¬°¨Ó·½¸ê®Æ, ²£¥ÍVCC«Y¼Æªº¦^Âk
+   * ä»¥XYZArrayç‚ºä¾†æºè³‡æ–™, ç”¢ç”ŸVCCä¿‚æ•¸çš„å›æ­¸
    * @param XYZArray CIEXYZ[]
    */
   public final void produceRegression(CIEXYZ[] XYZArray) {

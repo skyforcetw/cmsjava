@@ -9,7 +9,7 @@ import shu.cms.hvs.cam.ciecam02.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ´ú¸Õ±NLabÂà¨ì¤@­ÓRGB¦â±mªÅ¶¡¤¤,½T©w³o¨ÇLabÃC¦â100%¬°¤H²´¥i¨£.
+ * æ¸¬è©¦å°‡Labè½‰åˆ°ä¸€å€‹RGBè‰²å½©ç©ºé–“ä¸­,ç¢ºå®šé€™äº›Labé¡è‰²100%ç‚ºäººçœ¼å¯è¦‹.
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

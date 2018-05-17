@@ -9,7 +9,7 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ±NSpectraWin³nÅé²£¥Íªº.txt¸ê®ÆÀÉ¹ïÀ³¨ìSpectraWinAsciiFileª«¥ó
+ * å°‡SpectraWinè»Ÿé«”ç”¢ç”Ÿçš„.txtè³‡æ–™æª”å°æ‡‰åˆ°SpectraWinAsciiFileç‰©ä»¶
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -112,7 +112,7 @@ public class SpectraWinAsciiParser
   protected SpectraWinAsciiFile.Calculated parseCalculated(ArrayList section) {
     SpectraWinAsciiFile.Calculated c = new SpectraWinAsciiFile.Calculated();
 
-    //®æ¦¡¤Ó¶Ã,parseKeyValueÃø¥H³B²z,©Ò¥H¥u¦n¥Îif else
+    //æ ¼å¼å¤ªäº‚,parseKeyValueé›£ä»¥è™•ç†,æ‰€ä»¥åªå¥½ç”¨if else
     int size = section.size();
     for (int x = 1; x < size; x++) {
       String line = ( (String) section.get(x)); //.trim();
@@ -170,7 +170,7 @@ public class SpectraWinAsciiParser
         c.y = Double.parseDouble(val);
       }
       else if (line.equals("")) {
-        //¨SªF¦è´N²¤¹L
+        //æ²’æ±è¥¿å°±ç•¥é
       }
       else {
         c.info.add(line.trim());
@@ -206,7 +206,7 @@ public class SpectraWinAsciiParser
           break;
         }
         if (line.equals(END_OF_SECTION)) {
-          //¥Nªí¨ì¤F¾ã­Ó¤å¥óªºEND
+          //ä»£è¡¨åˆ°äº†æ•´å€‹æ–‡ä»¶çš„END
           if (section.size() == 0) {
             break;
           }

@@ -31,9 +31,9 @@ public class WHQLPatternGen {
   public static void duplicate(String[] args) {
     try {
       File dir = new File(
-          "D:\\≥n≈È\\nobody zone\\Pattern\\skyforce Pattern Collect\\Demo");
+          "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\Pattern\\skyforce Pattern Collect\\Demo");
       String targetdir =
-          "D:\\≥n≈È\\nobody zone\\Pattern\\skyforce Pattern Collect\\Demo\\Duplicate";
+          "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\Pattern\\skyforce Pattern Collect\\Demo\\Duplicate";
       for (File f : dir.listFiles()) {
         if (f.isFile() && f.getName().indexOf(".db") == -1 ) {
           BufferedImage img = ImageUtils.loadImage(f.getAbsolutePath());

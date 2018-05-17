@@ -69,7 +69,7 @@ public class RGB2XYZMatrixEstimator {
         IdealDigitalCamera.Source.BestEstimatedD200);
     LightSource.Source lightSource6000 = new LightSource.BlackbodyIlluminant(
         6000);
-    //§Q¥Î6kªºÂà´«¯x°}
+    //åˆ©ç”¨6kçš„è½‰æ›çŸ©é™£
     double[][] rgb2XYZm6k = getRGB2XYZMatrix(lightSource6000, camera);
 //    DCTarget target6k = rgb2XYZMatrixTarget;
 
@@ -77,23 +77,23 @@ public class RGB2XYZMatrixEstimator {
     System.out.println(DoubleArray.toString(rgb2XYZm6k));
 
     double[][] XYZ2rgbm6k = DoubleArray.inverse(rgb2XYZm6k);
-    //¹w´ú¥X¬Û¾÷¥úÃĞ
+    //é æ¸¬å‡ºç›¸æ©Ÿå…‰è­œ
     IdealDigitalCamera estimatedCamera = DCUtils.produceIdealDigitalCamerar(
         XYZ2rgbm6k, null);
 
     LightSource.Source lightSource3000 = new LightSource.BlackbodyIlluminant(
         3000);
-    //§â¤wª¾ªº¬Û¾÷¥úÃĞ, ²£¥Í¥X3k¤UªºÂà´«¯x°}
+    //æŠŠå·²çŸ¥çš„ç›¸æ©Ÿå…‰è­œ, ç”¢ç”Ÿå‡º3kä¸‹çš„è½‰æ›çŸ©é™£
     double[][] rgb2XYZm3k = getRGB2XYZMatrix(lightSource3000, camera);
     DCTarget target3k = rgb2XYZMatrixTarget;
 
-    //µM«á§Q¥Î¹w´úªº¬Û¾÷¥úÃĞ, ¦A¥Í¥X·sªºÂà´«¯x°}
+    //ç„¶å¾Œåˆ©ç”¨é æ¸¬çš„ç›¸æ©Ÿå…‰è­œ, å†ç”Ÿå‡ºæ–°çš„è½‰æ›çŸ©é™£
     double[][] rgb2XYZm6kto3k = getRGB2XYZMatrix(lightSource3000,
                                                  estimatedCamera);
 //                                                 camera);
     DCTarget target6kto3k = rgb2XYZMatrixTarget;
 
-    //¦P¼Ë¬O3k¤UªºÂà´«¯x°}, ¨âªÌ°µ¤ñ¸û
+    //åŒæ¨£æ˜¯3kä¸‹çš„è½‰æ›çŸ©é™£, å…©è€…åšæ¯”è¼ƒ
     System.out.println("3k");
     System.out.println(DoubleArray.toString(rgb2XYZm3k));
     System.out.println("6kto3k");
@@ -181,8 +181,8 @@ public class RGB2XYZMatrixEstimator {
       plot.addSpectra(cct + "G", sensors[1]);
       plot.addSpectra(cct + "B", sensors[2]);
 
-      //±qXYZ2rgbªº¯x°}±Àºâ¥Xsensorªºspectra, µM«á¦A¥Î³ospectra¥h±Àºâ¤£¦P¦â·Å¤UªºÂà´«¯x°}
-      //±µ¤U¨Ó, ´N¬O¦p¦ó¦ôºâ¥ÕÂIªº¦â«×®y¼Ğ
+      //å¾XYZ2rgbçš„çŸ©é™£æ¨ç®—å‡ºsensorçš„spectra, ç„¶å¾Œå†ç”¨é€™spectraå»æ¨ç®—ä¸åŒè‰²æº«ä¸‹çš„è½‰æ›çŸ©é™£
+      //æ¥ä¸‹ä¾†, å°±æ˜¯å¦‚ä½•ä¼°ç®—ç™½é»çš„è‰²åº¦åº§æ¨™
 
 
 //      if (cct == 5000) {

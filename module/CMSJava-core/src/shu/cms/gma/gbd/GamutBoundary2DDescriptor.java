@@ -13,7 +13,7 @@ import shu.cms.gma.gbp.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó´y­z¨C¤@­Ó¦â¬Û­¶¤Wªº¦â°ìÃä¬É
+ * ç”¨ä¾†æè¿°æ¯ä¸€å€‹è‰²ç›¸é ä¸Šçš„è‰²åŸŸé‚Šç•Œ
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -31,18 +31,18 @@ public class GamutBoundary2DDescriptor
   }
 
   /**
-   * ¨ú±o¦â¬Û­¶¤W ¤W­±¥H¤Î¤U­±³Ì¾aªñªº¨âÂI ÁÙ¦³ ¶°¤¤ÂI
+   * å–å¾—è‰²ç›¸é ä¸Š ä¸Šé¢ä»¥åŠä¸‹é¢æœ€é è¿‘çš„å…©é» é‚„æœ‰ é›†ä¸­é»
    * @param LCh CIELCh
    * @return CIELCh[]
    */
   protected CIELCh[] get2DUpperLowerNearestAndFocalPoint(CIELCh LCh) {
-    //¨ú¥X¦â¬Û¥­­±
+    //å–å‡ºè‰²ç›¸å¹³é¢
     List<CIELCh> huePlane = getHuePlane(LCh.h);
 
-    //¨ú¥X¶°¤¤°Ï
+    //å–å‡ºé›†ä¸­å€
     FocalArea focalArea = fp.getFocalArea(LCh.L, LCh.h);
 
-    //¹LÂo¥X¤À°Ï¤ºªº¦âÂI
+    //éæ¿¾å‡ºåˆ†å€å…§çš„è‰²é»
     List<CIELCh> filter = fp.filter(huePlane, focalArea);
     CIELCh focalPoint = fp.getFocalPoint(focalArea, LCh);
     CIELCh[] upperAndLower = get2DUpperAndLowerNearest(LCh, focalPoint,
@@ -53,13 +53,13 @@ public class GamutBoundary2DDescriptor
   }
 
   protected CIELCh[] get2DUpperLowerNearestDoubleAndFocalPoint(CIELCh LCh) {
-    //¨ú¥X¦â¬Û¥­­±
+    //å–å‡ºè‰²ç›¸å¹³é¢
     List<CIELCh> huePlane = getHuePlane(LCh.h);
 
-    //¨ú¥X¶°¤¤°Ï
+    //å–å‡ºé›†ä¸­å€
     FocalArea focalArea = fp.getFocalArea(LCh.L, LCh.h);
 
-    //¹LÂo¥X¤À°Ï¤ºªº¦âÂI
+    //éæ¿¾å‡ºåˆ†å€å…§çš„è‰²é»
     huePlane = fp.filter(huePlane, focalArea);
     CIELCh focalPoint = fp.getFocalPoint(focalArea, LCh);
     CIELCh[] upperAndLower = get2DUpperAndLowerNearestDouble(LCh, focalPoint,
@@ -83,7 +83,7 @@ public class GamutBoundary2DDescriptor
   }
 
   /**
-   * ­pºâ00»P01ªºª½½u¸ò10»P11ªºª½½uªº¥æÂI
+   * è¨ˆç®—00èˆ‡01çš„ç›´ç·šè·Ÿ10èˆ‡11çš„ç›´ç·šçš„äº¤é»
    * @param p00 CIELCh
    * @param p01 CIELCh
    * @param p10 CIELCh
@@ -105,12 +105,12 @@ public class GamutBoundary2DDescriptor
   }
 
   /**
-   * ¨Dpoint»PfocalAreaªº¶°¤¤ÂI©Òºc¦¨ªºª½½u,»P©Ò¦³points¤§¶¡ªº¶ZÂ÷
-   * (L=0©ÎªÌL=100ªÌ¤£¨ú,©Ò¥H±N¶ZÂ÷³]©w¦¨³Ì¤j)
+   * æ±‚pointèˆ‡focalAreaçš„é›†ä¸­é»æ‰€æ§‹æˆçš„ç›´ç·š,èˆ‡æ‰€æœ‰pointsä¹‹é–“çš„è·é›¢
+   * (L=0æˆ–è€…L=100è€…ä¸å–,æ‰€ä»¥å°‡è·é›¢è¨­å®šæˆæœ€å¤§)
    * @param point CIELCh
    * @param focalPoint CIELCh
    * @param points List
-   * @return double[] ¨Ì·Ópointsªº¶¶§Ç±Æ¦Cªº¶ZÂ÷
+   * @return double[] ä¾ç…§pointsçš„é †åºæ’åˆ—çš„è·é›¢
    */
   protected static double[] get2DDistance(CIELCh point, CIELCh focalPoint,
                                           List<CIELCh>
@@ -120,7 +120,7 @@ public class GamutBoundary2DDescriptor
 
     Point2d p0 = new Point2d(focalPoint.C, focalPoint.L);
     Point2d p1 = new Point2d(point.C, point.L);
-    //lf¥Nªípoint»P¶°¤¤ÂI¬Û³sªº¤@±øª½½u¤èµ{¦¡
+    //lfä»£è¡¨pointèˆ‡é›†ä¸­é»ç›¸é€£çš„ä¸€æ¢ç›´ç·šæ–¹ç¨‹å¼
     LinearFunction lf = LinearFunction.getInstance(p0, p1);
 
     for (int x = 0; x < size; x++) {
@@ -138,7 +138,7 @@ public class GamutBoundary2DDescriptor
   }
 
   /**
-   * ¨ú±o¦â¬Û­¶¤W ¤W­±¥H¤Î¤U­±³Ì¾aªñªº¨âÂI
+   * å–å¾—è‰²ç›¸é ä¸Š ä¸Šé¢ä»¥åŠä¸‹é¢æœ€é è¿‘çš„å…©é»
    * @param point CIELCh
    * @param focalPoint CIELCh
    * @param points List
@@ -151,21 +151,21 @@ public class GamutBoundary2DDescriptor
 
     Point2d p0 = new Point2d(focalPoint.C, focalPoint.L);
     Point2d p1 = new Point2d(point.C, point.L);
-    //lf¥Nªípoint»P¶°¤¤ÂI¬Û³sªº¤@±øª½½u¤èµ{¦¡
+    //lfä»£è¡¨pointèˆ‡é›†ä¸­é»ç›¸é€£çš„ä¸€æ¢ç›´ç·šæ–¹ç¨‹å¼
     LinearFunction lf = LinearFunction.getInstance(p0, p1);
 
     List<CIELCh> upperList = new ArrayList<CIELCh> ();
     List<CIELCh> lowerList = new ArrayList<CIELCh> ();
 
-    //¥Hpoint¨ìfocal pointªºª½½u¦¨¤@½u©Ê¤èµ{¦¡
+    //ä»¥pointåˆ°focal pointçš„ç›´ç·šæˆä¸€ç·šæ€§æ–¹ç¨‹å¼
     for (int x = 1; x < size - 1; x++) {
-      CIELCh LCh = points.get(x); //Ãä¬Éªº©Ò¦³ÂI
-      Point2d p2 = new Point2d(LCh.C, LCh.L); //Ãä¬ÉÂI
-      if (lf.isLower(p2)) { //½u¦pªG§C©ó¸ÓÂI
-        upperList.add(LCh); //¥Nªí³o­ÓÃä¬ÉÂI«G«×°ª©ópoint
+      CIELCh LCh = points.get(x); //é‚Šç•Œçš„æ‰€æœ‰é»
+      Point2d p2 = new Point2d(LCh.C, LCh.L); //é‚Šç•Œé»
+      if (lf.isLower(p2)) { //ç·šå¦‚æœä½æ–¼è©²é»
+        upperList.add(LCh); //ä»£è¡¨é€™å€‹é‚Šç•Œé»äº®åº¦é«˜æ–¼point
       }
-      else if (lf.isUpper(p2)) { //½u¦pªG°ª©ó¸ÓÂI
-        lowerList.add(LCh); //¥Nªí³o­ÓÃä¬ÉÂI«G«×§C©ópoint
+      else if (lf.isUpper(p2)) { //ç·šå¦‚æœé«˜æ–¼è©²é»
+        lowerList.add(LCh); //ä»£è¡¨é€™å€‹é‚Šç•Œé»äº®åº¦ä½æ–¼point
       }
     }
 
@@ -201,7 +201,7 @@ public class GamutBoundary2DDescriptor
 
     Point2d p0 = new Point2d(focalPoint.C, focalPoint.L);
     Point2d p1 = new Point2d(point.C, point.L);
-    //lf¥Nªípoint»P¶°¤¤ÂI¬Û³sªº¤@±øª½½u¤èµ{¦¡
+    //lfä»£è¡¨pointèˆ‡é›†ä¸­é»ç›¸é€£çš„ä¸€æ¢ç›´ç·šæ–¹ç¨‹å¼
     LinearFunction lf = LinearFunction.getInstance(p0, p1);
 
     List<CIELCh> upperList = new ArrayList<CIELCh> ();

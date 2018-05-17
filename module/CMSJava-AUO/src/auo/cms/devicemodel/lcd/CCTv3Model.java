@@ -254,7 +254,7 @@ public class CCTv3Model
   }
 
   /**
-   * ­pºâRGB,¤Ï±À¼Ò¦¡
+   * è¨ˆç®—RGB,åæ¨æ¨¡å¼
    *
    * @param relativeXYZ CIEXYZ
    * @param factor Factor[]
@@ -262,11 +262,11 @@ public class CCTv3Model
    */
   protected RGB _getRGB(CIEXYZ relativeXYZ, Factor[] factor) {
     double luminance = coefscd[0] * relativeXYZ.Y + coefscd[1];
-    //­×¥¿¦b½d³ò¤º
+    //ä¿®æ­£åœ¨ç¯„åœå…§
     double rLuminance = rgbInterpolator[0].correctValueInRange(luminance);
     double gLuminance = rgbInterpolator[1].correctValueInRange(luminance);
     double bLuminance = rgbInterpolator[2].correctValueInRange(luminance);
-    //¬dªí
+    //æŸ¥è¡¨
     double r = rgbInterpolator[0].getKey(rLuminance);
     double g = rgbInterpolator[1].getKey(gLuminance);
     double b = rgbInterpolator[2].getKey(bLuminance);
@@ -276,7 +276,7 @@ public class CCTv3Model
   }
 
   /**
-   * ­pºâXYZ,«e¾É¼Ò¦¡
+   * è¨ˆç®—XYZ,å‰å°æ¨¡å¼
    *
    * @param rgb RGB
    * @param factor Factor[]
@@ -288,7 +288,7 @@ public class CCTv3Model
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    */

@@ -14,8 +14,8 @@ import shu.cms.gma.gbp.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó´y­z¦â¥ßÅé¤Wªº¦â°ìÃä¬É
- * ¬O¥HGamutBoundary2DDescriptor¥[Åv¥­§¡¦Ó±o.
+ * ç”¨ä¾†æè¿°è‰²ç«‹é«”ä¸Šçš„è‰²åŸŸé‚Šç•Œ
+ * æ˜¯ä»¥GamutBoundary2DDescriptoråŠ æ¬Šå¹³å‡è€Œå¾—.
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

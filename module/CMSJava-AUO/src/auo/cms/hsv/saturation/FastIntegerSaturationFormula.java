@@ -85,7 +85,7 @@ public class FastIntegerSaturationFormula
     n = 1;
     n2 = 1. / (Math.pow(2, bitG2) - 1);
     intg1g2Shift = bitG2 - 3 + (12 - bitgain);
-    offsetShift = 10 + (bitgain - 12) + (3 - turnPointBit); //­¼¥X¨Óªºoffset°µÁY´î
+    offsetShift = 10 + (bitgain - 12) + (3 - turnPointBit); //ä¹˜å‡ºä¾†çš„offsetåšç¸®æ¸›
 
     g2InSelect = n / (turnPoint); // 3bit
     g2n2InSelect = g2InSelect / n2;

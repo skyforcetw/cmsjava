@@ -87,7 +87,7 @@ public class HSVIP {
     double saturationAdjust = hsvAdjust[1];
     double valueAdjust = hsvAdjust[2];
     //====================================================================
-    // HSVªº½Õ¾ã
+    // HSVçš„èª¿æ•´
     //====================================================================
     HSV hsv2 = (HSV) hsv.clone();
     hsv2.H += hueAdjust;

@@ -62,7 +62,7 @@ public abstract class DCModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    * @return Factor[]
    */
   protected abstract Factor _produceFactor();
@@ -179,14 +179,14 @@ public abstract class DCModel
   }
 
   /**
-   * ¶i¦ægamma®Õ¥¿
+   * é€²è¡Œgammaæ ¡æ­£
    * @param input double[]
    * @return double[]
    */
   public double[] gammaCorrect(double[] input) {
     if (doGammaCorrect) {
       //=======================================================================
-      // ¶i¦ægamma®Õ¥¿
+      // é€²è¡Œgammaæ ¡æ­£
       //=======================================================================
       input[0] = _RrCorrector.correct(input[0]);
       input[1] = _GrCorrector.correct(input[1]);
@@ -200,7 +200,7 @@ public abstract class DCModel
   public double[] gammaUncorrect(double[] input) {
     if (doGammaCorrect) {
       //=======================================================================
-      // ¶i¦ægamma¤Ï®Õ¥¿
+      // é€²è¡Œgammaåæ ¡æ­£
       //=======================================================================
       input[0] = _RrCorrector.uncorrect(input[0]);
       input[1] = _GrCorrector.uncorrect(input[1]);
@@ -212,7 +212,7 @@ public abstract class DCModel
 
   protected void produceGammaCorrector() {
     //=======================================================================
-    // ¶i¦ægamma®Õ¥¿,¦ı¬O´ú¸Õµ²ªG¬O¤£­n®Õ¥¿¤ñ¸û¦n-.-,¬O¬yµ{¿ù»~¶Ü?
+    // é€²è¡Œgammaæ ¡æ­£,ä½†æ˜¯æ¸¬è©¦çµæœæ˜¯ä¸è¦æ ¡æ­£æ¯”è¼ƒå¥½-.-,æ˜¯æµç¨‹éŒ¯èª¤å—?
     //=======================================================================
     if (doGammaCorrect) {
       List<Patch> grayScale = dcTarget.filter.grayScale();
@@ -237,7 +237,7 @@ public abstract class DCModel
     return rCorrecor;
 //    }
 //    else {
-//      //¤£¶i¦ægamma®Õ¥¿,©Ò¥H²£¥Í¤@­Ógamma¬°1ªºGammaCorrector
+//      //ä¸é€²è¡Œgammaæ ¡æ­£,æ‰€ä»¥ç”¢ç”Ÿä¸€å€‹gammaç‚º1çš„GammaCorrector
 //      GammaCorrector rCorrecor = GammaCorrector.getExponentInstance(grayScale,
 //          ch, 1.0, 1.0);
 //      return rCorrecor;
@@ -271,7 +271,7 @@ public abstract class DCModel
   }
 
   /**
-   * §Q¥Î¼Ò¦¡¤ºªº«Y¼Æ­pºâXYZ
+   * åˆ©ç”¨æ¨¡å¼å…§çš„ä¿‚æ•¸è¨ˆç®—XYZ
    * @param rgb RGB
    * @param relativeXYZ boolean
    * @return CIEXYZ
@@ -300,7 +300,7 @@ public abstract class DCModel
   }
 
   /**
-   * ­pºâXYZ
+   * è¨ˆç®—XYZ
    * @param rgb RGB
    * @return CIEXYZ
    */
@@ -316,7 +316,7 @@ public abstract class DCModel
   }
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    * @param dcModelFactor DCModelFactor
    */
   public DCModel(DCModelFactor dcModelFactor) {
@@ -333,7 +333,7 @@ public abstract class DCModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * æ±‚å€¼æ¨¡å¼
    * @param dcTarget DCTarget
    * @param doGammaCorrect boolean
    * @deprecated
@@ -346,10 +346,10 @@ public abstract class DCModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * æ±‚å€¼æ¨¡å¼
    * @param dcTarget DCTarget
-   * @param doGammaCorrect boolean ¬O§_¶i¦ægamma®Õ¥¿
-   * @param targetRGBNormalize boolean ¬O§_¨Ì·Ó¥Õ¦â¦â¶ô¶i¦æRGB¥¿³W¤Æ
+   * @param doGammaCorrect boolean æ˜¯å¦é€²è¡Œgammaæ ¡æ­£
+   * @param targetRGBNormalize boolean æ˜¯å¦ä¾ç…§ç™½è‰²è‰²å¡Šé€²è¡ŒRGBæ­£è¦åŒ–
    */
   public DCModel(DCTarget dcTarget, boolean doGammaCorrect,
                  boolean targetRGBNormalize) {
@@ -360,7 +360,7 @@ public abstract class DCModel
     this.doGammaCorrect = doGammaCorrect;
 
     if (targetRGBNormalize) {
-      //¨Ì·Ó¥Õ¦â¦â¶ô¶i¦æRGB¥¿³W¤Æ
+      //ä¾ç…§ç™½è‰²è‰²å¡Šé€²è¡ŒRGBæ­£è¦åŒ–
       switch (this.dcTarget.getType()) {
         case CC24:
           normal = dcTarget.getPatch(18).getRGB().getValues();
@@ -379,7 +379,7 @@ public abstract class DCModel
   }
 
   /**
-   * ²£¥Í¥i¥ÃÄòÀx¦s«Y¼Æªºclass
+   * ç”¢ç”Ÿå¯æ°¸çºŒå„²å­˜ä¿‚æ•¸çš„class
    * @param factor Factor
    * @return LCDModelFactor
    */
@@ -400,9 +400,9 @@ public abstract class DCModel
   }
 
   /**
-   * ¥H»s§@Profile©Ò¥Îªº³¡¥÷µû¦ô¦â®t
-   * ©Ò¿×»s§@Profileªº³¡¥÷,¥HCCSG©MCCDC¨Ó»¡,´N¬O¥h±¼©P³òªº¦Ç¶¥¦â¶ô
-   * ¨ä¥L¾Éªí«h¨S¦³®t²§
+   * ä»¥è£½ä½œProfileæ‰€ç”¨çš„éƒ¨ä»½è©•ä¼°è‰²å·®
+   * æ‰€è¬‚è£½ä½œProfileçš„éƒ¨ä»½,ä»¥CCSGå’ŒCCDCä¾†èªª,å°±æ˜¯å»æ‰å‘¨åœçš„ç°éšè‰²å¡Š
+   * å…¶ä»–å°è¡¨å‰‡æ²’æœ‰å·®ç•°
    *
    * @param targetPatch DCTarget
    * @param doColorDividing boolean
@@ -415,7 +415,7 @@ public abstract class DCModel
   }
 
   /**
-   * ¥H¾ã±i¾Éªí°µ¦â®tµû¦ô
+   * ä»¥æ•´å¼µå°è¡¨åšè‰²å·®è©•ä¼°
    * @param targetPatch DCTarget
    * @param doColorDividing boolean
    * @return DeltaEReport[]
@@ -459,27 +459,27 @@ public abstract class DCModel
     CIEXYZ whitePoint = this.luminance;
 
     /**
-     * XYZ-> RGB ¤£¹³RGB->XYZ, ¥i¥H­pºâ­ì©lªºXYZ¸ò¹w´úªºXYZªº»~®t;
-     * ©Ò¥H±Ä¥ÎÃ¹¦Ñ®vªº·Qªk:
+     * XYZ-> RGB ä¸åƒRGB->XYZ, å¯ä»¥è¨ˆç®—åŸå§‹çš„XYZè·Ÿé æ¸¬çš„XYZçš„èª¤å·®;
+     * æ‰€ä»¥æ¡ç”¨ç¾…è€å¸«çš„æƒ³æ³•:
      * 1. RGB->XYZ
      * 2. XYZ->RGB'
      * 3. RGB'->XYZ'
      */
     for (int x = 0; x < size; x++) {
       Patch p = XYZpatchList.get(x);
-      //«e¾É¥ı¹w´ú¥XXYZ
+      //å‰å°å…ˆé æ¸¬å‡ºXYZ
       CIEXYZ actualXYZ = getXYZ(p.getRGB(), false);
-      //¦b¤Ï±À±o¨ìRGB?
+      //åœ¨åæ¨å¾—åˆ°RGB?
       RGB reverseRGB = getRGB(actualXYZ, false);
       if (reverseRGB != null) {
-        //­Y±o¨ìRGB, ¦A«e¾Éºâ¥XXYZ
+        //è‹¥å¾—åˆ°RGB, å†å‰å°ç®—å‡ºXYZ
         CIEXYZ forwardXYZ = getXYZ(reverseRGB, false);
         CIELab Lab = CIELab.fromXYZ(forwardXYZ, whitePoint);
         Patch mp = new Patch(p.getName(), forwardXYZ, Lab, reverseRGB);
         modelPatchList.add(mp);
       }
       else {
-        //µLªk¨ú¥X¥¿½T­Èªº¦â¶ô,¥u¦n¨Ï¨ä¦â®t¬°0
+        //ç„¡æ³•å–å‡ºæ­£ç¢ºå€¼çš„è‰²å¡Š,åªå¥½ä½¿å…¶è‰²å·®ç‚º0
         Patch mp = new Patch(p.getName(), actualXYZ, p.getLab(), p.getRGB());
         modelPatchList.add(mp);
       }

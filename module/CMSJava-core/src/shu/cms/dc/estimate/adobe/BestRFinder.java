@@ -18,7 +18,7 @@ import shu.math.array.DoubleArray;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¦C¥X¤£¦Pªºrªº¦ô´ú»~®t,¨ÑµûÂ_³Ì¨Îªºr­È
+ * åˆ—å‡ºä¸åŒçš„rçš„ä¼°æ¸¬èª¤å·®,ä¾›è©•æ–·æœ€ä½³çš„rå€¼
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -37,7 +37,7 @@ public class BestRFinder {
         Content.MunsellGlossy, Illuminant.D65, RGB.ColorSpace.AdobeRGB);
 //    SpectraDatabaseAdapter munsell = new SpectraDatabaseAdapter(SpectraDatabase.
 //        Content.MunsellGlossy, blackbody6500k, RGB.RGBColorSpace.AdobeRGB);
-    //¤£­n¥Î·|¤ñ¸û·Ç
+    //ä¸è¦ç”¨æœƒæ¯”è¼ƒæº–
 //    munsell = munsell.getRationalRGBAdapter();
 
     DCTarget ccsg = DCTarget.Instance.get(munsell, munsell, LightSource.CIE.D65,
@@ -58,7 +58,7 @@ public class BestRFinder {
       Spectra[] spectras = estimator.estimate(x);
 
       //========================================================================
-      // ¬O§_¶i¦æ¦X²z¤Æ
+      // æ˜¯å¦é€²è¡Œåˆç†åŒ–
       //========================================================================
       spectras = PrincipalEigenvectorEstimator.rationalize(spectras);
 //      spectras[0] = spectras[0].reduceSpectra(380, 730, 10);
@@ -74,7 +74,7 @@ public class BestRFinder {
         System.out.println("r:" + x);
 
         //========================================================================
-        // µ´¹ï»~®t
+        // çµ•å°èª¤å·®
         //========================================================================
         System.out.println(DoubleArray.toString(df, r.absErrRGBMean) + "," +
                            df.format(r.getAbsErrMeanDeltaRGB()) + " | " +
@@ -83,7 +83,7 @@ public class BestRFinder {
         //========================================================================
 
         //========================================================================
-        // ¬Û¹ï»~®t
+        // ç›¸å°èª¤å·®
         //========================================================================
         System.out.println(DoubleArray.toString(df, r.relErrRGBMean) + "," +
                            df.format(r.getRelErrMeanDeltaRGB()) + " | " +

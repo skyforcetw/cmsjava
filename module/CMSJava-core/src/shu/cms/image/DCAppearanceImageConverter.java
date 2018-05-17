@@ -87,7 +87,7 @@ public class DCAppearanceImageConverter {
     }
 
     /**
-     * ªì©l¤Æ
+     * åˆå§‹åŒ–
      */
     public void init() {
       LightSource.Source lightsource = LightSource.CIE.D65;
@@ -182,21 +182,21 @@ public class DCAppearanceImageConverter {
 
         for (int x = 0; x < w; x++) {
           for (int y = 0; y < h; y++) {
-            //¨ú¥Xpixel,¬O0~255
+            //å–å‡ºpixel,æ˜¯0~255
             result.getRaster().getPixel(x, y, source);
-            //¥¿³W¤Æ
+            //æ­£è¦åŒ–
             pixels = DoubleArray.times(source, 1. / 255);
-            //from Profileªº¹Bºâ
+            //from Profileçš„é‹ç®—
             pixels = fromProfileLUT.getValues(pixels);
-            //¦X²z¤Æ
+            //åˆç†åŒ–
             pixels = RGB.rationalize(pixels, RGB.MaxValue.Double1);
-            //to Profileªº¹Bºâ
+            //to Profileçš„é‹ç®—
             pixels = toProfileLUT.getValues(pixels);
-            //¦X²z¤Æ
+            //åˆç†åŒ–
             pixels = RGB.rationalize(pixels, RGB.MaxValue.Double1);
-            //±q0~1Âà¦^0~255
+            //å¾0~1è½‰å›0~255
             pixels = DoubleArray.times(pixels, 255);
-            //¦^¦s
+            //å›å­˜
             result.getRaster().setPixel(x, y, pixels);
           }
         }

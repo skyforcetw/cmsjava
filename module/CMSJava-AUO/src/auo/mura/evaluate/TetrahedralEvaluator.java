@@ -109,7 +109,7 @@ public class TetrahedralEvaluator {
   public short[][] evaluateInteger(int grayLevelIn10Bit) {
 
     //==========================================================================
-    //ÅÜ¼Æ·Ç³Æ
+    //è®Šæ•¸æº–å‚™
     //==========================================================================
     int blockHCount = correctionData.getBlockHCount();
     int blockWCount = correctionData.getBlockWCount();
@@ -189,20 +189,20 @@ public class TetrahedralEvaluator {
   }
 
   /**
-   * ¥H¥¿¥ß¤èÅé¬°°ò·Çªº¥|­±Åé¤º´¡ªk
+   * ä»¥æ­£ç«‹æ–¹é«”ç‚ºåŸºæº–çš„å››é¢é«”å…§æ’æ³•
    *
-   * ¥|­±Åé¤º´¡ªk¹ê§@
-   * input¬°¦s¦b©ócoordinate©Ò§Î¦¨ªº¥|¤èÅéªº¤@­ÓÂI,
-   * ¦Ólut¬°coordinate¦UÂI©Ò¹ïÀ³ªº­È.
-   * ¥Ñinput»Pcoordinate¤§¶¡ªºÃö«Y¤º´¡¥Xinput©ÒÀ³¸Ó¥Nªíªº­È
+   * å››é¢é«”å…§æ’æ³•å¯¦ä½œ
+   * inputç‚ºå­˜åœ¨æ–¼coordinateæ‰€å½¢æˆçš„å››æ–¹é«”çš„ä¸€å€‹é»,
+   * è€Œlutç‚ºcoordinateå„é»æ‰€å°æ‡‰çš„å€¼.
+   * ç”±inputèˆ‡coordinateä¹‹é–“çš„é—œä¿‚å…§æ’å‡ºinputæ‰€æ‡‰è©²ä»£è¡¨çš„å€¼
    *
    * @param input double[]
-   * input¦w±Æ¤è¦¡: channel
+   * inputå®‰æ’æ–¹å¼: channel
    * @param coordinate double[]
-   * coordinate¦w±Æ¤è¦¡: x0 y0 z0 x1 y1 z1
+   * coordinateå®‰æ’æ–¹å¼: x0 y0 z0 x1 y1 z1
    * @param lut short[]
-   * lut¦w±Æ¤è¦¡:   000 100 010 110 (²Ä¤@¼h)| 001 101 011 111 (²Ä¤G¼h)
-   * 000=> x0 y0 z0, 100=> x1 y0 z0, 010=> x0 y1 z0...¾lÃş±À
+   * lutå®‰æ’æ–¹å¼:   000 100 010 110 (ç¬¬ä¸€å±¤)| 001 101 011 111 (ç¬¬äºŒå±¤)
+   * 000=> x0 y0 z0, 100=> x1 y0 z0, 010=> x0 y1 z0...é¤˜é¡æ¨
    * @return double[]
    */
   public short cubeTetrahedralInterpolate(short[] input,
@@ -324,7 +324,7 @@ public class TetrahedralEvaluator {
    * @param y int
    * @param z int
    * @param lut double[]
-   * lut¦w±Æ¤è¦¡ 000 100 010 110 (²Ä¤@¼h)| 001 101 011 111 (²Ä¤G¼h)
+   * lutå®‰æ’æ–¹å¼ 000 100 010 110 (ç¬¬ä¸€å±¤)| 001 101 011 111 (ç¬¬äºŒå±¤)
    * @return double
    */
   protected final static short dens(int x, int y, int z, short[] lut) {
@@ -333,7 +333,7 @@ public class TetrahedralEvaluator {
   }
 
   /**
-   * §P§O¦ì©ó¤»­±Åé¤¤ªº­ş¤@­Ó¥|­±Åé
+   * åˆ¤åˆ¥ä½æ–¼å…­é¢é«”ä¸­çš„å“ªä¸€å€‹å››é¢é«”
    * @param dx double
    * @param dy double
    * @param dz double

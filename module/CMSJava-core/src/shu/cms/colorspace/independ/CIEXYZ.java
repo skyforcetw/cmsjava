@@ -230,7 +230,7 @@ public final class CIEXYZ
   }
 
   /**
-   * ½Õ¾ã¨ì¸òscale¤@¼Ë(¥HY¬°¥D)
+   * èª¿æ•´åˆ°è·Ÿscaleä¸€æ¨£(ä»¥Yç‚ºä¸»)
    * @param scale CIEXYZ
    */
   public void scaleY(CIEXYZ scale) {
@@ -238,7 +238,7 @@ public final class CIEXYZ
   }
 
   /**
-   * ±NY½Õ¾ã¦¨scaleY
+   * å°‡Yèª¿æ•´æˆscaleY
    * @param scaleY double
    */
   public void scaleY(double scaleY) {
@@ -247,7 +247,7 @@ public final class CIEXYZ
   }
 
   /**
-   * ±NXYZ³£­¼¤Wfactor
+   * å°‡XYZéƒ½ä¹˜ä¸Šfactor
    * @param factor double
    */
   public void times(double factor) {
@@ -289,7 +289,7 @@ public final class CIEXYZ
   }
 
   /**
-   * °w¹ïnormal·í°µ1§@¥¿³W¤Æ
+   * é‡å°normalç•¶åš1ä½œæ­£è¦åŒ–
    * @param normal CIEXYZ
    */
   public void normalize(CIEXYZ normal) {
@@ -310,7 +310,7 @@ public final class CIEXYZ
 //  protected final static double NormalFactor = 1;
 
   /**
-   * ¥HY¬°¥D§@normalize
+   * ä»¥Yç‚ºä¸»ä½œnormalize
    */
   public void normalizeY() {
     double factor = NormalFactor / Y;
@@ -321,7 +321,7 @@ public final class CIEXYZ
   }
 
   /**
-   * ¨ú®ønormalizeªº¼Ð°O
+   * å–æ¶ˆnormalizeçš„æ¨™è¨˜
    */
   public void setNormalizeNot() {
     normalizeY = NormalizeY.Not;
@@ -350,9 +350,9 @@ public final class CIEXYZ
   }
 
   /**
-   * ±NXYZ­È¦X²z¤Æ
+   * å°‡XYZå€¼åˆç†åŒ–
    * @param XYZValuesArray double[][]
-   * @return int ¦X²z¤Æªº¦¸¼Æ
+   * @return int åˆç†åŒ–çš„æ¬¡æ•¸
    */
   public final static int rationalize(double[][] XYZValuesArray) {
     int size = XYZValuesArray.length;
@@ -376,19 +376,19 @@ public final class CIEXYZ
   }
 
   /**
-   * §PÂ_¸ÓXYZ­È¬O§_¦X²z,§PÂ_¨Ì¾Ú:
-   * 1.Y=0ªº¸Ü,¨ä¥LX,Z¤]¸Ó¬°0
-   * 2.Y!=0ªº¸Ü,X¤]À³¸Ó!=0
-   * 3.XYZ¤£¸Ó¦³­t­È
+   * åˆ¤æ–·è©²XYZå€¼æ˜¯å¦åˆç†,åˆ¤æ–·ä¾æ“š:
+   * 1.Y=0çš„è©±,å…¶ä»–X,Zä¹Ÿè©²ç‚º0
+   * 2.Y!=0çš„è©±,Xä¹Ÿæ‡‰è©²!=0
+   * 3.XYZä¸è©²æœ‰è² å€¼
    * @return boolean
    */
   public boolean isLegal() {
     if (Y == 0 && (X > 0 || Z > 0)) {
-      //¦pªGY=0,´NÀ³¸Ó¬°¶Â¦â,¨ä¥LÀW¹D¤£À³¸Ó¦³­È
+      //å¦‚æžœY=0,å°±æ‡‰è©²ç‚ºé»‘è‰²,å…¶ä»–é »é“ä¸æ‡‰è©²æœ‰å€¼
       return false;
     }
     else if (Y != 0 && X == 0) {
-      //¦pªGY¦³­È(¨ã¦³«G«×),XÀW¹D´N¤]À³¸Ó¦³­È,Z«h¤£¤@©w
+      //å¦‚æžœYæœ‰å€¼(å…·æœ‰äº®åº¦),Xé »é“å°±ä¹Ÿæ‡‰è©²æœ‰å€¼,Zå‰‡ä¸ä¸€å®š
       return false;
     }
     else if (X < 0 || Y < 0 || Z < 0) {
@@ -399,11 +399,11 @@ public final class CIEXYZ
   }
 
   /**
-   * ¦X²z¤Æ,¨Ì¾Ú¬O:
-   * 1.¦pªG¬ONaN,´N³]©w¦¨0
-   * 2.¦pªG<0,´N³]©w¦¨0
-   * 3.Y==0ªº¸Ü,X=0,Z=0
-   * 4.Y!=0¤SX==0ªº¸Ü,XYZ³£³]¬°0
+   * åˆç†åŒ–,ä¾æ“šæ˜¯:
+   * 1.å¦‚æžœæ˜¯NaN,å°±è¨­å®šæˆ0
+   * 2.å¦‚æžœ<0,å°±è¨­å®šæˆ0
+   * 3.Y==0çš„è©±,X=0,Z=0
+   * 4.Y!=0åˆX==0çš„è©±,XYZéƒ½è¨­ç‚º0
    */
   public void rationalize() {
     X = Double.isNaN(X) ? 0 : X;
@@ -426,8 +426,8 @@ public final class CIEXYZ
   }
 
   /**
-   * §PÂ_¸ÓXYZ­È¬O§_¦X²z,§PÂ_¨Ì¾Ú°£¤F»PisLegal()¬Û¦P¥~
-   * ¥t¥~¦A§P©w¸ÓXYZªº­È³£¤À§O¸Ó<= white
+   * åˆ¤æ–·è©²XYZå€¼æ˜¯å¦åˆç†,åˆ¤æ–·ä¾æ“šé™¤äº†èˆ‡isLegal()ç›¸åŒå¤–
+   * å¦å¤–å†åˆ¤å®šè©²XYZçš„å€¼éƒ½åˆ†åˆ¥è©²<= white
    * @param white CIEXYZ
    * @return boolean
    */
@@ -437,7 +437,7 @@ public final class CIEXYZ
   }
 
   /**
-   * °£¤F¨Ì·Órationalize()ªº¦X²z¤Æ¥H¥~,¦A°Ñ·Ówhite§@¦X²z¤Æ
+   * é™¤äº†ä¾ç…§rationalize()çš„åˆç†åŒ–ä»¥å¤–,å†åƒç…§whiteä½œåˆç†åŒ–
    * @param white CIEXYZ
    */
   public void rationalize(CIEXYZ white) {
@@ -461,7 +461,7 @@ public final class CIEXYZ
   }
 
   /**
-   * §ïÅÜNormalizeYªº­È
+   * æ”¹è®ŠNormalizeYçš„å€¼
    * @param normalizeY NormalizeY
    */
   public void normalize(NormalizeY normalizeY) {
@@ -498,7 +498,7 @@ public final class CIEXYZ
   private static SpectralCamera spectralCamera = null;
 
   /**
-   * ¥ÎXYZ¦^±À¥úÃÐ«á, ¦A­«·s¿n¤À¥X1964ªºXYZ, ¶È¨Ñ°Ñ¦Ò.
+   * ç”¨XYZå›žæŽ¨å…‰è­œå¾Œ, å†é‡æ–°ç©åˆ†å‡º1964çš„XYZ, åƒ…ä¾›åƒè€ƒ.
    * @return CIEXYZ
    */
   public final CIEXYZ toCIE1964XYZ() {

@@ -206,7 +206,7 @@ public class MeasureErrorAnalyzer {
 
   public static void main(String[] args) {
     File dir = new File(
-        "D:\\≥n≈È\\nobody zone\\exp data\\CCTv3\\111107\\model noise\\");
+        "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\exp data\\CCTv3\\111107\\model noise\\");
     String[] filenames = dir.list();
 
     int size = filenames.length;

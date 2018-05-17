@@ -16,7 +16,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ­pºâ¦â¶¥¤§¶¡ªºdelta ab, ¤ä´©¦hºØ¤£¦Pªº¦â±mªÅ¶¡
+ * è¨ˆç®—è‰²éšä¹‹é–“çš„delta ab, æ”¯æ´å¤šç¨®ä¸åŒçš„è‰²å½©ç©ºé–“
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -41,7 +41,7 @@ public class DeltaabGradientModel {
   }
 
   /**
-   * »P¥ÕÂIªº¦â°¾­pºâ
+   * èˆ‡ç™½é»çš„è‰²åè¨ˆç®—
    * @param style Style
    * @return double[][]
    */
@@ -143,7 +143,7 @@ public class DeltaabGradientModel {
   }
 
   /**
-   * ¬Û¾F±µªº¦â°¾­pºâ
+   * ç›¸é„°æ¥çš„è‰²åè¨ˆç®—
    * @param style Style
    * @return double[][][]
    */
@@ -156,10 +156,10 @@ public class DeltaabGradientModel {
     CIEXYZ XYZ3 = new CIEXYZ();
 
     for (int x = 1; x < size - 1; x++) {
-      //«e¤@­Ó
+      //å‰ä¸€å€‹
       XYZ1.setValues(XYZValues[x - 1]);
       XYZ2.setValues(XYZValues[x]);
-      //¤U¤@­Ó
+      //ä¸‹ä¸€å€‹
       XYZ3.setValues(XYZValues[x + 1]);
 
       switch (style) {

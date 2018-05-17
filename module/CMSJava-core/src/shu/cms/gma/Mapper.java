@@ -11,7 +11,7 @@ import shu.cms.plot.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ╕╛©Щ╓F╕U╨ьюёаY╙╨╓Х╕║
+ * Ф■╤И▄└Д╨├Е░└Г╗╝Её⌠Г╦╝Г └Ф√╧Е╪▐
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

@@ -35,7 +35,7 @@ public abstract class DeviceCharacterizationModel {
   }
 
   /**
-   * ¬O§_¬°¨D­È¼Ò¦¡
+   * æ˜¯å¦ç‚ºæ±‚å€¼æ¨¡å¼
    * @return boolean
    */
   public final boolean isEvaluationMode() {
@@ -43,12 +43,12 @@ public abstract class DeviceCharacterizationModel {
   }
 
   /**
-   * ¬O§_¬°¨D­È¼Ò¦¡
+   * æ˜¯å¦ç‚ºæ±‚å€¼æ¨¡å¼
    */
   protected boolean evaluationMode = false;
 
   /**
-   * ±NRGBpatchListªº¦â¶ô,¸g¥Ñ«e¾É¼Ò¦¡­pºâ¥XXYZ,¦^¶Ç¦¨List<Patch>
+   * å°‡RGBpatchListçš„è‰²å¡Š,ç¶“ç”±å‰å°æ¨¡å¼è¨ˆç®—å‡ºXYZ,å›å‚³æˆList<Patch>
    * @param RGBpatchList List
    * @return List
    */
@@ -56,7 +56,7 @@ public abstract class DeviceCharacterizationModel {
       RGBpatchList);
 
   /**
-   * ±NXYZpatchListªº¦â¶ô,¸g¥Ñ¤Ï±À¼Ò¦¡­pºâ¥XRGB,¦^¶Ç¦¨List<Patch>
+   * å°‡XYZpatchListçš„è‰²å¡Š,ç¶“ç”±åæ¨æ¨¡å¼è¨ˆç®—å‡ºRGB,å›å‚³æˆList<Patch>
    * @param XYZpatchList List
    * @return List
    */
@@ -70,7 +70,7 @@ public abstract class DeviceCharacterizationModel {
   public abstract String getDescription();
 
   /**
-   * ¥H¾É¨ã´ú¸Õ«e¾É¼Ò¦¡ªº¥¿½T©Ê
+   * ä»¥å°å…·æ¸¬è©¦å‰å°æ¨¡å¼çš„æ­£ç¢ºæ€§
    * @param targetLabPatchList List
    * @param doColorDividing boolean
    * @return DeltaEReport[]
@@ -88,7 +88,7 @@ public abstract class DeviceCharacterizationModel {
   }
 
   /**
-   * ¥H¾É¨ã´ú¸Õ«e¾É¼Ò¦¡ªº¥¿½T©Ê
+   * ä»¥å°å…·æ¸¬è©¦å‰å°æ¨¡å¼çš„æ­£ç¢ºæ€§
    * @param targetPatch LCDTarget
    * @param doColorDividing boolean
    * @return DeltaEReport[]
@@ -100,7 +100,7 @@ public abstract class DeviceCharacterizationModel {
   }
 
   /**
-   * ¥H¾É¨ã´ú¸Õ¤Ï±À¼Ò¦¡ªº¥¿½T©Ê
+   * ä»¥å°å…·æ¸¬è©¦åæ¨æ¨¡å¼çš„æ­£ç¢ºæ€§
    * @param targetPatch LCDTarget
    * @param doColorDividing boolean
    * @return DeltaEReport[]
@@ -112,7 +112,7 @@ public abstract class DeviceCharacterizationModel {
   }
 
   /**
-   * ¥H¾É¨ã´ú¸Õ¤Ï±À¼Ò¦¡ªº¥¿½T©Ê
+   * ä»¥å°å…·æ¸¬è©¦åæ¨æ¨¡å¼çš„æ­£ç¢ºæ€§
    * @param targetLabPatchList List
    * @param doColorDividing boolean
    * @return DeltaEReport[]
@@ -213,7 +213,7 @@ public abstract class DeviceCharacterizationModel {
     }
 
     /**
-     * Àx¦smodel¬°xml
+     * å„²å­˜modelç‚ºxml
      * @param filename String
      */
     public final void modelAsXML(String filename) {
@@ -238,7 +238,7 @@ public abstract class DeviceCharacterizationModel {
     }
 
     /**
-     * ±qxml®æ¦¡¸ü¤J¦^Model
+     * å¾xmlæ ¼å¼è¼‰å…¥å›Model
      * @param filename String
      * @return DeviceCharacterizationModel
      */

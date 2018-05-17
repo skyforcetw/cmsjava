@@ -355,7 +355,7 @@ public class HSVDumpFrame
             raster.setPixel(x, y, pixels);
           }
         }
-        //Àx¦sbmp
+        //å„²å­˜bmp
         ImageUtils.storeBMPImage("dump.bmp", img);
         if (output10BitData) {
           r.flush();

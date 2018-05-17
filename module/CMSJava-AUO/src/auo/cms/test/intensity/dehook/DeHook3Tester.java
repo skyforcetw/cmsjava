@@ -136,13 +136,13 @@ public class DeHook3Tester {
     CIEXYZ gXYZ = model.getXYZ(new RGB(0, targetRG, 0), false);
     CIEXYZ bXYZ = model.getXYZ(new RGB(0, 0, targetB), false);
 
-//    List<CIEXYZ> wXYZList = adapter.getXYZList().subList(0, targetRG + 1); //¶¶
+//    List<CIEXYZ> wXYZList = adapter.getXYZList().subList(0, targetRG + 1); //é †
     List<CIEXYZ> wXYZList = getWXYZList(model);
     CIEXYZ whiteXYZ = model.getXYZ(new RGB(targetRG, targetRG, targetB), false);
 //    CIEXYZ whiteXYZ = (CIEXYZ) wXYZList.get(255).clone();
 //    CIEXYZ whiteXYZ0 = model.getXYZ(RGB.White, false);
 
-    Collections.reverse(wXYZList); //°f
+    Collections.reverse(wXYZList); //é€†
 
     MaxMatrixIntensityAnalyzer analyzer = MaxMatrixIntensityAnalyzer.
         getReadyAnalyzer(rXYZ, gXYZ, bXYZ, whiteXYZ);
@@ -159,7 +159,7 @@ public class DeHook3Tester {
     System.out.println(whiteRGB + " " + model.getXYZ(whiteRGB, false) + " " +
                        whiteXYZ);
     drawGamma(rgbList, model, "r0");
-    if (true) { //¦pªGmulti-gen + native white, ¦³¶}¤ñ¸û¦n
+    if (true) { //å¦‚æžœmulti-gen + native white, æœ‰é–‹æ¯”è¼ƒå¥½
       whiteRGB.R = whiteRGB.G = whiteRGB.B = 255;
       drawGamma(rgbList, model, "r1");
     }
@@ -206,7 +206,7 @@ public class DeHook3Tester {
     CIEXYZ gXYZ = model.getXYZ(new RGB(0, targetRG, 0), false);
     CIEXYZ bXYZ = model.getXYZ(new RGB(0, 0, targetB), false);
 
-    List<CIEXYZ> wXYZList = adapter.getXYZList().subList(0, targetRG + 1); //¶¶
+    List<CIEXYZ> wXYZList = adapter.getXYZList().subList(0, targetRG + 1); //é †
     int size = wXYZList.size();
 //    CIEXYZ whiteXYZ = model.getXYZ(new RGB(targetRG, targetRG, targetB), false);
     CIEXYZ whiteXYZ = (CIEXYZ) wXYZList.get(255).clone();
@@ -215,7 +215,7 @@ public class DeHook3Tester {
 //    whiteXYZ = new CIEXYZ(364.15473190251396, 382.4332617913497, 587.8792677543);
 //    double targetY = 382.4332617913497;
 //    whiteXYZ.scaleY(targetY);
-    Collections.reverse(wXYZList); //°f
+    Collections.reverse(wXYZList); //é€†
 
     MaxMatrixIntensityAnalyzer analyzer = MaxMatrixIntensityAnalyzer.
         getReadyAnalyzer(rXYZ, gXYZ, bXYZ, whiteXYZ);

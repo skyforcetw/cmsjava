@@ -193,7 +193,7 @@ public class PsychophysicsExperimentFrame
 
     if (index == 59) {
       long seconds = (System.currentTimeMillis() - startTime) / 1000;
-      JOptionPane.showMessageDialog(this, "πÍ≈Áµ≤ßÙ! •Œ§F" + seconds + "¨Ì");
+      JOptionPane.showMessageDialog(this, "ÂØ¶È©óÁµêÊùü! Áî®‰∫Ü" + seconds + "Áßí");
       System.exit(0);
     }
 

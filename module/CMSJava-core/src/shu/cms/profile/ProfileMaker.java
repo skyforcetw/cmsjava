@@ -9,7 +9,7 @@ import shu.cms.hvs.cam.ciecam02.ViewingConditions;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó»s§@Profile
+ * ç”¨ä¾†è£½ä½œProfile
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -20,7 +20,7 @@ import shu.cms.hvs.cam.ciecam02.ViewingConditions;
  */
 public abstract class ProfileMaker {
   /**
-   * LUT®æÂIªº¼Æ¶q
+   * LUTæ ¼é»çš„æ•¸é‡
    */
   protected final static int NUMBER_OF_GRID_POINTS = 33;
 
@@ -38,7 +38,7 @@ public abstract class ProfileMaker {
       ViewingConditions.PerceptualIntentViewingConditions;
 
   /**
-   * ³]©w¦â¾AÀ³ªºmodel
+   * è¨­å®šè‰²é©æ‡‰çš„model
    * @param type CATType
    */
   public static void setCATType(CAMConst.CATType type) {
@@ -46,14 +46,14 @@ public abstract class ProfileMaker {
   }
 
   /**
-   * ³]³Æ¥Õ
+   * è¨­å‚™ç™½
    */
   protected CIEXYZ deviceWhite;
 
   protected CIEXYZ D50White = (CIEXYZ) Illuminant.D50WhitePoint.clone();
 
   /**
-   * deviceWhite¸g¥¿³W¤Æ³B²z
+   * deviceWhiteç¶“æ­£è¦åŒ–è™•ç†
    */
   protected CIEXYZ deviceNormalizeWhite;
 
@@ -63,13 +63,13 @@ public abstract class ProfileMaker {
 //  protected int errorDarkLabValuesCount2;
 
   /**
-   * Âà´«¨ì³]³Æ¦â·ÅªºXYZ
+   * è½‰æ›åˆ°è¨­å‚™è‰²æº«çš„XYZ
    * @param D50XYZ double[][]
    * @return double[][]
    */
   protected double[][] produceDeviceXYZGrid(double[][] D50XYZ) {
     int size = D50XYZ.length;
-    //±qD50Âà¨ì¿Ã¹õ¦â·Å
+    //å¾D50è½‰åˆ°è¢å¹•è‰²æº«
     double[][] deviceInput = new double[size][3];
     System.arraycopy(D50XYZ, 0, deviceInput, 0, size);
     deviceInput = D50chromaticAdaptation.adaptationFromDestination(deviceInput);
@@ -84,7 +84,7 @@ public abstract class ProfileMaker {
 
 
   /**
-   * ³]©w°Ñ¦ÒÀô¹Òªº°Ñ¼Æ
+   * è¨­å®šåƒè€ƒç’°å¢ƒçš„åƒæ•¸
    * @param vc ViewingConditions
    */
   public final static void setReferenceMediumViewingConditions(
@@ -97,9 +97,9 @@ public abstract class ProfileMaker {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * ²Ä¤G¦¸GAM©Ò±Ä¥Îªº¤èªk
-   * 1.RGB ª½±µ¹ïRGB¥Hclipªº¤è¦¡³B²z,µLªk«O«ù¦â¬Û«í©w
-   * 2.¥HLChªºCªºclip°µ³B²z,¥i¥H«O«ù¦â¬Û«í©w
+   * ç¬¬äºŒæ¬¡GAMæ‰€æ¡ç”¨çš„æ–¹æ³•
+   * 1.RGB ç›´æ¥å°RGBä»¥clipçš„æ–¹å¼è™•ç†,ç„¡æ³•ä¿æŒè‰²ç›¸æ†å®š
+   * 2.ä»¥LChçš„Cçš„clipåšè™•ç†,å¯ä»¥ä¿æŒè‰²ç›¸æ†å®š
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -114,33 +114,33 @@ public abstract class ProfileMaker {
 
   public static class Report {
     /**
-     * ¶i¦æ²Ä¤G¦¸gmaªº¦¸¼Æ,¦¸¼Æ¶V¦h¥Nªí­ì©lgmaªº³]­p¶V¤£¨}
+     * é€²è¡Œç¬¬äºŒæ¬¡gmaçš„æ¬¡æ•¸,æ¬¡æ•¸è¶Šå¤šä»£è¡¨åŸå§‹gmaçš„è¨­è¨ˆè¶Šä¸è‰¯
      */
     public int gma2ProcessCount;
     /**
-     * XYZ2JabÂà´«²£¥Í¿ù»~ªº¦¸¼Æ(­pºâ¥X«D¦X²z¼Æ)
+     * XYZ2Jabè½‰æ›ç”¢ç”ŸéŒ¯èª¤çš„æ¬¡æ•¸(è¨ˆç®—å‡ºéåˆç†æ•¸)
      */
     public int errorXYZ2JabCount;
     /**
-     * Jab2XYZÂà´«²£¥Í¿ù»~ªº¦¸¼Æ(­pºâ¥X«D¦X²z¼Æ)
+     * Jab2XYZè½‰æ›ç”¢ç”ŸéŒ¯èª¤çš„æ¬¡æ•¸(è¨ˆç®—å‡ºéåˆç†æ•¸)
      */
     public int errorJab2XYZCount;
     /**
-     * ±N¤@¨ÇÂà´«¤§«á,³y¦¨¿ù»~ªº·t³¡ÃC¦â,­×¥¿¦¨¶Â¦âªº¦¸¼Æ
+     * å°‡ä¸€äº›è½‰æ›ä¹‹å¾Œ,é€ æˆéŒ¯èª¤çš„æš—éƒ¨é¡è‰²,ä¿®æ­£æˆé»‘è‰²çš„æ¬¡æ•¸
      */
     public int errorDarkLabValuesCount1;
     /**
-     * ±N¤@¨ÇÂà´«¤§«á,³y¦¨¿ù»~ªº·t³¡ÃC¦â,­×¥¿¦¨¶Â¦âªº¦¸¼Æ
-     * ¦¹¬°²Ä¤G¦¸ªº­×¥¿
+     * å°‡ä¸€äº›è½‰æ›ä¹‹å¾Œ,é€ æˆéŒ¯èª¤çš„æš—éƒ¨é¡è‰²,ä¿®æ­£æˆé»‘è‰²çš„æ¬¡æ•¸
+     * æ­¤ç‚ºç¬¬äºŒæ¬¡çš„ä¿®æ­£
      */
     public int errorDarkLabValuesCount2;
 
     /**
-     * Lab¾D¦X²z¤Æªº¦¸¼Æ
+     * Labé­åˆç†åŒ–çš„æ¬¡æ•¸
      */
     public int _LabRationalCount;
     /**
-     * XYZ¾D¦X²z¤Æªº¦¸¼Æ
+     * XYZé­åˆç†åŒ–çš„æ¬¡æ•¸
      */
     public int XYZRationalCount;
 

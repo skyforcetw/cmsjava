@@ -6,7 +6,7 @@ package shu.cms.hvs.cam;
  * <p>Description: a Colour Management System by Java</p>
  * SR(Fu & Luo, 2005, p. 1195)= L / YW = Lsw / Ldw
  * = luminance of surround / luminance of reference white
- * = Àô¹Ò¥ú«G«×/°Ñ¦Ò¥Õ«G«×
+ * = ç’°å¢ƒå…‰äº®åº¦/åƒè€ƒç™½äº®åº¦
  *
  * The 0.2 coefficient derives from the "gray world" assumption
  * (~18%-20% reflectivity). It tests whether the surround luminance is darker or brighter than medium gray.
@@ -20,26 +20,26 @@ package shu.cms.hvs.cam;
  */
 public enum Surround {
   /**
-   * §¡¤Ã¥ú½uªºÀô¹Ò¤U, µø¨¤¤j©ó4«×
+   * å‡å‹»å…‰ç·šçš„ç’°å¢ƒä¸‹, è¦–è§’å¤§æ–¼4åº¦
    */
   AverageAbove4,
   /**
-   * §¡¤Ã¥ú½uªºÀô¹Ò¤U
+   * å‡å‹»å…‰ç·šçš„ç’°å¢ƒä¸‹
    * SR>20%
    */
   Average,
   /**
-   * ©ü·tªºÀô¹Ò
+   * æ˜æš—çš„ç’°å¢ƒ
    * SR=0%~20%
    */
   Dim,
   /**
-   * ·t«Ç, ©Î±N¤Û¿O¤ù¥´¦bÀğ¾À¤W, ©Î¬İ¹q¼v
+   * æš—å®¤, æˆ–å°‡å¹»ç‡ˆç‰‡æ‰“åœ¨ç‰†å£ä¸Š, æˆ–çœ‹é›»å½±
    * SR=0%
    */
   Dark,
   /**
-   * ¤Û¿O¤ù, ³z©ú¤ù, Â\¦b¿O½c¤W
+   * å¹»ç‡ˆç‰‡, é€æ˜ç‰‡, æ“ºåœ¨ç‡ˆç®±ä¸Š
    */
   CutSheet;
 

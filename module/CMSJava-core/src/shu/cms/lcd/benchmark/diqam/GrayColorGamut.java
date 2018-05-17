@@ -56,8 +56,8 @@ public class GrayColorGamut
 
   public static void main(String[] args) {
     LCDTarget target = LCDTarget.Instance.getFromAUOXLS(
-        "D:\\My Documents\\\\地璸礶\\LG 42SL90QD\\Standard\\2223.xls");
-//        "D:\\My Documents\\\\地璸礶\\LG 42SL90QD\\Standard\\2223-standard gamut.xls");
+        "D:\\My Documents\\宸ヤ綔\\鑿北瑷堢暙\\LG 42SL90QD\\Standard\\2223.xls");
+//        "D:\\My Documents\\宸ヤ綔\\鑿北瑷堢暙\\LG 42SL90QD\\Standard\\2223-standard gamut.xls");
     GrayColorGamut report = new GrayColorGamut(target);
     report.report();
     report.getPlot();

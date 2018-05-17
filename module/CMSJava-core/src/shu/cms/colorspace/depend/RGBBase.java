@@ -14,7 +14,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ´£¨ÑRGB¹B§@ªº°òÂ¦«Ø³]
+ * æä¾›RGBé‹ä½œçš„åŸºç¤å»ºè¨­
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -69,7 +69,7 @@ public abstract class RGBBase
     }
 
     /**
-     * ¨ú±o¤¤¶¡­È±ochannel(¤]´N¬OminChannel»PmaxChannel¥H¥~ªºchannel)
+     * å–å¾—ä¸­é–“å€¼å¾—channel(ä¹Ÿå°±æ˜¯minChannelèˆ‡maxChannelä»¥å¤–çš„channel)
      * @param minChannel Channel
      * @param maxChannel Channel
      * @return Channel
@@ -79,7 +79,7 @@ public abstract class RGBBase
     }
 
     /**
-     * ¨ú±o¥D¦â²Õ¦¨
+     * å–å¾—ä¸»è‰²çµ„æˆ
      * @param colorChannel Channel
      * @return Channel[]
      */
@@ -141,7 +141,7 @@ public abstract class RGBBase
     }
 
     /**
-     * ¨ú±osecondaryColorChannel¥H¥~ªºchannel.
+     * å–å¾—secondaryColorChannelä»¥å¤–çš„channel.
      * @param secondaryColorChannel Channel
      * @return Channel
      */
@@ -156,7 +156,7 @@ public abstract class RGBBase
     }
 
     /**
-     * ¨ú±ochannel1»Pchannel2¥H¥~ªºchannel.
+     * å–å¾—channel1èˆ‡channel2ä»¥å¤–çš„channel.
      * @param primaryColorChannel1 Channel
      * @param primaryColorChannel2 Channel
      * @return Channel
@@ -175,8 +175,8 @@ public abstract class RGBBase
     }
 
     /**
-     * primaryColorChannel¥H¥~ªºPrimaryChannel
-     * (ex:R¥H¥~ªºPrimaryChannel´N¬OG/B; G´N¬OR/B...)
+     * primaryColorChannelä»¥å¤–çš„PrimaryChannel
+     * (ex:Rä»¥å¤–çš„PrimaryChannelå°±æ˜¯G/B; Gå°±æ˜¯R/B...)
      * @param primaryColorChannel Channel
      * @return Channel[]
      */
@@ -230,7 +230,7 @@ public abstract class RGBBase
     public final String fullname;
 
     /**
-     * ¥H°}¦C¯Á¤ŞRGB Channel®É©Ò±Ä¥Îªºindex
+     * ä»¥é™£åˆ—ç´¢å¼•RGB Channelæ™‚æ‰€æ¡ç”¨çš„index
      * @return int
      */
     public final int getArrayIndex() {
@@ -239,7 +239,7 @@ public abstract class RGBBase
     }
 
     /**
-     * ±qarrayIndex§ä¨ì¬Û¹ïÀ³ªºchannel
+     * å¾arrayIndexæ‰¾åˆ°ç›¸å°æ‡‰çš„channel
      * @param arrayIndex int
      * @return Channel
      */
@@ -390,7 +390,7 @@ public abstract class RGBBase
   }
 
   /**
-   * ±q¤T­ì¦âªº¦â«×®y¼Ğ(x,y)¥H¤Î¥ÕÂIªºXYZ,­pºâ¥XRGB->XYZªºÂà´«¯x°}
+   * å¾ä¸‰åŸè‰²çš„è‰²åº¦åº§æ¨™(x,y)ä»¥åŠç™½é»çš„XYZ,è¨ˆç®—å‡ºRGB->XYZçš„è½‰æ›çŸ©é™£
    * @param r CIExyY
    * @param g CIExyY
    * @param b CIExyY
@@ -422,7 +422,7 @@ public abstract class RGBBase
   }
 
   /**
-   * linearRGBValuesÂà¨ìRGBValues
+   * linearRGBValuesè½‰åˆ°RGBValues
    * @param linearRGBValues double[]
    * @param colorSpace RGBColorSpace
    * @return double[]
@@ -451,7 +451,7 @@ public abstract class RGBBase
         double[] tmpValues = new double[3];
         double[] whiteValues = Illuminant.D50WhitePoint.getValues();
 
-        //±Ä¥ÎL-starªº¦±½u
+        //æ¡ç”¨L-starçš„æ›²ç·š
         for (int x = 0; x < 3; x++) {
           negative = rgbValues[x] < 0;
           if (negative) {
@@ -495,7 +495,7 @@ public abstract class RGBBase
   }
 
   /**
-   * RGBValuesÂà¨ìlinearRGBValues
+   * RGBValuesè½‰åˆ°linearRGBValues
    * @param RGBValues double[]
    * @param colorSpace RGBColorSpace
    * @return double[]
@@ -588,10 +588,10 @@ public abstract class RGBBase
   /**
    *
    * @param type MaxValue
-   * @param integerRoundDown boolean ¾ã¼Æªº³¡¥÷¬O§_±ÄµL±ø¥ó±Ë¥h
+   * @param integerRoundDown boolean æ•´æ•¸çš„éƒ¨ä»½æ˜¯å¦æ¡ç„¡æ¢ä»¶æ¨å»
    */
   public void changeMaxValue(MaxValue type, boolean integerRoundDown) {
-    // Ãş«¬¤@¼Ë¤£»İ­nÂà´« || µL­­¨îÃş«¬µLªk¶i¦æÂà´«
+    // é¡å‹ä¸€æ¨£ä¸éœ€è¦è½‰æ› || ç„¡é™åˆ¶é¡å‹ç„¡æ³•é€²è¡Œè½‰æ›
     if (this.maxValue == type ||
         this.maxValue == MaxValue.DoubleUnlimited ||
         type == MaxValue.DoubleUnlimited) {
@@ -651,7 +651,7 @@ public abstract class RGBBase
   }
 
   /**
-   * ¹ïrgb¶i¦æ¦X²z¤Æ(¤¶©ó0»PmaxValue¤§¶¡)
+   * å°rgbé€²è¡Œåˆç†åŒ–(ä»‹æ–¼0èˆ‡maxValueä¹‹é–“)
    * @param val double
    * @param maxValue MaxValue
    * @return double
@@ -666,7 +666,7 @@ public abstract class RGBBase
 
   public final static class Delta {
     /**
-     * ­pºâRGªÅ¶¡¤Uªº¦â®t
+     * è¨ˆç®—RGç©ºé–“ä¸‹çš„è‰²å·®
      * @param rgb1 RGB
      * @param rgb2 RGB
      * @return double
@@ -700,11 +700,11 @@ public abstract class RGBBase
   }
 
   public static enum Round {
-    //©|¥¼°õ¦æ
+    //å°šæœªåŸ·è¡Œ
     NotYet,
-    //¥|±Ë¤­¤J
+    //å››æ¨äº”å…¥
     RoundOff,
-    //µL±ø¥ó±Ë¥h
+    //ç„¡æ¢ä»¶æ¨å»
     RoundDown
   }
 

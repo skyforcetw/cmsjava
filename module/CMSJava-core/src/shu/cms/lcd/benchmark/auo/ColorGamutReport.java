@@ -84,7 +84,7 @@ public class ColorGamutReport
 
   public static void main(String[] args) throws Exception {
     LCDTarget lcdTarget = LCDTarget.Instance.getFromAUOXLS(
-        "D:\\My Documents\\\\地璸礶\\LG 42SL90QD\\Standard\\2223.xls");
+        "D:\\My Documents\\宸ヤ綔\\鑿北瑷堢暙\\LG 42SL90QD\\Standard\\2223.xls");
 
     ColorGamutReport report = new ColorGamutReport(lcdTarget);
     report.setGamutName("Wide");
@@ -93,7 +93,7 @@ public class ColorGamutReport
     LocusPlot locusPlot = report.getLocusPlot();
 
 //    LCDTarget stdTarget = LCDTarget.Instance.getFromAUOXLS(
-//        "D:\\My Documents\\\\地璸礶\\LG 42SL90QD\\Standard\\2223-standard gamut.xls");
+//        "D:\\My Documents\\宸ヤ綔\\鑿北瑷堢暙\\LG 42SL90QD\\Standard\\2223-standard gamut.xls");
 //    CIExyY[] stdrgbxyY = GamutUtil.getPrimaryxyY(stdTarget);
 //    locusPlot.drawGamutTriangle("Standard", stdrgbxyY[0], stdrgbxyY[1],
 //                                stdrgbxyY[2], Color.blue, LocusPlot.xyTrasnfer);

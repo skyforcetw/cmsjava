@@ -34,7 +34,7 @@ public class AUORampXLSAdapter extends TargetAdapter {
 
     public static void main(String[] args) throws FileNotFoundException {
         AUORampXLSAdapter adapter = new AUORampXLSAdapter(
-                "D:\\≥n≈È\\nobody zone\\exp data\\CCTv3\\111118\\probility test\\Measurement01.xls");
+                "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\exp data\\CCTv3\\111118\\probility test\\Measurement01.xls");
         for (CIEXYZ XYZ : adapter.getXYZList()) {
             System.out.println(XYZ);
         }

@@ -52,12 +52,12 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
 
     private MeterMode meterMode = MeterMode.Normal;
     /**
-     * ¥Î¨Ó³]©w¬O§_¯uªº¶i¦æ¶q´ú
+     * ç”¨ä¾†è¨­å®šæ˜¯å¦çœŸçš„é€²è¡Œé‡æ¸¬
      */
     private boolean fakeMeasure = false;
     /**
-     * ¥Î¨Ó³]©w¬O§_¯uªº¶i¦æ¶q´ú.
-     * ¦pªG¬O·f°tLCDModel¶i¦æ¼ÒÀÀ¶q´ú, «h«ØÄ³¶}±Ò¥[§Ö¶q´ú³t«×.
+     * ç”¨ä¾†è¨­å®šæ˜¯å¦çœŸçš„é€²è¡Œé‡æ¸¬.
+     * å¦‚æœæ˜¯æ­é…LCDModelé€²è¡Œæ¨¡æ“¬é‡æ¸¬, å‰‡å»ºè­°é–‹å•ŸåŠ å¿«é‡æ¸¬é€Ÿåº¦.
      * @param fake boolean
      */
     public void setFakeMeasure(boolean fake) {
@@ -153,7 +153,7 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
      *
      * @param referenceBlack CIEXYZ
      * @param referenceWhite CIEXYZ
-     * @deprecated ¼È®É¤£«ØÄ³¨Ï¥Î
+     * @deprecated æš«æ™‚ä¸å»ºè­°ä½¿ç”¨
      */
     public void softCalibrate(CIEXYZ referenceBlack, CIEXYZ referenceWhite) {
         Patch black = this.measure(RGB.Black, null);
@@ -172,7 +172,7 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
     private boolean autoClose = true;
 
     /**
-     * Ãö³¬
+     * é—œé–‰
      */
     public void close() {
         setMeasureWindowsVisible(false);
@@ -185,7 +185,7 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
     }
 
     /**
-     *  ¬O§_¤w¸g³]©w¹Ltitle¦WºÙ
+     *  æ˜¯å¦å·²ç¶“è¨­å®šétitleåç¨±
      */
     private boolean titleTouched = false;
 
@@ -225,7 +225,7 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
     }
 
     /**
-     * ³B²z¤ÏÂàªºrgb
+     * è™•ç†åè½‰çš„rgb
      * @param rgbArray RGB[]
      * @return RGB[]
      */
@@ -243,8 +243,8 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
         if (do255InverseMode) {
             RGB result = (RGB) rgb.clone();
             result.changeMaxValue(RGB.MaxValue.Double255);
-            //¦pªG­n³B²z255¤ÏÂàªºª¬ºA
-            //¦pªG¦³channelªº­È¹¡©M¤F(==255)
+            //å¦‚æœè¦è™•ç†255åè½‰çš„ç‹€æ…‹
+            //å¦‚æœæœ‰channelçš„å€¼é£½å’Œäº†(==255)
             result.R = result.R == 255 ? 254 : result.R;
             result.G = result.G == 255 ? 254 : result.G;
             result.B = result.B == 255 ? 254 : result.B;
@@ -256,10 +256,10 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
 
     /**
      *
-     * @param rgb RGB ¶q´úªºRGB¦â¶ô
-     * @param patchName String ¶q´ú¦â¶ôªº¦W¦r, ¥i¥H¬°null
-     * @param titleNote String ¼ĞÃDªºµù°O
-     * @param timeNote String ¶q´ú®É¶¡ªºµù°O
+     * @param rgb RGB é‡æ¸¬çš„RGBè‰²å¡Š
+     * @param patchName String é‡æ¸¬è‰²å¡Šçš„åå­—, å¯ä»¥ç‚ºnull
+     * @param titleNote String æ¨™é¡Œçš„è¨»è¨˜
+     * @param timeNote String é‡æ¸¬æ™‚é–“çš„è¨»è¨˜
      * @return Patch
      */
     protected Patch measure0(RGB rgb, String patchName, String titleNote,
@@ -272,11 +272,11 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
                                           JOptionPane.WARNING_MESSAGE);
         }
 
-        //¶q´úªºÃC¦â, ¶q´úªºÃC¦â¥i¯à»P¾É¨ãªºÃC¦â¤£¦P, ©Ò¥H¯S§O¿W¥ß¥X¦¹ÅÜ¼Æ
+        //é‡æ¸¬çš„é¡è‰², é‡æ¸¬çš„é¡è‰²å¯èƒ½èˆ‡å°å…·çš„é¡è‰²ä¸åŒ, æ‰€ä»¥ç‰¹åˆ¥ç¨ç«‹å‡ºæ­¤è®Šæ•¸
         final RGB measureRGB = processInverseRGB(rgb);
 
         if (doBlankInsert) {
-            //¦pªG­n´¡©ñ¹qµe­±
+            //å¦‚æœè¦æ’æ”¾é›»ç•«é¢
 //            Color c = isCPCodeLoading() ? cpBlank : blank;
             Color c = blank;
             measureWindow.setColor(c);
@@ -290,7 +290,7 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
 
         String name = (patchName == null) ? rgb.toString() : patchName;
         if (!titleTouched) {
-            //¦pªGtitle¨S³Q³]©w¹L
+            //å¦‚æœtitleæ²’è¢«è¨­å®šé
             if (titleNote != null) {
                 measureWindow.setTitle("Measure Window " + titleNote);
             } else {
@@ -300,14 +300,14 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
                                          titleNote);
         }
 
-        //³]©w¦nÃC¦â
+        //è¨­å®šå¥½é¡è‰²
 //    Color c = this.isCPCodeLoading() ? this.cpBackground : background;
         Color c = background;
         measureWindow.setBackground(c);
         measureWindow.setColor(measureRGB.getColor());
 
         //==========================================================================
-        // ÅÜ´«§¹µøµ¡ÃC¦âªºµu¼È°±¯d
+        // è®Šæ›å®Œè¦–çª—é¡è‰²çš„çŸ­æš«åœç•™
         //==========================================================================
         if (!fakeMeasure) {
             try {
@@ -320,14 +320,14 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
         //==========================================================================
 
         if (meter instanceof DummyMeter) {
-            //¦pªG¬Odummy, ´Nª½±µ«ü©wRGB, ¥ÑdummyÂà´«¦¨XYZ
+            //å¦‚æœæ˜¯dummy, å°±ç›´æ¥æŒ‡å®šRGB, ç”±dummyè½‰æ›æˆXYZ
             ((DummyMeter) meter).setRGB(measureRGB);
         }
         if (!fakeMeasure &&
             (!measureWindow.isVisible() || measureWindowInvisible)) {
             measureWindowInvisible = false;
             this.setMeasureWindowsVisible(false);
-            //¦pªGµøµ¡³QÃö³¬, ´Nµ²§ô¶q´ú
+            //å¦‚æœè¦–çª—è¢«é—œé–‰, å°±çµæŸé‡æ¸¬
             return null;
         }
         double[] result = null;
@@ -463,7 +463,7 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
     }
 
     /**
-     * ´¡¶Âµe­±ªºÃC¦â
+     * æ’é»‘ç•«é¢çš„é¡è‰²
      * @param blank Color
      * @deprecated
      */
@@ -472,7 +472,7 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
     }
 
     /**
-     * ´¡¶Âªº®É¶¡
+     * æ’é»‘çš„æ™‚é–“
      * @param blankTimes int
      */
     public void setBlankTimes(int blankTimes) {
@@ -519,12 +519,12 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
     }
 
     /**
-     * ¤j¶q¦â¶ô¶q´úªº½T»{
+     * å¤§é‡è‰²å¡Šé‡æ¸¬çš„ç¢ºèª
      */
     private boolean longMeasureVerify = false;
 
     /**
-     * ¤j¶q¦â¶ô¶q´úªº½T»{
+     * å¤§é‡è‰²å¡Šé‡æ¸¬çš„ç¢ºèª
      * @param verify boolean
      */
     public void setLongMeasureVerify(boolean verify) {
@@ -550,7 +550,7 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
     }
 
     /**
-     * ¤j¶q¦â¶ô¶q´úªº½T»{
+     * å¤§é‡è‰²å¡Šé‡æ¸¬çš„ç¢ºèª
      * @param patches int
      * @return boolean
      */
@@ -576,16 +576,16 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
 
     /**
      *
-     * @param rgbList List ¶q´úªºRGB¦â¶ô
-     * @param patchNameList List ¶q´ú¦â¶ôªº¦W¦r, ¥i¥H¬°null
-     * @return List ¶q´úªºPatch
+     * @param rgbList List é‡æ¸¬çš„RGBè‰²å¡Š
+     * @param patchNameList List é‡æ¸¬è‰²å¡Šçš„åå­—, å¯ä»¥ç‚ºnull
+     * @return List é‡æ¸¬çš„Patch
      */
     public List<Patch> measure(List<RGB> rgbList, List<String> patchNameList) {
         setMeasureWindowsVisible(true);
 
         if (!longMeasureVerify(rgbList.size())) {
             setMeasureWindowsVisible(false);
-            //¤j¶q¦â¶ô¶q´úªº½T»{
+            //å¤§é‡è‰²å¡Šé‡æ¸¬çš„ç¢ºèª
             return null;
         }
 
@@ -598,7 +598,7 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
         List<Patch> patchList = null;
         if (isAbnormalMode()) {
             //========================================================================
-            // ¶q´ú»ö¾¹¨Ã«Dª½±µ±±¨îªºª¬ªp¤U (³z¹L¨ä¥Lµ{¦¡¥h±±¨î»ö¾¹)
+            // é‡æ¸¬å„€å™¨ä¸¦éç›´æ¥æ§åˆ¶çš„ç‹€æ³ä¸‹ (é€éå…¶ä»–ç¨‹å¼å»æ§åˆ¶å„€å™¨)
             //========================================================================
             switch (meterMode) {
             case Argyll:
@@ -611,7 +611,7 @@ public class MeterMeasurement implements MeasureWindow.WindowsInvisibleListener 
             //========================================================================
         } else {
             //========================================================================
-            // ¦Û¥D±±¨î»ö¾¹, ¦]¦¹»İ¦Û¦æ±±¨î¶q´ú¦â¶ô
+            // è‡ªä¸»æ§åˆ¶å„€å™¨, å› æ­¤éœ€è‡ªè¡Œæ§åˆ¶é‡æ¸¬è‰²å¡Š
             //========================================================================
             patchList = new ArrayList<Patch>(size);
             long start = System.currentTimeMillis();

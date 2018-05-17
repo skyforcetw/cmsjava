@@ -7,7 +7,7 @@ import shu.cms.measure.meterapi.ca210api.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * »PCA210¬ÛÃöªºÃş§O
+ * èˆ‡CA210ç›¸é—œçš„é¡åˆ¥
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -74,7 +74,7 @@ public class CA210API {
   };
 
   /**
-   * ¨ú±o³W®æ®Ñ¤Wªº­«½Æ©Ê
+   * å–å¾—è¦æ ¼æ›¸ä¸Šçš„é‡è¤‡æ€§
    * @param probe Probe
    * @param luminance double
    * @return double delta xy

@@ -5,7 +5,7 @@ package shu.cms.colororder.pxl;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ±qPXLab­×§ï¦Ó¨Ó
+ * å¾žPXLabä¿®æ”¹è€Œä¾†
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

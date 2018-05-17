@@ -22,7 +22,7 @@ public class AGFinder {
 
   public static void main(String[] args) throws Exception {
     ExcelFile excel = new ExcelFile(
-        "D:/≥n≈È/nobody zone/exp data/debug from TV Team/20120308/raw.xls");
+        "D:/‡∏ìn‡∏•‡πâ/nobody zone/exp data/debug from TV Team/20120308/raw.xls");
     double[] luminances = new double[256];
     double[] keys = new double[256];
     for (int x = 0; x < 256; x++) {

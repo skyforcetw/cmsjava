@@ -63,7 +63,7 @@ public class GSDFVerifier
   }
 
   /**
-   * ¥HrgbColorSpaceªºgamma¬°°ò·Ç¥hÅçÃÒchannelªº¥­¶¶µ{«×
+   * ä»¥rgbColorSpaceçš„gammaç‚ºåŸºæº–å»é©—è­‰channelçš„å¹³é †ç¨‹åº¦
    * @param rgbColorSpace RGBColorSpace
    * @param channel Channel
    * @return VerifierReport
@@ -91,7 +91,7 @@ public class GSDFVerifier
   }
 
   /**
-   * ÀËÅçchannel JNDÅÜ¤Æªº±×²vªº¤@¦¸·L¤À (¥[³t«×ªº§ïÅÜ¶q)
+   * æª¢é©—channel JNDè®ŠåŒ–çš„æ–œç‡çš„ä¸€æ¬¡å¾®åˆ† (åŠ é€Ÿåº¦çš„æ”¹è®Šé‡)
    * @param channel Channel
    * @return VerifierReport
    */
@@ -103,7 +103,7 @@ public class GSDFVerifier
   }
 
   /**
-   * ÀËÅçchannel JNDÅÜ¤Æªº±×²v
+   * æª¢é©—channel JNDè®ŠåŒ–çš„æ–œç‡
    * @param channel Channel
    * @return VerifierReport
    */

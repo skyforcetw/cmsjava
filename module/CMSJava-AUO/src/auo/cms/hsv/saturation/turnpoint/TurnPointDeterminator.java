@@ -206,7 +206,7 @@ public class TurnPointDeterminator {
 //    int valueEnd = 100;
 
 //    boolean showOriginalDeltaE = false;
-    //­ì©lªº¦â®t h s v
+    //åŸå§‹çš„è‰²å·® h s v
     double[][][] originalDeltaEArray = new double[hueCount][101][101];
     double[][] sRGBPatchDeltaEArray = new double[16][hueCount];
     StringBuffer adjustbuf = new StringBuffer();
@@ -287,14 +287,14 @@ public class TurnPointDeterminator {
             RGB rgb = hsv.toRGB();
 
             //==================================================================
-            // ¦]¬°v=0~100 & s=0~100¨S¿ìªk­è¦n¸I¨ìsRGBªºcheck patch, ©Ò¥H¥u¦nÂ«§ï
+            // å› ç‚ºv=0~100 & s=0~100æ²’è¾¦æ³•å‰›å¥½ç¢°åˆ°sRGBçš„check patch, æ‰€ä»¥åªå¥½ç«„æ”¹
             //==================================================================
             sRGBAlter(rgb);
             //==================================================================
 
-            //¥Ø¼ĞXYZ
+            //ç›®æ¨™XYZ
             CIEXYZ sRGBXYZ = rgb.toXYZ();
-            //¥Ø«eXYZ
+            //ç›®å‰XYZ
             CIEXYZ XYZ = Util.model.getNormalizeXYZ(rgb);
             CIECAM02Color JCh = cam02.forward(XYZ);
             if (!orgCalculated) { //org deltaE
@@ -305,7 +305,7 @@ public class TurnPointDeterminator {
             }
 
             //====================================================================
-            // HSVªº½Õ¾ã
+            // HSVçš„èª¿æ•´
             //====================================================================
             HSV hsv2 = Util.getNewHSV(hsv, hsvAdjust, formula);
             //====================================================================
@@ -316,7 +316,7 @@ public class TurnPointDeterminator {
             CIECAM02Color JCh2 = cam02.forward(XYZ2);
 
             //==================================================================
-            // ­pºâ¦â®t
+            // è¨ˆç®—è‰²å·®
             //==================================================================
             DeltaE dE = new DeltaE(XYZ2, sRGBXYZ, whiteXYZ);
             double de00 = showDeltaEabOnly ? dE.getCIE2000Deltaab() :
@@ -325,7 +325,7 @@ public class TurnPointDeterminator {
             //==================================================================
 
             //==================================================================
-            // ­pºâdC
+            // è¨ˆç®—dC
             //==================================================================
             if (showJChVerify) {
               deltaSArray[s][v] = Math.abs(JCh2.s - JCh.s);
@@ -334,7 +334,7 @@ public class TurnPointDeterminator {
 
             if ( ( ( (hue == 0 || hue == 60) && s == 50) ||
                   (hue != 0 && hue != 60 && s == 33)) && v == 75) {
-              //¹J¨ìsRGB check patchªº®É­Ô
+              //é‡åˆ°sRGB check patchçš„æ™‚å€™
               sRGBPatchDeltaEArray[turnPoint][hIndex] = de00;
             }
 
@@ -342,7 +342,7 @@ public class TurnPointDeterminator {
         }
 
         //======================================================================
-        // ¨C­Óhueªº³B²z
+        // æ¯å€‹hueçš„è™•ç†
         //======================================================================
         System.out.print("Mean dE:" + Maths.mean(deltaEArray) + " ");
         if (showDeltaEPlot) {
@@ -364,7 +364,7 @@ public class TurnPointDeterminator {
           System.out.println(IntArray.toString(monitorIndex));
           System.out.println(IntArray.toString(Maths.maxIndex(deltaSArray)));
 //            double max = Maths.max(deltaCArray);
-          //vÂê©w¦b100§Y¥i
+          //vé–å®šåœ¨100å³å¯
           double max = deltaSArray[monitorIndex[0]][monitorIndex[1]];
           System.out.println("max dC(of JCh): " + max);
           Color c = colors[ (turnPoint - turnPointStart) % colors.length];
@@ -494,7 +494,7 @@ public class TurnPointDeterminator {
           double originalCAMSaturation = camcolor.s;
 
           //====================================================================
-          // HSVªº½Õ¾ã
+          // HSVçš„èª¿æ•´
           //====================================================================
           HSV hsv2 = getNewHSV(hsv, hsvAdjust, formula);
           //====================================================================

@@ -99,12 +99,12 @@ public class IntegerSaturationFormula
   }
 
   public double getAdjustValue(double originalSaturation, double newSaturation) {
-    //ºâ¥Xoffset, ¬Osaturationªº®t²§
+    //ç®—å‡ºoffset, æ˜¯saturationçš„å·®ç•°
     double offset = newSaturation - originalSaturation;
     double adjustValue = -1;
-    //§PÂ_¬O¦b TP «eÁÙ«á
+    //åˆ¤æ–·æ˜¯åœ¨ TP å‰é‚„å¾Œ
     if (originalSaturation < turnPointPercent) {
-      //ºâ¥Xgain­È
+      //ç®—å‡ºgainå€¼
       double gain = offset / originalSaturation;
       adjustValue = turnPointPercent * gain;
     }

@@ -28,7 +28,7 @@ public abstract class DC2LCDTargetAdapter {
   private final static void reproduceDCTargetLab(DCTarget dcTarget,
                                                  Patch whitePatch) {
     //======================================================================
-    // ¨Ì·ÓXYZ­«·s²£¥ÍRGB­È
+    // ä¾ç…§XYZé‡æ–°ç”¢ç”ŸRGBå€¼
     //======================================================================
     List<Patch> patchList = dcTarget.getPatchList();
     CIEXYZ normalizedWhiteXYZ = whitePatch.getNormalizedXYZ();
@@ -61,7 +61,7 @@ public abstract class DC2LCDTargetAdapter {
   private final static void reproduceDCTargetRGBByColorSpace(DCTarget
       dcTarget, RGB.ColorSpace rgbColorSpace, Patch whitePatch) {
     //======================================================================
-    // ¨Ì·ÓXYZ­«·s²£¥ÍRGB­È
+    // ä¾ç…§XYZé‡æ–°ç”¢ç”ŸRGBå€¼
     //======================================================================
     List<Patch> patchList = dcTarget.getPatchList();
     patchList.add(whitePatch);
@@ -120,7 +120,7 @@ public abstract class DC2LCDTargetAdapter {
       LightSource.Source source = LightSource.getLightSourceType(
           referenceWhite);
 
-      //§Q¥Îcamera
+      //åˆ©ç”¨camera
       DCTarget dcTarget = DCTarget.Instance.get(camera, source, chart);
       Patch whitePatch = getReferenceWhitePatch(referenceWhite);
       reproduceDCTargetRGBByColorSpace(dcTarget, rgbColorSpace, whitePatch);

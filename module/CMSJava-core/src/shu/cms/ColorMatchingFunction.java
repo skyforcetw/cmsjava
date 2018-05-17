@@ -47,7 +47,7 @@ public class ColorMatchingFunction
       new ColorMatchingFunction[CMFInfos.length];
 
   /**
-   * ªì©l¤ÆCMF
+   * åˆå§‹åŒ–CMF
    */
   static {
     for (int x = 0; x < CMFInfos.length; x++) {
@@ -113,7 +113,7 @@ public class ColorMatchingFunction
   }
 
   /**
-   * ­«»sCMF
+   * é‡è£½CMF
    * @param start int
    * @param end int
    * @param interval int

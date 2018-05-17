@@ -84,7 +84,7 @@ public final class SpectraDatabase {
     protected final static DecimalFormat fmt = new DecimalFormat("###.#");
 
     /**
-     * ¸ü¤Jglossyª©¥»ªºpatch name
+     * è¼‰å…¥glossyç‰ˆæœ¬çš„patch name
      * @return String[]
      */
     public static String[] getGlossyPatchName() {
@@ -109,7 +109,7 @@ public final class SpectraDatabase {
     }
 
     public static double[][] getMattEdition() {
-      //Åª¨ú¸ê®Æ
+      //è®€å–è³‡æ–™
       double[][] matt = BinaryFile.readDoubleArray(
           "Reference Files/Spectra Database/Munsell/munsell400_700_10_matt.dat",
           31);
@@ -132,7 +132,7 @@ public final class SpectraDatabase {
 //    }
 
     public static double[][] getGlossyEdition() {
-      //Åª¨ú¸ê®Æ
+      //è®€å–è³‡æ–™
       double[][] glossy = BinaryFile.readDoubleArray(
           "Reference Files/Spectra Database/Munsell/munsell400_700_10_glossy.dat",
           31);
@@ -140,7 +140,7 @@ public final class SpectraDatabase {
     }
 
     public static double[][] getGlossyEditionPrecise() {
-      //Åª¨ú¸ê®Æ
+      //è®€å–è³‡æ–™
       double[][] glossy = BinaryFile.readDoubleArray(
           "Reference Files/Spectra Database/Munsell/munsell380_780_5_glossy.dat",
           81);
@@ -148,11 +148,11 @@ public final class SpectraDatabase {
     }
 
     public static double[][] getAll() {
-      //Åª¨ú¸ê®Æ
+      //è®€å–è³‡æ–™
       double[][] matt = getMattEdition();
       double[][] glossy = getGlossyEdition();
 
-      //¦X¨Ö
+      //åˆä½µ
       double[][] spectraData = DoubleArray.mergeRows(matt, glossy);
       return spectraData;
     }
@@ -161,7 +161,7 @@ public final class SpectraDatabase {
 
   public final static class SOCS {
     /**
-     * ±q­ì©lSOCSªº¸ê®Æ(PDDE format)Âà¦¨double array¨Ã¥BÀx¦s°_¨Ó
+     * å¾åŸå§‹SOCSçš„è³‡æ–™(PDDE format)è½‰æˆdouble arrayä¸¦ä¸”å„²å­˜èµ·ä¾†
      * @param filename String
      */
     private final static void produceSOCSData(String filename) {
@@ -206,26 +206,26 @@ public final class SpectraDatabase {
     }
 
     /**
-     * ¦P¦â²§ÃĞÀËÅç(¨útypical©Mdiff¬Û¦PªÌ)
+     * åŒè‰²ç•°è­œæª¢é©—(å–typicalå’Œdiffç›¸åŒè€…)
      * @return double[][]
      */
     public final static double[][] getMetamers() {
-      //Åª¨ú¸ê®Æ
+      //è®€å–è³‡æ–™
       double[][] typical = getTypical();
       double[][] difference = getDifference();
       typical = DoubleArray.getRowsRangeCopy(typical, 0, difference.length - 1);
 
-      //¦X¨Ö
+      //åˆä½µ
       double[][] spectraData = DoubleArray.mergeRows(typical, difference);
       return spectraData;
     }
 
     public final static double[][] getTRDatabase() {
-      //Åª¨ú¸ê®Æ
+      //è®€å–è³‡æ–™
       double[][] typical = getTypical();
       double[][] difference = getDifference();
 
-      //¦X¨Ö
+      //åˆä½µ
       double[][] spectraData = DoubleArray.mergeRows(typical, difference);
       return spectraData;
     }

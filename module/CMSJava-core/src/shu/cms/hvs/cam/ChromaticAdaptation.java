@@ -10,7 +10,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¦â¾AÀ³Âà´«
+ * è‰²é©æ‡‰è½‰æ›
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -27,13 +27,13 @@ public class ChromaticAdaptation
   protected double[][] adaptationMatrixToDest;
   protected double[][] adaptationMatrixFromDest;
   /**
-   * ¹w³]ªº¦â¾AÀ³¤½¦¡
+   * é è¨­çš„è‰²é©æ‡‰å…¬å¼
    */
   public final static CAMConst.CATType DEFAULT_CAT_TYPE = CAMConst.CATType.
       Bradford;
 
   /**
-   * ­pºâdeviceWhite¨ìPCS(D50)ªº¦â¾AÀ³ª«¥ó
+   * è¨ˆç®—deviceWhiteåˆ°PCS(D50)çš„è‰²é©æ‡‰ç‰©ä»¶
    * @param deviceWhite CIEXYZ
    * @param catType CATType
    * @return ChromaticAdaptation
@@ -46,7 +46,7 @@ public class ChromaticAdaptation
   }
 
   /**
-   * ­pºâdeviceWhite¨ìD50ªº¦â¾AÀ³ª«¥ó
+   * è¨ˆç®—deviceWhiteåˆ°D50çš„è‰²é©æ‡‰ç‰©ä»¶
    * @param deviceWhite CIEXYZ
    * @param catType CATType
    * @return ChromaticAdaptation
@@ -68,8 +68,8 @@ public class ChromaticAdaptation
   }
 
   /**
-   * ª«¥ó¤èªk,¶·°t¦X«Øºc¦¡¨Ï¥Î
-   * ±NsourceXYZÂà¨ìdestXYZ
+   * ç‰©ä»¶æ–¹æ³•,é ˆé…åˆå»ºæ§‹å¼ä½¿ç”¨
+   * å°‡sourceXYZè½‰åˆ°destXYZ
    * @param sourceXYZ CIEXYZ
    * @return CIEXYZ
    */
@@ -87,8 +87,8 @@ public class ChromaticAdaptation
   }
 
   /**
-   * ª«¥ó¤èªk,¶·°t¦X«Øºc¦¡¨Ï¥Î
-   * ±NsourceXYZValues°}¦CÂà´«¨ìdestXYZValues°}¦C
+   * ç‰©ä»¶æ–¹æ³•,é ˆé…åˆå»ºæ§‹å¼ä½¿ç”¨
+   * å°‡sourceXYZValuesé™£åˆ—è½‰æ›åˆ°destXYZValuesé™£åˆ—
    * @param sourceXYZValues double[]
    * @return double[]
    */
@@ -97,8 +97,8 @@ public class ChromaticAdaptation
   }
 
   /**
-   * ª«¥ó¤èªk,¶·°t¦X«Øºc¦¡¨Ï¥Î
-   * ±NadaptedValues°}¦CÂà´«¨ìsourceXYZValues°}¦C
+   * ç‰©ä»¶æ–¹æ³•,é ˆé…åˆå»ºæ§‹å¼ä½¿ç”¨
+   * å°‡adaptedValuesé™£åˆ—è½‰æ›åˆ°sourceXYZValuesé™£åˆ—
    * @param adaptedXYZValues double[]
    * @return double[]
    */
@@ -107,8 +107,8 @@ public class ChromaticAdaptation
   }
 
   /**
-   * ª«¥ó¤èªk,¶·°t¦X«Øºc¦¡¨Ï¥Î
-   * ±NadaptedXYZÂà¨ìsourceXYZ
+   * ç‰©ä»¶æ–¹æ³•,é ˆé…åˆå»ºæ§‹å¼ä½¿ç”¨
+   * å°‡adaptedXYZè½‰åˆ°sourceXYZ
    * @param adaptedXYZ CIEXYZ
    * @return CIEXYZ
    */
@@ -119,7 +119,7 @@ public class ChromaticAdaptation
   }
 
   /**
-   * ­pºâ¦â¾AÀ³¯x°}
+   * è¨ˆç®—è‰²é©æ‡‰çŸ©é™£
    * @param sourceWhite CIEXYZ
    * @param destinationWhite CIEXYZ
    * @param catType CATType
@@ -144,7 +144,7 @@ public class ChromaticAdaptation
   }
 
   /**
-   * Ãş§O¤èªk(ÀRºA¤èªk),±NsourceColorÂà´«¨ìdestColor
+   * é¡åˆ¥æ–¹æ³•(éœæ…‹æ–¹æ³•),å°‡sourceColorè½‰æ›åˆ°destColor
    * @param sourceColor CIEXYZ
    * @param adaptationMatrix double[][]
    * @return CIEXYZ
@@ -156,7 +156,7 @@ public class ChromaticAdaptation
   }
 
   /**
-   * Ãş§O¤èªk(ÀRºA¤èªk),±NsourceXYZValues°}¦CÂà´«¨ìdest XYZValues
+   * é¡åˆ¥æ–¹æ³•(éœæ…‹æ–¹æ³•),å°‡sourceXYZValuesé™£åˆ—è½‰æ›åˆ°dest XYZValues
    * @param sourceXYZValues double[]
    * @param adaptationMatrix double[][]
    * @return double[]
@@ -169,7 +169,7 @@ public class ChromaticAdaptation
   }
 
   /**
-   * Ãş§O¤èªk(ÀRºA¤èªk),±NsourceColorÂà´«¨ìdestColor
+   * é¡åˆ¥æ–¹æ³•(éœæ…‹æ–¹æ³•),å°‡sourceColorè½‰æ›åˆ°destColor
    * @param sourceColor CIEXYZ
    * @param sourceWhite CIEXYZ
    * @param destinationWhite CIEXYZ
@@ -185,8 +185,8 @@ public class ChromaticAdaptation
   }
 
   /**
-   * ª«¥ó¤èªk,¶·°t¦X«Øºc¦¡¨Ï¥Î
-   * ±N(source)XYZValuesÂà´«¨ìdest XYZValues
+   * ç‰©ä»¶æ–¹æ³•,é ˆé…åˆå»ºæ§‹å¼ä½¿ç”¨
+   * å°‡(source)XYZValuesè½‰æ›åˆ°dest XYZValues
    * @param XYZValues double[][]
    * @return double[][]
    */
@@ -195,8 +195,8 @@ public class ChromaticAdaptation
   }
 
   /**
-   * ª«¥ó¤èªk,¶·°t¦X«Øºc¦¡¨Ï¥Î
-   * ±N(dest)XYZValuesÂà´«¨ìsource XYZValues
+   * ç‰©ä»¶æ–¹æ³•,é ˆé…åˆå»ºæ§‹å¼ä½¿ç”¨
+   * å°‡(dest)XYZValuesè½‰æ›åˆ°source XYZValues
    * @param XYZValues double[][]
    * @return double[][]
    */
@@ -205,7 +205,7 @@ public class ChromaticAdaptation
   }
 
   /**
-   * Ãş§O¤èªk(ÀRºA¤èªk),±N(source)XYZValues°}¦CÂà´«¨ìdest XYZValues
+   * é¡åˆ¥æ–¹æ³•(éœæ…‹æ–¹æ³•),å°‡(source)XYZValuesé™£åˆ—è½‰æ›åˆ°dest XYZValues
    * @param XYZValues double[][]
    * @param chromaticAdaptationMatrix double[][]
    * @return double[][]
@@ -225,7 +225,7 @@ public class ChromaticAdaptation
   protected final static CIEXYZ D65_WHITE = Illuminant.D65WhitePoint;
 
   /**
-   * Ãş§O¤èªk(ÀRºA¤èªk)
+   * é¡åˆ¥æ–¹æ³•(éœæ…‹æ–¹æ³•)
    * @param deviceWhite CIEXYZ
    * @param catType CATType
    * @return double[][]
@@ -237,8 +237,8 @@ public class ChromaticAdaptation
   }
 
   /**
-   * ª«¥ó¤èªk,¶·°t¦X«Øºc¦¡¨Ï¥Î
-   * ¨ú±osource->destªº¦â¾AÀ³¯x°}
+   * ç‰©ä»¶æ–¹æ³•,é ˆé…åˆå»ºæ§‹å¼ä½¿ç”¨
+   * å–å¾—source->destçš„è‰²é©æ‡‰çŸ©é™£
    * @return double[][]
    */
   public double[][] getAdaptationMatrixToDestination() {
@@ -246,8 +246,8 @@ public class ChromaticAdaptation
   }
 
   /**
-   * ª«¥ó¤èªk,¶·°t¦X«Øºc¦¡¨Ï¥Î
-   * ¨ú±odest->sourceªº¦â¾AÀ³¯x°}
+   * ç‰©ä»¶æ–¹æ³•,é ˆé…åˆå»ºæ§‹å¼ä½¿ç”¨
+   * å–å¾—dest->sourceçš„è‰²é©æ‡‰çŸ©é™£
    * @return double[][]
    */
   public double[][] getAdaptationMatrixFromDestination() {

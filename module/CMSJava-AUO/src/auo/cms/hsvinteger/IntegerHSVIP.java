@@ -191,7 +191,7 @@ public class IntegerHSVIP {
   }
 
   public short[] getHSVValues(AUOHSV hsv) {
-    //ºâ¥X¤º´¡­È
+    //ç®—å‡ºå…§æ’å€¼
     short[] hsvIntpol = hsvLUT.getHSVIntpol(hsv);
     return getHSVValues(hsv, hsvIntpol, saturationFormula, hsvClip);
   }

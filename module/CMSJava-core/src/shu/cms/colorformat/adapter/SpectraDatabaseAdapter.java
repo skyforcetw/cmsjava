@@ -197,7 +197,7 @@ public class SpectraDatabaseAdapter
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * ¥u¦^¶Ç¦bRGB¦â±mªÅ¶¡¦â°ì¤ºªº¦â¶ô
+   * åªå›å‚³åœ¨RGBè‰²å½©ç©ºé–“è‰²åŸŸå…§çš„è‰²å¡Š
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *

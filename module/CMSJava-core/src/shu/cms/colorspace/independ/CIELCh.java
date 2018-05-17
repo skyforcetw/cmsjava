@@ -28,7 +28,7 @@ public final class CIELCh
    *
    * @param LChValuesArray double[][]
    * @param whiteXYZValues double[]
-   * @todo M ¥Î¦h°õ¦æºü³B²z
+   * @todo M ç”¨å¤šåŸ·è¡Œç·’è™•ç†
    */
   public static final void LChab2XYZValues(final double[][] LChValuesArray,
                                            final double[] whiteXYZValues) {
@@ -44,7 +44,7 @@ public final class CIELCh
    *
    * @param XYZValuesArray double[][]
    * @param whiteXYZValues double[]
-   * @todo M ¥Î¦h°õ¦æºü³B²z
+   * @todo M ç”¨å¤šåŸ·è¡Œç·’è™•ç†
    */
   public final static void XYZ2LChabValues(final double[][] XYZValuesArray,
                                            final double[] whiteXYZValues) {
@@ -169,7 +169,7 @@ public final class CIELCh
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * XYZ»PLCh¤¬Âà¤è¦¡ªº©w¸q
+   * XYZèˆ‡LChäº’è½‰æ–¹å¼çš„å®šç¾©
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *

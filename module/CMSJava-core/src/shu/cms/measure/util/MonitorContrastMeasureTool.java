@@ -34,9 +34,9 @@ public class MonitorContrastMeasureTool {
 
   public List<Patch> measure() {
     JOptionPane.showMessageDialog(mt.getMeasureWindow(),
-                                  "½Ğ±N" + meter.getType().name() +
-                                  "©ñ¸m¦b¿Ã¹õ¤W,±N¿Ã¹õ«G«×½Õ¨ì³Ì¤j, ¨Ã«ö¤U <½T©w> ¶i¦æ¶q´ú.",
-                                  "¹ï¤ñ¶q´ú½T»{",
+                                  "è«‹å°‡" + meter.getType().name() +
+                                  "æ”¾ç½®åœ¨è¢å¹•ä¸Š,å°‡è¢å¹•äº®åº¦èª¿åˆ°æœ€å¤§, ä¸¦æŒ‰ä¸‹ <ç¢ºå®š> é€²è¡Œé‡æ¸¬.",
+                                  "å°æ¯”é‡æ¸¬ç¢ºèª",
                                   JOptionPane.INFORMATION_MESSAGE);
     List<Patch> patchList = new ArrayList<Patch> ();
 
@@ -48,8 +48,8 @@ public class MonitorContrastMeasureTool {
       patchList.add(blackPatch);
 
       int result = JOptionPane.showConfirmDialog(mt.getMeasureWindow(),
-                                                 "­°§C¿Ã¹õ«G«×Ä~Äò¤U¤@¦¸¶q´ú (©Î«ö¨ú®øµ²§ô¹ï¤ñ¶q´ú)",
-                                                 "¿Ã¹õ«G«×½Õ¾ã½T»{",
+                                                 "é™ä½è¢å¹•äº®åº¦ç¹¼çºŒä¸‹ä¸€æ¬¡é‡æ¸¬ (æˆ–æŒ‰å–æ¶ˆçµæŸå°æ¯”é‡æ¸¬)",
+                                                 "è¢å¹•äº®åº¦èª¿æ•´ç¢ºèª",
                                                  JOptionPane.OK_CANCEL_OPTION,
                                                  JOptionPane.QUESTION_MESSAGE);
 

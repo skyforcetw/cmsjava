@@ -81,7 +81,7 @@ public class EyeOneDisplay2
   }
 
   public String getCalibrationDescription() {
-//    return "½Ğ±Ni1 Display2©ñ¦b¥­©Z¤£¤Ï¥úªºªí­±¤W¶i¦æ®Õ¥¿.";
+//    return "è«‹å°‡i1 Display2æ”¾åœ¨å¹³å¦ä¸åå…‰çš„è¡¨é¢ä¸Šé€²è¡Œæ ¡æ­£.";
     return "Place i1 Display2 on plain surface";
   }
 

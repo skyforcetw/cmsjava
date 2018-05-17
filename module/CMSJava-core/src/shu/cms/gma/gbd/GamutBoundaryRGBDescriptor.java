@@ -18,12 +18,12 @@ import shu.cms.devicemodel.dc.dcam.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥HRGB¼Æ­Èªº¦X²z©Ê¨Ó­pºâ¦â°ìÃä¬É.
+ * ä»¥RGBæ•¸å€¼çš„åˆç†æ€§ä¾†è¨ˆç®—è‰²åŸŸé‚Šç•Œ.
  *
- * ³o­Ó¤èªk¹ï©ólcd model¦ü¥G¨S»³...
- * ¦]¬°lcd model(¤×¨ä¬Omulti matrix«ÜÃø§PÂ_¬O§_¸¨©ó¦â°ì¤º©Î¥~)
- * ©Î³\multi matrixÀ³¸Ó´«­Ó¤è¦V, ¤£­n¥Îinverse model(¦]¬°¹w´úrgb¥¿½T©Ê«ÜÃø)
- * ¦Ó¸Ó¥Îforward model???
+ * é€™å€‹æ–¹æ³•å°æ–¼lcd modelä¼¼ä¹æ²’è¼’...
+ * å› ç‚ºlcd model(å°¤å…¶æ˜¯multi matrixå¾ˆé›£åˆ¤æ–·æ˜¯å¦è½æ–¼è‰²åŸŸå…§æˆ–å¤–)
+ * æˆ–è¨±multi matrixæ‡‰è©²æ›å€‹æ–¹å‘, ä¸è¦ç”¨inverse model(å› ç‚ºé æ¸¬rgbæ­£ç¢ºæ€§å¾ˆé›£)
+ * è€Œè©²ç”¨forward model???
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -49,7 +49,7 @@ public abstract class GamutBoundaryRGBDescriptor
                                 RGB.MaxValue.Double1);
     protected double[] whiteXYZValues;
     /**
-     * ­pºâmax chroma®É, ®t²§­n¤p©ó¦¹­È, ¤~µø¬°¦³®Ämax chroma
+     * è¨ˆç®—max chromaæ™‚, å·®ç•°è¦å°æ–¼æ­¤å€¼, æ‰è¦–ç‚ºæœ‰æ•ˆmax chroma
      */
     protected double threshold = .5;
     protected TetrahedralInterpolation ti;
@@ -77,16 +77,16 @@ public abstract class GamutBoundaryRGBDescriptor
     }
 
     protected double[] getXYZValues(CIELCh D65LCh) {
-      //¨ú¥XLCh
+      //å–å‡ºLCh
       D65LCh.getValues(tmpValues);
 
       if (retriever != null) {
         return retriever.getXYZValues(tmpValues);
       }
       else {
-        //Âà¦¨Lab
+        //è½‰æˆLab
         double[] LabValues = CIELCh.toLabValues(tmpValues);
-        //Âà¦¨XYZ
+        //è½‰æˆXYZ
         double[] XYZValues = CIELab.toXYZValues(LabValues, whiteXYZValues);
         return XYZValues;
       }
@@ -97,7 +97,7 @@ public abstract class GamutBoundaryRGBDescriptor
       double[] rgbValues = pcs.fromCIEXYZValues(XYZValues);
       rgb.setValues(rgbValues);
       /**
-       * §Q¥Îrgb¬O§_¬°legal¨Ó§PÂ_¬O§_¦bgamut¤º
+       * åˆ©ç”¨rgbæ˜¯å¦ç‚ºlegalä¾†åˆ¤æ–·æ˜¯å¦åœ¨gamutå…§
        */
       boolean isLegal = rgb.isLegal();
       return!isLegal;
@@ -110,10 +110,10 @@ public abstract class GamutBoundaryRGBDescriptor
       }
 
       if (onLineCalculate) {
-        //½u¤W­pºâªº¤è¦¡, ¨C¦¸³£¥Îchroma»¼´î§ä¨ìboundary,
-        //¬Û¹ï¤U­±ªºoff-line, µ²ªG·|¤ñ¸û·Ç½T
+        //ç·šä¸Šè¨ˆç®—çš„æ–¹å¼, æ¯æ¬¡éƒ½ç”¨chromaéæ¸›æ‰¾åˆ°boundary,
+        //ç›¸å°ä¸‹é¢çš„off-line, çµæœæœƒæ¯”è¼ƒæº–ç¢º
 
-        //¨è·NÅıtestÃz±¼, µM«á¦A¤ºÁY§ä¨ìboundary
+        //åˆ»æ„è®“testçˆ†æ‰, ç„¶å¾Œå†å…§ç¸®æ‰¾åˆ°boundary
         while (!isOutOfGamut(test)) {
           test.C *= 1.5;
         }
@@ -160,7 +160,7 @@ public abstract class GamutBoundaryRGBDescriptor
 
     public boolean isOutOfGamut(CIELCh LCh) {
       //==========================================================================
-      // ¥ı­pºâ¶Ç¤JªºLCh
+      // å…ˆè¨ˆç®—å‚³å…¥çš„LCh
       //==========================================================================
       LCh.getValues(tmpValues);
       double[] rgbValues = pcs.fromPCSCIELChValues(tmpValues);
@@ -170,14 +170,14 @@ public abstract class GamutBoundaryRGBDescriptor
     }
 
     /**
-     * ­pºâ¸ÓÂI©Ò¹ï¬M¨ìªºÃä¬É
+     * è¨ˆç®—è©²é»æ‰€å°æ˜ åˆ°çš„é‚Šç•Œ
      *
      * @param LCh CIELCh
      * @return CIELCh
      */
     public CIELCh getBoundaryLCh(CIELCh LCh) {
       //==========================================================================
-      // ¥ı­pºâ¶Ç¤JªºLCh
+      // å…ˆè¨ˆç®—å‚³å…¥çš„LCh
       //==========================================================================
       LCh.getValues(tmpValues);
       double[] rgbValues = pcs.fromPCSCIELChValues(tmpValues);
@@ -185,8 +185,8 @@ public abstract class GamutBoundaryRGBDescriptor
       //==========================================================================
 
       //==========================================================================
-      // ¦pªG¦b¦â°ì¥~,´N´î¨ì¦â°ì¤º
-      // ´î¨ì¦â°ì¤º¦A©¹¥~¼W¥[±m«×,¹Gªñ¦â°ìÃä¬É,¥ÑRGBªº¦X²z©Ê¨Ó§PÂ_
+      // å¦‚æœåœ¨è‰²åŸŸå¤–,å°±æ¸›åˆ°è‰²åŸŸå…§
+      // æ¸›åˆ°è‰²åŸŸå…§å†å¾€å¤–å¢åŠ å½©åº¦,é€¼è¿‘è‰²åŸŸé‚Šç•Œ,ç”±RGBçš„åˆç†æ€§ä¾†åˆ¤æ–·
       //==========================================================================
       if (!rgb.isLegal()) {
         rgb.rationalize();
@@ -195,7 +195,7 @@ public abstract class GamutBoundaryRGBDescriptor
       //==========================================================================
 
       double[] boundary = DoubleArray.copy(tmpValues);
-      //¦pªGC¬°0,Cªº±Ò©l­È«h¥H5¶}©l
+      //å¦‚æœCç‚º0,Cçš„å•Ÿå§‹å€¼å‰‡ä»¥5é–‹å§‹
       double step = (tmpValues[1] == 0) ? 5 : tmpValues[1] / 2.;
       double irrationalValue = 0;
 
@@ -228,7 +228,7 @@ public abstract class GamutBoundaryRGBDescriptor
 
         }
         else {
-          //¦X²zªº¸Ü
+          //åˆç†çš„è©±
           DoubleArray.copy(tmpValues, boundary);
         }
       }
@@ -240,7 +240,7 @@ public abstract class GamutBoundaryRGBDescriptor
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * §ä´M¦â°ìÃä¬Éªº¤èªk
+   * æ‰¾å°‹è‰²åŸŸé‚Šç•Œçš„æ–¹æ³•
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -250,10 +250,10 @@ public abstract class GamutBoundaryRGBDescriptor
    * @version 1.0
    */
   public static enum Style {
-    //³v¨B¼W¥[chromaªº¤è¦¡
+    //é€æ­¥å¢åŠ chromaçš„æ–¹å¼
     Step,
-    //¤G¤¸·j´Mªk·f°tThresholdªº­­¨î,½T«O§ä¨ìªºchroma»~®t¦bthreshold¥H¤º
-    //¦Ó¥B¬O¥HD65¬°¥ÕÂI, ¦Ó¤£Âà´«¨ìPCS¤U, ´î¤ÖÂà´«­°§C»~®tµo¥Íªº¥i¯à
+    //äºŒå…ƒæœå°‹æ³•æ­é…Thresholdçš„é™åˆ¶,ç¢ºä¿æ‰¾åˆ°çš„chromaèª¤å·®åœ¨thresholdä»¥å…§
+    //è€Œä¸”æ˜¯ä»¥D65ç‚ºç™½é», è€Œä¸è½‰æ›åˆ°PCSä¸‹, æ¸›å°‘è½‰æ›é™ä½èª¤å·®ç™¼ç”Ÿçš„å¯èƒ½
     D65Threshold
   }
 

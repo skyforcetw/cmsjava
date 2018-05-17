@@ -12,8 +12,8 @@ import shu.math.array.DoubleArray;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ±N­ì©lªºMunsellªº¥úÃĞ¸ê®Æ, Âà¦¨CMSJava¥i¥H³B²zªº¸ê®Æ®æ¦¡.
- * ¬°ªº¬O´î§C¸ê®Æºû«×¥H¤Î´î¤ÖÂà´«©Ò»İ­nªº®É¶¡»PªÅ¶¡.
+ * å°‡åŸå§‹çš„Munsellçš„å…‰è­œè³‡æ–™, è½‰æˆCMSJavaå¯ä»¥è™•ç†çš„è³‡æ–™æ ¼å¼.
+ * ç‚ºçš„æ˜¯æ¸›ä½è³‡æ–™ç¶­åº¦ä»¥åŠæ¸›å°‘è½‰æ›æ‰€éœ€è¦çš„æ™‚é–“èˆ‡ç©ºé–“.
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

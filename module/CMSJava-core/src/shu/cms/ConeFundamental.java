@@ -67,7 +67,7 @@ public class ConeFundamental
       new ConeFundamental[CFInfos.length];
 
   /**
-   * ªì©l¤ÆCMF
+   * åˆå§‹åŒ–CMF
    */
   static {
     for (int x = 0; x < CFInfos.length; x++) {

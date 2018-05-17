@@ -11,26 +11,26 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ±Ä¥Î°õ¦æºü¶i¦æ¼Ò¦¡ªº¹Bºâ»İ·f°t¦¹Ãş§O
- * ´£¨Ñ¤F¨Ï¥Î°õ¦æºü¹Bºâªº¤@¨ÇÃş§O¥H¤Î¨ç¦¡
+ * æ¡ç”¨åŸ·è¡Œç·’é€²è¡Œæ¨¡å¼çš„é‹ç®—éœ€æ­é…æ­¤é¡åˆ¥
+ * æä¾›äº†ä½¿ç”¨åŸ·è¡Œç·’é‹ç®—çš„ä¸€äº›é¡åˆ¥ä»¥åŠå‡½å¼
  *
- * ThreadCalculatorªº³]­p²z½×:
- * ·íªì¶}µoSCurve2 & YY¼Ò¦¡ ®É,µo²{ÁöµM¼Ò¦¡¥»¨­¦³©Ò®t²§,
- * ¦ı¬O¨D­Èªº¤è¦¡,¤£¥~¥G´N¬O­¡¥N: §ïÅÜ°Ñ¼Æ¨Ã¥B¤ñ¸û¦â®t
- * ¥H©â¶H·§©À¨Ó»¡,¤è¦¡¥i¥H»¡¬O¤@¼Ëªº.
- * ¦]¦¹¦Ò¼{§â­¡¥Nªº¥\¯à¿W¥ß¥X¨Ó,©Ò¥H¤~²£¥Í¤FThreadCalculator.
+ * ThreadCalculatorçš„è¨­è¨ˆç†è«–:
+ * ç•¶åˆé–‹ç™¼SCurve2 & YYæ¨¡å¼ æ™‚,ç™¼ç¾é›–ç„¶æ¨¡å¼æœ¬èº«æœ‰æ‰€å·®ç•°,
+ * ä½†æ˜¯æ±‚å€¼çš„æ–¹å¼,ä¸å¤–ä¹å°±æ˜¯è¿­ä»£: æ”¹è®Šåƒæ•¸ä¸¦ä¸”æ¯”è¼ƒè‰²å·®
+ * ä»¥æŠ½è±¡æ¦‚å¿µä¾†èªª,æ–¹å¼å¯ä»¥èªªæ˜¯ä¸€æ¨£çš„.
+ * å› æ­¤è€ƒæ…®æŠŠè¿­ä»£çš„åŠŸèƒ½ç¨ç«‹å‡ºä¾†,æ‰€ä»¥æ‰ç”¢ç”Ÿäº†ThreadCalculator.
  *
- * ¥t¥~,¦]À³Âù®Ö¤ß³B²z¾¹ªº¯S©Ê,ÂÂ¦³ªºµ{¦¡µLªkµo´§Âù®Ö¤ßªº®Ä¯à¹ê¦b¬O«Ü¥i±¤.
- * ¨ä¹ê¥u­n¯à°÷§â¹Bºâ®Ö¤ßªº³¡¥÷³]­p¦¨¦h­ÓThreadªº¤è¦¡,
- * ¤£¦PThread´N¥i¥H¤À°t¨ì¤£¦Pªº®Ö¤ß¤W¹Bºâ.
- * ¦p¦¹¬ù¥i¼W¶i¹Bºâ®Ä²v30%~50%
- * ©Ò¥H¤~¦³ "Thread"Calculator ³o­Ó¦W¦rªº¥Ñ¨Ó.
+ * å¦å¤–,å› æ‡‰é›™æ ¸å¿ƒè™•ç†å™¨çš„ç‰¹æ€§,èˆŠæœ‰çš„ç¨‹å¼ç„¡æ³•ç™¼æ®é›™æ ¸å¿ƒçš„æ•ˆèƒ½å¯¦åœ¨æ˜¯å¾ˆå¯æƒœ.
+ * å…¶å¯¦åªè¦èƒ½å¤ æŠŠé‹ç®—æ ¸å¿ƒçš„éƒ¨ä»½è¨­è¨ˆæˆå¤šå€‹Threadçš„æ–¹å¼,
+ * ä¸åŒThreadå°±å¯ä»¥åˆ†é…åˆ°ä¸åŒçš„æ ¸å¿ƒä¸Šé‹ç®—.
+ * å¦‚æ­¤ç´„å¯å¢é€²é‹ç®—æ•ˆç‡30%~50%
+ * æ‰€ä»¥æ‰æœ‰ "Thread"Calculator é€™å€‹åå­—çš„ç”±ä¾†.
  *
- * ªşµù:
- * ¥Ñ©óThreadCalculatorªº³]­p¬O¦bLCDModel³]­p¨ì¤@¥b¤~¨M©w¥[¶i¨Óªº,
- * «Ü¦h¦a¤è³£¬O¬°¤F¶}µo¤è«K¤~°µªº§´¨ó³]­p.
- * ¦]¦¹¦s¦b«Ü¦h·PÄ±«Ü¦h¾l¤S·MÄøªº³]­p...
- * ¤£¹L¶}µo®É¶¡ªº­­¨î¤U,¨M©w¥ı¤£²z·|....Orz
+ * é™„è¨»:
+ * ç”±æ–¼ThreadCalculatorçš„è¨­è¨ˆæ˜¯åœ¨LCDModelè¨­è¨ˆåˆ°ä¸€åŠæ‰æ±ºå®šåŠ é€²ä¾†çš„,
+ * å¾ˆå¤šåœ°æ–¹éƒ½æ˜¯ç‚ºäº†é–‹ç™¼æ–¹ä¾¿æ‰åšçš„å¦¥å”è¨­è¨ˆ.
+ * å› æ­¤å­˜åœ¨å¾ˆå¤šæ„Ÿè¦ºå¾ˆå¤šé¤˜åˆæ„šè ¢çš„è¨­è¨ˆ...
+ * ä¸éé–‹ç™¼æ™‚é–“çš„é™åˆ¶ä¸‹,æ±ºå®šå…ˆä¸ç†æœƒ....Orz
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -42,12 +42,12 @@ import shu.util.log.*;
 public final class ThreadCalculator {
 
   /**
-   * Ãö±¼(false)¤ñ¸û§Ö,¦Ó¥B¥´¶}ÁÙ¦³¤@¨Ç°İÃD¦s¦b(­pºâµ²ªG¤£¤@­P)
-   * ®ÄªG©|¥¼´ú¸Õ,«ØÄ³¤£­n§ó°Ê
+   * é—œæ‰(false)æ¯”è¼ƒå¿«,è€Œä¸”æ‰“é–‹é‚„æœ‰ä¸€äº›å•é¡Œå­˜åœ¨(è¨ˆç®—çµæœä¸ä¸€è‡´)
+   * æ•ˆæœå°šæœªæ¸¬è©¦,å»ºè­°ä¸è¦æ›´å‹•
    */
   public final static boolean STOP_WHEN_TOUCHED = false;
 
-  //¹Bºâªº°õ¦æºü¼Æ¶q
+  //é‹ç®—çš„åŸ·è¡Œç·’æ•¸é‡
   public final static int THREAD_COUNT = 4;
 
   /**
@@ -55,7 +55,7 @@ public final class ThreadCalculator {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ­n»PThreadCalculator¦@°µªºÃş§O,»İ­n¹ê§@¦¹¤¶­±
+   * è¦èˆ‡ThreadCalculatorå…±åšçš„é¡åˆ¥,éœ€è¦å¯¦ä½œæ­¤ä»‹é¢
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -66,32 +66,32 @@ public final class ThreadCalculator {
    */
   public interface Cooperation {
     /**
-     * ­¡¥N¨Ã¥B²£¥Í³ø§i
+     * è¿­ä»£ä¸¦ä¸”ç”¢ç”Ÿå ±å‘Š
      * @param coefficient IterateCoefficient
      * @return IterativeReport
      */
     IterativeReport iterateAndReport(IterateCoefficient coefficient);
 
     /**
-     * ²£¥Í­¡¥N°Ñ¼Æ
+     * ç”¢ç”Ÿè¿­ä»£åƒæ•¸
      * @return IterateCoefficient
      */
     IterateCoefficient produceIterateCoefficient();
 
     /**
-     * ­¡¥Nªº¦¸¼Æ
+     * è¿­ä»£çš„æ¬¡æ•¸
      * @return int
      */
     int getMaxIterativeTimes();
 
     /**
-     * ­¡¥Nstepªº¤ñ¨Ò
+     * è¿­ä»£stepçš„æ¯”ä¾‹
      * @return int
      */
     double getStepRate();
 
     /**
-     * ­¡¥N½d³òªº¤ñ¨Ò
+     * è¿­ä»£ç¯„åœçš„æ¯”ä¾‹
      * @return int
      */
     double getRangeRate();
@@ -101,7 +101,7 @@ public final class ThreadCalculator {
   }
 
   /**
-   * ±qfutureList·í¤¤,§ä¨ì³Ì¨ÎªºIterativeReport
+   * å¾futureListç•¶ä¸­,æ‰¾åˆ°æœ€ä½³çš„IterativeReport
    * @param futureList List
    * @param executorService ExecutorService
    * @return IterativeReport
@@ -109,16 +109,16 @@ public final class ThreadCalculator {
   public final static IterativeReport getBestIterativeReport(List<Future<
       IterativeReport>> futureList, ExecutorService executorService) {
     //==========================================================================
-    //±N©Ò¦³¹Bºâµ²ªG¤¤,§ä¥X³Ì¨Îµ²ªG
+    //å°‡æ‰€æœ‰é‹ç®—çµæœä¸­,æ‰¾å‡ºæœ€ä½³çµæœ
     //==========================================================================
     IterativeReport bestReport = null;
     int size = futureList.size();
-    //¬ö¿ı¤W¤@­ÓdeltaE
+    //ç´€éŒ„ä¸Šä¸€å€‹deltaE
     double lastMeasuredDeltaE = Double.MAX_VALUE;
     try {
       for (Future<IterativeReport> f : futureList) {
         Logger.log.info( (futureList.indexOf(f) + 1) + "/" + size);
-        //¨ú¥X¹Bºâµ²ªG.¦pªG¹Bºâ©|¥¼¦³µ²ªG,process·|¿ğº¢¦bget(),ª½¨ìµ²ªG¥X¨Ó¬°¤î.
+        //å–å‡ºé‹ç®—çµæœ.å¦‚æœé‹ç®—å°šæœªæœ‰çµæœ,processæœƒé²æ»¯åœ¨get(),ç›´åˆ°çµæœå‡ºä¾†ç‚ºæ­¢.
         IterativeReport iReport = f.get();
         if (iReport == null) {
           continue;
@@ -137,7 +137,7 @@ public final class ThreadCalculator {
 
         if (ThreadCalculator.STOP_WHEN_TOUCHED) {
           //======================================================================
-          //#1 iReport±N¥i¯à¥X²{ªÅ­È
+          //#1 iReportå°‡å¯èƒ½å‡ºç¾ç©ºå€¼
           //======================================================================
           bestReport = IterativeReport.analyzeIterativeReport(bestReport,
               iReport);
@@ -145,16 +145,16 @@ public final class ThreadCalculator {
         }
         else {
           //======================================================================
-          //#2 ¨Ì·ÓÁÍ¶Õ³]©wbestReport
+          //#2 ä¾ç…§è¶¨å‹¢è¨­å®šbestReport
           //======================================================================
-          //ªí¥Ü©|¥¼³]©wdeltaE
+          //è¡¨ç¤ºå°šæœªè¨­å®šdeltaE
           if (lastMeasuredDeltaE == Double.MAX_VALUE) {
             lastMeasuredDeltaE = measuredDeltaE;
           }
           else {
             double diff = measuredDeltaE - lastMeasuredDeltaE;
             lastMeasuredDeltaE = measuredDeltaE;
-            //ªí¥ÜdeltaE¶}©l¦³¤W¤ÉªºÁÍ¶Õ,©¹«áªº­¡¥N¥i¥H¨ú®ø
+            //è¡¨ç¤ºdeltaEé–‹å§‹æœ‰ä¸Šå‡çš„è¶¨å‹¢,å¾€å¾Œçš„è¿­ä»£å¯ä»¥å–æ¶ˆ
             if (diff > 0) {
               executorService.shutdownNow();
               break;
@@ -174,21 +174,21 @@ public final class ThreadCalculator {
     }
     //==========================================================================
 
-    //Ãö³¬°õ¦æºü¦À
+    //é—œé–‰åŸ·è¡Œç·’æ± 
     executorService.shutdown();
 
     return bestReport;
   }
 
   /**
-   * ¶Ç¤J¹ê§@Cooperationªºª«¥ó,¥i§ä¨ì³Ì¦nªº­¡¥N³ø§i
+   * å‚³å…¥å¯¦ä½œCooperationçš„ç‰©ä»¶,å¯æ‰¾åˆ°æœ€å¥½çš„è¿­ä»£å ±å‘Š
    * @param c Cooperation
    * @return IterativeReport
    */
   public static IterativeReport produceBestIterativeReport(Cooperation
       c) {
     //==========================================================================
-    // ­¡¥N¥ÎÅÜ¼Æ
+    // è¿­ä»£ç”¨è®Šæ•¸
     //==========================================================================
     IterativeReport bestIterativeReport = null;
     int size = c.getMaxIterativeTimes();
@@ -205,7 +205,7 @@ public final class ThreadCalculator {
         bestIterativeReport = iReport;
       }
       else {
-        //§ä¥X³Ì¦nªºµ²ªG
+        //æ‰¾å‡ºæœ€å¥½çš„çµæœ
         IterativeReport result = IterativeReport.analyzeIterativeReport(
             bestIterativeReport,
             iReport);
@@ -214,9 +214,9 @@ public final class ThreadCalculator {
         }
       }
 
-      //¦pªGÁÙ¦³¤U¤@¦¸­¡¥N,´N¶i¦æ ÅÜ§ó«Y¼Æ½d³ò
+      //å¦‚æœé‚„æœ‰ä¸‹ä¸€æ¬¡è¿­ä»£,å°±é€²è¡Œ è®Šæ›´ä¿‚æ•¸ç¯„åœ
       if (x + 1 < size) {
-        //ÅÜ§ó«Y¼Æ½d³ò
+        //è®Šæ›´ä¿‚æ•¸ç¯„åœ
         c.modifyCoefficientsRange(bestIterativeReport.factors, x);
       }
 
@@ -249,7 +249,7 @@ public final class ThreadCalculator {
         DeltaEReport.AnalyzeType analyzeType, IterativeReport bestReport) {
 
       //==========================================================
-      //®Ú¾Ú°Ñ¼Æ²£¥Í¦â¶ô
+      //æ ¹æ“šåƒæ•¸ç”¢ç”Ÿè‰²å¡Š
       //==========================================================
       List<Patch>
           modelPatchList =
@@ -275,7 +275,7 @@ public final class ThreadCalculator {
 
       if (checkType == CheckType.CheckAll) {
         //=========================================================
-        //#1 §¹¥şÀË¬d©Ò¦³deltaE
+        //#1 å®Œå…¨æª¢æŸ¥æ‰€æœ‰deltaE
         //=========================================================
         if (bestReport == null) {
           bestReport = new
@@ -289,7 +289,7 @@ public final class ThreadCalculator {
                   bestReport.deltaEReport,
                   reports[0], analyzeType, true);
 
-          //¥Nªí§ä¨ì·sªºbest report
+          //ä»£è¡¨æ‰¾åˆ°æ–°çš„best report
           if (result == reports[0]) {
             bestReport = new
                 IterativeReport(factors,
@@ -300,7 +300,7 @@ public final class ThreadCalculator {
       }
       else {
         //=========================================================
-        //#2®Ú¾ÚdeltaEªº¨«¶Õ¨M©w¬O§_­nÄ~Äò
+        //#2æ ¹æ“šdeltaEçš„èµ°å‹¢æ±ºå®šæ˜¯å¦è¦ç¹¼çºŒ
         //=========================================================
         if (bestReport == null) {
           bestReport = new
@@ -311,14 +311,14 @@ public final class ThreadCalculator {
 
         double measuredDeltaE = reports[0].meanDeltaE.getMeasuredDeltaE();
 
-        //ªí¥Ü©|¥¼³]©wdeltaE
+        //è¡¨ç¤ºå°šæœªè¨­å®šdeltaE
         if (lastMeasuredDeltaE == Double.MAX_VALUE) {
           lastMeasuredDeltaE = measuredDeltaE;
         }
         else {
           double diff = measuredDeltaE - lastMeasuredDeltaE;
           lastMeasuredDeltaE = measuredDeltaE;
-          //ªí¥ÜdeltaE¶}©l¦³¤W¤ÉªºÁÍ¶Õ,©¹«áªº­¡¥N¥i¥H¨ú®ø
+          //è¡¨ç¤ºdeltaEé–‹å§‹æœ‰ä¸Šå‡çš„è¶¨å‹¢,å¾€å¾Œçš„è¿­ä»£å¯ä»¥å–æ¶ˆ
           if (diff > 0) {
 //          break;
             return bestReport;
@@ -329,7 +329,7 @@ public final class ThreadCalculator {
                   bestReport.deltaEReport,
                   reports[0], analyzeType, true);
 
-          //¥Nªí§ä¨ì·sªºbest report
+          //ä»£è¡¨æ‰¾åˆ°æ–°çš„best report
           if (result == reports[0] &&
               result != bestReport.deltaEReport) {
             bestReport = new
@@ -349,7 +349,7 @@ public final class ThreadCalculator {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ­pºâ¥Îªº«Y¼Æ¤º®eÄ~©Ó¦Û¦¹Ãş§O
+   * è¨ˆç®—ç”¨çš„ä¿‚æ•¸å…§å®¹ç¹¼æ‰¿è‡ªæ­¤é¡åˆ¥
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *

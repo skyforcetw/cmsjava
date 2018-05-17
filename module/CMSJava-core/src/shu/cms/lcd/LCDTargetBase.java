@@ -292,9 +292,9 @@ public abstract class LCDTargetBase extends Target {
                                     new double[] {xyYArray[1].x, xyYArray[1].y});
             double d1 = Maths.delta(new double[] {xyYArray[2].x, xyYArray[2].y},
                                     new double[] {xyYArray[3].x, xyYArray[3].y});
-            //ºî¦X¨âªÌªº¶ZÂ÷
+            //ç¶œåˆå…©è€…çš„è·é›¢
             double d = (d0 + d1) / 2;
-            //¨ú¥X¬Û¹ï©ó¶ÂÂIªºxy®y¼Ğ
+            //å–å‡ºç›¸å°æ–¼é»‘é»çš„xyåº§æ¨™
             double[] dxyValues = xyYArray[2].getDeltaxy(blackxyY);
             double[] polarValues = CIExyY.cartesian2polarCoordinatesValues(
                     dxyValues[
@@ -470,7 +470,7 @@ public abstract class LCDTargetBase extends Target {
      * <p>Title: Colour Management System</p>
      *
      * <p>Description: a Colour Management System by Java</p>
-     * ¾Ş§@LCDTarget¬ÛÃöªºClass
+     * æ“ä½œLCDTargetç›¸é—œçš„Class
      *
      * <p>Copyright: Copyright (c) 2008</p>
      *
@@ -482,7 +482,7 @@ public abstract class LCDTargetBase extends Target {
     public final static class Operator {
 
         /**
-         * ¾ß¬d«G«×¬O§_»¼¼W
+         * æ’¿æŸ¥äº®åº¦æ˜¯å¦éå¢
          * @param lcdTarget LCDTarget
          * @return boolean
          */
@@ -504,7 +504,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ¾ß¬d«G«×¬O§_»¼¼W
+         * æ’¿æŸ¥äº®åº¦æ˜¯å¦éå¢
          * @param lcdTarget LCDTarget
          * @param ch Channel
          * @return boolean
@@ -525,7 +525,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * clipªº­×¥¿, ¥ÎclipÂI©P³ò¨âÂI¤º´¡¥X«G«×
+         * clipçš„ä¿®æ­£, ç”¨clipé»å‘¨åœå…©é»å…§æ’å‡ºäº®åº¦
          * @param lcdTarget LCDTarget
          * @param fixCode int
          */
@@ -536,7 +536,7 @@ public abstract class LCDTargetBase extends Target {
                 int size = patchList.size();
                 int fixIndex = size - (256 - fixCode);
                 if (size != 0 && size != 1) {
-                    //­×¥¿clippingªº²{¶H, §@ªk´N¬O¥Î¤º´¡
+                    //ä¿®æ­£clippingçš„ç¾è±¡, ä½œæ³•å°±æ˜¯ç”¨å…§æ’
                     Patch clip = patchList.get(fixIndex);
                     Patch next = patchList.get(fixIndex + 1);
 
@@ -554,7 +554,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ¨ú±o³Ì«GÂIpatchªºindex
+         * å–å¾—æœ€äº®é»patchçš„index
          * @param patchList List
          * @param startIndex int
          * @return int
@@ -573,8 +573,8 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ­×¥¿¤ÏÂàªº°İÃD
-         * ¥D­n¬O­×¥¿ 1.»ö¾¹or­±ªO¤£Ã­©w³y¦¨ªº¤ÏÂà 2.­±ªO¥»¨­¯S©Ê
+         * ä¿®æ­£åè½‰çš„å•é¡Œ
+         * ä¸»è¦æ˜¯ä¿®æ­£ 1.å„€å™¨oré¢æ¿ä¸ç©©å®šé€ æˆçš„åè½‰ 2.é¢æ¿æœ¬èº«ç‰¹æ€§
          * @param lcdTarget LCDTarget
          */
         public final static void gradationReverseFix(LCDTarget lcdTarget) {
@@ -592,7 +592,7 @@ public abstract class LCDTargetBase extends Target {
                         int brighterIndex = getBrighterIndex(patchList,
                                 preIndex);
                         double Y = 0;
-                        //¦pªG§ä¤£¨ì, ´N³]¤@¼Ë§a
+                        //å¦‚æœæ‰¾ä¸åˆ°, å°±è¨­ä¸€æ¨£å§
                         if (brighterIndex == -1) {
                             Y = pre.getXYZ().Y;
                         } else {
@@ -618,7 +618,7 @@ public abstract class LCDTargetBase extends Target {
                     }
                 }
                 if (size != 0 && size != 1) {
-                    //­×¥¿³Ì«á¤@­Ócode·|¦³¤ÏÂàªº°İÃD(gamma¤ÏÂà)
+                    //ä¿®æ­£æœ€å¾Œä¸€å€‹codeæœƒæœ‰åè½‰çš„å•é¡Œ(gammaåè½‰)
                     Patch end1Patch = patchList.get(size - 1);
                     Patch end2Patch = patchList.get(size - 2);
                     if (end2Patch.getXYZ().Y > end1Patch.getXYZ().Y) {
@@ -632,7 +632,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ­«·s­pºâLCDTargetªº­«­n«Y¼Æ
+         * é‡æ–°è¨ˆç®—LCDTargetçš„é‡è¦ä¿‚æ•¸
          * @param lcdTarget LCDTarget
          */
         private final static void recalculateLCDTarget(LCDTarget lcdTarget) {
@@ -646,7 +646,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ³]©wLCDªºNumber
+         * è¨­å®šLCDçš„Number
          * @param lcdTarget LCDTarget
          * @param number Number
          */
@@ -656,7 +656,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * µ²¦X¨â­ÓLCDTarget¦¨¤@­Ó
+         * çµåˆå…©å€‹LCDTargetæˆä¸€å€‹
          * @param target1 LCDTarget
          * @param target2 LCDTarget
          * @return LCDTarget
@@ -681,7 +681,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ±Ntargets§@¥­§¡
+         * å°‡targetsä½œå¹³å‡
          * @param targets LCDTarget[]
          * @return LCDTarget
          */
@@ -714,7 +714,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ¨ú±otargets©Ò¦³ªºdescription
+         * å–å¾—targetsæ‰€æœ‰çš„description
          * @param targets LCDTarget[]
          * @return String
          */
@@ -739,11 +739,11 @@ public abstract class LCDTargetBase extends Target {
         public final static LCDTarget measure(Source source,
                                               LCDTargetBase.Number number,
                                               boolean calibrate, DICOM dicom) {
-            //¨ú±o¬Û¹ïÀ³ªºmeter
+            //å–å¾—ç›¸å°æ‡‰çš„meter
             Meter meter = getMeter(source);
-            //§âmeter¸ò¶q´úµ{§Çµ²¦X
+            //æŠŠmeterè·Ÿé‡æ¸¬ç¨‹åºçµåˆ
             MeterMeasurement mm = new MeterMeasurement(meter, dicom, calibrate);
-            //³]©w¬O§_­n¸Ñ¨M¤ÏÂà
+            //è¨­å®šæ˜¯å¦è¦è§£æ±ºåè½‰
             mm.setDo255InverseMode(InverseModeMeasure);
             mm.setDoBlankInsert(MeasureBlankInsert);
             mm.setBlankTimes(MeasureBlankTime);
@@ -775,20 +775,20 @@ public abstract class LCDTargetBase extends Target {
                 getInstance();
 
         /**
-         * ¬O§_¨Ì·ÓRGBªº«G«×¥ı°µ±Æ§Ç
+         * æ˜¯å¦ä¾ç…§RGBçš„äº®åº¦å…ˆåšæ’åº
          */
         private static boolean SortByRGBLumi = false;
         /**
-         * ¶q´ú®É¬O§_¥ı´¡¶Â¦A¶q
+         * é‡æ¸¬æ™‚æ˜¯å¦å…ˆæ’é»‘å†é‡
          */
         private static boolean MeasureBlankInsert = false;
         /**
-         * ´¡¶Âªº®É¶¡
+         * æ’é»‘çš„æ™‚é–“
          */
         private static int MeasureBlankTime = MeterMeasurement.
                                               DefaultBlankTimes;
         /**
-         * ¶q´ú¦â¶ô¤§¶¡ªºµ¥«İ®É¶¡
+         * é‡æ¸¬è‰²å¡Šä¹‹é–“çš„ç­‰å¾…æ™‚é–“
          */
         private static int MeasureWaitTime = MeterMeasurement.DefaultWaitTimes;
 
@@ -804,7 +804,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ¬O§_°w¹ï¤ÏÂàªº­±ªO¯S§O³B²z
+         * æ˜¯å¦é‡å°åè½‰çš„é¢æ¿ç‰¹åˆ¥è™•ç†
          */
         private static boolean InverseModeMeasure = true;
 
@@ -825,7 +825,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ³]©w¬O§_¨Ì·ÓRGBªº«G«×¥ı°µ±Æ§Ç
+         * è¨­å®šæ˜¯å¦ä¾ç…§RGBçš„äº®åº¦å…ˆåšæ’åº
          * @param sortByRGBLumi boolean
          */
         public final static void setSortByRGBLumi(boolean sortByRGBLumi) {
@@ -841,13 +841,13 @@ public abstract class LCDTargetBase extends Target {
                 Collections.sort(list, rgbComparator);
                 rgbList = list;
             }
-            //¶q´ú
+            //é‡æ¸¬
             List<Patch>
                     patchList = meterMeasurement.measure(rgbList, patchNameList);
             if (patchList.size() != rgbList.size()) {
                 return null;
             }
-            //Âà´«¦¨LCDTarget
+            //è½‰æ›æˆLCDTarget
             LCDTarget lcdTarget = LCDTarget.Instance.get(patchList, number,
                     InverseModeMeasure);
             Meter meter = meterMeasurement.getMeter();
@@ -855,7 +855,7 @@ public abstract class LCDTargetBase extends Target {
             lcdTarget.measureMetadata.instrument = meter.getType();
 
             //========================================================================
-            // ¹w¥ıÀx¦s°_¨Ó
+            // é å…ˆå„²å­˜èµ·ä¾†
             //========================================================================
             String numberName = (lcdTarget.getNumber() !=
                                  LCDTargetBase.Number.Unknow) ?
@@ -875,7 +875,7 @@ public abstract class LCDTargetBase extends Target {
         private final static void saveToLogoLog(LCDTarget lcdTarget,
                                                 String filename) {
             //========================================================================
-            // ¥Ø¿ı¤£¦s¦b´N«Ø¥ß¥Ø¿ı
+            // ç›®éŒ„ä¸å­˜åœ¨å°±å»ºç«‹ç›®éŒ„
             //========================================================================
             File dir = new File(LogoLogDir);
             if (!dir.exists()) {
@@ -932,7 +932,7 @@ public abstract class LCDTargetBase extends Target {
     final static class Filename {
 
         /**
-         * ÂÇ¥Ñsource¤ÎfileType¨Ó²£¥Í¹ïÀ³ªºfilename(or dirname)
+         * è—‰ç”±sourceåŠfileTypeä¾†ç”¢ç”Ÿå°æ‡‰çš„filename(or dirname)
          * @param device String
          * @param source Source
          * @param room Room
@@ -1050,7 +1050,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ¨Ì·Ó¦U­Ótag²£¥ÍÀÉ®×¦WºÙ
+         * ä¾ç…§å„å€‹tagç”¢ç”Ÿæª”æ¡ˆåç¨±
          * @param device String
          * @param source Source
          * @param room Room
@@ -1112,7 +1112,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ¨ú±ofilename¸Ì­±ªºfilename(¥h°£±¼¸ô®|)
+         * å–å¾—filenameè£¡é¢çš„filename(å»é™¤æ‰è·¯å¾‘)
          * @param filename String
          * @return String
          */
@@ -1136,7 +1136,7 @@ public abstract class LCDTargetBase extends Target {
 
     public static enum Number {
         //==========================================================================
-        // ¤Ö¶q¦â¶ô
+        // å°‘é‡è‰²å¡Š
         //==========================================================================
         BlackAndWhite(2, "Black&White", TargetType.Unknow, -1, ""),
         FourColor(4, "4Color", TargetType.Unknow, -1, ""),
@@ -1144,22 +1144,22 @@ public abstract class LCDTargetBase extends Target {
         //==========================================================================
 
         //==========================================================================
-        // ³W«ß¦â¶ô
+        // è¦å¾‹è‰²å¡Š
         //==========================================================================
         //PLCC
         PLCC(58, "PLCC", TargetType.Unknow, -1, ""),
-        //125¤¤ ³æ¤@»P¨â¨â from 125
+        //125ä¸­ å–®ä¸€èˆ‡å…©å…© from 125
         Patch62(62, null, TargetType.Unknow, -1, ""),
-        //8874¥Îªº³Ì¤Ö¶q´úÂI
+        //8874ç”¨çš„æœ€å°‘é‡æ¸¬é»
         Patch79(79, "Patch 79", TargetType.Unknow, -1, ""),
         //5*5*5
         Patch125(125, "Lo 125", TargetType.Unknow, 63, ""),
-        //³æ¤@»P¨â¨â(¥i±q729±À)
+        //å–®ä¸€èˆ‡å…©å…©(å¯å¾729æ¨)
         Patch218(218, "Lo 218", TargetType.Unknow, 32, ""),
         //==========================================================================
 
         //==========================================================================
-        // ¯S§O©ÎÃø©w¸q¦â¶ô
+        // ç‰¹åˆ¥æˆ–é›£å®šç¾©è‰²å¡Š
         //==========================================================================
         Unknow( -1, null, TargetType.Unknow, -1, ""),
         //UGRA
@@ -1167,7 +1167,7 @@ public abstract class LCDTargetBase extends Target {
                             ""),
         //WHQL
         WHQL(46, "WHQL", TargetType.Unknow, -1, ""),
-        //XRite¤º«Ø®Õ¥¿¿Ã¹õ¥Î99¦â¶ô
+        //XRiteå…§å»ºæ ¡æ­£è¢å¹•ç”¨99è‰²å¡Š
         XRite2_0(99, "LCD Monitor Reference 2.0", TargetType.Unknow,
                  -1, "LCD Monitor Reference 2.0"),
         Surface1352(1352, "", TargetType.Unknow, 17, "Surface Color 1352"),
@@ -1175,7 +1175,7 @@ public abstract class LCDTargetBase extends Target {
         //==========================================================================
 
         //==========================================================================
-        // ¬Û¾÷¥Î¦â¶ô
+        // ç›¸æ©Ÿç”¨è‰²å¡Š
         //==========================================================================
 //    ColorChecker24(24, "Color Checker 24", TargetType.Camera, -1,
 //                   "Color Checker 24"),
@@ -1185,7 +1185,7 @@ public abstract class LCDTargetBase extends Target {
         //==========================================================================
         // ramp
         //==========================================================================
-        //W 0~255,¥i¥Î¨Ó´ú¸Õ»ö¾¹Ã­©w«×
+        //W 0~255,å¯ç”¨ä¾†æ¸¬è©¦å„€å™¨ç©©å®šåº¦
         Ramp256W(256, "Ramp 256 W", 1, "", RGBBase.Channel.W),
         Ramp256R(256, "Ramp 256 R", 1, "", RGBBase.Channel.R),
         Ramp256G(256, "Ramp 256 G", 1, "", RGBBase.Channel.G),
@@ -1193,52 +1193,52 @@ public abstract class LCDTargetBase extends Target {
         Ramp256R_W(257, "Ramp 256 R+W", 1, "", RGBBase.Channel.R),
         Ramp256G_W(257, "Ramp 256 G+W", 1, "", RGBBase.Channel.G),
         Ramp256B_W(257, "Ramp 256 B+W", 1, "", RGBBase.Channel.B),
-        //step¬°4
+        //stepç‚º4
         Ramp256_6Bit(256, "Ramp 256(6bit)", 4, "", true,
                      RGBBase.Channel.RGBWChannel),
-        //step¬°4
+        //stepç‚º4
         Ramp257_6Bit(257, "Ramp 257(6bit)", 4, "", true,
                      RGBBase.Channel.RGBWChannel),
-        //step¬°4,¥[¤W³Ì«á¥|­Ó255: 64*4+1*4=260 from 1024
+        //stepç‚º4,åŠ ä¸Šæœ€å¾Œå››å€‹255: 64*4+1*4=260 from 1024
         Ramp260(260, null, 4, "Ramp 260",
                 RGBBase.Channel.RGBWChannel),
-        //step¬°2ªºR/G/B/Grey from 1021
+        //stepç‚º2çš„R/G/B/Grey from 1021
         Ramp509(509, null, 2, "Ramp 509",
                 RGBBase.Channel.RGBWChannel),
-        //step¬°1,¶È¦³RGBªºramp,¥[¤W³Ì«áªº¥Õ
+        //stepç‚º1,åƒ…æœ‰RGBçš„ramp,åŠ ä¸Šæœ€å¾Œçš„ç™½
         Ramp256RGB_W(767, "Ramp 256 RGB+W", 1, "",
                      RGBBase.Channel.RGBChannel),
 
-        //step¬°2ªºR/G/B/C/M/Y/Grey(W) from 1792
+        //stepç‚º2çš„R/G/B/C/M/Y/Grey(W) from 1792
         Ramp896(896, null, 2, "Ramp 896",
                 RGBBase.Channel.RGBYMCWChannel),
-        //step¬°2ªºR/G/B/C/M/Y/Grey(W)
+        //stepç‚º2çš„R/G/B/C/M/Y/Grey(W)
         Ramp897(897, "Ramp 897", 2, "",
                 RGBBase.Channel.RGBYMCWChannel),
-        //step¬°1ªºR/G/B/Grey
+        //stepç‚º1çš„R/G/B/Grey
         Ramp1021(1021, "Ramp 1021", 1, "",
                  RGBBase.Channel.RGBWChannel),
-        //step¬°1ªºR/G/B/Grey (black¦³­«½Æ) (from VastView)
+        //stepç‚º1çš„R/G/B/Grey (blackæœ‰é‡è¤‡) (from VastView)
         Ramp1024(1024, "Ramp 1024", 1, "",
                  RGBBase.Channel.RGBWChannel),
-        //step¬°1ªºR/G/B/C/M/Y/Grey(W) (black¦³­«½Æ) (from VastView)
+        //stepç‚º1çš„R/G/B/C/M/Y/Grey(W) (blackæœ‰é‡è¤‡) (from VastView)
         Ramp1792(1792, "Ramp 1792", 1, "",
                  RGBBase.Channel.RGBYMCWChannel),
 
-        //step¬°.5ªºR/G/B/Grey(W) (white¦³­«½Æ)
+        //stepç‚º.5çš„R/G/B/Grey(W) (whiteæœ‰é‡è¤‡)
         Ramp2048(2048, null, .5, "", RGBBase.Channel.RGBWChannel),
-        //step¬°.5ªºR/G/B/C/M/Y/Grey(W)
+        //stepç‚º.5çš„R/G/B/C/M/Y/Grey(W)
         Ramp3577(3577, null, .5, "", RGBBase.Channel.RGBYMCWChannel),
-        //step¬°.25ªºR/G/B/Grey(W)
+        //stepç‚º.25çš„R/G/B/Grey(W)
         Ramp4084(4084, null, .25, "", RGBBase.Channel.RGBWChannel),
-        //step¬°.25ªºR/G/B/Grey(W) (white¦³­«½Æ)
+        //stepç‚º.25çš„R/G/B/Grey(W) (whiteæœ‰é‡è¤‡)
         Ramp4096(4096, null, .25, "", RGBBase.Channel.RGBWChannel),
         Ramp16320(16320, null, 0.0625, "",
                   RGBBase.Channel.RGBWChannel),
-        //step¬°.25ªºR/G/B/C/M/Y/Grey(W)
+        //stepç‚º.25çš„R/G/B/C/M/Y/Grey(W)
         Ramp7147(7147, null, .25, "",
                  RGBBase.Channel.RGBYMCWChannel),
-        //step¬°.25ªºR/G/B/C/M/Y/Grey(W) (white¦³­«½Æ) (from VastView)
+        //stepç‚º.25çš„R/G/B/C/M/Y/Grey(W) (whiteæœ‰é‡è¤‡) (from VastView)
         Ramp7168(7168, null, .25, "",
                  RGBBase.Channel.RGBYMCWChannel),
         //==========================================================================
@@ -1268,16 +1268,16 @@ public abstract class LCDTargetBase extends Target {
         //==========================================================================
         // xtalk
         //==========================================================================
-        //16*16*3+white "¥u¦³"¨â¨â¦³­È
+        //16*16*3+white "åªæœ‰"å…©å…©æœ‰å€¼
         Xtalk769(769, "Xtalk 769", TargetType.XTalk, 16, ""),
-        // 6bit±M¥Î,32*32*x+white
+        // 6bitå°ˆç”¨,32*32*x+white
         Xtalk3073_6Bit(3073, "Xtalk 3073(6bit)", TargetType.XTalk,
                        8, "", true),
         Xtalk589_6Bit(589, "Xtalk 589(6bit)", TargetType.XTalk,
                       20, "", true),
-        //38*38*3+white ¨â¨â¦³­È
+        //38*38*3+white å…©å…©æœ‰å€¼
         Xtalk4333(4333, "Xtalk 4333", TargetType.XTalk, 7, ""),
-        //38*38*3+white "¥u¦³"¨â¨â¦³­È
+        //38*38*3+white "åªæœ‰"å…©å…©æœ‰å€¼
         Xtalk4108(4108, "Xtalk 4108", TargetType.XTalk, 7, ""),
         Xtalk5548(5548, "Xtalk 5548", TargetType.XTalk, 6, ""),
         Xtalk7804(7804, "Xtalk 7804", TargetType.XTalk, 5, ""),
@@ -1588,7 +1588,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ±qch¨Ó¨ú±o¹ïÀ³ªºramp256
+         * å¾chä¾†å–å¾—å°æ‡‰çš„ramp256
          * @param ch Channel
          * @param withWhite boolean
          * @return Number
@@ -1665,7 +1665,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ¨ú¥X³¡¥÷ªºtarget
+         * å–å‡ºéƒ¨ä»½çš„target
          * @param device Device
          * @param source Source
          * @param room Room
@@ -1712,7 +1712,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * Âo¥X¬Y­Ó½d³òRGBªº¦â¶ô,¨Ã¥B²£¥Í¬°LCDTarget
+         * æ¿¾å‡ºæŸå€‹ç¯„åœRGBçš„è‰²å¡Š,ä¸¦ä¸”ç”¢ç”Ÿç‚ºLCDTarget
          * @param target LCDTarget
          * @param rgbStartIn255 int
          * @param rgbEndIn255 int
@@ -1744,7 +1744,7 @@ public abstract class LCDTargetBase extends Target {
                                     end);
             Patch.Filter.RGBInRange(patchList, tmp, RGBBase.Channel.W, start,
                                     end);
-            //¦pªG¥]§t¨ì0,°O±o§â0¥[¦^¥h,¦]¬°filterRGBInRange¨S¿ìªk¦Ò¼{¨ì0
+            //å¦‚æœåŒ…å«åˆ°0,è¨˜å¾—æŠŠ0åŠ å›å»,å› ç‚ºfilterRGBInRangeæ²’è¾¦æ³•è€ƒæ…®åˆ°0
             if (rgbStartIn255 == 0) {
                 tmp.add(target.getBlackPatch());
             }
@@ -1851,7 +1851,7 @@ public abstract class LCDTargetBase extends Target {
                             instrumentation);
                 } catch (IllegalArgumentException ex) {
                     //======================================================================
-                    // ¬°¤F¦V«eªº¬Û®e©Ê
+                    // ç‚ºäº†å‘å‰çš„ç›¸å®¹æ€§
                     //======================================================================
                     if ("dummy meter".equals(instrumentation)) {
                         lcdTarget.measureMetadata.instrument = Meter.Instr.
@@ -1861,7 +1861,7 @@ public abstract class LCDTargetBase extends Target {
                                 Argyll;
                     }
                     //======================================================================
-                    //§ä¤£¨ì´Nºâ¤F
+                    //æ‰¾ä¸åˆ°å°±ç®—äº†
                 }
             }
             return lcdTarget;
@@ -1931,7 +1931,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ±qnumber¨ú¥Xreference¤U¹ïÀ³ªºrgb list
+         * å¾numberå–å‡ºreferenceä¸‹å°æ‡‰çš„rgb list
          * @param number Number
          * @return List
          */
@@ -1969,12 +1969,12 @@ public abstract class LCDTargetBase extends Target {
         }
 
         private final static TargetAdapter getNumberTargetAdapter(Number number) {
-            //¥H­pºâªº¤è¦¡²£¥Í
+            //ä»¥è¨ˆç®—çš„æ–¹å¼ç”¢ç”Ÿ
             LCDTargetNumberAdapter adapter1 = new LCDTargetNumberAdapter(number);
             if (adapter1.getRGBList() != null) {
                 return adapter1;
             } else {
-                //±qÀÉ®×Åª
+                //å¾æª”æ¡ˆè®€
                 String filename = number.referenceFilename + ".logo";
                 InputStream is = Monitor.class.getResourceAsStream(number.
                         referenceFilename + ".logo");
@@ -1992,14 +1992,14 @@ public abstract class LCDTargetBase extends Target {
         public final static LCDTarget getFromUSB4000(String dirFilename,
                 Number number) {
             //==========================================================================
-            // ¥úÃĞ­È
+            // å…‰è­œå€¼
             //==========================================================================
             USB4000Adapter adapter = new USB4000Adapter(dirFilename);
             List<Spectra> spectra = adapter.getSpectraList();
             //==========================================================================
 
             //==========================================================================
-            // RGB­È,from °Ñ¦Ò¾É¨ã
+            // RGBå€¼,from åƒè€ƒå°å…·
             //==========================================================================
             List<RGB> rgbList = getRGBList(number);
             //==========================================================================
@@ -2012,7 +2012,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ±qCA-210¨ú±o¾É¨ã¸ê®Æ,¾É¨ãªº®æ¦¡¥H¨t²Î¤º¦sªº¬°¥D
+         * å¾CA-210å–å¾—å°å…·è³‡æ–™,å°å…·çš„æ ¼å¼ä»¥ç³»çµ±å…§å­˜çš„ç‚ºä¸»
          * @param filename String
          * @param number Number
          * @return LCDTarget
@@ -2052,7 +2052,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ¥ÑTargetAdapter¨Ó²£¥Í¾É¨ã¸ê®Æ
+         * ç”±TargetAdapterä¾†ç”¢ç”Ÿå°å…·è³‡æ–™
          * @param adapter TargetAdapter
          * @return LCDTarget
          */
@@ -2061,7 +2061,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ¥ÑTargetAdapter¨Ó²£¥Í¾É¨ã¸ê®Æ
+         * ç”±TargetAdapterä¾†ç”¢ç”Ÿå°å…·è³‡æ–™
          * @param adapter TargetAdapter
          * @param number Number
          * @return LCDTarget
@@ -2123,7 +2123,7 @@ public abstract class LCDTargetBase extends Target {
         }
 
         /**
-         * ±Ncomplex¤U­ì¥»ªº¦h­ÓLCDTarget¦X¨Ö¬°³æ¤@­Ó
+         * å°‡complexä¸‹åŸæœ¬çš„å¤šå€‹LCDTargetåˆä½µç‚ºå–®ä¸€å€‹
          * @param source Source
          * @param number Number
          * @param fileType FileType
@@ -2232,7 +2232,7 @@ public abstract class LCDTargetBase extends Target {
                                           Number number, FileType fileType,
                                           String dirTag, String fileTag) {
             //=========================================================================
-            // ¹LÂo¥X±qÀÉ®×²£¥Íªº¦â¶ôÀÉ(¨ú¥X³¡¤À¤º®e)
+            // éæ¿¾å‡ºå¾æª”æ¡ˆç”¢ç”Ÿçš„è‰²å¡Šæª”(å–å‡ºéƒ¨åˆ†å…§å®¹)
             //=========================================================================
             LCDTarget part = getByPart(device, source, room, illuminant, number);
             if (part != null) {
@@ -2241,7 +2241,7 @@ public abstract class LCDTargetBase extends Target {
             //=========================================================================
 
             //=========================================================================
-            // ²£¥ÍLCDTarget©Ò»İ¦U¶µ°Ñ¼Æ
+            // ç”¢ç”ŸLCDTargetæ‰€éœ€å„é …åƒæ•¸
             //=========================================================================
             String filename = Filename.produceFilename(device, source, room,
                     illuminant, number, fileType,
@@ -2250,7 +2250,7 @@ public abstract class LCDTargetBase extends Target {
             boolean multiTarget = !new File(filename).exists() &&
                                   number.isComplex();
             if (multiTarget) {
-                //¦pªGcomplexÀÉ®×¤£¦s¦b, «h¥H¦hÀÉ¸ü¤J¦X¨Ö³B²zªº¤è¦¡
+                //å¦‚æœcomplexæª”æ¡ˆä¸å­˜åœ¨, å‰‡ä»¥å¤šæª”è¼‰å…¥åˆä½µè™•ç†çš„æ–¹å¼
                 String[] filenames = Filename.produceLogoFilenames(device,
                         source, room,
                         illuminant, number, dirTag, fileTag);
@@ -2296,7 +2296,7 @@ public abstract class LCDTargetBase extends Target {
     }
 
     /**
-     * ªì©l¤ÆLCDªºmetadata
+     * åˆå§‹åŒ–LCDçš„metadata
      */
     void initLCDMetadata() {
         String filename = CMSDir.Measure.Monitor + "/" + device + "/meta.xml";

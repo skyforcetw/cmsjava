@@ -403,12 +403,12 @@ public class ThreeDInterpolation {
 
 
         //========================================================================
-        //µL±¯•Û±À•h
+        //ÁÑ°Ê¢ù‰ª∂Êç®Âéª
         short linearValue1 = (short) (linearValue0 / Math.pow(2, 16));
         short linearValue = (short) (c - linearValue1);
 
         //========================================================================
-        //•|±À§≠§J
+        //ÂõõÊç®‰∫îÂÖ•
 //      double linearValue1_ = linearValue0 / Math.pow(2, 15);
 //      short linearValue_ = (short) Math.round(c - linearValue1_);
         //========================================================================

@@ -52,7 +52,7 @@ public class RGBColorSpaceVerifier
 //                                                 LCDTarget.FileType.Logo,
 //                                                 null, null);
     LCDTarget lcdTarget = LCDTarget.Instance.getFromAUOXLS(
-        "D:\\My Documents\\§uß@\\µÿ§s≠pµe\\LG 42SL90QD\\Standard\\2223.xls");
+        "D:\\My Documents\\Â∑•‰Ωú\\ËèØÂ±±Ë®àÁï´\\LG 42SL90QD\\Standard\\2223.xls");
     lcdTarget = lcdTarget.targetFilter.getTest();
     RGBColorSpaceVerifier verifier = new RGBColorSpaceVerifier(lcdTarget);
     DeltaEReport.setOnlyCountMeasuredDeltaE(false);

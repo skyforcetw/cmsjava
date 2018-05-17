@@ -28,7 +28,7 @@ public class AlterableDisplayLUT extends DisplayLUT {
         undoAddValue = addValue;
         if (ch == RGBBase.Channel.W) {
             //========================================================================
-            // ½Õ¥Õ¦â, ¤]´N¬OR/G/B¤@°_°Ê
+            // èª¿ç™½è‰², ä¹Ÿå°±æ˜¯R/G/Bä¸€èµ·å‹•
             //========================================================================
             double[] results = new double[3];
             results[0] = rgbOutput[0][index] + addValue;
@@ -36,7 +36,7 @@ public class AlterableDisplayLUT extends DisplayLUT {
             results[2] = rgbOutput[2][index] + addValue;
             for (int x = 0; x < 3; x++) {
                 if (results[x] > 255 || results[x] < 0) {
-                    //¶W¥X¥i½Õ¾ã½d³ò
+                    //è¶…å‡ºå¯èª¿æ•´ç¯„åœ
                     return false;
                 }
             }
@@ -50,11 +50,11 @@ public class AlterableDisplayLUT extends DisplayLUT {
             //========================================================================
         } else {
             //========================================================================
-            // ½Õ³æ¦â
+            // èª¿å–®è‰²
             //========================================================================
             double result = rgbOutput[ch.getArrayIndex()][index] + addValue;
             if (result > 255 || result < 0) {
-                //¶W¥X¥i½Õ¾ã½d³ò
+                //è¶…å‡ºå¯èª¿æ•´ç¯„åœ
                 return false;
             }
             rgbOutput[ch.getArrayIndex()][index] = result;
@@ -67,13 +67,13 @@ public class AlterableDisplayLUT extends DisplayLUT {
     }
 
     /**
-     * ªğ¦^¤W¤@¦¸ªº­×¥¿
+     * è¿”å›ä¸Šä¸€æ¬¡çš„ä¿®æ­£
      * @return boolean
      */
     public boolean undo() {
         if (canUndo) {
             if (!addOutputValue(undoChannel, undoIndex, -undoAddValue)) {
-                //¦pªGundo¥¢±Ñ
+                //å¦‚æœundoå¤±æ•—
                 canUndo = false;
                 return false;
             }
@@ -99,7 +99,7 @@ public class AlterableDisplayLUT extends DisplayLUT {
     private RGB[] memoryOutputRGBArray;
 
     /**
-     * ±N¹ï·Óªí²{ªp°O¾Ğ°_¨Ó
+     * å°‡å°ç…§è¡¨ç¾æ³è¨˜æ†¶èµ·ä¾†
      * LUT -> memory
      */
     public void storeToMemory() {
@@ -109,7 +109,7 @@ public class AlterableDisplayLUT extends DisplayLUT {
     }
 
     /**
-     * ±q°O¾Ğ¼´¥X¨Ã¥B¸ü¤J¨ì¹ï·Óªí
+     * å¾è¨˜æ†¶æ’ˆå‡ºä¸¦ä¸”è¼‰å…¥åˆ°å°ç…§è¡¨
      * memory -> LUT
      */
     public void loadFromMemory() {
@@ -135,7 +135,7 @@ public class AlterableDisplayLUT extends DisplayLUT {
     }
 
     /**
-     * rgbOutput»PoutputRGBArray¬O§_¦P¨B
+     * rgbOutputèˆ‡outputRGBArrayæ˜¯å¦åŒæ­¥
      * @return boolean
      */
     public boolean isSync() {

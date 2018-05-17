@@ -56,9 +56,9 @@ public class FlickerTester {
 
   public static void main(String[] args) {
     String blfilename =
-        "D:\\≥n≈È\\nobody zone\\exp data\\CCTv3\\2012\\120622\\stability-bl.xls";
+        "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\exp data\\CCTv3\\2012\\120622\\stability-bl.xls";
     String lcfilename =
-        "D:\\≥n≈È\\nobody zone\\exp data\\CCTv3\\2012\\120622\\stability-lc.xls";
+        "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\exp data\\CCTv3\\2012\\120622\\stability-lc.xls";
     double[][] data0 = readLuminanceAndFlicker(blfilename);
     double[][] data1 = readLuminanceAndFlicker(lcfilename);
     printDoubleArray(data0[0]);

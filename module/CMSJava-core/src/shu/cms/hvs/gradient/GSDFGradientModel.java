@@ -18,7 +18,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¹w´ú¶¥½Õ¥~»ªªºmodel
+ * é æ¸¬éšèª¿å¤–è²Œçš„model
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -46,7 +46,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * µûÂ_lcdTarget¤Uªºchªºº¥¼h¬O§_¥­¶¶
+   * è©•æ–·lcdTargetä¸‹çš„chçš„æ¼¸å±¤æ˜¯å¦å¹³é †
    * @param lcdTarget LCDTarget
    * @param ch Channel
    * @return boolean
@@ -56,7 +56,7 @@ public class GSDFGradientModel
       throw new IllegalArgumentException(
           "lcdTarget's number:" + lcdTarget.getNumber() + " is not support.");
     }
-    //2«×µø¨¤¬Oµ¹SCIELAB¥Îªº, ¦ı¬O³oÃä¨Ã¤£±Ä¥ÎSCIELAB, ©Ò¥HÀH«Kµ¹¤@­Ó­È
+    //2åº¦è¦–è§’æ˜¯çµ¦SCIELABç”¨çš„, ä½†æ˜¯é€™é‚Šä¸¦ä¸æ¡ç”¨SCIELAB, æ‰€ä»¥éš¨ä¾¿çµ¦ä¸€å€‹å€¼
     GSDFGradientModel gm = new GSDFGradientModel(lcdTarget);
 
     return gm.isSmooth(ch);
@@ -68,7 +68,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * µûÂ_lcdTargetªºº¥¼h¬O§_¥­¶¶
+   * è©•æ–·lcdTargetçš„æ¼¸å±¤æ˜¯å¦å¹³é †
    * @param lcdTarget LCDTarget
    * @return boolean
    */
@@ -77,7 +77,7 @@ public class GSDFGradientModel
       throw new IllegalArgumentException(
           "lcdTarget's number:" + lcdTarget.getNumber() + " is not support.");
     }
-    //2«×µø¨¤¬Oµ¹SCIELAB¥Îªº, ¦ı¬O³oÃä¨Ã¤£±Ä¥ÎSCIELAB, ©Ò¥HÀH«Kµ¹¤@­Ó­È
+    //2åº¦è¦–è§’æ˜¯çµ¦SCIELABç”¨çš„, ä½†æ˜¯é€™é‚Šä¸¦ä¸æ¡ç”¨SCIELAB, æ‰€ä»¥éš¨ä¾¿çµ¦ä¸€å€‹å€¼
     GSDFGradientModel gm = new GSDFGradientModel(lcdTarget);
     boolean smooth = true;
 
@@ -115,7 +115,7 @@ public class GSDFGradientModel
   /**
    *
    * @param dataArray double[]
-   * @param isLuminance boolean ¸ê®Æªº«¬§O true:¬O«G«× false:¬OJNDI
+   * @param isLuminance boolean è³‡æ–™çš„å‹åˆ¥ true:æ˜¯äº®åº¦ false:æ˜¯JNDI
    */
   public GSDFGradientModel(double[] dataArray, boolean isLuminance) {
     super(dataArray, isLuminance);
@@ -128,7 +128,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * ±N¤£¶¶ºZÂIªºsignal¥[Á`¦¨¬°score, ¥Î¨Ó§PÂ_¥­¶¶µ{«×
+   * å°‡ä¸é †æš¢é»çš„signalåŠ ç¸½æˆç‚ºscore, ç”¨ä¾†åˆ¤æ–·å¹³é †ç¨‹åº¦
    * @param patternIndexAndSignal double[][]
    * @return double
    */
@@ -146,12 +146,12 @@ public class GSDFGradientModel
   }
 
   /**
-   * ¹w³]±Ä¥Îªºpattern¥¿­t¸¹
+   * é è¨­æ¡ç”¨çš„patternæ­£è² è™Ÿ
    */
   private PatternSign patternSign = PatternSign.Threshold;
 
   /**
-   * ¨ú±o¤£¶¶ªºPattern¥H¤Î¨äsmoothªº¤À¼Æ
+   * å–å¾—ä¸é †çš„Patternä»¥åŠå…¶smoothçš„åˆ†æ•¸
    * @return PatternAndScore
    */
   public final PatternAndScore getPatternAndScore() {
@@ -174,7 +174,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * ³]©w¬ÛÃöªº°Ñ¼Æ
+   * è¨­å®šç›¸é—œçš„åƒæ•¸
    * @param p Parameter
    */
   public void setParameter(Parameter p) {
@@ -188,16 +188,16 @@ public class GSDFGradientModel
       Threshold.Acceptable;
 
 //  public static enum PatternType {
-//    //³Ì¨S¦³°İÃDªºpattern
+//    //æœ€æ²’æœ‰å•é¡Œçš„pattern
 //    DVary
 //  }
 
   /**
-   * ­pºâ¥­§¡«G«×
+   * è¨ˆç®—å¹³å‡äº®åº¦
    * @return double
    */
   protected final double getMeanLuminance() {
-    //¨ú±oJNDIªºcurve
+    //å–å¾—JNDIçš„curve
     double[] signal = this.getJNDIndexCurve();
     int signalsize = signal.length;
     double total = 0;
@@ -219,7 +219,7 @@ public class GSDFGradientModel
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * ±Ä¥ÎªºPatternªº¥¿­t¸¹
+   * æ¡ç”¨çš„Patternçš„æ­£è² è™Ÿ
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -230,25 +230,25 @@ public class GSDFGradientModel
    */
   public static enum PatternSign {
     /**
-     * ¤£½×¥¿­t¸¹©Mthreshold ¥ş³¡¦C¥X¨Ó
+     * ä¸è«–æ­£è² è™Ÿå’Œthreshold å…¨éƒ¨åˆ—å‡ºä¾†
      */
     All,
     /**
-     * ¶W¥Xthreshold¥B¬O¥¿¼Æ
+     * è¶…å‡ºthresholdä¸”æ˜¯æ­£æ•¸
      */
     Positive,
     /**
-     * ¶W¥Xthreshold¥B¬O­t¼Æ
+     * è¶…å‡ºthresholdä¸”æ˜¯è² æ•¸
      */
     Negative,
     /**
-     * ¶W¥Xthreshold¥B¤£½×¥¿­t¼Æ
+     * è¶…å‡ºthresholdä¸”ä¸è«–æ­£è² æ•¸
      */
     Threshold
   }
 
   /**
-   * ­pºâ¤£¶¶pattern
+   * è¨ˆç®—ä¸é †pattern
    * @param type PatternSign
    * @return List
    */
@@ -269,12 +269,12 @@ public class GSDFGradientModel
       double JNDIndex = signal[signalIndex];
       double threshold = GSDFThresholdModel.getThreshold(thresholdType,
           JNDIndex, meanY, thresholdPercent);
-      if (type == PatternSign.All || //¥ş³¡
-          (type == PatternSign.Positive && pattern > threshold) || //¥¿¼Æ
-          (type == PatternSign.Negative && pattern < -threshold) || //­t¼Æ
-          (type == PatternSign.Threshold && //¥u­n¶W¥Xthreshold, ¤£½×¥¿­t
+      if (type == PatternSign.All || //å…¨éƒ¨
+          (type == PatternSign.Positive && pattern > threshold) || //æ­£æ•¸
+          (type == PatternSign.Negative && pattern < -threshold) || //è² æ•¸
+          (type == PatternSign.Threshold && //åªè¦è¶…å‡ºthreshold, ä¸è«–æ­£è² 
            (pattern > threshold || pattern < -threshold))) {
-        //¦pªGpattern > threshold
+        //å¦‚æœpattern > threshold
         double[] accel = new double[] {
             firstOrderSignal[x], firstOrderSignal[x + 1]};
         float overRatio = (float) (pattern / threshold * 100.);
@@ -294,7 +294,7 @@ public class GSDFGradientModel
     //==========================================================================
     LCDTarget.setRGBNormalize(false);
     String device = "hisense_TLM26V68";
-    String dirtag = "©ú«G";
+    String dirtag = "æ˜äº®";
     String tag = "";
     LCDTarget.FileType fileType = LCDTarget.FileType.AUORampXLS;
     LCDTarget.Source source = LCDTarget.Source.CA210;
@@ -328,7 +328,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * ³]©w¥Ø¼Ğªº«G«×¦±½u
+   * è¨­å®šç›®æ¨™çš„äº®åº¦æ›²ç·š
    * @param targetxyYCurve CIExyY[]
    */
   public void setTargetxyYArray(CIExyY[] targetxyYCurve) {
@@ -336,12 +336,12 @@ public class GSDFGradientModel
   }
 
   /**
-   * ³]©w¥Ø¼Ğªº«G«×¦±½u(±Ä¥ÎxyYªº­ì¦]¦b©ó, ­n¦Ò¼{HK®ÄÀ³, ©Ò¥H­n§¹¾ã«O¯d¦â«×©M«G«×ªº¸ê°T)
+   * è¨­å®šç›®æ¨™çš„äº®åº¦æ›²ç·š(æ¡ç”¨xyYçš„åŸå› åœ¨æ–¼, è¦è€ƒæ…®HKæ•ˆæ‡‰, æ‰€ä»¥è¦å®Œæ•´ä¿ç•™è‰²åº¦å’Œäº®åº¦çš„è³‡è¨Š)
    */
   private CIExyY[] targetxyYCurve;
 
   /**
-   * ¥Ø¼Ğªº¥[³t«×ªº°}¦C
+   * ç›®æ¨™çš„åŠ é€Ÿåº¦çš„é™£åˆ—
    */
   private double[] targetAccelArray;
 
@@ -350,19 +350,19 @@ public class GSDFGradientModel
   }
 
   /**
-   * ¥Ø¼ĞªºJNDI°}¦C
+   * ç›®æ¨™çš„JNDIé™£åˆ—
    */
   private double[] targetJNDIArray;
   /**
-   * ¹ê»Úªº¥[³t«×ªº°}¦C
+   * å¯¦éš›çš„åŠ é€Ÿåº¦çš„é™£åˆ—
    */
   private double[] actualAccelArray;
   /**
-   * ¥[³t«×®t°}¦C
+   * åŠ é€Ÿåº¦å·®é™£åˆ—
    */
   private double[] deltaAccelArray;
   /**
-   * JNDI®tªº°}¦C
+   * JNDIå·®çš„é™£åˆ—
    */
   private double[] deltaJNDIArray;
 
@@ -385,7 +385,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * Ã¸¥Xpattern¥[³t«×ªº¸ê°T
+   * ç¹ªå‡ºpatternåŠ é€Ÿåº¦çš„è³‡è¨Š
    * @param plotAccelPrime boolean
    * @param plotDeltaTarget boolean
    * @return Plot2D
@@ -396,7 +396,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * Ã¸¥Xpattern¥[³t«×ªº¸ê°T
+   * ç¹ªå‡ºpatternåŠ é€Ÿåº¦çš„è³‡è¨Š
    * @param plot Plot2D
    * @param plotAccelPrime boolean
    * @param plotDeltaTarget boolean
@@ -449,8 +449,8 @@ public class GSDFGradientModel
   }
 
   /**
-   * ±Npatternµe¥X
-   * @param absolute boolean ¬O§_­n±Npatternªº¼Æ­È¥[¤Wµ´¹ï­È
+   * å°‡patternç•«å‡º
+   * @param absolute boolean æ˜¯å¦è¦å°‡patternçš„æ•¸å€¼åŠ ä¸Šçµ•å°å€¼
    * @return Plot2D
    */
   public Plot2D plotPattern(boolean absolute) {
@@ -471,7 +471,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * ³]©wthresholdªºtype (¥i·Pª¾©Î¥i±µ¨ü)
+   * è¨­å®šthresholdçš„type (å¯æ„ŸçŸ¥æˆ–å¯æ¥å—)
    * @param thresholdType Threshold
    */
   public void setThresholdType(GSDFThresholdModel.Threshold thresholdType) {
@@ -479,7 +479,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * ³]©wpatternªº¥¿­t¸¹
+   * è¨­å®špatternçš„æ­£è² è™Ÿ
    * @param patternSign PatternSign
    */
   public void setPatternSign(PatternSign patternSign) {
@@ -487,7 +487,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * ¥[³t«×®t°}¦C
+   * åŠ é€Ÿåº¦å·®é™£åˆ—
    * @return double[]
    */
   public double[] getDeltaAccelArray() {
@@ -506,7 +506,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * JNDI®tªº°}¦C
+   * JNDIå·®çš„é™£åˆ—
    * @return double[]
    */
   public double[] getDeltaJNDIArray() {
@@ -514,7 +514,7 @@ public class GSDFGradientModel
   }
 
   /**
-   * ¥[³t«×°}¦C
+   * åŠ é€Ÿåº¦é™£åˆ—
    * @return double[]
    */
   public double[] getActualAccelArray() {

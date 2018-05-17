@@ -41,7 +41,7 @@ public class ClippingGMA
    */
   protected CIELCh _gamutMapping(final CIELCh LCh) {
     //==========================================================================
-    // ¶W¥Xªº³¡¤Àªº³B²z
+    // è¶…å‡ºçš„éƒ¨åˆ†çš„è™•ç†
     //==========================================================================
     if (gbd.isOutOfGamut(LCh)) {
       return gbd.getBoundaryLCh(LCh);

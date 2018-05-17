@@ -22,7 +22,7 @@ import shu.math.*;
 public abstract class PartialChromaticAdaptation {
 
   /**
-   * ­pºâ¸g¹L³¡¤À¾AÀ³©M²V¦X¾AÀ³«áªºXYZ
+   * è¨ˆç®—ç¶“ééƒ¨åˆ†é©æ‡‰å’Œæ··åˆé©æ‡‰å¾Œçš„XYZ
    * @param XYZ CIEXYZ
    * @return LMS
    */
@@ -42,7 +42,7 @@ public abstract class PartialChromaticAdaptation {
   private CIEXYZ adaptedDisplayWhite;
 
   /**
-   * ³¡¤À¾AÀ³«áªº¿Ã¹õ¥ÕÂI
+   * éƒ¨åˆ†é©æ‡‰å¾Œçš„è¢å¹•ç™½é»
    * @return CIEXYZ
    */
   public CIEXYZ getAdaptedDisplayWhite() {
@@ -54,7 +54,7 @@ public abstract class PartialChromaticAdaptation {
   }
 
   /**
-   * ¸g¹L³¡¤À¾AÀ³©M²V¦X¾AÀ³«áªº¾AÀ³¥ÕÂI
+   * ç¶“ééƒ¨åˆ†é©æ‡‰å’Œæ··åˆé©æ‡‰å¾Œçš„é©æ‡‰ç™½é»
    * @return CIEXYZ
    */
   public CIEXYZ getAdaptedWhite() {
@@ -163,7 +163,7 @@ public abstract class PartialChromaticAdaptation {
   }
 
   /**
-   * ¨ú±o³¡¤À¾AÀ³ªº«Y¼Æ
+   * å–å¾—éƒ¨åˆ†é©æ‡‰çš„ä¿‚æ•¸
    * @return double[]
    */
   protected abstract double[] getpLMSValues();
@@ -171,7 +171,7 @@ public abstract class PartialChromaticAdaptation {
   private double[] dLMSValues;
 
   /**
-   * ±qDFactor­pºâ³¡¤À¾AÀ³ªº«Y¼Æ
+   * å¾DFactorè¨ˆç®—éƒ¨åˆ†é©æ‡‰çš„ä¿‚æ•¸
    * @param DFactor DFactorIF
    * @return double[]
    */
@@ -216,7 +216,7 @@ public abstract class PartialChromaticAdaptation {
   }
 
   /**
-   * ­pºâ¾AÀ³¥ÕÂI®Éªº¿Ã¹õ«Y¼Æ
+   * è¨ˆç®—é©æ‡‰ç™½é»æ™‚çš„è¢å¹•ä¿‚æ•¸
    * @return double
    */
   protected double getDisplayFactor() {
@@ -227,7 +227,7 @@ public abstract class PartialChromaticAdaptation {
   }
 
   /**
-   * ­pºâ¾AÀ³¥ÕÂI®ÉªºÀô¹Ò«Y¼Æ
+   * è¨ˆç®—é©æ‡‰ç™½é»æ™‚çš„ç’°å¢ƒä¿‚æ•¸
    * @return double
    */
   protected double getAmbientFactor() {

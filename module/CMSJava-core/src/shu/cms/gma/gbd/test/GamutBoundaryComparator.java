@@ -29,7 +29,7 @@ import shu.cms.profile.*;
 public class GamutBoundaryComparator {
   public static void surfaceTest(String[] args) {
 //    Plot3D plot = Plot3D.getInstance();
-//    //2 §Q¥Îramp¥[¤WXYZ¤º´¡²£¥Íboundary
+//    //2 åˆ©ç”¨rampåŠ ä¸ŠXYZå…§æ’ç”¢ç”Ÿboundary
 //    String surfaceFilename =
 //        "../module/CMSJava-AUO/workdir/prefered/EIZO S2031W/surface.xls";
 //    LCDTarget surface = LCDTarget.Instance.getFromAUOXLS(surfaceFilename);
@@ -50,8 +50,8 @@ public class GamutBoundaryComparator {
   }
 
   public static void compare(String[] args) {
-    //1 §Q¥Îsurface¥[¤Wgamut ¤º´¡²£¥Í¥Xboundary
-    //2 §Q¥Îramp¥[¤WXYZ¤º´¡²£¥Íboundary
+    //1 åˆ©ç”¨surfaceåŠ ä¸Šgamut å…§æ’ç”¢ç”Ÿå‡ºboundary
+    //2 åˆ©ç”¨rampåŠ ä¸ŠXYZå…§æ’ç”¢ç”Ÿboundary
     String surfaceFilename =
         "../module/CMSJava-AUO/workdir/prefered/EIZO S2031W/surface.xls";
     String rampFilename =

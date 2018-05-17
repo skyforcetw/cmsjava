@@ -11,7 +11,7 @@ import shu.cms.Illuminant;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * CIECAM02¦â¥~»ª¼Ò¦¡
+ * CIECAM02ï¸¹îš„åå®¶Î‘
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -127,9 +127,9 @@ public class CIECAM02
   }
 
   /**
-   * ¦â¥~»ª¼Ò¦¡ªº«e¾É
-   * @param XYZ CIEXYZ «İ¹w´úªº¦â¨ë¿E­È
-   * @return CIECAM02Color ¹w´úªº¤H²´¦â¥~»ª­È
+   * ï¸¹îš„åå®¶Î‘î€™ç¡æ—§
+   * @param XYZ CIEXYZ î‚šç®‡ä»£î€™ï¸¹îŸç¸€î…
+   * @return CIECAM02Color ç®‡ä»£î€™î—®æ³Šï¸¹îš„åî…
    */
   public final CIECAM02Color forward(CIEXYZ XYZ) {
     double[] XYZValues = new double[3];
@@ -325,7 +325,7 @@ public class CIECAM02
   }
 
   /**
-   * ¦â¥~»ª¼Ò¦¡ªº«e¾É
+   * ï¸¹îš„åå®¶Î‘î€™ç¡æ—§
    * @param XYZ CIEXYZ
    * @param vc ViewingConditions
    * @return CIECAM02Color
@@ -439,7 +439,7 @@ public class CIECAM02
   }
 
   /**
-   * ¦â¥~»ª¼Ò¦¡ªº¤Ï±À
+   * ï¸¹îš„åå®¶Î‘î€™ã¯å´©
    * @param color CIECAM02Color
    * @param vc ViewingConditions
    * @return CIEXYZ

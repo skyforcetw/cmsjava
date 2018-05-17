@@ -15,7 +15,7 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ±NGMB(²{¦b³QXRite¦X¨Ö¤F)²£«~©Ò²£¥ÍªºICC Profile,·í§@Target¨Ó¨Ï¥Îªºadapter.
+ * å°‡GMB(ç¾åœ¨è¢«XRiteåˆä½µäº†)ç”¢å“æ‰€ç”¢ç”Ÿçš„ICC Profile,ç•¶ä½œTargetä¾†ä½¿ç”¨çš„adapter.
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -98,7 +98,7 @@ public class GMBICCProfileAdapter
 
   public static void main(String[] args) {
     String filename =
-        "Measurement Files/Camera/HTC Legend/¤é¥ú.icc";
+        "Measurement Files/Camera/HTC Legend/æ—¥å…‰.icc";
     GMBICCProfileAdapter adapter = new GMBICCProfileAdapter(filename);
     for (RGB rgb : adapter.getRGBList()) {
       System.out.println(rgb);

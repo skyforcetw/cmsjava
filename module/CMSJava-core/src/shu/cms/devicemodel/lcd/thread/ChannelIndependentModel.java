@@ -11,7 +11,7 @@ import shu.cms.lcd.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * °²³]ÀW¹D¿W¥ßªºLCD¼Ò¦¡
+ * å®‰ç ç¹µç¬µç¸’ãƒŸî€™LCDå®¶Î‘
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -34,7 +34,7 @@ public abstract class ChannelIndependentModel
   protected IterativeReport[] iterativeReports = new IterativeReport[3];
 
   /**
-   * ´£¨Ñ¤TÀW¹D¦U¦ÛªºIterativeReport (ex:scurve1)
+   * çŸ—ã„‘î—ºç¹µç¬µîš»îî€™IterativeReport (ex:scurve1)
    * @return IterativeReport[]
    */
   public final IterativeReport[] getIterativeReports() {
@@ -42,7 +42,7 @@ public abstract class ChannelIndependentModel
   }
 
   /**
-   * ²£¥Í³Ì¨ÎªºIterativeReport
+   * ç»ãƒç¨‹ã„î€™IterativeReport
    * @param factors Factor[]
    * @param patchList List
    * @param whitePatch Patch
@@ -61,11 +61,11 @@ public abstract class ChannelIndependentModel
                                        reports[0]);
     }
     else {
-      //¤ÀªR³Ì¨Îªºreport
+      //ã çŒ‚ç¨‹ã„î€™report
       DeltaEReport result = DeltaEReport.Analyze.analyzeDeltaEReport(
           bestReport.deltaEReport,
           reports[0]);
-      //¦pªG³o­ÓreportÀu©ó¥Ø«e³Ì¨Îªº,´N§ó·s
+      //î›–ç‹¦ç¡‚î…Œreportçº”î „ãƒ˜ç¡ç¨‹ã„î€™,ç¢î°ç©
       if (result == reports[0]) {
         bestReport = new IterativeReport(factors[channel.getArrayIndex()],
                                          reports[0]);

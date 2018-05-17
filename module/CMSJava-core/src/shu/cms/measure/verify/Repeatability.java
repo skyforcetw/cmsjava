@@ -9,7 +9,7 @@ import shu.math.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * »ö¾¹­«½Æ©ÊªºÅçÃÒ
+ * å„€å™¨é‡è¤‡æ€§çš„é©—è­‰
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -28,7 +28,7 @@ public class Repeatability {
   }
 
   /**
-   * ¤ÀªR¥i¨Ñ¥Î¨Ó­pºâmcdmªº¦â¶ô¼Æ¶q¤Î¶}©lªº¯Á¤Ş­È
+   * åˆ†æå¯ä¾›ç”¨ä¾†è¨ˆç®—mcdmçš„è‰²å¡Šæ•¸é‡åŠé–‹å§‹çš„ç´¢å¼•å€¼
    * @param lcdTarget LCDTarget
    * @return int[]
    */
@@ -132,7 +132,7 @@ public class Repeatability {
   protected Interpolation YMeanInterpolation;
 
   /**
-   * ¥H¹ê»Ú´ú¶qªº¼Æ­È¬°°ò·Ç©Ò±Àºâªº­«½Æ©Ê(max)
+   * ä»¥å¯¦éš›æ¸¬é‡çš„æ•¸å€¼ç‚ºåŸºæº–æ‰€æ¨ç®—çš„é‡è¤‡æ€§(max)
    * @param luminance double
    * @return double[] CIExyY
    */
@@ -152,7 +152,7 @@ public class Repeatability {
   }
 
   /**
-   * ¨ú±o¸Óluminance¤UªºxyY std(1 sigma)
+   * å–å¾—è©²luminanceä¸‹çš„xyY std(1 sigma)
    * @param luminance double
    * @return double[]
    */
@@ -181,7 +181,7 @@ public class Repeatability {
   }
 
   /**
-   * ¨ú±o¸Óluminance¤UªºxyY mcdm(§¡­È¦â®tªº¥­§¡)
+   * å–å¾—è©²luminanceä¸‹çš„xyY mcdm(å‡å€¼è‰²å·®çš„å¹³å‡)
    * @param luminance double
    * @return double[]
    */
@@ -201,7 +201,7 @@ public class Repeatability {
   }
 
   /**
-   * ¨ú±o¸Óluminance¤UªºxyY mean
+   * å–å¾—è©²luminanceä¸‹çš„xyY mean
    * @param luminance double
    * @return double[]
    */

@@ -58,7 +58,7 @@ public class DigitalGammaLoader
 class CPCodeLoader {
   public static class DummyAdapter {
     /**
-     * ³]©wdummy LCDModel, Åıcp code¸ü¨ìLCDModel¸Ì
+     * è¨­å®šdummy LCDModel, è®“cp codeè¼‰åˆ°LCDModelè£¡
      * @param lcdModel LCDModel
      */
     public void setDummyLCDModel(LCDModel lcdModel) {
@@ -66,8 +66,8 @@ class CPCodeLoader {
     }
 
     /**
-     * ¬O§_°°¸Ë¸ü¤J, °°¸Ë¸ü¤J¨Ã¤£·|¯uªº§âcp code¸ü¨ìrom¥h
-     * ¦pªG¦³dummy LCDModel, ·|¸ü¨ìLCDModel¥h
+     * æ˜¯å¦å½è£è¼‰å…¥, å½è£è¼‰å…¥ä¸¦ä¸æœƒçœŸçš„æŠŠcp codeè¼‰åˆ°romå»
+     * å¦‚æœæœ‰dummy LCDModel, æœƒè¼‰åˆ°LCDModelå»
      * @param dummy boolean
      */
     public void setDummyLoading(boolean dummy) {
@@ -81,7 +81,7 @@ class CPCodeLoader {
   public final static String CP_LOADER_DIR = "..\\lib\\Send_CP_Table";
 
   /**
-   * cp loadµ{¦¡¬O§_¦s¦b
+   * cp loadç¨‹å¼æ˜¯å¦å­˜åœ¨
    * @return boolean
    */
   public final static boolean exists() {
@@ -91,23 +91,23 @@ class CPCodeLoader {
 
   private static Mode mode = Mode.Com;
   /**
-   * ¬O§_§@°°¸Ë¸ü¤J
+   * æ˜¯å¦ä½œå½è£è¼‰å…¥
    */
   private static boolean DummyLoading = false;
   /**
-   * ¬O§_´¡¶Â
+   * æ˜¯å¦æ’é»‘
    */
   private static boolean DarkInsert = mode == Mode.Command;
 //  private static boolean DarkInsert = false;
 
 
   /**
-   * °°¸Ë¸ü¤Jªº¥Ø¼ĞLCDModel
+   * å½è£è¼‰å…¥çš„ç›®æ¨™LCDModel
    */
   private static LCDModel DummyLCDModel;
 
   /**
-   * ¸ü¤J«e¬O§_´¡¶Âµe­±Á×§K¿Ã¹õªº°{Ã{
+   * è¼‰å…¥å‰æ˜¯å¦æ’é»‘ç•«é¢é¿å…è¢å¹•çš„é–ƒçˆ
    * @param insert boolean
    */
   final static void setDarkInsert(boolean insert) {
@@ -115,10 +115,10 @@ class CPCodeLoader {
   }
 
   /**
-   * ¸ü¤Jcp code
-   * @param excelFilename String ­n¸ü¤JªºexcelÀÉ¦W
-   * @param maxValue MaxValue ¥Ø¼Ğicªºbit¼Æ
-   * @return boolean ¬O§_¸ü¤J¦¨¥\
+   * è¼‰å…¥cp code
+   * @param excelFilename String è¦è¼‰å…¥çš„excelæª”å
+   * @param maxValue MaxValue ç›®æ¨™icçš„bitæ•¸
+   * @return boolean æ˜¯å¦è¼‰å…¥æˆåŠŸ
    */
   public final static boolean load(String excelFilename, RGB.MaxValue maxValue) {
     RGB[] rgbArray = null;
@@ -135,7 +135,7 @@ class CPCodeLoader {
   }
 
   /**
-   * ±N256ÂX¥R¦¨257­ÓRGB, µ¹12bit IC¥Îªº
+   * å°‡256æ“´å……æˆ257å€‹RGB, çµ¦12bit ICç”¨çš„
    * @param rgbArray256 RGB[]
    * @return RGB[]
    */
@@ -151,20 +151,20 @@ class CPCodeLoader {
   }
 
   /**
-   * ´¡¶Â¥Îªºframe
+   * æ’é»‘ç”¨çš„frame
    */
 //  private static DarkFrame darkFrame = null;
   /**
-   * ¬O§_±j¨î¸ü¤J, ­n¬O¶}±Ò«áµo¥ÍµLªk¸ü¤J, ·|¥H°T®§³qª¾±Æ°£»ÙÃª, ª½¨ì¸ü¤J¦¨¥\
+   * æ˜¯å¦å¼·åˆ¶è¼‰å…¥, è¦æ˜¯é–‹å•Ÿå¾Œç™¼ç”Ÿç„¡æ³•è¼‰å…¥, æœƒä»¥è¨Šæ¯é€šçŸ¥æ’é™¤éšœç¤™, ç›´åˆ°è¼‰å…¥æˆåŠŸ
    */
   private static boolean ForceLoading = true;
   /**
-   * ¬O§_´¿¸g¸ü¤J¹L­ì©lcp code
+   * æ˜¯å¦æ›¾ç¶“è¼‰å…¥éåŸå§‹cp code
    */
   private static boolean OriginalLoaded = false;
 
   /**
-   * ¬O§_¸ü¤J¤Fcp code
+   * æ˜¯å¦è¼‰å…¥äº†cp code
    * @return boolean
    */
   public final static boolean isCPCodeLoading() {
@@ -172,9 +172,9 @@ class CPCodeLoader {
   }
 
   /**
-   * ¸ü¤J­ì©lªºcp code, ¤]´N¬O¶ñ0 1 2 3....255
-   * @param maxValue MaxValue ¥Ø¼Ğicªºbit¼Æ
-   * @return boolean ¬O§_¸ü¤J¦¨¥\
+   * è¼‰å…¥åŸå§‹çš„cp code, ä¹Ÿå°±æ˜¯å¡«0 1 2 3....255
+   * @param maxValue MaxValue ç›®æ¨™icçš„bitæ•¸
+   * @return boolean æ˜¯å¦è¼‰å…¥æˆåŠŸ
    */
   public final static boolean loadOriginal(RGB.MaxValue maxValue) {
 //    System.out.println("xx");
@@ -194,10 +194,10 @@ class CPCodeLoader {
   }
 
   /**
-   * ¸ü¤Jcp code
+   * è¼‰å…¥cp code
    * @param rgbArray RGB[]
-   * @param maxValue MaxValue ¥Ø¼Ğicªºbit¼Æ
-   * @return boolean ¬O§_¸ü¤J¦¨¥\
+   * @param maxValue MaxValue ç›®æ¨™icçš„bitæ•¸
+   * @return boolean æ˜¯å¦è¼‰å…¥æˆåŠŸ
    */
   public final static boolean load(RGB[] rgbArray, RGB.MaxValue maxValue) {
     return load(rgbArray, maxValue, false, false);
@@ -209,29 +209,29 @@ class CPCodeLoader {
   }
 
   /**
-   * ¨C´X¦¸¸ü¤J±j¨î§@¤@¦¸gc
+   * æ¯å¹¾æ¬¡è¼‰å…¥å¼·åˆ¶ä½œä¸€æ¬¡gc
    */
   private final static int EachGCForLoadingCount = 20;
   /**
-   * ¸ü¤JªºÁ`¦¸¼Æ
+   * è¼‰å…¥çš„ç¸½æ¬¡æ•¸
    */
   private static int LoadingCount = 0;
 
   public static enum Mode {
-    //³z¹L©R¥O¦C¼Ò¦¡ªºÂà¤¶µ{¦¡load
+    //é€éå‘½ä»¤åˆ—æ¨¡å¼çš„è½‰ä»‹ç¨‹å¼load
     Command,
-    //³z¹Lshare memory¶Ç°ecode§@load
+    //é€éshare memoryå‚³é€codeä½œload
     ShareMemory,
     Com
   }
 
   /**
-   * ¤W¤@¦¸¸ü¤Jªºcp code, ¥Î¨ÓÁ×§Kµe­±°{Ã{©Ò¨Ï¥Î.
+   * ä¸Šä¸€æ¬¡è¼‰å…¥çš„cp code, ç”¨ä¾†é¿å…ç•«é¢é–ƒçˆæ‰€ä½¿ç”¨.
    */
   private static RGB[] LastCPCode;
 
   /**
-   * ÀË¬d®t²§­È
+   * æª¢æŸ¥å·®ç•°å€¼
    */
   private static boolean CheckDifference = false;
   private static int AcceptDifference = 63;
@@ -245,7 +245,7 @@ class CPCodeLoader {
   }
 
   /**
-   * ¾ß¬dcodeªº®t²§©Ê¬O§_¤p©óµ¥©óaccept
+   * æ’¿æŸ¥codeçš„å·®ç•°æ€§æ˜¯å¦å°æ–¼ç­‰æ–¼accept
    * @param rgbArray RGB[]
    * @param accept int
    * @return boolean
@@ -273,7 +273,7 @@ class CPCodeLoader {
                                          AcceptDifference + ".");
     }
     if (rgbArray.length == 256 && maxValue == RGB.MaxValue.Int12Bit) {
-      //12bitªºic»İ­nextend¨ì257­Ó
+      //12bitçš„icéœ€è¦extendåˆ°257å€‹
       rgbArray = extend256To257(rgbArray);
     }
 
@@ -358,15 +358,15 @@ class CPCodeLoader {
     }
 
 //    if (rgbArray.length == 256 && maxValue == RGB.MaxValue.Int12Bit) {
-//      //12bitªºic»İ­nextend¨ì257­Ó
+//      //12bitçš„icéœ€è¦extendåˆ°257å€‹
 //      rgbArray = extend256To257(rgbArray);
 //    }
 
-    //¦s¦¨¤G¶i¦ìÀÉ®×
+    //å­˜æˆäºŒé€²ä½æª”æ¡ˆ
     RGBArray.storeBinaryFile(rgbArray,
                              CP_LOADER_DIR + "\\" + BINARY_FILE_NAME,
                              maxValue);
-    //¦A¦s¦¨excelÀÉ, ¥u¬O¥Î¨Ó½T»{¥Î
+    //å†å­˜æˆexcelæª”, åªæ˜¯ç”¨ä¾†ç¢ºèªç”¨
     RGBArray.storeVVExcel(rgbArray,
                           CP_LOADER_DIR + "\\" + EXCEL_FILE_NAME);
 
@@ -412,7 +412,7 @@ class CPCodeLoader {
   }
 
   /**
-   * ­n¤£­n²¤¹LÀË¬ddown load code¬O§_¦¨¥\
+   * è¦ä¸è¦ç•¥éæª¢æŸ¥down load codeæ˜¯å¦æˆåŠŸ
    */
   private static boolean SkipShareMemoryAck = false;/*AutoCPOptions.get(
       "CPL_SkipShareMemoryAck");*/
@@ -420,7 +420,7 @@ class CPCodeLoader {
 //  private static ShareMemoryConnector connector;
 
   /**
-   * ³Ì¨ì³Ì·tªºcode.
+   * æœ€åˆ°æœ€æš—çš„code.
    * @param rgbArray RGB[]
    * @return Color
    */
@@ -441,19 +441,19 @@ class CPCodeLoader {
   }
 
   /**
-   * ¸ü¤Jcp code
+   * è¼‰å…¥cp code
    *
-   * 1. ÀË¬d¬O§_¬°original load, Á×§K­«½Æload original
-   * 2. ÀË¬ddummyLoading
-   * 3. ÀË¬d¬O§_show¶Âµe­±
-   * 4. ÀË¬dcode¼Æ¶q
+   * 1. æª¢æŸ¥æ˜¯å¦ç‚ºoriginal load, é¿å…é‡è¤‡load original
+   * 2. æª¢æŸ¥dummyLoading
+   * 3. æª¢æŸ¥æ˜¯å¦showé»‘ç•«é¢
+   * 4. æª¢æŸ¥codeæ•¸é‡
    * 5.
    *
    * @param rgbArray RGB[]
-   * @param maxValue MaxValue ¥Ø¼Ğicªºbit¼Æ
-   * @param originalLoading boolean ¬O§_¸ü¤J­ì©lcp code
+   * @param maxValue MaxValue ç›®æ¨™icçš„bitæ•¸
+   * @param originalLoading boolean æ˜¯å¦è¼‰å…¥åŸå§‹cp code
    * @param dummyLoading boolean
-   * @return boolean ¬O§_¸ü¤J¦¨¥\
+   * @return boolean æ˜¯å¦è¼‰å…¥æˆåŠŸ
    */
   private final static boolean load(RGB[] rgbArray, RGB.MaxValue maxValue,
                                     boolean originalLoading,
@@ -470,10 +470,10 @@ class CPCodeLoader {
     }
 
     //==========================================================================
-    // ¨¾¤î­«½Æ°µoriginalªºloading
+    // é˜²æ­¢é‡è¤‡åšoriginalçš„loading
     //==========================================================================
     if (OriginalLoaded == true && OriginalLoaded == originalLoading) {
-      //¤w¸g°µ¹Lorignalªºloading, ©Ò¥H¤£¥Î¦Aload¤F
+      //å·²ç¶“åšéorignalçš„loading, æ‰€ä»¥ä¸ç”¨å†loadäº†
       setDarkFrame(false);
       return true;
     }
@@ -510,7 +510,7 @@ class CPCodeLoader {
 //        if (DarkInsert) {
 //          darkFrame.setVisible(false);
 //        }
-//        //¦pªG¤£retry, ¥á¥X°T®§¨Ã¥B¦^¶Çfalse
+//        //å¦‚æœä¸retry, ä¸Ÿå‡ºè¨Šæ¯ä¸¦ä¸”å›å‚³false
 //        JOptionPane.showMessageDialog(darkFrame,
 //                                      "CP Code loading fail, stop measure.",
 //                                      "Stop measure",
@@ -519,7 +519,7 @@ class CPCodeLoader {
 //        return false;
 //      }
 //      else {
-//        //¦pªG­nretry, ¬ö¿ı¤@¤U°T®§
+//        //å¦‚æœè¦retry, ç´€éŒ„ä¸€ä¸‹è¨Šæ¯
 //        Logger.log.error("CP Code loading fail, retry.");
 //      }
     }
@@ -546,13 +546,13 @@ class CPCodeLoader {
   private final static void initDarkFrame() {
     if (DarkInsert) {
       /**
-       * ¥Ñ©ócp code¸ü¤Jªº®É­Ô, µe­±·|°{Ã{(³o¥u¬O¬°¤F¤ÈºÎµÛ·Q..., ¦]¬°°{¨Ó°{¥h«ÜÃøºÎ), ¬°¤F
-       * ­°§C°{Ã{ªº²{¶H, ©Ò¥H¦bcp code¸Ì­±, §ä¨ì³Ì·tªºcode, ­n´«µe­±¤§«e, show³o­Ó³Ì·tªº
-       * code, ´N¤ñ¸û¤£·|°{Ã{¤F.
+       * ç”±æ–¼cp codeè¼‰å…¥çš„æ™‚å€™, ç•«é¢æœƒé–ƒçˆ(é€™åªæ˜¯ç‚ºäº†åˆç¡è‘—æƒ³..., å› ç‚ºé–ƒä¾†é–ƒå»å¾ˆé›£ç¡), ç‚ºäº†
+       * é™ä½é–ƒçˆçš„ç¾è±¡, æ‰€ä»¥åœ¨cp codeè£¡é¢, æ‰¾åˆ°æœ€æš—çš„code, è¦æ›ç•«é¢ä¹‹å‰, showé€™å€‹æœ€æš—çš„
+       * code, å°±æ¯”è¼ƒä¸æœƒé–ƒçˆäº†.
        */
       Color black = (LastCPCode != null) ? findDarkestColor(LastCPCode) :
           Color.black;
-      //show¶Âµe­±
+      //showé»‘ç•«é¢
 //      darkFrame = (darkFrame == null) ? new DarkFrame(black) : darkFrame;
 //      darkFrame.setColor(black);
 //      setDarkFrame(true);

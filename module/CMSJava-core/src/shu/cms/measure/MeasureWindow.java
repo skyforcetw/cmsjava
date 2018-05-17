@@ -11,7 +11,7 @@ import shu.ui.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * Åã¥Ü¤@­Óµøµ¡,¥i¥H§ïÅÜÃC¦â,´£¨Ñµ¹´ú¦â»ö¾¹´ú¶q¥Î
+ * é¡¯ç¤ºä¸€å€‹è¦–çª—,å¯ä»¥æ”¹è®Šé¡è‰²,æä¾›çµ¦æ¸¬è‰²å„€å™¨æ¸¬é‡ç”¨
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -85,7 +85,7 @@ public class MeasureWindow
 
   /**
    *
-   * @param screenSize Dimension µøµ¡ªº¼e¤Î°ª
+   * @param screenSize Dimension è¦–çª—çš„å¯¬åŠé«˜
    */
   public MeasureWindow(Dimension screenSize) {
     this(screenSize.width, screenSize.height);
@@ -93,8 +93,8 @@ public class MeasureWindow
 
   /**
    *
-   * @param width int µøµ¡ªº¼e
-   * @param height int µøµ¡ªº°ª
+   * @param width int è¦–çª—çš„å¯¬
+   * @param height int è¦–çª—çš„é«˜
    */
   public MeasureWindow(int width, int height) {
     this.windowWidth = width;
@@ -110,7 +110,7 @@ public class MeasureWindow
 
   /**
    *
-   * @param dicom DICOM DICOM°Ñ¼Æ
+   * @param dicom DICOM DICOMåƒæ•¸
    */
   public MeasureWindow(DICOM dicom) {
     this(Mode.getMode(dicom));
@@ -160,7 +160,7 @@ public class MeasureWindow
   }
 
   /**
-   * ¬O§_³B©ó¥şµøµ¡¼Ò¦¡
+   * æ˜¯å¦è™•æ–¼å…¨è¦–çª—æ¨¡å¼
    * @return boolean
    */
   protected boolean isFullScreenMode() {
@@ -168,7 +168,7 @@ public class MeasureWindow
   }
 
   /**
-   * ¬O§_³B©óDICOM¼Ò¦¡¤U(¦â¶ô«D¦ûº¡¥şµøµ¡)
+   * æ˜¯å¦è™•æ–¼DICOMæ¨¡å¼ä¸‹(è‰²å¡Šéä½”æ»¿å…¨è¦–çª—)
    * @return boolean
    */
   protected boolean isDICOMMode() {
@@ -240,12 +240,12 @@ public class MeasureWindow
 
   public void setColor(Color c) {
     if (isDICOMMode()) {
-      //«D¥ş¿Ã¹õ, ¦rªºÃC¦â¥u­n¸ò­I´º¦âÃC¦â¤£¦P§Y¥i.
+      //éå…¨è¢å¹•, å­—çš„é¡è‰²åªè¦è·ŸèƒŒæ™¯è‰²é¡è‰²ä¸åŒå³å¯.
       this.color = c;
       this.patchCanvas.repaint();
     }
     else {
-      //¥ş¿Ã¹õ, ©Ò¥H­n¸òµÛpattern§ïÅÜ¦rªºÃC¦â
+      //å…¨è¢å¹•, æ‰€ä»¥è¦è·Ÿè‘—patternæ”¹è®Šå­—çš„é¡è‰²
       this.getContentPane().setBackground(c);
     }
 
@@ -356,7 +356,7 @@ public class MeasureWindow
 //    measurewindow.setVisible(true);
 
 //    JOptionPane.showMessageDialog(null,
-//                                  "®Õ¥¿§¹²¦", "®Õ¥¿§¹²¦",
+//                                  "æ ¡æ­£å®Œç•¢", "æ ¡æ­£å®Œç•¢",
 //                                  JOptionPane.INFORMATION_MESSAGE);
 
 //    MeasureWindow measurewindow = new MeasureWindow(MeterMeasurement.getSize(

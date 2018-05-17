@@ -29,7 +29,7 @@ public class SpectraBasedModel
   protected IdealDigitalCamera camera;
   protected SpectraEstimator estimator;
   /**
-   * ½Õ¾ã«Y¼Æ
+   * èª¿æ•´ä¿‚æ•¸
    */
   protected double scaleFactor = 1.;
   protected Spectra illuminant;
@@ -58,7 +58,7 @@ public class SpectraBasedModel
   }
 
   /**
-   * ­pºâXYZ
+   * è¨ˆç®—XYZ
    *
    * @param rgb RGB
    * @return CIEXYZ
@@ -71,10 +71,10 @@ public class SpectraBasedModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
-   * @todo M ±Ä¥ÎscaleFactor¨Ã¤£¨¬,³£³y¦¨Y¹w´ú¹L«×
+   * @todo M æ¡ç”¨scaleFactorä¸¦ä¸è¶³,éƒ½é€ æˆYé æ¸¬éåº¦
    */
   protected Factor _produceFactor() {
     if (byWiener) {

@@ -1,4 +1,4 @@
-package auo.cms.frc.impl;
+package fiti.cms.frc.impl;
 
 import java.io.Serializable;
 import java.util.Arrays;

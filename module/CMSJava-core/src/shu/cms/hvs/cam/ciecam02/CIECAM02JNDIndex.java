@@ -10,20 +10,20 @@ import shu.math.lut.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥ÎCIECAM02¨Ó­pºâJND Index.
- * ¥»ª«¥ó¬O¥HCIECAM02, «Ø¥ß¤¤©Ê¦â¶ôªº©ú«×»P«G«×ªºÃö«Y.
- * ¦p¦¹´N¥i¥H¤£»İ­n³z¹LXYZ¦Ó¶È»İY´N¥i¥H¹ïÀ³¨ìLightness, ¤Ï¹L¨Ó¥ç¦P.
+ * ç”¨CIECAM02ä¾†è¨ˆç®—JND Index.
+ * æœ¬ç‰©ä»¶æ˜¯ä»¥CIECAM02, å»ºç«‹ä¸­æ€§è‰²å¡Šçš„æ˜åº¦èˆ‡äº®åº¦çš„é—œä¿‚.
+ * å¦‚æ­¤å°±å¯ä»¥ä¸éœ€è¦é€éXYZè€Œåƒ…éœ€Yå°±å¯ä»¥å°æ‡‰åˆ°Lightness, åéä¾†äº¦åŒ.
  *
- * CIECAM02¦p¦ó¤¶¤JHK®ÄÀ³? ²z½×¤W¨Ó»¡CIECAM02¬O¤£¦Ò¼{¨ìHK®ÄÀ³ªº.
- * ¦ı¬O¥ÎCIECAM02À³¸Ó¬O¥Î¨Ó¸Ñ¨M V' ¿ù»~ªº°İÃD(§a!? ²q´úªº)
+ * CIECAM02å¦‚ä½•ä»‹å…¥HKæ•ˆæ‡‰? ç†è«–ä¸Šä¾†èªªCIECAM02æ˜¯ä¸è€ƒæ…®åˆ°HKæ•ˆæ‡‰çš„.
+ * ä½†æ˜¯ç”¨CIECAM02æ‡‰è©²æ˜¯ç”¨ä¾†è§£æ±º V' éŒ¯èª¤çš„å•é¡Œ(å§!? çŒœæ¸¬çš„)
  *
- * «D¤¤©Ê¦â¦â¶ôA¦p¦ó¨ú±o»P¤¤©Ê¦â¦â¶ôB¬Û¦P©ú«×¤Uªº«G«×
+ * éä¸­æ€§è‰²è‰²å¡ŠAå¦‚ä½•å–å¾—èˆ‡ä¸­æ€§è‰²è‰²å¡ŠBç›¸åŒæ˜åº¦ä¸‹çš„äº®åº¦
  *
- * 1. ­º¥ı«Ø¥ß¤¤©Ê¦â¶ô¦Ç¶¥¤U, ©ú«×»P«G«×ªºÃö«Y Lightness<->Luminance
- * 2. §Q¥ÎCIECAM02, ¥HAªº«G«×Y¨DAªº©ú«×L. ±NAªº©ú«×§Q¥Î¨BÆJ1ªºÃö«Y, ¥i¥H±o¨ì¬Û¹ïÀ³ªº«G«×Y'.
- *  Y»PY'À³¸Ó¬O¤£¬Û¦Pªº.
- * 3. ©Ò¥H¨D«D¤¤©Ê¦âªºAªºJNDI, ¹ê»Ú¤W¬O¨D¥XY', ¦A¥ÑY'±a¥XJNDIndex.
- * 4. ¤£¦P«D¤¤©Ê¦â, ¦Û¦³¤£¦PªºY->JNDIndex, ¤Ï¹L¨ÓJNDIndex->Y¥ç¦P.
+ * 1. é¦–å…ˆå»ºç«‹ä¸­æ€§è‰²å¡Šç°éšä¸‹, æ˜åº¦èˆ‡äº®åº¦çš„é—œä¿‚ Lightness<->Luminance
+ * 2. åˆ©ç”¨CIECAM02, ä»¥Açš„äº®åº¦Yæ±‚Açš„æ˜åº¦L. å°‡Açš„æ˜åº¦åˆ©ç”¨æ­¥é©Ÿ1çš„é—œä¿‚, å¯ä»¥å¾—åˆ°ç›¸å°æ‡‰çš„äº®åº¦Y'.
+ *  Yèˆ‡Y'æ‡‰è©²æ˜¯ä¸ç›¸åŒçš„.
+ * 3. æ‰€ä»¥æ±‚éä¸­æ€§è‰²çš„Açš„JNDI, å¯¦éš›ä¸Šæ˜¯æ±‚å‡ºY', å†ç”±Y'å¸¶å‡ºJNDIndex.
+ * 4. ä¸åŒéä¸­æ€§è‰², è‡ªæœ‰ä¸åŒçš„Y->JNDIndex, åéä¾†JNDIndex->Yäº¦åŒ.
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -46,7 +46,7 @@ public final class CIECAM02JNDIndex {
   }
 
   /**
-   * ¹êÅç¥\¯à, ¤£«ØÄ³¨Ï¥Î
+   * å¯¦é©—åŠŸèƒ½, ä¸å»ºè­°ä½¿ç”¨
    * @param color CIECAM02Color
    * @return double[]
    * @deprecated
@@ -60,7 +60,7 @@ public final class CIECAM02JNDIndex {
   }
 
   /**
-   * ±qJÂà´«¨ìJND Index (J->JNDI)
+   * å¾Jè½‰æ›åˆ°JND Index (J->JNDI)
    * @param lightness double
    * @return double
    */
@@ -70,7 +70,7 @@ public final class CIECAM02JNDIndex {
   }
 
   /**
-   * ±qJNDIndexÂà¨ìJ (JNDI->J)
+   * å¾JNDIndexè½‰åˆ°J (JNDI->J)
    * @param JNDIndex double
    * @return double
    */
@@ -80,7 +80,7 @@ public final class CIECAM02JNDIndex {
   }
 
   /**
-   * ¥H©ú«×¨ú±o³æ¦â¥ú¬Û¹ïÀ³ªº«G«×­È
+   * ä»¥æ˜åº¦å–å¾—å–®è‰²å…‰ç›¸å°æ‡‰çš„äº®åº¦å€¼
    * @param lightness double
    * @return double
    */
@@ -93,7 +93,7 @@ public final class CIECAM02JNDIndex {
   }
 
   /**
-   * «Ø¥ß³æ¦â¥úªºJ»P«G«×¤§¶¡ªºÃö«Y
+   * å»ºç«‹å–®è‰²å…‰çš„Jèˆ‡äº®åº¦ä¹‹é–“çš„é—œä¿‚
    * @param XYZArray CIEXYZ[]
    */
   public void setupMonochromeLUT(CIEXYZ[] XYZArray) {
@@ -114,10 +114,10 @@ public final class CIECAM02JNDIndex {
   }
 
   /**
-   * ªì©l¤Æ, «Ø¥ß¥ÕÂIªºY»PJ¤§¶¡ªºÃö«Y
+   * åˆå§‹åŒ–, å»ºç«‹ç™½é»çš„Yèˆ‡Jä¹‹é–“çš„é—œä¿‚
    */
   protected void init() {
-    //¥Õªºjndi
+    //ç™½çš„jndi
     whiteJNDIndex = GSDF.DICOM.getJNDIndex(white.Y);
     int size = ( (int) whiteJNDIndex) + 2;
     double[] JNDIndexArray = new double[size];
@@ -126,13 +126,13 @@ public final class CIECAM02JNDIndex {
 
     for (int x = 1; x < size; x++) {
       JNDIndexArray[x] = x;
-      //jndi¹ïÀ³¨ìªºY
+      //jndiå°æ‡‰åˆ°çš„Y
       double Y = GSDF.DICOM.getLuminance(x);
       XYZ.scaleY(Y);
       XYZ.normalize(white);
       XYZ.normalize(NormalizeY.Normal100);
       CIECAM02Color color = cam.forward(XYZ);
-      //Y¹ïÀ³ªºJ
+      //Yå°æ‡‰çš„J
       lightnessArray[x] = color.J;
     }
 

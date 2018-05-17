@@ -7,7 +7,7 @@ import shu.cms.plot.Plot2D;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * DICOM³W®æ¸ÌªºGSDF,¥i¥Î¨Ó­pºâ¥­·Æ«×
+ * DICOMè¦æ ¼è£¡çš„GSDF,å¯ç”¨ä¾†è¨ˆç®—å¹³æ»‘åº¦
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -81,7 +81,7 @@ public abstract class GSDF {
     public static class DICOM extends GSDF {
 
         /**
-         * ¬O§_¦b¤½¦¡»~®tªº½d³ò¤º
+         * æ˜¯å¦åœ¨å…¬å¼èª¤å·®çš„ç¯„åœå…§
          * @param luminance1 double
          * @param luminance2 double
          * @return boolean

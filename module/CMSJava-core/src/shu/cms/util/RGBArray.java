@@ -126,7 +126,7 @@ public abstract class RGBArray {
   public final static class Check {
 
     /**
-     * ¾ß¬dcode¬O§_¦³»¼¼W
+     * æ’¿æŸ¥codeæ˜¯å¦æœ‰éå¢
      * @param rgbArray RGB[]
      * @return boolean
      */
@@ -140,7 +140,7 @@ public abstract class RGBArray {
     }
 
     /**
-     * ¾ß¬dcode¬O§_¦³»¼¼W
+     * æ’¿æŸ¥codeæ˜¯å¦æœ‰éå¢
      * @param rgbArray RGB[]
      * @param ch Channel
      * @return boolean
@@ -159,7 +159,7 @@ public abstract class RGBArray {
     }
 
     /**
-     * ªğ¦^R/B¨âcode¤§¶¡®t²§¤j©óGªº³Ì¤j®t²§¤§index
+     * è¿”å›R/Bå…©codeä¹‹é–“å·®ç•°å¤§æ–¼Gçš„æœ€å¤§å·®ç•°ä¹‹index
      * @param rgbArray RGB[]
      * @param start int
      * @param end int
@@ -182,7 +182,7 @@ public abstract class RGBArray {
     }
 
     /**
-     * ªğ¦^R/B¨âcode¤§¶¡®t²§¤j©óGªº³Ì¤j®t²§¤§index
+     * è¿”å›R/Bå…©codeä¹‹é–“å·®ç•°å¤§æ–¼Gçš„æœ€å¤§å·®ç•°ä¹‹index
      * @param rgbArray RGB[]
      * @return int[][]
      */
@@ -191,7 +191,7 @@ public abstract class RGBArray {
     }
 
     /**
-     * ªğ¦^values¤¤¨â­Ócode¤§¶¡ªº®t²§¤j©óthreshold¤§index
+     * è¿”å›valuesä¸­å…©å€‹codeä¹‹é–“çš„å·®ç•°å¤§æ–¼thresholdä¹‹index
      * @param values double[]
      * @param threshold double
      * @return int[]
@@ -382,7 +382,7 @@ public abstract class RGBArray {
   }
 
   /**
-   * ­ì©lªºcp code RGB, ¤]´N¬O0 1 2 3...255
+   * åŸå§‹çš„cp code RGB, ä¹Ÿå°±æ˜¯0 1 2 3...255
    * @return RGB[]
    */
   public final static RGB[] getOriginalRGBArray() {
@@ -411,7 +411,7 @@ public abstract class RGBArray {
   }
 
   /**
-   * ­ì©lªºcp code, ¤]´N¬O0 1 2 3...255
+   * åŸå§‹çš„cp code, ä¹Ÿå°±æ˜¯0 1 2 3...255
    */
   private static RGB[] OriginalRGBArray = null;
   private static RGB[] NullRGBArray = null;
@@ -449,7 +449,7 @@ public abstract class RGBArray {
   }
 
   /**
-   * ±NrgbListÂà¦¨rgb°}¦C
+   * å°‡rgbListè½‰æˆrgbé™£åˆ—
    * @param rgbList List
    * @return RGB[]
    */

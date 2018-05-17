@@ -25,7 +25,7 @@ public class SaturationAdjustor {
 
   public static void main(String[] args) throws IOException {
     String dirname =
-        "D:\\≥n≈È\\nobody zone\\Pattern\\skyforce Pattern Collect\\Saturation Evaluation Picture\\Duplicate";
+        "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\Pattern\\skyforce Pattern Collect\\Saturation Evaluation Picture\\Duplicate";
     File dir = new File(dirname);
 
 //    for (File file : dir.listFiles()) {

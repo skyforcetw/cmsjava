@@ -106,8 +106,8 @@ public class SaturationPrecisionEvaluator {
 //        double g1n2 = g1 / n2;
 //        int intg1 = ( (int) g1n2);
 //
-//        double g2 = n / (turnPoint); //3bit => 5bit¾ã¼Æ/2bit¯BÂI
-//        double g2n2 = g2 / n2; //¯d8­Óbit
+//        double g2 = n / (turnPoint); //3bit => 5bitæ•´æ•¸/2bitæµ®é»
+//        double g2n2 = g2 / n2; //ç•™8å€‹bit
 //        int intg2 = ( (int) g2n2) >> 8;
 //
 //        int intg1g2 = (intg1 * intg2) >> 8;
@@ -174,7 +174,7 @@ public class SaturationPrecisionEvaluator {
 
 //    System.out.println(s);
 //    result = (short) (s / 100. * newEndSaturation);
-    result = (short) s; //¥i¥H¹F12bit
+    result = (short) s; //å¯ä»¥é”12bit
 
     return result;
 
@@ -218,7 +218,7 @@ public class SaturationPrecisionEvaluator {
     double n2 = 1. / Math.pow(2, bitG2);
 
     int intg1g2Shift = bitG2 - 3 + (12 - bitgain);
-    int offsetShift = 10 + (bitgain - 12) + (0); //­¼¥X¨Óªºoffset°µÁY´î
+    int offsetShift = 10 + (bitgain - 12) + (0); //ä¹˜å‡ºä¾†çš„offsetåšç¸®æ¸›
 
     if (showMessage) {
 //      System.out.println("intg1g2Shift: " + intg1g2Shift);
@@ -309,7 +309,7 @@ public class SaturationPrecisionEvaluator {
     double n2 = 1. / (Math.pow(2, bitG2) - 1);
 
     int intg1g2Shift = bitG2 - 3 + (12 - bitgain);
-    int offsetShift = 10 + (bitgain - 12) + (3 - turnPointBit); //­¼¥X¨Óªºoffset°µÁY´î
+    int offsetShift = 10 + (bitgain - 12) + (3 - turnPointBit); //ä¹˜å‡ºä¾†çš„offsetåšç¸®æ¸›
 
     if (showMessage) {
       System.out.println("intg1g2Shift: " + intg1g2Shift);

@@ -4,7 +4,7 @@ package shu.cms.gma;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó±Ô­z¤À°Ï¤¤ªº¶°¤¤ÂI¥H¤Î¤À°ÏªºÃä¬É­È
+ * ç”¨ä¾†æ•˜è¿°åˆ†å€ä¸­çš„é›†ä¸­é»ä»¥åŠåˆ†å€çš„é‚Šç•Œå€¼
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -15,19 +15,19 @@ package shu.cms.gma;
  */
 public interface FocalArea {
   /**
-   * ¨ú±o¶°¤¤ÂI
+   * å–å¾—é›†ä¸­é»
    * @return double
    */
   public double getFocalPoint();
 
   /**
-   * ¨ú±o¸Ó°Ïªº¤W¬É­­
+   * å–å¾—è©²å€çš„ä¸Šç•Œé™
    * @return double
    */
   public double getUpperBoundary();
 
   /**
-   * ¨ú±o¸Ó°Ïªº¤U¬É­­
+   * å–å¾—è©²å€çš„ä¸‹ç•Œé™
    * @return double
    */
   public double getLowerBoundary();

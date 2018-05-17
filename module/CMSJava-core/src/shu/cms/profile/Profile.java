@@ -9,8 +9,8 @@ import shu.cms.colorspace.independ.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * Profile¥D­n¬O¬Û®e©óICC Profileªº¤º®e,
- * ¥H°O¿ı¬°¥D­n¥Ø¼Ğ,©Ò¥HºÉ¶q´î¤Ö¨ç¦¡ªº¹ê§@.
+ * Profileä¸»è¦æ˜¯ç›¸å®¹æ–¼ICC Profileçš„å…§å®¹,
+ * ä»¥è¨˜éŒ„ç‚ºä¸»è¦ç›®æ¨™,æ‰€ä»¥ç›¡é‡æ¸›å°‘å‡½å¼çš„å¯¦ä½œ.
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

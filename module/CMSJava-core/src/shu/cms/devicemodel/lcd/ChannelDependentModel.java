@@ -25,7 +25,7 @@ public abstract class ChannelDependentModel
   protected LCDTarget xtalkLCDTarget;
 
   /**
-   * ¦pªG¦³¤wÀx¦sªºmodel¦sÀÉ«h¸ü¤J, §_«h¤£°Ê§@
+   * å¦‚æœæœ‰å·²å„²å­˜çš„modelå­˜æª”å‰‡è¼‰å…¥, å¦å‰‡ä¸å‹•ä½œ
    * @return ChannelDependentModel
    */
   public final ChannelDependentModel loadStoreInstanceWhileExist() {
@@ -39,7 +39,7 @@ public abstract class ChannelDependentModel
   }
 
   /**
-   * loading¤wÀx¦sªºmodel¦sÀÉ
+   * loadingå·²å„²å­˜çš„modelå­˜æª”
    * @return ChannelDependentModel
    */
   public final ChannelDependentModel getStoreInstance() {
@@ -100,7 +100,7 @@ public abstract class ChannelDependentModel
   }
 
   /**
-   * ±qxtalkLCDTarget¨ú±ochªºelementValues(©Ò¦³ªºcode)
+   * å¾xtalkLCDTargetå–å¾—chçš„elementValues(æ‰€æœ‰çš„code)
    * @param ch Channel
    * @return double[]
    */
@@ -109,7 +109,7 @@ public abstract class ChannelDependentModel
   }
 
   /**
-   * ¨ú±opixel element valueªºÅÜ¤Æ¶¡¹j
+   * å–å¾—pixel element valueçš„è®ŠåŒ–é–“éš”
    * @param lcdTarget LCDTarget
    * @param ch Channel
    * @return double[]

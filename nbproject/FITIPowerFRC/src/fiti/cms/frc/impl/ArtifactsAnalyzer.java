@@ -1,9 +1,9 @@
-package auo.cms.frc.impl;
+package fiti.cms.frc.impl;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 
-import auo.cms.frc.FRCPattern;
+import fiti.cms.frc.FRCPattern;
 import shu.math.array.DoubleArray;
 
 /**
@@ -706,8 +706,10 @@ public class ArtifactsAnalyzer {
     }
     };
 
+    /*
     public static void main(String[] args) throws FileNotFoundException,
             IOException {
+        System.out.println("1211134");
         ArtifactsAnalyzer analyzer = new ArtifactsAnalyzer(ArtifactsAnalyzer.
                 Inversion.Dot,
 //                new AUOFRC("frc/auofrc.csv", AUOFRC.PatternCount.FRC8));
@@ -717,6 +719,11 @@ public class ArtifactsAnalyzer {
 //        analyzer.setNPlus1DotInversion(true);
 //        analyzer.setNLineDotInversion(2);
         System.out.println(FRCUtil.toString(analyzer.getPolarity(0)));
+    }
+    */
+    
+    public static void main(String[] args) {
+        System.out.println("1234");
     }
 
     public void setFrameInversion(int frameInversion) {

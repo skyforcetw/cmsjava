@@ -129,7 +129,7 @@ public class LocusPlot {
   };
 
   /**
-   * µe¥Xxy¦â«×¹Ïªº¤H²´¦â°ìÃä¬É(°¨¿á§Î¹Ï)
+   * ç•«å‡ºxyè‰²åº¦åœ–çš„äººçœ¼è‰²åŸŸé‚Šç•Œ(é¦¬è¹„å½¢åœ–)
    * @param color boolean
    */
   public void drawCIExyLocus(boolean color) {
@@ -137,7 +137,7 @@ public class LocusPlot {
   }
 
   /**
-   * µe¥Xxy¦â«×¹Ïªº¤H²´¦â°ìÃä¬É(°¨¿á§Î¹Ï)
+   * ç•«å‡ºxyè‰²åº¦åœ–çš„äººçœ¼è‰²åŸŸé‚Šç•Œ(é¦¬è¹„å½¢åœ–)
    */
   public void drawCIExyLocus() {
     drawLocus(true, xyTrasnfer);

@@ -15,9 +15,9 @@ import shu.math.array.DoubleArray;
  * @version 1.0
  */
 public enum ITU_R {
-  //HDTVªº¼Ð·Ç, ¬Û·í©ósRGB
+  //HDTVçš„æ¨™æº–, ç›¸ç•¶æ–¼sRGB
   BT709(0.212656, 0.072186),
-  //NTSCªº·sª©¥», ¤]´N¬OSMPTE-C
+  //NTSCçš„æ–°ç‰ˆæœ¬, ä¹Ÿå°±æ˜¯SMPTE-C
   SMPTE_C(0.212395, 0.086556),
   //NTSC
   BT601(0.298839, 0.114350),

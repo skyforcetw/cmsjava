@@ -25,19 +25,19 @@ public class LCDMetadata
   }
 
   /**
-   * ¿Ã¹õ/panel ªºmodel
+   * è¢å¹•/panel çš„model
    */
   protected String model;
   /**
-   * ¸É¥R±Ô­z
+   * è£œå……æ•˜è¿°
    */
   protected String description = "";
   /**
-   * ²G´¹ªºdrive type
+   * æ¶²æ™¶çš„drive type
    */
   protected Type type;
   /**
-   * ±Ä¥Îªº­I¥ú·½
+   * æ¡ç”¨çš„èƒŒå…‰æº
    */
   protected Backlight backlight;
 

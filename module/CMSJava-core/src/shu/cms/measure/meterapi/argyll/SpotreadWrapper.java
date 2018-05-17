@@ -8,16 +8,16 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * wrapper¬[ºc¹Ï:
+ * wrapperæ¶æ§‹åœ–:
  * spotread <=exec=> SpotreadWrapper    <=exec=>    caller
  *                                   <-ctr signal<-
- * ¶Ç²Î¬[ºc¹Ï:
+ * å‚³çµ±æ¶æ§‹åœ–:
  * spotread <=exec=> caller
  *
- * ¥[¤WSpotreadWrapperªº¥Î·N¦b©ó, ¬°¤FÁ×§K¦b¶Ç²Î¬[ºc¤U, ¦pªGcallerµL¹wÄµªº¤¤Â_«á,
- * ·|³y¦¨°õ¦æspotreadªºjava.exe¨äcpu¨Ï¥Î²vº¡¸ü. ¬°¤F¸Ñ¨M³o¼Ëªº°İÃD, ¥[¤J¤@Wrapper¤¶¤J¨ä¤¤,
- * Wrapper»İ­n©w®É±µ¨ü¤@­Ó±±¨î°T¸¹, ­n¬O±±¨î°T¸¹¹L¤[¨S¦³¶Ç°e¶i¨Ó, ´N·|§P©wcaller¤w¸g°±¤î.
- * ¦¹®ÉWrapper·|¥ıÃö³¬spotread¹ïÀ³ªºjava.exe, µM«á¦A¦Û±ş.
+ * åŠ ä¸ŠSpotreadWrapperçš„ç”¨æ„åœ¨æ–¼, ç‚ºäº†é¿å…åœ¨å‚³çµ±æ¶æ§‹ä¸‹, å¦‚æœcallerç„¡é è­¦çš„ä¸­æ–·å¾Œ,
+ * æœƒé€ æˆåŸ·è¡Œspotreadçš„java.exeå…¶cpuä½¿ç”¨ç‡æ»¿è¼‰. ç‚ºäº†è§£æ±ºé€™æ¨£çš„å•é¡Œ, åŠ å…¥ä¸€Wrapperä»‹å…¥å…¶ä¸­,
+ * Wrapperéœ€è¦å®šæ™‚æ¥å—ä¸€å€‹æ§åˆ¶è¨Šè™Ÿ, è¦æ˜¯æ§åˆ¶è¨Šè™Ÿéä¹…æ²’æœ‰å‚³é€é€²ä¾†, å°±æœƒåˆ¤å®šcallerå·²ç¶“åœæ­¢.
+ * æ­¤æ™‚Wrapperæœƒå…ˆé—œé–‰spotreadå°æ‡‰çš„java.exe, ç„¶å¾Œå†è‡ªæ®º.
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -32,7 +32,7 @@ public class SpotreadWrapper {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * ¦Û°Êµo°e Control SignalªºThread
+   * è‡ªå‹•ç™¼é€ Control Signalçš„Thread
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -140,7 +140,7 @@ public class SpotreadWrapper {
     listener.start();
 
     //==========================================================================
-    // Åªconsole¿é¤J => spotread
+    // è®€consoleè¼¸å…¥ => spotread
     //==========================================================================
     Thread ist = new Thread() {
       public void run() {
@@ -169,7 +169,7 @@ public class SpotreadWrapper {
     //==========================================================================
 
     //==========================================================================
-    // Åªspotread¿é¥X => console
+    // è®€spotreadè¼¸å‡º => console
     //==========================================================================
     Thread ost = new Thread() {
       public void run() {
@@ -192,7 +192,7 @@ public class SpotreadWrapper {
     //==========================================================================
 
     //==========================================================================
-    // Åªspotread err => console
+    // è®€spotread err => console
     //==========================================================================
     Thread est = new Thread() {
       public void run() {

@@ -42,7 +42,7 @@ public abstract class TuneTarget {
   public abstract HSV getTuneSpot(double hue);
 
   /**
-   * ���o�n�Ψӽվ㪺�I
+   * 取得要用來調整的點
    * @param hue double
    * @return HSV[]
    */

@@ -40,7 +40,7 @@ public class ShareMemoryMeter
   }
 
   /**
-   * ¶q´úªº¦P®É, «ü©w­I´º©M´¡¦âªºindex. (GUIºİ©|¥¼¤ä´©)
+   * é‡æ¸¬çš„åŒæ™‚, æŒ‡å®šèƒŒæ™¯å’Œæ’è‰²çš„index. (GUIç«¯å°šæœªæ”¯æ´)
    * @param rgbArray RGB[]
    * @return CIEXYZ[]
    */

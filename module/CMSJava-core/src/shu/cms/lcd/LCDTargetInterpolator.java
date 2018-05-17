@@ -17,8 +17,8 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ®Ú¾ÚR/G/B³æ¤@ÀW¹Dªº´ú¶q­È,¤º´¡¥X©Ò»İ­nªº¦â¶ô¡F¥Ø«e¶È¯à¤º´¡¦P¼Ë³æ¤@ÀW¹Dªº¦â¶ô¡C
- * ¨Ã¥B¥i¥H®Ú¾Ú»İ¨D,¦Û°Ê¿ï¾Ü³Ì¨Îªº¤º´¡ºtºâªk¡C
+ * æ ¹æ“šR/G/Bå–®ä¸€é »é“çš„æ¸¬é‡å€¼,å…§æ’å‡ºæ‰€éœ€è¦çš„è‰²å¡Šï¼›ç›®å‰åƒ…èƒ½å…§æ’åŒæ¨£å–®ä¸€é »é“çš„è‰²å¡Šã€‚
+ * ä¸¦ä¸”å¯ä»¥æ ¹æ“šéœ€æ±‚,è‡ªå‹•é¸æ“‡æœ€ä½³çš„å…§æ’æ¼”ç®—æ³•ã€‚
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -31,7 +31,7 @@ public class LCDTargetInterpolator {
 
   private LCDTarget lcdTarget;
   /**
-   * ¥H³Ì§¡¤Ãªºuv'¨Ó°µ¤º´¡¬O³Ì¨Îªº
+   * ä»¥æœ€å‡å‹»çš„uv'ä¾†åšå…§æ’æ˜¯æœ€ä½³çš„
    */
   private Domain domain = Domain.uvPrime;
 
@@ -70,8 +70,8 @@ public class LCDTargetInterpolator {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ¤º´¡©Ò¨Ï¥Îªº¼Æ­È.
-   * XYZªº¦â®t·|¸û¤j,¤£«ØÄ³¨Ï¥Î
+   * å…§æ’æ‰€ä½¿ç”¨çš„æ•¸å€¼.
+   * XYZçš„è‰²å·®æœƒè¼ƒå¤§,ä¸å»ºè­°ä½¿ç”¨
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -131,7 +131,7 @@ public class LCDTargetInterpolator {
   }
 
   /**
-   * ªì©l¤Æ¤º´¡¹Bºâ(for uniform)
+   * åˆå§‹åŒ–å…§æ’é‹ç®—(for uniform)
    * @param channels Channel[]
    */
   protected void initInterpolationUniform(RGBBase.Channel[] channels) {
@@ -158,10 +158,10 @@ public class LCDTargetInterpolator {
       int index = 0;
       keyRGB.setColorBlack();
       for (double code = 0; code <= 255; code += step) {
-        //¨ú±o¸ÓÀW¹D¤U0~255ªº¶q´ú­È
+        //å–å¾—è©²é »é“ä¸‹0~255çš„é‡æ¸¬å€¼
         keyRGB.setValue(c, code, RGB.MaxValue.Double255);
         Patch p = lcdTarget.getPatch(keyRGB);
-        //±N¹ï¬Mªºdomain¸ê®Æ¨ú¥X, ©ñ¨ìrgbArray. ¤º´¡±N¨Ì·ÓrgbArrayªº¼Æ­È.
+        //å°‡å°æ˜ çš„domainè³‡æ–™å–å‡º, æ”¾åˆ°rgbArray. å…§æ’å°‡ä¾ç…§rgbArrayçš„æ•¸å€¼.
         rgbArray[arrayIndex][index++] = getDomainValues(p.getXYZ());
         if (false == codeArrayInit) {
           codeArray[codeArrayIndex++] = code;
@@ -203,12 +203,12 @@ public class LCDTargetInterpolator {
   }
 
   /**
-   * ªì©l¤Æ¤º´¡¹Bºâ(for various)
-   * @todo M ¬İfor various¬O¤£¬O¥i¥H¨ú¥Nfor uniform
+   * åˆå§‹åŒ–å…§æ’é‹ç®—(for various)
+   * @todo M çœ‹for variousæ˜¯ä¸æ˜¯å¯ä»¥å–ä»£for uniform
    */
   protected void initInterpolationVarious() {
     //==========================================================================
-    // ­º¥ı¹LÂo¥X¶È¦³R/G/B/Wªº¦â¶ô
+    // é¦–å…ˆéæ¿¾å‡ºåƒ…æœ‰R/G/B/Wçš„è‰²å¡Š
     //==========================================================================1
     List<Patch>
         [] patchListArray = filterPatchListArray(RGB.Channel.RGBWChannel);
@@ -216,7 +216,7 @@ public class LCDTargetInterpolator {
     //==========================================================================
 
     //==========================================================================
-    // ¥[¥ş¶Âªº¦â¶ô
+    // åŠ å…¨é»‘çš„è‰²å¡Š
     //==========================================================================
 //    Patch darkestPatch = lcdTarget.getDarkestPatch();
     int[] sizeArray = new int[channels];
@@ -232,7 +232,7 @@ public class LCDTargetInterpolator {
       rgbwArray[x] = new double[size][];
 
       //==========================================================================
-      // ±NList¤ºªº©Ò¦³¦â¶ô, ¤@¤@Àx¦s¨ìrgbArray
+      // å°‡Listå…§çš„æ‰€æœ‰è‰²å¡Š, ä¸€ä¸€å„²å­˜åˆ°rgbArray
       //==========================================================================
       int index = 0;
       for (Patch p : patchList) {
@@ -244,14 +244,14 @@ public class LCDTargetInterpolator {
       //==========================================================================
     }
 
-    //Âà¸m
+    //è½‰ç½®
     rArray = DoubleArray.transpose(rgbwArray[0]);
     gArray = DoubleArray.transpose(rgbwArray[1]);
     bArray = DoubleArray.transpose(rgbwArray[2]);
     wArray = DoubleArray.transpose(rgbwArray[3]);
 
     //==========================================================================
-    // ²£¥Í¤º´¡ª«¥ó
+    // ç”¢ç”Ÿå…§æ’ç‰©ä»¶
     //==========================================================================
     rInterpolator = new Interpolator(codeArray[0], rArray);
     gInterpolator = new Interpolator(codeArray[1], gArray);
@@ -261,10 +261,10 @@ public class LCDTargetInterpolator {
   }
 
   /**
-   * ¥HlcdTarget¬°°ò·Ç,²£¥Í¤º´¡­È
-   * ¦]¬°¨S¦³¹w³]Interpolation.Type,©Ò¥H­n©I¥s
+   * ä»¥lcdTargetç‚ºåŸºæº–,ç”¢ç”Ÿå…§æ’å€¼
+   * å› ç‚ºæ²’æœ‰é è¨­Interpolation.Type,æ‰€ä»¥è¦å‘¼å«
    * getPatch(RGBBase.Channel ch, double value,Interpolation.Type type)
-   * §Y®É³]©w¤º´¡ºtºâªk
+   * å³æ™‚è¨­å®šå…§æ’æ¼”ç®—æ³•
    * @param lcdTarget LCDTarget
    */
   private LCDTargetInterpolator(LCDTarget lcdTarget) {
@@ -280,8 +280,8 @@ public class LCDTargetInterpolator {
   private RGBBase.Channel[] channels = RGBBase.Channel.RGBWChannel;
 
   /**
-   * ¥HlcdTarget¬°°ò·Ç,²£¥Í¤º´¡­È.
-   * ¤º´¡ºtºâªk¨Ã¥B¥HrInterpolationType/gInterpolationType/bInterpolationType°µ­pºâ.
+   * ä»¥lcdTargetç‚ºåŸºæº–,ç”¢ç”Ÿå…§æ’å€¼.
+   * å…§æ’æ¼”ç®—æ³•ä¸¦ä¸”ä»¥rInterpolationType/gInterpolationType/bInterpolationTypeåšè¨ˆç®—.
    * @param lcdTarget LCDTarget
    * @param algos Algo[]
    * @param channels Channel[]
@@ -316,7 +316,7 @@ public class LCDTargetInterpolator {
   }
 
   /**
-   * ªì©l¤Ægamma corrector, ¨ÑLuminance RGBÂàDAC Value RGB®É¥Î
+   * åˆå§‹åŒ–gamma corrector, ä¾›Luminance RGBè½‰DAC Value RGBæ™‚ç”¨
    * @param channels Channel[]
    */
   protected void initGammaCorrector(RGBBase.Channel[] channels) {
@@ -334,7 +334,7 @@ public class LCDTargetInterpolator {
   }
 
   /**
-   * Luminance RGBÂàDAC Value RGB®É¥Î
+   * Luminance RGBè½‰DAC Value RGBæ™‚ç”¨
    */
   private GammaCorrector[] correctors;
 
@@ -347,9 +347,9 @@ public class LCDTargetInterpolator {
         initInterpolationUniform(channels);
 
         /**
-         * @todo M acp initInterpolationVarious·|¦³°İÃD
-         * @note uniformªºpatch¥ÎinitInterpolationVarious¥h²£¥Í¤º´¡­È,
-         * ·|¦³¿ù»~,­ì¦]?½Ğ¦Aªá®É¶¡²Ó¬İ...
+         * @todo M acp initInterpolationVariousæœƒæœ‰å•é¡Œ
+         * @note uniformçš„patchç”¨initInterpolationVariouså»ç”¢ç”Ÿå…§æ’å€¼,
+         * æœƒæœ‰éŒ¯èª¤,åŸå› ?è«‹å†èŠ±æ™‚é–“ç´°çœ‹...
          */
 //        initInterpolationVarious();
         break;
@@ -361,7 +361,7 @@ public class LCDTargetInterpolator {
   }
 
   /**
-   * ¨ú±och©Ò¦bªºarray index
+   * å–å¾—chæ‰€åœ¨çš„array index
    * @param ch Channel
    * @return int
    */
@@ -375,7 +375,7 @@ public class LCDTargetInterpolator {
   }
 
   /**
-   * ¤º´¡­È(CIEXYZ)
+   * å…§æ’å€¼(CIEXYZ)
    * @param ch Channel
    * @param code double
    * @param type Type
@@ -384,7 +384,7 @@ public class LCDTargetInterpolator {
   protected double[] getValues(RGBBase.Channel ch, double code,
                                Interpolation.Algo type) {
     //==========================================================================
-    // ¬Y¨Çºtºâªk¥u¾A¦X«G«×ªº­pºâ, ¦]¦¹«D«G«×ªº­pºâ¶·¥HLINEAR³B²z
+    // æŸäº›æ¼”ç®—æ³•åªé©åˆäº®åº¦çš„è¨ˆç®—, å› æ­¤éäº®åº¦çš„è¨ˆç®—é ˆä»¥LINEARè™•ç†
     //==========================================================================
     Interpolation.Algo nonlumiType = null;
     if ( (type == Interpolation.Algo.Gamma || type == Interpolation.Algo.Gamma2) &&
@@ -414,7 +414,7 @@ public class LCDTargetInterpolator {
   }
 
   /**
-   * ¤º´¡¥XPatch
+   * å…§æ’å‡ºPatch
    * @param ch Channel
    * @param value double
    * @return Patch
@@ -454,7 +454,7 @@ public class LCDTargetInterpolator {
   }
 
   /**
-   * ¤º´¡¥XPatch
+   * å…§æ’å‡ºPatch
    * @param ch Channel
    * @param value double
    * @param type Type
@@ -480,7 +480,7 @@ public class LCDTargetInterpolator {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * ³Ì¨Î¤Æªº§PÂ_°ò·Ç(¥H¦â®t¬°°ò·Ç)
+   * æœ€ä½³åŒ–çš„åˆ¤æ–·åŸºæº–(ä»¥è‰²å·®ç‚ºåŸºæº–)
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -498,10 +498,10 @@ public class LCDTargetInterpolator {
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: a Colour Management System by Java</p>
-   * ©Ò±Ä¥Îªº¼Ë¥»«¬ºA
-   * Uniform»PVariousªº®t§O¦b©ó:
-   * Uniform¬°³sÄòcode¤£¶¡Â_ªº¦â¶ô.
-   * Various«h¬°code¦³¶¡Â_ªº¦â¶ô.
+   * æ‰€æ¡ç”¨çš„æ¨£æœ¬å‹æ…‹
+   * Uniformèˆ‡Variousçš„å·®åˆ¥åœ¨æ–¼:
+   * Uniformç‚ºé€£çºŒcodeä¸é–“æ–·çš„è‰²å¡Š.
+   * Variouså‰‡ç‚ºcodeæœ‰é–“æ–·çš„è‰²å¡Š.
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -518,10 +518,10 @@ public class LCDTargetInterpolator {
 
   public static class Find {
     /**
-     * ±qlessTarget«Ø¥ßmodel, ¦A¥ÎmoreTarget°µÅçÃÒ, §ä¨ì³Ì¨Î¤º´¡ªk
+     * å¾lessTargetå»ºç«‹model, å†ç”¨moreTargetåšé©—è­‰, æ‰¾åˆ°æœ€ä½³å…§æ’æ³•
      * @param lessTarget LCDTarget
      * @param moreTarget LCDTarget
-     * @param type OptimumType §ä¨ì³Ì¨Î¸Ñªº«ü¼Ğ
+     * @param type OptimumType æ‰¾åˆ°æœ€ä½³è§£çš„æŒ‡æ¨™
      * @return Type[]
      */
     public final static Interpolation.Algo[] optimumInterpolationType(
@@ -537,10 +537,10 @@ public class LCDTargetInterpolator {
     }
 
     /**
-     * ±qlessTarget«Ø¥ßmodel, ¦A¥ÎmoreTarget°µÅçÃÒ, §ä¨ì³Ì¨Î¤º´¡ªk
+     * å¾lessTargetå»ºç«‹model, å†ç”¨moreTargetåšé©—è­‰, æ‰¾åˆ°æœ€ä½³å…§æ’æ³•
      * @param lessTarget LCDTarget
      * @param moreTarget LCDTarget
-     * @param type OptimumType §ä¨ì³Ì¨Î¸Ñªº«ü¼Ğ
+     * @param type OptimumType æ‰¾åˆ°æœ€ä½³è§£çš„æŒ‡æ¨™
      * @param channels Channel[]
      * @return Algo[]
      */
@@ -565,7 +565,7 @@ public class LCDTargetInterpolator {
       int size = morePatchList.size() - lessPatchList.size();
       double[] deltaEArray = new double[size];
 
-      //§Q¥Îless target°µ¤º´¡,¥Øªº¬O§Æ±æ¤º´¡µ²ªG¥i¥H¹GªñmoreTarget
+      //åˆ©ç”¨less targetåšå…§æ’,ç›®çš„æ˜¯å¸Œæœ›å…§æ’çµæœå¯ä»¥é€¼è¿‘moreTarget
       LCDTargetInterpolator interpolator = new LCDTargetInterpolator(lessTarget,
           new RGBBase.Channel[] {ch});
       RGB keyRGB = lessTarget.getKeyRGB();
@@ -578,10 +578,10 @@ public class LCDTargetInterpolator {
       double[] rgbValues = new double[3];
 
       for (Interpolation.Algo interpType : Interpolation.Algo.values()) {
-        //±N¦UºØ¤º´¡ºtºâªk¦C¥X¨Ó
+        //å°‡å„ç¨®å…§æ’æ¼”ç®—æ³•åˆ—å‡ºä¾†
         if (interpType == Interpolation.Algo.Lagrange ||
             interpType == Interpolation.Algo.Spline2) {
-          //­¡¥N¤£¦Pªº¤º´¡ªk,¦ı¬O²¤¹LLAGRANGE(¤Ó¦h¤º´¡³t«×·|¹LºC),ÁÙ¦³SPLINE2(¤ÓºC)
+          //è¿­ä»£ä¸åŒçš„å…§æ’æ³•,ä½†æ˜¯ç•¥éLAGRANGE(å¤ªå¤šå…§æ’é€Ÿåº¦æœƒéæ…¢),é‚„æœ‰SPLINE2(å¤ªæ…¢)
           continue;
         }
         int arrayIndex = 0;
@@ -601,7 +601,7 @@ public class LCDTargetInterpolator {
           }
         }
         double index = Double.MAX_VALUE;
-        //¨Ì·Ó¤£¦Pªº³Ì¨Î¤Æ¤èªk,­pºâ¥Xindex­È
+        //ä¾ç…§ä¸åŒçš„æœ€ä½³åŒ–æ–¹æ³•,è¨ˆç®—å‡ºindexå€¼
         switch (type) {
           case Average:
             index = Maths.mean(deltaEArray);
@@ -614,7 +614,7 @@ public class LCDTargetInterpolator {
             break;
         }
         if (index < bestIndex) {
-          //§ä¨ì³Ì¨Îºtºâªk
+          //æ‰¾åˆ°æœ€ä½³æ¼”ç®—æ³•
           bestInterpType = interpType;
           bestIndex = index;
         }
@@ -662,7 +662,7 @@ public class LCDTargetInterpolator {
       double targetJNDI = gm.getJNDIndex(targetXYZ);
 
       //========================================================================
-      // ®t²§­pºâ
+      // å·®ç•°è¨ˆç®—
       //========================================================================
       double de = DeltaE.CIE2000DeltaE(interpLab, targetLab);
       deArray[index] = de;

@@ -30,7 +30,7 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¤H²´µû¦ôGradientªºmodel
+ * äººçœ¼è©•ä¼°Gradientçš„model
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -48,7 +48,7 @@ public abstract class GradientModel {
     private RGBBase.Channel imageChannel;
 
     /**
-     * ±qRGBW¥|­Óº¥¼h¨ÓµûÂ_¬O§_¥­¶¶
+     * å¾RGBWå››å€‹æ¼¸å±¤ä¾†è©•æ–·æ˜¯å¦å¹³é †
      * @return boolean
      */
     public final boolean isSmooth() {
@@ -68,7 +68,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * µûÂ_chªºº¥¼h¬O§_¥­¶¶
+     * è©•æ–·chçš„æ¼¸å±¤æ˜¯å¦å¹³é †
      * @param ch Channel
      * @return boolean
      */
@@ -80,7 +80,7 @@ public abstract class GradientModel {
         for (Pattern p : patternList) {
             Logger.log.info(p);
         }
-        //¥u­n¦³¥ô¦ó­È¦^¶Ç, ´N¥Nªí¤£¶¶.
+        //åªè¦æœ‰ä»»ä½•å€¼å›å‚³, å°±ä»£è¡¨ä¸é †.
         return ps.isSmooth();
     }
 
@@ -143,14 +143,14 @@ public abstract class GradientModel {
 
         if (target != null) {
             this.target = target;
-            //¹w³]¼v¹³ªºchannel
+            //é è¨­å½±åƒçš„channel
             this.imageChannel = target.getTargetChannel();
         }
         initCAM();
     }
 
     /**
-     * ¨ú±o¼v¹³ªºRGB code curve
+     * å–å¾—å½±åƒçš„RGB code curve
      * @return double[]
      */
     private double[] getCodeCurve() {
@@ -167,7 +167,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ¥HcodeªºÅÜ¤Æ¨Ó°»´úÃä½tªºindex
+     * ä»¥codeçš„è®ŠåŒ–ä¾†åµæ¸¬é‚Šç·£çš„index
      * @return int[]
      */
     private int[] detectIdealBorderIndexByCode() {
@@ -183,7 +183,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ¨ú±oÃä¬Éªº¤T¨ë¿E­È
+     * å–å¾—é‚Šç•Œçš„ä¸‰åˆºæ¿€å€¼
      * @return double[][]
      */
     double[][] getBorderXYZValues() {
@@ -201,7 +201,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ³]©w¼v¹³ªº°Ñ¼Æ
+     * è¨­å®šå½±åƒçš„åƒæ•¸
      * @param start int
      * @param end int
      * @param R boolean
@@ -222,7 +222,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ³]©wsmooth¬ÛÃö¹Bºâ®É©Ò¨Ï¥Îªºimage¼v¹³
+     * è¨­å®šsmoothç›¸é—œé‹ç®—æ™‚æ‰€ä½¿ç”¨çš„imageå½±åƒ
      * @param start int
      * @param end int
      * @param ch Channel
@@ -235,18 +235,18 @@ public abstract class GradientModel {
     }
 
     /**
-     * ¹w³]ªº¼v¹³°ª«×, ¥Ñ©ó¤£¦Ò¼{ªÅ¶¡ªº¼vÅT, ©Ò¥H³]1´N¦n¤£»İÅÜ°Ê.
+     * é è¨­çš„å½±åƒé«˜åº¦, ç”±æ–¼ä¸è€ƒæ…®ç©ºé–“çš„å½±éŸ¿, æ‰€ä»¥è¨­1å°±å¥½ä¸éœ€è®Šå‹•.
      */
     public final static int DEFAULT_IMAGE_HEIGHT = 1;
 
     /**
-     * ³]©wsmooth¬ÛÃö¹Bºâ®É©Ò¨Ï¥Îªºimage¼v¹³
-     * @param start int codeªºstart
-     * @param end int codeªºend
-     * @param ch Channel ¿ï¥Îªºchannel
-     * @param scale int RGBÁ`¦@ªºÅÜ¤Æµ{«×(³Ì¦hªºÅÜ¤Æµ{«×¬°0~255, ¤]´N¬O256­Ó)
-     * @param width int ¼v¹³ªº¼e
-     * @param height int ¼v¹³ªº°ª
+     * è¨­å®šsmoothç›¸é—œé‹ç®—æ™‚æ‰€ä½¿ç”¨çš„imageå½±åƒ
+     * @param start int codeçš„start
+     * @param end int codeçš„end
+     * @param ch Channel é¸ç”¨çš„channel
+     * @param scale int RGBç¸½å…±çš„è®ŠåŒ–ç¨‹åº¦(æœ€å¤šçš„è®ŠåŒ–ç¨‹åº¦ç‚º0~255, ä¹Ÿå°±æ˜¯256å€‹)
+     * @param width int å½±åƒçš„å¯¬
+     * @param height int å½±åƒçš„é«˜
      */
     public void setupImage(int start, int end, RGBBase.Channel ch, int scale,
                            int width, int height) {
@@ -293,7 +293,7 @@ public abstract class GradientModel {
      * <p>Title: Colour Management System</p>
      *
      * <p>Description: a Colour Management System by Java</p>
-     * ¹ï¤ñªº­pºâ¤è¦¡
+     * å°æ¯”çš„è¨ˆç®—æ–¹å¼
      *
      * <p>Copyright: Copyright (c) 2008</p>
      *
@@ -317,7 +317,7 @@ public abstract class GradientModel {
 
     private class _Contrast {
         /**
-         * ¨ú¥X¹ï¤ñ¦±½u
+         * å–å‡ºå°æ¯”æ›²ç·š
          * @param type Contrast
          * @return double[]
          */
@@ -399,7 +399,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ¨ú±o¤£¶¶ªºPattern¥H¤Î¨äsmoothªº¤À¼Æ
+     * å–å¾—ä¸é †çš„Patternä»¥åŠå…¶smoothçš„åˆ†æ•¸
      * @return PatternAndScore
      */
     public abstract PatternAndScore getPatternAndScore();
@@ -407,7 +407,7 @@ public abstract class GradientModel {
     protected double thresholdPercent = 10;
 
     /**
-     * ³]©wthreshold percent
+     * è¨­å®šthreshold percent
      * @param percent double
      */
     public void setThresholdPercent(double percent) {
@@ -415,7 +415,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ³]©w«ØÄ³ªºthreshold percent(¦¹¤D¸gÅç­È)
+     * è¨­å®šå»ºè­°çš„threshold percent(æ­¤ä¹ƒç¶“é©—å€¼)
      * @param channel Channel
      */
     public void setRecommendThresholdPercent(RGBBase.Channel channel) {
@@ -450,7 +450,7 @@ public abstract class GradientModel {
      * <p>Title: Colour Management System</p>
      *
      * <p>Description: a Colour Management System by Java</p>
-     * ¬ö¿ı¤£¶¶pattern¥H¤Î¹ï¬Msmooth¤À¼ÆªºÃş§O
+     * ç´€éŒ„ä¸é †patternä»¥åŠå°æ˜ smoothåˆ†æ•¸çš„é¡åˆ¥
      *
      * <p>Copyright: Copyright (c) 2008</p>
      *
@@ -476,25 +476,25 @@ public abstract class GradientModel {
         }
 
         /**
-         * ­pºâsignal©Ò±Ä¥Îªºsignal, ³q±`´N¬O«üJND Index
+         * è¨ˆç®—signalæ‰€æ¡ç”¨çš„signal, é€šå¸¸å°±æ˜¯æŒ‡JND Index
          */
         public double[] signal;
 
         /**
-         * ¤£¶¶ªºpattern
+         * ä¸é †çš„pattern
          */
         public List<Pattern> patternList;
         /**
-         * smoothªº¤À¼Æ, ¶V§C¶Vsmooth
+         * smoothçš„åˆ†æ•¸, è¶Šä½è¶Šsmooth
          */
         public double score;
         /**
-         * »P¥Ø¼Ğ¥[³t«×ªº®t²§
+         * èˆ‡ç›®æ¨™åŠ é€Ÿåº¦çš„å·®ç•°
          */
         public double[] deltaAccelArray;
 
         /**
-         * ¤£¶¶ªº¤À¼Æ, ¶V§C¶V¤£·|¤£¶¶
+         * ä¸é †çš„åˆ†æ•¸, è¶Šä½è¶Šä¸æœƒä¸é †
          */
         public double overScore;
     }
@@ -509,9 +509,9 @@ public abstract class GradientModel {
      */
     protected static double[][] producePatternIndexAndSignal(ArrayDoubleList
             indexList, ArrayDoubleList signalList) {
-        //index­È
+        //indexå€¼
         double[] indexResult = indexList.toArray();
-        //index¹ïÀ³ªºsignal­È
+        //indexå°æ‡‰çš„signalå€¼
         double[] signalResult = signalList.toArray();
         double[][] patternIndexAndSignal = DoubleArray.transpose(new double[][] {
                 indexResult, signalResult});
@@ -536,7 +536,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ¨ú±ochannel¹ïÀ³ªºindex.
+     * å–å¾—channelå°æ‡‰çš„index.
      * @return int
      */
     protected int getChannelIndex() {
@@ -544,9 +544,9 @@ public abstract class GradientModel {
     }
 
     /**
-     * ¨ú±ochannel¹ïÀ³ªºindex.
-     * ¦]¬°¦bRGBªºchannel¹ïÀ³index¤èªk¤¤, white·|¹ïÀ³¨ì6.
-     * µM¦Ó³oÃäªºwhite­n¹ïÀ³¨ì3, ©Ò¥H¥t¥~¼g¤@­Ó¤èªk­pºâChannelIndex
+     * å–å¾—channelå°æ‡‰çš„index.
+     * å› ç‚ºåœ¨RGBçš„channelå°æ‡‰indexæ–¹æ³•ä¸­, whiteæœƒå°æ‡‰åˆ°6.
+     * ç„¶è€Œé€™é‚Šçš„whiteè¦å°æ‡‰åˆ°3, æ‰€ä»¥å¦å¤–å¯«ä¸€å€‹æ–¹æ³•è¨ˆç®—ChannelIndex
      * @param ch Channel
      * @return int
      */
@@ -571,9 +571,9 @@ public abstract class GradientModel {
     }
 
     /**
-     * ±N¼v¹³ªºXYZÂà¦¨GSDF¦±½u
-     * ¨Ã¥B¦Ò¶q¤F¦â«×¹ïJNDIªº¼vÅT, ¦Ò¶qªº¤è¦¡¥Ø«e¦³ Nayatani©MCIECAM02.
-     * ÁöµMCIECAM02¨ä¹ê¨Ã¨S¦³¦Ò¶q¨ì¦â«×¹ï©ú«×ªº¼vÅT, ¦ı¬O¹ê»Ú´ú¸Õµ²ªG¸ûNayatani¨Î.
+     * å°‡å½±åƒçš„XYZè½‰æˆGSDFæ›²ç·š
+     * ä¸¦ä¸”è€ƒé‡äº†è‰²åº¦å°JNDIçš„å½±éŸ¿, è€ƒé‡çš„æ–¹å¼ç›®å‰æœ‰ Nayataniå’ŒCIECAM02.
+     * é›–ç„¶CIECAM02å…¶å¯¦ä¸¦æ²’æœ‰è€ƒé‡åˆ°è‰²åº¦å°æ˜åº¦çš„å½±éŸ¿, ä½†æ˜¯å¯¦éš›æ¸¬è©¦çµæœè¼ƒNayataniä½³.
      * @return double[]
      */
     public double[] getJNDIndexCurve() {
@@ -581,7 +581,7 @@ public abstract class GradientModel {
             return jndiCurve;
         }
         if (mode == Mode.LuminanceOnly) {
-            //¥u¦³«G«×¼Æ¾Úªºª¬ªp, ª½±µ¥ÎGSDFÂà¦¨JNDI
+            //åªæœ‰äº®åº¦æ•¸æ“šçš„ç‹€æ³, ç›´æ¥ç”¨GSDFè½‰æˆJNDI
             int size = this.YArray.length;
             jndiCurve = new double[size];
             for (int x = 0; x < size; x++) {
@@ -589,7 +589,7 @@ public abstract class GradientModel {
                 jndiCurve[x] = GSDF.DICOM.getJNDIndex(Y);
             }
         } else {
-            //¦³XYZ¼Æ¾Úªºª¬ªp, ¦¹®É­n¦Ò¼{¨ìHK®ÄÀ³, ©Ò¥H­n±NXYZ¥ş³¡Â\¥X¨Ó
+            //æœ‰XYZæ•¸æ“šçš„ç‹€æ³, æ­¤æ™‚è¦è€ƒæ…®åˆ°HKæ•ˆæ‡‰, æ‰€ä»¥è¦å°‡XYZå…¨éƒ¨æ“ºå‡ºä¾†
             final double[][][] XYZValuesImage = getXYZImage();
             int h = XYZValuesImage.length;
             final double[][] row = XYZValuesImage[h / 2];
@@ -607,7 +607,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * gsdf¦±½u, ¥ÑJNDIndex²Õ¦¨
+     * gsdfæ›²ç·š, ç”±JNDIndexçµ„æˆ
      */
     private double[] jndiCurve;
 
@@ -616,7 +616,7 @@ public abstract class GradientModel {
      * <p>Title: Colour Management System</p>
      *
      * <p>Description: a Colour Management System by Java</p>
-     * ¦b¸Ñ¨MHK®ÄÀ³©Ò±Ä¥Îªº¤èªk
+     * åœ¨è§£æ±ºHKæ•ˆæ‡‰æ‰€æ¡ç”¨çš„æ–¹æ³•
      *
      * <p>Copyright: Copyright (c) 2008</p>
      *
@@ -636,7 +636,7 @@ public abstract class GradientModel {
     private HKStrategy hkStrategy = HKStrategy.CIECAM02;
 
     /**
-     * ³]©wHK®ÄÀ³ªº¸Ñ¨M¤èªk
+     * è¨­å®šHKæ•ˆæ‡‰çš„è§£æ±ºæ–¹æ³•
      * @param strategy HKStrategy
      */
     public void setHKStrategy(HKStrategy strategy) {
@@ -647,18 +647,18 @@ public abstract class GradientModel {
     private ViewingConditions vc = null;
 
     /**
-     * «Ø¥ßJ<->JNDIªºÃö«Y
+     * å»ºç«‹J<->JNDIçš„é—œä¿‚
      */
     private CIECAM02JNDIndex camJNDIndex;
     /**
-     * «Ø¥ßJ<->YªºÃö«Y
+     * å»ºç«‹J<->Yçš„é—œä¿‚
      */
     private CIECAM02JNDIndex[] camJNDIArray = null;
     protected LCDTarget target;
 
     /**
-     * ¥ÑJNDIndexÂà¦^«G«×(Y)
-     * ¥¼«ü©wÀW¹D, «h¥H¹w³]ªº¼v¹³ÀW¹D§@¹ï¬M.
+     * ç”±JNDIndexè½‰å›äº®åº¦(Y)
+     * æœªæŒ‡å®šé »é“, å‰‡ä»¥é è¨­çš„å½±åƒé »é“ä½œå°æ˜ .
      * @param JNDIndex double
      * @return double
      */
@@ -667,8 +667,8 @@ public abstract class GradientModel {
     }
 
     /**
-     * ¥ÑJNDIndexÂà¦^«G«×(Y)
-     * ¤w«ü©wÀW¹D, «h¥H«ü©wÀW¹Dªº¹ï¬Mªí§@¹ï¬M.
+     * ç”±JNDIndexè½‰å›äº®åº¦(Y)
+     * å·²æŒ‡å®šé »é“, å‰‡ä»¥æŒ‡å®šé »é“çš„å°æ˜ è¡¨ä½œå°æ˜ .
      * @param JNDIndex double
      * @param ch Channel
      * @return double
@@ -687,7 +687,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ±NJNDIndexÂà¦^¨ìLuminance, ¥B­n§âHKªº¸ÉÀv¥h°£
+     * å°‡JNDIndexè½‰å›åˆ°Luminance, ä¸”è¦æŠŠHKçš„è£œå„Ÿå»é™¤
      * @param JNDIndex double
      * @param strategy HKStrategy
      * @return double
@@ -697,7 +697,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ±NJNDIndexÂà¦^¨ìLuminance, ¥B­n§âHKªº¸ÉÀv¥h°£
+     * å°‡JNDIndexè½‰å›åˆ°Luminance, ä¸”è¦æŠŠHKçš„è£œå„Ÿå»é™¤
      * @param JNDIndex double
      * @param strategy HKStrategy
      * @param ch Channel
@@ -720,7 +720,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ¨ú±oJNDIndex, ¥B¦Ò¼{¤FHKªº¼vÅT°µ¤F¸ÉÀv, ¨Ã¥B¥H¹w³]ªºHK¸ÉÀvªk§@¸ÉÀv.
+     * å–å¾—JNDIndex, ä¸”è€ƒæ…®äº†HKçš„å½±éŸ¿åšäº†è£œå„Ÿ, ä¸¦ä¸”ä»¥é è¨­çš„HKè£œå„Ÿæ³•ä½œè£œå„Ÿ.
      * @param XYZ CIEXYZ
      * @return double
      */
@@ -729,7 +729,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ¨ú±oJNDIndex, ¥B¦Ò¼{¤FHKªº¼vÅT°µ¤F¸ÉÀv
+     * å–å¾—JNDIndex, ä¸”è€ƒæ…®äº†HKçš„å½±éŸ¿åšäº†è£œå„Ÿ
      * @param XYZ CIEXYZ
      * @param strategy HKStrategy
      * @return double
@@ -752,7 +752,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ¥HCIECAM§@¬°¤¤¤¶ªºÂà´«ªÅ¶¡(XYZ->JCh->JNDI)
+     * ä»¥CIECAMä½œç‚ºä¸­ä»‹çš„è½‰æ›ç©ºé–“(XYZ->JCh->JNDI)
      * @param XYZ CIEXYZ
      * @return double
      */
@@ -760,19 +760,19 @@ public abstract class GradientModel {
         CIEXYZ clone = (CIEXYZ) XYZ.clone();
         clone.normalize(white);
         clone.normalize(NormalizeY.Normal100);
-        //XYZÂàJCh
+        //XYZè½‰JCh
         CIECAM02Color color = cam.forward(clone);
-        //¦A±qJ§ä¨ì¹ïÀ³ªºJNDI
+        //å†å¾Jæ‰¾åˆ°å°æ‡‰çš„JNDI
         double JNDI = camJNDIndex.getJNDIndex(color.J);
         return JNDI;
     }
 
     private double getCIECAM02Luminance(double JNDIndex, RGBBase.Channel ch) {
-        //­º¥ı¥ÑJNDIndexÂà©ú«×
+        //é¦–å…ˆç”±JNDIndexè½‰æ˜åº¦
         double lightness = camJNDIndex.getLightness(JNDIndex);
         int index = getChannelIndex(ch);
 
-        //©ú«×Âà«G«×
+        //æ˜åº¦è½‰äº®åº¦
         return camJNDIArray[index].getMonochromeLuminance(lightness);
     }
 
@@ -811,7 +811,7 @@ public abstract class GradientModel {
 
     private void initCAM() {
         //==========================================================================
-        // ¦â¥~»ª¬ÛÃö
+        // è‰²å¤–è²Œç›¸é—œ
         //==========================================================================
         CIEXYZ white = (CIEXYZ)this.white.clone();
         double La = white.Y * 0.2;
@@ -847,14 +847,14 @@ public abstract class GradientModel {
     }
 
     /**
-     * ²z·QªºÃä½tsignalªºindex­È
+     * ç†æƒ³çš„é‚Šç·£signalçš„indexå€¼
      * @return int[]
      * @deprecated
      */
     private int[] getIdealBorderSignalIndex() {
         int[] borderIndexes = detectIdealBorderIndexByCode();
         int size = borderIndexes.length - 1;
-        //¥Ñ©ó¨C¤@­Ócode¬Ò·|¹ïÀ³ °ª­È ¤Î §C­È, ¦]¦¹­nx2
+        //ç”±æ–¼æ¯ä¸€å€‹codeçš†æœƒå°æ‡‰ é«˜å€¼ åŠ ä½å€¼, å› æ­¤è¦x2
         int[] signalIndex = new int[size * 2];
         for (int x = 0; x < size; x++) {
             signalIndex[x * 2] = borderIndexes[x];
@@ -864,7 +864,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ­pºâpatternªºÁ`©M, ¤]´N¬Osmoothªº¤À¼Æ, ¶V§C¶V¦n
+     * è¨ˆç®—patternçš„ç¸½å’Œ, ä¹Ÿå°±æ˜¯smoothçš„åˆ†æ•¸, è¶Šä½è¶Šå¥½
      * @param patternList List
      * @return double
      */
@@ -877,7 +877,7 @@ public abstract class GradientModel {
     }
 
     /**
-     * ­pºâ¹F¨ì¤H²´¥i¿ëÃÑªºpattern¨ä¤À¼ÆÁ`©M
+     * è¨ˆç®—é”åˆ°äººçœ¼å¯è¾¨è­˜çš„patternå…¶åˆ†æ•¸ç¸½å’Œ
      * @param patternList List
      * @return double
      */

@@ -68,7 +68,7 @@ public class CA210
    * @return String
    */
   public String getCalibrationDescription() {
-//    return "½Ğ±NProbeÂà¨ì0-CAL¶i¦æ®Õ¥¿.";
+//    return "è«‹å°‡Probeè½‰åˆ°0-CALé€²è¡Œæ ¡æ­£.";
     return "Set the pointing ring to the 0-CAL position.";
   }
 
@@ -198,8 +198,8 @@ public class CA210
     logo.setHeader(LogoFile.Reserved.Created, new Date().toString());
     logo.setHeader(LogoFile.Reserved.Instrumentation, getType().name());
 
-    //³s½u¹L¤[¨S¦³§@°Ê¥i¯à·|¸òCA-210Â_½u, ³y¦¨¦A©I¥sCA-210ªº®É­Ô·|³y¦¨com¿ù»~
-    //©Ò¥H°®¯Ü¨ú®ø¸òCA-210­n®Õ¥¿¼Ğ·Çªº°Ê§@
+    //é€£ç·šéä¹…æ²’æœ‰ä½œå‹•å¯èƒ½æœƒè·ŸCA-210æ–·ç·š, é€ æˆå†å‘¼å«CA-210çš„æ™‚å€™æœƒé€ æˆcoméŒ¯èª¤
+    //æ‰€ä»¥ä¹¾è„†å–æ¶ˆè·ŸCA-210è¦æ ¡æ­£æ¨™æº–çš„å‹•ä½œ
 //    logo.setHeader(LogoFile.Reserved.MeasurementSource,
 //                   "Illumination=Unknown	ObserverAngle=Unknown	WhiteBase=" +
 //                   _CA210API.getCalStandard().name() + "	Filter=Unknown");

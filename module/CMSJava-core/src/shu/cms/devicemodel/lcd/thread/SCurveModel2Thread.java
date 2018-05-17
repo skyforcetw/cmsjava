@@ -15,12 +15,12 @@ import shu.math.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¤ä´©¦h½uµ{­pºâ,¥i¥Hº^°®HT/Duo Core/Duo processorªº®Ä¯à!
- * ¼K¼K¼K!
+ * æ”¯æ´å¤šç·šç¨‹è¨ˆç®—,å¯ä»¥æ¦¨ä¹¾HT/Duo Core/Duo processorçš„æ•ˆèƒ½!
+ * å˜¿å˜¿å˜¿!
  *
- * ·|§Q¥ÎSCurveIªº¹Bºâµ²ªG,§@¬°­¡¥Nªº°_ÂI.
- * ¦pªG fixedMainCoefA ¬O false,·|³s¥D­n°Ñ¼Æ¤@°_­¡¥N,
- * ·íµM³t«×·|ºC«D±`¦h,¦Ó¥B¤£«OÃÒ·|§ä¨ì§ó¦nªº¼Æ¾Ú.
+ * æœƒåˆ©ç”¨SCurveIçš„é‹ç®—çµæœ,ä½œç‚ºè¿­ä»£çš„èµ·é».
+ * å¦‚æœ fixedMainCoefA æ˜¯ false,æœƒé€£ä¸»è¦åƒæ•¸ä¸€èµ·è¿­ä»£,
+ * ç•¶ç„¶é€Ÿåº¦æœƒæ…¢éå¸¸å¤š,è€Œä¸”ä¸ä¿è­‰æœƒæ‰¾åˆ°æ›´å¥½çš„æ•¸æ“š.
  * <p>Copyright: Copyright (c) 2006</p>
  *
  * <p>Company: </p>
@@ -43,7 +43,7 @@ public class SCurveModel2Thread
   }
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    * @param factor LCDModelFactor
    */
   public SCurveModel2Thread(LCDModelFactor factor) {
@@ -268,7 +268,7 @@ public class SCurveModel2Thread
         4, 6,
         RGBBase.Channel.B);*/
 
-    //dell 729(¸û4096¨Î)
+    //dell 729(è¼ƒ4096ä½³)
     CoefficientsRange coefR = new CoefficientsRange(
         3, 7,
         -0.08, 0.08, -0.08, 0.08,
@@ -320,22 +320,22 @@ public class SCurveModel2Thread
 
   /**
    *
-   * @param fixedMainCoefA boolean ¬O§_©T©w¥D­n«Y¼Æ
-   * (¤£©T©w¹Bºâ¹ê¦b¬O¤Ó¤[¤F,¦Ó¥Bºtºâªk¤WÁÙ¦³ÂI°İÃD,¨D¥X¨ÓªºdeltaE¥¼¥²¸û¤p)
+   * @param fixedMainCoefA boolean æ˜¯å¦å›ºå®šä¸»è¦ä¿‚æ•¸
+   * (ä¸å›ºå®šé‹ç®—å¯¦åœ¨æ˜¯å¤ªä¹…äº†,è€Œä¸”æ¼”ç®—æ³•ä¸Šé‚„æœ‰é»å•é¡Œ,æ±‚å‡ºä¾†çš„deltaEæœªå¿…è¼ƒå°)
    * @return Factor[]
    */
   protected Factor[] _produceFactor(boolean fixedMainCoefA) {
     this.fixedMainCoefA = fixedMainCoefA;
 
-    //­pºâmodel1°Ñ¼Æ
+    //è¨ˆç®—model1åƒæ•¸
     model1 = new SCurveModel1Thread(this.rCorrectorLCDTarget);
     model1.produceFactor();
 
-    //ªì©l¤Æ­¡¥N«Y¼Æ
+    //åˆå§‹åŒ–è¿­ä»£ä¿‚æ•¸
     initCoefficientsRange();
 
     //==========================================================================
-    // ²£¥Í°V½m¥Î¦â¶ô
+    // ç”¢ç”Ÿè¨“ç·´ç”¨è‰²å¡Š
     //==========================================================================
     patchList = lcdTarget.filter.leastOneZeroChannel();
     whitePatch = lcdTarget.getWhitePatch();
@@ -344,28 +344,28 @@ public class SCurveModel2Thread
     patchList = Patch.Produce.LabPatches(patchList, whitePoint);
     //==========================================================================
 
-    //»PThreadCalculator¦@§@­pºâ
+    //èˆ‡ThreadCalculatorå…±ä½œè¨ˆç®—
     IterativeReport bestIterativeReport = ThreadCalculator.
         produceBestIterativeReport(this);
     iterativeReport = bestIterativeReport;
-    //«Y¼Æ­«·s³]©w
+    //ä¿‚æ•¸é‡æ–°è¨­å®š
     coefficientsRange = null;
 //    this.setTheModelFactors(bestIterativeReport.factors);
     return toFactorArray(bestIterativeReport.factors);
   }
 
   /**
-   * ±±¨î¹Bºâ°õ¦æºüªº¼Æ¥Ø
+   * æ§åˆ¶é‹ç®—åŸ·è¡Œç·’çš„æ•¸ç›®
    */
   protected int threadCount = ThreadCalculator.THREAD_COUNT;
 
   /**
-   * ¬O§_©T©w¥D­n«Y¼Æ
+   * æ˜¯å¦å›ºå®šä¸»è¦ä¿‚æ•¸
    */
   private final static boolean FIXED_MAIN_COEFA = true;
 
   /**
-   * ²£¥Í­¡¥N©Ò»İiterativeCoefficient
+   * ç”¢ç”Ÿè¿­ä»£æ‰€éœ€iterativeCoefficient
    * @param iterativeCoefficient CoefficientsRange[]
    * @param model1Factors Factor[]
    * @return CoefficientsRange[]
@@ -385,7 +385,7 @@ public class SCurveModel2Thread
         getArrayIndex()];
 
     //=========================================================================
-    //³]©w¥D­n«Y¼Æ
+    //è¨­å®šä¸»è¦ä¿‚æ•¸
     //=========================================================================
     double ArrS = 0;
     double ArrE = 0;
@@ -467,7 +467,7 @@ public class SCurveModel2Thread
     IterateCoefficient coef = (IterateCoefficient) coefficient;
 
     //==========================================================================
-    //²£¥Í«Y¼Æ
+    //ç”¢ç”Ÿä¿‚æ•¸
     //==========================================================================
     CoefficientsRange[] coefs = produceCoefficientsRange(
         coef.coefficientsRange, coef.model1Factors);
@@ -481,7 +481,7 @@ public class SCurveModel2Thread
     //==========================================================================
 
     //==========================================================================
-    //³]©w°õ¦æºü
+    //è¨­å®šåŸ·è¡Œç·’
     //==========================================================================
     ExecutorService executorService = Executors.newFixedThreadPool(threadCount);
     List<Future<IterativeReport>>
@@ -489,23 +489,23 @@ public class SCurveModel2Thread
     //==========================================================================
 
     //==========================================================================
-    //¦h°õ¦æºü¹Bºâ
+    //å¤šåŸ·è¡Œç·’é‹ç®—
     //==========================================================================
     for (double Arr = ArrS; Arr <= ArrE; Arr += ArrStep) {
       for (double Arg = ArgS; Arg <= ArgE;
            Arg += ArgStep) {
         IterativeFactorThread task = new IterativeFactorThread(Arr, Arg, coefs,
             coef.model1Factors, this);
-        //±N¹Bºâ¤u§@©ñ¨ìThread pool¤¤½ü´À°õ¦æ
+        //å°‡é‹ç®—å·¥ä½œæ”¾åˆ°Thread poolä¸­è¼ªæ›¿åŸ·è¡Œ
         Future<IterativeReport> future = executorService.submit(task);
-        //±N¹Bºâµ²ªG©ñ¨ìList¤¤
+        //å°‡é‹ç®—çµæœæ”¾åˆ°Listä¸­
         futureList.add(future);
       }
     }
     //==========================================================================
 
     //==========================================================================
-    //±N©Ò¦³¹Bºâµ²ªG¤¤,§ä¥X³Ì¨Îµ²ªG
+    //å°‡æ‰€æœ‰é‹ç®—çµæœä¸­,æ‰¾å‡ºæœ€ä½³çµæœ
     //==========================================================================
     return ThreadCalculator.getBestIterativeReport(futureList, executorService);
 
@@ -516,7 +516,7 @@ public class SCurveModel2Thread
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ´£¨Ñ¥HThread¬°°òÂ¦ªº¹Bºâ
+   * æä¾›ä»¥Threadç‚ºåŸºç¤çš„é‹ç®—
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -527,14 +527,14 @@ public class SCurveModel2Thread
    */
   private class IterativeFactorThread
       extends ThreadCalculator.IterativeFactorThread {
-    //rÀW¹Dªº¼Æ­È©M½d³ò
+    //ré »é“çš„æ•¸å€¼å’Œç¯„åœ
     double Arr;
     double Arg;
     double ArbS;
     double ArbE;
     double ArbStep;
 
-    //gÀW¹Dªº½d³ò
+    //gé »é“çš„ç¯„åœ
     double AgrS;
     double AgrE;
     double AgrStep;
@@ -545,7 +545,7 @@ public class SCurveModel2Thread
     double AgbE;
     double AgbStep;
 
-    //bÀW¹Dªº½d³ò
+    //bé »é“çš„ç¯„åœ
     double AbrS;
     double AbrE;
     double AbrStep;
@@ -556,15 +556,15 @@ public class SCurveModel2Thread
     double AbbE;
     double AbbStep;
 
-    //rÀW¹Dªºa b C
+    //ré »é“çš„a b C
     double ar;
     double br;
     double Cr;
-    //gÀW¹Dªºa b C
+    //gé »é“çš„a b C
     double ag;
     double bg;
     double Cg;
-    //bÀW¹Dªºa b C
+    //bé »é“çš„a b C
     double ab;
     double bb;
     double Cb;
@@ -582,7 +582,7 @@ public class SCurveModel2Thread
       CoefficientsRange ABCoefs = coefficientsRange[2];
 
       //=========================================================================
-      //³]©w«Y¼Æ
+      //è¨­å®šä¿‚æ•¸
       //=========================================================================
       ArbS = ARCoefs.Ab.start;
       ArbE = ARCoefs.Ab.end;
@@ -617,7 +617,7 @@ public class SCurveModel2Thread
           getArrayIndex()];
 
       //=========================================================================
-      //³]©wf¨ç¦¡¤º«Y¼Æ
+      //è¨­å®šfå‡½å¼å…§ä¿‚æ•¸
       //=========================================================================
       ar = factorR.alpha;
       br = factorR.beta;
@@ -636,7 +636,7 @@ public class SCurveModel2Thread
       IterativeReport bestReport = null;
 
       //=========================================================================
-      //°j°é­¡¥N
+      //è¿´åœˆè¿­ä»£
       //=========================================================================
       for (double Arb = ArbS; Arb <= ArbE;
            Arb += ArbStep) {
@@ -657,7 +657,7 @@ public class SCurveModel2Thread
                        Abg += AbgStep) {
 
                     //==========================================================
-                    //³]©w°Ñ¼Æ
+                    //è¨­å®šåƒæ•¸
                     //==========================================================
                     factors[RGBBase.Channel.R.getArrayIndex()] = new
                         Factor(Arr, Arg, Arb, ar, br, Cr,

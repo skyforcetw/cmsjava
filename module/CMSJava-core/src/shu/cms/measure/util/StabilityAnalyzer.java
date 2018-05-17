@@ -11,7 +11,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Ø¼Ğ:LabªºÃ­©w«×/
+ * ç›®æ¨™:Labçš„ç©©å®šåº¦/
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -27,7 +27,7 @@ public class StabilityAnalyzer {
   protected double[] deltaEs;
 
   /**
-   * ¤ÀªR¥i¨Ñ¥Î¨Ó­pºâmcdmªº¦â¶ô¼Æ¶q¤Î¶}©lªº¯Á¤Ş­È
+   * åˆ†æå¯ä¾›ç”¨ä¾†è¨ˆç®—mcdmçš„è‰²å¡Šæ•¸é‡åŠé–‹å§‹çš„ç´¢å¼•å€¼
    * @param lcdTarget LCDTarget
    * @return int[]
    */
@@ -240,7 +240,7 @@ public class StabilityAnalyzer {
     }
 
     protected double[][] xyYValues;
-    //»P¥­§¡ªº»~®t
+    //èˆ‡å¹³å‡çš„èª¤å·®
     protected double[][] transposeDelta;
     protected double[] mean;
 
@@ -266,7 +266,7 @@ public class StabilityAnalyzer {
 
     /**
      * Mean color differences from the mean.
-     * »P¥­§¡­È©Ò­pºâªº¦â®tªº¥­§¡­È
+     * èˆ‡å¹³å‡å€¼æ‰€è¨ˆç®—çš„è‰²å·®çš„å¹³å‡å€¼
      * @param type Type
      * @return double
      */

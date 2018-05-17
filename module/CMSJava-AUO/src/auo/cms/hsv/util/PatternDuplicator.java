@@ -19,7 +19,7 @@ import java.awt.image.BufferedImage;
 public class PatternDuplicator {
 
   public static void main(String[] args) {
-    String dirname = "D:\\≥n≈È\\nobody zone\\Pattern\\skyforce Pattern Collect";
+    String dirname = "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\Pattern\\skyforce Pattern Collect";
     File dir = new File(dirname);
 
     for (File file : dir.listFiles()) {

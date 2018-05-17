@@ -16,8 +16,8 @@ import shu.cms.colorspace.depend.DeviceDependentSpace;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ©Ò¦³¦âªÅ¶¡¬ÒÄ~©Ó¦¹Ãş§O
- * (¥Ø«e¨S¤°¥\¯à...)
+ * æ‰€æœ‰è‰²ç©ºé–“çš†ç¹¼æ‰¿æ­¤é¡åˆ¥
+ * (ç›®å‰æ²’ä»€åŠŸèƒ½...)
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -162,7 +162,7 @@ public abstract class ColorSpace
   }
 
   /**
-   * ²Ã¥d¨à®y¼Ğ=>·¥®y¼Ğ
+   * ç¬›å¡å…’åº§æ¨™=>æ¥µåº§æ¨™
    * @param cartesianValues double[]
    * @return double[]
    */
@@ -219,7 +219,7 @@ public abstract class ColorSpace
   }
 
   /**
-   * ·¥®y¼Ğ=>²Ã¥d¨à®y¼Ğ
+   * æ¥µåº§æ¨™=>ç¬›å¡å…’åº§æ¨™
    * @param polarValues double[]
    * @return double[]
    */

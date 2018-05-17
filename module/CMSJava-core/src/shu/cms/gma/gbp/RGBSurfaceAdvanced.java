@@ -42,7 +42,7 @@ public
 //    this.parent = parent;
 //    this.HLevel = parent.HLevel;
 //    this.LLevel = parent.LLevel;
-//    //ªì©l¤Æ
+//    //åˆå§‹åŒ–
 //    boundaryHLCArray = new double[HLevel][LLevel];
   }
 
@@ -57,7 +57,7 @@ public
       rgbValues[1] = (double) rgb.G / 255.;
       rgbValues[2] = (double) rgb.B / 255.;
 
-      //¦bPCSªºLCh°µ­pºâ
+      //åœ¨PCSçš„LChåšè¨ˆç®—
       double[] LChValues = getLChValues(rgbValues, referenceWhite);
       int hue = (int) LChValues[2];
       List<double[]> LChValuesList = boundaryMap.get(hue);
@@ -73,8 +73,8 @@ public
 
   /**
    * calculate
-   * §óºë½TªºRGBSurfac­pºâªk
-   * 1.±N©Ò¦³surfaceÂI¾ã²z¨ì¥Hhue¬°¯Á¤Şªºmap
+   * æ›´ç²¾ç¢ºçš„RGBSurfacè¨ˆç®—æ³•
+   * 1.å°‡æ‰€æœ‰surfaceé»æ•´ç†åˆ°ä»¥hueç‚ºç´¢å¼•çš„map
    */
   protected void calculate() {
     initBoundaryMap();
@@ -241,7 +241,7 @@ public
     double hue = center.x;
 
     //==========================================================================
-    // ©Ô¥XLCh¨Ã¥B­pºâ¶ZÂ÷
+    // æ‹‰å‡ºLChä¸¦ä¸”è¨ˆç®—è·é›¢
     //==========================================================================
     for (int x = 0; x < size; x++) {
       double[] lchValues = lchValuesList.get(x);
@@ -258,7 +258,7 @@ public
     }
     //==========================================================================
 
-    //¨Ì·Ó¶ZÂ÷­«·s±Æ§Ç
+    //ä¾ç…§è·é›¢é‡æ–°æ’åº
     Collections.sort(lchAndDistanceList, distanceComparator);
     Point2d[][] candidateTriangles = new Point2d[CandidateTriangleCount][];
     Point3d[][] candidateTriangles3D = new Point3d[CandidateTriangleCount][];

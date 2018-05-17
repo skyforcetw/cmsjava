@@ -16,7 +16,7 @@ import shu.cms.ui.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * WHQL¼Ğ·Ç, ¤]´N¬OsRGBªºÅçÃÒ
+ * WHQLæ¨™æº–, ä¹Ÿå°±æ˜¯sRGBçš„é©—è­‰
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -44,7 +44,7 @@ public class WHQLVerifier
   protected DeltaEReport IEC61966_4LCDReport;
 
   /**
-   * ®à¤W«¬Åã¥Ü¾¹ªºsRGB(WHQL)ÅçÃÒ
+   * æ¡Œä¸Šå‹é¡¯ç¤ºå™¨çš„sRGB(WHQL)é©—è­‰
    * @return VerifierReport
    */
   public final VerifierReport standAloneLCDVerify() {
@@ -58,7 +58,7 @@ public class WHQLVerifier
   }
 
   /**
-   * ¾ã¦X¦¡Åã¥Ü¾¹, ¤]´N¬Oµ§¹q©ÎªÌÄâ±a³]³ÆªºÅã¥Ü¾¹sRGB(WHQL)ÅçÃÒ
+   * æ•´åˆå¼é¡¯ç¤ºå™¨, ä¹Ÿå°±æ˜¯ç­†é›»æˆ–è€…æ”œå¸¶è¨­å‚™çš„é¡¯ç¤ºå™¨sRGB(WHQL)é©—è­‰
    * @return VerifierReport
    */
   public final VerifierReport integratedLCDVerify() {
@@ -72,7 +72,7 @@ public class WHQLVerifier
   }
 
   /**
-   * IEC61966_4ªºÅçÃÒ
+   * IEC61966_4çš„é©—è­‰
    * @return VerifierReport
    */
   public final VerifierReport IEC61966_4Verify() {

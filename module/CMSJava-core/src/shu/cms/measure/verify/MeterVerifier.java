@@ -15,7 +15,7 @@ import shu.cms.plot.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Î¨ÓÅçÃÒ»ö¾¹ªº·Ç½T«×¤ÎÃ­©w«×
+ * ç”¨ä¾†é©—è­‰å„€å™¨çš„æº–ç¢ºåº¦åŠç©©å®šåº¦
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -30,7 +30,7 @@ public class MeterVerifier {
   protected Repeatability repeatability;
 
   /**
-   * Ã¸¥XmeasurementªºY­«½Æ²v
+   * ç¹ªå‡ºmeasurementçš„Yé‡è¤‡ç‡
    * @return Plot2D
    */
   public Plot2D plotYRepeatability() {
@@ -88,7 +88,7 @@ public class MeterVerifier {
   }
 
   /**
-   * Ã¸¥Xmeasurementªºxy·Ç½T©Ê(°Ñ¦Ò¦Ûreference)
+   * ç¹ªå‡ºmeasurementçš„xyæº–ç¢ºæ€§(åƒè€ƒè‡ªreference)
    * @return Plot2D
    */
   public Plot2D plotxyAccuracy() {
@@ -232,7 +232,7 @@ public class MeterVerifier {
   }
 
   /**
-   * Ã¸¥XmeasurementªºY·Ç½T²v(°Ñ¦Ò¦Ûreference)
+   * ç¹ªå‡ºmeasurementçš„Yæº–ç¢ºç‡(åƒè€ƒè‡ªreference)
    * @return Plot2D
    */
   public Plot2D plotYAccuracy() {
@@ -324,7 +324,7 @@ public class MeterVerifier {
   }
 
   /**
-   * Ã¸¥Xmeasurementªºxy­«½Æ©Ê
+   * ç¹ªå‡ºmeasurementçš„xyé‡è¤‡æ€§
    * @return Plot2D
    */
   public Plot2D plotxyRepeatability() {
@@ -357,8 +357,8 @@ public class MeterVerifier {
   }
 
   /**
-   * ¥u¦³isRamp256Target¤~¯à¥Îrepeatability¹Bºâ, ¦]¬°isRamp256Targetªºª¬ªp¤U,
-   * ¤@­Ó«G«×¤~·|¹ïÀ³¨ì°ß¤@ªº¦â¶ô
+   * åªæœ‰isRamp256Targetæ‰èƒ½ç”¨repeatabilityé‹ç®—, å› ç‚ºisRamp256Targetçš„ç‹€æ³ä¸‹,
+   * ä¸€å€‹äº®åº¦æ‰æœƒå°æ‡‰åˆ°å”¯ä¸€çš„è‰²å¡Š
    */
   protected boolean isRamp256Target = false;
 

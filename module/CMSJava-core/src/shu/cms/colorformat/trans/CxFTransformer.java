@@ -9,7 +9,7 @@ import shu.cms.colorformat.legend.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ノㄓ盢Α锣传CxFㄏノ
+ * 銉庛創鐩㈩喗螒閿ｄ紶顭廋xF銊忋儙
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -28,7 +28,7 @@ public class CxFTransformer {
     }
     SampleSet sampleSet = objFactory.createSampleSet();
 
-    //header场だ
+    //header鍦恒仩
     sampleSet.setName("Data");
     sampleSet.setCreated(files[0].getHeader().dateTime);
 
@@ -43,7 +43,7 @@ public class CxFTransformer {
   }
 
   /**
-   * 盢SpectraWinASCIIFile锣ΘSample
+   * 鐩pectraWinASCIIFile閿Ｎ楽ample
    * @param file SpectraWinASCIIFile
    * @param sampleName String
    * @return Sample
@@ -185,7 +185,7 @@ public class CxFTransformer {
     String created = file.pddeHeader.created;
     SampleSet sampleSet = objFactory.createSampleSet();
 
-    //header场だ
+    //header鍦恒仩
     sampleSet.setName("Data");
     sampleSet.setCreated(created);
 
@@ -234,7 +234,7 @@ public class CxFTransformer {
   private static SampleSet TRDatabaseToSampleSet(TRDatabaseFile file) {
     SampleSet sampleSet = objFactory.createSampleSet();
 
-    //header场だ
+    //header鍦恒仩
     sampleSet.setName("Data");
 
     List<Sample> samples = sampleSet.getSample();
@@ -295,7 +295,7 @@ public class CxFTransformer {
 
     SampleSet sampleSet = objFactory.createSampleSet();
 
-    //header场だ
+    //header鍦恒仩
     sampleSet.setName("Data");
     sampleSet.setCreated(created);
 
@@ -346,7 +346,7 @@ public class CxFTransformer {
 
     SampleSet sampleSet = objFactory.createSampleSet();
 
-    //header场だ
+    //header鍦恒仩
     sampleSet.setName("Data");
     sampleSet.setCreated(created);
 

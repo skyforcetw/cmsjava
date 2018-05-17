@@ -65,8 +65,8 @@ public class IdealDigitalCamera {
   }
 
   /**
-   * EstimatedD200_1 : ¸û¦­¹êÅç²£¥Íªº,¥Î¦b¹ê»Ú¥úÃĞ¼Ò¦¡¤W
-   * EstimatedD200_2 : r=4²£¥Íªº,®Ú¾Úrgb»~®t¿ï¥X¸û·ÇªÌ,¦ı¥Î¦b¥úÃĞ¼Ò¦¡¤£·Ç
+   * EstimatedD200_1 : è¼ƒæ—©å¯¦é©—ç”¢ç”Ÿçš„,ç”¨åœ¨å¯¦éš›å…‰è­œæ¨¡å¼ä¸Š
+   * EstimatedD200_2 : r=4ç”¢ç”Ÿçš„,æ ¹æ“šrgbèª¤å·®é¸å‡ºè¼ƒæº–è€…,ä½†ç”¨åœ¨å…‰è­œæ¨¡å¼ä¸æº–
    */
   public enum Source {
     CIEXYZ, Sun, EstimatedD200_1, TestD200, EstimatedD200_2, BestEstimatedD200,
@@ -74,7 +74,7 @@ public class IdealDigitalCamera {
   }
 
   /**
-   * ¨Ì·Óspectras¤¤³Ì¤jªºSpectra¤§peak¬°max,Åıspectras¬Ò¶i¦æ¥¿³W¤Æ
+   * ä¾ç…§spectrasä¸­æœ€å¤§çš„Spectraä¹‹peakç‚ºmax,è®“spectrasçš†é€²è¡Œæ­£è¦åŒ–
    * @param spectras Spectra[]
    * @return Spectra[]
    */
@@ -486,7 +486,7 @@ public class IdealDigitalCamera {
   protected double[] maximunRGBValues;
 
   /**
-   * ¼Æ¦ì¬Û¾÷¹ï¥úÃĞªº¤ÏÀ³, ­ì©l°T¸¹¥¿³W¤Æ«á¿é¥X
+   * æ•¸ä½ç›¸æ©Ÿå°å…‰è­œçš„åæ‡‰, åŸå§‹è¨Šè™Ÿæ­£è¦åŒ–å¾Œè¼¸å‡º
    * @param spectra Spectra
    * @return double[]
    */
@@ -508,7 +508,7 @@ public class IdealDigitalCamera {
 //  }
 
   /**
-   * ¼Æ¦ì¬Û¾÷¹ï¥úÃĞªº¤ÏÀ³, ­ì©l°T¸¹ªº¿é¥X
+   * æ•¸ä½ç›¸æ©Ÿå°å…‰è­œçš„åæ‡‰, åŸå§‹è¨Šè™Ÿçš„è¼¸å‡º
    * @param spectra Spectra
    * @return double[]
    */
@@ -538,7 +538,7 @@ public class IdealDigitalCamera {
   }
 
   /**
-   * ±À¦^©|¥¼¥¿³W¤Æªº¼Æ¦ì¬Û¾÷Digital Value
+   * æ¨å›å°šæœªæ­£è¦åŒ–çš„æ•¸ä½ç›¸æ©ŸDigital Value
    * @param normalizeRGBValues double[]
    * @return double[]
    */

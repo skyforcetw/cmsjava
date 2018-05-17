@@ -37,7 +37,7 @@ public class To6BitImage {
   public static void main(String[] args) {
     try {
       BufferedImage img = ImageUtils.loadImage(
-          "D:\\≥n≈È\\nobody zone\\exp data\\12307\\Side Effect\\Samsung.png");
+          "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\exp data\\12307\\Side Effect\\Samsung.png");
       to6Bit(img);
 //      WritableRaster raster = img.getRaster();
 //      int w = raster.getWidth();

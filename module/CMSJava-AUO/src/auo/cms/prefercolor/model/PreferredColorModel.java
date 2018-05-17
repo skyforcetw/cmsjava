@@ -46,14 +46,14 @@ public class PreferredColorModel {
 
   /**
    *
-   * @param memoryColorInterface MemoryColorInterface ¹êÅç²£¥Íªºmemory color
+   * @param memoryColorInterface MemoryColorInterface å¯¦é©—ç”¢ç”Ÿçš„memory color
    * @param gbd GamutBoundaryDescriptor
    */
 
   /**
    *
-   * @param original MemoryColorInterface ªì©l°O¾Ğ¦â
-   * @param preffered MemoryColorInterface ½Õ¾ã«á°O¾Ğ¦â, ¬°³ß¦n¦â
+   * @param original MemoryColorInterface åˆå§‹è¨˜æ†¶è‰²
+   * @param preffered MemoryColorInterface èª¿æ•´å¾Œè¨˜æ†¶è‰², ç‚ºå–œå¥½è‰²
    * @param gbd GamutBoundaryDescriptor
    */
   public PreferredColorModel(MemoryColorInterface original,
@@ -67,7 +67,7 @@ public class PreferredColorModel {
 
   private final static boolean T = true;
   private final static boolean F = false;
-  //¬O§_­n°µhue mapping
+  //æ˜¯å¦è¦åšhue mapping
   private boolean doHueProcess = F;
 
   //============================================================================
@@ -90,7 +90,7 @@ public class PreferredColorModel {
   //============================================================================
 
   /**
-   * ¨ú±o³ß¦n¦âªº¹ïÀ³, ·|¦bHSVªÅ¶¡§@½u©Ê¹ïÀ³
+   * å–å¾—å–œå¥½è‰²çš„å°æ‡‰, æœƒåœ¨HSVç©ºé–“ä½œç·šæ€§å°æ‡‰
    * @param hsv HSV
    * @return HSV
    */
@@ -116,7 +116,7 @@ public class PreferredColorModel {
   }
 
   /**
-   * ¨ú±o³ß¦n¦âªº¹ïÀ³ (·|¦bLChªÅ¶¡§@½u©Ê¹ïÀ³)
+   * å–å¾—å–œå¥½è‰²çš„å°æ‡‰ (æœƒåœ¨LChç©ºé–“ä½œç·šæ€§å°æ‡‰)
    * @param LCh CIELCh
    * @return CIELCh
    */
@@ -125,7 +125,7 @@ public class PreferredColorModel {
   }
 
   /**
-   * ¨ú±o³ß¦n¦âªº¹ïÀ³ (·|¦bLChªÅ¶¡§@½u©Ê¹ïÀ³)
+   * å–å¾—å–œå¥½è‰²çš„å°æ‡‰ (æœƒåœ¨LChç©ºé–“ä½œç·šæ€§å°æ‡‰)
    * @param LCh CIELCh
    * @param neutral boolean
    * @return CIELCh
@@ -155,7 +155,7 @@ public class PreferredColorModel {
     //chroma by hue
     if (!neutral) {
       CIELCh boundary = gbd.getBoundaryLCh(clone);
-      //¦¹³B¨Ï¥Î¨ìGBD
+      //æ­¤è™•ä½¿ç”¨åˆ°GBD
       if (!gbd.isOutOfGamut(clone, boundary)) {
         double normalizedChroma = LCh.C / boundary.C;
         double normalizedChromaPrime = chromaLUT.getValuePrime(
@@ -178,14 +178,14 @@ public class PreferredColorModel {
 
   private void init() {
     //==========================================================================
-    // «e´Á¸ê®Æ³B¸Ì
+    // å‰æœŸè³‡æ–™è™•è£¡
     //==========================================================================
-    // ³B²z³ß¦n¦â¸ê°T(³ß¦n¦â¥²µM¬O¦s¦b¿W¥ß¦âªÅ¶¡ªº)
+    // è™•ç†å–œå¥½è‰²è³‡è¨Š(å–œå¥½è‰²å¿…ç„¶æ˜¯å­˜åœ¨ç¨ç«‹è‰²ç©ºé–“çš„)
     CIELab[] referenceMemoryColorArray = getLabArray(original);
     CIELab[] prefferedMemoryColorArray = getLabArray(preffered);
 
     CIEXYZ white = preffered.getReferenceWhiteXYZ();
-    //¼´¥X«G«×¸ê®Æ
+    //æ’ˆå‡ºäº®åº¦è³‡æ–™
     double[][] luminancePairArray = getLuminancePairArray(
         referenceMemoryColorArray,
         prefferedMemoryColorArray);
@@ -193,7 +193,7 @@ public class PreferredColorModel {
                                               prefferedMemoryColorArray, white);
     Arrays.sort(LChPairArray, new HueOfLChComparator());
     //==========================================================================
-    // ¬°¤FÀ³¥Î¦bµwÅé¹ê²{¤W, §â¿W¥ß¦âªº³ß¦n¦âÂà´«¨ì³]³Æ¦âªº
+    // ç‚ºäº†æ‡‰ç”¨åœ¨ç¡¬é«”å¯¦ç¾ä¸Š, æŠŠç¨ç«‹è‰²çš„å–œå¥½è‰²è½‰æ›åˆ°è¨­å‚™è‰²çš„
     double[][] valuePairArray = getValuePairArray(referenceMemoryColorArray,
                                                   prefferedMemoryColorArray);
     HSV[][] hsvPairArray = getHSVPairArray(referenceMemoryColorArray,
@@ -203,9 +203,9 @@ public class PreferredColorModel {
     //==========================================================================
 
     //==========================================================================
-    // ¹ï·Óªí¥Í¦¨
+    // å°ç…§è¡¨ç”Ÿæˆ
     //==========================================================================
-    // LCh ¹ï·Óªíªº¥Í¦¨
+    // LCh å°ç…§è¡¨çš„ç”Ÿæˆ
     if (doLChProcess) {
       initGlobalLightness(luminancePairArray, white);
       initLocalLightness(LChPairArray, globalLightnessLUT);
@@ -213,7 +213,7 @@ public class PreferredColorModel {
       initChromaLUT(LChPairArray);
     }
     //==========================================================================
-    // HSV ¹ï·Óªíªº¥Í¦¨
+    // HSV å°ç…§è¡¨çš„ç”Ÿæˆ
     initGlobalValue(valuePairArray);
     initLocalValue(hsvPairArray, globalValueLUT);
     initHueOfHSV(hsvPairArray);
@@ -250,12 +250,12 @@ public class PreferredColorModel {
   //=============================================================================
 
   private double[] getNormalInOutput(CIELCh[] LChPair) {
-    //®Ú¾Úgbd§ä¨ì³o¨â­ÓÃC¦âªºboundary
+    //æ ¹æ“šgbdæ‰¾åˆ°é€™å…©å€‹é¡è‰²çš„boundary
     CIELCh boundary0 = gbd.getBoundaryLCh(LChPair[0]);
     CIELCh boundary1 = gbd.getBoundaryLCh(LChPair[1]);
-    //§ä¤ñ¸û¤jªº·í§@¦@¦Pªºboundary
+    //æ‰¾æ¯”è¼ƒå¤§çš„ç•¶ä½œå…±åŒçš„boundary
     CIELCh boundary = (boundary0.C > boundary1.C) ? boundary0 : boundary1;
-    //¥H¦¹boundary°µ¥¿³W¤Æ
+    //ä»¥æ­¤boundaryåšæ­£è¦åŒ–
     double normalInput = LChPair[0].C / boundary.C;
     double normalOutput = LChPair[1].C / boundary.C;
     return new double[] {
@@ -425,22 +425,22 @@ public class PreferredColorModel {
     boolean inIPT = false;
 
     for (int x = 0; x < size; x++) {
-      //§ä¨ìLab
+      //æ‰¾åˆ°Lab
       CIELab Lab1 = LabArray1[x];
       CIELab Lab2 = LabArray2[x];
       CIELCh LCh1 = null, LCh2 = null;
 
       if (inIPT) {
-        //°h¦^XYZ
+        //é€€å›XYZ
         CIEXYZ XYZ1 = CIELab.toXYZ(Lab1, white);
         CIEXYZ XYZ2 = CIELab.toXYZ(Lab2, white);
-        //¦AÂà¦¨IPT
+        //å†è½‰æˆIPT
         IPT ipt1 = IPT.fromXYZ(XYZ1, white);
         IPT ipt2 = IPT.fromXYZ(XYZ2, white);
-        //scale ¨ìLab«á
+        //scale åˆ°Labå¾Œ
         ipt1.scaleToCIELab();
         ipt2.scaleToCIELab();
-        //¤~Âà¦¨LCh
+        //æ‰è½‰æˆLCh
         LCh1 = new CIELCh(ipt1);
         LCh2 = new CIELCh(ipt2);
       }
@@ -449,7 +449,7 @@ public class PreferredColorModel {
         LCh2 = new CIELCh(Lab2);
       }
 
-      //½Õ¾ãchroma­È°ì
+      //èª¿æ•´chromaå€¼åŸŸ
       double adoptChroma = ChromaPercent * (LCh2.C - LCh1.C) + LCh1.C;
       LCh2.C = adoptChroma;
       LChPairArray[x] = new CIELCh[] {
@@ -469,7 +469,7 @@ public class PreferredColorModel {
     HSV[][] hsvPairArray = new HSV[size][];
 
     for (int x = 0; x < size; x++) {
-      //§ä¨ìLab
+      //æ‰¾åˆ°Lab
       CIELab Lab1 = LabArray1[x];
       CIELab Lab2 = LabArray2[x];
       CIEXYZ XYZ1 = CIELab.toXYZ(Lab1, white);
@@ -703,7 +703,7 @@ public class PreferredColorModel {
     double whiteLuminance = white.Y;
 
     //==========================================================================
-    // ¼´¥X«G«×¸ê®Æ
+    // æ’ˆå‡ºäº®åº¦è³‡æ–™
     //==========================================================================
     for (int x = 0; x < size; x++) {
       double Y1 = luminancePairArray[x][0] / whiteLuminance;
@@ -781,7 +781,7 @@ public class PreferredColorModel {
     double[] outputValueArray = new double[size + 2];
 
     //==========================================================================
-    // ¼´¥X«G«×¸ê®Æ
+    // æ’ˆå‡ºäº®åº¦è³‡æ–™
     //==========================================================================
     for (int x = 0; x < size; x++) {
       inputValueArray[x] = valuePairArray[x][0] / 100.;
@@ -960,16 +960,16 @@ public class PreferredColorModel {
    * RGB-> HSV -> HSV' ->RGB - >XYZ
    * ^^^A  ^^^^^^^^^^^Prefer    ^^^B
    *
-   * ¥|­±Åé¹ï·Óªíªº½d³ò©T©w¦bRxGxB 0~255x0~255x0~255ªº½d³ò¤º
-   * ¤£¹LPreferredColor¥HHSVªº§Î¦¡°µ¹ïÀ³(¬°¤F¹ïÀ³µwÅéªº¤è¦¡)
-   * ©Ò¥H¥ı¦bHSV¨ú¥XPreferred Color«á, ¦A¥HsignalSourceÂà¥X¹ïÀ³ªºXYZ, ¦A²£¥Í¥X¹ï·Óªí
-   * ¦¹³BªºsignalSource¥NªíµÛ°T¸¹ªº¹w©w¦â±mªÅ¶¡.
+   * å››é¢é«”å°ç…§è¡¨çš„ç¯„åœå›ºå®šåœ¨RxGxB 0~255x0~255x0~255çš„ç¯„åœå…§
+   * ä¸éPreferredColorä»¥HSVçš„å½¢å¼åšå°æ‡‰(ç‚ºäº†å°æ‡‰ç¡¬é«”çš„æ–¹å¼)
+   * æ‰€ä»¥å…ˆåœ¨HSVå–å‡ºPreferred Colorå¾Œ, å†ä»¥signalSourceè½‰å‡ºå°æ‡‰çš„XYZ, å†ç”¢ç”Ÿå‡ºå°ç…§è¡¨
+   * æ­¤è™•çš„signalSourceä»£è¡¨è‘—è¨Šè™Ÿçš„é å®šè‰²å½©ç©ºé–“.
    *
-   * ¥H¤W¬OºØ¤è¦¡, ¥t¥~¤@¸ô¬O¨«LCh¹ïÀ³, ¤ñ¸û¦³³q¥Î©Ê
+   * ä»¥ä¸Šæ˜¯ç¨®æ–¹å¼, å¦å¤–ä¸€è·¯æ˜¯èµ°LChå°æ‡‰, æ¯”è¼ƒæœ‰é€šç”¨æ€§
    * RGB-> XYZ-> LCh -> LCh'-> XYZ'
    * ^^^^^^^^^1  ^^^^^^^^^^^2
-   * 1. ¥HsignalSourceÂà´«
-   * 2. ¥HPreferred ColorÂà´«
+   * 1. ä»¥signalSourceè½‰æ›
+   * 2. ä»¥Preferred Colorè½‰æ›
    *
    * @param signalSource ProfileColorSpace
    * @param step int
@@ -982,7 +982,7 @@ public class PreferredColorModel {
 
     double[][][] lut = new double[grid * grid * grid][2][];
     int index = 0;
-    //¨úwhite
+    //å–white
     CIEXYZ referenceWhite = signalSource.getD65ReferenceWhite();
     setReferenceWhite(referenceWhite);
     double[] rgbValues = new double[3];
@@ -1000,7 +1000,7 @@ public class PreferredColorModel {
           RGB rgb2 = hsv2.toRGB();
           rgb2.getValues(rgbValues, RGB.MaxValue.Double1);
 
-          //¨úXYZ
+          //å–XYZ
           double[] XYZValues = signalSource.toD65CIEXYZValues(rgbValues);
           //B
           lut[index][1] = XYZValues;
@@ -1087,8 +1087,8 @@ public class PreferredColorModel {
   }
 
   /**
-   * ²£¥ÍPreferredColorModel¦blimitColorSpaceªº­­¨î¤º
-   * @param limitColorSpace ProfileColorSpace ­­¨î¦b¦¹¦â°ì¤º
+   * ç”¢ç”ŸPreferredColorModelåœ¨limitColorSpaceçš„é™åˆ¶å…§
+   * @param limitColorSpace ProfileColorSpace é™åˆ¶åœ¨æ­¤è‰²åŸŸå…§
    * @return PreferredColorModel
    */
   public final static PreferredColorModel getInstance(ProfileColorSpace
@@ -1116,7 +1116,7 @@ public class PreferredColorModel {
     analyzer.analyze();
     MemoryColorInterface memoryColor = analyzer.getMemoryColorInterface();
     //==========================================================================
-    //gbd¥ÑlimitColorSpace²£¥Í¦Ó¨Ó
+    //gbdç”±limitColorSpaceç”¢ç”Ÿè€Œä¾†
     GamutBoundaryDescriptor gbd = GamutBoundaryRGBDescriptor.getInstance(
         GamutBoundaryRGBDescriptor.Style.D65Threshold, limitColorSpace);
 

@@ -231,7 +231,7 @@ public class ColorMatrixCalculator {
     for (int x = 0; x < size; x++) {
       RGB rgb = (RGB) testRGBList.get(x).clone();
       CIEXYZ targetXYZ = rgb.toXYZ(RGB.ColorSpace.sRGB);
-      targetXYZ.times(whiteXYZ.Y); //base¬°1, ­¼¤j¬°panel«G«×
+      targetXYZ.times(whiteXYZ.Y); //baseç‚º1, ä¹˜å¤§ç‚ºpaneläº®åº¦
 
       RGB cmRGB = matrixMode ? getColorMatirxRGB(rgb, cm, offset) :
           getColorMatirxRGB(rgb, rgbGain, offset);
@@ -337,10 +337,10 @@ public class ColorMatrixCalculator {
   public static void stock(String[] args) {
     String sourceFilename =
 //        "dell/ramp.xls";
-        "D:\\My Documents\\¤u§@\\Project\\Product\\Dell\\B156HW03\\1125\\for cm2\\ramp.xls";
+        "D:\\My Documents\\å·¥ä½œ\\Project\\Product\\Dell\\B156HW03\\1125\\for cm2\\ramp.xls";
     String targetFilename =
 //        "dell/sRGB target.xls";
-        "D:\\My Documents\\¤u§@\\Project\\Product\\Dell\\B156HW03\\1125\\for cm2\\sRGB46(Target sRGB).xls";
+        "D:\\My Documents\\å·¥ä½œ\\Project\\Product\\Dell\\B156HW03\\1125\\for cm2\\sRGB46(Target sRGB).xls";
 //    String sourceFilename = "suorce_data.xls";
 //    String targetFilename = "srgb46_raw.xls";
 

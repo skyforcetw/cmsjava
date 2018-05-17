@@ -36,7 +36,7 @@ public class LogoFile
   public LogoFile(String filename, List<Patch> patchList,
       Meter meter) throws IOException {
     this(filename, true);
-    //¦pªG¶Ç¤Jªºmeter¬Onull, ´N¥ÎDummyMeter
+    //å¦‚æžœå‚³å…¥çš„meteræ˜¯null, å°±ç”¨DummyMeter
     meter = (meter == null) ? new DummyMeter() : meter;
     meter.setLogoFileHeader(this);
     meter.setLogoFileData(this, patchList);

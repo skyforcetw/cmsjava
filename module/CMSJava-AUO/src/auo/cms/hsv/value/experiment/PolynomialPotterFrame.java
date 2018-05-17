@@ -68,8 +68,8 @@ public class PolynomialPotterFrame
       }
     });
     jLabel5.setText("jLabel5");
-    jLabel6.setText("y+·¥­È");
-    jLabel8.setText("y-·¥­È");
+    jLabel6.setText("y+æ¥µå€¼");
+    jLabel8.setText("y-æ¥µå€¼");
     jLabel1.setMinimumSize(new Dimension(50, 15));
     jLabel1.setPreferredSize(new Dimension(150, 15));
     jLabel3.setPreferredSize(new Dimension(150, 15));

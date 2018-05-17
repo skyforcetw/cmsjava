@@ -9,9 +9,9 @@ import shu.cms.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * Ёo╦л╙╨╓ю╟о╛O╛╟╓F╕^бk╓ю╙Rав╖K╓с╧L╣╢╧О,
- * ╘р╔H╠д╔н╙╨╛OцP╢╡╕║╓ю╟о(╓ю╟о╓╖╤║╘╪╕╧╕Ё╜╚е|).
- * ╩щ╜n╔t╔~╓@╨ь╨Р╠K╕║╓ю╟о(╗S╕Ё╜╚е|),╔н╖@╦Й╝ф╓ю╙R╗о╔н.
+ * И─≥Хё║Г └Е┬├Е█─Ф≤╞Г┌╨Д╨├Е⌡·Ф╜╦Е┬├Ф·░И│©Е┘█Е╓╙И│▌Г╣∙Е╟█,
+ * Ф┴─Д╩╔Ф▌║Г■╗Г └Ф≤╞И╛├Ф∙ёЕ╪▐Е┬├Е█─(Е┬├Е█─Д╧▀И√⌠Е╫╪Ф╜╓Ф°┴И┤█Г√┼).
+ * И°─Х╕│Е▐╕Е╓√Д╦─Г╗╝Г╥┼Е╞├Е╪▐Е┬├Е█─(Ф╡▓Ф°┴И┤█Г√┼),Г■╗Д╫°ХЁ┤Ф√≥Е┬├Ф·░Д╫©Г■╗.
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -19,7 +19,7 @@ import shu.cms.util.*;
  *
  * @author cms.shu.edu.tw
  * @version 1.0
- * @todo M цP╢╡╕║╓ю╟о/╨Р╠K╕║╓ю╟о (loose/tight)
+ * @todo M И╛├Ф∙ёЕ╪▐Е┬├Е█─/Г╥┼Е╞├Е╪▐Е┬├Е█─ (loose/tight)
  */
 public final class ColorDivision {
   private final static ColorDivision[] divisionArray = new ColorDivision[Zone.
@@ -227,7 +227,7 @@ public final class ColorDivision {
   }
 
   /**
-   * ╧Lбopatch
+   * И│▌Ф©╬patch
    * @param patchList List
    * @param division ColorDivision
    * @return List
@@ -249,8 +249,8 @@ public final class ColorDivision {
   }
 
   /**
-   * ╧Lбopatch
-   * ╥|╔HpatchList1╛╟╔D,╝з╬зdivision╗с╧Lбopatch
+   * И│▌Ф©╬patch
+   * Ф°┐Д╩╔patchList1Г┌╨Д╦╩,Ф═╧Ф⌠ divisionД╬├И│▌Ф©╬patch
    * @param patchList1 List
    * @param patchList2 List
    * @param division ColorDivision

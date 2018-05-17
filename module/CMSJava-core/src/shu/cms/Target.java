@@ -11,7 +11,7 @@ import shu.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Nªí¾É¨ã
+ * ä»£è¡¨å°å…·
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -30,8 +30,8 @@ public abstract class Target
   private static boolean RGBNormalize = false;
 
   /**
-   * ³]©wTarget¤ºªºRGB¬O§_¶i¦æ¥¿³W¤Æ.
-   * ³]©wnormalize¬°false®É,«hRGB¤£·|¥¿³W¤Æ¬°0~1
+   * è¨­å®šTargetå…§çš„RGBæ˜¯å¦é€²è¡Œæ­£è¦åŒ–.
+   * è¨­å®šnormalizeç‚ºfalseæ™‚,å‰‡RGBä¸æœƒæ­£è¦åŒ–ç‚º0~1
    * @param normalize boolean
    */
   public final static void setRGBNormalize(boolean normalize) {
@@ -91,10 +91,10 @@ public abstract class Target
   protected String filename;
 
   /**
-   * ±qpatch List²£¥Í¥Xpatch Map
+   * å¾patch Listç”¢ç”Ÿå‡ºpatch Map
    * @param patchList List
    * @return Map
-   * @todo H ¹ï©ó¤@¨Ç¦³­«½Æªºtarget,¨S¿ìªk¦P®É¦s¦b!
+   * @todo H å°æ–¼ä¸€äº›æœ‰é‡è¤‡çš„target,æ²’è¾¦æ³•åŒæ™‚å­˜åœ¨!
    */
   private final static Map<RGB, Patch> processPatchMap(List<Patch> patchList) {
     Map<RGB, Patch> patchMap = new HashMap<RGB, Patch> (patchList.size());
@@ -123,7 +123,7 @@ public abstract class Target
   }
 
   /**
-   * ±qrgb§ä¨ì¹ïÀ³ªºpatch
+   * å¾rgbæ‰¾åˆ°å°æ‡‰çš„patch
    * @param rgb RGB
    * @return Patch
    */
@@ -166,7 +166,7 @@ public abstract class Target
   }
 
   /**
-   * §Q¥Î¦¹RGBª«¥ó·í§@getPatch(RGB)ªºkey­È
+   * åˆ©ç”¨æ­¤RGBç‰©ä»¶ç•¶ä½œgetPatch(RGB)çš„keyå€¼
    * @return RGB
    */
   public final RGB getKeyRGB() {
@@ -191,7 +191,7 @@ public abstract class Target
   }
 
   /**
-   * ¨ú±o¹w³]ªºCMF
+   * å–å¾—é è¨­çš„CMF
    * @return ColorMatchingFunction
    */
   public final static ColorMatchingFunction getDefaultCMF() {
@@ -219,7 +219,7 @@ public abstract class Target
   }
 
   /**
-   * ±N¨C­Ó¦â¶ôªºRGB¥¿³W¤Æ¨ì1.0
+   * å°‡æ¯å€‹è‰²å¡Šçš„RGBæ­£è¦åŒ–åˆ°1.0
    */
   private void normalizeRGB2Double1() {
     int size = patchList.size();
@@ -244,13 +244,13 @@ public abstract class Target
   }
 
   /**
-   * Âà¦¨LabªºPatch List
+   * è½‰æˆLabçš„Patch List
    * @return List
    */
   public abstract List<Patch> getLabPatchList();
 
   /**
-   * ±NPatch name´À´«¦¨RGBªºcode
+   * å°‡Patch nameæ›¿æ›æˆRGBçš„code
    */
   public final void replacePatchNameByRGB() {
     int size = patchList.size();

@@ -42,12 +42,12 @@ public class IntensityProofer {
 //CIEXYZ blackXYZ2 = (CIEXYZ) blackXYZ.clone();
 //blackXYZ2.times(2);
 
-//­ì©lªº¦â«×®y¼Ğ
+//åŸå§‹çš„è‰²åº¦åº§æ¨™
     CIExyY rxyY = new CIExyY(rXYZ);
     CIExyY gxyY = new CIExyY(gXYZ);
     CIExyY bxyY = new CIExyY(bXYZ);
 
-//°¾²¾«áªº¦â«×®y¼Ğ
+//åç§»å¾Œçš„è‰²åº¦åº§æ¨™
     CIExyY rxyY2 = (CIExyY) rxyY.clone();
     rxyY2.x += 0.01;
     CIExyY gxyY2 = (CIExyY) gxyY.clone();
@@ -151,7 +151,7 @@ public class IntensityProofer {
     int size = 256;
     CIEXYZ[] rampXYZArray = new CIEXYZ[size];
     //==========================================================================
-    // ¥Í¦¨panel ramp
+    // ç”Ÿæˆpanel ramp
     //==========================================================================
     for (int x = 0; x < size; x++) {
       CIEXYZ XYZ = model.getXYZ(new double[] {x, x, x});
@@ -237,7 +237,7 @@ public class IntensityProofer {
               else {
                 xyY1.x = Interpolation.linear(0, 1, xyY0.x, xyY2.x, 0.5);
                 xyY1.y = Interpolation.linear(0, 1, xyY0.y, xyY2.y, 0.5);
-                //¦³Yªºsmooth®ÄªG·|§óºG!
+                //æœ‰Yçš„smoothæ•ˆæœæœƒæ›´æ…˜!
 //            xyY1.Y = Interpolation.linear(0, 1, xyY0.Y, xyY2.Y, 0.5);
               }
               XYZ = xyY1.toXYZ();
@@ -286,7 +286,7 @@ public class IntensityProofer {
     double[][] invm = model.getXYZ2RGBMatrix();
 
     //==========================================================================
-    // ¥Í¦¨panel ramp
+    // ç”Ÿæˆpanel ramp
     //==========================================================================
 
     CIEXYZ[] panelRampXYZArray4CCT = getRampXYZArray(model, grayRampSmooth, 1);
@@ -333,14 +333,14 @@ public class IntensityProofer {
 //        panelRampXYZArray, targetXYZArray);
 
     //=========================================================================
-    //ºâdg lut
+    //ç®—dg lut
     //=========================================================================
     RGB[] dglut = getDGLut(intensityArray4CCT, bitDepth);
     analyzeDGByPlot(dglut, model, invm);
     //=========================================================================
 
     //=========================================================================
-    // ¤ÀªRdg§¹ªº»~®t
+    // åˆ†ædgå®Œçš„èª¤å·®
     //=========================================================================
     CIExyY[] dgWhitexyYArray = getDGWhitexyYArray(model, dglut);
     if (originalAnalyze) {
@@ -425,7 +425,7 @@ public class IntensityProofer {
 //          recommendTargetXYZArray);
 //
 //      //=========================================================================
-//      //ºâdg lut
+//      //ç®—dg lut
 //      //=========================================================================
 //      RGB[] dglut2 = getDGLut(intensityArray2, bitDepth);
 //      CIExyY[] dgWhitexyYArray2 = getDGWhitexyYArray(model, dglut2);
@@ -438,7 +438,7 @@ public class IntensityProofer {
 
     if (doFeedback) {
       //=========================================================================
-      //ºâdg lut
+      //ç®—dg lut
       //=========================================================================
       RGB[] dglut2 = feedback(dglut, model, bitDepth, 0.00015);
 //      RGB[] dglut2 = getDGLut(intensityArray2, bitDepth);
@@ -478,13 +478,13 @@ public class IntensityProofer {
         RGB rgb;
         double value = -1;
         if (deltaU1 > deltaD1) {
-          //­Y¤W¤èªºdelta¤ñ¸û¤j, ¥Nªí¤ñ¸û¤jªº½Õ¾ãªÅ¶¡, ©Ò¥H©¹¤W½Õ
+          //è‹¥ä¸Šæ–¹çš„deltaæ¯”è¼ƒå¤§, ä»£è¡¨æ¯”è¼ƒå¤§çš„èª¿æ•´ç©ºé–“, æ‰€ä»¥å¾€ä¸Šèª¿
           rgb = (clone)[y];
           value = rgb.getValue(ch, bitDepth) + 1;
           System.out.println(y + " " + ch + " +1");
         }
         else {
-          //¤Ï¤§, ´N¬O©¹¤U½Õ
+          //åä¹‹, å°±æ˜¯å¾€ä¸‹èª¿
           rgb = (clone)[y - 1];
           value = rgb.getValue(ch, bitDepth) - 1;
           System.out.println( (y - 1) + " " + ch + " -1");
@@ -565,7 +565,7 @@ public class IntensityProofer {
 //    Plot2D iplot = Plot2D.getInstance("intensity");
     Plot2D diplot = Plot2D.getInstance("delta intensity");
 //=========================================================================
-//ºâdg lut
+//ç®—dg lut
 //=========================================================================
 
     for (int x = 1; x < 256; x++) {
@@ -604,7 +604,7 @@ public class IntensityProofer {
     Plot2D dxyplot = Plot2D.getInstance("dxy of Target");
     Plot2D defectplot = Plot2D.getInstance("defect of Target");
     //=========================================================================
-    // ¤ÀªRdg§¹ªº»~®t
+    // åˆ†ædgå®Œçš„èª¤å·®
     //=========================================================================
     for (int x = 0; x < 256; x++) {
 
@@ -673,7 +673,7 @@ public class IntensityProofer {
   static Plot2D getDefectPlot(CIExyY[] dgWhitexyYArray) {
     Plot2D defectplot = Plot2D.getInstance("defect of Target");
     //=========================================================================
-    // ¤ÀªRdg§¹ªº»~®t
+    // åˆ†ædgå®Œçš„èª¤å·®
     //=========================================================================
 
     for (int x = 0; x < 256; x++) {
@@ -797,7 +797,7 @@ public class IntensityProofer {
       double[] factor = getFactor(invm, targetXYZ);
       double[][] intensitys = new double[256][];
 
-      //ºâintensity
+      //ç®—intensity
       for (int y = 255; y >= 0; y--) {
         CIEXYZ XYZ = wXYZArray[y];
         double[] intensity = getIntensity(invm, XYZ, factor);
@@ -817,7 +817,7 @@ public class IntensityProofer {
   }
 
   /**
-   * ®Õ¥¿Target WhiteªºIntensity¬°100%
+   * æ ¡æ­£Target Whiteçš„Intensityç‚º100%
    * @param invm double[][]
    * @param targetXYZ CIEXYZ
    * @return double[]
@@ -963,12 +963,12 @@ class SimpleLCDModel
 //    CIEXYZ blackXYZ2 = (CIEXYZ) blackXYZ.clone();
 //    blackXYZ2.times(2);
 
-//­ì©lªº¦â«×®y¼Ğ
+//åŸå§‹çš„è‰²åº¦åº§æ¨™
     CIExyY rxyY = new CIExyY(rXYZ);
     CIExyY gxyY = new CIExyY(gXYZ);
     CIExyY bxyY = new CIExyY(bXYZ);
 
-//°¾²¾«áªº¦â«×®y¼Ğ
+//åç§»å¾Œçš„è‰²åº¦åº§æ¨™
     CIExyY rxyY2 = (CIExyY) rxyY.clone();
     rxyY2.x += 0.02;
     CIExyY gxyY2 = (CIExyY) gxyY.clone();

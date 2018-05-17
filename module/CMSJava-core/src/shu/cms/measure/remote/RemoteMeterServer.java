@@ -49,7 +49,7 @@ public class RemoteMeterServer
 //    mm = new MeterMeasurement(meter,false);
 
     LocateRegistry.createRegistry(port);
-    Naming.rebind(url, this); // ±N¹ê²{Ãş¸j¨ì¤@­Ó¦W¦r¤W¥h
+    Naming.rebind(url, this); // å°‡å¯¦ç¾é¡ç¶åˆ°ä¸€å€‹åå­—ä¸Šå»
     initTrayIcon();
     Logger.log.info("Bind at " + url);
   }
@@ -70,8 +70,8 @@ public class RemoteMeterServer
       }
     }
     else {
-      Logger.log.error("µLªk¨ú±o¨t²Î¤u¨ã¦C");
-    } //¤u¨ã¦C¹Ï¥Ü
+      Logger.log.error("ç„¡æ³•å–å¾—ç³»çµ±å·¥å…·åˆ—");
+    } //å·¥å…·åˆ—åœ–ç¤º
 
   }
 

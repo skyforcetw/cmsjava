@@ -43,7 +43,7 @@ public class DCPolynomialRegressionModel
                                             coefficients)[0];
 
     //=======================================================================
-    // ¶i¦ægamma¤Ï®Õ¥¿
+    // é€²è¡Œgammaåæ ¡æ­£
     //=======================================================================
     result = this.gammaUncorrect(result);
     //=======================================================================
@@ -58,7 +58,7 @@ public class DCPolynomialRegressionModel
     double[] rgbValues = rgb.getValues(new double[3], RGB.MaxValue.Double1);
 
     //=======================================================================
-    // ¶i¦ægamma®Õ¥¿
+    // é€²è¡Œgammaæ ¡æ­£
     //=======================================================================
     rgbValues = gammaCorrect(rgbValues);
     //=======================================================================
@@ -73,13 +73,13 @@ public class DCPolynomialRegressionModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    */
   protected Factor _produceFactor() {
     //=======================================================================
-    // ¶i¦ægamma®Õ¥¿,¦ı¬O´ú¸Õµ²ªG¬O¤£­n®Õ¥¿¤ñ¸û¦n-.-,¬O¬yµ{¿ù»~¶Ü?
+    // é€²è¡Œgammaæ ¡æ­£,ä½†æ˜¯æ¸¬è©¦çµæœæ˜¯ä¸è¦æ ¡æ­£æ¯”è¼ƒå¥½-.-,æ˜¯æµç¨‹éŒ¯èª¤å—?
     //=======================================================================
     produceGammaCorrector();
     //=======================================================================
@@ -94,7 +94,7 @@ public class DCPolynomialRegressionModel
       p.getRGB().getValues(input[x], RGB.MaxValue.Double1);
 
       //=======================================================================
-      // ¶i¦ægamma®Õ¥¿
+      // é€²è¡Œgammaæ ¡æ­£
       //=======================================================================
       input[x] = gammaCorrect(input[x]);
       //=======================================================================
@@ -102,7 +102,7 @@ public class DCPolynomialRegressionModel
       p.getNormalizedXYZ().getValues(output[x]);
     }
 
-    //¶i¦æ¦^Âk¹Bºâ
+    //é€²è¡Œå›æ­¸é‹ç®—
     if (forwardCoef == null) {
       forwardCoef = PolynomialRegression.findBestPolynomialCoefficient3(
           input, output);
@@ -111,7 +111,7 @@ public class DCPolynomialRegressionModel
         ReductionPolynomialRegression(input, output, forwardCoef);
     forwardRegression.regressBestDataSet();
 
-    //¶i¦æ¦^Âk¹Bºâ
+    //é€²è¡Œå›æ­¸é‹ç®—
     if (inverseCoef == null) {
       inverseCoef = PolynomialRegression.findBestPolynomialCoefficient3(
           output, input);
@@ -132,7 +132,7 @@ public class DCPolynomialRegressionModel
   private ReductionPolynomialRegression inverseRegression;
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    * @param modelFactorFilename String
    */
   public DCPolynomialRegressionModel(String modelFactorFilename) {
@@ -147,11 +147,11 @@ public class DCPolynomialRegressionModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * æ±‚å€¼æ¨¡å¼
    * @param dcTarget DCTarget
    * @param doGammaCorrect boolean
    * @param forwardCoef COEF_3
-   * @param targetRGBNormalize boolean ¬O§_¨Ì·Ó¥Õ¦â¦â¶ô¶i¦æRGB¥¿³W¤Æ
+   * @param targetRGBNormalize boolean æ˜¯å¦ä¾ç…§ç™½è‰²è‰²å¡Šé€²è¡ŒRGBæ­£è¦åŒ–
    */
   public DCPolynomialRegressionModel(DCTarget dcTarget, boolean doGammaCorrect,
                                      Polynomial.COEF_3 forwardCoef,
@@ -162,12 +162,12 @@ public class DCPolynomialRegressionModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * æ±‚å€¼æ¨¡å¼
    * @param dcTarget DCTarget
    * @param doGammaCorrect boolean
-   * @param forwardCoef COEF_3 «e¾É«Y¼Æ
-   * @param inverseCoef COEF_3 ¤Ï±À«Y¼Æ
-   * @param targetRGBNormalize boolean ¬O§_¨Ì·Ó¥Õ¦â¦â¶ô¶i¦æRGB¥¿³W¤Æ
+   * @param forwardCoef COEF_3 å‰å°ä¿‚æ•¸
+   * @param inverseCoef COEF_3 åæ¨ä¿‚æ•¸
+   * @param targetRGBNormalize boolean æ˜¯å¦ä¾ç…§ç™½è‰²è‰²å¡Šé€²è¡ŒRGBæ­£è¦åŒ–
    */
   public DCPolynomialRegressionModel(DCTarget dcTarget, boolean doGammaCorrect,
                                      Polynomial.COEF_3 forwardCoef,
@@ -180,7 +180,7 @@ public class DCPolynomialRegressionModel
   }
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    * @param factor DCModelFactor
    */
   public DCPolynomialRegressionModel(DCModelFactor factor) {

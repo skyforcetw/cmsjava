@@ -12,7 +12,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ­««ØXtalkªº®ÄÀ³
+ * é‡å»ºXtalkçš„æ•ˆæ‡‰
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -33,7 +33,7 @@ public class XTalkReconstructor
   }
 
   /**
-   * ±qxtalk«áªºXYZ¥H¤Î­ì©lªºoriginalRGB(¤]´N¬O¥¼¨üxtalk¼vÅTªºRGB), ±Àºâ¥Xxtalk©Ò³y¦¨ªºRGB§ïÅÜ
+   * å¾xtalkå¾Œçš„XYZä»¥åŠåŸå§‹çš„originalRGB(ä¹Ÿå°±æ˜¯æœªå—xtalkå½±éŸ¿çš„RGB), æ¨ç®—å‡ºxtalkæ‰€é€ æˆçš„RGBæ”¹è®Š
    * @param XYZ CIEXYZ
    * @param originalRGB RGB
    * @param relativeXYZ boolean
@@ -51,7 +51,7 @@ public class XTalkReconstructor
     DeltaE byMinimisationDeltaE = getXTalkRGBDeltaE();
     double byMinimisationdE = byMinimisationDeltaE.getCIE2000DeltaE();
 
-    //±N¦ôºâ¥X¨Ó¦â®t¸û¤pªºµ²ªG¦^¶Ç
+    //å°‡ä¼°ç®—å‡ºä¾†è‰²å·®è¼ƒå°çš„çµæœå›å‚³
     if (byMatrixRGBdE < byMinimisationdE) {
       this._getXTalkRGBDeltaE = byMatrixRGBDeltaE;
       byMatrixCount++;
@@ -70,14 +70,14 @@ public class XTalkReconstructor
   protected RGB getXTalkRGB(CIEXYZ XYZ, final RGB originalRGB,
                             boolean relativeXYZ, Method method) {
     if (!originalRGB.isSecondaryChannel()) {
-      //originalRGB¤@©w¥u¯à¬O¤G¦¸¦â
+      //originalRGBä¸€å®šåªèƒ½æ˜¯äºŒæ¬¡è‰²
       return null;
     }
 
-    //®Ú¾ÚrelativeXYZ³B²zXYZ
+    //æ ¹æ“šrelativeXYZè™•ç†XYZ
     CIEXYZ fromXYZ = adapter.fromXYZ(XYZ, relativeXYZ);
     /**
-     * @todo H acp ¬O§_­n¯d¦srationalize
+     * @todo H acp æ˜¯å¦è¦ç•™å­˜rationalize
      */
     fromXYZ.rationalize();
 
@@ -92,12 +92,12 @@ public class XTalkReconstructor
   }
 
   /**
-   * ¤wª¾XYZ,ÁÙ­ìRGB,¥B½T©w¤FXTalkªºÀW¹D,§Q¥ÎÀu¤Æªº¤è¦¡¨D±o³Ì¨Î¸Ñ
+   * å·²çŸ¥XYZ,é‚„åŸRGB,ä¸”ç¢ºå®šäº†XTalkçš„é »é“,åˆ©ç”¨å„ªåŒ–çš„æ–¹å¼æ±‚å¾—æœ€ä½³è§£
    *
-   * ºtºâªk»¡©ú:
-   * (1)­pºâXtalk channel
-   * (2)§Q¥ÎÀu¤Æªº¤è¦¡¨D±o³Ì¨Î¸Ñ
-   * (3)­pºâ¾ã­Óºtºâªk»~®t©Ò³y¦¨ªº¦â®t
+   * æ¼”ç®—æ³•èªªæ˜:
+   * (1)è¨ˆç®—Xtalk channel
+   * (2)åˆ©ç”¨å„ªåŒ–çš„æ–¹å¼æ±‚å¾—æœ€ä½³è§£
+   * (3)è¨ˆç®—æ•´å€‹æ¼”ç®—æ³•èª¤å·®æ‰€é€ æˆçš„è‰²å·®
    * @param XYZ CIEXYZ
    * @param originalRGB RGB
    * @return RGB
@@ -110,7 +110,7 @@ public class XTalkReconstructor
     RGB rgb = recover.getXTalkRGB(XYZ, originalRGB, selfChannel);
 
     //==========================================================================
-    // ­pºâinverseLabªºdeltaE
+    // è¨ˆç®—inverseLabçš„deltaE
     //==========================================================================
     //(3)
     _getXTalkRGBDeltaE = mmModel.calculateGetRGBDeltaE(rgb, XYZ, true);
@@ -125,12 +125,12 @@ public class XTalkReconstructor
       implements MinimisationFunction {
     /**
      *
-     * @param XYZ CIEXYZ xtalk«áªºXYZ
-     * @param originalRGB RGB ­ì©lªºRGB
-     * @param xtalkChannel Channel ³Qxtalk¼vÅTªºchannel
-     * @param signConstraint boolean ¬O§_­n­­¨î¥¿­t¸¹
-     * @param negativeXTalk boolean ¥¿­t¸¹ªº­­¨î¤è¦V
-     * @return RGB xtalk¹w´úªºRGB
+     * @param XYZ CIEXYZ xtalkå¾Œçš„XYZ
+     * @param originalRGB RGB åŸå§‹çš„RGB
+     * @param xtalkChannel Channel è¢«xtalkå½±éŸ¿çš„channel
+     * @param signConstraint boolean æ˜¯å¦è¦é™åˆ¶æ­£è² è™Ÿ
+     * @param negativeXTalk boolean æ­£è² è™Ÿçš„é™åˆ¶æ–¹å‘
+     * @return RGB xtalké æ¸¬çš„RGB
      */
     private RGB getXTalkRGB(CIEXYZ XYZ, final RGB originalRGB,
                             RGBBase.Channel xtalkChannel,
@@ -176,10 +176,10 @@ public class XTalkReconstructor
 
     /**
      *
-     * @param XYZ CIEXYZ Crosstalk¼vÅT«áªºXYZ
-     * @param originalRGB RGB ­ì©l¿é¤JªºRGB°T¸¹
-     * @param xtalkChannel Channel Crosstalk¼vÅTªºÀW¹D
-     * @param negativeXTalk boolean Crosstalk¬O§_¦³­tªº¼vÅT
+     * @param XYZ CIEXYZ Crosstalkå½±éŸ¿å¾Œçš„XYZ
+     * @param originalRGB RGB åŸå§‹è¼¸å…¥çš„RGBè¨Šè™Ÿ
+     * @param xtalkChannel Channel Crosstalkå½±éŸ¿çš„é »é“
+     * @param negativeXTalk boolean Crosstalkæ˜¯å¦æœ‰è² çš„å½±éŸ¿
      * @return RGB
      */
     public RGB getXTalkRGB(CIEXYZ XYZ, final RGB originalRGB,
@@ -204,9 +204,9 @@ public class XTalkReconstructor
      */
     public double function(double[] doubleArray) {
       double val = doubleArray[0];
-      //½Õ¾ãxtalkChannelªº¼Æ­È
+      //èª¿æ•´xtalkChannelçš„æ•¸å€¼
       recoverRGB.setValue(xtalkChannel, val);
-      //¨ÏdeltaE¹F¨ì³Ì¤p
+      //ä½¿deltaEé”åˆ°æœ€å°
       DeltaE de = mmModel.calculateGetRGBDeltaE(recoverRGB, measureXYZ, true);
       return de.getCIE2000DeltaE();
     }
@@ -214,15 +214,15 @@ public class XTalkReconstructor
   }
 
   /**
-   * ¤wª¾XYZ,ÁÙ­ìRGB,¥B½T©w¤FXTalkªºÀW¹D
+   * å·²çŸ¥XYZ,é‚„åŸRGB,ä¸”ç¢ºå®šäº†XTalkçš„é »é“
    *
-   * ºtºâªk»¡©ú:
-   * (1)­pºâXtalk channel
-   * (2)ÂÇ¥Ñ¤wª¾ªºoriginalRGB, ±Æ°£±¼XTalkªºChannel¥H¥~ªºXYZ, ±o¨ìbesideXYZ
-   * (3)±Nbeside XYZ±a¤Jmax¯x°}¶i¦æ¹Bºâ, ±o¨ì²Ê¦ôLuminance RGB
-   * (4)§ïÅÜ¯x°}ªºXYZ, ¤£Â_­¡¥N¶i¦æ¹Bºâ, ±o¨ì³Ì¨Î¸Ñ.
-   * (5)±N³Ì¨Î¸ÑLuminace RGB¥HungammaCorrect±oDAC RGB
-   * (6)­pºâ¾ã­Óºtºâªk»~®t©Ò³y¦¨ªº¦â®t
+   * æ¼”ç®—æ³•èªªæ˜:
+   * (1)è¨ˆç®—Xtalk channel
+   * (2)è—‰ç”±å·²çŸ¥çš„originalRGB, æ’é™¤æ‰XTalkçš„Channelä»¥å¤–çš„XYZ, å¾—åˆ°besideXYZ
+   * (3)å°‡beside XYZå¸¶å…¥maxçŸ©é™£é€²è¡Œé‹ç®—, å¾—åˆ°ç²—ä¼°Luminance RGB
+   * (4)æ”¹è®ŠçŸ©é™£çš„XYZ, ä¸æ–·è¿­ä»£é€²è¡Œé‹ç®—, å¾—åˆ°æœ€ä½³è§£.
+   * (5)å°‡æœ€ä½³è§£Luminace RGBä»¥ungammaCorrectå¾—DAC RGB
+   * (6)è¨ˆç®—æ•´å€‹æ¼”ç®—æ³•èª¤å·®æ‰€é€ æˆçš„è‰²å·®
    * @param XYZ CIEXYZ
    * @param originalRGB RGB
    * @return RGB
@@ -236,7 +236,7 @@ public class XTalkReconstructor
       _getXTalkRGBDeltaE = null;
       return originalRGB;
     }
-    //¥u¯dxtalkªºXYZ
+    //åªç•™xtalkçš„XYZ
     //(2)
     CIEXYZ besideXYZ = getBesideXYZ(XYZ, originalRGB, selfChannel);
 
@@ -262,7 +262,7 @@ public class XTalkReconstructor
     //(5)
     mmModel.correct.gammaUncorrect(rgb);
 
-    //±N¥¿³W¤ÆªºDAC RGBÂà¦^­ì©l¤j¤p
+    //å°‡æ­£è¦åŒ–çš„DAC RGBè½‰å›åŸå§‹å¤§å°
     rgb.changeMaxValue(mmModel.getLCDTarget().getMaxValue());
     rgb = mmModel.rational.RGBRationalize(rgb);
     RGBBase.Channel[] constChannel = RGBBase.Channel.getBesidePrimaryChannel(
@@ -272,7 +272,7 @@ public class XTalkReconstructor
     rgb.setValue(constChannel[1], originalRGB.getValue(constChannel[1]));
 
     //==========================================================================
-    // ­pºâinverseLabªºdeltaE
+    // è¨ˆç®—inverseLabçš„deltaE
     //==========================================================================
     //(6)
     _getXTalkRGBDeltaE = mmModel.calculateGetRGBDeltaE(rgb, XYZ, true);
@@ -283,7 +283,7 @@ public class XTalkReconstructor
   }
 
   /**
-   * ­pºâxtalkChannelªºXYZ­È
+   * è¨ˆç®—xtalkChannelçš„XYZå€¼
    * @param relativeXYZ CIEXYZ
    * @param originalRGB RGB
    * @param xtalkChannel Channel
@@ -292,7 +292,7 @@ public class XTalkReconstructor
   protected CIEXYZ getBesideXYZ(CIEXYZ relativeXYZ, final RGB originalRGB,
                                 RGBBase.Channel xtalkChannel) {
 
-    //¤£¨üxtalk¼vÅTªºchannel
+    //ä¸å—xtalkå½±éŸ¿çš„channel
     RGBBase.Channel[] constChannel = RGBBase.Channel.getBesidePrimaryChannel(
         xtalkChannel);
 
@@ -313,7 +313,7 @@ public class XTalkReconstructor
   private double[] bMaxInverse = null;
 
   /**
-   * ­pºâchannel¤Uªºmax XYZ©Ò§Î¦¨ªº¤Ï¯x°}
+   * è¨ˆç®—channelä¸‹çš„max XYZæ‰€å½¢æˆçš„åçŸ©é™£
    * @param channel Channel
    * @return double[]
    */
@@ -353,7 +353,7 @@ public class XTalkReconstructor
   }
 
   /**
-   * ±qchannelªºmax XYZ,¥h¤Ïºâ¥XRGB­È
+   * å¾channelçš„max XYZ,å»åç®—å‡ºRGBå€¼
    * @param XYZ CIEXYZ
    * @param channel Channel
    * @return RGB
@@ -371,7 +371,7 @@ public class XTalkReconstructor
   }
 
   /**
-   * ¨ú±ochannelªºcode¬°channelValue¤UªºXYZ­È¤Ï¯x°}
+   * å–å¾—channelçš„codeç‚ºchannelValueä¸‹çš„XYZå€¼åçŸ©é™£
    * @param channel Channel
    * @param channelValue double
    * @return double[]
@@ -393,7 +393,7 @@ public class XTalkReconstructor
   }
 
   /**
-   * ¥H¦h­«Matrixªº¤è¦¡,±o¨ì³Ì¹GªñchannelXYZªºRGB code
+   * ä»¥å¤šé‡Matrixçš„æ–¹å¼,å¾—åˆ°æœ€é€¼è¿‘channelXYZçš„RGB code
    * @param luminanceRoughRGB RGB
    * @param channelXYZ CIEXYZ
    * @param channel Channel
@@ -404,7 +404,7 @@ public class XTalkReconstructor
                                           final RGBBase.Channel channel
       ) {
     //==========================================================================
-    // ­×¥¿¬°DAC Value
+    // ä¿®æ­£ç‚ºDAC Value
     //==========================================================================
     RGB rgb = (RGB) luminanceRoughRGB.clone();
     rgb.getValues(luminanceRGBValues);
@@ -414,7 +414,7 @@ public class XTalkReconstructor
     double[] inverseMatrix = getChannelInverse(channel,
                                                rgb.getValue(channel));
     if (inverseMatrix != null) {
-      //      //¦¹®É¦^¶ÇªºRGB¬°luminance RGBªº¤ñ­È
+      //      //æ­¤æ™‚å›å‚³çš„RGBç‚ºluminance RGBçš„æ¯”å€¼
       rgb = XYZToChannelByMatrix(channelXYZ, inverseMatrix, channel);
 //      rgb.getValues(rgbValues, RGB.MaxValue.Double1);
       rgb.setValue(channel,
@@ -430,7 +430,7 @@ public class XTalkReconstructor
   private double[] luminanceRGBValues = new double[3];
 
   /**
-   * ±NXYZValues­¼¤WinverseMatrix,±o¨ì¸ÓChannel luminance RGB
+   * å°‡XYZValuesä¹˜ä¸ŠinverseMatrix,å¾—åˆ°è©²Channel luminance RGB
    * @param XYZValues double[]
    * @param inverseMatrix double[]
    * @return double
@@ -441,7 +441,7 @@ public class XTalkReconstructor
   }
 
   /**
-   * ±NXYZ»PinveseMatrix­pºâ±o¨ìluminance RGB
+   * å°‡XYZèˆ‡inveseMatrixè¨ˆç®—å¾—åˆ°luminance RGB
    * @param XYZ CIEXYZ
    * @param inverseMatrix double[]
    * @param channel Channel
@@ -453,12 +453,12 @@ public class XTalkReconstructor
     double channelValues = XYZToChannel(XYZ.getValues(), inverseMatrix);
 
     /**
-     * @note «Ü·N¥~ªº,¦ı¤]¤£·N¥~ªº,§A¥²¶·§âfixRGB©MRGBRationalizeÃö³¬,
-     * ¤~¯àÅı¹w´ú¥X¨ÓªºRBÁÍ©ó¥¿½T¡C
-     * ¬°¤°»ò?«ÜÂ²³æ,RBValues·|¦³>1ªºª¬ªp,³o¬O¥¿±`ªºª¬ªp!
-     * ¦]¬°¦b³o¸Ì¤£¦A¬O¥Î"max"©Ò²Õ¦¨ªºmatrix,©Ò¥H·|¦³>1ªºª¬ªp¤]¤£·N¥~!
-     * ¬Û¹ïªº,¦b¨ä¥L¦a¤èªºfixRGB©MRGBRationalize·|¤£·|¤]¹J¨ì³o¼Ëªºª¬ªp??
-     * »İ­n°µ¶i¤@¨BÅçÃÒ!
+     * @note å¾ˆæ„å¤–çš„,ä½†ä¹Ÿä¸æ„å¤–çš„,ä½ å¿…é ˆæŠŠfixRGBå’ŒRGBRationalizeé—œé–‰,
+     * æ‰èƒ½è®“é æ¸¬å‡ºä¾†çš„RBè¶¨æ–¼æ­£ç¢ºã€‚
+     * ç‚ºä»€éº¼?å¾ˆç°¡å–®,RBValuesæœƒæœ‰>1çš„ç‹€æ³,é€™æ˜¯æ­£å¸¸çš„ç‹€æ³!
+     * å› ç‚ºåœ¨é€™è£¡ä¸å†æ˜¯ç”¨"max"æ‰€çµ„æˆçš„matrix,æ‰€ä»¥æœƒæœ‰>1çš„ç‹€æ³ä¹Ÿä¸æ„å¤–!
+     * ç›¸å°çš„,åœ¨å…¶ä»–åœ°æ–¹çš„fixRGBå’ŒRGBRationalizeæœƒä¸æœƒä¹Ÿé‡åˆ°é€™æ¨£çš„ç‹€æ³??
+     * éœ€è¦åšé€²ä¸€æ­¥é©—è­‰!
      */
     RGB rgb = new RGB(RGB.ColorSpace.unknowRGB);
     rgb.setValue(channel, channelValues, RGB.MaxValue.Double1);

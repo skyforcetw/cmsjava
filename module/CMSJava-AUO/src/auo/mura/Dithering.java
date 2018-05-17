@@ -147,7 +147,7 @@ public class Dithering {
   }
 
   static void floydSteinberg(int[] abcd, int error, boolean modified) {
-    //©î¦¨abcd¥|­Ó³¡¥÷, ¤]´N¬O§âerror©ß¨ì³o¥|­Ópixel¥h  : 7 1 5 3
+    //â•ŠÎ˜abcdîš‚î…Œåœºî½, î˜ƒç¢çŒÑ€errorâ”»îŸç¡‚îš‚î…Œpixelî™®  : 7 1 5 3
     if (modified) {
       abcd[0] = (int) Math.round(error * 7. / 16);
       abcd[1] = (error == 1 || error == 7) ? 1 : (error == 9 || error == 15) ?
@@ -166,7 +166,7 @@ public class Dithering {
 
   static void floydSteinbergCC(int[] abcd, int error, int h, int w, int height,
                                int width) {
-    //©î¦¨abcd¥|­Ó³¡¥÷, ¤]´N¬O§âerror©ß¨ì³o¥|­Ópixel¥h  : 7 1 5 3
+    //â•ŠÎ˜abcdîš‚î…Œåœºî½, î˜ƒç¢çŒÑ€errorâ”»îŸç¡‚îš‚î…Œpixelî™®  : 7 1 5 3
 
     // *a
     //dcb
@@ -291,7 +291,7 @@ public class Dithering {
           int h_ = y % matrixh;
           int w_ = x % matrixw;
           threshold =
-              thresholdMatrix[h_][w_]; //¹ïÀ³¨ìorder matrix
+              thresholdMatrix[h_][w_]; //ç™¸è±îŸorder matrix
         }
 
         if (error >= threshold) { //pr>th
@@ -306,7 +306,7 @@ public class Dithering {
         compensationData[y][x] = integer;
 //        System.out.println(y + " " + x + ": " + integer / 16);
 
-        //¥ı§â¤p¼ÆÂI©ñ¨ìerror data,©Ò¥H³B²z¤§«á¥u³Ñ¾ã¼Æ
+        //îƒÑ€î˜–è®¡ç¿´î ‚îŸerror data,â”®î™çŸªç¶ã‡î‚î™»é€ä¿±è®¡
         if (Debug) {
           switch (compensationData[y][x]) {
             case 16:
@@ -324,7 +324,7 @@ public class Dithering {
           }
         }
 
-        //©î¦¨abcd¥|­Ó³¡¥÷, ¤]´N¬O§âerror©ß¨ì³o¥|­Ópixel¥h  : 7 1 5 3
+        //â•ŠÎ˜abcdîš‚î…Œåœºî½, î˜ƒç¢çŒÑ€errorâ”»îŸç¡‚îš‚î…Œpixelî™®  : 7 1 5 3
         floydSteinberg(abcd, error, false);
 //        floydSteinbergCC(abcd, error, height, width, height, width);
 //        abcd[0] = (int) (error * 7. / 16);
@@ -402,7 +402,7 @@ public class Dithering {
           int h_ = y % matrixh;
           int w_ = x % matrixw;
           threshold =
-              thresholdMatrix[h_][w_]; //¹ïÀ³¨ìorder matrix
+              thresholdMatrix[h_][w_]; //ç™¸è±îŸorder matrix
         }
 
         if (error >= threshold) { //pr>th
@@ -412,7 +412,7 @@ public class Dithering {
         compensationData[y][x] = integer;
         max = Math.max(integer, max);
 
-        //¥ı§â¤p¼ÆÂI©ñ¨ìerror data,©Ò¥H³B²z¤§«á¥u³Ñ¾ã¼Æ
+        //îƒÑ€î˜–è®¡ç¿´î ‚îŸerror data,â”®î™çŸªç¶ã‡î‚î™»é€ä¿±è®¡
 //        if (Debug) {
 //          switch (compensationData[y][x]) {
 //            case 16: //1
@@ -430,7 +430,7 @@ public class Dithering {
 //          }
 //        }
 
-        //©î¦¨abcd¥|­Ó³¡¥÷, ¤]´N¬O§âerror©ß¨ì³o¥|­Ópixel¥h  : 7 1 5 3
+        //â•ŠÎ˜abcdîš‚î…Œåœºî½, î˜ƒç¢çŒÑ€errorâ”»îŸç¡‚îš‚î…Œpixelî™®  : 7 1 5 3
         floydSteinberg(abcd, error, false);
 //        abcd[0] = (int) (error * 7 / 16.);
 //        abcd[1] = (int) (error / 16.);
@@ -466,14 +466,14 @@ public class Dithering {
     for (int y = 0; y < h; y++) {
       for (int x = 0; x < w; x++) {
         short data = (short) compensationData[y][x];
-        short integer = (short) (data / delta * delta); //¥ı¥h°£¤p¼ÆÂI, ¯d¤U¾ã¼Æ³¡¥÷
+        short integer = (short) (data / delta * delta); //îƒî™®åŸƒî˜–è®¡ç¿´, ç—™î—»ä¿±è®¡åœºî½
 
-        int error = data - integer; //error§Y¬°¤p¼ÆÂI, ¤]´N¬O­n³Q©ß¥X¥hªº³¡¤À
+        int error = data - integer; //errorîœŸîƒ‹î˜–è®¡ç¿´, î˜ƒç¢çŒç’¶ç †â”»î™î™®î€™åœºã 
 
-        //©î¦¨abcd¥|­Ó³¡¥÷, ¤]´N¬O§âerror©ß¨ì³o¥|­Ópixel¥h  : 7 1 5 3
+        //â•ŠÎ˜abcdîš‚î…Œåœºî½, î˜ƒç¢çŒÑ€errorâ”»îŸç¡‚îš‚î…Œpixelî™®  : 7 1 5 3
         floydSteinberg(abcd, error);
 
-        compensationData[y][x] = integer; //¥ı§â¤p¼ÆÂI©ñ¨ìerror data,©Ò¥H³B²z¤§«á¥u³Ñ¾ã¼Æ
+        compensationData[y][x] = integer; //îƒÑ€î˜–è®¡ç¿´î ‚îŸerror data,â”®î™çŸªç¶ã‡î‚î™»é€ä¿±è®¡
         if (x + 1 < w) {
           compensationData[y][x + 1] += abcd[0];
         }
@@ -501,16 +501,16 @@ public class Dithering {
             int hindex = hBegin + h_;
             int windex = wBegin + w_;
 
-            short data = compensationData[hindex][windex]; //¤W­±floyd¤w¸g³B¸Ì¹L, ©Ò¥H¦¹³Bªºdata¥u¦³¾ã¼Æ
+            short data = compensationData[hindex][windex]; //î—½î„ªfloydî˜ç«’çŸªæŸ‘ç­, â”®î™î…çŸªî€™dataî™»Î¤ä¿±è®¡
             short threshold = (thresholdMatrix != null) ?
-                thresholdMatrix[h_][w_] : 8; //¹ïÀ³¨ìorder matrix
-//            short error = errorData[hindex][windex]; //³B²z¥X¨Óªº¤p¼Æ³¡¥÷
-//            short totaldata = (short) (data + error); //¦X¨Ö¾ã¼Æ»P¤p¾ğ
-            //­n­«·s­pºâ¾ã¼Æ»P¤p¼Æªº­ì¦], ¦b©óerrorªº³¡¥÷¥i¯àÀx¦s¶W¹L1ªº­È
-            short integer = (short) (data / delta * delta); //¤ÀÂ÷¥X¾ã¼Æ»P¤p¼Æ
+                thresholdMatrix[h_][w_] : 8; //ç™¸è±îŸorder matrix
+//            short error = errorData[hindex][windex]; //çŸªç¶î™ã„“î€™î˜–è®¡åœºî½
+//            short totaldata = (short) (data + error); //îš¾ã„–ä¿±è®¡ç±”î˜–æ”«
+            //ç’¶î„¤ç©ç’¸è¡¡ä¿±è®¡ç±”î˜–è®¡î€™î…¥î›ƒ, î›ˆî „errorî€™åœºî½î™¯îˆ•çº—î›™ç¦¬ç­1î€™î…
+            short integer = (short) (data / delta * delta); //ã ç’î™ä¿±è®¡ç±”î˜–è®¡
             short error = (short) (data - integer);
 
-            //­Y¶W¹Lthreshold, ¤]´N¬O order matrix,  ´N¾ã¼Æ+1
+            //ç’ç¦¬ç­threshold, î˜ƒç¢çŒ order matrix,  ç¢ä¿±è®¡+1
             if (error >= threshold) {
               integer += delta;
             }
@@ -702,7 +702,7 @@ public class Dithering {
 //          short hoseip = compensationData[h + jj][w + ii];
 //          tmperror = hoseip % 16;
 
-          //¨C³ü¦¸Åx¥X¥h, §Y¨è­pºâ¬O§_­n¶i¦ì
+          //â€“æ»Î©èˆ©î™î™®, îœŸã„¨ç’¸è¡¡çŒîœ¥ç’¶ç§ˆî”
 
 //          if (tmperror >= threshold) {
 //            diza[h + jj][w + ii]

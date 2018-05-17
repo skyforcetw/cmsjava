@@ -184,7 +184,7 @@ public class DICOMCalibrator {
     private RGB[] experiementTarget;
     private int firstAdjustIndex;
     /**
-     * ²Ä¤@­Ó³Q½Õ¾ã¨ìªºcode index­È
+     * ç¬¬ä¸€å€‹è¢«èª¿æ•´åˆ°çš„code indexå€¼
      * @return int
      */
     public int getFirstAdjustIndex() {
@@ -219,9 +219,9 @@ public class DICOMCalibrator {
      * @param ch Channel
      * @param maxValue MaxValue
      * @param maxCode double
-     * @param occurjndi double ½Õ¾ãªºjndi³B
-     * @param deltajndi double ½Õ¾ãªºdelta jndi
-     * @return RGB[] ·ídelta jndi¤Ó¤p¾É­P¨S¿ìªk§ä¨ì¦³®t²§ªºcode®É, ¦^¶Çnull
+     * @param occurjndi double èª¿æ•´çš„jndiè™•
+     * @param deltajndi double èª¿æ•´çš„delta jndi
+     * @return RGB[] ç•¶delta jndiå¤ªå°å°è‡´æ²’è¾¦æ³•æ‰¾åˆ°æœ‰å·®ç•°çš„codeæ™‚, å›å‚³null
      */
     public RGB[] produceExperimentTarget(RGBBase.Channel ch,
                                          RGB.MaxValue maxValue,
@@ -239,7 +239,7 @@ public class DICOMCalibrator {
         RGB[] target = calibrate(ch, maxValue, maxCode);
         int size = calibratedActualJNDIArray.length;
         experimentTargetJNDIArray = new double[size];
-        //copy calibratedTargetJNDIArray ¨ì experimentTargetJNDIArray
+        //copy calibratedTargetJNDIArray åˆ° experimentTargetJNDIArray
         System.arraycopy(calibratedActualJNDIArray, 0,
                          experimentTargetJNDIArray, 0,
                          size);
@@ -355,27 +355,27 @@ public class DICOMCalibrator {
         return code2JNDILut.getKey(Y);
     }
 
-    //®Õ¥¿«áªº¥Ø¼Ğjndi
+    //æ ¡æ­£å¾Œçš„ç›®æ¨™jndi
     private double[] calibratedTargetJNDIArray;
-    //®Õ¥¿«áªº¹ê»Újndi
+    //æ ¡æ­£å¾Œçš„å¯¦éš›jndi
     private double[] calibratedActualJNDIArray;
     private double[] experimentTargetJNDIArray;
-    //code»Pjndi¤§¶¡ªº¹ï·Óªí
+    //codeèˆ‡jndiä¹‹é–“çš„å°ç…§è¡¨
     private Interpolation1DLUT code2JNDILut;
-    //®Õ¥¿«áªºrgb code
+    //æ ¡æ­£å¾Œçš„rgb code
     private RGB[] calibratedRGBArray;
     private RGBBase.Channel ch;
     private double maxCode;
     private double[] contrastCruve;
-    //¸Ñ¨Mhk®ÄÀ³ªº¤èªk
+    //è§£æ±ºhkæ•ˆæ‡‰çš„æ–¹æ³•
     private GradientModel.HKStrategy strategy = GradientModel.HKStrategy.None;
     /**
-     * ±µ³sªºcodeªºjndi¬O§_©µÄò½Õ¾ã³Bªºjndi?
+     * æ¥é€£çš„codeçš„jndiæ˜¯å¦å»¶çºŒèª¿æ•´è™•çš„jndi?
      */
     private static boolean following = true;
 
     /**
-     * ²£¥ÍDICOM GSDF³W½d¤Uªºcode
+     * ç”¢ç”ŸDICOM GSDFè¦ç¯„ä¸‹çš„code
      * @param ch Channel
      * @param maxValue MaxValue
      * @param maxCode double
@@ -384,7 +384,7 @@ public class DICOMCalibrator {
     public RGB[] calibrate(RGBBase.Channel ch, RGB.MaxValue maxValue,
                            double maxCode) {
         //==========================================================================
-        // ¦@¥Î°Ñ¼Æ
+        // å…±ç”¨åƒæ•¸
         //==========================================================================
         this.ch = ch;
         this.maxCode = maxCode;
@@ -399,7 +399,7 @@ public class DICOMCalibrator {
         int maxCodeSize = size - (int) ((measureMaxCode - maxCode) / step);
 
         //==========================================================================
-        // «G«×data
+        // äº®åº¦data
         //==========================================================================
         Patch blackPatch = getBlackPatch(patchList);
         CIEXYZ blackXYZ = blackPatch.getXYZ();

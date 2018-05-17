@@ -63,12 +63,12 @@ public class DynamicContrastReport
         "High", "Medium", "Low"};*/
 
     LCDTarget ramp = LCDTarget.Instance.getFromAUORampXLS(
-        "D:\\My Documents\\\\地璸礶\\Sharp LC-46LX1\\Modes\\PC\\ramp.xls");
+        "D:\\My Documents\\宸ヤ綔\\鑿北瑷堢暙\\Sharp LC-46LX1\\Modes\\PC\\ramp.xls");
 
     for (String content : contents) {
       //for (String func : functions) {
       LCDTarget target = LCDTarget.Instance.getFromAUORampXLS(
-          "D:\\My Documents\\\\地璸礶\\Sharp LC-46LX1\\Modes\\PC\\笆篈癸ゑ\\" +
+          "D:\\My Documents\\宸ヤ綔\\鑿北瑷堢暙\\Sharp LC-46LX1\\Modes\\PC\\鍕曟厠灏嶆瘮\\" +
           content + ".xls");
 
       DynamicContrastReport report = new DynamicContrastReport(

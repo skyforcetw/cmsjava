@@ -43,7 +43,7 @@ public class BatchProfileMaker {
   }
 
   /**
-   * ²£¥Í©Ò¦³«¬ºAªºProfile
+   * ç”¢ç”Ÿæ‰€æœ‰åž‹æ…‹çš„Profile
    * @param factorFilename String
    * @param vc ViewingConditions
    */
@@ -91,7 +91,7 @@ public class BatchProfileMaker {
   }
 
   /**
-   * ±NfactorDirName¤Uªºfactor¥þ³¡²£¥Í¬°Profile
+   * å°‡factorDirNameä¸‹çš„factorå…¨éƒ¨ç”¢ç”Ÿç‚ºProfile
    * @param factorDirName String
    * @param vc ViewingConditions
    * @param catType CATType

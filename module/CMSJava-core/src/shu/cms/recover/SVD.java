@@ -13,10 +13,10 @@ import shu.math.SVDLib;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * (1) ±NSOCSªº¥úÃĞ¤Ï®g¤ñ¸ê®Æ¶i¦æSVD,
- * ¦ı¬OSOCS¸ê®Æµ§¼Æ¤Ó¦h,©Ò¥HµLªk¹Bºâ(¶·°ª¹F20G¥H¤Wªº°O¾ĞÅé=.=) *
+ * (1) å°‡SOCSçš„å…‰è­œåå°„æ¯”è³‡æ–™é€²è¡ŒSVD,
+ * ä½†æ˜¯SOCSè³‡æ–™ç­†æ•¸å¤ªå¤š,æ‰€ä»¥ç„¡æ³•é‹ç®—(é ˆé«˜é”20Gä»¥ä¸Šçš„è¨˜æ†¶é«”=.=) *
  *
- * (2) ±N¨âºØMunsell¸ê®Æ Matt/Glossy ¦X¨Ö,¨Ã¥B¶i¦æSVD
+ * (2) å°‡å…©ç¨®Munsellè³‡æ–™ Matt/Glossy åˆä½µ,ä¸¦ä¸”é€²è¡ŒSVD
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -35,7 +35,7 @@ public final class SVD {
     this.illuminant = illuminant;
 
     if (!checkMunsellUSV(source, illuminant)) {
-      //USVÀÉ®×¤£¦s¦b´N²£¥Í¥L
+      //USVæª”æ¡ˆä¸å­˜åœ¨å°±ç”¢ç”Ÿä»–
       produceMunsellUSV(source, illuminant);
     }
   }
@@ -47,7 +47,7 @@ public final class SVD {
   protected double[][] V;
 
   /**
-   * ÀË¬dMunsellªºUSVÀÉ®×¬O§_¦s¦b
+   * æª¢æŸ¥Munsellçš„USVæª”æ¡ˆæ˜¯å¦å­˜åœ¨
    * @param source Content
    * @param illuminant Spectra
    * @return boolean
@@ -64,18 +64,18 @@ public final class SVD {
   private final static void produceMunsellUSV(SpectraDatabase.Content source,
                                               Spectra illuminant) {
     //==========================================================================
-    // Åª¨úmunsell bookªº¸ê®Æ
+    // è®€å–munsell bookçš„è³‡æ–™
     //==========================================================================
     double[][] data = SpectraDatabase.getSpectraData(source);
 
     if (illuminant != null) {
-      //¦pªG¦³¥ú·½, ±Nmunsellªº¥úÃĞ¤Ï®g²v­¼¤W¥úÃĞ¯à¶q­È.
+      //å¦‚æœæœ‰å…‰æº, å°‡munsellçš„å…‰è­œåå°„ç‡ä¹˜ä¸Šå…‰è­œèƒ½é‡å€¼.
       data = RecoverUtils.getIlluminantSpectraData(source, data,
           illuminant);
     }
     data = DoubleArray.transpose(data);
 
-    //¶i¦æSVD
+    //é€²è¡ŒSVD
     SVDLib svd = new SVDLib(data);
     double[][] u = svd.getU();
     double[] sv = svd.getSingularValues();
@@ -123,7 +123,7 @@ public final class SVD {
     data = DoubleArray.transpose(data);
     System.out.println(DoubleArray.dimension(data));
 
-    //¶i¦æSVD
+    //é€²è¡ŒSVD
     SVDLib svd = new SVDLib(data);
     double[][] u = svd.getU();
     double[] sv = svd.getSingularValues();
@@ -146,7 +146,7 @@ public final class SVD {
     data = DoubleArray.transpose(data);
     System.out.println(DoubleArray.dimension(data));
 
-    //¶i¦æSVD
+    //é€²è¡ŒSVD
     SVDLib svd = new SVDLib(data);
     double[][] u = svd.getU();
     double[] sv = svd.getSingularValues();
@@ -172,7 +172,7 @@ public final class SVD {
     data = DoubleArray.transpose(data);
     System.out.println(DoubleArray.dimension(data));
 
-    //¶i¦æSVD
+    //é€²è¡ŒSVD
     SVDLib svd = new SVDLib(data);
     double[][] u = svd.getU();
     double[] sv = svd.getSingularValues();

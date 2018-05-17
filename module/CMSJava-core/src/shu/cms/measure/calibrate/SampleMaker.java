@@ -4,7 +4,7 @@ package shu.cms.measure.calibrate;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ²£¥Í®Õ¥¿»ö¾¹¥Îªº¦â¶ô¸ê®Æ
+ * ç”¢ç”Ÿæ ¡æ­£å„€å™¨ç”¨çš„è‰²å¡Šè³‡æ–™
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -40,7 +40,7 @@ public class SampleMaker {
   }
 
   /**
-   * °Ñ¦Ò¦Ûªü¦N¾Çªøªº°V½m¦â¶ô
+   * åƒè€ƒè‡ªé˜¿å‰å­¸é•·çš„è¨“ç·´è‰²å¡Š
    * @return String
    */
   public static String getStandardTrainingSample() {
@@ -50,7 +50,7 @@ public class SampleMaker {
   }
 
   /**
-   * ¤Àªº§ó²Óªº°V½m¦â¶ô
+   * åˆ†çš„æ›´ç´°çš„è¨“ç·´è‰²å¡Š
    * @return String
    */
   public static String getAdvancedTrainingSample() {
@@ -73,7 +73,7 @@ public class SampleMaker {
   }
 
   /**
-   * °Ñ¦Ò¦Ûªü¦N¾Çªøªº´ú¸Õ¦â¶ô
+   * åƒè€ƒè‡ªé˜¿å‰å­¸é•·çš„æ¸¬è©¦è‰²å¡Š
    * @return String
    */
   public static String getStandardTestSample() {

@@ -14,8 +14,8 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥i¥H±N¥Ñ¼Æ¦ì¬Û¾÷²£¥ÍªºICC Profile¤¤ªºDevD tag¨ú¥X,
- * ¥t¥~¦s¦¨CxFÀÉ
+ * å¯ä»¥å°‡ç”±æ•¸ä½ç›¸æ©Ÿç”¢ç”Ÿçš„ICC Profileä¸­çš„DevD tagå–å‡º,
+ * å¦å¤–å­˜æˆCxFæª”
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -48,7 +48,7 @@ public class RGBICCProfile2CxF
       transform(inputFilename, outputFilename);
     }
 
-    //µ²§ô
+    //çµæŸ
     current = lengthOfTask;
     done = true;
   }
@@ -58,8 +58,8 @@ public class RGBICCProfile2CxF
     ICC_Profile profile = ICC_Profile.getInstance(ICCProfileFilename);
     byte[] devD = profile.getData(DevD_TAG);
 
-    //¬°¤F­nÄF¹LParser³o¬O¤@­ÓTestChart,§_«h´N­n¥h§ïParser¤º³¡ªºµ{¦¡½X
-    //¬°¤F¨D§Ö³t,©Ò¥H¥Î³oºØ§é°Jªº¤èªk
+    //ç‚ºäº†è¦é¨™éParseré€™æ˜¯ä¸€å€‹TestChart,å¦å‰‡å°±è¦å»æ”¹Parserå…§éƒ¨çš„ç¨‹å¼ç¢¼
+    //ç‚ºäº†æ±‚å¿«é€Ÿ,æ‰€ä»¥ç”¨é€™ç¨®æŠ˜è¡·çš„æ–¹æ³•
     String devDString = new String(devD);
     devDString = "Logo TestChart\n" + devDString;
 

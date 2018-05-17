@@ -181,7 +181,7 @@ public class DeMuraTableProducer {
       int patternH = pattern.length;
       int patternW = pattern[0].length;
       int start = 0, end = 0;
-      if (x != 4) { //�̫�̭�
+      if (x != 4) { //最後依個
         start = (n + 1) - 1;
         end = n + pieceBlockWidthCount - 1;
       }
@@ -238,7 +238,7 @@ public class DeMuraTableProducer {
       int patternH = pattern.length;
       int patternW = pattern[0].length;
       int start = 0, end = 0;
-      if (x != 4) { //�̫�̭�
+      if (x != 4) { //最後依個
         start = (n + 1) - 1;
         end = n + pieceBlockHeightCount - 1;
       }
@@ -295,7 +295,7 @@ public class DeMuraTableProducer {
       int patternH = pattern.length;
       int patternW = pattern[0].length;
       int start = 0, end = 0;
-      if (x != 9) { //�̫�̭�
+      if (x != 9) { //最後依個
         start = (n + 1) - 1;
         end = n + pieceBlockWidthCount - 1;
       }

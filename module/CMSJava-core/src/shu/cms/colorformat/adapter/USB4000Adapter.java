@@ -109,23 +109,23 @@ public class USB4000Adapter
             String line = reader.readLine();
 
             if (firstSkip > 0) {
-              //360nm¥H«eªº¸ê®Æ³£²¤¹L
+              //360nmä»¥å‰çš„è³‡æ–™éƒ½ç•¥é
               firstSkip--;
               continue;
             }
 
             if (skip > 0) {
-              //±µ¤U¨Ó³£¬°¬Û¦Pªiªøªº¸ê®Æ,©Ò¥H¥i¥H²¤¹L
+              //æ¥ä¸‹ä¾†éƒ½ç‚ºç›¸åŒæ³¢é•·çš„è³‡æ–™,æ‰€ä»¥å¯ä»¥ç•¥é
               skip--;
               continue;
             }
 
             if (line.charAt(0) < '3') {
-              //¥u­n§ä300¥H¤W
+              //åªè¦æ‰¾300ä»¥ä¸Š
               continue;
             }
             else if (line.charAt(0) > '7') {
-              //¥u­n§ä700¥H¤U
+              //åªè¦æ‰¾700ä»¥ä¸‹
               break;
             }
             int tabIndex = line.indexOf('\t');
@@ -165,7 +165,7 @@ public class USB4000Adapter
 //    USB4000Adapter adapter = new USB4000Adapter(
 //        "Measurement Files/Monitor/cpt_17inch_demo2/usb4000/darkroom/native/1021");
     USB4000Adapter adapter = new USB4000Adapter(
-        "C://Documents and Settings//skyforce//My Documents//Case//§»Ãu¬ì§Ş//LED.ProcSpec", true);
+        "C://Documents and Settings//skyforce//My Documents//Case//å®ç€¨ç§‘æŠ€//LED.ProcSpec", true);
     List<Spectra> spectraList = adapter.getSpectraList();
     System.out.println(spectraList.size());
     for (Spectra s : spectraList) {

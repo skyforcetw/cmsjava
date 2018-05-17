@@ -28,9 +28,9 @@ public class Diagram {
 //  ZB = 1.0f - (XB + YB),
 //  ZW = 1.0f - (XW + YW);
 
-  //¹Ïªºsize
+  //åœ–çš„size
   protected int M = 300, N = 300;
-  //¬ö¿ı¤£¦Px®y¼Ğªº¤W¤U¬É
+  //ç´€éŒ„ä¸åŒxåº§æ¨™çš„ä¸Šä¸‹ç•Œ
   private short range[][];
 
   /**
@@ -65,24 +65,24 @@ public class Diagram {
     int white = toRGB(255, 255, 255);
 
     for (int j = 0; j < size; j++) { //DO J=1,81
-      //¼e«×­¼¤W¦â«×, ®£©È¬O§â¦â«×Âà¨ìµe¯À®y¼Ğ
-      //³o¤@­Óx
+      //å¯¬åº¦ä¹˜ä¸Šè‰²åº¦, ææ€•æ˜¯æŠŠè‰²åº¦è½‰åˆ°ç•«ç´ åº§æ¨™
+      //é€™ä¸€å€‹x
       float s1 = (float) M * data.wxy[j].x;
-      //¤U¤@­Óx
+      //ä¸‹ä¸€å€‹x
       float s2 = (float) M * data.wxy[j + 1].x;
-      //³o¤@­Óy
+      //é€™ä¸€å€‹y
       float t1 = (float) N * (1.f - data.wxy[j].y);
-      //¤U¤@­Óy
+      //ä¸‹ä¸€å€‹y
       float t2 = (float) N * (1.f - data.wxy[j + 1].y);
-      //¶º¹Î¥~³òªº±×²v
+      //é£¯åœ˜å¤–åœçš„æ–œç‡
       float slope = (t2 - t1) / (s2 - s1);
       int i1 = (int) (s1 + 0.5f);
       int i2 = (int) (s2 + 0.5f);
 
 //      if (true) {
-      //§â¦â«×®y¼ĞÂà´«¦¨µe¯À®y¼Ğ
+      //æŠŠè‰²åº¦åº§æ¨™è½‰æ›æˆç•«ç´ åº§æ¨™
       if (i1 < i2) {
-        //x¼W¥[
+        //xå¢åŠ 
         for (int ii = i1; ii <= i2; ii++) {
           s = (float) ii;
           j1 = j2;
@@ -102,8 +102,8 @@ public class Diagram {
         }
       }
       else {
-        //³o¤@¬q¬Oµe«ù¥­ªº¨º¤@¬q
-        //x´î¤Ö
+        //é€™ä¸€æ®µæ˜¯ç•«æŒå¹³çš„é‚£ä¸€æ®µ
+        //xæ¸›å°‘
         for (int ii = i1; ii > i2; ii--) {
           s = (float) ii;
           j1 = j2;
@@ -127,28 +127,28 @@ public class Diagram {
 
     if (fillColor) {
       // Calculate RGB Values for x and y coordinates
-      // µÛ¦â ¥Ñ¤W¦Ó¤U, ¥Ñ¥ª¦Ó¥k
+      // è‘—è‰² ç”±ä¸Šè€Œä¸‹, ç”±å·¦è€Œå³
       float gamma = 1f / (float) rgbColorSpace.gamma;
       for (int j = 1; j <= N; j++) {
         int jtest = 0;
         for (int i = 1; i <= M; i++) {
           if ( (icv[i - 1][j - 1] & (255 << 16)) == (1 << 16) &&
               (icv[i][j - 1] & (255 << 16)) == 0) {
-            //¬O¶Â½u´N++ (ÄY®æ¨Ó»¡, ¬OR=G=B=1ªº½u)
+            //æ˜¯é»‘ç·šå°±++ (åš´æ ¼ä¾†èªª, æ˜¯R=G=B=1çš„ç·š)
             jtest++;
           }
         }
         if (jtest == 2) {
-          //x¤è¦V¦³¨â±ø½u
+          //xæ–¹å‘æœ‰å…©æ¢ç·š
           int itest = 0;
           for (int i = 1; i <= M; i++) {
             if ( (icv[i - 1][j - 1] & (255 << 16)) == (1 << 16) &&
                 (icv[i][j - 1] & (255 << 16)) == 0) {
-              //¦A°µ¤@¦¸¤@¼Ëªº´ú¸Õ?
+              //å†åšä¸€æ¬¡ä¸€æ¨£çš„æ¸¬è©¦?
               itest++;
             }
             if (itest == 1) {
-              //¦]¬°¥Ñ¥ª¦Ó¥k, ¦pªGitest==1 ´N¬O¦b¨â­Ó¶Â½u¤§¶¡, ´NºâRGB¨Ã¥B¶ñ­È
+              //å› ç‚ºç”±å·¦è€Œå³, å¦‚æœitest==1 å°±æ˜¯åœ¨å…©å€‹é»‘ç·šä¹‹é–“, å°±ç®—RGBä¸¦ä¸”å¡«å€¼
               //==================================================================
               // XYZ to RGB
               //==================================================================
@@ -172,7 +172,7 @@ public class Diagram {
               //==================================================================
 
               //==================================================================
-              // RGB¥Í¦¨
+              // RGBç”Ÿæˆ
               //==================================================================
               int ired = (int) (255. * Math.pow(R / RMAX, gamma));
               int igreen = (int) (255. * Math.pow(G / RMAX, gamma));
@@ -186,7 +186,7 @@ public class Diagram {
 //int white =
       for (int j = 1; j < N; j++) {
         for (int i = 1; i < M; i++) {
-          //§â¶Â¦â¹Ï¦¨¥Õ¦â
+          //æŠŠé»‘è‰²åœ–æˆç™½è‰²
           if (icv[i][j] == black) {
             icv[i][j] = white;
           }
@@ -209,7 +209,7 @@ public class Diagram {
 
     //==========================================================================
     //	Draw tongue outline and init range array
-    // ®³±¼¤]¨S¦³¼vÅT(?)
+    // æ‹¿æ‰ä¹Ÿæ²’æœ‰å½±éŸ¿(?)
     //==========================================================================
     for (int i = 0; i < M; i++) {
       range[i][0] = Short.MAX_VALUE; // min value
@@ -221,23 +221,23 @@ public class Diagram {
     //==========================================================================
     int size = data.wxy.length - 1;
     for (int j = 0; j < size; j++) { //DO J=1,81
-      //¼e«×­¼¤W¦â«×, ®£©È¬O§â¦â«×Âà¨ìµe¯À®y¼Ğ
-      //³o¤@­Óx
+      //å¯¬åº¦ä¹˜ä¸Šè‰²åº¦, ææ€•æ˜¯æŠŠè‰²åº¦è½‰åˆ°ç•«ç´ åº§æ¨™
+      //é€™ä¸€å€‹x
       float s1 = (float) M * data.wxy[j].x;
-      //¤U¤@­Óx
+      //ä¸‹ä¸€å€‹x
       float s2 = (float) M * data.wxy[j + 1].x;
-      //³o¤@­Óy
+      //é€™ä¸€å€‹y
       float t1 = (float) N * (1.f - data.wxy[j].y);
-      //¤U¤@­Óy
+      //ä¸‹ä¸€å€‹y
       float t2 = (float) N * (1.f - data.wxy[j + 1].y);
-      //¶º¹Î¥~³òªº±×²v
+      //é£¯åœ˜å¤–åœçš„æ–œç‡
       float slope = (t2 - t1) / (s2 - s1);
       int i1 = (int) (s1 + 0.5f);
       int i2 = (int) (s2 + 0.5f);
 
-      //§â¦â«×®y¼ĞÂà´«¦¨µe¯À®y¼Ğ
+      //æŠŠè‰²åº¦åº§æ¨™è½‰æ›æˆç•«ç´ åº§æ¨™
       if (i1 < i2) {
-        //x¼W¥[
+        //xå¢åŠ 
         for (int ii = i1; ii <= i2; ii++) {
           s = (float) ii;
           j1 = j2;
@@ -259,7 +259,7 @@ public class Diagram {
         }
       }
       else {
-        //x´î¤Ö
+        //xæ¸›å°‘
         for (int ii = i1; ii > i2; ii--) {
           s = (float) ii;
           j1 = j2;
@@ -283,27 +283,27 @@ public class Diagram {
     } //for( j=0..81 )
 
     // Calculate RGB Values for x and y coordinates
-    // µÛ¦â ¥Ñ¤W¦Ó¤U, ¥Ñ¥ª¦Ó¥k
+    // è‘—è‰² ç”±ä¸Šè€Œä¸‹, ç”±å·¦è€Œå³
     for (int j = 1; j <= N; j++) {
       int jtest = 0;
       for (int i = 1; i <= M; i++) {
         if ( (icv[i - 1][j - 1] & (255 << 16)) == (1 << 16) &&
             (icv[i][j - 1] & (255 << 16)) == 0) {
-          //¬O¶Â½u´N++ (ÄY®æ¨Ó»¡, ¬ORGB=1ªº½u)
+          //æ˜¯é»‘ç·šå°±++ (åš´æ ¼ä¾†èªª, æ˜¯RGB=1çš„ç·š)
           jtest++;
         }
       }
       if (jtest == 2) {
-        //x¤è¦V¦³¨â±ø½u
+        //xæ–¹å‘æœ‰å…©æ¢ç·š
         int itest = 0;
         for (int i = 1; i <= M; i++) {
           if ( (icv[i - 1][j - 1] & (255 << 16)) == (1 << 16) &&
               (icv[i][j - 1] & (255 << 16)) == 0) {
-            //¦A°µ¤@¦¸¤@¼Ëªº´ú¸Õ?
+            //å†åšä¸€æ¬¡ä¸€æ¨£çš„æ¸¬è©¦?
             itest++;
           }
           if (itest == 1) {
-            //¦]¬°¥Ñ¥ª¦Ó¥k, ¦pªGitest==1 ´N¬O¦b¨â­Ó¶Â½u¤§¶¡, ´NºâRGB¨Ã¥B¶ñ­È
+            //å› ç‚ºç”±å·¦è€Œå³, å¦‚æœitest==1 å°±æ˜¯åœ¨å…©å€‹é»‘ç·šä¹‹é–“, å°±ç®—RGBä¸¦ä¸”å¡«å€¼
             //==================================================================
             // XYZ to RGB
             //==================================================================
@@ -327,7 +327,7 @@ public class Diagram {
             //==================================================================
 
             //==================================================================
-            // RGB¥Í¦¨
+            // RGBç”Ÿæˆ
             //==================================================================
             int ired = (int) (255. * Math.pow(R / RMAX, GAMMA));
             int igreen = (int) (255. * Math.pow(G / RMAX, GAMMA));
@@ -343,7 +343,7 @@ public class Diagram {
   }
 
   /**
-   * ±NRGB¥Hintªí¥Ü
+   * å°‡RGBä»¥intè¡¨ç¤º
    * @param red int
    * @param green int
    * @param blue int
@@ -428,12 +428,12 @@ public class Diagram {
 
     /**
      * Constructs the chromaticity coordinates of spectral stimuli.
-     * °¨¿á¹Ï¥~³òªº¦â«×®y¼Ğ(?)
+     * é¦¬è¹„åœ–å¤–åœçš„è‰²åº¦åº§æ¨™(?)
      */
     public ChromaticityData() {
       wxy = new XY[66];
 
-      wxy[0] = new XY(0.1741f, 0.0050f); //¥ª¤U¨¤, y¹Gªñ0
+      wxy[0] = new XY(0.1741f, 0.0050f); //å·¦ä¸‹è§’, yé€¼è¿‘0
       wxy[1] = new XY(0.1740f, 0.0050f);
       wxy[2] = new XY(0.1738f, 0.0049f);
       wxy[3] = new XY(0.1736f, 0.0049f);
@@ -458,10 +458,10 @@ public class Diagram {
       wxy[22] = new XY(0.0454f, 0.2950f);
       wxy[23] = new XY(0.0235f, 0.4127f);
       wxy[24] = new XY(0.0082f, 0.5384f);
-      wxy[25] = new XY(0.0039f, 0.6548f); //x¹Gªñ0, ¾F±µy axis
+      wxy[25] = new XY(0.0039f, 0.6548f); //xé€¼è¿‘0, é„°æ¥y axis
       wxy[26] = new XY(0.0139f, 0.7502f);
       wxy[27] = new XY(0.0389f, 0.8120f);
-      wxy[28] = new XY(0.0743f, 0.8338f); //y³Ì¤j­È
+      wxy[28] = new XY(0.0743f, 0.8338f); //yæœ€å¤§å€¼
       wxy[29] = new XY(0.1142f, 0.8262f);
       wxy[30] = new XY(0.1547f, 0.8059f);
       wxy[31] = new XY(0.1929f, 0.7816f);
@@ -494,10 +494,10 @@ public class Diagram {
       wxy[58] = new XY(0.7320f, 0.2680f);
       wxy[59] = new XY(0.7327f, 0.2673f);
       wxy[60] = new XY(0.7334f, 0.2666f);
-      wxy[61] = new XY(0.7340f, 0.2660f); //600¤U¬°Âà§é
+      wxy[61] = new XY(0.7340f, 0.2660f); //600ä¸‹ç‚ºè½‰æŠ˜
       wxy[62] = new XY(0.7344f, 0.2656f);
       wxy[63] = new XY(0.7346f, 0.2654f);
-      wxy[64] = new XY(0.7347f, 0.2653f); //x³Ì¤j­È
+      wxy[64] = new XY(0.7347f, 0.2653f); //xæœ€å¤§å€¼
 //      wxy[65] = new XY(0.7347f, 0.2653f);
 //      wxy[66] = new XY(0.7347f, 0.2653f);
 //      wxy[67] = new XY(0.7347f, 0.2653f);

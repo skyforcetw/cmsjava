@@ -57,7 +57,7 @@ public abstract class DIQAM {
 
     for (String mode : modes) {
       LCDTarget ramp = LCDTarget.Instance.getFromAUORampXLS(
-          "D:\\My Documents\\§uß@\\µÿ§s≠pµe\\Sharp LC-46LX1\\Modes\\" + mode + "\\ramp.xls");
+          "D:\\My Documents\\Â∑•‰Ωú\\ËèØÂ±±Ë®àÁï´\\Sharp LC-46LX1\\Modes\\" + mode + "\\ramp.xls");
       LCDTarget.Operator.gradationReverseFix(ramp);
       System.out.println(mode);
       benchmark(mode, ramp, 2.4, grayColorGamutPlot);

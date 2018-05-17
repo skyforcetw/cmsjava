@@ -14,7 +14,7 @@ import shu.cms.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ±Ä¥Î¥[±jª©ªº«Y¼Æ­¡¥Nªk
+ * æ¡ç”¨åŠ å¼·ç‰ˆçš„ä¿‚æ•¸è¿­ä»£æ³•
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -34,7 +34,7 @@ public class GOGModelThread
   }
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    * @param factor LCDModelFactor
    */
   public GOGModelThread(LCDModelFactor factor) {
@@ -50,7 +50,7 @@ public class GOGModelThread
     initCoefficientsRange();
 
     //==========================================================================
-    //¦h°õ¦æºü¹Bºâ
+    //å¤šåŸ·è¡Œç·’é‹ç®—
     //==========================================================================
     IterativeReport[] reports = SimpleThreadCalculator.
         produceBestIterativeReport(
@@ -82,8 +82,8 @@ public class GOGModelThread
                                                  LCDTargetBase.Number.Ramp1792, null, null);
 //    LCDTarget testLCDTarget = trainingLCDTarget;
 
-    //dell¥Î1021¨D±oªº®Ä¹L¸û®t,¤]ºC«Ü¦h(²Å¦X±ø¥óªº¦â¶ô¸û¦h)
-    //729¦³³Ì¨Îµ²ªG
+    //dellç”¨1021æ±‚å¾—çš„æ•ˆéè¼ƒå·®,ä¹Ÿæ…¢å¾ˆå¤š(ç¬¦åˆæ¢ä»¶çš„è‰²å¡Šè¼ƒå¤š)
+    //729æœ‰æœ€ä½³çµæœ
 
     GOGModelThread model = new GOGModelThread(
         lcdTarget);
@@ -93,8 +93,8 @@ public class GOGModelThread
     LCDModelFactor lcdModelFactor = model.produceLCDModelFactor(factors);
 
     /**
-     * ¦¹³B«Y¼Æ¥H §Ç¦C¤Æ ³B²z,¤£¨Ï¥ÎXMLÀx¦s¬O¦]¬°Ãiªº³B²ztag :P
-     * ¥[¤WFactor¶¡¦³Ä~©ÓÃö«Y,¥Ø«e¤£ª¾¹DXML-Java¤u¨ã¬O§_¥i¥H«Ü¦nªº³B²z.
+     * æ­¤è™•ä¿‚æ•¸ä»¥ åºåˆ—åŒ– è™•ç†,ä¸ä½¿ç”¨XMLå„²å­˜æ˜¯å› ç‚ºæ‡¶çš„è™•ç†tag :P
+     * åŠ ä¸ŠFactoré–“æœ‰ç¹¼æ‰¿é—œä¿‚,ç›®å‰ä¸çŸ¥é“XML-Javaå·¥å…·æ˜¯å¦å¯ä»¥å¾ˆå¥½çš„è™•ç†.
      */
 //    Utils.writeObject(lcdModelFactor, "gog.factor");
 
@@ -339,8 +339,8 @@ public class GOGModelThread
   }
 
   /**
-   * ªì©l¤Æ­¡±a«Y¼Æ
-   * ¥i¥Hµø±¡ªp½Õ¾ã¦¹«Y¼Æ­È,Åı¼Ò¦¡¦³§ó¦nªº¹Bºâªí²{
+   * åˆå§‹åŒ–è¿­å¸¶ä¿‚æ•¸
+   * å¯ä»¥è¦–æƒ…æ³èª¿æ•´æ­¤ä¿‚æ•¸å€¼,è®“æ¨¡å¼æœ‰æ›´å¥½çš„é‹ç®—è¡¨ç¾
    */
   public void initCoefficientsRange() {
     if (coefficientsRange == null) {
@@ -402,7 +402,7 @@ public class GOGModelThread
     Factor[] factors = new Factor[] {
         new Factor(), new Factor(), new Factor()};
 
-    //­¡¥N
+    //è¿­ä»£
     for (double gain = gainS; gain <= gainE; gain += gainStep) {
       for (double offset = offsetS; offset <= offsetE; offset += offsetStep) {
         for (double gamma = gammaS; gamma <= gammaE; gamma += gammaStep) {

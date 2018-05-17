@@ -87,7 +87,7 @@ public class YUV
   }
 
   /**
-   * �ѦҦ�http://en.wikipedia.org/wiki/YUV
+   * 參考自http://en.wikipedia.org/wiki/YUV
    * @param rgb RGB
    * @return YUV
    */

@@ -239,7 +239,7 @@ public class LogoDataExchangeFormat {
     }
 
     /**
-     * ¨ú±o¯Á¤Ş­È¬°indexªº¸Óµ§data
+     * å–å¾—ç´¢å¼•å€¼ç‚ºindexçš„è©²ç­†data
      * @param index int
      * @return String[]
      */
@@ -258,7 +258,7 @@ public class LogoDataExchangeFormat {
     }
 
     /**
-     * ¨ú±o¯Á¤Ş­È¬°indexªº¸Óµ§data,¥BÄæ¦ì¦WºÙ¬°fieldName
+     * å–å¾—ç´¢å¼•å€¼ç‚ºindexçš„è©²ç­†data,ä¸”æ¬„ä½åç¨±ç‚ºfieldName
      * @param index int
      * @param fieldName String
      * @return String

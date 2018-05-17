@@ -11,8 +11,8 @@ import shu.cms.plot.Plot2D;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ­pºâ¦â·Å¥Î
- * ´ú¸Õ¤¤
+ * è¨ˆç®—è‰²æº«ç”¨
+ * æ¸¬è©¦ä¸­
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -27,12 +27,12 @@ public class CorrelatedColorTemperature {
   }
 
   /**
-   * ­pºâCCT2xyY©Ò»İ
+   * è¨ˆç®—CCT2xyYæ‰€éœ€
    */
   private final static double DBL_MIN = 1E-37;
 
   /**
-   * ­pºâCCT2xyY©Ò»İ
+   * è¨ˆç®—CCT2xyYæ‰€éœ€
    */
   private final static double[] rt = new double[] {
       /* reciprocal temperature (K) */
@@ -45,7 +45,7 @@ public class CorrelatedColorTemperature {
   };
 
   /**
-   * ­pºâCCT2xyY©Ò»İ
+   * è¨ˆç®—CCT2xyYæ‰€éœ€
    */
   private final static UVT[] uvt = new UVT[] {
       new UVT(0.18006, 0.26352, -0.24341),
@@ -166,7 +166,7 @@ public class CorrelatedColorTemperature {
 
   /**
    * from lcms
-   * ¦â·ÅÂàD¨t¦CxyY®y¼Ğ
+   * è‰²æº«è½‰Dç³»åˆ—xyYåº§æ¨™
    * @param tempK int
    * @return CIExyY
    */
@@ -234,7 +234,7 @@ public class CorrelatedColorTemperature {
   }
 
   /**
-   * ®Ú¾ÚVESA/McCamyªºformula©Ò­pºâ(«DCIE)
+   * æ ¹æ“šVESA/McCamyçš„formulaæ‰€è¨ˆç®—(éCIE)
    * @param xyY CIExyY
    * @return double
    */
@@ -301,7 +301,7 @@ public class CorrelatedColorTemperature {
    *              Gunter Wyszecki and W. S. Stiles, John Wiley & Sons, 1982, pp. 227, 228.
 
    * from http://www.brucelindbloom.com/
-   * XYZÂàCCT
+   * XYZè½‰CCT
 
    * @param XYZ CIEXYZ
    * @return double
@@ -391,7 +391,7 @@ public class CorrelatedColorTemperature {
   }
 
   /**
-   * ­pºâ¶ÂÅé¿ç®gªº¥úÃĞ
+   * è¨ˆç®—é»‘é«”è¼»å°„çš„å…‰è­œ
    * @param tempK int
    * @return Spectra
    */
@@ -417,7 +417,7 @@ public class CorrelatedColorTemperature {
   }
 
   /**
-   * ¶ÂÅé¿ç®g¬ÛÃö±`¼Æ
+   * é»‘é«”è¼»å°„ç›¸é—œå¸¸æ•¸
    */
   private final static double c = 2.99792458E8;
   private final static double h = 6.626176E-34;

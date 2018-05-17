@@ -6,7 +6,7 @@
 /*
  * HueJFrame.java
  *
- * Created on 2010/9/5, ¤U¤È 02:18:41
+ * Created on 2010/9/5, ä¸‹åˆ 02:18:41
  */
 package auo.cms.applet.hue;
 

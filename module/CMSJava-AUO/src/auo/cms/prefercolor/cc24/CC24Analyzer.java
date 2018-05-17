@@ -30,7 +30,7 @@ public class CC24Analyzer {
 
   public static void main(String[] args) {
     //==========================================================================
-    // πÍ≈ÈTarget
+    // ÂØ¶È´îTarget
     //==========================================================================
     LCDTarget rampTarget = LCDTarget.Instance.getFromAUORampXLS(
         "prefered/B125XW02/WRGB.xls", LCDTarget.Number.Ramp1024);
@@ -44,7 +44,7 @@ public class CC24Analyzer {
 //        "prefered/Sharp LC-46LX1/Modes/Standard/871.xls");
 //        "prefered/Sony 70x7000/729color_standard.xls");
 //        "prefered/SONY KDL-40ZX1/729colors_standard.xls");
-        "prefered/VIZIO VF551XVT-T/º–∑«/¶‚±m¥£§…-¬A∆v.xls");
+        "prefered/VIZIO VF551XVT-T/Ê®ôÊ∫ñ/Ëâ≤ÂΩ©ÊèêÂçá-ÈÆÆË±î.xls");
 
     ProfileColorSpace pcs = ProfileColorSpaceUtils.
         getProfileColorSpaceFrom729Target(test729Target);
@@ -52,7 +52,7 @@ public class CC24Analyzer {
     //==========================================================================
 
     //==========================================================================
-    // µÍ¿¿Target
+    // ËôõÊì¨Target
     //==========================================================================
     LCDTarget lcdTarget = DC2LCDTargetAdapter.Instance.getCameraTarget(DCTarget.
         Chart.CC24, RGB.ColorSpace.sRGB_gamma22, pcs);

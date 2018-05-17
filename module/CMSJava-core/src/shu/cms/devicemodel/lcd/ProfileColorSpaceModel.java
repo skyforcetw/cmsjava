@@ -53,7 +53,7 @@ public class ProfileColorSpaceModel
   private ProfileColorSpace pcs;
 
   /**
-   * ­pºâRGB,¤Ï±À¼Ò¦¡
+   * è¨ˆç®—RGB,åæ¨æ¨¡å¼
    *
    * @param XYZ CIEXYZ
    * @param factor Factor[]
@@ -68,7 +68,7 @@ public class ProfileColorSpaceModel
   }
 
   /**
-   * ­pºâXYZ,«e¾É¼Ò¦¡
+   * è¨ˆç®—XYZ,å‰å°æ¨¡å¼
    *
    * @param rgb RGB
    * @param factor Factor[]
@@ -83,7 +83,7 @@ public class ProfileColorSpaceModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    */

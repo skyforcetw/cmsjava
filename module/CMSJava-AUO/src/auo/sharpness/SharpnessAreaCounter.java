@@ -21,7 +21,7 @@ public class SharpnessAreaCounter {
 
   public static void main(String[] args) {
     String dir =
-        "D:/³nÅé/nobody zone/Pattern/Sharpness Pattern/Sharpness Area Compare/·s¸ê®Æ§¨/";
+        "D:/è»Ÿé«”/nobody zone/Pattern/Sharpness Pattern/Sharpness Area Compare/æ–°è³‡æ–™å¤¾/";
     String filename1 = dir + "shutterstock_10421110_cr.bmp";
     String filename2 = dir + "shutterstock_10421110_cr_s4_frame2.bmp";
     try {

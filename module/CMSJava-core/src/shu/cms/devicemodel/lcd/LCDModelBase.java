@@ -42,7 +42,7 @@ public abstract class LCDModelBase
   }
 
   /**
-   * ¨ú±o¥ÕÂIªº«G«×
+   * å–å¾—ç™½é»çš„äº®åº¦
    * @return CIEXYZ
    */
   public CIEXYZ getLuminance() {
@@ -50,7 +50,7 @@ public abstract class LCDModelBase
   }
 
   /**
-   * ¿Ã¹õ«G«×(µ´¹ï­È)
+   * è¢å¹•äº®åº¦(çµ•å°å€¼)
    */
   protected CIEXYZ luminance;
   protected LCDTarget lcdTarget;
@@ -60,11 +60,11 @@ public abstract class LCDModelBase
   protected LCDTarget rCorrectLCDTarget;
 
   /**
-   * ¾É¨ãªº°Ñ¦Ò¥Õ(¥¼´î±¼º|¥ú)
+   * å°å…·çš„åƒè€ƒç™½(æœªæ¸›æ‰æ¼å…‰)
    */
   protected CIEXYZ targetWhitePoint;
   /**
-   * ¼ü¹õ¾Éªíªº¥Õ,¬°¥¼´î±¼º|¥úªº¬Û¹ï­È
+   * ç‘©å¹•å°è¡¨çš„ç™½,ç‚ºæœªæ¸›æ‰æ¼å…‰çš„ç›¸å°å€¼
    * @return CIEXYZ
    */
   public CIEXYZ getLCDTargetWhite() {
@@ -101,32 +101,32 @@ public abstract class LCDModelBase
   public class Correct {
 
     /**
-     * Gamma¤Ï®Õ¥¿
-     * ¤Ïgamma­×¥¿,±Nluminance RGB­×¥¿¦^DAC RGB
+     * Gammaåæ ¡æ­£
+     * ågammaä¿®æ­£,å°‡luminance RGBä¿®æ­£å›DAC RGB
      * @param rgb RGB
      */
     public void gammaUncorrect(RGB rgb) {
       double[] rgbValues = new double[3];
       rgb.getValues(rgbValues, RGB.MaxValue.Double1);
-      //¤Ïgamma­×¥¿,±Nluminance RGB­×¥¿¦^DAC RGB
+      //ågammaä¿®æ­£,å°‡luminance RGBä¿®æ­£å›DAC RGB
       correct.gammaUncorrect(rgbValues);
       rgb.setFixed(rgb.isFixed() || correct.hasCorrectedInRange());
-      //¦¹®Éªºrgb¬°DAC RGB
+      //æ­¤æ™‚çš„rgbç‚ºDAC RGB
       rgb.setValues(rgbValues, RGB.MaxValue.Double1);
     }
 
     /**
-     * Gamma®Õ¥¿
-     * gamma­×¥¿,±NDAC RGB­×¥¿¦¨luminance RGB
+     * Gammaæ ¡æ­£
+     * gammaä¿®æ­£,å°‡DAC RGBä¿®æ­£æˆluminance RGB
      * @param rgb RGB
      */
     public void gammaCorrect(RGB rgb) {
       double[] rgbValues = new double[3];
       rgb.getValues(rgbValues, RGB.MaxValue.Double1);
-      //gamma­×¥¿,±NDAC RGB­×¥¿¦¨luminance RGB
+      //gammaä¿®æ­£,å°‡DAC RGBä¿®æ­£æˆluminance RGB
       correct.gammaCorrect(rgbValues);
       rgb.setFixed(correct.hasCorrectedInRange());
-      //¦¹®Éªºrgb¬°DAC RGB
+      //æ­¤æ™‚çš„rgbç‚ºDAC RGB
       rgb.setValues(rgbValues, RGB.MaxValue.Double1);
     }
 
@@ -152,13 +152,13 @@ public abstract class LCDModelBase
     }
 
     /**
-     * RGBªº«G«×gamma®Õ¥¿
+     * RGBçš„äº®åº¦gammaæ ¡æ­£
      */
     public GammaCorrector _RrCorrector = null;
     public GammaCorrector _GrCorrector = null;
     public GammaCorrector _BrCorrector = null;
     /**
-     * RGBªº¯à¶qgamma®Õ¥¿(¯à¶q=X+Y+Z)
+     * RGBçš„èƒ½é‡gammaæ ¡æ­£(èƒ½é‡=X+Y+Z)
      */
     public GammaCorrector _RPowerCorrector;
     public GammaCorrector _GPowerCorrector;
@@ -208,14 +208,14 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¶i¦ægamma®Õ¥¿«e,¥ıÀË¬d¬O§_¥i¥H¶i¦æ®Õ¥¿,
-     * Á×§K¤£¯à®Õ¥¿ªºª¬ªp¶i¦æ®Õ¥¿,±N·|©ß¥X¨Ò¥~
+     * é€²è¡Œgammaæ ¡æ­£å‰,å…ˆæª¢æŸ¥æ˜¯å¦å¯ä»¥é€²è¡Œæ ¡æ­£,
+     * é¿å…ä¸èƒ½æ ¡æ­£çš„ç‹€æ³é€²è¡Œæ ¡æ­£,å°‡æœƒæ‹‹å‡ºä¾‹å¤–
      */
     private boolean checkGammaCorrect = false;
     private boolean checkPowerCorrect = false;
 
     /**
-     * ¬O§_­n¶i¦ægamma correct
+     * æ˜¯å¦è¦é€²è¡Œgamma correct
      * @param doGammaCorrect boolean
      */
     public void setDoGammaCorrect(boolean doGammaCorrect) {
@@ -223,7 +223,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¬O§_­n¶i¦ægamma correct
+     * æ˜¯å¦è¦é€²è¡Œgamma correct
      * @return boolean
      */
     public boolean isDoGammaCorrect() {
@@ -231,12 +231,12 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¬O§_¶i¦ægamma®Õ¥¿
+     * æ˜¯å¦é€²è¡Œgammaæ ¡æ­£
      */
     private boolean doGammaCorrect = true;
 
     /**
-     * gamma correct«e¬O§_­nÀË¬dgamma correctªº¦X²z©Ê
+     * gamma correctå‰æ˜¯å¦è¦æª¢æŸ¥gamma correctçš„åˆç†æ€§
      * @param checkGammaCorrect boolean
      */
     public void setCheckGammaCorrect(boolean checkGammaCorrect) {
@@ -244,7 +244,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¶i¦ægamma®Õ¥¿(DAC value­×¥¿¨ìY)
+     * é€²è¡Œgammaæ ¡æ­£(DAC valueä¿®æ­£åˆ°Y)
      * @param input double[]
      * @return double[]
      */
@@ -271,7 +271,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¶i¦ægamma¤Ï®Õ¥¿(YÂà´«¦^DAC Value)
+     * é€²è¡Œgammaåæ ¡æ­£(Yè½‰æ›å›DAC Value)
      * @param input double[]
      * @return double[]
      */
@@ -299,7 +299,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¶i¦æpower®Õ¥¿(DAC value­×¥¿¨ìpower)
+     * é€²è¡Œpoweræ ¡æ­£(DAC valueä¿®æ­£åˆ°power)
      * @param input double[]
      * @return double[]
      */
@@ -317,7 +317,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¶i¦æpower¤Ï®Õ¥¿(powerÂà´«¦^DAC Value)
+     * é€²è¡Œpoweråæ ¡æ­£(powerè½‰æ›å›DAC Value)
      * @param input double[]
      * @return double[]
      */
@@ -335,7 +335,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ²£¥ÍRGBªºgamma®Õ¥¿
+     * ç”¢ç”ŸRGBçš„gammaæ ¡æ­£
      */
     public void produceGammaCorrector() {
       if (singleChannel.rChannelPatch == null || singleChannel.gChannelPatch == null ||
@@ -358,7 +358,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ²£¥Í¯à¶q®Õ¥¿¾¹
+     * ç”¢ç”Ÿèƒ½é‡æ ¡æ­£å™¨
      */
     public void producePowerCorrector() {
       if (singleChannel.rChannelPowerPatch == null ||
@@ -397,7 +397,7 @@ public abstract class LCDModelBase
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * LCDModelªº¤ºÁôÃş§O,¥Î¨Ó±Nflare¬ÛÃöªº¨ç¼Æ°µÅŞ¿è¤Wªº¤ÀÃş
+   * LCDModelçš„å…§éš±é¡åˆ¥,ç”¨ä¾†å°‡flareç›¸é—œçš„å‡½æ•¸åšé‚è¼¯ä¸Šçš„åˆ†é¡
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -409,7 +409,7 @@ public abstract class LCDModelBase
   public final class Flare {
 
     /**
-     * ¨ú±och¥H¥~channel©Ò³y¦¨ªºflare,¨Ã¥B¥H³Ì¨Î¤Æªº¤è¦¡­pºâflare¥»¨­ªºr/g/b¤ñ¨Ò
+     * å–å¾—chä»¥å¤–channelæ‰€é€ æˆçš„flare,ä¸¦ä¸”ä»¥æœ€ä½³åŒ–çš„æ–¹å¼è¨ˆç®—flareæœ¬èº«çš„r/g/bæ¯”ä¾‹
      * @param ch Channel
      * @return CIEXYZ
      */
@@ -424,7 +424,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¨ú±och¥H¥~channel©Ò³y¦¨ªºflare
+     * å–å¾—chä»¥å¤–channelæ‰€é€ æˆçš„flare
      * @param ch Channel
      * @param value double
      * @return CIEXYZ
@@ -452,7 +452,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¥H³Ì¨Î¤Æ(¦ô´ú)ªº¤è¦¡§ä¨ì³Ì¾A·íªºflare
+     * ä»¥æœ€ä½³åŒ–(ä¼°æ¸¬)çš„æ–¹å¼æ‰¾åˆ°æœ€é©ç•¶çš„flare
      * @return CIEXYZ
      */
     public CIEXYZ getEstimatedFlare() {
@@ -479,7 +479,7 @@ public abstract class LCDModelBase
     private double[] rgbFlareProportion;
 
     /**
-     * ¥H¦ô´úªºº|¥ú,¥[¤Wcode=value®ÉªºRGB¤ñ¨Ò,­pºâ³Ì¾A·íªºº|¥úCIEXYZ
+     * ä»¥ä¼°æ¸¬çš„æ¼å…‰,åŠ ä¸Šcode=valueæ™‚çš„RGBæ¯”ä¾‹,è¨ˆç®—æœ€é©ç•¶çš„æ¼å…‰CIEXYZ
      * @param ch Channel
      * @param value double
      * @return CIEXYZ
@@ -499,7 +499,7 @@ public abstract class LCDModelBase
       CIEXYZ bXYZ = lcdTarget.getPatch(keyRGB).getXYZ();
 
       //==========================================================================
-      // ´î±¼º|¥ú¦]¯À
+      // æ¸›æ‰æ¼å…‰å› ç´ 
       //==========================================================================
       double[][] m = DoubleArray.transpose(new double[][] {
                                            CIEXYZ.minus(rXYZ, flare).
@@ -521,7 +521,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¨ú±oº|¥ú
+     * å–å¾—æ¼å…‰
      * @return CIEXYZ
      */
     public CIEXYZ getFlare() {
@@ -529,7 +529,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¨ú±o³æ¤@ÀW¹D©Ò°^Ämªºº|¥ú
+     * å–å¾—å–®ä¸€é »é“æ‰€è²¢ç»çš„æ¼å…‰
      * @param ch Channel
      * @return CIEXYZ
      */
@@ -550,7 +550,7 @@ public abstract class LCDModelBase
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ¨ú±oFlareªº¤è¦¡
+   * å–å¾—Flareçš„æ–¹å¼
    *
    * <p>Copyright: Copyright (c) 2008</p>
    *
@@ -562,21 +562,21 @@ public abstract class LCDModelBase
   public static enum FlareType {
 
     /**
-     * ²Ä¤@­Órgb=0ªº¦â¶ô
+     * ç¬¬ä¸€å€‹rgb=0çš„è‰²å¡Š
      */
     Black,
     /**
-     * Y­È³Ì§Cªº¦â¶ô
+     * Yå€¼æœ€ä½çš„è‰²å¡Š
      */
     Darkest,
     /**
-     * ¦ô´ú©Ò±oªºXYZ
+     * ä¼°æ¸¬æ‰€å¾—çš„XYZ
      */
     Estimate
   }
 
   /**
-   * ³]©wFlare¨ú±oªº¤è¦¡
+   * è¨­å®šFlareå–å¾—çš„æ–¹å¼
    * @param flareType FlareType
    */
   public static void setFlareType(FlareType flareType) {
@@ -589,8 +589,8 @@ public abstract class LCDModelBase
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ´£¨Ñ¥ÃÄòÀx¦s«Y¼Æªºclass
-   * ¸g¥Ñ¦¹class©ÒÀx¦sªº¼Æ­È,¥i¥H¨Ïmodel¥H¨Ï¥Î¼Ò¦¡¹êÅé¤Æ¨Ã¥B¨Ï¥Î
+   * æä¾›æ°¸çºŒå„²å­˜ä¿‚æ•¸çš„class
+   * ç¶“ç”±æ­¤classæ‰€å„²å­˜çš„æ•¸å€¼,å¯ä»¥ä½¿modelä»¥ä½¿ç”¨æ¨¡å¼å¯¦é«”åŒ–ä¸¦ä¸”ä½¿ç”¨
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -615,7 +615,7 @@ public abstract class LCDModelBase
   protected LuminanceChannel luminanceChannel = new LuminanceChannel();
   public final class LuminanceChannel {
     /**
-     * ¨ú±o³æ¤@ÀW¹D¦³­Èªº«G«×Patch Set
+     * å–å¾—å–®ä¸€é »é“æœ‰å€¼çš„äº®åº¦Patch Set
      * @return Set
      */
     public final Set<Patch> getLuminancePatchSet() {
@@ -628,7 +628,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * §âR/G/B³æ¤@ÀW¹Dªºpatch,Âà´«¦¨luminance RGB
+     * æŠŠR/G/Bå–®ä¸€é »é“çš„patch,è½‰æ›æˆluminance RGB
      * @param model LCDModel
      */
     public void produceLuminancePatch(LuminanceRGBModelIF model) {
@@ -645,14 +645,14 @@ public abstract class LCDModelBase
     }
 
     /**
-     * rgb³æ¤@ÀW¹Dªºpatch set,for luminance RGB
+     * rgbå–®ä¸€é »é“çš„patch set,for luminance RGB
      */
     public Set<Patch> rChannelLuminancePatch;
     public Set<Patch> gChannelLuminancePatch;
     public Set<Patch> bChannelLuminancePatch;
 
     /**
-     * ±NsingleChannelPatch,¨Ì·Ómodel¤ºªº¼Ò¦¡,§âRGBÂà´«¦¨luminance RGB
+     * å°‡singleChannelPatch,ä¾ç…§modelå…§çš„æ¨¡å¼,æŠŠRGBè½‰æ›æˆluminance RGB
      * @param singleChannelPatch Set
      * @param model LCDModel
      * @return Set
@@ -680,20 +680,20 @@ public abstract class LCDModelBase
   public final class SingleChannel {
 
     /**
-     * rgb³æ¤@ÀW¹Dªºpatch Set
+     * rgbå–®ä¸€é »é“çš„patch Set
      */
     public Set<Patch> rChannelPatch = null;
     public Set<Patch> gChannelPatch = null;
     public Set<Patch> bChannelPatch = null;
     /**
-     * rgb³æ¤@ÀW¹Dªºpatch set,for power
+     * rgbå–®ä¸€é »é“çš„patch set,for power
      */
     public Set<Patch> rChannelPowerPatch;
     public Set<Patch> gChannelPowerPatch;
     public Set<Patch> bChannelPowerPatch;
 
     /**
-     * ¨ú±o³æ¤@ÀW¹D¦³­ÈªºPatch Set
+     * å–å¾—å–®ä¸€é »é“æœ‰å€¼çš„Patch Set
      * @return Set
      */
     public final Set<Patch> getPatchSet() {
@@ -706,20 +706,20 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ²£¥Í(¹LÂo¥X)R/G/B³æ¤@ÀW¹DªºPatch
+     * ç”¢ç”Ÿ(éæ¿¾å‡º)R/G/Bå–®ä¸€é »é“çš„Patch
      */
     public final void produceRGBPatch() {
       produceRGBPatch(rCorrectLCDTarget, true);
     }
 
     /**
-     * ²£¥ÍR/G/B³æ¤@ÀW¹Dªºpatch
-     * @param lcdTarget LCDTarget ±qlcdTarget²£¥Í
-     * @param validateY boolean ¬O§_ÅçÃÒY­È(Luminance),¦p¦³¤£¦X²zªºY­È(°fÂà)«h±N¸Ópatch§R°£
+     * ç”¢ç”ŸR/G/Bå–®ä¸€é »é“çš„patch
+     * @param lcdTarget LCDTarget å¾lcdTargetç”¢ç”Ÿ
+     * @param validateY boolean æ˜¯å¦é©—è­‰Yå€¼(Luminance),å¦‚æœ‰ä¸åˆç†çš„Yå€¼(é€†è½‰)å‰‡å°‡è©²patchåˆªé™¤
      */
     protected final void produceRGBPatch(LCDTarget lcdTarget,
                                          boolean validateY) {
-      //¹LÂo¥X³æ¤@ÀW¹Dªº­È
+      //éæ¿¾å‡ºå–®ä¸€é »é“çš„å€¼
       if (rChannelPatch == null) {
         rChannelPatch = lcdTarget.filter.grayScalePatchSet(RGBBase.Channel.R);
 //        rChannelPatch = LCDModelUtil.producePatchSet(lcdTarget,
@@ -736,7 +736,7 @@ public abstract class LCDModelBase
 //            RGBBase.Channel.B);
       }
       if (validateY) {
-        //½T»{Y¬O§_¬°»¼¼W,­Y¬°§_,«h²¾°£¤ÏÂà­È
+        //ç¢ºèªYæ˜¯å¦ç‚ºéå¢,è‹¥ç‚ºå¦,å‰‡ç§»é™¤åè½‰å€¼
         rChannelPatch = LCDModelUtil.validate(rChannelPatch, false);
         gChannelPatch = LCDModelUtil.validate(gChannelPatch, false);
         bChannelPatch = LCDModelUtil.validate(bChannelPatch, false);
@@ -754,7 +754,7 @@ public abstract class LCDModelBase
      */
     protected final void produceRGBPowerPatch(LCDTarget lcdTarget,
                                               boolean validatePower) {
-      //¹LÂo¥X³æ¤@ÀW¹Dªº­È
+      //éæ¿¾å‡ºå–®ä¸€é »é“çš„å€¼
       if (rChannelPowerPatch == null) {
         rChannelPowerPatch = lcdTarget.filter.grayScalePatchSet(RGBBase.Channel.
             R);
@@ -774,7 +774,7 @@ public abstract class LCDModelBase
 //            RGBBase.Channel.B);
       }
       if (validatePower) {
-        //½T»{Y¬O§_¬°»¼¼W,­Y¬°§_,«h²¾°£¤ÏÂà­È
+        //ç¢ºèªYæ˜¯å¦ç‚ºéå¢,è‹¥ç‚ºå¦,å‰‡ç§»é™¤åè½‰å€¼
         rChannelPowerPatch = LCDModelUtil.validate(rChannelPowerPatch, true);
         gChannelPowerPatch = LCDModelUtil.validate(gChannelPowerPatch, true);
         bChannelPowerPatch = LCDModelUtil.validate(bChannelPowerPatch, true);
@@ -789,7 +789,7 @@ public abstract class LCDModelBase
       implements MatriesInterface {
 
     /**
-     * ³z¹LRGB³Ì¤j­Èªºmax¯x°},¹w´ú¸ÓXYZªºRGB­È
+     * é€éRGBæœ€å¤§å€¼çš„maxçŸ©é™£,é æ¸¬è©²XYZçš„RGBå€¼
      * @param XYZ CIEXYZ
      * @return RGB luminance
      */
@@ -798,7 +798,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * XYZToRGBªºµ²ªG¬O§_¬°­t
+     * XYZToRGBçš„çµæœæ˜¯å¦ç‚ºè² 
      */
     private transient boolean negativeXYZToRGB = false;
     protected boolean isNegativeXYZToRGB() {
@@ -806,9 +806,9 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¥Hmatrix±ÀºâXYZ¹ïÀ³ªºRGB
+     * ä»¥matrixæ¨ç®—XYZå°æ‡‰çš„RGB
      *
-     * ¥HXYZ¥H¤ÎinverseMatrix±Àºâ¬Û¹ïÀ³ªºRGB
+     * ä»¥XYZä»¥åŠinverseMatrixæ¨ç®—ç›¸å°æ‡‰çš„RGB
      * @param XYZ CIEXYZ
      * @param inverseMatrix double[][]
      * @return RGB luminance RGB
@@ -819,7 +819,7 @@ public abstract class LCDModelBase
       XYZ = rational.XYZLimit(XYZ);
 
       /**
-       * @note ¦bXYZ¹L¤pªºª¬ªp¤U, RGBValues±N¥i¯à¬°­t¼Æ
+       * @note åœ¨XYZéå°çš„ç‹€æ³ä¸‹, RGBValueså°‡å¯èƒ½ç‚ºè² æ•¸
        */
       double[] RGBValues = LCDModelUtil.XYZ2RGB(XYZ.getValues(),
                                                 inverseMatrix);
@@ -833,7 +833,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ­pºâR/G/B³Ì¤j­ÈªºXYZ©Ò§Î¦¨ªº¯x°}
+     * è¨ˆç®—R/G/Bæœ€å¤§å€¼çš„XYZæ‰€å½¢æˆçš„çŸ©é™£
      * @param RMax CIEXYZ
      * @param GMax CIEXYZ
      * @param BMax CIEXYZ
@@ -851,7 +851,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ³z¹LRGB³Ì¤j­È²Õ¦¨ªºmax¯x°},¹w´ú¸ÓrgbªºXYZ­È
+     * é€éRGBæœ€å¤§å€¼çµ„æˆçš„maxçŸ©é™£,é æ¸¬è©²rgbçš„XYZå€¼
      * @param rgb RGB
      * @return CIEXYZ
      */
@@ -898,7 +898,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¬O§_­n¶i¦æRGBªº¦X²z¤Æ
+     * æ˜¯å¦è¦é€²è¡ŒRGBçš„åˆç†åŒ–
      * @param doRGBRational boolean
      */
     public void setDoRGBRational(boolean doRGBRational) {
@@ -906,7 +906,7 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¬O§_­n¶i¦æXYZªº³Ì¤j­È­­¨î
+     * æ˜¯å¦è¦é€²è¡ŒXYZçš„æœ€å¤§å€¼é™åˆ¶
      * @param doXYZLimit boolean
      */
     public void setDoXYZLimit(boolean doXYZLimit) {
@@ -920,8 +920,8 @@ public abstract class LCDModelBase
     private double xMax = 0, yMax = 0, zMax = 0;
 
     /**
-     * ­­¨îXYZ¤£­n¶W¹LMax
-     * (­­¨î¤§«áªºdeltaE§ó¤j?)
+     * é™åˆ¶XYZä¸è¦è¶…éMax
+     * (é™åˆ¶ä¹‹å¾Œçš„deltaEæ›´å¤§?)
      * @param XYZ CIEXYZ
      * @return CIEXYZ
      */
@@ -954,23 +954,23 @@ public abstract class LCDModelBase
     }
 
     /**
-     * ¬O§_­n¹ïXYZ§@limit°Ê§@,limit·|­­¨îXYZ¦bmax¤º
-     * ¦ı¬Olimit¤§«á©¹©¹·|¥¢·Ç,¤£«ØÄ³¨Ï¥Î
-     * (¤£­n¥Î)
+     * æ˜¯å¦è¦å°XYZä½œlimitå‹•ä½œ,limitæœƒé™åˆ¶XYZåœ¨maxå…§
+     * ä½†æ˜¯limitä¹‹å¾Œå¾€å¾€æœƒå¤±æº–,ä¸å»ºè­°ä½¿ç”¨
+     * (ä¸è¦ç”¨)
      */
     private boolean doXYZLimit = false;
     /**
-     * ÅıXYZ¦X²z¤Æ(>=0)
+     * è®“XYZåˆç†åŒ–(>=0)
      */
     private boolean doXYZRational = false;
     /**
-     * ¬O§_­n¹ïRGB§@¦X²z¤Æ°Ê§@(­­¨î³Ì¤j¦b1.0,³Ì¤p¬°0)
-     * (¤£­n¥Î)
+     * æ˜¯å¦è¦å°RGBä½œåˆç†åŒ–å‹•ä½œ(é™åˆ¶æœ€å¤§åœ¨1.0,æœ€å°ç‚º0)
+     * (ä¸è¦ç”¨)
      */
     private boolean doRGBRational = false;
 
     /**
-     * ¹ïRGB¶i¦æ¦X²z¤Æ
+     * å°RGBé€²è¡Œåˆç†åŒ–
      * @param rgb RGB
      * @return RGB
      */
@@ -985,7 +985,7 @@ public abstract class LCDModelBase
   private boolean rationalized = false;
 
   /**
-   * ±N¸g¹LgetRGB¹Bºâ©Ò±o¨ìªºgetRGB¼Æ­È, ±a¨ì«e¾É¼Ò¦¡±o¨ìªº¹w´úXYZ»P¹ê»ÚXYZªº¦â®t
+   * å°‡ç¶“égetRGBé‹ç®—æ‰€å¾—åˆ°çš„getRGBæ•¸å€¼, å¸¶åˆ°å‰å°æ¨¡å¼å¾—åˆ°çš„é æ¸¬XYZèˆ‡å¯¦éš›XYZçš„è‰²å·®
    * @param getRGB RGB
    * @param XYZ CIEXYZ
    * @param relativeXYZ boolean
@@ -999,9 +999,9 @@ public abstract class LCDModelBase
   public DeltaE calculateGetRGBDeltaE(RGB getRGB, CIEXYZ XYZ, CIEXYZ whitePoint,
                                       boolean relativeXYZ) {
     //==========================================================================
-    // ­pºâinverLabªºdeltaE
+    // è¨ˆç®—inverLabçš„deltaE
     //==========================================================================
-    //­pºâdeltaE¥Îabsolute XYZ
+    //è¨ˆç®—deltaEç”¨absolute XYZ
     CIEXYZ forwardXYZ = this.getXYZ(getRGB, false);
     CIEXYZ testedXYZ = this.toXYZ(XYZ, !relativeXYZ);
     if (whitePoint == null) {
@@ -1014,8 +1014,8 @@ public abstract class LCDModelBase
   }
 
   /**
-   * ¥ÑrelativeXYZ±NXYZ³B²z¦¨¬Û¹ï©Îµ´¹ï­È
-   * (¥Ñ¤º³¡³B²zÂà´«¨ì¥~³¡³B²z)
+   * ç”±relativeXYZå°‡XYZè™•ç†æˆç›¸å°æˆ–çµ•å°å€¼
+   * (ç”±å…§éƒ¨è™•ç†è½‰æ›åˆ°å¤–éƒ¨è™•ç†)
    * @param XYZ CIEXYZ
    * @param relativeXYZ boolean
    * @return CIEXYZ
@@ -1033,8 +1033,8 @@ public abstract class LCDModelBase
   }
 
   /**
-   * ¥ÑrelativeXYZ±NXYZ³B²z¦¨¬Û¹ï©Îµ´¹ï­È
-   * (¥Ñ¥~³¡³B²zÂà´«¨ì¤º³¡³B²z)
+   * ç”±relativeXYZå°‡XYZè™•ç†æˆç›¸å°æˆ–çµ•å°å€¼
+   * (ç”±å¤–éƒ¨è™•ç†è½‰æ›åˆ°å…§éƒ¨è™•ç†)
    * @param XYZ CIEXYZ
    * @param relativeXYZ boolean
    * @return CIEXYZ
@@ -1045,8 +1045,8 @@ public abstract class LCDModelBase
     }
     else {
       /**
-       * ¦pªG¤£¬OrelativeXYZ,´N¬Oµ´¹ï­È,­n¥ı´î±¼º|¥ú,¦A¶i¯x°}¹Bºâ.
-       * ¦]¬°¯x°}ºc¦¨®É,¤]¤w¸g¥ı´î±¼º|¥úªº¦]¯À¤F.
+       * å¦‚æœä¸æ˜¯relativeXYZ,å°±æ˜¯çµ•å°å€¼,è¦å…ˆæ¸›æ‰æ¼å…‰,å†é€²çŸ©é™£é‹ç®—.
+       * å› ç‚ºçŸ©é™£æ§‹æˆæ™‚,ä¹Ÿå·²ç¶“å…ˆæ¸›æ‰æ¼å…‰çš„å› ç´ äº†.
        */
       CIEXYZ result = CIEXYZ.minus(XYZ, flare.flareXYZ);
       return result;
@@ -1054,7 +1054,7 @@ public abstract class LCDModelBase
   }
 
   /**
-   * ¨ú±o»P«G«×½u©ÊªºRGB
+   * å–å¾—èˆ‡äº®åº¦ç·šæ€§çš„RGB
    * @param XYZ CIEXYZ
    * @param relativeXYZ boolean
    * @return RGB
@@ -1071,7 +1071,7 @@ public abstract class LCDModelBase
   }
 
   /**
-   * ²£¥Í¥i¥ÃÄòÀx¦s«Y¼Æªºclass
+   * ç”¢ç”Ÿå¯æ°¸çºŒå„²å­˜ä¿‚æ•¸çš„class
    * @param factors Factor[]
    * @return LCDModelFactor
    */
@@ -1101,7 +1101,7 @@ public abstract class LCDModelBase
   }
 
   /**
-   * ­pºâ¥X¸Ó¦â«×®y¼Ğ¤U, ³Ì¤j¥i¹F¨ìªº«G«×
+   * è¨ˆç®—å‡ºè©²è‰²åº¦åº§æ¨™ä¸‹, æœ€å¤§å¯é”åˆ°çš„äº®åº¦
    * @param xyY CIExyY
    * @return double
    */
@@ -1129,7 +1129,7 @@ public abstract class LCDModelBase
   }
 
   /**
-   * ¼Ğ·Çmodel´ú¸Õ³ø§i
+   * æ¨™æº–modelæ¸¬è©¦å ±å‘Š
    * @param testTarget LCDTarget
    * @param reportMinimumDeltaE double
    * @return String
@@ -1224,7 +1224,7 @@ public abstract class LCDModelBase
   public class Report {
 
     /**
-     * model´ú¸Õ³ø§i
+     * modelæ¸¬è©¦å ±å‘Š
      * @param testTarget LCDTarget
      * @param reportMinimumDeltaE double
      * @return String

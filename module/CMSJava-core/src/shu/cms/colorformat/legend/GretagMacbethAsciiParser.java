@@ -9,8 +9,8 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó©î¸ÑProfilemaker²£¥Íªº´ú¶q¸ê®ÆÀÉ®×®æ¦¡
- * ¤]¥i©î¸ÑTestChartÀÉ®×
+ * ç”¨ä¾†æ‹†è§£Profilemakerç”¢ç”Ÿçš„æ¸¬é‡è³‡æ–™æª”æ¡ˆæ ¼å¼
+ * ä¹Ÿå¯æ‹†è§£TestChartæª”æ¡ˆ
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -54,27 +54,27 @@ public class GretagMacbethAsciiParser
   }
 
   /**
-   * §PÂ_¸¨¦bHeader©ÎDataFormat
+   * åˆ¤æ–·è½åœ¨Headeræˆ–DataFormat
    * @param section ArrayList
    */
   protected void judge(ArrayList section) {
     String line = ( (String) section.get(0)).trim();
     if (line.startsWith(BEGIN)) {
       if (line.equals(BEGIN_DATA_FORMAT)) {
-        //¸ê®Æ®æ¦¡°Ï¬q
+        //è³‡æ–™æ ¼å¼å€æ®µ
         dataFormat = parseDataFormat(section);
       }
       else {
       }
     }
     else {
-      //header°Ï¬q
+      //headerå€æ®µ
       header = parseHeader(section);
     }
   }
 
   /**
-   * ©î¸Ñ¸ê®Æ®æ¦¡°Ï¬q
+   * æ‹†è§£è³‡æ–™æ ¼å¼å€æ®µ
    * @param section ArrayList
    * @return ArrayList
    */
@@ -103,7 +103,7 @@ public class GretagMacbethAsciiParser
   }
 
   /**
-   * ©î¸Ñ¼ĞÀY°Ï¬q
+   * æ‹†è§£æ¨™é ­å€æ®µ
    * @param section ArrayList
    * @return GretagMacbethAsciiFile.Header
    */
@@ -142,9 +142,9 @@ public class GretagMacbethAsciiParser
   }
 
   /**
-   * ±Nvalue­È©î¸Ñ¥X¨Ó
+   * å°‡valueå€¼æ‹†è§£å‡ºä¾†
    * ex: KEYWORD	"SampleID"
-   * ªº"SampleID"
+   * çš„"SampleID"
    *
    * @param keyValue String
    * @return String
@@ -172,7 +172,7 @@ public class GretagMacbethAsciiParser
 
       }
 
-      //data³q±`³QÂ\¦b³Ì«á
+      //dataé€šå¸¸è¢«æ“ºåœ¨æœ€å¾Œ
       dataSet = parseData(sec);
     }
     catch (IOException ex) {
@@ -207,7 +207,7 @@ public class GretagMacbethAsciiParser
   }
 
   /**
-   * ©î¸Ñ¸ê®Æ°Ï¬q
+   * æ‹†è§£è³‡æ–™å€æ®µ
    * @param section ArrayList
    * @return GretagMacbethAsciiFile.DataSets
    */

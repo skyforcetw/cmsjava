@@ -30,7 +30,7 @@ import auo.cms.hsv.HSVVersion;
 public class AutoTunerSimpler {
   public static void main(String[] args) {
     String rampFilename = "hsv autotune/B101EVN06/Measurement02_.xls";
-    //¥Ø«esRGB¥u¦³©w¸q³æÂI½Õ¾ã, ©Ò¥H¤£¾A¦X±Ä¥ÎMulti Spot, °£«D¼W¥[sRGBsRGBTuneTarget¹ï¦hÂIªº¤ä´©
+    //ç›®å‰sRGBåªæœ‰å®šç¾©å–®é»èª¿æ•´, æ‰€ä»¥ä¸é©åˆæ¡ç”¨Multi Spot, é™¤éå¢åŠ sRGBsRGBTuneTargetå°å¤šé»çš„æ”¯æ´
     TuneParameter tp1 = getsRGBTuneParameter(rampFilename,
                                              AutoTuner.FitMode.SingleSpot);
     System.out.println(tp1.toToolkitFormatString());
@@ -45,13 +45,13 @@ public class AutoTunerSimpler {
       LCDTarget
       rampLCDTarget) {
 
-    //­­¨î¦b­±ªOªº¦â°ì¤º
+    //é™åˆ¶åœ¨é¢æ¿çš„è‰²åŸŸå…§
     ProfileColorSpace limitpcs = ProfileColorSpaceUtils.
         getProfileColorSpaceFromRampTarget(rampLCDTarget);
 
     PreferredColorModel preferredColorModel = PreferredColorModel.
         getInstance(limitpcs);
-    //²£¥Í¥XsRGB°T¸¹³W®æ¤Uªº Preferred Color Space
+    //ç”¢ç”Ÿå‡ºsRGBè¨Šè™Ÿè¦æ ¼ä¸‹çš„ Preferred Color Space
     ProfileColorSpace pcs = preferredColorModel.
         produceHSVPreferredProfileColorSpaceInsRGBSignal();
 
@@ -133,8 +133,8 @@ public class AutoTunerSimpler {
     ExcelFile xls = null;
     try {
       xls = new ExcelFile(
-          "hsv autotune/B101EVN06/ipad2_sRGB_table_20120106.xls"); //richardªº
-//          "hsv autotune/B101EVN06/ipad2_sRGB_table_20111219.xls"); //acerªº
+          "hsv autotune/B101EVN06/ipad2_sRGB_table_20120106.xls"); //richardçš„
+//          "hsv autotune/B101EVN06/ipad2_sRGB_table_20111219.xls"); //acerçš„
     }
     catch (IOException ex) {
       ex.printStackTrace();

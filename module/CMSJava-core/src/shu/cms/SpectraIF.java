@@ -4,7 +4,7 @@ package shu.cms;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ´£¨Ñ¥úÃĞ¬ÛÃöÃş§O¤@­Ó¦@³q¾Ş§@¤¶­±
+ * æä¾›å…‰è­œç›¸é—œé¡åˆ¥ä¸€å€‹å…±é€šæ“ä½œä»‹é¢
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

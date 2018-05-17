@@ -14,7 +14,7 @@ import shu.cms.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥ı¨Ì¾ÚÀW¹D­pºâ¥XGamma,¦A¥H­¡¥Nªº¤è¦¡­pºâGain»Poffset
+ * å…ˆä¾æ“šé »é“è¨ˆç®—å‡ºGamma,å†ä»¥è¿­ä»£çš„æ–¹å¼è¨ˆç®—Gainèˆ‡offset
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -82,7 +82,7 @@ public class RegularGOGModelThread
     initCoefficientsRange();
 
     //==========================================================================
-    //¦h°õ¦æºü¹Bºâ
+    //å¤šåŸ·è¡Œç·’é‹ç®—
     //==========================================================================
     IterativeReport[] reports = SimpleThreadCalculator.
         produceBestIterativeReport(
@@ -131,8 +131,8 @@ public class RegularGOGModelThread
     LCDModelFactor lcdModelFactor = model.produceLCDModelFactor(factors);
 
     /**
-     * ¦¹³B«Y¼Æ¥H §Ç¦C¤Æ ³B²z,¤£¨Ï¥ÎXMLÀx¦s¬O¦]¬°Ãiªº³B²ztag :P
-     * ¥[¤WFactor¶¡¦³Ä~©ÓÃö«Y,¥Ø«e¤£ª¾¹DXML-Java¤u¨ã¬O§_¥i¥H«Ü¦nªº³B²z.
+     * æ­¤è™•ä¿‚æ•¸ä»¥ åºåˆ—åŒ– è™•ç†,ä¸ä½¿ç”¨XMLå„²å­˜æ˜¯å› ç‚ºæ‡¶çš„è™•ç†tag :P
+     * åŠ ä¸ŠFactoré–“æœ‰ç¹¼æ‰¿é—œä¿‚,ç›®å‰ä¸çŸ¥é“XML-Javaå·¥å…·æ˜¯å¦å¯ä»¥å¾ˆå¥½çš„è™•ç†.
      */
     model.store.modelFactorFile(lcdModelFactor, "t.tmp");
 
@@ -207,8 +207,8 @@ public class RegularGOGModelThread
   }
 
   /**
-   * ªì©l¤Æ­¡±a«Y¼Æ
-   * ¥i¥Hµø±¡ªp½Õ¾ã¦¹«Y¼Æ­È,Åı¼Ò¦¡¦³§ó¦nªº¹Bºâªí²{
+   * åˆå§‹åŒ–è¿­å¸¶ä¿‚æ•¸
+   * å¯ä»¥è¦–æƒ…æ³èª¿æ•´æ­¤ä¿‚æ•¸å€¼,è®“æ¨¡å¼æœ‰æ›´å¥½çš„é‹ç®—è¡¨ç¾
    */
   public void initCoefficientsRange() {
     CoefficientsRange coefR = new CoefficientsRange(.5, 3., -2., 1., rGamma,
@@ -253,7 +253,7 @@ public class RegularGOGModelThread
     Factor[] factors = new Factor[] {
         new Factor(), new Factor(), new Factor()};
 
-    //­¡¥N
+    //è¿­ä»£
     for (double gain = gainS; gain <= gainE; gain += gainStep) {
       for (double offset = offsetS; offset <= offsetE; offset += offsetStep) {
 //        for (double gamma = gammaS; gamma <= gammaE; gamma += gammaStep) {

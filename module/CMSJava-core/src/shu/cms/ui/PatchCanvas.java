@@ -52,7 +52,7 @@ public class PatchCanvas
   }
 
   /**
-   * ²£¥Í®e¯ÇPatchCanvasªº¤@­ÓJFrame
+   * ç”¢ç”Ÿå®¹ç´PatchCanvasçš„ä¸€å€‹JFrame
    * @param canvas PatchCanvas
    * @return JFrame
    */
@@ -127,7 +127,7 @@ public class PatchCanvas
   }
 
   /**
-   * ±N¼v¹³½Æ»s¨ì°Å¶KÃ¯
+   * å°‡å½±åƒè¤‡è£½åˆ°å‰ªè²¼ç°¿
    */
   public void toClipboard() {
     Image image = createImage(getWidth(), getHeight());
@@ -138,13 +138,13 @@ public class PatchCanvas
   private boolean horizontalDraw = false;
 
   /**
-   * canvasªº¤j¤p
+   * canvasçš„å¤§å°
    */
   protected Dimension d;
   public void paintComponent(Graphics g) {
     super.paintComponent(g);
     d = this.getSize();
-    //µe­I´º
+    //ç•«èƒŒæ™¯
     g.setColor(this.getBackground());
     g.fillRect(0, 0, d.width, d.height);
 
@@ -156,17 +156,17 @@ public class PatchCanvas
 
     if (drawRef) {
       //========================================================================
-      // µereferenceRGBList
+      // ç•«referenceRGBList
       //========================================================================
       int rgbSize = referenceRGBList.size();
 
       if (rowLength == -1) {
-        //¨S¦³­­¨îªø«×ªº³õ¦X
+        //æ²’æœ‰é™åˆ¶é•·åº¦çš„å ´åˆ
         hwItems = getHeightAndWidthItems(d, rgbSize);
         patchWidth = getPatchWidth(d, hwItems);
       }
       else {
-        //¦³­­¨îªø«×ªº³õ¦X
+        //æœ‰é™åˆ¶é•·åº¦çš„å ´åˆ
         patchWidth = d.height / rowLength;
         hwItems = new int[] {
             rowLength, (int) Math.ceil(rgbSize / rowLength)};
@@ -190,7 +190,7 @@ public class PatchCanvas
         g.fillRect(x, y, drawWidth, drawWidth);
 
         if (drawTar) {
-          //µetargetRGBList
+          //ç•«targetRGBList
           RGB tarRGB = targetRGBList.get(i);
           g.setColor(tarRGB.getColor());
           g.fillRect(x + drawWidth / 4, y + drawWidth / 4, drawWidth / 2,
@@ -198,7 +198,7 @@ public class PatchCanvas
         }
 
         if (drawTar2) {
-          //µetargetRGBList2
+          //ç•«targetRGBList2
           RGB tarRGB = targetRGBList2.get(i);
           g.setColor(tarRGB.getColor());
           g.fillRect(x + (int) (drawWidth * (5. / 8)), y + drawWidth / 4,
@@ -210,7 +210,7 @@ public class PatchCanvas
       //========================================================================
 
       //========================================================================
-      // §â»İ­nhighLightªºµe¥X¨Ó
+      // æŠŠéœ€è¦highLightçš„ç•«å‡ºä¾†
       //========================================================================
       if (highLightIndex != null) {
         int size = highLightIndex.length;
@@ -235,23 +235,23 @@ public class PatchCanvas
 
 
       //========================================================================
-      // §â¤wÂI¿ïªº¼Ğ¥Ü¥X¨Ó
+      // æŠŠå·²é»é¸çš„æ¨™ç¤ºå‡ºä¾†
       //========================================================================
       if (selectEnable && pressed) {
         int x = memoryPressed[0] * patchWidth;
         int y = memoryPressed[1] * patchWidth;
-        //«ö¤U¥hªº
+        //æŒ‰ä¸‹å»çš„
         g.setColor(selectedColor);
-        //µe¨â­Ó®Ø
-        //®Ø1
+        //ç•«å…©å€‹æ¡†
+        //æ¡†1
         g.drawRect(x, y, patchWidth - 1,
                    patchWidth - 1);
-        //®Ø2
+        //æ¡†2
         g.drawRect(x + 1, y + 1, patchWidth - 3,
                    patchWidth - 3);
       }
 
-      //¿ï¨ú¨ìªºindex
+      //é¸å–åˆ°çš„index
       selectIndex = selectedCol * hwItems[0] + selectedRow;
       if (selectEnable && selectedCol != -1 && selectIndex < rgbSize &&
           selectedRow < hwItems[0]) {
@@ -259,13 +259,13 @@ public class PatchCanvas
         int x = (selectedCol * patchWidth);
         int y = (selectedRow * patchWidth);
 
-        //§â¥¿ÂI¿ïªºµe¥X¨Ó
+        //æŠŠæ­£é»é¸çš„ç•«å‡ºä¾†
         Color c = mousePress ? selectedColor : selectColor;
         g.setColor(c);
         g.drawRect(x, y, patchWidth - 1, patchWidth - 1);
 
         //======================================================================
-        // ¬ö¿ı«ö¤U¥hªº¦ì¸mÂI
+        // ç´€éŒ„æŒ‰ä¸‹å»çš„ä½ç½®é»
         //======================================================================
         if (mousePress) {
           memoryPressed[0] = selectedCol;
@@ -282,7 +282,7 @@ public class PatchCanvas
   }
 
   /**
-   * ±N¥Ø«e¿ï¨ú¨ìªºindex¦^¶Ç
+   * å°‡ç›®å‰é¸å–åˆ°çš„indexå›å‚³
    * @return int
    */
   public int getSelectIndex() {
@@ -290,7 +290,7 @@ public class PatchCanvas
   }
 
   /**
-   * ±NclickÂI¿ïªºindex¦^¶Ç
+   * å°‡clické»é¸çš„indexå›å‚³
    * @return int
    */
   public int getSelectedIndex() {
@@ -298,85 +298,85 @@ public class PatchCanvas
   }
 
   /**
-   * ¥Ø«e¿ï¨úªºindex
+   * ç›®å‰é¸å–çš„index
    */
   protected int selectIndex = 0;
   /**
-   * ¤w¿ï¨ú¨ìªºindex
+   * å·²é¸å–åˆ°çš„index
    */
   protected int selectedIndex = 0;
   /**
-   * ¬O§_«ö¤U¥h¤F?
+   * æ˜¯å¦æŒ‰ä¸‹å»äº†?
    */
   protected boolean pressed = false;
   /**
-   * °O¾Ğ«ö¤U¥hªº¦ì¸m
+   * è¨˜æ†¶æŒ‰ä¸‹å»çš„ä½ç½®
    */
   protected int[] memoryPressed = new int[2];
   /**
-   * patchªº¼e«×
+   * patchçš„å¯¬åº¦
    */
   protected int patchWidth;
   /**
-   * ¹ê»Ú­nµeªº¼e«×
+   * å¯¦éš›è¦ç•«çš„å¯¬åº¦
    */
   protected int drawWidth;
   /**
-   * ªø¤Î¼eªº¼Æ¶q
+   * é•·åŠå¯¬çš„æ•¸é‡
    */
   protected int[] hwItems;
   /**
-   * °Ñ¦ÒªºRGB
+   * åƒè€ƒçš„RGB
    */
   protected List<RGB> referenceRGBList = null;
   /**
-   * ¥Ø¼ĞªºRGB
+   * ç›®æ¨™çš„RGB
    */
   protected List<RGB> targetRGBList = null;
   /**
-   * ¥Ø¼Ğ²Ä¤GRGB
+   * ç›®æ¨™ç¬¬äºŒRGB
    */
   protected List<RGB> targetRGBList2 = null;
   /**
-   * ¨C­Órow¥i©ñªºpatch¼Æ¶q
+   * æ¯å€‹rowå¯æ”¾çš„patchæ•¸é‡
    */
   protected int rowLength = -1;
 
   /**
-   * highlightªºindex
+   * highlightçš„index
    */
   protected int[] highLightIndex;
   /**
-   * highlightªºcolor
+   * highlightçš„color
    */
   protected Color highLightColor;
   /**
-   * ¤w¿ï¨ú±Ä¥ÎªºÃC¦â
+   * å·²é¸å–æ¡ç”¨çš„é¡è‰²
    */
   protected Color selectedColor = Color.white;
   /**
-   * ¥Ø«e¿ï¨ú±Ä¥ÎªºÃC¦â
+   * ç›®å‰é¸å–æ¡ç”¨çš„é¡è‰²
    */
   protected Color selectColor = Color.white;
   /**
-   * ¤w¿ï¨úªºcolumn (¥Hpatch¬°³æ¦ì)
+   * å·²é¸å–çš„column (ä»¥patchç‚ºå–®ä½)
    */
   protected int selectedCol = -1;
   /**
-   * ¤w¿ï¨úªºrow (¥Hpatch¬°³æ¦ì)
+   * å·²é¸å–çš„row (ä»¥patchç‚ºå–®ä½)
    */
   protected int selectedRow = -1;
   /**
-   * ¬O§_±Ò°Ê¿ï¨ú¥\¯à
+   * æ˜¯å¦å•Ÿå‹•é¸å–åŠŸèƒ½
    */
   protected boolean selectEnable = false;
   /**
-   * ¦â¶ôªºgap¶¡¶Z(in pixel)
+   * è‰²å¡Šçš„gapé–“è·(in pixel)
    */
   protected int gap = 0;
 
   /**
-   * ­pºâpatchªº¼e«×
+   * è¨ˆç®—patchçš„å¯¬åº¦
    * @param d Dimension
    * @param hwItems int[]
    * @return int
@@ -394,12 +394,12 @@ public class PatchCanvas
    */
   private final static int[] getItemsAndWidth(Dimension d,
                                               int patchItems) {
-    //¥ı¥Î©Ò¦³ ­±¿n/¤è¶ô¼Æ ºâ¨C¤@­Ó¤è¶ôªº¥­§¡¤j¤p
-    //floorµL±ø¥ó±Ë¥h
+    //å…ˆç”¨æ‰€æœ‰ é¢ç©/æ–¹å¡Šæ•¸ ç®—æ¯ä¸€å€‹æ–¹å¡Šçš„å¹³å‡å¤§å°
+    //floorç„¡æ¢ä»¶æ¨å»
     int width = (int) Math.floor(Math.sqrt( ( (double) (d.width * d.height)) /
                                            patchItems));
-    //ceilµL±ø¥ó¶i¦ì
-    //¶W¥X¤@­Ó, ¬°¤F¬O¶ñº¡
+    //ceilç„¡æ¢ä»¶é€²ä½
+    //è¶…å‡ºä¸€å€‹, ç‚ºäº†æ˜¯å¡«æ»¿
     int hItems = (int) Math.floor( ( (double) d.height) / width);
     int wItems = (int) Math.floor( ( (double) patchItems) / hItems);
     int patchWidth = Math.min( (int) Math.floor(d.height / hItems),
@@ -412,19 +412,19 @@ public class PatchCanvas
   }
 
   /**
-   * ­pºâªø©M¼eªºpatch¼Æ¶q
+   * è¨ˆç®—é•·å’Œå¯¬çš„patchæ•¸é‡
    * @param d Dimension
    * @param patchItems int
    * @return int[]
    */
   private final static int[] getHeightAndWidthItems(Dimension d,
       int patchItems) {
-    //¥ı¥Î©Ò¦³ ­±¿n/¤è¶ô¼Æ ºâ¨C¤@­Ó¤è¶ôªº¥­§¡¤j¤p
-    //floorµL±ø¥ó±Ë¥h
+    //å…ˆç”¨æ‰€æœ‰ é¢ç©/æ–¹å¡Šæ•¸ ç®—æ¯ä¸€å€‹æ–¹å¡Šçš„å¹³å‡å¤§å°
+    //floorç„¡æ¢ä»¶æ¨å»
     int width = (int) Math.floor(Math.sqrt( ( (double) (d.width * d.height)) /
                                            patchItems));
-    //ceilµL±ø¥ó¶i¦ì
-    //¶W¥X¤@­Ó, ¬°¤F¬O¶ñº¡
+    //ceilç„¡æ¢ä»¶é€²ä½
+    //è¶…å‡ºä¸€å€‹, ç‚ºäº†æ˜¯å¡«æ»¿
     int hItems = (int) Math.ceil( ( (double) d.height) / width);
     int wItems = (int) Math.ceil( ( (double) patchItems) / hItems);
     int patchWidth = Math.min( (int) Math.floor(d.height / hItems),
@@ -436,7 +436,7 @@ public class PatchCanvas
   }
 
   /**
-   * ³]©w°Ñ¦ÒªºRGB
+   * è¨­å®šåƒè€ƒçš„RGB
    * @param referenceRGBList List
    */
   public void setReferenceRGBList(List<RGB> referenceRGBList) {
@@ -444,7 +444,7 @@ public class PatchCanvas
   }
 
   /**
-   * ³]©w¥Ø¼ĞªºRGB
+   * è¨­å®šç›®æ¨™çš„RGB
    * @param targetRGBList List
    */
   public void setTargetRGBList(List<RGB> targetRGBList) {
@@ -452,7 +452,7 @@ public class PatchCanvas
   }
 
   /**
-   * ³]©w¨C¤@­Órow¥i¥H©ñªºpatch¼Æ¶q
+   * è¨­å®šæ¯ä¸€å€‹rowå¯ä»¥æ”¾çš„patchæ•¸é‡
    * @param rowLength int
    */
   public void setRowLength(int rowLength) {
@@ -460,7 +460,7 @@ public class PatchCanvas
   }
 
   /**
-   * ³]©w²Ä¤G­Ó¥Ø¼ĞRGB
+   * è¨­å®šç¬¬äºŒå€‹ç›®æ¨™RGB
    * @param targetRGBList2 List
    */
   public void setTargetRGBList2(List<RGB> targetRGBList2) {
@@ -468,7 +468,7 @@ public class PatchCanvas
   }
 
   /**
-   * ³]©w¿ï¨ú¥\¯à¬O§_±Ò°Ê
+   * è¨­å®šé¸å–åŠŸèƒ½æ˜¯å¦å•Ÿå‹•
    * @param selectEnable boolean
    */
   public void setSelectEnable(boolean selectEnable) {
@@ -476,7 +476,7 @@ public class PatchCanvas
   }
 
   /**
-   * ³]©w¦â¶ô¤§¶¡ªº¶¡¶Z
+   * è¨­å®šè‰²å¡Šä¹‹é–“çš„é–“è·
    * @param gap int
    */
   public void setGap(int gap) {
@@ -484,9 +484,9 @@ public class PatchCanvas
   }
 
   /**
-   * ³Q©w­n³Qhighlight¥X¨Óªº¦â¶ô¯Á¤Ş­È¤Îhighlightªº¦â±m
-   * @param highLightIndex int[] highlightªº¯Á¤Ş­È
-   * @param highLightColor Color highlightªº¦â±m
+   * è¢«å®šè¦è¢«highlightå‡ºä¾†çš„è‰²å¡Šç´¢å¼•å€¼åŠhighlightçš„è‰²å½©
+   * @param highLightIndex int[] highlightçš„ç´¢å¼•å€¼
+   * @param highLightColor Color highlightçš„è‰²å½©
    */
   public void setHighLightIndex(int[] highLightIndex, Color highLightColor) {
     this.highLightIndex = highLightIndex;

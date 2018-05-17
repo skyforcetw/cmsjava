@@ -142,7 +142,7 @@ public abstract class DCUtils {
   }
 
   /**
-   * �NCC24 White Patch�վ㦨�ؼЭ� 0.885583
+   * 將CC24 White Patch調整成目標值 0.885583
    * @param dcTarget DCTarget
    */
   public final static void calibrateWhitePatchInCC24(DCTarget dcTarget) {

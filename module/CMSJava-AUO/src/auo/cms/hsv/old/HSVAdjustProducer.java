@@ -80,18 +80,18 @@ public class HSVAdjustProducer {
 //                        p.getRGB().getValues(new double[3],
 //                                             RGB.MaxValue.Double1),
 //                        RGB.MaxValue.Double1);
-//      //­ì©lªºHSV
+//      //åŸå§‹çš„HSV
 //      HSV hsv = new HSV(rgb);
 //
-//      //ºâ¥X¥Ø¼ĞXYZ
+//      //ç®—å‡ºç›®æ¨™XYZ
 //      CIEXYZ XYZ = rgb.toXYZ();
-//      //±N¥Ø¼ĞXYZ½Õ¾ã¦ÜLCDª«²z¶q¤@­P
+//      //å°‡ç›®æ¨™XYZèª¿æ•´è‡³LCDç‰©ç†é‡ä¸€è‡´
 //      XYZ.times(luminance);
-//      //­pºâ¥XLCD¤W²z·QªºRGB
+//      //è¨ˆç®—å‡ºLCDä¸Šç†æƒ³çš„RGB
 //      RGB rgb2 = model.getRGB(XYZ, false);
-//      //±À¦^HSV
+//      //æ¨å›HSV
 //      HSV hsv2 = new HSV(rgb2);
-//      //­pºâhueÀ³¸Óªº½Õ¾ã¶q
+//      //è¨ˆç®—hueæ‡‰è©²çš„èª¿æ•´é‡
 //
 //      adjustArray[x] = getValueAdjust(hsv.V, hsv2.V, hsv.getMinimum());
 ////    adjustArray[x] = hsv2.H - hsv.H;
@@ -110,18 +110,18 @@ public class HSVAdjustProducer {
 //                        p.getRGB().getValues(new double[3],
 //                                             RGB.MaxValue.Double1),
 //                        RGB.MaxValue.Double1);
-//      //­ì©lªºHSV
+//      //åŸå§‹çš„HSV
 //      HSV hsv = new HSV(rgb);
 //
-//      //ºâ¥X¥Ø¼ĞXYZ
+//      //ç®—å‡ºç›®æ¨™XYZ
 //      CIEXYZ XYZ = rgb.toXYZ();
-//      //±N¥Ø¼ĞXYZ½Õ¾ã¦ÜLCDª«²z¶q¤@­P
+//      //å°‡ç›®æ¨™XYZèª¿æ•´è‡³LCDç‰©ç†é‡ä¸€è‡´
 //      XYZ.times(luminance);
-//      //­pºâ¥XLCD¤W²z·QªºRGB
+//      //è¨ˆç®—å‡ºLCDä¸Šç†æƒ³çš„RGB
 //      RGB rgb2 = model.getRGB(XYZ, false);
-//      //±À¦^HSV
+//      //æ¨å›HSV
 //      HSV hsv2 = new HSV(rgb2);
-//      //­pºâhueÀ³¸Óªº½Õ¾ã¶q
+//      //è¨ˆç®—hueæ‡‰è©²çš„èª¿æ•´é‡
 //      if (hsv.H == 0 && hsv2.H >= 345) {
 //        adjustArray[x] = hsv2.H - 360;
 //      }
@@ -143,18 +143,18 @@ public class HSVAdjustProducer {
 //                        p.getRGB().getValues(new double[3],
 //                                             RGB.MaxValue.Double1),
 //                        RGB.MaxValue.Double1);
-//      //­ì©lªºHSV
+//      //åŸå§‹çš„HSV
 //      HSV hsv = new HSV(rgb);
 //
-//      //ºâ¥X¥Ø¼ĞXYZ
+//      //ç®—å‡ºç›®æ¨™XYZ
 //      CIEXYZ XYZ = rgb.toXYZ();
-//      //±N¥Ø¼ĞXYZ½Õ¾ã¦ÜLCDª«²z¶q¤@­P
+//      //å°‡ç›®æ¨™XYZèª¿æ•´è‡³LCDç‰©ç†é‡ä¸€è‡´
 //      XYZ.times(luminance);
-//      //­pºâ¥XLCD¤W²z·QªºRGB
+//      //è¨ˆç®—å‡ºLCDä¸Šç†æƒ³çš„RGB
 //      RGB rgb2 = model.getRGB(XYZ, false);
-//      //±À¦^HSV
+//      //æ¨å›HSV
 //      HSV hsv2 = new HSV(rgb2);
-//      //­pºâSaturationÀ³¸Óªº½Õ¾ã¶q
+//      //è¨ˆç®—Saturationæ‡‰è©²çš„èª¿æ•´é‡
 //      adjustArray[x] = getSaturationAdjust(hsv.S, hsv2.S, method);
 //    }
 //
@@ -182,19 +182,19 @@ public class HSVAdjustProducer {
                         p.getRGB().getValues(new double[3],
                                              RGB.MaxValue.Double1),
                         RGB.MaxValue.Double1);
-      //­ì©lªºHSV
+      //åŸå§‹çš„HSV
       HSV hsv = new HSV(rgb);
 
-      //ºâ¥X¥Ø¼ĞXYZ
+      //ç®—å‡ºç›®æ¨™XYZ
       CIEXYZ XYZ = rgb.toXYZ();
-      //±N¥Ø¼ĞXYZ½Õ¾ã¦ÜLCDª«²z¶q¤@­P
+      //å°‡ç›®æ¨™XYZèª¿æ•´è‡³LCDç‰©ç†é‡ä¸€è‡´
       XYZ.times(luminance);
-      //­pºâ¥XLCD¤W²z·QªºRGB
+      //è¨ˆç®—å‡ºLCDä¸Šç†æƒ³çš„RGB
       RGB rgb2 = model.getRGB(XYZ, false);
-      //±À¦^HSV
+      //æ¨å›HSV
       HSV hsv2 = new HSV(rgb2);
       //========================================================================
-      //­pºâSaturationÀ³¸Óªº½Õ¾ã¶q
+      //è¨ˆç®—Saturationæ‡‰è©²çš„èª¿æ•´é‡
       //========================================================================
       double saturationAdjust = saturationFormula.getAdjustValue(hsv.S, hsv2.S);
       if (saturationFormula instanceof IntegerSaturationFormula) {

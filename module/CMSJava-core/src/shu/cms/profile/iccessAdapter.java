@@ -219,21 +219,21 @@ public class iccessAdapter {
       //========================================================================
       // private tag
       //========================================================================
-      //Àx¦s²£¥ÍProfile¹Lµ{ªº¬ö¿ı
+      //å„²å­˜ç”¢ç”ŸProfileéç¨‹çš„ç´€éŒ„
       if (p.profileProductionRecord != null) {
         TextType ppr = new TextType("ProfileProductionRecord:\n\n" +
                                     p.profileProductionRecord);
         profile.addTagTypeEntry(PrivateTags.profileProductionRecordTag, ppr);
       }
 
-      //¦PGMBªºDevD,Deviceªº¶q´ú¸ê®Æ
+      //åŒGMBçš„DevD,Deviceçš„é‡æ¸¬è³‡æ–™
       if (p.deviceMeasureData != null) {
         TextType dmd = new TextType("DeviceMeasureData:\n\n" +
                                     p.deviceMeasureData);
         profile.addTagTypeEntry(PrivateTags.profileProductionRecordTag, dmd);
       }
 
-      //¦PGMBªºCIED,CIEªº¶q´ú¸ê®Æ
+      //åŒGMBçš„CIED,CIEçš„é‡æ¸¬è³‡æ–™
       if (p.CIEMeasureData != null) {
         TextType Cmd = new TextType("CIEMeasureData:\n\n" +
                                     p.CIEMeasureData);
@@ -242,7 +242,7 @@ public class iccessAdapter {
       //========================================================================
 
       //========================================================================
-      // Àx¦s
+      // å„²å­˜
       //========================================================================
       ICCFileWriter writer = new ICCFileWriter(filename);
       profile.save(writer);
@@ -304,7 +304,7 @@ public class iccessAdapter {
   }
 
   /**
-   * ±qiccioªºLut16TypeÂà¨ìCMSJavaªºColorSpaceConnectedLUT
+   * å¾iccioçš„Lut16Typeè½‰åˆ°CMSJavaçš„ColorSpaceConnectedLUT
    * @param lut Lut16Type
    * @param doLabCorrect boolean
    * @return ColorSpaceConnectedLUT
@@ -332,7 +332,7 @@ public class iccessAdapter {
   }
 
   /**
-   * ±qiccioªºclutÂà¨ìCMSJava¤U
+   * å¾iccioçš„clutè½‰åˆ°CMSJavaä¸‹
    * @param clutValues UInt16Number[]
    * @param outputChannels int
    * @param doLabCorrect boolean
@@ -357,7 +357,7 @@ public class iccessAdapter {
   }
 
   /**
-   * ±qiccioªºi/o tablesÂà¨ìCMSJava¤U
+   * å¾iccioçš„i/o tablesè½‰åˆ°CMSJavaä¸‹
    * @param tables UInt16Number[]
    * @param outputChannels int
    * @return double[][]
@@ -393,7 +393,7 @@ public class iccessAdapter {
   }
 
   /**
-   * ±qiccio Lut16TypeªºmaxtirÂà¨ìCMSJava¤U
+   * å¾iccio Lut16Typeçš„maxtirè½‰åˆ°CMSJavaä¸‹
    * @param lut16 Lut16Type
    * @return double[][]
    */
@@ -501,7 +501,7 @@ public class iccessAdapter {
   }
 
   /**
-   * ±qiccioªºheaderÂà¨ìCMSJavaªºprofile
+   * å¾iccioçš„headerè½‰åˆ°CMSJavaçš„profile
    * @param header ICCProfileHeader
    * @param profile Profile
    */
@@ -569,7 +569,7 @@ public class iccessAdapter {
   }
 
   /**
-   * ¶i¤Jiccio«e,­t­Èªº­×¥¿(iccioªº°İÃD!?)
+   * é€²å…¥iccioå‰,è² å€¼çš„ä¿®æ­£(iccioçš„å•é¡Œ!?)
    * @param v double[]
    * @return double[]
    */
@@ -583,7 +583,7 @@ public class iccessAdapter {
   }
 
   /**
-   * ±qiccioÅª¤J«á,­t­Èªº­×¥¿(iccioªº°İÃD!?)
+   * å¾iccioè®€å…¥å¾Œ,è² å€¼çš„ä¿®æ­£(iccioçš„å•é¡Œ!?)
    * @param v double[]
    * @return double[]
    */

@@ -14,7 +14,7 @@ import shu.math.regress.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ³z¹LCLUT¥i²£¥Í¤Ï±À¼Ò¦¡
+ * é€éCLUTå¯ç”¢ç”Ÿåæ¨æ¨¡å¼
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -56,7 +56,7 @@ public class CLUTRegressionReverseModel extends LCDModel {
 
 
 //  /**
-//   * ¨Ï¥Î¼Ò¦¡
+//   * ä½¿ç”¨æ¨¡å¼
 //   *
 //   * @param factor LCDModelFactor
 //   */
@@ -133,7 +133,7 @@ public class CLUTRegressionReverseModel extends LCDModel {
     }
 
     /**
-     * ­pºâRGB,¤Ï±À¼Ò¦¡
+     * è¨ˆç®—RGB,åæ¨æ¨¡å¼
      * @param XYZ CIEXYZ
      * @param factor Factor[]
      * @return RGB
@@ -160,7 +160,7 @@ public class CLUTRegressionReverseModel extends LCDModel {
     }
 
     /**
-     * ­pºâXYZ,«e¾É¼Ò¦¡
+     * è¨ˆç®—XYZ,å‰å°æ¨¡å¼
      * @param rgb RGB
      * @param factor Factor[]
      * @return CIEXYZ
@@ -174,7 +174,7 @@ public class CLUTRegressionReverseModel extends LCDModel {
     }
 
     /**
-     * ¨D«Y¼Æ
+     * æ±‚ä¿‚æ•¸
      * @return Factor[]
      */
     protected Factor[] _produceFactor() {
@@ -193,7 +193,7 @@ public class CLUTRegressionReverseModel extends LCDModel {
         }
 
         //==========================================================================
-        // ¤Ï±À(B2A)
+        // åæ¨(B2A)
         //==========================================================================
         //XYZ->linear
         PolynomialRegression inverseRegression = new PolynomialRegression(

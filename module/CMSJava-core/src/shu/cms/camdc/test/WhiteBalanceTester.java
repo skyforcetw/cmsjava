@@ -107,7 +107,7 @@ public class WhiteBalanceTester {
 //    rgbValues = new double[] {
         253, 226, 107};
     //======================================================================
-    // Âà¦¨«G«×½u©Êrgb
+    // è½‰æˆäº®åº¦ç·šæ€§rgb
     //======================================================================
 //    if (null != luminanceLut) {
 //      rgbValues[0] = luminanceLut.getValue(rgbValues[0]);
@@ -133,7 +133,7 @@ public class WhiteBalanceTester {
         raster.getPixel(x, y, rgbValues);
 
         //======================================================================
-        // Âà¦¨«G«×½u©Êrgb
+        // è½‰æˆäº®åº¦ç·šæ€§rgb
         //======================================================================
 //        rgbValues[0] = luminanceLut.getValue(rgbValues[0]);
 //        rgbValues[1] = luminanceLut.getValue(rgbValues[1]);
@@ -170,23 +170,23 @@ public class WhiteBalanceTester {
   public static void main(String[] args) {
 
     /**
-     * ­«±Ò¥Õ¥­¿Å¬ã¨s
+     * é‡å•Ÿç™½å¹³è¡¡ç ”ç©¶
      *
-     * ¥Ñ©ó³]©w¦b¤é¥ú¥Õ¥­¿Å¤Uªº¼v¹³, ¤w¸g¬ã¨s¨ü¨ìclipping...
-     * ©Ò¥H¨S¿ìªk¥H¤é¥ú¥Õ¥­¿Å¨Ó°µ¬°¦Û°Ê¥Õ¥­©M¿Åªºsource
+     * ç”±æ–¼è¨­å®šåœ¨æ—¥å…‰ç™½å¹³è¡¡ä¸‹çš„å½±åƒ, å·²ç¶“ç ”ç©¶å—åˆ°clipping...
+     * æ‰€ä»¥æ²’è¾¦æ³•ä»¥æ—¥å…‰ç™½å¹³è¡¡ä¾†åšç‚ºè‡ªå‹•ç™½å¹³å’Œè¡¡çš„source
      *
-     * ¥Ø«e­­ÁY¬°, ¶°¤¤¸Ñ¨Mhtc¦bÂëµ·¿O¤UÃC¦â¤£¨Îªº°İÃD
-     * ¦]¦¹±Ä¥Î¤é¥ú¥Õ¥­¿Å©Ò±À±oªºsensor¥úÃĞ¬°°òÂ¦
-     * ¦ı¥HÂëµ·¿Oªº¼v¹³¨Ó¶i¦æ¥Õ¥­¿Å
+     * ç›®å‰é™ç¸®ç‚º, é›†ä¸­è§£æ±ºhtcåœ¨é¢çµ²ç‡ˆä¸‹é¡è‰²ä¸ä½³çš„å•é¡Œ
+     * å› æ­¤æ¡ç”¨æ—¥å…‰ç™½å¹³è¡¡æ‰€æ¨å¾—çš„sensorå…‰è­œç‚ºåŸºç¤
+     * ä½†ä»¥é¢çµ²ç‡ˆçš„å½±åƒä¾†é€²è¡Œç™½å¹³è¡¡
      */
 
 
     /**
-     * ¦³¬Û¾÷¥úÃĞ¡B¦³¥ú·½¡B¦³¼v¹³, ¥Õ¥­¿Å¨ìD65
+     * æœ‰ç›¸æ©Ÿå…‰è­œã€æœ‰å…‰æºã€æœ‰å½±åƒ, ç™½å¹³è¡¡åˆ°D65
      */
 //    IdealDigitalCamera camera = DCModelEstimator.estimateHTCLegend(false, false);
-    String dayICCFilename = "Measurement Files/camera/htc legend/test3/¤é.icc";
-    String AICCFilename = "Measurement Files/camera/htc legend/test3/Âëµ·¿O.icc";
+    String dayICCFilename = "Measurement Files/camera/htc legend/test3/æ—¥.icc";
+    String AICCFilename = "Measurement Files/camera/htc legend/test3/é¢çµ²ç‡ˆ.icc";
 
     DCTarget ADCTarget = DCTarget.Instance.get(LightSource.CIE.A, 1,
                                                DCTarget.Chart.MiniCC24,
@@ -202,7 +202,7 @@ public class WhiteBalanceTester {
     DCPolynomialRegressionModel dcmodel = estimator.getDCModel();
     GammaCorrector[] gammaCorrectors = estimator.getGammaCorrectors();
 
-//    iccfilename = "Measurement Files/camera/htc legend/test3/½Æ»s -¤é.icc";
+//    iccfilename = "Measurement Files/camera/htc legend/test3/è¤‡è£½ -æ—¥.icc";
 //    IdealDigitalCamera camera2 = DCModelEstimator.estimateCamera(iccfilename, false, false);
 
     Plot2D sensorPlot = Plot2D.getInstance();
@@ -215,8 +215,8 @@ public class WhiteBalanceTester {
 
     try {
 //      Illuminant.get
-//      image = ImageUtils.loadImage("Image/WhiteBalance/HTC Legend/¤é¥ú.jpg");
-      image = ImageUtils.loadImage("Image/WhiteBalance/HTC Legend/Âëµ·¿O.jpg");
+//      image = ImageUtils.loadImage("Image/WhiteBalance/HTC Legend/æ—¥å…‰.jpg");
+      image = ImageUtils.loadImage("Image/WhiteBalance/HTC Legend/é¢çµ²ç‡ˆ.jpg");
 
       Spectra spectra = CorrelatedColorTemperature.
           getSpectraOfBlackbodyRadiator(3000);
@@ -230,12 +230,12 @@ public class WhiteBalanceTester {
       ex.printStackTrace();
     }
     /**
-     * ¥Î¤é¥ú¥Õ¥­¿Å¥h©çÂëµ·¿O, µ²ªG³y¦¨«G³¡ÅÜ«Cºñ¦â
-     * ¬ã§P¬O¤é¥ú®É... R clipping³y¦¨.
-     * ¦]¬°R­Y¨S¦³clipping, ­ì©lÀ³¸Ó¬O¶W¹L255ªº­È, wb«á­°¦^255.
-     * ¥Ñ©ó³Qclipping, ¤@¶}©l´N¬O255ªº­È, wb«á¤p©ó255, ¥Õ¦â¥D­n¬°G©MB, ½T¹ê¬°«C
+     * ç”¨æ—¥å…‰ç™½å¹³è¡¡å»æ‹é¢çµ²ç‡ˆ, çµæœé€ æˆäº®éƒ¨è®Šé’ç¶ è‰²
+     * ç ”åˆ¤æ˜¯æ—¥å…‰æ™‚... R clippingé€ æˆ.
+     * å› ç‚ºRè‹¥æ²’æœ‰clipping, åŸå§‹æ‡‰è©²æ˜¯è¶…é255çš„å€¼, wbå¾Œé™å›255.
+     * ç”±æ–¼è¢«clipping, ä¸€é–‹å§‹å°±æ˜¯255çš„å€¼, wbå¾Œå°æ–¼255, ç™½è‰²ä¸»è¦ç‚ºGå’ŒB, ç¢ºå¯¦ç‚ºé’
      *
-     * ©Ò¥H¤é¥ú·|¦³clipping °İÃD¦ÓµLªk·í§@±`ºA¥Õ¥­¿Å...
+     * æ‰€ä»¥æ—¥å…‰æœƒæœ‰clipping å•é¡Œè€Œç„¡æ³•ç•¶ä½œå¸¸æ…‹ç™½å¹³è¡¡...
      */
 
   }

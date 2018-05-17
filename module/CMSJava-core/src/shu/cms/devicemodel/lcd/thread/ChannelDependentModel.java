@@ -7,7 +7,7 @@ import shu.cms.lcd.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * °²³]ÀW¹D¬Û¨ÌªºLCD¼Ò¦¡
+ * å‡è¨­é »é“ç›¸ä¾çš„LCDæ¨¡å¼
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -30,7 +30,7 @@ public abstract class ChannelDependentModel
   protected IterativeReport iterativeReport;
 
   /**
-   * ´£¨Ñ¤TÀW¹D¦@¥ÎªºIterativeReport (ex:scurve2,YY)
+   * æä¾›ä¸‰é »é“å…±ç”¨çš„IterativeReport (ex:scurve2,YY)
    * @return IterativeReport
    */
   protected IterativeReport getIterativeReport() {

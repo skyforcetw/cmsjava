@@ -41,11 +41,11 @@ public class FourthLutXTalkReconstructor
    */
   public RGB getXTalkRGB(CIEXYZ XYZ, RGB originalRGB, boolean relativeXYZ) {
     if (!originalRGB.isSecondaryChannel()) {
-      //originalRGB¤@©w¥u¯à¬O¤G¦¸¦â
+      //originalRGBä¸€å®šåªèƒ½æ˜¯äºŒæ¬¡è‰²
       return null;
     }
 
-    //®Ú¾ÚrelativeXYZ³B²zXYZ
+    //æ ¹æ“šrelativeXYZè™•ç†XYZ
     CIEXYZ fromXYZ = adapter.fromXYZ(XYZ, relativeXYZ);
     fromXYZ.rationalize();
 
@@ -105,10 +105,10 @@ public class FourthLutXTalkReconstructor
      * @return double
      */
     public double function(double[] values) {
-      //½Õ¾ãxtalkChannelªº¼Æ­È
+      //èª¿æ•´xtalkChannelçš„æ•¸å€¼
       recoverRGB.setValue(positiveChannel, values[0]);
       recoverRGB.setValue(negativeChannel, values[1]);
-      //¨ÏdeltaE¹F¨ì³Ì¤p
+      //ä½¿deltaEé”åˆ°æœ€å°
       DeltaE de = mmModel.calculateGetRGBDeltaE(recoverRGB, measureXYZ, true);
       return de.getCIE2000DeltaE();
     }

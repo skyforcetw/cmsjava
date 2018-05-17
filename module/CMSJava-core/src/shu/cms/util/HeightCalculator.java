@@ -6,8 +6,8 @@ import shu.math.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ­pºâ¾Éªí»P¬Û¾÷¤§¶¡¶ZÂ÷ªº¤u¨ã.
- * ¦ı¬O¤£¤Ó·Ç½T,¤£«ØÄ³¨Ï¥Î.
+ * è¨ˆç®—å°è¡¨èˆ‡ç›¸æ©Ÿä¹‹é–“è·é›¢çš„å·¥å…·.
+ * ä½†æ˜¯ä¸å¤ªæº–ç¢º,ä¸å»ºè­°ä½¿ç”¨.
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

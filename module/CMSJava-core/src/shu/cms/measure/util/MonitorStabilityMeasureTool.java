@@ -88,9 +88,9 @@ public class MonitorStabilityMeasureTool {
 
   public List<Patch> measure(long periodInMinute) {
     JOptionPane.showMessageDialog(mt.getMeasureWindow(),
-                                  "½Ğ±N" + meter.getType().name() +
-                                  "©ñ¸m¦b¿Ã¹õ¤W,¨Ã«ö¤U <½T©w> ¶i¦æ¶q´ú.",
-                                  "Ã­©w«×¶q´ú½T»{",
+                                  "è«‹å°‡" + meter.getType().name() +
+                                  "æ”¾ç½®åœ¨è¢å¹•ä¸Š,ä¸¦æŒ‰ä¸‹ <ç¢ºå®š> é€²è¡Œé‡æ¸¬.",
+                                  "ç©©å®šåº¦é‡æ¸¬ç¢ºèª",
                                   JOptionPane.INFORMATION_MESSAGE);
 
     long period = periodInMinute * 60 * 1000;
@@ -104,7 +104,7 @@ public class MonitorStabilityMeasureTool {
       patchList.add(p);
 //      Measure m = new Measure(time, p.getXYZ());
 //      measureList.add(m);
-      mt.setTitle("³Ñ¾l: " + String.valueOf( (period - time) / 1000) + "¬í");
+      mt.setTitle("å‰©é¤˜: " + String.valueOf( (period - time) / 1000) + "ç§’");
     }
     mt.setMeasureWindowsVisible(false);
 //    return new Result(measureList, patchList);

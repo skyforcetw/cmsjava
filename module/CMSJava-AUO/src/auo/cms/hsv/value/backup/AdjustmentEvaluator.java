@@ -45,7 +45,7 @@ public class AdjustmentEvaluator {
   //========================================================================
   // fitting setting
   //========================================================================
-  //¦h¶µ¦¡ªº3D fitting
+  //å¤šé …å¼çš„3D fitting
   static boolean poly3DFit = false;
   static boolean simpleFit = true;
   static boolean plotting2D = false;
@@ -57,10 +57,10 @@ public class AdjustmentEvaluator {
   static boolean showcoef = true;
   static boolean showOrg = false;
   static boolean showOrg2D = false;
-  //¬O§_­n±ÛÂàµø¨¤
+  //æ˜¯å¦è¦æ—‹è½‰è¦–è§’
   static boolean rotate2Axis = true;
   static int rotateAxis = 1;
-  //²Ä¤G¶b¬O§_­nauto scale
+  //ç¬¬äºŒè»¸æ˜¯å¦è¦auto scale
   static boolean autoScaleAxis2 = false;
   //========================================================================
 
@@ -91,12 +91,12 @@ public class AdjustmentEvaluator {
           griddataSaturation[vv][ss] = deltaS;
         }
         if (ss == 0 && SKIP_NEUTRAL) {
-          //¬O§_²¤¹L¤¤©Ê¦â
+          //æ˜¯å¦ç•¥éä¸­æ€§è‰²
           grayDeltaValue[vv] = deltaV;
         }
         deltaV = deltaV - grayDeltaValue[vv];
         if (SKIP_HEAD_TAIL && (vv == 0 || vv == (PIECE - 1))) {
-          //¬O§_¥hÀY¥h§À
+          //æ˜¯å¦å»é ­å»å°¾
           deltaV = 0;
         }
 
@@ -297,7 +297,7 @@ public class AdjustmentEvaluator {
                                                 800, 800);
 
           //========================================================================
-          // ²£¥Í
+          // ç”¢ç”Ÿ
           //========================================================================
           double[][] griddata = new double[PIECE][PIECE];
           double[][] griddataSaturation = new double[PIECE][PIECE];
@@ -813,7 +813,7 @@ public class AdjustmentEvaluator {
                                    double[] vArray) {
 
     //======================================================================
-    // interpolation, ²£¥Í¥X¹ï·Óªí¶ñªº°òÂ¦­È
+    // interpolation, ç”¢ç”Ÿå‡ºå°ç…§è¡¨å¡«çš„åŸºç¤å€¼
     //======================================================================
     Plot2D testPlot = Plot2D.getInstance("Interpolation " + title);
     int index = 0;
@@ -932,7 +932,7 @@ public class AdjustmentEvaluator {
       double hue = (index * HUE_STEP) % 360;
       HSV hsv = new HSV(RGB.ColorSpace.sRGB, new double[] {hue, 100, 100});
       Color c = hsv.toRGB().getColor();
-      //¥¼¥¿³W¤Æªº¦±½u
+      //æœªæ­£è¦åŒ–çš„æ›²ç·š
 //      curveplot.addLinePlot(Integer.toString(index), c, 0, 255, curve);
 
       double max = Maths.max(curve);
@@ -1043,7 +1043,7 @@ public class AdjustmentEvaluator {
     curveplot.setFixedBounds(1, 0, 1);
     //==========================================================================
 
-    //poly­n¨D¥X¤@­ÓÁÍ¶Õ
+    //polyè¦æ±‚å‡ºä¸€å€‹è¶¨å‹¢
 
   }
 

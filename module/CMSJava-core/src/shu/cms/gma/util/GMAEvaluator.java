@@ -15,7 +15,7 @@ import shu.math.array.DoubleArray;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¦â°ì¹ï¬Mºtºâªkµû¦ô¾¹
+ * è‰²åŸŸå°æ˜ æ¼”ç®—æ³•è©•ä¼°å™¨
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -39,24 +39,24 @@ public class GMAEvaluator {
 
   public DeltaEReport evaluate(SpectraDatabase.Content type) {
     CIEXYZ white = IlluminantD50.getNormalizeXYZ();
-    //²£¥ÍXYZ°}¦C
+    //ç”¢ç”ŸXYZé™£åˆ—
     double[][] XYZValuesArray = produceXYZValuesArray(type);
     CIELCh.XYZ2LChabValues(XYZValuesArray,
                            white.getValues());
     double[][] LChValuesArray = XYZValuesArray;
-    //²£¥Í«İ´úªºLab­ì©l¸ê®Æ
+    //ç”¢ç”Ÿå¾…æ¸¬çš„LabåŸå§‹è³‡æ–™
     List<CIELab> originalLabList = produceCIELabList(LChValuesArray);
 
-    //¥Ø¼Ğ¦â°ì¬°sRGB
+    //ç›®æ¨™è‰²åŸŸç‚ºsRGB
     ProfileColorSpace sRGB = ProfileColorSpace.Instance.get(RGB.ColorSpace.
         sRGB);
     ClippingGMA gma = new ClippingGMA(sRGB, FocalPoint.FocalType.MultiByKMeans);
-    //¶i¦æ¦â°ìÀ£ÁY
+    //é€²è¡Œè‰²åŸŸå£“ç¸®
     gma.gamutMapping(LChValuesArray);
 
-    //­pºâÀ£ÁY«áªºLab
+    //è¨ˆç®—å£“ç¸®å¾Œçš„Lab
     List<CIELab> mappingLabList = produceCIELabList(LChValuesArray);
-    //¦â®t­pºâ
+    //è‰²å·®è¨ˆç®—
     DeltaEReport report = DeltaEReport.Instance.CIELabReport(originalLabList,
         mappingLabList);
     return report;
@@ -64,9 +64,9 @@ public class GMAEvaluator {
 
   public DeltaEReport evaluate2(SpectraDatabase.Content type) {
     CIEXYZ white = IlluminantD50.getNormalizeXYZ();
-    //²£¥ÍXYZ°}¦C
+    //ç”¢ç”ŸXYZé™£åˆ—
     double[][] XYZValuesArray = produceXYZValuesArray(type);
-    //²£¥Í«İ´úªºLab­ì©l¸ê®Æ
+    //ç”¢ç”Ÿå¾…æ¸¬çš„LabåŸå§‹è³‡æ–™
     List<CIELab> originalLabList = produceCIELabList(XYZValuesArray, white);
 
     if (true) {
@@ -78,11 +78,11 @@ public class GMAEvaluator {
                              white.getValues());
     }
 
-    //¥Ø¼Ğ¦â°ì¬°sRGB
+    //ç›®æ¨™è‰²åŸŸç‚ºsRGB
     ProfileColorSpace sRGB = ProfileColorSpace.Instance.get(RGB.ColorSpace.
         sRGB);
     ClippingGMA gma = new ClippingGMA(sRGB, FocalPoint.FocalType.MultiByKMeans);
-    //¶i¦æ¦â°ìÀ£ÁY
+    //é€²è¡Œè‰²åŸŸå£“ç¸®
     gma.gamutMapping(XYZValuesArray);
     if (true) {
       CIELCh.toLabValues(XYZValuesArray);
@@ -92,16 +92,16 @@ public class GMAEvaluator {
       CIELCh.LChab2XYZValues(XYZValuesArray, white.getValues());
     }
 
-    //­pºâÀ£ÁY«áªºLab
+    //è¨ˆç®—å£“ç¸®å¾Œçš„Lab
     List<CIELab> mappingLabList = produceCIELabList(XYZValuesArray, white);
-    //¦â®t­pºâ
+    //è‰²å·®è¨ˆç®—
     DeltaEReport report = DeltaEReport.Instance.CIELabReport(originalLabList,
         mappingLabList);
     return report;
   }
 
   /**
-   * ²£¥Í¥úÃĞ¸ê®Æ®wªºXYZ°}¦C(±Ä¥ÎPCS,¤]´N¬OD50ªºXYZ)
+   * ç”¢ç”Ÿå…‰è­œè³‡æ–™åº«çš„XYZé™£åˆ—(æ¡ç”¨PCS,ä¹Ÿå°±æ˜¯D50çš„XYZ)
    * @param type Type
    * @return double[][]
    */

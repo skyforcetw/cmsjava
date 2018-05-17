@@ -21,7 +21,7 @@ public final class CrossPoint {
       1, 1, 1};
 
   /**
-   * ¨ú±op0»Pp4ªº³s½u©ótriangleªº¥æÂI
+   * å–å¾—p0èˆ‡p4çš„é€£ç·šæ–¼triangleçš„äº¤é»
    * @param p0 CIELCh
    * @param p4 CIELCh
    * @param triangle CIELCh[]
@@ -75,7 +75,7 @@ public final class CrossPoint {
   }
 
   /**
-   * crossPoint¬O§_¸¨¦btriangle¸Ì
+   * crossPointæ˜¯å¦è½åœ¨triangleè£¡
    * @param crossPoint CIELCh
    * @param triangle CIELCh[]
    * @return boolean

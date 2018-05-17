@@ -31,7 +31,7 @@ public final class Spectra
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ¥Î¨Óªí¥Ü³o­Ó¥úÃĞªº©Ê½è,¥Ø«e¦bµ{¦¡¤º¨S¦³¨ä¯S§O¥Î³~
+   * ç”¨ä¾†è¡¨ç¤ºé€™å€‹å…‰è­œçš„æ€§è³ª,ç›®å‰åœ¨ç¨‹å¼å…§æ²’æœ‰å…¶ç‰¹åˆ¥ç”¨é€”
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -41,19 +41,19 @@ public final class Spectra
    * @version 1.0
    */
   public static enum SpectrumType {
-    NO_ASSIGN, //¥¼¯S§O«ü©w
-    EMISSION, //µo¥ú¥úÃĞ
-    REFLECTANCE, //¤Ï®g¥úÃĞ
-    FUNCTION, //¥úÃĞ¨ç¦¡
-    AMBIENTLIGHT, //Àô¹Ò¥ú¥úÃĞ
-    TRANSMISSION //¥úÃĞ¬ï³z²v
+    NO_ASSIGN, //æœªç‰¹åˆ¥æŒ‡å®š
+    EMISSION, //ç™¼å…‰å…‰è­œ
+    REFLECTANCE, //åå°„å…‰è­œ
+    FUNCTION, //å…‰è­œå‡½å¼
+    AMBIENTLIGHT, //ç’°å¢ƒå…‰å…‰è­œ
+    TRANSMISSION //å…‰è­œç©¿é€ç‡
   }
 
   /**
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ¥Î¨Óªí¥Ü³o­Ó¥úÃĞ³æ¦ìªº©Ê½è,¥Ø«e¦bµ{¦¡¤º¨S¦³¨ä¯S§O¥Î³~
+   * ç”¨ä¾†è¡¨ç¤ºé€™å€‹å…‰è­œå–®ä½çš„æ€§è³ª,ç›®å‰åœ¨ç¨‹å¼å…§æ²’æœ‰å…¶ç‰¹åˆ¥ç”¨é€”
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -75,7 +75,7 @@ public final class Spectra
   }
 
   /**
-   * ¬O§_¬O¯à¶q­È
+   * æ˜¯å¦æ˜¯èƒ½é‡å€¼
    * @return boolean
    */
   public final boolean isPowerSpectrum() {
@@ -139,7 +139,7 @@ public final class Spectra
   }
 
   /**
-   * ±N³Ì¤j­È¥¿³W¤Æ¨ì1
+   * å°‡æœ€å¤§å€¼æ­£è¦åŒ–åˆ°1
    */
   public void normalizeDataToMax() {
     checkReadOnly();
@@ -150,7 +150,7 @@ public final class Spectra
   }
 
   /**
-   * ¥Hnormal§@¬°¥¿³W¤Æ1
+   * ä»¥normalä½œç‚ºæ­£è¦åŒ–1
    * @param normal double
    */
   public void normalizeData(double normal) {
@@ -163,7 +163,7 @@ public final class Spectra
   }
 
   /**
-   * ¨ú±o®p­È
+   * å–å¾—å³°å€¼
    * @return int
    */
   public int getPeak() {
@@ -185,7 +185,7 @@ public final class Spectra
   }
 
   /**
-   * ©İ®i¸ê®Æªº¼Æ¶q
+   * æ‹“å±•è³‡æ–™çš„æ•¸é‡
    * @param start int
    * @param end int
    * @return Spectra
@@ -234,7 +234,7 @@ public final class Spectra
   }
 
   /**
-   * ­pºâXYZ,»İ­n±a¤JCMF¤~¥i­pºâ
+   * è¨ˆç®—XYZ,éœ€è¦å¸¶å…¥CMFæ‰å¯è¨ˆç®—
    * @param cmf ColorMatchingFunction
    * @return CIEXYZ
    */
@@ -257,7 +257,7 @@ public final class Spectra
   }
 
   /**
-   * ­pºâ¥úÃĞ¤Ï®g²v
+   * è¨ˆç®—å…‰è­œåå°„ç‡
    * @param illuminant Illuminant
    * @return Spectra
    */
@@ -286,8 +286,8 @@ public final class Spectra
   }
 
   /**
-   * ±q¥úÃĞ¤Ï®g²v¥H¤Î¥ú·½¥úÃĞ¯à¶q­È­pºâ¤Ï®gª«¥úÃĞ¯à¶q
-   * reflectSpectra»Pilluminantªº¥úÃĞ¸ê®Æµ§¼Æ¥i¤£¦P
+   * å¾å…‰è­œåå°„ç‡ä»¥åŠå…‰æºå…‰è­œèƒ½é‡å€¼è¨ˆç®—åå°„ç‰©å…‰è­œèƒ½é‡
+   * reflectSpectraèˆ‡illuminantçš„å…‰è­œè³‡æ–™ç­†æ•¸å¯ä¸åŒ
    * @param reflectSpectra List
    * @param illuminant Illuminant
    * @return List
@@ -303,15 +303,15 @@ public final class Spectra
       reflectSpectra, Illuminant illuminant, boolean takeBigInterval) {
     Spectra firstReflect = reflectSpectra.get(0);
 
-    //¨úinterval
+    //å–interval
     int interval = Math.min(firstReflect.getInterval(),
                             illuminant.getInterval());
     if (takeBigInterval) {
-      //¦pªG¬O¨ú¤jªºinterval
+      //å¦‚æœæ˜¯å–å¤§çš„interval
       interval = Math.max(firstReflect.getInterval(),
                           illuminant.getInterval());
     }
-    //¨ú½d³ò¸û¤pªº
+    //å–ç¯„åœè¼ƒå°çš„
     int start = Math.max(firstReflect.getStart(), illuminant.getStart());
     int end = Math.min(firstReflect.getEnd(), illuminant.getEnd());
     int size = reflectSpectra.size();
@@ -332,8 +332,8 @@ public final class Spectra
   }
 
   /**
-   * ±q¥úÃĞ¤Ï®g²v¥H¤Î¥ú·½¥úÃĞ¯à¶q­È­pºâ¤Ï®gª«¥úÃĞ¯à¶q
-   * reflectSpectra»Pilluminantªº¥úÃĞ¸ê®Æµ§¼Æ¥i¶·¬Û¦P
+   * å¾å…‰è­œåå°„ç‡ä»¥åŠå…‰æºå…‰è­œèƒ½é‡å€¼è¨ˆç®—åå°„ç‰©å…‰è­œèƒ½é‡
+   * reflectSpectraèˆ‡illuminantçš„å…‰è­œè³‡æ–™ç­†æ•¸å¯é ˆç›¸åŒ
    * @param reflectSpectra List
    * @param illuminantSpectra Spectra
    * @return List
@@ -356,7 +356,7 @@ public final class Spectra
   private static boolean fillZero = false;
 
   /**
-   * ¨âÃä¤£¨¬³B¬O§_¸É¹s(§_«h´N¬O¥ÎÀY/§Àªº¼Æ¥h¸É)
+   * å…©é‚Šä¸è¶³è™•æ˜¯å¦è£œé›¶(å¦å‰‡å°±æ˜¯ç”¨é ­/å°¾çš„æ•¸å»è£œ)
    * @param zero boolean
    */
   public static void setFillZero(boolean zero) {
@@ -388,12 +388,12 @@ public final class Spectra
   }
 
   /**
-   * ©İ®i¸ê®Æªº¼Æ¶q
+   * æ‹“å±•è³‡æ–™çš„æ•¸é‡
    * @param data double[]
    * @param leftBorder int
-   * ¥ªÃä­n¶ñªº¼Æ¶q
+   * å·¦é‚Šè¦å¡«çš„æ•¸é‡
    * @param rightBorder int
-   * ¥kÃä­n¶ñªº¼Æ¶q
+   * å³é‚Šè¦å¡«çš„æ•¸é‡
    * @return double[]
    */
   private static double[] fillPurlieusData(final double[] data,
@@ -422,8 +422,8 @@ public final class Spectra
   }
 
   /**
-   * ³z¹Lintervalªº³]©w°µ¾A·íªº¬Û­¼¥[Á`­pºâ
-   * data1»Pdata2¨ã¦³¤£¦Pinterval®É,°µ¥[Á`­pºâ
+   * é€éintervalçš„è¨­å®šåšé©ç•¶çš„ç›¸ä¹˜åŠ ç¸½è¨ˆç®—
+   * data1èˆ‡data2å…·æœ‰ä¸åŒintervalæ™‚,åšåŠ ç¸½è¨ˆç®—
    * @param start int
    * @param end int
    * @param data1 double[]
@@ -459,7 +459,7 @@ public final class Spectra
   }
 
   /**
-   * data1©Mdata2¨ã¦³¬Û¦Pªºinterval
+   * data1å’Œdata2å…·æœ‰ç›¸åŒçš„interval
    * @param start int
    * @param end int
    * @param interval int
@@ -511,7 +511,7 @@ public final class Spectra
   }
 
   /**
-   * ¸ÑªRCxFªºConditions
+   * è§£æCxFçš„Conditions
    * @param conditions Conditions
    */
   private void parseConditions(Conditions conditions) {
@@ -537,7 +537,7 @@ public final class Spectra
   }
 
   /**
-   * ¸ÑªRCxFªºSpectrum
+   * è§£æCxFçš„Spectrum
    * @param spectrum Spectrum
    */
   private void parseSpectrum(Spectrum spectrum) {
@@ -550,7 +550,7 @@ public final class Spectra
   }
 
   /**
-   * ¸ÑªR¦^CxFªºSpectrum
+   * è§£æå›CxFçš„Spectrum
    * @return Spectrum
    */
   public Spectrum toSpectrum() {
@@ -595,7 +595,7 @@ public final class Spectra
   }
 
   /**
-   * ¨ú±o¨ã¦³¸ê®Æªº¥ª¾F±µªiªø
+   * å–å¾—å…·æœ‰è³‡æ–™çš„å·¦é„°æ¥æ³¢é•·
    * @param wavelength int
    * @return int
    */
@@ -607,7 +607,7 @@ public final class Spectra
   }
 
   /**
-   * ¨ú±o¨ã¦³¸ê®Æªº¥k¾F±µªiªø
+   * å–å¾—å…·æœ‰è³‡æ–™çš„å³é„°æ¥æ³¢é•·
    * @param wavelength int
    * @return int
    */
@@ -635,11 +635,11 @@ public final class Spectra
   }
 
   /**
-   * ¶i¦æ¤º´¡
+   * é€²è¡Œå…§æ’
    * @param newInterval int
-   * ·sªº¶¡¹j
+   * æ–°çš„é–“éš”
    * @param interpolationType Type
-   * ¨Ï¥Îªº¤º´¡ªk
+   * ä½¿ç”¨çš„å…§æ’æ³•
    * @return Spectra
    */
   private Spectra doInterpolating(int newInterval,
@@ -651,7 +651,7 @@ public final class Spectra
       int lambda = start + x * newInterval;
       int left1 = getLeftAdjoin(lambda);
       if (left1 == lambda) {
-        //¤£¥Î¤º´¡ªº³õ¦X
+        //ä¸ç”¨å…§æ’çš„å ´åˆ
         newData[x] = this.getData(lambda);
         continue;
       }
@@ -667,7 +667,7 @@ public final class Spectra
       else {
         int right1 = getRightAdjoin(lambda);
         if (left1 == start) {
-          //¨ì¤F¥ªÃä¬É­­
+          //åˆ°äº†å·¦é‚Šç•Œé™
           int left2 = left1;
           left1 = getRightAdjoin(left2 + 1);
           right1 = getRightAdjoin(left1 + 1);
@@ -679,7 +679,7 @@ public final class Spectra
               getData(left2), getData(left1), getData(right1), getData(right2)};
         }
         else if (right1 == end) {
-          //¨ì¤F¥kÃä¬É­­
+          //åˆ°äº†å³é‚Šç•Œé™
           int right2 = right1;
           right1 = getLeftAdjoin(right2 - 1);
           left1 = getLeftAdjoin(right1 - 1);
@@ -710,7 +710,7 @@ public final class Spectra
   }
 
   /**
-   * ­¼¤W¥t¥~¤@­Ó¥úÃĞ¤ºªº¼Æ­È
+   * ä¹˜ä¸Šå¦å¤–ä¸€å€‹å…‰è­œå…§çš„æ•¸å€¼
    * @param spectra Spectra
    */
   public void times(Spectra spectra) {
@@ -784,7 +784,7 @@ public final class Spectra
   }
 
   /**
-   * °£¤W¥t¥~¤@­Ó¥úÃĞ¤ºªº¼Æ­È
+   * é™¤ä¸Šå¦å¤–ä¸€å€‹å…‰è­œå…§çš„æ•¸å€¼
    * @param spectra Spectra
    */
   public void divide(Spectra spectra) {
@@ -820,7 +820,7 @@ public final class Spectra
   }
 
   /**
-   * ±N¥úÃĞ¸ê®Æ´î¶q¦¨spectraªº¤j¤p
+   * å°‡å…‰è­œè³‡æ–™æ¸›é‡æˆspectraçš„å¤§å°
    * @param spectra Spectra
    * @return Spectra
    */
@@ -829,7 +829,7 @@ public final class Spectra
   }
 
   /**
-   * ±N¥úÃĞ¸ê®Æ´î¶q
+   * å°‡å…‰è­œè³‡æ–™æ¸›é‡
    * @param start int
    * @param end int
    * @param interval int
@@ -850,7 +850,7 @@ public final class Spectra
   }
 
   /**
-   * ±N­t­È½Õ¾ã¦¨¬°0
+   * å°‡è² å€¼èª¿æ•´æˆç‚º0
    */
   public void rationalize() {
     checkReadOnly();
@@ -862,7 +862,7 @@ public final class Spectra
   }
 
   /**
-   * ±NspectraArray¤ºªºSpectra¶i¦æ¥­§¡
+   * å°‡spectraArrayå…§çš„Spectraé€²è¡Œå¹³å‡
    * @param spectraArray Spectra[]
    * @return Spectra
    */
@@ -896,7 +896,7 @@ public final class Spectra
   }
 
   /**
-   * ©İ®i¸ê®Æ¥B¤º´¡
+   * æ‹“å±•è³‡æ–™ä¸”å…§æ’
    * @param start int
    * @param end int
    * @param interval int
@@ -909,15 +909,15 @@ public final class Spectra
                                           interpolationType) {
     checkReadOnly();
 
-    //©İ®i
+    //æ‹“å±•
     Spectra s = doFillPurlieus(start, end);
-    //¤º´¡
+    //å…§æ’
     s = s.doInterpolating(interval, interpolationType);
     return s;
   }
 
   /**
-   * ©İ®i¸ê®Æ¥B¤º´¡
+   * æ‹“å±•è³‡æ–™ä¸”å…§æ’
    * @param start int
    * @param end int
    * @param interval int

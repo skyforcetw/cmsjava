@@ -111,7 +111,7 @@ public class IPT
   }
 
   /**
-   * ±N­ì¥»ªºIPT¤Ø«×Âà¦¨Labªº¤Ø«×
+   * å°‡åŸæœ¬çš„IPTå°ºåº¦è½‰æˆLabçš„å°ºåº¦
    */
   public final void scaleToCIELab() {
     I *= 100.;
@@ -121,7 +121,7 @@ public class IPT
   }
 
   /**
-   * ±NiptValues­ì¥»ªºIPT¤Ø«×Âà¦¨Labªº¤Ø«×
+   * å°‡iptValuesåŸæœ¬çš„IPTå°ºåº¦è½‰æˆLabçš„å°ºåº¦
    * @param iptValues double[]
    * @return double[]
    */
@@ -133,7 +133,7 @@ public class IPT
   }
 
   /**
-   * ±NLab¤Ø«×ªºIPTÂà¦^IPT­ì¥»ªº¤Ø«×
+   * å°‡Labå°ºåº¦çš„IPTè½‰å›IPTåŸæœ¬çš„å°ºåº¦
    */
   public final void recoverCIELabScale() {
     I /= 100.;
@@ -143,7 +143,7 @@ public class IPT
   }
 
   /**
-   * ±NLab¤Ø«×ªºiptValuesÂà¦^IPT­ì¥»ªº¤Ø«×
+   * å°‡Labå°ºåº¦çš„iptValuesè½‰å›IPTåŸæœ¬çš„å°ºåº¦
    * @param iptValues double[]
    * @return double[]
    */
@@ -185,7 +185,7 @@ public class IPT
    *
    * @param IPTValuesArray double[][]
    * @param recoverCIELabScale boolean
-   * @todo M ¥Î¦h°õ¦æºü³B²z
+   * @todo M ç”¨å¤šåŸ·è¡Œç·’è™•ç†
    */
   public static final void toXYZValues(final double[][] IPTValuesArray,
                                        boolean recoverCIELabScale) {
@@ -217,7 +217,7 @@ public class IPT
   }
 
   /**
-   * IPTValuesÂà¦^¨ìXYZValues«á, ¦A¥HcatTypeªº¦â¾AÀ³Âà´«¨ìwhitePoint¤UªºXYZValues
+   * IPTValuesè½‰å›åˆ°XYZValueså¾Œ, å†ä»¥catTypeçš„è‰²é©æ‡‰è½‰æ›åˆ°whitePointä¸‹çš„XYZValues
    * @param IPTValues double[]
    * @param whiteValues double[]
    * @param catType CATType
@@ -246,7 +246,7 @@ public class IPT
    *
    * @param XYZValuesArray double[][]
    * @param scaleToCIELab boolean
-   * @todo M ¥Î¦h°õ¦æºü³B²z
+   * @todo M ç”¨å¤šåŸ·è¡Œç·’è™•ç†
    */
   public final static void fromXYZValues(final double[][] XYZValuesArray,
                                          boolean scaleToCIELab) {
@@ -267,7 +267,7 @@ public class IPT
 
   /**
    *
-   * @param XYZValues double[] D65¤UªºXYZValues
+   * @param XYZValues double[] D65ä¸‹çš„XYZValues
    * @return double[]
    */
   public final static double[] fromXYZValues(final double[] XYZValues) {
@@ -278,9 +278,9 @@ public class IPT
   }
 
   /**
-   * ·|¥ı±NXYZValues¥HcatTypeªº¦â¾AÀ³Âà´«¨ìD65, ¦A¶i¦æIPT Valuesªº¹Bºâ
+   * æœƒå…ˆå°‡XYZValuesä»¥catTypeçš„è‰²é©æ‡‰è½‰æ›åˆ°D65, å†é€²è¡ŒIPT Valuesçš„é‹ç®—
    * @param XYZValues double[]
-   * @param whiteXYZValues double[] XYZValuesªº¥ÕÂI
+   * @param whiteXYZValues double[] XYZValuesçš„ç™½é»
    * @return double[]
    */
   public final static double[] fromXYZValues(final double[] XYZValues,

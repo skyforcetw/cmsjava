@@ -1,5 +1,7 @@
-package auo.cms.frc;
+package fiti.cms.frc;
 
+import fiti.cms.frc.impl.FRCUtil;
+import fiti.cms.frc.impl.CheckTool;
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,7 +13,6 @@ import shu.io.ascii.ASCIIFileFormat;
 import shu.io.ascii.ASCIIFileFormatParser;
 import shu.io.files.CSVFile;
 import shu.math.Maths;
-import auo.cms.frc.impl.*;
 
 /**
  * <p>Title: </p>
@@ -574,7 +575,7 @@ public class FRCPattern implements Serializable {
         String filename = "D:/My Documents/�u�@/Project/FRC/FRC Research/NewFRC/AllNewFRC2.txt";
 
 //         AUOFRC frc = new AUOFRC(filename, AUOFRC.PatternCount.FRC16);
-        FRCPattern frc = new FRCPattern(filename);
-        System.out.println(frc);
+//        FRCPattern frc = new FRCPattern(filename);
+//        System.out.println(frc);
     }
 }

@@ -21,7 +21,7 @@ import shu.plot.SkinInterface;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ���Ѥ@�Ǳ`�Ϊ�plot�ϥΤ覡,��֭��Ъ�code
+ * 提供一些常用的plot使用方式,減少重覆的code
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

@@ -12,7 +12,7 @@ import shu.math.regress.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ®Õ¥¿¥ú·½ªº§¡¤Ã«×
+ * æ ¡æ­£å…‰æºçš„å‡å‹»åº¦
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -36,7 +36,7 @@ public class LightUniform {
   }
 
   /**
-   * HSBªº®ÄªGÀu©óYUV
+   * HSBçš„æ•ˆæœå„ªæ–¼YUV
    */
   protected final static LightUniformColorSpace LIGHT_UNIFORM_COLOR_SPACE =
       LightUniformColorSpace.HSB;
@@ -68,7 +68,7 @@ public class LightUniform {
   }
 
   /**
-   * ¥Ñµ{¦¡¦Û°Ê´M§ä³Ì¨Îªº¶µ¼Æ
+   * ç”±ç¨‹å¼è‡ªå‹•å°‹æ‰¾æœ€ä½³çš„é …æ•¸
    * @param device Device
    * @param targetIlluminant Type
    * @deprecated
@@ -81,10 +81,10 @@ public class LightUniform {
   }
 
   /**
-   * §ä¨ì³Ì¾A¦h¶µ¦¡
-   * ¦pªG¨Ì·Ó¦^Âkªºrms°µµû¦ô,©Òµû¦ôªº¬O¦^Âk¹ï©ó¨C¤@­Ó¼Ë¥»ªºÁÙ­ì©Ê
-   * ¦pªG¦^Âk«á°w¹ï¾ã­Ó¼Ë¥»½d³ò,­pºâ¨ärgªÅ¶¡¤UªºÅÜ²§¼Æ,¤~¯àÀËÅç¨ä¤£§¡¤Ã®Õ¥¿ªº®ÄªG
-   * ¦Ó¼Ë¥»¼Æ¬Æ¦Ü¥i¥H´£°ª¬°­ì¥»ªº2­¿¬Æ¦Ü¬O4­¿
+   * æ‰¾åˆ°æœ€é©å¤šé …å¼
+   * å¦‚æœä¾ç…§å›æ­¸çš„rmsåšè©•ä¼°,æ‰€è©•ä¼°çš„æ˜¯å›æ­¸å°æ–¼æ¯ä¸€å€‹æ¨£æœ¬çš„é‚„åŸæ€§
+   * å¦‚æœå›æ­¸å¾Œé‡å°æ•´å€‹æ¨£æœ¬ç¯„åœ,è¨ˆç®—å…¶rgç©ºé–“ä¸‹çš„è®Šç•°æ•¸,æ‰èƒ½æª¢é©—å…¶ä¸å‡å‹»æ ¡æ­£çš„æ•ˆæœ
+   * è€Œæ¨£æœ¬æ•¸ç”šè‡³å¯ä»¥æé«˜ç‚ºåŸæœ¬çš„2å€ç”šè‡³æ˜¯4å€
    * @return COEF_3
    */
   protected Polynomial.COEF_3 findBestPolynomialCoef() {
@@ -124,7 +124,7 @@ public class LightUniform {
   }
 
   /**
-   * ¨ú±o§¡¤Ã¤Æ«Y¼Æ
+   * å–å¾—å‡å‹»åŒ–ä¿‚æ•¸
    * @param x double
    * @param y double
    * @param targetBorder double
@@ -135,7 +135,7 @@ public class LightUniform {
   }
 
   /**
-   * ¨ú±o§¡¤Ã¤Æ«Y¼Æ
+   * å–å¾—å‡å‹»åŒ–ä¿‚æ•¸
    * @param x double
    * @param y double
    * @param targetBorder double
@@ -196,7 +196,7 @@ public class LightUniform {
   }
 
   /**
-   * ¶i¦æ§¡¤Ã¤Æ®Õ¥¿
+   * é€²è¡Œå‡å‹»åŒ–æ ¡æ­£
    * @param input double[]
    * @param x double
    * @param y double
@@ -209,7 +209,7 @@ public class LightUniform {
   }
 
   /**
-   * ¶i¦æ¦^Âk«Y¼Æªº¹Bºâ
+   * é€²è¡Œå›æ­¸ä¿‚æ•¸çš„é‹ç®—
    * @param polynomialCoef COEF_3
    * @return double[][]
    */
@@ -249,8 +249,8 @@ public class LightUniform {
   }
 
   /**
-   * ¥Î¨ÓÅçÃÒ¤£§¡¤Ã®Õ¥¿ªº®ÄªG.
-   * ¤èªk¬°±N­ì¥»¦Ç¥dªºrgb¦A±a¤J¶i¦æ®Õ¥¿,µM«á­pºâ¨äB­Èªº¼Ğ·Ç®t
+   * ç”¨ä¾†é©—è­‰ä¸å‡å‹»æ ¡æ­£çš„æ•ˆæœ.
+   * æ–¹æ³•ç‚ºå°‡åŸæœ¬ç°å¡çš„rgbå†å¸¶å…¥é€²è¡Œæ ¡æ­£,ç„¶å¾Œè¨ˆç®—å…¶Bå€¼çš„æ¨™æº–å·®
    * @return double
    */
   protected double getVerifyFactor() {
@@ -269,7 +269,7 @@ public class LightUniform {
   }
 
   /**
-   * ²£¥ÍoutputData
+   * ç”¢ç”ŸoutputData
    * @param rgbList List
    * @return double[][]
    */
@@ -279,13 +279,13 @@ public class LightUniform {
 
     switch (UNIFORM_BASE) {
       case Center: {
-        //¥Î¤¤¤ß°µ°ò·Ç
+        //ç”¨ä¸­å¿ƒåšåŸºæº–
         int middleLine = size / lgorowLength / 2;
         centerIndex = lgorowLength * middleLine + lgorowLength / 2;
       }
       break;
       case TopCenter: {
-        //¥Î³Ì¤W¤è³Ì°ò·Ç
+        //ç”¨æœ€ä¸Šæ–¹æœ€åŸºæº–
         int middleLine = size / lgorowLength / 2;
         centerIndex = lgorowLength * middleLine;
       }
@@ -326,7 +326,7 @@ public class LightUniform {
   }
 
   /**
-   * ­pºâ¾Éªí¦â¶ôªº¹ïÀ³¸ê®Æ
+   * è¨ˆç®—å°è¡¨è‰²å¡Šçš„å°æ‡‰è³‡æ–™
    * @param patchNumber int
    * @param totalPatch int
    * @param lgorowLength int

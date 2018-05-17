@@ -8,7 +8,7 @@ import shu.cms.profile.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥HRGBªÅ¶¡§@clipªº¦â°ì¹ïÀ³
+ * ä»¥RGBç©ºé–“ä½œclipçš„è‰²åŸŸå°æ‡‰
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -40,12 +40,12 @@ public class RGBClippingGMA
    */
   protected CIELCh _gamutMapping(CIELCh LCh) {
     LCh.getValues(tmpValues);
-    //±NLChÂà¦¨RGB
+    //å°‡LChè½‰æˆRGB
     rgb.setValues(pcs.fromPCSCIELChValues(tmpValues));
-    //¶i¦æ¦X²z¤Æ(clip)
+    //é€²è¡Œåˆç†åŒ–(clip)
     rgb.rationalize();
     rgb.getValues(tmpValues);
-    //clip§¹ªºrgb,¦AÂà¦¨LCh,¦^¶Ç
+    //clipå®Œçš„rgb,å†è½‰æˆLCh,å›å‚³
     return new CIELCh(pcs.toPCSCIELChValues(tmpValues));
   }
 

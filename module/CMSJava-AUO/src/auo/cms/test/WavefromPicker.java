@@ -29,7 +29,7 @@ public class WavefromPicker {
 
     try {
       BufferedReader br = new BufferedReader(new FileReader(
-          "D:/≥n≈È/nobody zone/exp data/0914/test.csv"));
+          "D:/‡∏ìn‡∏•‡πâ/nobody zone/exp data/0914/test.csv"));
       boolean overThreshhold = false;
       ArrayList<Double> overThreshholdList = null;
 

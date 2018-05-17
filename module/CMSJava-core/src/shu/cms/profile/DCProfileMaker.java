@@ -27,7 +27,7 @@ public class DCProfileMaker
     init();
 
     //==========================================================================
-    //°Ñ¼Æªº·Ç³Æ
+    //åƒæ•¸çš„æº–å‚™
     //==========================================================================
     deviceWhite = dcModel.getWhitePatchXYZ();
     deviceNormalizeWhite = (CIEXYZ) deviceWhite.clone();
@@ -35,29 +35,29 @@ public class DCProfileMaker
     //==========================================================================
 
     //==========================================================================
-    //²£¥Í¦â¾AÀ³
+    //ç”¢ç”Ÿè‰²é©æ‡‰
     //==========================================================================
-    //¦â¾AÀ³¼Ò²Õ¬O¥H relativeDeviceNormalizeWhite¬°Âà´«°òÂ¦,¨Ï¥Î¤W­n¯S§Oª`·N
+    //è‰²é©æ‡‰æ¨¡çµ„æ˜¯ä»¥ relativeDeviceNormalizeWhiteç‚ºè½‰æ›åŸºç¤,ä½¿ç”¨ä¸Šè¦ç‰¹åˆ¥æ³¨æ„
     D50chromaticAdaptation = new ChromaticAdaptation(deviceNormalizeWhite,
         D50White, this.catType);
     //==========================================================================
   }
 
   /**
-   * »s§@¼Æ¦ì¬Û¾÷ªºProfile
+   * è£½ä½œæ•¸ä½ç›¸æ©Ÿçš„Profile
    * @param dcModel DCModel
    * @return Profile
    */
   public Profile makeLabProfile(DCModel dcModel) {
     //==========================================================================
-    //°Ñ¼Æªº·Ç³Æ
+    //åƒæ•¸çš„æº–å‚™
     //==========================================================================
     init(dcModel);
     //==========================================================================
 
 
     //==========================================================================
-    //²£¥Í¹ï·Óªí
+    //ç”¢ç”Ÿå°ç…§è¡¨
     //==========================================================================
     double[][][] AToB = produceRGBToXYZArray(dcModel, NUMBER_OF_GRID_POINTS, true);
     CIELab.fromXYZValues(AToB[1], D50White.getValues());
@@ -67,7 +67,7 @@ public class DCProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Í¦¨
+    // ç”Ÿæˆ
     //==========================================================================
     String description = dcModel.getModelFactor().getModelFactorFilename() +
         " Lab-" + this.catType.name();
@@ -80,8 +80,8 @@ public class DCProfileMaker
   }
 
   /**
-   * ¥H­×¥¿ª©ªºCIECAM¶i¦æJabLab Profileªº»s§@
-   * (ps:´X¥GµL®t²§)
+   * ä»¥ä¿®æ­£ç‰ˆçš„CIECAMé€²è¡ŒJabLab Profileçš„è£½ä½œ
+   * (ps:å¹¾ä¹ç„¡å·®ç•°)
    * @param dcModel DCModel
    * @param vc ViewingConditions
    * @return Profile
@@ -96,32 +96,32 @@ public class DCProfileMaker
 
   public Profile makeJabLabProfile(DCModel dcModel, ViewingConditions vc) {
     //==========================================================================
-    //°Ñ¼Æªº·Ç³Æ
+    //åƒæ•¸çš„æº–å‚™
     //==========================================================================
     init(dcModel);
     //==========================================================================
 
 
     //==========================================================================
-    //²£¥Í¹ï·Óªí
+    //ç”¢ç”Ÿå°ç…§è¡¨
     //==========================================================================
     double[][][] AToB = produceRGBToXYZArray(dcModel, NUMBER_OF_GRID_POINTS, false);
-    //ÂàJab
+    //è½‰Jab
     report.errorXYZ2JabCount = ProfileUtils.XYZToJabArray(AToB[1], vc);
-    //¦X²z¤Æ
+    //åˆç†åŒ–
     CIELab.rationalize(AToB[1]);
-    //·t³¡ÃC¦âªº­×¥¿
+    //æš—éƒ¨é¡è‰²çš„ä¿®æ­£
     report.errorDarkLabValuesCount1 = ProfileUtils.fixDarkLabValue(AToB[1]);
-    //ÂàXYZ
+    //è½‰XYZ
     report.errorJab2XYZCount = ProfileUtils.JabToXYZArray(AToB[1],
         referenceMediumViewingConditions);
-    //¦X²z¤Æ2
+    //åˆç†åŒ–2
     CIEXYZ.rationalize(AToB[1]);
-    //ÂàLAb
+    //è½‰LAb
     CIELab.fromXYZValues(AToB[1], D50White.getValues());
-    //¦X²z¤Æ3
+    //åˆç†åŒ–3
     CIELab.rationalize(AToB[1]);
-    //·t³¡ÃC¦âªº­×¥¿
+    //æš—éƒ¨é¡è‰²çš„ä¿®æ­£
     report.errorDarkLabValuesCount2 = ProfileUtils.fixDarkLabValue(AToB[1]);
 
     ColorSpaceConnectedLUT AToB1 = ProfileUtils.produceRGBToLabCSCLUT(dcModel,
@@ -129,7 +129,7 @@ public class DCProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Í¦¨
+    // ç”Ÿæˆ
     //==========================================================================
     String description = dcModel.getModelFactor().getModelFactorFilename() +
         " JabLab" + (CIECAM02.isModifyState() ? "Modified-" : "-") +
@@ -143,14 +143,14 @@ public class DCProfileMaker
 
   public Profile makeJabProfile(DCModel dcModel, ViewingConditions vc) {
     //==========================================================================
-    //°Ñ¼Æªº·Ç³Æ
+    //åƒæ•¸çš„æº–å‚™
     //==========================================================================
     init(dcModel);
     //==========================================================================
 
 
     //==========================================================================
-    //²£¥Í¹ï·Óªí
+    //ç”¢ç”Ÿå°ç…§è¡¨
     //==========================================================================
     double[][][] AToB = produceRGBToXYZArray(dcModel, NUMBER_OF_GRID_POINTS, false);
     report.errorXYZ2JabCount = ProfileUtils.XYZToJabArray(AToB[1], vc);
@@ -161,7 +161,7 @@ public class DCProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Í¦¨
+    // ç”Ÿæˆ
     //==========================================================================
     String description = dcModel.getModelFactor().getModelFactorFilename() +
         " Jab" + (CIECAM02.isModifyState() ? "Modified-" : "-") +
@@ -178,7 +178,7 @@ public class DCProfileMaker
                                               int grid, boolean CATToD50) {
 
     //==========================================================================
-    // ¥²­nªº¼Æ¾Ú¥ı·Ç³Æ¦n
+    // å¿…è¦çš„æ•¸æ“šå…ˆæº–å‚™å¥½
     //==========================================================================
     double[][][] inputAndOutput = new double[2][][];
     double step = 255. / (grid - 1);
@@ -190,7 +190,7 @@ public class DCProfileMaker
                       RGB.MaxValue.Double1);
 
     //==========================================================================
-    // ­¡¥N²£¥Í©Ò¦³ªºRGB¹ï¬M¨ìªºXYZ
+    // è¿­ä»£ç”¢ç”Ÿæ‰€æœ‰çš„RGBå°æ˜ åˆ°çš„XYZ
     //==========================================================================
     for (double r = 0; r <= 255.; r += step) {
       for (double g = 0; g <= 255.; g += step) {
@@ -199,7 +199,7 @@ public class DCProfileMaker
               r / 255, g / 255, b / 255};
           rgb.setValues(input[index]);
           CIEXYZ XYZ = model.getXYZ(rgb, false);
-          //¥¿³W¤Æ
+          //æ­£è¦åŒ–
           XYZ.normalize(deviceNormalizeWhite);
           output[index] = XYZ.getValues();
           index++;
@@ -209,7 +209,7 @@ public class DCProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Ñ©ó²£¥Í¥X¨ÓªºXYZ³B©órelativeDeviceNormalizeWhite,©Ò¥H±oÂà¨ìPCS(D50)¨Ã¥B¦X²z¤Æ
+    // ç”±æ–¼ç”¢ç”Ÿå‡ºä¾†çš„XYZè™•æ–¼relativeDeviceNormalizeWhite,æ‰€ä»¥å¾—è½‰åˆ°PCS(D50)ä¸¦ä¸”åˆç†åŒ–
     //==========================================================================
     if (CATToD50) {
       output = D50chromaticAdaptation.adaptationToDestination(output);
@@ -227,7 +227,7 @@ public class DCProfileMaker
                                                  int grid) {
 
     //==========================================================================
-    // ¥²­nªº¼Æ¾Ú¥ı·Ç³Æ¦n
+    // å¿…è¦çš„æ•¸æ“šå…ˆæº–å‚™å¥½
     //==========================================================================
     double[][][] inputAndOutput = new double[2][][];
     double step = 255. / (grid - 1);
@@ -239,7 +239,7 @@ public class DCProfileMaker
                       RGB.MaxValue.Double1);
 
     //==========================================================================
-    // ­¡¥N²£¥Í©Ò¦³ªºRGB¹ï¬M¨ìªºXYZ
+    // è¿­ä»£ç”¢ç”Ÿæ‰€æœ‰çš„RGBå°æ˜ åˆ°çš„XYZ
     //==========================================================================
     for (double r = 0; r <= 255.; r += step) {
       for (double g = 0; g <= 255.; g += step) {
@@ -248,7 +248,7 @@ public class DCProfileMaker
               r / 255, g / 255, b / 255};
           rgb.setValues(input[index]);
           CIEXYZ XYZ = model.getXYZ(rgb, false);
-          //¥¿³W¤Æ
+          //æ­£è¦åŒ–
           XYZ.normalize(deviceNormalizeWhite);
           output[index] = XYZ.getValues();
           index++;
@@ -258,7 +258,7 @@ public class DCProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Ñ©ó²£¥Í¥X¨ÓªºXYZ³B©órelativeDeviceNormalizeWhite,©Ò¥H±oÂà¨ìPCS(D50)¨Ã¥B¦X²z¤Æ
+    // ç”±æ–¼ç”¢ç”Ÿå‡ºä¾†çš„XYZè™•æ–¼relativeDeviceNormalizeWhite,æ‰€ä»¥å¾—è½‰åˆ°PCS(D50)ä¸¦ä¸”åˆç†åŒ–
     //==========================================================================
     output = D50chromaticAdaptation.adaptationToDestination(output);
     CIEXYZ.rationalize(output);
@@ -273,7 +273,7 @@ public class DCProfileMaker
   public static void main(String[] args) {
 
     //==========================================================================
-    // ¥ÕÂI/Àô¹Ò³]©w
+    // ç™½é»/ç’°å¢ƒè¨­å®š
     //==========================================================================
     CIEXYZ whiteXYZ = LightSource.getIlluminant(LightSource.i1Pro.D50).
         getNormalizeXYZ();

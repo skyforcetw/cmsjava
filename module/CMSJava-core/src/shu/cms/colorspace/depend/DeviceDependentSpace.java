@@ -8,7 +8,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ³]³Æ¬Û¨Ì¦âªÅ¶¡ªº¤½¥Î¨ç¦¡
+ * è¨­å‚™ç›¸ä¾è‰²ç©ºé–“çš„å…¬ç”¨å‡½å¼
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -21,19 +21,19 @@ public abstract class DeviceDependentSpace
     extends ColorSpace {
 
   public static void example(String[] args) {
-    //³]©wrgb
+    //è¨­å®šrgb
     RGB rgb = new RGB(RGB.ColorSpace.AdobeRGB, new int[] {10, 100, 200});
-    //°µ¥¿³W¤Æ
+    //åšæ­£è¦åŒ–
     rgb.changeMaxValue(RGB.MaxValue.Double1);
-    //Åã¥Ü¥¿³W¤Æ«áªºµ²ªG
+    //é¡¯ç¤ºæ­£è¦åŒ–å¾Œçš„çµæœ
     System.out.println(rgb);
-    //±NrgbÂàXYZ
+    //å°‡rgbè½‰XYZ
     CIEXYZ XYZ = RGB.toXYZ(rgb);
-    //Åã¥ÜXYZ
+    //é¡¯ç¤ºXYZ
     System.out.println(XYZ);
-    //±qXYZÂà¦^rgb
+    //å¾XYZè½‰å›rgb
     RGB rgb2 = RGB.fromXYZ(XYZ, RGB.ColorSpace.AdobeRGB);
-    //Âà¦^¤§rgb
+    //è½‰å›ä¹‹rgb
     System.out.println(rgb2);
 
   }
@@ -76,32 +76,32 @@ public abstract class DeviceDependentSpace
   }
 
   /**
-   * ³Ì¤j­È¦³¥H¤U´XºØ:
-   * Double1 1.0(range:0.0~1.0 ¯BÂI¼Æ)
-   * Double1 100(range:0.0~100.0 ¯BÂI¼Æ)
-   * Int8Bit 255(range:0~255 ¾ã¼Æ)
-   * Double255 255(range:0.0~255.0 ¯BÂI¼Æ)
-   * DoubleUnlimited µL­­¨î(range: ?~? ¯BÂI¼Æ)
-   * Composite ½Æ¦X«¬ºA(¦pLab,L 0~100,a/b -128.0~127.0)
+   * æœ€å¤§å€¼æœ‰ä»¥ä¸‹å¹¾ç¨®:
+   * Double1 1.0(range:0.0~1.0 æµ®é»æ•¸)
+   * Double1 100(range:0.0~100.0 æµ®é»æ•¸)
+   * Int8Bit 255(range:0~255 æ•´æ•¸)
+   * Double255 255(range:0.0~255.0 æµ®é»æ•¸)
+   * DoubleUnlimited ç„¡é™åˆ¶(range: ?~? æµ®é»æ•¸)
+   * Composite è¤‡åˆå‹æ…‹(å¦‚Lab,L 0~100,a/b -128.0~127.0)
    *
-   * ³o¬O¬°¤F¦]À³¤£¦PÂà´«¨ç¦¡¶¡,·|¦³¤£¦Pªºµ²ªG,¬°¤F¤è«KÂà´«,©Ò¥[ªºµù°O
-   * (MaxValue¸ÌgetCodeBit? ,CodeBit¬OLCDTarget¤º³¡¥Îªº,©Ò¥HÀ³¸Ó¤ñ¸û¤£¥i¦æ.
-   * ¸û¥i¦æªº¤èªk¬OCodeBit¸ÌgetMaxValue)
+   * é€™æ˜¯ç‚ºäº†å› æ‡‰ä¸åŒè½‰æ›å‡½å¼é–“,æœƒæœ‰ä¸åŒçš„çµæœ,ç‚ºäº†æ–¹ä¾¿è½‰æ›,æ‰€åŠ çš„è¨»è¨˜
+   * (MaxValueè£¡getCodeBit? ,CodeBitæ˜¯LCDTargetå…§éƒ¨ç”¨çš„,æ‰€ä»¥æ‡‰è©²æ¯”è¼ƒä¸å¯è¡Œ.
+   * è¼ƒå¯è¡Œçš„æ–¹æ³•æ˜¯CodeBitè£¡getMaxValue)
    */
   public static enum MaxValue {
-    Double1(1.), //¥¿³W¤Æ
-    Double100(100.), //¥¿³W¤Æ
-    Double255(255.), //¦UºØbit¼ÆªºRGB code³q¥Î
+    Double1(1.), //æ­£è¦åŒ–
+    Double100(100.), //æ­£è¦åŒ–
+    Double255(255.), //å„ç¨®bitæ•¸çš„RGB codeé€šç”¨
     Double360(360.),
     Double1020(1020, false, true), //10bit
     Double4080(4080, false, true), //12bit
-    DoubleUnlimited(Double.MAX_VALUE), //µL­­¨î
+    DoubleUnlimited(Double.MAX_VALUE), //ç„¡é™åˆ¶
 
     Int5Bit(31., true, false), //5bit
     Int6Bit(63., true, false), //6bit
     Int100(100, true, false),
     Int7Bit(127., true, false), //7bit
-    Int8Bit(255., true, true), //¤@¯ë±`¥ÎªºRGB code
+    Int8Bit(255., true, true), //ä¸€èˆ¬å¸¸ç”¨çš„RGB code
     Int360(360, true, false),
     Int9Bit(510., true, true), //9bit
     Int10Bit(1020, true, true), //10bit
@@ -116,7 +116,7 @@ public abstract class DeviceDependentSpace
     Int31Bit(2139095040, true, true); //31bit
 
     /**
-     * ¥Hlevel´«ºâ¦¨¾ã¼ÆªºMaxValue
+     * ä»¥levelæ›ç®—æˆæ•´æ•¸çš„MaxValue
      * @param level int
      * @return MaxValue
      */
@@ -131,7 +131,7 @@ public abstract class DeviceDependentSpace
     }
 
     /**
-     * ¥Hmax´«ºâ¦¨¾ã¼ÆªºMaxValue
+     * ä»¥maxæ›ç®—æˆæ•´æ•¸çš„MaxValue
      * @param max int
      * @return MaxValue
      */
@@ -162,13 +162,13 @@ public abstract class DeviceDependentSpace
     public final double max;
     public final boolean integer;
     /**
-     * ¥i°£ºÉªº
+     * å¯é™¤ç›¡çš„
      */
     public final boolean divisible;
   }
 
   /**
-   * ¥Î¨ÓÂà´«¾ã¼Æ«¬ºAªºMaxValue,¥i¥HÁ×§K¥¿³W¤Æ¤p¼ÆÂIªº°İÃD
+   * ç”¨ä¾†è½‰æ›æ•´æ•¸å‹æ…‹çš„MaxValue,å¯ä»¥é¿å…æ­£è¦åŒ–å°æ•¸é»çš„å•é¡Œ
    * @param integerValues double[]
    * @param srcType MaxValue
    * @param destType MaxValue
@@ -178,7 +178,7 @@ public abstract class DeviceDependentSpace
   protected final static double[] changeIntegerMaxValue(double[] integerValues,
       MaxValue srcType, MaxValue destType, boolean roundDown) {
     if (false == srcType.integer && false == destType.integer) {
-      //¬JµM¬O³B²z¾ã¼ÆªºÂà´«, ·íµM¦Ü¤Ö­n¦³¤@­Ó¬O¾ã¼Æ°Õ~
+      //æ—¢ç„¶æ˜¯è™•ç†æ•´æ•¸çš„è½‰æ›, ç•¶ç„¶è‡³å°‘è¦æœ‰ä¸€å€‹æ˜¯æ•´æ•¸å•¦~
       throw new IllegalArgumentException(
           "false == srcType.integer && false == destType.integer");
     }
@@ -186,12 +186,12 @@ public abstract class DeviceDependentSpace
 
     if (true == srcType.integer && false == srcType.divisible &&
         destType.max == 255) {
-      //³B²z¤p©ó8bit, ¤]´N¬O¨S¿ìªk¾ã°£ªº³¡¥÷
+      //è™•ç†å°æ–¼8bit, ä¹Ÿå°±æ˜¯æ²’è¾¦æ³•æ•´é™¤çš„éƒ¨ä»½
       rate = (destType.max + 1) / srcType.max;
     }
     else if (true == destType.integer && false == destType.divisible &&
              srcType.max == 255) {
-      //³B²z¤p©ó8bit, ¤]´N¬O¨S¿ìªk¾ã°£ªº³¡¥÷
+      //è™•ç†å°æ–¼8bit, ä¹Ÿå°±æ˜¯æ²’è¾¦æ³•æ•´é™¤çš„éƒ¨ä»½
       rate = (destType.max + 1) / (srcType.max + 1);
     }
     else {
@@ -204,7 +204,7 @@ public abstract class DeviceDependentSpace
       integerValues[x] = destType.integer ?
           (roundDown ? (int) integerValues[x] : Math.round(integerValues[x])) :
           integerValues[x];
-      //¤p©ó8bitªºÂà´«, ·|¦³¶W¹Lmaxªºª¬ªp, ©Ò¥H­n§@clip
+      //å°æ–¼8bitçš„è½‰æ›, æœƒæœ‰è¶…émaxçš„ç‹€æ³, æ‰€ä»¥è¦ä½œclip
       integerValues[x] = (integerValues[x] > destType.max) ? destType.max :
           integerValues[x];
     }

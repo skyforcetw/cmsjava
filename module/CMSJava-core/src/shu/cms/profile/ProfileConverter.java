@@ -11,7 +11,7 @@ import shu.image.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ®M¥Î¨â­ÓICC Profile¶i¦æ½ÆÂø¼v¹³ªºÂà´«
+ * å¥—ç”¨å…©å€‹ICC Profileé€²è¡Œè¤‡é›œå½±åƒçš„è½‰æ›
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

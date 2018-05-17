@@ -41,7 +41,7 @@ public class RemoteMeter
       RemoteException, java.net.MalformedURLException,
       java.rmi.NotBoundException {
     url = RemoteMeterServer.getURL(hostname, port, bindname);
-    meter = (MeterInterface) Naming.lookup(url); // ´M±o¹ï¹³
+    meter = (MeterInterface) Naming.lookup(url); // å°‹å¾—å°åƒ
   }
 
   public final static RemoteMeter getDefaultInstance() {
@@ -54,7 +54,7 @@ public class RemoteMeter
                                    RemoteMeterServer.Port,
                                    RemoteMeterServer.BindName);
     try {
-      meter = (MeterInterface) Naming.lookup(url); // ´M±o¹ï¹³
+      meter = (MeterInterface) Naming.lookup(url); // å°‹å¾—å°åƒ
     }
     catch (RemoteException ex) {
       Logger.log.error("", ex);

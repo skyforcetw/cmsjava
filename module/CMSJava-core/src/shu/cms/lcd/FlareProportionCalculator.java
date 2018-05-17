@@ -9,7 +9,7 @@ import shu.cms.devicemodel.lcd.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * º|¥ú¤ñ¨Ò­pºâ¾¹
+ * æ¼å…‰æ¯”ä¾‹è¨ˆç®—å™¨
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -40,7 +40,7 @@ public class FlareProportionCalculator
   }
 
   /**
-   * ¥HVariance¬°°ò·Ç,±q2~20­¡¥N,§ä¨ì³Ì¤pªºVariance,´N¬Oº|¥úªº(³Ì¨Î)RGB¤ñ¨Ò
+   * ä»¥Varianceç‚ºåŸºæº–,å¾2~20è¿­ä»£,æ‰¾åˆ°æœ€å°çš„Variance,å°±æ˜¯æ¼å…‰çš„(æœ€ä½³)RGBæ¯”ä¾‹
    * @return double
    */
   public double getFlareProportionValue() {

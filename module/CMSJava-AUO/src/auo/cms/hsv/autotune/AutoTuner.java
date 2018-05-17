@@ -45,7 +45,7 @@ public class AutoTuner {
   }
 
   /**
-   * ³æÂI©Î¦hÂI
+   * å–®é»æˆ–å¤šé»
    */
   private FitMode fitMode = FitMode.SingleSpot;
   LCDModel model;
@@ -89,29 +89,29 @@ public class AutoTuner {
   }
 
   private TuneParameter getTuneParameterMultiSpot(TuneTarget tuneTarget) {
-    // 1. ­n¨M©wInteger SaturationªºÂà§éÂI
-    // 2. ¦A­pºâ¥X½Õ¾ã¶q
+    // 1. è¦æ±ºå®šInteger Saturationçš„è½‰æŠ˜é»
+    // 2. å†è¨ˆç®—å‡ºèª¿æ•´é‡
     SingleHueAdjustValue[] singleHueAdjustValue = new SingleHueAdjustValue[24];
     SingleHueAdjustValue[] interSingleHueAdjustValue = doInterTuneParameter ?
         new SingleHueAdjustValue[24] : null;
     double luminance = model.getWhiteXYZ().Y;
     indexes = new double[24];
 
-    //¦@24°Ï, ¨C°Ï15«×
+    //å…±24å€, æ¯å€15åº¦
     for (double hue = 0; hue < 360; hue += 7.5) {
       if (!doInterTuneParameter && hue % 15 != 0) {
         continue;
       }
       int index = (int) hue / 15;
-      // 1. ¨ú±o°òÂ¦­È
+      // 1. å–å¾—åŸºç¤å€¼
       HSV[] tuneSpots = tuneTarget.getTuneSpots(hue);
       int tuneSpotsSize = tuneSpots.length;
-      // 2. ¨ú±o¥Ø¼Ğ­ÈCIEXYZ
+      // 2. å–å¾—ç›®æ¨™å€¼CIEXYZ
       CIEXYZ[] targetXYZArray = new CIEXYZ[tuneSpotsSize];
       for (int x = 0; x < tuneSpotsSize; x++) {
         HSV hsv = tuneSpots[x];
         CIEXYZ targetXYZ = tuneTarget.getTarget(hsv);
-        //­Y­n¦³tolerance, ¥ı¦b³oÃäÂX¥R
+        //è‹¥è¦æœ‰tolerance, å…ˆåœ¨é€™é‚Šæ“´å……
 
         if (targetXYZ.getNormalizeY() == NormalizeY.Normal1) {
           targetXYZ.times(luminance);
@@ -120,7 +120,7 @@ public class AutoTuner {
         targetXYZArray[x] = newTargetXYZ;
       }
 
-      // 3. ¹ïH/S/V³Ì¨Î¤Æ, ¨Ã¥B¥Hmodel¹w´ú©Ò¦³ÂIªº¦â®t­È, ¨Ã¨ú¦â®t³Ì¤pªÌ
+      // 3. å°H/S/Væœ€ä½³åŒ–, ä¸¦ä¸”ä»¥modelé æ¸¬æ‰€æœ‰é»çš„è‰²å·®å€¼, ä¸¦å–è‰²å·®æœ€å°è€…
       int initIndex = findSuitableSpotIndex(tuneSpots);
       SingleHueAdjustValue hsvAdjustValue = getOptimalHSVAdjustValue(tuneSpots,
           targetXYZArray, initIndex);
@@ -217,11 +217,11 @@ public class AutoTuner {
 
   private TuneParameter interTuneParameter;
   /**
-   * ¬O§_­pºâ°Ï»P°Ï¤§¶¡ªº½Õ¾ã­È(7.5«×)
+   * æ˜¯å¦è¨ˆç®—å€èˆ‡å€ä¹‹é–“çš„èª¿æ•´å€¼(7.5åº¦)
    */
   private boolean doInterTuneParameter = false;
   /**
-   * ¬O§_²¤¹L¥D/¸É¦â¤£­n½Õ
+   * æ˜¯å¦ç•¥éä¸»/è£œè‰²ä¸è¦èª¿
    */
   private boolean doSkipPrimaryColorAdjust = false;
   public void setDoSkipPrimaryColorAdjust(boolean skip) {
@@ -237,11 +237,11 @@ public class AutoTuner {
   }
 
   /**
-   * §ä¨ì³Ì¨Î¤ÆªºHSVAdjustValue
-   * ·|±NColorIndex­°¨ì³Ì¤p
+   * æ‰¾åˆ°æœ€ä½³åŒ–çš„HSVAdjustValue
+   * æœƒå°‡ColorIndexé™åˆ°æœ€å°
    * @param tuneSpots HSV[]
    * @param targetXYZArray CIEXYZ[]
-   * @param initIndex int °_©l²£¥Í½Õ¾ã¶qªºpatch index
+   * @param initIndex int èµ·å§‹ç”¢ç”Ÿèª¿æ•´é‡çš„patch index
    * @return HSVAdjustValue
    */
   private SingleHueAdjustValue getOptimalHSVAdjustValue(final HSV[] tuneSpots,
@@ -249,40 +249,40 @@ public class AutoTuner {
     if (! (this.index instanceof ColorIndex)) {
       throw new IllegalStateException("! (this.index instanceof ColorIndex)");
     }
-    //¥ı±j¨îÂà«¬¦¨ColorIndex, §_«h¨S¿ìªk§â¥Ø¼Ğ­È°e¶i¥h
+    //å…ˆå¼·åˆ¶è½‰å‹æˆColorIndex, å¦å‰‡æ²’è¾¦æ³•æŠŠç›®æ¨™å€¼é€é€²å»
     final ColorIndex colorIndex = (ColorIndex) index;
-    //°e¥Ø¼Ğ­È, ¦n­pºâ¦â®t
+    //é€ç›®æ¨™å€¼, å¥½è¨ˆç®—è‰²å·®
     colorIndex.setTargetCIEXYZ(targetXYZArray);
     colorIndex.setTargetWhiteXYZ(modelWhiteXYZ);
-    //·|¦bfunc¸Ì­±¨g³Qcall, ©Ò¥H°®¯Ü¥ı§âÅÜ¼Æ©T©w¤U¨Ó
+    //æœƒåœ¨funcè£¡é¢ç‹‚è¢«call, æ‰€ä»¥ä¹¾è„†å…ˆæŠŠè®Šæ•¸å›ºå®šä¸‹ä¾†
     final int tuneSpotsSize = tuneSpots.length;
 
     //==========================================================================
-    //¥Î¨Ó­pºâ¦â®t¤Î³Ì¨Î¤Æ(¦â®t)ªº¨ç¼Æ
+    //ç”¨ä¾†è¨ˆç®—è‰²å·®åŠæœ€ä½³åŒ–(è‰²å·®)çš„å‡½æ•¸
     //==========================================================================
     MinimisationFunction func = new MinimisationFunction() {
       public double function(double[] param) {
-        //§â°Ñ¼ÆÂà¬°HSVAdjustValue, ¤è«K­pºâ¦¨HSV
+        //æŠŠåƒæ•¸è½‰ç‚ºHSVAdjustValue, æ–¹ä¾¿è¨ˆç®—æˆHSV
         SingleHueAdjustValue hsvAdjustValue = new SingleHueAdjustValue( (short)
-            param[0], (byte) param[1], (byte) param[2]); //½Õ¾ã«áªºHSV
+            param[0], (byte) param[1], (byte) param[2]); //èª¿æ•´å¾Œçš„HSV
         HSV[] adjustedTuneSpot = new HSV[tuneSpotsSize];
-        //­pºâ¥X©Ò¦³½Õ¾ã«áªºHSV
+        //è¨ˆç®—å‡ºæ‰€æœ‰èª¿æ•´å¾Œçš„HSV
         for (int i = 0; i < tuneSpotsSize; i++) {
           HSV hsv = tuneSpots[i];
-          //½Õ¾ã«áªºHSV
+          //èª¿æ•´å¾Œçš„HSV
           HSV adjustedHSV = getAdjustedHSV(hsv, hsvAdjustValue);
-          //Âà¦^RGB, ¦]¬°­n¶q¤Æ
+          //è½‰å›RGB, å› ç‚ºè¦é‡åŒ–
           RGB adjustedRGB = adjustedHSV.toRGB();
-          //¶q¤Æ
+          //é‡åŒ–
           adjustedRGB.changeMaxValue(bitDepth);
-          //¶q¤Æ¤§«á¦AÂà¦^HSV
+          //é‡åŒ–ä¹‹å¾Œå†è½‰å›HSV
           adjustedHSV = new HSV(adjustedRGB);
-          //¶ë¨ì°}¦C¸Ì
+          //å¡åˆ°é™£åˆ—è£¡
           adjustedTuneSpot[i] = adjustedHSV;
         }
-        //§â½Õ¾ã«áHSV¶ë¨ìIndex¥h
+        //æŠŠèª¿æ•´å¾ŒHSVå¡åˆ°Indexå»
         colorIndex.setTuneSpots(adjustedTuneSpot);
-        //­pºâ¥Xindex, ¤]´N¬O¦â®t
+        //è¨ˆç®—å‡ºindex, ä¹Ÿå°±æ˜¯è‰²å·®
         double index = colorIndex.getIndex();
         return index;
       };
@@ -293,7 +293,7 @@ public class AutoTuner {
     minimisation.supressNoConvergenceMessage();
 
     //==========================================================================
-    // ­­¨î½d³ò
+    // é™åˆ¶ç¯„åœ
     //==========================================================================
     // hue
     minimisation.addConstraint(0, -1, 0);
@@ -306,10 +306,10 @@ public class AutoTuner {
     minimisation.addConstraint(2, 1, 63);
     //==========================================================================
 
-    //¥H²Ä¤@­ÓÂI¬°½Õ¾ã°Ñ¦Ò­È, ­Y¥u¦³¤@­ÓÂI, ¤j·§¤]´N¬O³o­Ó­È(§a?)
+    //ä»¥ç¬¬ä¸€å€‹é»ç‚ºèª¿æ•´åƒè€ƒå€¼, è‹¥åªæœ‰ä¸€å€‹é», å¤§æ¦‚ä¹Ÿå°±æ˜¯é€™å€‹å€¼(å§?)
     SingleHueAdjustValue init = getHSVAdjustValue(new AUOHSV(tuneSpots[
         initIndex]), targetXYZArray[initIndex]);
-    //§ä¨ì³Ì¤pÂI
+    //æ‰¾åˆ°æœ€å°é»
     double[] step = new double[] {
         1, 1, 1};
     double[] initAdjustValues = init.getAdjustDoubleArray();
@@ -360,7 +360,7 @@ public class AutoTuner {
     if (HSVVersion.v2 == hsvVersion) {
       double saturationAdjust = integerSaturationFormula.getAdjustValue(hsv.
           saturation, modefiedHSV.saturation);
-      //¶q¤Æ
+      //é‡åŒ–
       return integerSaturationFormula.getAdjustOffset(
           saturationAdjust);
     }
@@ -390,7 +390,7 @@ public class AutoTuner {
     short min = hsv.min;
     short newValue = modefiedHSV.value;
     if (HSVVersion.v2 == hsvVersion) {
-      //¶q¤Æ
+      //é‡åŒ–
       return ValuePrecisionEvaluator.getOffset(max, min, newValue);
     }
     else if (HSVVersion.v1 == hsvVersion) {
@@ -436,13 +436,13 @@ public class AutoTuner {
   private CIEXYZ modelWhiteXYZ;
 
   /**
-   * ¬O§_³z¹L¦â±m¥~»ª¥h½Õ¾ã?
-   * ¬O¥²­nªº, XYZªº½Õ¾ã¥u¯à«OÃÒª«²z¶q¬Ûµ¥, µøÄ±¤£¨£±o¬Ûµ¥
+   * æ˜¯å¦é€éè‰²å½©å¤–è²Œå»èª¿æ•´?
+   * æ˜¯å¿…è¦çš„, XYZçš„èª¿æ•´åªèƒ½ä¿è­‰ç‰©ç†é‡ç›¸ç­‰, è¦–è¦ºä¸è¦‹å¾—ç›¸ç­‰
    */
   private boolean adjustByColorAppearance = true;
 
   private SingleHueAdjustValue getHSVAdjustValue(AUOHSV hsv, CIEXYZ targetXYZ) {
-    //ª½±µ±qXYZÂàRGB, ±N³y¦¨¥ÕÂIµLªk¹ï»ô
+    //ç›´æ¥å¾XYZè½‰RGB, å°‡é€ æˆç™½é»ç„¡æ³•å°é½Š
     RGB targetRGB = model.getRGB(targetXYZ, false);
     targetRGB.changeMaxValue(RGB.MaxValue.Int10Bit);
     AUOHSV targetHSV = new AUOHSV(targetRGB);
@@ -450,18 +450,18 @@ public class AutoTuner {
     //========================================================================
     // Hue
     //========================================================================
-    //¶q¤Æ
+    //é‡åŒ–
     short hueAdjustValue = getHueAdjustValue(targetHSV);
     //========================================================================
     //========================================================================
-    //­pºâSaturationÀ³¸Óªº½Õ¾ã¶q
+    //è¨ˆç®—Saturationæ‡‰è©²çš„èª¿æ•´é‡
     //========================================================================
     byte saturationAdjustValue = getSaturationAdjustValue(hsv, targetHSV);
     //========================================================================
     //========================================================================
     // Value
     //========================================================================
-    //¶q¤Æ
+    //é‡åŒ–
     byte valueAdjustValue = getValueAdjustValue(hsv, targetHSV);
 
     SingleHueAdjustValue hsvAdjustValue = new SingleHueAdjustValue(
@@ -491,21 +491,21 @@ public class AutoTuner {
    * @return TuneParameter
    */
   private TuneParameter getTuneParameterSingleSpot(TuneTarget tuneTarget) {
-    // 1. ­n¨M©wInteger SaturationªºÂà§éÂI
-    // 2. ¦A­pºâ¥X½Õ¾ã¶q
+    // 1. è¦æ±ºå®šInteger Saturationçš„è½‰æŠ˜é»
+    // 2. å†è¨ˆç®—å‡ºèª¿æ•´é‡
 
     SingleHueAdjustValue[] singleHueAdjustValues = new SingleHueAdjustValue[24];
-    //¦@24°Ï, ¨C°Ï15«×
+    //å…±24å€, æ¯å€15åº¦
     for (int hue = 0; hue < 360; hue += 15) {
       HSV hsv = tuneTarget.getTuneSpot(hue);
       CIEXYZ targetXYZ = tuneTarget.getTarget(hue);
       if (null == targetXYZ) {
-        //·|³y¦¨null
+        //æœƒé€ æˆnull
         continue;
       }
 
       /**
-       * @todo ­Y­n¦³tolerance, ¥ı¦b³oÃäÂX¥R
+       * @todo è‹¥è¦æœ‰tolerance, å…ˆåœ¨é€™é‚Šæ“´å……
        */
 //      if (targetXYZ.getNormalizeY() == NormalizeY.Normal1) {
 //        targetXYZ.times(luminance);
@@ -608,7 +608,7 @@ public class AutoTuner {
    */
   private void checkSpot(double hue, SingleHueAdjustValue hsvAdjustValue) {
     if (tuneTarget instanceof SingleTuneTarget) {
-      //¦pªG¬O³æÂI, ´Ncheck¸ÓÂIªº¦â®t
+      //å¦‚æœæ˜¯å–®é», å°±checkè©²é»çš„è‰²å·®
       HSV tuneSpot = tuneTarget.getTuneSpot(hue);
       RGB newRGB = getNewHSVIPRGB(tuneSpot, hsvAdjustValue);
       CIELab newLab = model.getLab(newRGB, true);
@@ -645,7 +645,7 @@ public class AutoTuner {
       produceIntegerSaturationFormula();
     }
     /**
-     * multi©Msingle¥iµø¬°¦P¨Ì­Ócase, ¥u¬Osingle¥u¬İ¤@­ÓÂI¦Ó¤w(¶Ü?)
+     * multiå’Œsingleå¯è¦–ç‚ºåŒä¾å€‹case, åªæ˜¯singleåªçœ‹ä¸€å€‹é»è€Œå·²(å—?)
      */
     switch (fitMode) {
       case SingleSpot:

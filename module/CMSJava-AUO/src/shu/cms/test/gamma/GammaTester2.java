@@ -13,9 +13,9 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ±´°Q¨âºØcase
- * 1. ª«²z¤Wªºgamma§¹¥ş¬Ûµ¥
- * 2. ¤ß²z¤Wªºgamma§¹¥ş¬Ûµ¥
+ * æ¢è¨å…©ç¨®case
+ * 1. ç‰©ç†ä¸Šçš„gammaå®Œå…¨ç›¸ç­‰
+ * 2. å¿ƒç†ä¸Šçš„gammaå®Œå…¨ç›¸ç­‰
  *
  * <p>Copyright: Copyright (c) 2009</p>
  *
@@ -191,7 +191,7 @@ public class GammaTester2 {
     Yplot.addLinePlot("ideal", 0, 256, idealLumiCurve);
 
     //==========================================================================
-    //©³¤U¬O¦h¾lªº
+    //åº•ä¸‹æ˜¯å¤šé¤˜çš„
     //==========================================================================
     double idealGammaWithOffset = GammaFinder.findGammaWithOffset(
         idealLumiCurve);

@@ -16,7 +16,7 @@ import shu.util.*;
  * <p>Description: a Colour Management System by Java</p>
  *
  * <p>Copyright: Copyright (c) 2008 skyforce</p>
- * �HIdealDigitalCamera�Ө쪺spectraPowerList,���ͥXRGB
+ * 以IdealDigitalCamera照到的spectraPowerList,產生出RGB
  *
  * <p>Company: skygroup</p>
  *

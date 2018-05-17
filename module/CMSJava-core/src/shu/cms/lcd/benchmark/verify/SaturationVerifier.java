@@ -20,8 +20,8 @@ import shu.math.geometry.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¿Ã¹õªº¹¡©M«×¦±½uÅçÃÒ.
- * ¦pªG¿Ã¹õ¨ü¨ìº|¥úªº¼vÅTÄY­«ªº¸Ü, ¹¡©M«×ªº¤W¤É±N·|«Ü½wºC, ¤Ï¤§, «Ü®e©ö´N¨ì¹F¹¡©M.
+ * è¢å¹•çš„é£½å’Œåº¦æ›²ç·šé©—è­‰.
+ * å¦‚æœè¢å¹•å—åˆ°æ¼å…‰çš„å½±éŸ¿åš´é‡çš„è©±, é£½å’Œåº¦çš„ä¸Šå‡å°‡æœƒå¾ˆç·©æ…¢, åä¹‹, å¾ˆå®¹æ˜“å°±åˆ°é”é£½å’Œ.
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -40,7 +40,7 @@ public class SaturationVerifier
   public static void main(String[] args) {
 
     LCDTarget target = LCDTarget.Instance.getFromAUORampXLS(
-        "D:\\My Documents\\¤u§@\\µØ¤s­pµe\\LG 42SL90QD\\Cinema\\ramp.xls");
+        "D:\\My Documents\\å·¥ä½œ\\è¯å±±è¨ˆç•«\\LG 42SL90QD\\Cinema\\ramp.xls");
 //    LCDTarget target = LCDTarget.Instance.getFromSpectroPhotometerCxF(
 //        "Measurement Files/Monitor/dell_2407wfp_hc/i1pro/darkroom/D65/1021.cxf");
 //    LCDTarget target = LCDTarget.Instance.getFromSpectroPhotometerCxF(

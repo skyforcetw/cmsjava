@@ -60,7 +60,7 @@ public abstract class Plot2D extends shu.plot.Plot2D {
     public abstract void setPlotOnTop(boolean onTop);
 
     /**
-     * Åıx/y¶bªºÁY©ñ¤ñ¨Ò¬Û¦P,¥Hx¶b¬°¥D
+     * è®“x/yè»¸çš„ç¸®æ”¾æ¯”ä¾‹ç›¸åŒ,ä»¥xè»¸ç‚ºä¸»
      * @param xMin double
      * @param xMax double
      * @param yMin double
@@ -69,7 +69,7 @@ public abstract class Plot2D extends shu.plot.Plot2D {
                                                double yMin);
 
     /**
-     * Åıx/y¶bªºÁY©ñ¤ñ¨Ò¬Û¦P,¥HY¶b¬°¥D
+     * è®“x/yè»¸çš„ç¸®æ”¾æ¯”ä¾‹ç›¸åŒ,ä»¥Yè»¸ç‚ºä¸»
      * @param xMin double
      * @param yMin double
      * @param yMax double
@@ -149,7 +149,7 @@ public abstract class Plot2D extends shu.plot.Plot2D {
                                            report,
                                            ReportType reportType) {
         //==========================================================================
-        // ³]©w¶b
+        // è¨­å®šè»¸
         //==========================================================================
         setAxeLabel(1, "DeltaE");
         switch (reportType) {
@@ -208,7 +208,7 @@ public abstract class Plot2D extends shu.plot.Plot2D {
      * <p>Title: Colour Management System</p>
      *
      * <p>Description: </p>
-     * addPatchDeltaEReport©Ò±Ä¥Îªº³ø§i«¬ºA
+     * addPatchDeltaEReportæ‰€æ¡ç”¨çš„å ±å‘Šå‹æ…‹
      *
      * <p>Copyright: Copyright (c) 2006</p>
      *

@@ -28,7 +28,7 @@ public class PrecisionImageEvaluator {
 //    PrecisionEvaluator.getV( (short) (1 * 4), (short) (1 * 4),
 //                            (byte) 0, (short) 1020, 0, 0, 0);
 //    String imageDirname =
-//        "D:\\≥n≈È\\nobody zone\\Pattern\\skyforce Pattern Collect\\Demo\\Duplicate";
+//        "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\Pattern\\skyforce Pattern Collect\\Demo\\Duplicate";
 //    BufferedImage pattern = patternGen(800, 600);
 //    try {
 //      ImageUtils.storeTIFFImage("pattern.tif", pattern);
@@ -38,7 +38,7 @@ public class PrecisionImageEvaluator {
 //    }
 
     String imageDirname =
-        "D:\\≥n≈È\\nobody zone\\Pattern\\skyforce Pattern Collect\\Color Adjust\\Evaluation Picture\\Artificial";
+        "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\Pattern\\skyforce Pattern Collect\\Color Adjust\\Evaluation Picture\\Artificial";
     byte offset = 25;
 
     try {

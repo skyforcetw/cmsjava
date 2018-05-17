@@ -10,7 +10,7 @@ import shu.cms.measure.meter.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ·|±N¶q¹Lªº¦â¶ô¼È¦s°_¨Ó, ¦pªG¹J¨ì­n­«½Æ¶q´úªºª¬ªp, ·|²¤¹L¶q´úª½±µ¦^¶Ç¼È¦s­È
+ * æœƒå°‡é‡éçš„è‰²å¡Šæš«å­˜èµ·ä¾†, å¦‚æœé‡åˆ°è¦é‡è¤‡é‡æ¸¬çš„ç‹€æ³, æœƒç•¥éé‡æ¸¬ç›´æ¥å›å‚³æš«å­˜å€¼
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -47,7 +47,7 @@ public class BufferedMeterMeasurement
   public Patch measure0(RGB rgb, String patchName, String titleNote,
                         String timeNote) {
     if (bufferedMeasure && rgbPatchMap.containsKey(rgb)) {
-      //¶q¹L´N¤£­n¦A­«½Æ¶q¤F
+      //é‡éå°±ä¸è¦å†é‡è¤‡é‡äº†
       return rgbPatchMap.get(rgb);
     }
     else {
@@ -59,7 +59,7 @@ public class BufferedMeterMeasurement
   }
 
   /**
-   * ¶q¹Lªº­n¤£­n­«½Æ¶q
+   * é‡éçš„è¦ä¸è¦é‡è¤‡é‡
    */
   private boolean bufferedMeasure = true;
   private Map<RGB, Patch> rgbPatchMap = new HashMap<RGB, Patch> ();

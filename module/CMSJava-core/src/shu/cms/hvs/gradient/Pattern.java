@@ -9,7 +9,7 @@ import shu.math.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Î¨Ó°O¿ı¤£¶¶patternªº¬ÛÃö°T®§
+ * ç”¨ä¾†è¨˜éŒ„ä¸é †patternçš„ç›¸é—œè¨Šæ¯
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -20,38 +20,38 @@ import shu.math.*;
  */
 public class Pattern {
   /**
-   * pattern©Ò¦bªºindex(¤]´N¬Ocode)
+   * patternæ‰€åœ¨çš„index(ä¹Ÿå°±æ˜¯code)
    */
   public int index;
   /**
-   * ­pºâ¥X¨Óªºpattern¤j¤p
+   * è¨ˆç®—å‡ºä¾†çš„patternå¤§å°
    */
   public double pattern;
   /**
-   * pattern¬Û¾Fªº¨â­Ó¥[³t«×
+   * patternç›¸é„°çš„å…©å€‹åŠ é€Ÿåº¦
    */
   public double[] acceleration;
   /**
-   * ¶W¥Xthresholdªº¤ñ¨Ò
+   * è¶…å‡ºthresholdçš„æ¯”ä¾‹
    */
   public float overRatio;
   /**
-   * pattern©Ò¦bcodeªºJNDI
+   * patternæ‰€åœ¨codeçš„JNDI
    */
   public double jndIndex;
   /**
-   * ¸Ópattern¹ïÀ³ªºª¬ªp¤Uªºthreshold
+   * è©²patternå°æ‡‰çš„ç‹€æ³ä¸‹çš„threshold
    */
   public double threshold;
 
   /**
    *
-   * @param index int pattern©Ò¦bªºindex(¤]´N¬Ocode)
-   * @param jndIndex double pattern©Ò¦bcodeªºJNDI
-   * @param pattern double ­pºâ¥X¨Óªºpattern¤j¤p
-   * @param acceleration double[] pattern¬Û¾Fªº¨â­Ó¥[³t«×
-   * @param overRatio float ¶W¥Xthresholdªº¤ñ¨Ò
-   * @param threshold double ¸Ópattern¹ïÀ³ªºª¬ªp¤Uªºthreshold
+   * @param index int patternæ‰€åœ¨çš„index(ä¹Ÿå°±æ˜¯code)
+   * @param jndIndex double patternæ‰€åœ¨codeçš„JNDI
+   * @param pattern double è¨ˆç®—å‡ºä¾†çš„patternå¤§å°
+   * @param acceleration double[] patternç›¸é„°çš„å…©å€‹åŠ é€Ÿåº¦
+   * @param overRatio float è¶…å‡ºthresholdçš„æ¯”ä¾‹
+   * @param threshold double è©²patternå°æ‡‰çš„ç‹€æ³ä¸‹çš„threshold
    */
   public Pattern(int index, double jndIndex, double pattern,
                  double[] acceleration, float overRatio, double threshold) {

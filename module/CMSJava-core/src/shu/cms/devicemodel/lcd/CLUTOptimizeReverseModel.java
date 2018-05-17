@@ -13,7 +13,7 @@ import shu.math.lut.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * §Q¥ÎÀu¤Æºtºâªk, §ä¨ì¤Ï±Àªº³Ì±µªñ¸Ñ
+ * åˆ©ç”¨å„ªåŒ–æ¼”ç®—æ³•, æ‰¾åˆ°åæ¨çš„æœ€æ¥è¿‘è§£
  *
  * <p>Copyright: Copyright (c) 2009</p>
  *
@@ -48,7 +48,7 @@ public class CLUTOptimizeReverseModel
   private CLUTRegressionReverseModel regressionReverseModel;
 
   /**
-   * ­pºâRGB,¤Ï±À¼Ò¦¡
+   * è¨ˆç®—RGB,åæ¨æ¨¡å¼
    *
    * @param relativeXYZ CIEXYZ
    * @param factor Factor[]
@@ -75,7 +75,7 @@ public class CLUTOptimizeReverseModel
   }
 
   /**
-   * ­pºâXYZ,«e¾É¼Ò¦¡
+   * è¨ˆç®—XYZ,å‰å°æ¨¡å¼
    *
    * @param rgb RGB
    * @param factor Factor[]
@@ -89,7 +89,7 @@ public class CLUTOptimizeReverseModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    * @todo Implement this shu.cms.devicemodel.lcd.LCDModel method

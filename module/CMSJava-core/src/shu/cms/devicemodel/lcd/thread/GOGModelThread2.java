@@ -14,8 +14,8 @@ import shu.cms.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ±Ä¥Î¥[±jª©ªº«Y¼Æ­¡¥Nªk
- * ±Noffset»Pgain¸j¦í,¥H½T«O¥ÕÂIªº¥¿½T©Ê
+ * æ¡ç”¨åŠ å¼·ç‰ˆçš„ä¿‚æ•¸è¿­ä»£æ³•
+ * å°‡offsetèˆ‡gainç¶ä½,ä»¥ç¢ºä¿ç™½é»çš„æ­£ç¢ºæ€§
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -35,7 +35,7 @@ public class GOGModelThread2
   }
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    * @param factor LCDModelFactor
    */
   public GOGModelThread2(LCDModelFactor factor) {
@@ -51,7 +51,7 @@ public class GOGModelThread2
     initCoefficientsRange();
 
     //==========================================================================
-    //¦h°õ¦æºü¹Bºâ
+    //å¤šåŸ·è¡Œç·’é‹ç®—
     //==========================================================================
     IterativeReport[] reports = SimpleThreadCalculator.
         produceBestIterativeReport(
@@ -84,8 +84,8 @@ public class GOGModelThread2
                                                  LCDTarget.TargetIlluminant.
                                                  Native,
                                                  LCDTargetBase.Number.Ramp1792, null, null);
-    //dell¥Î1021¨D±oªº®Ä¹L¸û®t,¤]ºC«Ü¦h(²Å¦X±ø¥óªº¦â¶ô¸û¦h)
-    //729¦³³Ì¨Îµ²ªG
+    //dellç”¨1021æ±‚å¾—çš„æ•ˆéè¼ƒå·®,ä¹Ÿæ…¢å¾ˆå¤š(ç¬¦åˆæ¢ä»¶çš„è‰²å¡Šè¼ƒå¤š)
+    //729æœ‰æœ€ä½³çµæœ
 
     GOGModelThread2 model = new GOGModelThread2(
         lcdTarget);
@@ -95,8 +95,8 @@ public class GOGModelThread2
     LCDModelFactor lcdModelFactor = model.produceLCDModelFactor(factors);
 
     /**
-     * ¦¹³B«Y¼Æ¥H §Ç¦C¤Æ ³B²z,¤£¨Ï¥ÎXMLÀx¦s¬O¦]¬°Ãiªº³B²ztag :P
-     * ¥[¤WFactor¶¡¦³Ä~©ÓÃö«Y,¥Ø«e¤£ª¾¹DXML-Java¤u¨ã¬O§_¥i¥H«Ü¦nªº³B²z.
+     * æ­¤è™•ä¿‚æ•¸ä»¥ åºåˆ—åŒ– è™•ç†,ä¸ä½¿ç”¨XMLå„²å­˜æ˜¯å› ç‚ºæ‡¶çš„è™•ç†tag :P
+     * åŠ ä¸ŠFactoré–“æœ‰ç¹¼æ‰¿é—œä¿‚,ç›®å‰ä¸çŸ¥é“XML-Javaå·¥å…·æ˜¯å¦å¯ä»¥å¾ˆå¥½çš„è™•ç†.
      */
     model.store.modelFactorFile(lcdModelFactor, "gog.factor");
 
@@ -334,8 +334,8 @@ public class GOGModelThread2
   }
 
   /**
-   * ªì©l¤Æ­¡±a«Y¼Æ
-   * ¥i¥Hµø±¡ªp½Õ¾ã¦¹«Y¼Æ­È,Åı¼Ò¦¡¦³§ó¦nªº¹Bºâªí²{
+   * åˆå§‹åŒ–è¿­å¸¶ä¿‚æ•¸
+   * å¯ä»¥è¦–æƒ…æ³èª¿æ•´æ­¤ä¿‚æ•¸å€¼,è®“æ¨¡å¼æœ‰æ›´å¥½çš„é‹ç®—è¡¨ç¾
    */
   public void initCoefficientsRange() {
     CoefficientsRange coefR = new CoefficientsRange(.5, 3, 0, 2.8,

@@ -124,7 +124,7 @@ public class SpectraIntensityAnalyzer {
 
     MinimisationFunction func = new MinimisationFunction() {
       /**
-       * ­pºâindex¨Ã¥B¦^¶Ç
+       * è¨ˆç®—indexä¸¦ä¸”å›žå‚³
        * @param param double[] : dn d
        * @return double
        */

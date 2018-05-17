@@ -121,7 +121,7 @@ public class HSVLUT {
   }
 
   /**
-   * ±qzone©Mmax index§ä¨ì§CºÝªºaddress
+   * å¾žzoneå’Œmax indexæ‰¾åˆ°ä½Žç«¯çš„address
    * @param auoHSV AUOHSV
    * @return int
    */

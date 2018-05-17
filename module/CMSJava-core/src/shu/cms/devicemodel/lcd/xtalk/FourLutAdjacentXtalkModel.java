@@ -14,7 +14,7 @@ import shu.math.lut.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * À³¥Î3+1¹ï·Óªíªº¤è¦¡¨Ó¸Ñ¨Mcrosstalk
+ * æ‡‰ç”¨3+1å°ç…§è¡¨çš„æ–¹å¼ä¾†è§£æ±ºcrosstalk
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -113,7 +113,7 @@ public class FourLutAdjacentXtalkModel
     keyRGB.setColorBlack();
     int size = channelValues.length;
 //    int adfSize = adjacentChannelValues.length;
-    //¦¹³BªºcorrectLutªº¦ì¸m»Ppatent¤Wªº¤£¦P, ¤w¸g¹ï½Õ¤F
+    //æ­¤è™•çš„correctLutçš„ä½ç½®èˆ‡patentä¸Šçš„ä¸åŒ, å·²ç¶“å°èª¿äº†
     double[][][] correctLuts = new double[2][size][size];
     for (int x = 0; x < size; x++) {
       for (int y = 0; y < size; y++) {
@@ -122,7 +122,7 @@ public class FourLutAdjacentXtalkModel
 
         Patch p = xtalkLCDTarget.getPatch(keyRGB);
         if (p == null || !p.getRGB().isSecondaryChannel()) {
-          //¦pªG¤£¬O¤G¦¸¦â, ¨S¿ìªk¨DXtalk RGB
+          //å¦‚æœä¸æ˜¯äºŒæ¬¡è‰², æ²’è¾¦æ³•æ±‚Xtalk RGB
           continue;
         }
         RGB rgb = p.getRGB();
@@ -148,19 +148,19 @@ public class FourLutAdjacentXtalkModel
           channelVI));
 //      adjValues = RGB.rationalize(adjValues, rgb.getMaxValue());
 
-      //selfªº­×¥¿¶µ
+      //selfçš„ä¿®æ­£é …
 //      double selfCorrectValues = chVIEliminator.getCorrectionValue(selfValues,
 //          adjValues);
       double selfCorrectValues = chVIEliminator.getCorrectionValue(adjValues,
           selfValues);
 
       if (uncorrect) {
-        //²¾°£xtalk
+        //ç§»é™¤xtalk
         correctRGB.setValue(channelVI,
                             correctRGB.getValue(channelVI) - selfCorrectValues);
       }
       else {
-        //¹w´úxtalk(­×¥¿)
+        //é æ¸¬xtalk(ä¿®æ­£)
         correctRGB.setValue(channelVI,
                             correctRGB.getValue(channelVI) + selfCorrectValues);
       }

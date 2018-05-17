@@ -3,11 +3,11 @@
  * To change this template file, choose Tools | Templates
  * and open the template in the editor.
  */
-package auo.cms.frc.impl;
+package fiti.cms.frc.impl;
 
-import auo.cms.frc.FRCPattern;
-import static auo.cms.frc.impl.FRC3_16Util.isOverlapping;
-import static auo.cms.frc.impl.FRC3_16Util.lineToFrame;
+import fiti.cms.frc.FRCPattern;
+import static fiti.cms.frc.impl.FRC3_16Util.isOverlapping;
+import static fiti.cms.frc.impl.FRC3_16Util.lineToFrame;
 import java.io.IOException;
 import java.util.Calendar;
 import java.util.LinkedList;

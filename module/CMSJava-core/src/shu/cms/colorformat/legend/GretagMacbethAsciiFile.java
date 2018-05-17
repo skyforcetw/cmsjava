@@ -9,7 +9,7 @@ import shu.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ÀÉ®×¦³¤­ºØ¥i¯à
+ * æª”æ¡ˆæœ‰äº”ç¨®å¯èƒ½
  * 1.TestChart
  * 2.Reflection Lab
  * 3.Reflection Spectra
@@ -114,7 +114,7 @@ public class GretagMacbethAsciiFile
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ¥Î¨Óªí¥Ü¾Éªí¸ê®Æ
+   * ç”¨ä¾†è¡¨ç¤ºå°è¡¨è³‡æ–™
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -297,7 +297,7 @@ public class GretagMacbethAsciiFile
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ¥Î¨Óªí¥ÜGMB Ascii fileªºÀÉÀY
+   * ç”¨ä¾†è¡¨ç¤ºGMB Ascii fileçš„æª”é ­
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *

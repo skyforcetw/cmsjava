@@ -19,8 +19,8 @@ import shu.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ©Ò¿×ªºadvanced´N¬O:§â«e¾É¸ò¤Ï±Àªº«Y¼Æ¤À¶}¤F,¤]´N¬O¨â­Ómodel¥i¥H¥Î¤£¦Pªº«Y¼Æ­Ó¼Æ
- * ¦Ó¥B¤]·s¼W¥[¤F®Ú¾ÚdeltaE³Ì¨Î¤Æ«Y¼Æ­Ó¼Æªº¥\¯à: findBestForwardPolynomialCoefficient3
+ * æ‰€è¬‚çš„advancedå°±æ˜¯:æŠŠå‰å°è·Ÿåæ¨çš„ä¿‚æ•¸åˆ†é–‹äº†,ä¹Ÿå°±æ˜¯å…©å€‹modelå¯ä»¥ç”¨ä¸åŒçš„ä¿‚æ•¸å€‹æ•¸
+ * è€Œä¸”ä¹Ÿæ–°å¢åŠ äº†æ ¹æ“šdeltaEæœ€ä½³åŒ–ä¿‚æ•¸å€‹æ•¸çš„åŠŸèƒ½: findBestForwardPolynomialCoefficient3
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -71,7 +71,7 @@ public class LCDAdvancedPolynomialRegressionModel
   }
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    *
    * @param factor LCDModelFactor
    */
@@ -80,7 +80,7 @@ public class LCDAdvancedPolynomialRegressionModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * æ±‚å€¼æ¨¡å¼
    * @param lcdTarget LCDTarget
    */
   public LCDAdvancedPolynomialRegressionModel(LCDTarget lcdTarget) {
@@ -88,9 +88,9 @@ public class LCDAdvancedPolynomialRegressionModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * æ±‚å€¼æ¨¡å¼
    * @param lcdTarget LCDTarget
-   * @param rCorrectLCDTarget LCDTarget «ØÄ³±Ä¥Îcode¶¡¶Z¬°0ªº¾É¨ã
+   * @param rCorrectLCDTarget LCDTarget å»ºè­°æ¡ç”¨codeé–“è·ç‚º0çš„å°å…·
    */
   public LCDAdvancedPolynomialRegressionModel(LCDTarget lcdTarget,
                                               LCDTarget rCorrectLCDTarget) {
@@ -117,7 +117,7 @@ public class LCDAdvancedPolynomialRegressionModel
   }
 
   /**
-   * ¨Ï¥Î¼Ò¦¡
+   * ä½¿ç”¨æ¨¡å¼
    * @param modelFactorFilename String
    */
   public LCDAdvancedPolynomialRegressionModel(String modelFactorFilename) {
@@ -163,7 +163,7 @@ public class LCDAdvancedPolynomialRegressionModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    */
@@ -177,7 +177,7 @@ public class LCDAdvancedPolynomialRegressionModel
     double[][] outputArray = new double[size][3];
 
     //==========================================================================
-    // «e¾É(A2B)
+    // å‰å°(A2B)
     //==========================================================================
     for (int x = 0; x < size; x++) {
       Patch p = patchList.get(x);
@@ -205,7 +205,7 @@ public class LCDAdvancedPolynomialRegressionModel
     //==========================================================================
 
     //==========================================================================
-    // ¤Ï±À(B2A)
+    // åæ¨(B2A)
     //==========================================================================
     if (this.reverseCoefficientCount == null) {
 //      Polynomial.COEF_3 coef  = this.findBestReversePolynomialCoefficient3(
@@ -232,7 +232,7 @@ public class LCDAdvancedPolynomialRegressionModel
   }
 
   /**
-   * ©Ò±Ä¥Îªº«Y¼Æ¶µ
+   * æ‰€æ¡ç”¨çš„ä¿‚æ•¸é …
    */
   private Polynomial.COEF forwardCoefficientCount;
   private Polynomial.COEF reverseCoefficientCount;
@@ -243,7 +243,7 @@ public class LCDAdvancedPolynomialRegressionModel
   }
 
   /**
-   * ­pºâXYZ
+   * è¨ˆç®—XYZ
    * @param rgb RGB
    * @param factor Factor[]
    * @return CIEXYZ
@@ -298,7 +298,7 @@ public class LCDAdvancedPolynomialRegressionModel
   }
 
   /**
-   * ´M§äForwardCoefficient®É¥u¦bCOEF_1
+   * å°‹æ‰¾ForwardCoefficientæ™‚åªåœ¨COEF_1
    * @param findForwardCoefficientInCOEF_1 boolean
    */
   public void setFindForwardCoefficientInCOEF_1(boolean
@@ -307,7 +307,7 @@ public class LCDAdvancedPolynomialRegressionModel
   }
 
   /**
-   * ´M§äReverseCoefficient®É¥u¦bCOEF_1
+   * å°‹æ‰¾ReverseCoefficientæ™‚åªåœ¨COEF_1
    * @param findReverseCoefficientInCOEF_1 boolean
    */
   public void setFindReverseCoefficientInCOEF_1(boolean

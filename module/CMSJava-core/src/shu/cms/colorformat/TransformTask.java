@@ -4,8 +4,8 @@ package shu.cms.colorformat;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * �ഫ�{���ҥi�~�Ӧ����O
- * �o�����O�̤j���\�Φb��,�i�H�ΨӽT�w�ഫ�u�@�O�_����.
+ * 轉換程式皆可繼承此類別
+ * 這個類別最大的功用在於,可以用來確定轉換工作是否完成.
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

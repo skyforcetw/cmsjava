@@ -28,7 +28,7 @@ import auo.cms.hsv.autotune.PreferredColorSpace;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Î¨Ó¤ÀªR¦U®aªºpreferred color
+ * ç”¨ä¾†åˆ†æå„å®¶çš„preferred color
  *
  * <p>Copyright: Copyright (c) 2009</p>
  *
@@ -177,7 +177,7 @@ public class PreferredColorInspector {
       double[][] zoneVector = new double[9][];
       double[][] chromaVector = getChromaVector();
       double[][] lightnessVector = getLightnessVector();
-      int j0 = 0, j1 = 3; //for Value of HSV, §C«G«×
+      int j0 = 0, j1 = 3; //for Value of HSV, ä½äº®åº¦
 
       zoneVector[0] = getSubMatrixAndAverage(chromaVector, lightnessVector, 0,
                                              3, j0, j1);
@@ -186,7 +186,7 @@ public class PreferredColorInspector {
       zoneVector[2] = getSubMatrixAndAverage(chromaVector, lightnessVector, 7,
                                              10, j0, j1);
 
-      j0 = 3; //¤¤«G«×
+      j0 = 3; //ä¸­äº®åº¦
       j1 = 7;
       zoneVector[3] = getSubMatrixAndAverage(chromaVector, lightnessVector, 0,
                                              3, j0, j1);
@@ -194,7 +194,7 @@ public class PreferredColorInspector {
                                              7, j0, j1);
       zoneVector[5] = getSubMatrixAndAverage(chromaVector, lightnessVector, 7,
                                              10, j0, j1);
-      j0 = 7; //°ª«G«×
+      j0 = 7; //é«˜äº®åº¦
       j1 = 10;
       zoneVector[6] = getSubMatrixAndAverage(chromaVector, lightnessVector, 0,
                                              3, j0, j1);
@@ -416,25 +416,25 @@ public class PreferredColorInspector {
 //    String mode = "Natural";
 //    String mode = "Vivid";
 //    String mode = "sRGB";
-//    String mode = "¦â±m´£¤É-Ãö³¬";
-//    String mode = "¦â±m´£¤É-ÂAÆv";
-//    String mode = "¦â±m´£¤É-ºñ¦â-ÂÅ¦â";
-//    String mode = "¦â±m´£¤É-ºñ¦â-½§¦â";
+//    String mode = "è‰²å½©æå‡-é—œé–‰";
+//    String mode = "è‰²å½©æå‡-é®®è±”";
+//    String mode = "è‰²å½©æå‡-ç¶ è‰²-è—è‰²";
+//    String mode = "è‰²å½©æå‡-ç¶ è‰²-è†šè‰²";
 
     if (args.length != 0) {
       mode = args[0];
     }
 
     LCDTarget test729Target = LCDTarget.Instance.getTest729FromAUOXLS(
-//        "prefered/CHIMEI 22GH/729colors_" + mode + ".xls"); //¼s¦â°ì
-//        "prefered/CHIMEI TCM32/" + mode + "_729.xls"); //ªüºK?
-        "prefered/EIZO S2031W/729color_" + mode + ".xls"); //ªüºK?
+//        "prefered/CHIMEI 22GH/729colors_" + mode + ".xls"); //å»£è‰²åŸŸ
+//        "prefered/CHIMEI TCM32/" + mode + "_729.xls"); //é˜¿æ‘˜?
+        "prefered/EIZO S2031W/729color_" + mode + ".xls"); //é˜¿æ‘˜?
 //        "prefered/LG 42SL90QD/" + mode + "/871.xls");
 //        "prefered/Samsung PAVV/3DLUT729_Dynamic_DNIE Off_HDR Off.xls");
 //        "prefered/Sharp LC-46LX1/Modes/" + mode + "/871.xls");
 //        "prefered/Sony 70x7000/729color_" + mode + ".xls");
 //        "prefered/SONY KDL-40ZX1/729colors_" + mode + ".xls");
-//        "prefered/VIZIO VF551XVT-T/¼Ğ·Ç/" + mode + "/871.xls");
+//        "prefered/VIZIO VF551XVT-T/æ¨™æº–/" + mode + "/871.xls");
 
     boolean show2DHuePlane = true;
     boolean plot2DHueVector = false;

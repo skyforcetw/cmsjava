@@ -6,7 +6,7 @@ import shu.cms.colorspace.depend.RGBBase.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ´£¨Ñ¦â¥~»ª¤TÄİ©Ê ©ú«× ±m«× ¦â¬Û ªº°òÂ¦¥\¯à
+ * æä¾›è‰²å¤–è²Œä¸‰å±¬æ€§ æ˜åº¦ å½©åº¦ è‰²ç›¸ çš„åŸºç¤åŠŸèƒ½
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

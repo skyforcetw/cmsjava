@@ -76,7 +76,7 @@ public class AUORampXLSFile {
    *
    * @param excel ExcelFile
    * @param lcdTarget LCDTarget
-   * @return int ¼g¤Jªº¦Ç¶¥µ§¼Æ
+   * @return int å¯«å…¥çš„ç°éšç­†æ•¸
    * @throws WriteException
    */
   private int writeWhite(ExcelFile excel, LCDTarget lcdTarget) throws
@@ -87,7 +87,7 @@ public class AUORampXLSFile {
     excel.setCell(2, 0, "W_y");
     excel.setCell(3, 0, "W_Y (nit)");
     excel.setCell(4, 0, "W_C.T.");
-    excel.setCell(5, 0, "£GUV");
+    excel.setCell(5, 0, "Î”UV");
     excel.setCell(6, 0, "W_R");
     excel.setCell(7, 0, "W_G");
     excel.setCell(8, 0, "W_B");

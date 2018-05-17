@@ -13,7 +13,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¦â«×»öªº¥|¦â®Õ¥¿
+ * è‰²åº¦å„€çš„å››è‰²æ ¡æ­£
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -29,7 +29,7 @@ public class FourColorCalibrator
   protected CIEXYZ white;
 
   /**
-   * ±NsampleRGBW®Õ¥¿¨ìrefRGBW
+   * å°‡sampleRGBWæ ¡æ­£åˆ°refRGBW
    * @param refRGBW CIEXYZ[]
    * @param sampleRGBW CIEXYZ[]
    */
@@ -44,7 +44,7 @@ public class FourColorCalibrator
   }
 
   /**
-   * ±NlcdTargets®Õ¥¿¨ìreference
+   * å°‡lcdTargetsæ ¡æ­£åˆ°reference
    * @param reference LCDTarget
    * @param lcdTargets LCDTarget[]
    */
@@ -68,7 +68,7 @@ public class FourColorCalibrator
   }
 
   /**
-   * ±NlcdTarget®Õ¥¿¨ìreference
+   * å°‡lcdTargetæ ¡æ­£åˆ°reference
    * @param reference LCDTarget
    * @param lcdTarget LCDTarget
    */
@@ -79,7 +79,7 @@ public class FourColorCalibrator
   }
 
   /**
-   * ±NpatchList¨C¤@­Ópatch¸ÌªºXYZ, ­«·s­pºâ®Õ¥¿«áªºXYZ, ¨Ã¥B´À´«±¼.
+   * å°‡patchListæ¯ä¸€å€‹patchè£¡çš„XYZ, é‡æ–°è¨ˆç®—æ ¡æ­£å¾Œçš„XYZ, ä¸¦ä¸”æ›¿æ›æ‰.
    * @param patchList List
    */
   public final void calibrate(List<Patch> patchList) {
@@ -105,10 +105,10 @@ public class FourColorCalibrator
       Patch.Operator.setXYZ(p, result);
     }
 
-    //µ´¹ï«G«×®Õ¥¿
+    //çµ•å°äº®åº¦æ ¡æ­£
     CIEXYZ calLuminance = calibrate(lcdTarget.getLuminance());
     lcdTarget.getLuminance().setValues(calLuminance.getValues());
-    //©Ò¦³¦â¶ôLab­«·s­pºâ
+    //æ‰€æœ‰è‰²å¡ŠLabé‡æ–°è¨ˆç®—
     CIEXYZ white = lcdTarget.getWhitePatch().getXYZ();
     lcdTarget.calculatePatchLab(white);
     lcdTarget.calculateNormalizedXYZ();

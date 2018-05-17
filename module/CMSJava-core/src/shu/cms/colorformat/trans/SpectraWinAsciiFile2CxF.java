@@ -12,7 +12,7 @@ import shu.cms.colorformat.legend.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ±NSpectraWin³nÅé²£¥Íªº.txt¸ê®ÆÀÉ,Âà´«¦¨CxF
+ * å°‡SpectraWinè»Ÿé«”ç”¢ç”Ÿçš„.txtè³‡æ–™æª”,è½‰æ›æˆCxF
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -55,7 +55,7 @@ public class SpectraWinAsciiFile2CxF
 
     m.marshal(cxf, new BufferedWriter(new FileWriter(outputFilename)));
 
-    //µ²§ô
+    //çµæŸ
     current = lengthOfTask;
     done = true;
   }
@@ -73,9 +73,9 @@ public class SpectraWinAsciiFile2CxF
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¹ê§@¦¹Comparatorªº­ì¦]¦b©ó:
- * file¦^¶ÇªºfileList,¨ä±Æ§Ç¤£²Å¦XPatchShower©ÒÂ^¨úªºÀÉ®×¶¶§Ç
- * ¦]¦¹»İ­n­«·s±Æ§Ç¥H«ì´_­ì¥»ªº¶¶§Ç
+ * å¯¦ä½œæ­¤Comparatorçš„åŸå› åœ¨æ–¼:
+ * fileå›å‚³çš„fileList,å…¶æ’åºä¸ç¬¦åˆPatchShoweræ‰€æ“·å–çš„æª”æ¡ˆé †åº
+ * å› æ­¤éœ€è¦é‡æ–°æ’åºä»¥æ¢å¾©åŸæœ¬çš„é †åº
  * <p>Copyright: Copyright (c) 2006</p>
  *
  * <p>Company: </p>

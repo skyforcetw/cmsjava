@@ -78,7 +78,7 @@ public final class ColorMatchingFunctionFile
   }
 
   /**
-   * ±Nªiªø¥h±¼,¥u¯d¤Ucmf,¨Ã¥B§@Âà¸m
+   * å°‡æ³¢é•·å»æ‰,åªç•™ä¸‹cmf,ä¸¦ä¸”ä½œè½‰ç½®
    * @param cmf double[][]
    * @return double[][]
    */

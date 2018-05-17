@@ -5,23 +5,25 @@ import javax.media.jai.*;
 
 import java.awt.image.*;
 
-import com.sun.image.codec.jpeg.*;
+//import com.sun.image.codec.jpeg.*;
 import shu.math.*;
 import shu.math.array.DoubleArray;
 import shu.image.*;
+import javax.imageio.ImageIO;  
+
 /**
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó§@¬°¼v¹³ªºWrapper,¦]¬°¼v¹³¦³RGB¸òLMS¨âºØ,
- * ¦ı¬O¹ï©ó¥ÕÂI°»´ú¨Ó»¡¨âºØ¼v¹³¨Ã¨S¦³¤£¦P,
- * ¦]¦¹³z¹L¦¹Wrapper¨ÓÂ²¤Æ¼v¹³ªº¾Ş§@
+ * ç”¨ä¾†ä½œç‚ºå½±åƒçš„Wrapper,å› ç‚ºå½±åƒæœ‰RGBè·ŸLMSå…©ç¨®,
+ * ä½†æ˜¯å°æ–¼ç™½é»åµæ¸¬ä¾†èªªå…©ç¨®å½±åƒä¸¦æ²’æœ‰ä¸åŒ,
+ * å› æ­¤é€éæ­¤Wrapperä¾†ç°¡åŒ–å½±åƒçš„æ“ä½œ
  *
- * »PDeviceIndependentImageªº¤À³¥¦b©ó:
- * ­n¬O¹ï©ó¼v¹³ªºXYZ/RGB/LMS¨S¦³³q¥Î©Êªº¾Ş§@»İ¨D
- * ´NºÉ¶q¥HDeviceIndependentImage¬°¥D
+ * èˆ‡DeviceIndependentImageçš„åˆ†é‡åœ¨æ–¼:
+ * è¦æ˜¯å°æ–¼å½±åƒçš„XYZ/RGB/LMSæ²’æœ‰é€šç”¨æ€§çš„æ“ä½œéœ€æ±‚
+ * å°±ç›¡é‡ä»¥DeviceIndependentImageç‚ºä¸»
  *
- * ¨Ò¥~ªº¬O,¯Âºé»İ­nRGB¾Ş§@®É,¥HImageSkeleton¬°¥D
+ * ä¾‹å¤–çš„æ˜¯,ç´”ç²¹éœ€è¦RGBæ“ä½œæ™‚,ä»¥ImageSkeletonç‚ºä¸»
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -198,13 +200,14 @@ public abstract class ImageSkeleton
    * @param filename String
    * @return BufferedImage
    * @throws IOException
-   * @deprecated §ï¥ÎloadImage
+   * @deprecated æ”¹ç”¨loadImage
    */
   public final static BufferedImage loadJPEGImage(String filename) throws
       IOException {
     FileInputStream fs = new FileInputStream(filename);
-    JPEGImageDecoder in = JPEGCodec.createJPEGDecoder(fs);
-    return in.decodeAsBufferedImage();
+//    JPEGImageDecoder in = JPEGCodec.createJPEGDecoder(fs); 
+    return ImageIO.read(fs);
+//    return in.decodeAsBufferedImage();
   }
 
   public static void main(String[] args) throws IOException {
@@ -270,10 +273,11 @@ public abstract class ImageSkeleton
                                           BufferedImage image) throws
       IOException {
     FileOutputStream fs = new FileOutputStream(filename);
-    JPEGEncodeParam jpd = JPEGCodec.getDefaultJPEGEncodeParam(image);
-    jpd.setQuality(1.0f, false);
-    JPEGImageEncoder o = JPEGCodec.createJPEGEncoder(fs, jpd);
-    o.encode(image);
+//    JPEGEncodeParam jpd = JPEGCodec.getDefaultJPEGEncodeParam(image);
+//    jpd.setQuality(1.0f, false);
+//    JPEGImageEncoder o = JPEGCodec.createJPEGEncoder(fs, jpd);
+//    o.encode(image);
+     ImageIO.write(image, "jpg", fs);
   }
 
   /**

@@ -39,7 +39,7 @@ public class PatchListTablePanel
 
   public static void main(String[] args) {
     //==========================================================================
-    // ≥]©w∞œ
+    // Ë®≠ÂÆöÂçÄ
     //==========================================================================
     LCDTarget.setRGBNormalize(false);
 //    LCDTarget.setXYZNormalize(false);

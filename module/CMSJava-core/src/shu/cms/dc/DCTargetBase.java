@@ -76,7 +76,7 @@ public abstract class DCTargetBase
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ¥Î¨ÓÀx¦s¾Éªí¬ÛÃö¼Æ¾Ú
+   * ç”¨ä¾†å„²å­˜å°è¡¨ç›¸é—œæ•¸æ“š
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -164,11 +164,11 @@ public abstract class DCTargetBase
       CCSG.chart = Chart.CCSG;
 
       /**
-       * IT8¾Éªíªº´X¦ó¼Æ¾Ú
-       * ¼e15.45 °ª10.2 border 1.52
-       * ±m¦â¶ô 14.15 7.68 border 3.45
+       * IT8å°è¡¨çš„å¹¾ä½•æ•¸æ“š
+       * å¯¬15.45 é«˜10.2 border 1.52
+       * å½©è‰²å¡Š 14.15 7.68 border 3.45
        * GS 15.45 1.25 border 1.52
-       * ¤@­Ó±m¦â¦â¶ô¬O0.64¨£¤è
+       * ä¸€å€‹å½©è‰²è‰²å¡Šæ˜¯0.64è¦‹æ–¹
        */
       IT8.width = 14.15;
       IT8.height = 7.68;
@@ -261,7 +261,7 @@ public abstract class DCTargetBase
                                      Chart chart) {
       if (rgbTarget.getStyle() == TargetAdapter.Style.Spectra ||
           XYZSpectraTarget.getStyle() == TargetAdapter.Style.RGB) {
-        //¥ıÀË¬dTargetªºStyle
+        //å…ˆæª¢æŸ¥Targetçš„Style
         throw new IllegalArgumentException("Illegal target style.");
       }
       Illuminant illuminant = getIlluminant(lightSource);
@@ -332,7 +332,7 @@ public abstract class DCTargetBase
         break;
       }
       //=========================================================================
-      // ²£¥ÍDCTarget©Ò»İ¦U¶µ°Ñ¼Æ
+      // ç”¢ç”ŸDCTargetæ‰€éœ€å„é …åƒæ•¸
       //=========================================================================
 //      TargetData targetData = TargetData.getInstance(chart);
 //      List<Spectra>
@@ -384,7 +384,7 @@ public abstract class DCTargetBase
         List<Spectra> targetReflectSpectra, LightSource.Source lightSource,
         double lightSourceFactor, Chart chart) {
       //=========================================================================
-      // ³B²z¥ú·½
+      // è™•ç†å…‰æº
       //=========================================================================
       Illuminant illuminant = getIlluminant(lightSource);
 //      Illuminant illuminant = LightSource.getIlluminant(lightSource);
@@ -394,7 +394,7 @@ public abstract class DCTargetBase
       //=========================================================================
 
       //=========================================================================
-      // ²£¥Í¥úÃĞ¯à¶q
+      // ç”¢ç”Ÿå…‰è­œèƒ½é‡
       //=========================================================================
       List<Spectra>
           targetSpectra = Spectra.produceSpectraPowerList(
@@ -442,7 +442,7 @@ public abstract class DCTargetBase
     private final static List<Spectra> getTargetReflectSpectra(TargetData
         targetData) {
       //=========================================================================
-      // ³]©wÀÉ®×¸ô®|
+      // è¨­å®šæª”æ¡ˆè·¯å¾‘
       //=========================================================================
       String targetSpectraCxFFilename = Filename.produceSpectraCxFFilename(
           targetData);
@@ -451,7 +451,7 @@ public abstract class DCTargetBase
       //=========================================================================
 
       //=========================================================================
-      // ²£¥ÍLCDTarget©Ò»İ¦U¶µ°Ñ¼Æ
+      // ç”¢ç”ŸLCDTargetæ‰€éœ€å„é …åƒæ•¸
       //=========================================================================
       List<Spectra>
           targetReflectSpectra = targetSpectraCxF.getSpectraList();
@@ -459,7 +459,7 @@ public abstract class DCTargetBase
     }
 
     /**
-     * ¥HIdealDigitalCamera©Ò­pºâ±o¤§¼Æ¦ì¬Û¾÷¾Éªí
+     * ä»¥IdealDigitalCameraæ‰€è¨ˆç®—å¾—ä¹‹æ•¸ä½ç›¸æ©Ÿå°è¡¨
      * @param camera IdealDigitalCamera
      * @param illuminant Illuminant
      * @param chart Chart
@@ -469,7 +469,7 @@ public abstract class DCTargetBase
                                      Illuminant illuminant,
                                      Chart chart) {
       //=========================================================================
-      // ²£¥ÍLCDTarget©Ò»İ¦U¶µ°Ñ¼Æ
+      // ç”¢ç”ŸLCDTargetæ‰€éœ€å„é …åƒæ•¸
       //=========================================================================
       TargetData targetData = TargetData.getInstance(chart);
       List<Spectra>
@@ -490,7 +490,7 @@ public abstract class DCTargetBase
     }
 
     /**
-     * ¥HIdealDigitalCamera©Ò­pºâ±o¤§¼Æ¦ì¬Û¾÷¾Éªí
+     * ä»¥IdealDigitalCameraæ‰€è¨ˆç®—å¾—ä¹‹æ•¸ä½ç›¸æ©Ÿå°è¡¨
      * @param lightSource Type
      * @param chart Chart
      * @param camera IdealDigitalCamera

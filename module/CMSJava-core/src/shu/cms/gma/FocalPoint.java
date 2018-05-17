@@ -10,7 +10,7 @@ import shu.cms.gma.gbp.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * À£ÁY¶°¤¤ÂIªº¹Bºâ,ÂÇ¥Ñkmeans©Ò±o
+ * å£“ç¸®é›†ä¸­é»çš„é‹ç®—,è—‰ç”±kmeansæ‰€å¾—
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -22,29 +22,29 @@ import shu.cms.gma.gbp.*;
 public class FocalPoint {
 
   /**
-   * ¥Î¨Óªí¥ÜÃä½t°Ï°ìªº¶°¤¤¤è¦¡.
-   * ¶°¤¤¨ì¸Ó°Ï¤¤¥¡©ÎªÌ¶°¤¤¨ì¸Ó°ÏÃä½t(¤]¬O¦VµÛ¤¤¤ß°Ï°ìªºÃä½t)
+   * ç”¨ä¾†è¡¨ç¤ºé‚Šç·£å€åŸŸçš„é›†ä¸­æ–¹å¼.
+   * é›†ä¸­åˆ°è©²å€ä¸­å¤®æˆ–è€…é›†ä¸­åˆ°è©²å€é‚Šç·£(ä¹Ÿæ˜¯å‘è‘—ä¸­å¿ƒå€åŸŸçš„é‚Šç·£)
    */
   public static enum SideAreaFocalType {
     Center, Boundary;
   }
 
   /**
-   * ¹ïÀ³ªº¤èªk:
-   * Multi ¤TÂI¶°¤¤
-   * Single ³æÂI¶°¤¤
-   * None µL¶°¤¤ÂI(±m«×À£ÁY/µô¤Á)
+   * å°æ‡‰çš„æ–¹æ³•:
+   * Multi ä¸‰é»é›†ä¸­
+   * Single å–®é»é›†ä¸­
+   * None ç„¡é›†ä¸­é»(å½©åº¦å£“ç¸®/è£åˆ‡)
    */
   public static enum FocalType {
     MultiByKMeans, Single, None, Multi
   }
 
   /**
-   * ¶°¤¤ÂIªº¼Æ¶q
+   * é›†ä¸­é»çš„æ•¸é‡
    */
   public final static int FOCAL_POINT_AMOUNT = 3;
   /**
-   * ¤£­n§ó°Ê,¨Ñkmeans¨Ï¥Î
+   * ä¸è¦æ›´å‹•,ä¾›kmeansä½¿ç”¨
    */
   protected final static int K = FOCAL_POINT_AMOUNT;
 
@@ -75,7 +75,7 @@ public class FocalPoint {
   }
 
   /**
-   * ¥D­n¨Ï¥Î¦b¤ä´©MultiByKMeansªº­pºâ¤è¦¡
+   * ä¸»è¦ä½¿ç”¨åœ¨æ”¯æ´MultiByKMeansçš„è¨ˆç®—æ–¹å¼
    * @param gbp GamutBoundaryPoint
    * @param focalType FocalType
    * @return FocalPoint
@@ -127,7 +127,7 @@ public class FocalPoint {
 
   protected TheFocalArea noneFocalArea;
   /**
-   * ¥Ñ¦â¬Û¥H¤Î©ú«×§ä¨ìFocalArea
+   * ç”±è‰²ç›¸ä»¥åŠæ˜åº¦æ‰¾åˆ°FocalArea
    * @param lightness double
    * @param hue double
    * @return TheFocalArea
@@ -155,7 +155,7 @@ public class FocalPoint {
   }
 
   /**
-   * §Q¥Îkmeans­pºâ¶°¤¤ÂI
+   * åˆ©ç”¨kmeansè¨ˆç®—é›†ä¸­é»
    * @param hue double
    * @return TheFocalArea[]
    */
@@ -183,7 +183,7 @@ public class FocalPoint {
   }
 
   /**
-   * ©T©w±Ä¥ÎL50¬°À£ÁY¶°¤¤ÂI
+   * å›ºå®šæ¡ç”¨L50ç‚ºå£“ç¸®é›†ä¸­é»
    * @return TheFocalArea[]
    */
   protected TheFocalArea[] produceFocalAreaByL50() {
@@ -201,7 +201,7 @@ public class FocalPoint {
   }
 
   /**
-   * ­pºâ¥XÃä¬É
+   * è¨ˆç®—å‡ºé‚Šç•Œ
    * @param KMeansData double[][]
    * @param assignment int[]
    * @param k int
@@ -318,7 +318,7 @@ public class FocalPoint {
   }
 
   /**
-   * (2)¨ú¥XP©Ò¦b¤À°ÏªºÂI
+   * (2)å–å‡ºPæ‰€åœ¨åˆ†å€çš„é»
    * @param list List
    * @param focalArea FocalArea
    * @return List
@@ -354,7 +354,7 @@ public class FocalPoint {
   }
 
   /**
-   * ¥Hhue°µ¥[Åv­pºâ©Ò±oªºfocalPoint
+   * ä»¥hueåšåŠ æ¬Šè¨ˆç®—æ‰€å¾—çš„focalPoint
    * @param LCh CIELCh
    * @param leftFocalPoint CIELCh
    * @param rightFocalPoint CIELCh

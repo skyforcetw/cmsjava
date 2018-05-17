@@ -63,13 +63,13 @@ public class PachinkoCCTMapper {
   }
 
   public static void main(String[] args) throws FileNotFoundException {
-    String dir = "D:/³nÅé/nobody zone/exp data/CCTv3/2012/120703/·s¸ê®Æ§¨";
+    String dir = "D:/è»Ÿé«”/nobody zone/exp data/CCTv3/2012/120703/æ–°è³‡æ–™å¤¾";
     AUORampXLSAdapter customer = new AUORampXLSAdapter(dir +
         "/Measurement01_customer.xls");
     AUORampXLSAdapter original = new AUORampXLSAdapter(dir +
         "/Measurement01_original.xls");
 //    AUORampXLSAdapter original = new AUORampXLSAdapter(
-//        "D:/³nÅé/nobody zone/exp data/CCTv3/2012/120703/Measurement00_original.xls");
+//        "D:/è»Ÿé«”/nobody zone/exp data/CCTv3/2012/120703/Measurement00_original.xls");
 
     double[][] customerCurve = getLuminanceCurve(customer);
     double[][] originalCurve = getLuminanceCurve(original);

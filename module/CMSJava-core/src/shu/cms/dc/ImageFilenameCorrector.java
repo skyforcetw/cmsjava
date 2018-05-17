@@ -6,7 +6,7 @@ import java.io.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ±N¬Û¾÷©çÄá¤U¨Óªºraw+jpg ¬y¤ô¸¹ÀÉ¦WÂà¦¨¨t²Î¥i¥H¿ëÃÑªºÀÉ¦W
+ * å°‡ç›¸æ©Ÿæ‹æ”ä¸‹ä¾†çš„raw+jpg æµæ°´è™Ÿæª”åè½‰æˆç³»çµ±å¯ä»¥è¾¨è­˜çš„æª”å
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -27,7 +27,7 @@ public class ImageFilenameCorrector {
     File[] files = dir.listFiles(new Filter());
 
     if (files.length != correctNames.length * 2) {
-      System.out.println("ÀÉ®×¼Æ¥Ø¤£²Å¦X59­Ó");
+      System.out.println("æª”æ¡ˆæ•¸ç›®ä¸ç¬¦åˆ59å€‹");
       return;
     }
 

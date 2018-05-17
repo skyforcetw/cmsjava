@@ -195,13 +195,13 @@ public class DeltaECalculator {
     DeltaEReport.setOnlyCountMeasuredDeltaE(false);
 //     DeltaEReport[] reports = compareWithsRGB("dell/dg off.xls");
 //    DeltaEReport[] reports = compareWithsRGB("dell/dg on.xls");
-    DeltaEReport[] reports = compareWithsRGB("¶q´ú/dg off(46).xls");
-//    DeltaEReport[] reports = compareWithsRGB("¶q´ú/dg on(46).xls");
-//    DeltaEReport[] reports = compareWithsRGB("¶q´ú/Acer(46).xls");
-//    DeltaEReport[] reports = compareWithsRGB("¶q´ú/eizo like(46).xls");
-//    DeltaEReport[] reports = compareWithsRGB("¶q´ú/eizo like(weak gamma).xls");
-//    DeltaEReport[] reports = compareWithsRGB("¶q´ú/cm2.xls");
-//    DeltaEReport[] reports = compareWithsRGB("¶q´ú/sRGB(46).xls");
+    DeltaEReport[] reports = compareWithsRGB("ç§–ä»£/dg off(46).xls");
+//    DeltaEReport[] reports = compareWithsRGB("ç§–ä»£/dg on(46).xls");
+//    DeltaEReport[] reports = compareWithsRGB("ç§–ä»£/Acer(46).xls");
+//    DeltaEReport[] reports = compareWithsRGB("ç§–ä»£/eizo like(46).xls");
+//    DeltaEReport[] reports = compareWithsRGB("ç§–ä»£/eizo like(weak gamma).xls");
+//    DeltaEReport[] reports = compareWithsRGB("ç§–ä»£/cm2.xls");
+//    DeltaEReport[] reports = compareWithsRGB("ç§–ä»£/sRGB(46).xls");
 
 //    DeltaEReport[] reports = compareWithsRGB("dell/cm1.xls");
 

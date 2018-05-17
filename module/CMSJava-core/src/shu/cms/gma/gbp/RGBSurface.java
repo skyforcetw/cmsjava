@@ -62,7 +62,7 @@ public class RGBSurface
   protected void setBoundaryLChValues(RGB rgb, double[] LChValues) {
     int[] LIndices = null;
     if (parent.useNearestLightnessIndex) {
-      //­pºâ¥H³Ì±µªñªºLightnes¶i¦æ
+      //è¨ˆç®—ä»¥æœ€æ¥è¿‘çš„Lightnesé€²è¡Œ
       LIndices = getNearestLightnessIndex(LChValues[0]);
     }
     else {
@@ -71,13 +71,13 @@ public class RGBSurface
     }
 
     int HIndex = parent.getHueIndex(LChValues[2]);
-//¥NªíÂà¤F¤@°é,©Ò¥H­nÂk¹s
+//ä»£è¡¨è½‰äº†ä¸€åœˆ,æ‰€ä»¥è¦æ­¸é›¶
     HIndex = (HIndex == HLevel) ? 0 : HIndex;
 
-    //¥i¥H°µ¨ì§ó·s¨â­Óindex
+    //å¯ä»¥åšåˆ°æ›´æ–°å…©å€‹index
     for (int x = 0; x < LIndices.length; x++) {
       int LIndex = LIndices[x];
-      //¦pªGC§ó¤j,´N§ó·sboundary
+      //å¦‚æœCæ›´å¤§,å°±æ›´æ–°boundary
       if (LChValues[1] > boundaryHLCArray[HIndex][LIndex]) {
         boundaryHLCArray[HIndex][LIndex] = LChValues[1];
         boundaryRGBArray[HIndex][LIndex][0] = (short) rgb.R;

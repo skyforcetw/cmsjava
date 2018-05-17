@@ -60,14 +60,14 @@ public abstract class ProfileColorSpace
   }
 
   /**
-   * ±qProfile­ì¥ÍªºCIEXYZÂà¨ìRGB
+   * å¾ProfileåŸç”Ÿçš„CIEXYZè½‰åˆ°RGB
    * @param XYZValues double[]
    * @return double[]
    */
   public abstract double[] fromCIEXYZValues(double[] XYZValues);
 
   /**
-   * ±qRGBÂà¨ì­ì¥ÍªºCIEXYZ
+   * å¾RGBè½‰åˆ°åŸç”Ÿçš„CIEXYZ
    * @param rgbValues double[]
    * @return double[]
    */
@@ -93,7 +93,7 @@ public abstract class ProfileColorSpace
       getValues();
 
   /**
-   * ±qPCSªºCIEXYZ->Device CIEXYZ->RGB
+   * å¾PCSçš„CIEXYZ->Device CIEXYZ->RGB
    * @param PCSXYZValues double[]
    * @return double[]
    */
@@ -122,7 +122,7 @@ public abstract class ProfileColorSpace
   }
 
   /**
-   * ±qRGBÂà¨ìPCSªºCIEXYZ,¤]´N¬OD50¤UªºCIEXYZ
+   * å¾RGBè½‰åˆ°PCSçš„CIEXYZ,ä¹Ÿå°±æ˜¯D50ä¸‹çš„CIEXYZ
    * @param rgbValues double[]
    * @return double[]
    */
@@ -148,7 +148,7 @@ public abstract class ProfileColorSpace
   public final static class Instance {
 
     /**
-     * ¹w³]±Ä¥ÎRelativeColorimetric
+     * é è¨­æ¡ç”¨RelativeColorimetric
      * @param profile Profile
      * @param catType CATType
      * @param description String
@@ -168,7 +168,7 @@ public abstract class ProfileColorSpace
     }
 
     /**
-     * ±Ä¥ÎProfile²£¥ÍProfileColorSpace
+     * æ¡ç”¨Profileç”¢ç”ŸProfileColorSpace
      * @param profile Profile
      * @param intent RenderingIntent
      * @param catType CATType
@@ -180,7 +180,7 @@ public abstract class ProfileColorSpace
                                               CAMConst.CATType catType,
                                               String description) {
       if (profile == null) {
-        //³o¬O´ú¸Õ¥Îªº
+        //é€™æ˜¯æ¸¬è©¦ç”¨çš„
         return new ByRGBColorSpace(RGB.ColorSpace.sRGB, catType, description);
       }
       else {
@@ -198,7 +198,7 @@ public abstract class ProfileColorSpace
     }
 
     /**
-     * ±Ä¥ÎColorSpaceConnectedLUT²£¥ÍProfileColorSpace
+     * æ¡ç”¨ColorSpaceConnectedLUTç”¢ç”ŸProfileColorSpace
      * @param AToB ColorSpaceConnectedLUT
      * @param BToA ColorSpaceConnectedLUT
      * @param white CIEXYZ
@@ -240,7 +240,7 @@ public abstract class ProfileColorSpace
     }
 
     /**
-     * ±Ä¥ÎRGB.RGBColorSpace²£¥ÍProfileColorSpace
+     * æ¡ç”¨RGB.RGBColorSpaceç”¢ç”ŸProfileColorSpace
      * @param rgbColorSpace ColorSpace
      * @param catType CATType
      * @param description String
@@ -375,7 +375,7 @@ public abstract class ProfileColorSpace
     }
 
     /**
-     * ±qProfile­ì¥ÍªºCIEXYZÂà¨ìRGB
+     * å¾ProfileåŸç”Ÿçš„CIEXYZè½‰åˆ°RGB
      *
      * @param XYZValues double[]
      * @return double[]
@@ -387,7 +387,7 @@ public abstract class ProfileColorSpace
     }
 
     /**
-     * ±qRGBÂà¨ì­ì¥ÍªºCIEXYZ
+     * å¾RGBè½‰åˆ°åŸç”Ÿçš„CIEXYZ
      *
      * @param rgbValues double[]
      * @return double[]
@@ -496,7 +496,7 @@ public abstract class ProfileColorSpace
     }
 
     /**
-     * ±qProfile­ì¥ÍªºCIEXYZÂà¨ìRGB
+     * å¾ProfileåŸç”Ÿçš„CIEXYZè½‰åˆ°RGB
      *
      * @param XYZValues double[]
      * @return double[]
@@ -506,7 +506,7 @@ public abstract class ProfileColorSpace
     }
 
     /**
-     * ±qRGBÂà¨ì­ì¥ÍªºCIEXYZ
+     * å¾RGBè½‰åˆ°åŸç”Ÿçš„CIEXYZ
      *
      * @param rgbValues double[]
      * @return double[]
@@ -571,7 +571,7 @@ public abstract class ProfileColorSpace
    *
    * @author cms.shu.edu.tw
    * @version 1.0
-   * @todo H icc Lab¹ï·Óªíªº³B²z
+   * @todo H icc Labå°ç…§è¡¨çš„è™•ç†
    */
   protected static class ByCLUT
       extends ByTetrahedral {

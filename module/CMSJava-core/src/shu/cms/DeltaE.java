@@ -8,7 +8,7 @@ import shu.math.*;
  *
  * <p>Description: </p>
  * from lcms
- * ¦â®t¤½¦¡
+ * è‰²å·®å…¬å¼
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -50,14 +50,14 @@ public final class DeltaE {
   }
 
   /**
-   * ´£¨ÑsumDeltaE¨Ï¥Î
+   * æä¾›sumDeltaEä½¿ç”¨
    */
   protected DeltaE() {
     deltaE = new double[Formula.values().length];
   }
 
   /**
-   * ¥]§t¦â¾AÀ³ªº¥\¯à,±Nwhite¾AÀ³¦ÜD65¤U,¦A­pºâLab
+   * åŒ…å«è‰²é©æ‡‰çš„åŠŸèƒ½,å°‡whiteé©æ‡‰è‡³D65ä¸‹,å†è¨ˆç®—Lab
    * @param _XYZ1 CIEXYZ
    * @param _XYZ2 CIEXYZ
    * @param white CIEXYZ
@@ -67,11 +67,11 @@ public final class DeltaE {
   }
 
   /**
-   * ­pºâLab
+   * è¨ˆç®—Lab
    * @param _XYZ1 CIEXYZ
    * @param _XYZ2 CIEXYZ
    * @param white CIEXYZ
-   * @param adaptedToD65 boolean ¬O§_­n§@¦â¾AÀ³¨ìD65¤U
+   * @param adaptedToD65 boolean æ˜¯å¦è¦ä½œè‰²é©æ‡‰åˆ°D65ä¸‹
    */
   public DeltaE(final CIEXYZ _XYZ1, final CIEXYZ _XYZ2, final CIEXYZ white,
                 boolean adaptedToD65) {
@@ -91,7 +91,7 @@ public final class DeltaE {
   }
 
   /**
-   * ¨Ì·ÓLab1©MLab2­pºâ¦â®t, ¨Ã¥B¥ı±NLab1©MLab2¾AÀ³¨ìD65¤U
+   * ä¾ç…§Lab1å’ŒLab2è¨ˆç®—è‰²å·®, ä¸¦ä¸”å…ˆå°‡Lab1å’ŒLab2é©æ‡‰åˆ°D65ä¸‹
    * @param Lab1 CIELab
    * @param Lab2 CIELab
    */
@@ -100,7 +100,7 @@ public final class DeltaE {
   }
 
   public DeltaE(final CIELab Lab1, final CIELab Lab2, boolean adaptedToD65) {
-    //¹w³]­È³]¬°-1¥Nªí©|¥¼­pºâdeltaE
+    //é è¨­å€¼è¨­ç‚º-1ä»£è¡¨å°šæœªè¨ˆç®—deltaE
     deltaE = new double[] {
         -1, -1, -1, -1, -1, -1};
     this._Lab1 = adaptedToD65 ? Lab1.getLabAdaptedToD65() : Lab1;
@@ -200,7 +200,7 @@ public final class DeltaE {
   }
 
   /**
-   * ¨ú±oCIEDE2000©ú«×®t
+   * å–å¾—CIEDE2000æ˜åº¦å·®
    * @return double
    */
   public final double getCIE2000DeltaL() {
@@ -214,7 +214,7 @@ public final class DeltaE {
   }
 
   /**
-   * ¨ú±oCIEDE2000¶ÀÂÅ¬õºñ®t
+   * å–å¾—CIEDE2000é»ƒè—ç´…ç¶ å·®
    * @return double
    */
   public final double getCIE2000Deltaab() {
@@ -265,7 +265,7 @@ public final class DeltaE {
   }
 
   /**
-   * BFD deltaE­pºâ¨Ï¥Î
+   * BFD deltaEè¨ˆç®—ä½¿ç”¨
    * @param Lab CIELab
    * @return double
    */
@@ -381,7 +381,7 @@ public final class DeltaE {
   }
 
   /**
-   * CIE2000¦â®t¤½¦¡(±Ä¥Î¹w³]­È¹Bºâ)
+   * CIE2000è‰²å·®å…¬å¼(æ¡ç”¨é è¨­å€¼é‹ç®—)
    * @param Lab1 CIELab
    * @param Lab2 CIELab
    * @return double
@@ -392,12 +392,12 @@ public final class DeltaE {
 
   private final static double[] _CIE2000DeltaLCH = new double[3];
   /**
-   * ­pºâ¦â®t¥Îªº°Ñ¼Æ {dL, dC, dh, Sl, Sc, Sh, Rt, Kl, Kc, Kh}
+   * è¨ˆç®—è‰²å·®ç”¨çš„åƒæ•¸ {dL, dC, dh, Sl, Sc, Sh, Rt, Kl, Kc, Kh}
    */
   private final static double[] _CIE2000Parameters = new double[10];
 
   /**
-   * CIE2000¦â®t¤½¦¡
+   * CIE2000è‰²å·®å…¬å¼
    * @param Lab1 CIELab
    * @param Lab2 CIELab
    * @param Kl double
@@ -431,7 +431,7 @@ public final class DeltaE {
   }
 
   /**
-   * ­pºâCIEDE2000©Ò»İ­nªº°Ñ¼Æ
+   * è¨ˆç®—CIEDE2000æ‰€éœ€è¦çš„åƒæ•¸
    * @param Lab1 CIELab
    * @param Lab2 CIELab
    * @param Kl double
@@ -523,7 +523,7 @@ public final class DeltaE {
   }
 
   /**
-   * CIE2000DeltaE­pºâ¨Ï¥Î
+   * CIE2000DeltaEè¨ˆç®—ä½¿ç”¨
    * @param deg double
    * @return double
    */
@@ -532,7 +532,7 @@ public final class DeltaE {
   }
 
   /**
-   * CIE2000DeltaE­pºâ¨Ï¥Î
+   * CIE2000DeltaEè¨ˆç®—ä½¿ç”¨
    * @param b double
    * @param a double
    * @return double
@@ -686,7 +686,7 @@ public final class DeltaE {
   }
 
   /**
-   * getMeanDeltaE­pºâ¨Ï¥Î
+   * getMeanDeltaEè¨ˆç®—ä½¿ç”¨
    * @param divisor int
    */
   protected final void divideDeltaE(int divisor) {
@@ -696,7 +696,7 @@ public final class DeltaE {
   }
 
   /**
-   * ­pºâ©Ò¦³ªºdeltaE
+   * è¨ˆç®—æ‰€æœ‰çš„deltaE
    */
   protected final void calculateAllDeltaE() {
     double de = getBFDDeltaE();

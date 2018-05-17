@@ -11,10 +11,10 @@ import shu.math.lut.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Î¨Ó¼ÒÀÀCP table©ÎªÌÅã¥dªºLUT.
- * ¥Ñ©óDisplayLUT¤º³¡¬O¥ÎInterpolation1DLUT¹ê§@, ¦ÓInterpolation1DLUT¬O¥Hdouble[]²£¥Í.
- * ©Ò¥H¦pªG·Q­n¨Ï¥~³¡¼Æ¾Ú»PDisplayLUT¤º³¡ªºInterpolation1DLUT¦P¨B,
- * ´N­n¥ÎDisplayLUT(double[][] rgbOutput)³o°¦«Øºc¦¡
+ * ç”¨ä¾†æ¨¡æ“¬CP tableæˆ–è€…é¡¯å¡çš„LUT.
+ * ç”±æ–¼DisplayLUTå…§éƒ¨æ˜¯ç”¨Interpolation1DLUTå¯¦ä½œ, è€ŒInterpolation1DLUTæ˜¯ä»¥double[]ç”¢ç”Ÿ.
+ * æ‰€ä»¥å¦‚æœæƒ³è¦ä½¿å¤–éƒ¨æ•¸æ“šèˆ‡DisplayLUTå…§éƒ¨çš„Interpolation1DLUTåŒæ­¥,
+ * å°±è¦ç”¨DisplayLUT(double[][] rgbOutput)é€™éš»å»ºæ§‹å¼
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -30,7 +30,7 @@ public class DisplayLUT {
   protected RGB[] outputRGBArray;
 
   /**
-   * ±qRGBArray§ó·s¨ìrgbOutput
+   * å¾RGBArrayæ›´æ–°åˆ°rgbOutput
    */
   public void updateFromRGBArray() {
     if (outputRGBArray != null) {
@@ -57,15 +57,15 @@ public class DisplayLUT {
   }
 
   /**
-   * ¨ã¦P¨B®ÄªGªº«Øºc¦¡
-   * @param rgbOutput double[][] ¥Hdouble[3][256]ªº°}¦Cªì©l¤Æ¹ï·Óªí
+   * å…·åŒæ­¥æ•ˆæœçš„å»ºæ§‹å¼
+   * @param rgbOutput double[][] ä»¥double[3][256]çš„é™£åˆ—åˆå§‹åŒ–å°ç…§è¡¨
    */
   public DisplayLUT(double[][] rgbOutput) {
     this(RGBArray.getOriginalRGBDoubleArray(), rgbOutput);
   }
 
   /**
-   * ¨ã¦P¨B®ÄªGªº«Øºc¦¡
+   * å…·åŒæ­¥æ•ˆæœçš„å»ºæ§‹å¼
    * @param rgbInput double[][]
    * @param rgbOutput double[][]
    */
@@ -86,7 +86,7 @@ public class DisplayLUT {
   }
 
   /**
-   * ¬O§_¨ã¦³»P¥~³¡¦P¨Bªº¥\¯à
+   * æ˜¯å¦å…·æœ‰èˆ‡å¤–éƒ¨åŒæ­¥çš„åŠŸèƒ½
    */
   private boolean externSynchronal;
 
@@ -95,7 +95,7 @@ public class DisplayLUT {
   }
 
   /**
-   * ¤£¨ã¦P¨B®ÄªGªº«Øºc¦¡
+   * ä¸å…·åŒæ­¥æ•ˆæœçš„å»ºæ§‹å¼
    * @param outputArray RGB[]
    */
   public DisplayLUT(RGB[] outputArray) {

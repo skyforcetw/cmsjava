@@ -1,4 +1,4 @@
-package auo.cms.frc.impl;
+package fiti.cms.frc.impl;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -20,8 +20,8 @@ import java.util.concurrent.Executors;
 import java.util.concurrent.ThreadFactory;
 import java.util.concurrent.ThreadPoolExecutor;
 
-import auo.cms.frc.FRCPattern;
-import static auo.cms.frc.impl.FRC3_16Util.*;
+import fiti.cms.frc.FRCPattern;
+import static fiti.cms.frc.impl.FRC3_16Util.*;
 
 /**
  * <p>Title: </p>

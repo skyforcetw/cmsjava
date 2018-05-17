@@ -38,7 +38,7 @@ public class CharacterizationAnalyzer {
 
   public static void main(String[] args) throws BiffException, IOException {
     AUOMeasureXLSAdapter adapter = new AUOMeasureXLSAdapter(
-        "d:/≥n≈È/nobody zone/CCT exp data/2012/120910/iPad.xls");
+        "d:/‡∏ìn‡∏•‡πâ/nobody zone/CCT exp data/2012/120910/iPad.xls");
     LCDTarget target = LCDTarget.Instance.get(adapter);
 //    for (Patch p : target.getPatchList()) {
 //      System.out.println(p);

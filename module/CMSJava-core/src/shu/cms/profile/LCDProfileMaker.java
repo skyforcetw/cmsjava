@@ -25,7 +25,7 @@ import shu.math.array.DoubleArray;
 public class LCDProfileMaker
     extends ProfileMaker {
   /**
-   * D50White­¼¤W«Y¼Æ0.5
+   * D50Whiteä¹˜ä¸Šä¿‚æ•¸0.5
    */
   protected CIEXYZ LUTPCSWhite;
   protected final static double NORMALIZE_Y = 32768. / 65535.;
@@ -35,11 +35,11 @@ public class LCDProfileMaker
   }
 
   /**
-   * ¬Û¹ï³]³Æ¥Õ,´î±¼flareªºwhite
+   * ç›¸å°è¨­å‚™ç™½,æ¸›æ‰flareçš„white
    */
   protected CIEXYZ relativeDeviceWhite;
   /**
-   * relativeDeviceWhite¸g¥¿³W¤Æ³B²z
+   * relativeDeviceWhiteç¶“æ­£è¦åŒ–è™•ç†
    */
   protected CIEXYZ relativeDeviceNormalizeWhite;
 
@@ -52,7 +52,7 @@ public class LCDProfileMaker
     init();
 
     //==========================================================================
-    //°Ñ¼Æªº·Ç³Æ
+    //åƒæ•¸çš„æº–å‚™
     //==========================================================================
     lcdModel.correct.setDoGammaCorrect(true);
     deviceWhite = lcdModel.getModelWhite();
@@ -65,9 +65,9 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    //²£¥Í¦â¾AÀ³
+    //ç”¢ç”Ÿè‰²é©æ‡‰
     //==========================================================================
-    //¦â¾AÀ³¼Ò²Õ¬O¥H relativeDeviceNormalizeWhite¬°Âà´«°òÂ¦,¨Ï¥Î¤W­n¯S§Oª`·N
+    //è‰²é©æ‡‰æ¨¡çµ„æ˜¯ä»¥ relativeDeviceNormalizeWhiteç‚ºè½‰æ›åŸºç¤,ä½¿ç”¨ä¸Šè¦ç‰¹åˆ¥æ³¨æ„
     D50chromaticAdaptation = new ChromaticAdaptation(
         relativeDeviceNormalizeWhite,
         D50White, this.catType);
@@ -75,35 +75,35 @@ public class LCDProfileMaker
   }
 
   /**
-   * »s§@¥HLab¬°PCSªºProfile
+   * è£½ä½œä»¥Labç‚ºPCSçš„Profile
    * @param lcdModel LCDModel
    * @return Profile
    */
   public Profile makeLabProfile(LCDModel lcdModel) {
     //==========================================================================
-    //°Ñ¼Æªº·Ç³Æ
+    //åƒæ•¸çš„æº–å‚™
     //==========================================================================
     init(lcdModel);
     //==========================================================================
 
     //==========================================================================
-    //²£¥Í¹ï·Óªí
+    //ç”¢ç”Ÿå°ç…§è¡¨
     //==========================================================================
 
     //==========================================================================
     // AToB
     //==========================================================================
-    //PCS¤UªºRGB->XYZ
+    //PCSä¸‹çš„RGB->XYZ
     double[][][] AToB = produceRGBToXYZArray(lcdModel, NUMBER_OF_GRID_POINTS, true);
-    //²£¥ÍCSCLUT¨ÑBToA¥Î
+    //ç”¢ç”ŸCSCLUTä¾›BToAç”¨
     ColorSpaceConnectedLUT AToB1XYZ = ProfileUtils.produceRGBToXYZCSCLUT(
         lcdModel, AToB[0], AToB[1], NUMBER_OF_GRID_POINTS);
 
-    //±NRGB->XYZÅÜ¦¨ RGB->Lab
+    //å°‡RGB->XYZè®Šæˆ RGB->Lab
     CIELab.fromXYZValues(AToB[1], D50White.getValues());
-    //¦X²z¤Æ
+    //åˆç†åŒ–
     report._LabRationalCount += CIELab.rationalize(AToB[1]);
-    //²£¥ÍAToBªºCSCLUT
+    //ç”¢ç”ŸAToBçš„CSCLUT
     ColorSpaceConnectedLUT AToB1 = ProfileUtils.produceRGBToLabCSCLUT(lcdModel,
         AToB[0], AToB[1], NUMBER_OF_GRID_POINTS);
     //==========================================================================
@@ -118,7 +118,7 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Í¦¨
+    // ç”Ÿæˆ
     //==========================================================================
     CIEXYZ luminance = lcdModel.getLuminance();
     String description = lcdModel.getModelFactor().getModelFactorFilename() +
@@ -142,33 +142,33 @@ public class LCDProfileMaker
   }
 
   /**
-   * ²£¥Í¥HPCS(Lab)¹ï·Óªí,¦ı¬O¤¤¶¡»Î±µ±Ä¥ÎJab
+   * ç”¢ç”Ÿä»¥PCS(Lab)å°ç…§è¡¨,ä½†æ˜¯ä¸­é–“éŠœæ¥æ¡ç”¨Jab
    * A2B: RGB -> XYZ -vc1-> Jab -vc2-> XYZ -> Lab
-   *         (DC)   (¿Ã¹õvc)    (°Ñ¦Òvc)     (¥ÕÂID50)
+   *         (DC)   (è¢å¹•vc)    (åƒè€ƒvc)     (ç™½é»D50)
    *
    * B2A: Lab -> XYZ -vc2-> Jab -vc1> XYZ -> RGB
-   *       (¥ÕÂID50) (°Ñ¦Òvc)    (¿Ã¹õvc)  (DC)
+   *       (ç™½é»D50) (åƒè€ƒvc)    (è¢å¹•vc)  (DC)
    * @param lcdModel LCDModel
    * @param vc ViewingConditions
    * @return Profile
    */
   public Profile makeJabLabProfile(LCDModel lcdModel, ViewingConditions vc) {
     //==========================================================================
-    //°Ñ¼Æªº·Ç³Æ
+    //åƒæ•¸çš„æº–å‚™
     //==========================================================================
     init(lcdModel);
     //==========================================================================
 
     //==========================================================================
-    //²£¥Í¹ï·Óªí
+    //ç”¢ç”Ÿå°ç…§è¡¨
     //==========================================================================
 
     //==========================================================================
     // AToB
     //==========================================================================
-    //³]³ÆªÅ¶¡¤UªºXYZ
+    //è¨­å‚™ç©ºé–“ä¸‹çš„XYZ
     double[][][] AToB = produceRGBToXYZArray(lcdModel, NUMBER_OF_GRID_POINTS, false);
-    //³]³Æ¤UªºXYZ
+    //è¨­å‚™ä¸‹çš„XYZ
     ColorSpaceConnectedLUT AToB1XYZ = ProfileUtils.produceRGBToXYZCSCLUT(
         lcdModel, AToB[0], AToB[1], NUMBER_OF_GRID_POINTS);
 
@@ -189,7 +189,7 @@ public class LCDProfileMaker
     //==========================================================================
     // BToA
     //==========================================================================
-    // ¦b¦â¥~»ªªÅ¶¡°µgma, xyz->Jab
+    // åœ¨è‰²å¤–è²Œç©ºé–“åšgma, xyz->Jab
     ColorSpaceConnectedLUT BToA1 = produceJabToRGB1ByLut(lcdModel, AToB1XYZ,
         GMA2ClippingType.RGB, vc);
     //==========================================================================
@@ -197,7 +197,7 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Í¦¨
+    // ç”Ÿæˆ
     //==========================================================================
     CIEXYZ luminance = lcdModel.getLuminance();
     String description = lcdModel.getModelFactor().getModelFactorFilename() +
@@ -219,25 +219,25 @@ public class LCDProfileMaker
    * @param lcdModel LCDModel
    * @param vc ViewingConditions
    * @return Profile
-   * @todo M icc ¤£ª¾¹D¬O¬yµ{¦³°İÃD,ÁÙ¬O®Ú¥»¤£¾A¦X¥Î¦â¥~»ªJab·íLab
+   * @todo M icc ä¸çŸ¥é“æ˜¯æµç¨‹æœ‰å•é¡Œ,é‚„æ˜¯æ ¹æœ¬ä¸é©åˆç”¨è‰²å¤–è²ŒJabç•¶Lab
    */
   public Profile makeJabProfile(LCDModel lcdModel, ViewingConditions vc) {
     //==========================================================================
-    //°Ñ¼Æªº·Ç³Æ
+    //åƒæ•¸çš„æº–å‚™
     //==========================================================================
     init(lcdModel);
     //==========================================================================
 
     //==========================================================================
-    //²£¥Í¹ï·Óªí
+    //ç”¢ç”Ÿå°ç…§è¡¨
     //==========================================================================
 
     //==========================================================================
     // AToB
     //==========================================================================
-    //³]³ÆªÅ¶¡¤UªºXYZ
+    //è¨­å‚™ç©ºé–“ä¸‹çš„XYZ
     double[][][] AToB = produceRGBToXYZArray(lcdModel, NUMBER_OF_GRID_POINTS, false);
-    //³]³Æ¤UªºXYZ
+    //è¨­å‚™ä¸‹çš„XYZ
     ColorSpaceConnectedLUT AToB1XYZ = ProfileUtils.produceRGBToXYZCSCLUT(
         lcdModel, AToB[0], AToB[1], NUMBER_OF_GRID_POINTS);
 
@@ -251,7 +251,7 @@ public class LCDProfileMaker
     //==========================================================================
     // BToA
     //==========================================================================
-    // ¦b¦â¥~»ªªÅ¶¡°µgma, xyz->Jab
+    // åœ¨è‰²å¤–è²Œç©ºé–“åšgma, xyz->Jab
     ColorSpaceConnectedLUT BToA1 = produceJabToRGB1ByLut(lcdModel, AToB1XYZ,
         GMA2ClippingType.RGB, vc);
     //==========================================================================
@@ -259,7 +259,7 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Í¦¨
+    // ç”Ÿæˆ
     //==========================================================================
     CIEXYZ luminance = lcdModel.getLuminance();
     String description = lcdModel.getModelFactor().getModelFactorFilename() +
@@ -275,7 +275,7 @@ public class LCDProfileMaker
   }
 
   /**
-   * »s§@¥HXYZ¬°PCSªºProfile
+   * è£½ä½œä»¥XYZç‚ºPCSçš„Profile
    * @param lcdModel LCDModel
    * @param type LCDProfileType
    * @return Profile
@@ -283,16 +283,16 @@ public class LCDProfileMaker
   public Profile makeXYZProfile(LCDModel lcdModel, LCDProfileType type) {
 
     //==========================================================================
-    //°Ñ¼Æªº·Ç³Æ
+    //åƒæ•¸çš„æº–å‚™
     //==========================================================================
     init(lcdModel);
     //==========================================================================
 
     //==========================================================================
-    //²£¥Í¹ï·Óªí
+    //ç”¢ç”Ÿå°ç…§è¡¨
     //==========================================================================
     double[][][] AToB = produceRGBToXYZArray(lcdModel, NUMBER_OF_GRID_POINTS, true);
-    //±N³Ì¤j¥¿³W¤Æ¨ì0.5
+    //å°‡æœ€å¤§æ­£è¦åŒ–åˆ°0.5
     AToB[1] = CIEXYZ.times(AToB[1], D50White.getValues(), NORMALIZE_Y);
 
     ColorSpaceConnectedLUT AToB1 = ProfileUtils.produceRGBToXYZCSCLUT(lcdModel,
@@ -308,7 +308,7 @@ public class LCDProfileMaker
       case Lut:
 
         /**
-         * @todo M icc Lut¼Ò¦¡¦³°İÃD
+         * @todo M icc Lutæ¨¡å¼æœ‰å•é¡Œ
          */
         BToA1 = produceXYZToRGB1ByLut(lcdModel, AToB1, GMA2ClippingType.RGB);
         break;
@@ -323,7 +323,7 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Í¦¨
+    // ç”Ÿæˆ
     //==========================================================================
     CIEXYZ luminance = lcdModel.getLuminance();
     String description = lcdModel.getModelFactor().getModelFactorFilename() +
@@ -339,16 +339,16 @@ public class LCDProfileMaker
   }
 
   /**
-   * ±ND50ªºXYZÂà´«¨ìdevice¤UªºXYZ
+   * å°‡D50çš„XYZè½‰æ›åˆ°deviceä¸‹çš„XYZ
    * @param lutPCSXYZ double[][]
    * @param lutPCSWhite CIEXYZ
    */
   protected void PCSXYZToRelativeDeviceXYZ(double[][] lutPCSXYZ,
                                            CIEXYZ lutPCSWhite) {
-    //±qÀ£ÁYªºA2B white(0.5) ÁÙ­ì¦¨¥¿±`ªºD50 white
+    //å¾å£“ç¸®çš„A2B white(0.5) é‚„åŸæˆæ­£å¸¸çš„D50 white
     lutPCSXYZ = CIEXYZ.times(lutPCSXYZ, lutPCSWhite.getValues(),
                              D50White.Y);
-    //±qD50Âà¦^¨ìdevice
+    //å¾D50è½‰å›åˆ°device
     lutPCSXYZ = D50chromaticAdaptation.adaptationFromDestination(lutPCSXYZ);
     report.XYZRationalCount += CIEXYZ.rationalize(lutPCSXYZ);
     lutPCSXYZ = CIEXYZ.times(lutPCSXYZ,
@@ -357,21 +357,21 @@ public class LCDProfileMaker
   }
 
   /**
-   * ²£¥ÍLab2RGBªº¹ï·Óªí
-   * 1.²£¥ÍD50Lab
-   * 2.²£¥ÍD50¦â°ìÃä¬É
-   * 3.¶i¦æ¦â°ì¹ïÀ³
-   * 4.²£¥Í¹ï·Óªí
+   * ç”¢ç”ŸLab2RGBçš„å°ç…§è¡¨
+   * 1.ç”¢ç”ŸD50Lab
+   * 2.ç”¢ç”ŸD50è‰²åŸŸé‚Šç•Œ
+   * 3.é€²è¡Œè‰²åŸŸå°æ‡‰
+   * 4.ç”¢ç”Ÿå°ç…§è¡¨
    * @param lcdModel LCDModel
-   * @param AToB1XYZ ColorSpaceConnectedLUT ­pºâ¦â°ìÃä¬É¥ÎªºA2B
-   * @param clipType GMA2ClippingType ¶i¦æ²Ä¤G¦¸GMA®É©Ò±Ä¥Îªº¤è¦¡
+   * @param AToB1XYZ ColorSpaceConnectedLUT è¨ˆç®—è‰²åŸŸé‚Šç•Œç”¨çš„A2B
+   * @param clipType GMA2ClippingType é€²è¡Œç¬¬äºŒæ¬¡GMAæ™‚æ‰€æ¡ç”¨çš„æ–¹å¼
    * @return ColorSpaceConnectedLUT
    */
   protected ColorSpaceConnectedLUT produceLabToRGB1ByLut(LCDModel
       lcdModel, ColorSpaceConnectedLUT AToB1XYZ, GMA2ClippingType clipType) {
     int grid = AToB1XYZ.getNumberOfGridPoints();
     //==========================================================================
-    // ²£¥ÍD50ªºLab
+    // ç”¢ç”ŸD50çš„Lab
     //==========================================================================
     double[][] D50input = ColorSpaceConnectedLUT.produceInputLabCLUT(grid);
     double[][] inputTables = null;
@@ -379,7 +379,7 @@ public class LCDProfileMaker
       abCoordinatesOffset(D50input, 0.5);
 
       //========================================================================
-      // »İ­n³z¹Labªº1D Lut¨Ó°µ®y¼Ğªº¥­²¾
+      // éœ€è¦é€éabçš„1D Lutä¾†åšåº§æ¨™çš„å¹³ç§»
       //========================================================================
       inputTables = new double[3][];
       inputTables[0] = new double[grid];
@@ -395,7 +395,7 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¦â°ìÃä¬É¥Î¦â±mªÅ¶¡(¦]¬°¬O¥ÎA2B,©Ò¥H¬O¦bD50ªÅ¶¡¤U)
+    // è‰²åŸŸé‚Šç•Œç”¨è‰²å½©ç©ºé–“(å› ç‚ºæ˜¯ç”¨A2B,æ‰€ä»¥æ˜¯åœ¨D50ç©ºé–“ä¸‹)
     //==========================================================================
     ProfileColorSpace boundaryColorSpace = null;
     if (lcdModel instanceof ProfileColorSpaceModel) {
@@ -414,18 +414,18 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¶i¦æ¦â°ì¹ï¬M
+    // é€²è¡Œè‰²åŸŸå°æ˜ 
     //==========================================================================
-    //D50ªºLab
+    //D50çš„Lab
     double[][] relativeDeviceInput = DoubleArray.copy(D50input);
-    //¥HD50(PCS)¶i¦æGMA
+    //ä»¥D50(PCS)é€²è¡ŒGMA
     chromaClippingGamutMappint(relativeDeviceInput,
                                boundaryColorSpace, FocalPoint.FocalType.None);
     //==========================================================================
 
     CIELab.toXYZValues(relativeDeviceInput,
                        D50White.getValues());
-    //±qPCSÂà¨ìdevice¤U
+    //å¾PCSè½‰åˆ°deviceä¸‹
     PCSXYZToRelativeDeviceXYZ(relativeDeviceInput, D50White);
 
     double[][] output = produceB2AOutput(lcdModel, relativeDeviceInput,
@@ -442,40 +442,40 @@ public class LCDProfileMaker
       ViewingConditions vc) {
     int grid = AToB1DeviceXYZ.getNumberOfGridPoints();
     //==========================================================================
-    // ²£¥Í¦â¥~»ªªºJab
+    // ç”¢ç”Ÿè‰²å¤–è²Œçš„Jab
     //==========================================================================
     double[][] LabInput = ColorSpaceConnectedLUT.produceInputLabCLUT(grid);
     //==========================================================================
 
     //==========================================================================
-    // ¦â°ìÃä¬É¥Î¦â±mªÅ¶¡(DeviceXYZ)
+    // è‰²åŸŸé‚Šç•Œç”¨è‰²å½©ç©ºé–“(DeviceXYZ)
     //==========================================================================
     ProfileColorSpace boundaryColorSpace = getBoundaryColorSpace(AToB1DeviceXYZ,
         Polynomial.COEF_3.BY_19C);
     //==========================================================================
 
     //==========================================================================
-    // ¶i¦æ¦â°ì¹ï¬M
+    // é€²è¡Œè‰²åŸŸå°æ˜ 
     //==========================================================================
     //PCS Lab
     double[][] relativeDeviceInput = DoubleArray.copy(LabInput);
-    //Lab¥ıÂàXYZ(PCS)
+    //Labå…ˆè½‰XYZ(PCS)
     CIELab.toXYZValues(relativeDeviceInput, D50White.getValues());
     report.XYZRationalCount += CIEXYZ.rationalize(relativeDeviceInput);
-    //(PCS XYZÂà¨ìJab¤U)
+    //(PCS XYZè½‰åˆ°Jabä¸‹)
     ProfileUtils.XYZToJabArray(relativeDeviceInput,
                                referenceMediumViewingConditions);
     report._LabRationalCount += CIELab.rationalize(relativeDeviceInput);
 
     /**
-     * @todo M gma ¦â¥~»ªªºGMA
+     * @todo M gma è‰²å¤–è²Œçš„GMA
      */
-    //¥Ø«e¬OµL§@°Êªº
-    //§Q¥ÎJab¶i¦ægma
+    //ç›®å‰æ˜¯ç„¡ä½œå‹•çš„
+    //åˆ©ç”¨Jabé€²è¡Œgma
     chromaClippingGamutMappint(relativeDeviceInput,
                                boundaryColorSpace, FocalPoint.FocalType.None);
 
-    //±NJabÂà¦¨XYZ
+    //å°‡Jabè½‰æˆXYZ
     ProfileUtils.JabToXYZArray(relativeDeviceInput, vc);
     report.XYZRationalCount += CIEXYZ.rationalize(relativeDeviceInput);
     //==========================================================================
@@ -489,7 +489,7 @@ public class LCDProfileMaker
   }
 
   /**
-   * §Q¥ÎAToB1ªº¼Æ­È,¶i¦æ¦^Âk¨ú±omodel,§@¬°¦â°ìÃä¬É­pºâ®É¨Ï¥Î
+   * åˆ©ç”¨AToB1çš„æ•¸å€¼,é€²è¡Œå›æ­¸å–å¾—model,ä½œç‚ºè‰²åŸŸé‚Šç•Œè¨ˆç®—æ™‚ä½¿ç”¨
    * @param AToB1 ColorSpaceConnectedLUT
    * @param coefs COEF_3
    * @return ProfileColorSpace
@@ -509,7 +509,7 @@ public class LCDProfileMaker
   }
 
   /**
-   * ²£¥ÎinverseModel²£¥ÍB2A
+   * ç”¢ç”¨inverseModelç”¢ç”ŸB2A
    * @param lcdModel LCDModel
    * @param AToB1 ColorSpaceConnectedLUT
    * @param clipType ClippingType
@@ -519,28 +519,28 @@ public class LCDProfileMaker
       lcdModel, ColorSpaceConnectedLUT AToB1, GMA2ClippingType clipType) {
     int grid = AToB1.getNumberOfGridPoints();
     //==========================================================================
-    // ²£¥ÍD50ªºXYZ
+    // ç”¢ç”ŸD50çš„XYZ
     //==========================================================================
     double[][] D50input = ColorSpaceConnectedLUT.produceInputXYZCLUT(grid);
     //==========================================================================
 
     //==========================================================================
-    // ¦â°ìÃä¬É¥Î¦â±mªÅ¶¡(¦]¬°¬O¥ÎA2B,©Ò¥H¬O¦bD50ªÅ¶¡¤U)
+    // è‰²åŸŸé‚Šç•Œç”¨è‰²å½©ç©ºé–“(å› ç‚ºæ˜¯ç”¨A2B,æ‰€ä»¥æ˜¯åœ¨D50ç©ºé–“ä¸‹)
     //==========================================================================
     ProfileColorSpace boundaryColorSpace = getBoundaryColorSpace(AToB1,
         Polynomial.COEF_3.BY_19C);
     //==========================================================================
 
     //==========================================================================
-    // ¶i¦æ¦â°ì¹ï¬M
+    // é€²è¡Œè‰²åŸŸå°æ˜ 
     //==========================================================================
-    //D50ªºXYZ
+    //D50çš„XYZ
     double[][] relativeDeviceInput = DoubleArray.copy(D50input);
-    //¥HD50(PCS)¶i¦æGMA
+    //ä»¥D50(PCS)é€²è¡ŒGMA
     chromaClippingGamutMappint(relativeDeviceInput,
                                boundaryColorSpace,
                                FocalPoint.FocalType.MultiByKMeans, LUTPCSWhite);
-    //±qPCSÂà¨ìdevice¤U
+    //å¾PCSè½‰åˆ°deviceä¸‹
     PCSXYZToRelativeDeviceXYZ(relativeDeviceInput, LUTPCSWhite);
     //==========================================================================
 
@@ -554,9 +554,9 @@ public class LCDProfileMaker
   }
 
   /**
-   * ±Ä¥Îmatrix+lutªº¤è¦¡¶i¦æXYZ2RGB¹ï·Óªíªº¹Bºâ.
-   * ¥ı±NXYZ³z¹LmatrixÂà¨ì¤@RGBªÅ¶¡,¥R¤À§Q¥Î©Ò¦³ªº¹ï·ÓªíªÅ¶¡.
-   * ¦A±NRGB­ÈÂà¦^¨ìXYZ,¥H¦¹XYZ¶i¦æ¦â°ì¹ï¬M
+   * æ¡ç”¨matrix+lutçš„æ–¹å¼é€²è¡ŒXYZ2RGBå°ç…§è¡¨çš„é‹ç®—.
+   * å…ˆå°‡XYZé€ématrixè½‰åˆ°ä¸€RGBç©ºé–“,å……åˆ†åˆ©ç”¨æ‰€æœ‰çš„å°ç…§è¡¨ç©ºé–“.
+   * å†å°‡RGBå€¼è½‰å›åˆ°XYZ,ä»¥æ­¤XYZé€²è¡Œè‰²åŸŸå°æ˜ 
    * @param lcdModel LCDModel
    * @param AToB1 ColorSpaceConnectedLUT
    * @param clipType ClippingType
@@ -566,14 +566,14 @@ public class LCDProfileMaker
       lcdModel, ColorSpaceConnectedLUT AToB1, GMA2ClippingType clipType) {
 
     //==========================================================================
-    // °Ñ¦ÒRGBªÅ¶¡
+    // åƒè€ƒRGBç©ºé–“
     //==========================================================================
     RGB.ColorSpace rgbColorSpace = RGB.ColorSpace.WideGamutRGB;
     CIEXYZ RGBRefWhite = rgbColorSpace.referenceWhite.getNormalizeXYZ();
     //==========================================================================
 
     //==========================================================================
-    // ²£¥ÍRGBªºXYZ
+    // ç”¢ç”ŸRGBçš„XYZ
     //==========================================================================
     int grid = AToB1.getNumberOfGridPoints();
     double[][] RGBInput = ColorSpaceConnectedLUT.produceInputXYZCLUT(grid);
@@ -581,26 +581,26 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¦â°ìÃä¬É¥Î¦â±mªÅ¶¡(¦]¬°¬O¥ÎA2B,©Ò¥H¬O¦bD50ªÅ¶¡¤U)
+    // è‰²åŸŸé‚Šç•Œç”¨è‰²å½©ç©ºé–“(å› ç‚ºæ˜¯ç”¨A2B,æ‰€ä»¥æ˜¯åœ¨D50ç©ºé–“ä¸‹)
     //==========================================================================
     ProfileColorSpace boundaryColorSpace = getBoundaryColorSpace(AToB1,
         Polynomial.COEF_3.BY_19C);
     //==========================================================================
 
     //==========================================================================
-    // ¶i¦æ¦â°ì¹ï¬M
+    // é€²è¡Œè‰²åŸŸå°æ˜ 
     //==========================================================================
-    //D50ªºXYZ
+    //D50çš„XYZ
     double[][] relativeDeviceInput = new double[size][];
     for (int x = 0; x < size; x++) {
       double[] rgbValues = RGBInput[x];
       relativeDeviceInput[x] = RGB.linearToXYZValues(rgbValues, rgbColorSpace);
     }
-    //¥HD50(PCS)¶i¦æGMA
+    //ä»¥D50(PCS)é€²è¡ŒGMA
     chromaClippingGamutMappint(relativeDeviceInput,
                                boundaryColorSpace,
                                FocalPoint.FocalType.MultiByKMeans, RGBRefWhite);
-    //±qPCSÂà¨ìdevice¤U
+    //å¾PCSè½‰åˆ°deviceä¸‹
     PCSXYZToRelativeDeviceXYZ(relativeDeviceInput, RGBRefWhite);
     //==========================================================================
 
@@ -616,9 +616,9 @@ public class LCDProfileMaker
   }
 
   /**
-   * ¨Ì·ÓrelativeDeviceInput¤ºªº¼Æ­È,
-   * ¸glcdModelÂà´««á©Ò±oªºRGB,¨ú±oB2Aªº¿é¥X­È.
-   * ¦pªGB2Aªº¿é¥X­È¦³¤£¦X²z³B,¨Ì·ÓclipTypeªº¤èªk¶i¦æclip
+   * ä¾ç…§relativeDeviceInputå…§çš„æ•¸å€¼,
+   * ç¶“lcdModelè½‰æ›å¾Œæ‰€å¾—çš„RGB,å–å¾—B2Açš„è¼¸å‡ºå€¼.
+   * å¦‚æœB2Açš„è¼¸å‡ºå€¼æœ‰ä¸åˆç†è™•,ä¾ç…§clipTypeçš„æ–¹æ³•é€²è¡Œclip
    * @param lcdModel LCDModel
    * @param relativeDeviceInputXYZ double[][]
    * @param clipType ClippingType
@@ -628,7 +628,7 @@ public class LCDProfileMaker
                                         double[][] relativeDeviceInputXYZ,
                                         GMA2ClippingType clipType) {
     //==========================================================================
-    // °Ñ¼Æªº·Ç³Æ
+    // åƒæ•¸çš„æº–å‚™
     //==========================================================================
     int size = relativeDeviceInputXYZ.length;
 //    double[] deviceFlare = lcdModel.getFlare().getValues();
@@ -640,21 +640,21 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ²£¥ÍB2A¹ï·Óªí
+    // ç”¢ç”ŸB2Aå°ç…§è¡¨
     //==========================================================================
     /*for (int x = 0; x < size; x++) {
-      //¥ı¥[¤Wflare
+      //å…ˆåŠ ä¸Šflare
       double[] XYZValues = DoubleArray.plus(relativeDeviceInputXYZ[x],
                                             deviceFlare);
       XYZ.setValues(XYZValues);
-      //¦A¥ÎLCDModel¤Ï±ÀRGB
+      //å†ç”¨LCDModelåæ¨RGB
       RGB rgb = lcdModel.getRGB(XYZ, false);
 
-      //¦pªGrgb¤£¦s¦b©ÎªÌ¤£¦X²z
+      //å¦‚æœrgbä¸å­˜åœ¨æˆ–è€…ä¸åˆç†
       if (DO_GAMUT_MAPPING2 && (rgb == null || !rgb.isLegal())) {
         gma2Count++;
         if (clipType == GMA2ClippingType.RGB) {
-          //±Ä¥ÎRGB clippingªº¤è¦¡
+          //æ¡ç”¨RGB clippingçš„æ–¹å¼
           rgb.rationalize();
         }
         else if (clipType == GMA2ClippingType.LCh) {
@@ -671,14 +671,14 @@ public class LCDProfileMaker
       double[] XYZValues = relativeDeviceInputXYZ[x];
 
       XYZ.setValues(XYZValues);
-      //¦A¥ÎLCDModel¤Ï±ÀRGB
+      //å†ç”¨LCDModelåæ¨RGB
       RGB rgb = lcdModel.getRGB(XYZ, true);
 
-      //¦pªGrgb¤£¦s¦b©ÎªÌ¤£¦X²z
+      //å¦‚æœrgbä¸å­˜åœ¨æˆ–è€…ä¸åˆç†
       if (DO_GAMUT_MAPPING2 && (rgb == null || !rgb.isLegal())) {
         gma2Count++;
         if (clipType == GMA2ClippingType.RGB) {
-          //±Ä¥ÎRGB clippingªº¤è¦¡
+          //æ¡ç”¨RGB clippingçš„æ–¹å¼
           rgb.rationalize();
         }
         else if (clipType == GMA2ClippingType.LCh) {
@@ -697,8 +697,8 @@ public class LCDProfileMaker
   }
 
   /**
-   * ²£¥ÍRGBªºgrid,­pºâ¥X¹ï¬Mªº³]³ÆXYZ.¦¹XYZ¤w¸g´î¥hflare.
-   * ¦A±N¦¹³]³ÆªºXYZ±q³]³Æ¦â·ÅÂà¨ìD50¦â·Å(PCS)
+   * ç”¢ç”ŸRGBçš„grid,è¨ˆç®—å‡ºå°æ˜ çš„è¨­å‚™XYZ.æ­¤XYZå·²ç¶“æ¸›å»flare.
+   * å†å°‡æ­¤è¨­å‚™çš„XYZå¾è¨­å‚™è‰²æº«è½‰åˆ°D50è‰²æº«(PCS)
    * @param model LCDModel
    * @param grid int
    * @return double[][][]
@@ -708,7 +708,7 @@ public class LCDProfileMaker
                                                  int grid) {
 
     //==========================================================================
-    // ¥²­nªº¼Æ¾Ú¥ı·Ç³Æ¦n
+    // å¿…è¦çš„æ•¸æ“šå…ˆæº–å‚™å¥½
     //==========================================================================
     double[][][] inputAndOutput = new double[2][][];
     double step = 255. / (grid - 1);
@@ -722,7 +722,7 @@ public class LCDProfileMaker
     double[] XYZValues = new double[3];
 
     //==========================================================================
-    // ­¡¥N²£¥Í©Ò¦³ªºRGB¹ï¬M¨ìªºXYZ
+    // è¿­ä»£ç”¢ç”Ÿæ‰€æœ‰çš„RGBå°æ˜ åˆ°çš„XYZ
     //==========================================================================
     for (double r = 0; r <= 255.; r += step) {
       for (double g = 0; g <= 255.; g += step) {
@@ -732,10 +732,10 @@ public class LCDProfileMaker
           rgb.setValues(input[index]);
           CIEXYZ XYZ = model.getXYZ(rgb, false);
           XYZ.getValues(XYZValues);
-          //¥h±¼flare
+          //å»æ‰flare
           double[] relativeXYZValues = DoubleArray.minus(XYZValues, flareValues);
           XYZ.setValues(relativeXYZValues);
-          //¥¿³W¤Æ
+          //æ­£è¦åŒ–
           XYZ.normalize(relativeDeviceWhite);
           XYZ.getValues(relativeXYZValues);
           output[index] = relativeXYZValues;
@@ -746,7 +746,7 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Ñ©ó²£¥Í¥X¨ÓªºXYZ³B©órelativeDeviceNormalizeWhite,©Ò¥H±oÂà¨ìPCS(D50)¨Ã¥B¦X²z¤Æ
+    // ç”±æ–¼ç”¢ç”Ÿå‡ºä¾†çš„XYZè™•æ–¼relativeDeviceNormalizeWhite,æ‰€ä»¥å¾—è½‰åˆ°PCS(D50)ä¸¦ä¸”åˆç†åŒ–
     //==========================================================================
     output = D50chromaticAdaptation.adaptationToDestination(output);
     report.XYZRationalCount += CIEXYZ.rationalize(output);
@@ -762,7 +762,7 @@ public class LCDProfileMaker
                                               int grid, boolean CATToD50) {
 
     //==========================================================================
-    // ¥²­nªº¼Æ¾Ú¥ı·Ç³Æ¦n
+    // å¿…è¦çš„æ•¸æ“šå…ˆæº–å‚™å¥½
     //==========================================================================
     double[][][] inputAndOutput = new double[2][][];
     double step = 255. / (grid - 1);
@@ -776,7 +776,7 @@ public class LCDProfileMaker
 //    double[] XYZValues = new double[3];
 
     //==========================================================================
-    // ­¡¥N²£¥Í©Ò¦³ªºRGB¹ï¬M¨ìªºXYZ
+    // è¿­ä»£ç”¢ç”Ÿæ‰€æœ‰çš„RGBå°æ˜ åˆ°çš„XYZ
     //==========================================================================
     for (double r = 0; r <= 255.; r += step) {
       for (double g = 0; g <= 255.; g += step) {
@@ -786,10 +786,10 @@ public class LCDProfileMaker
           rgb.setValues(input[index]);
           CIEXYZ XYZ = model.getXYZ(rgb, true);
 //          XYZ.getValues(XYZValues);
-          //¥h±¼flare
+          //å»æ‰flare
 //          double[] relativeXYZValues = DoubleArray.minus(XYZValues, flareValues);
 //          XYZ.setValues(relativeXYZValues);
-          //¥¿³W¤Æ
+          //æ­£è¦åŒ–
           XYZ.normalize(relativeDeviceWhite);
 //          XYZ.getValues(relativeXYZValues);
 //          output[index] = relativeXYZValues;
@@ -801,7 +801,7 @@ public class LCDProfileMaker
     //==========================================================================
 
     //==========================================================================
-    // ¥Ñ©ó²£¥Í¥X¨ÓªºXYZ³B©órelativeDeviceNormalizeWhite,©Ò¥H±oÂà¨ìPCS(D50)¨Ã¥B¦X²z¤Æ
+    // ç”±æ–¼ç”¢ç”Ÿå‡ºä¾†çš„XYZè™•æ–¼relativeDeviceNormalizeWhite,æ‰€ä»¥å¾—è½‰åˆ°PCS(D50)ä¸¦ä¸”åˆç†åŒ–
     //==========================================================================
     if (CATToD50) {
       output = D50chromaticAdaptation.adaptationToDestination(output);
@@ -855,8 +855,8 @@ public class LCDProfileMaker
   }
 
   /**
-   * ¼Ò¥éGMBªºProfileªº®æ¦¡¹ê§@B2A
-   * ¥u±Ä¥Î¤@­Ó3x3 matrix¶i¦æ¹Bºâ
+   * æ¨¡ä»¿GMBçš„Profileçš„æ ¼å¼å¯¦ä½œB2A
+   * åªæ¡ç”¨ä¸€å€‹3x3 matrixé€²è¡Œé‹ç®—
    * @param lcdModel LCDModel
    * @param AToB1 ColorSpaceConnectedLUT
    * @return ColorSpaceConnectedLUT
@@ -865,7 +865,7 @@ public class LCDProfileMaker
       lcdModel,
       ColorSpaceConnectedLUT AToB1) {
     int grid = AToB1.getNumberOfGridPoints();
-    //²£¥ÍD50ªºXYZ
+    //ç”¢ç”ŸD50çš„XYZ
     double[][] D50input = ColorSpaceConnectedLUT.produceInputXYZCLUT(grid);
     int size = D50input.length;
     double[][] output = new double[size][];
@@ -875,7 +875,7 @@ public class LCDProfileMaker
     }
 
     //==========================================================================
-    // ­pºâB2Aªº3x3 matrix
+    // è¨ˆç®—B2Açš„3x3 matrix
     //==========================================================================
     CLUTRegressionReverseModel reverseModel = new CLUTRegressionReverseModel(
         AToB1,
@@ -893,7 +893,7 @@ public class LCDProfileMaker
   }
 
   /**
-   * ¦â°ì¹ï¬Mºtºâªk
+   * è‰²åŸŸå°æ˜ æ¼”ç®—æ³•
    * @param XYZGrid double[][]
    * @param boundaryColorSpace ProfileColorSpace
    * @param focalType FocalType
@@ -907,7 +907,7 @@ public class LCDProfileMaker
       focalType,
       CIEXYZ white) {
     if (DO_GAMUT_MAPPING) {
-      //white¥HA2Bªº¬°¥D (X,.5,Z)
+      //whiteä»¥A2Bçš„ç‚ºä¸» (X,.5,Z)
       CIELCh.XYZ2LChabValues(XYZGrid, white.getValues());
       chromaClippingGamutMappint(XYZGrid, boundaryColorSpace, focalType);
       CIELCh.LChab2XYZValues(XYZGrid, white.getValues());
@@ -932,7 +932,7 @@ public class LCDProfileMaker
   }
 
   /**
-   * ¶i¦æGMA
+   * é€²è¡ŒGMA
    */
   protected final static boolean DO_GAMUT_MAPPING = true;
 

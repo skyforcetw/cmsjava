@@ -68,7 +68,7 @@ public abstract class Parser {
   public static final String DIVISION = "\t";
 
   /**
-   * ±NÂù¤Ş¸¹ " ¥h±¼
+   * å°‡é›™å¼•è™Ÿ " å»æ‰
    * ex: "SampleID" => SampleID
    * @param str String
    * @return String
@@ -78,7 +78,7 @@ public abstract class Parser {
   }
 
   /**
-   * ±Ndivide«áªº­È·í§@value¦^¶Ç
+   * å°‡divideå¾Œçš„å€¼ç•¶ä½œvalueå›å‚³
    * @param keyValue String
    * @param divide char
    * @return String
@@ -94,8 +94,8 @@ public abstract class Parser {
   }
 
   /**
-   * ±NDIVISION©ÎªÌ':'§@¤À¬É,©î¦¨key-value pair
-   * ¥á¨ìmap¸Ì,µM«á¦^¶Ç.
+   * å°‡DIVISIONæˆ–è€…':'ä½œåˆ†ç•Œ,æ‹†æˆkey-value pair
+   * ä¸Ÿåˆ°mapè£¡,ç„¶å¾Œå›å‚³.
    * @param list ArrayList
    * @return Map
    */
@@ -116,7 +116,7 @@ public abstract class Parser {
 
       int colonIndex = line.indexOf(":");
       if (colonIndex != -1) {
-        //SpectraWin¤~¦³ :
+        //SpectraWinæ‰æœ‰ :
         key = line.substring(0, colonIndex).trim();
         val = line.substring(colonIndex + 1).trim();
         keyValue.put(key, val);

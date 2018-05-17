@@ -1,8 +1,8 @@
-package auo.cms.frc.impl;
+package fiti.cms.frc.impl;
 
+import fiti.cms.frc.FRCPattern;
 import java.util.*;
 
-import auo.cms.frc.*;
 import java.io.IOException;
 
 /**

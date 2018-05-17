@@ -6,7 +6,7 @@ import java.util.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * SOCSªº¸ê®Æ®æ¦¡
+ * SOCSçš„è³‡æ–™æ ¼å¼
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

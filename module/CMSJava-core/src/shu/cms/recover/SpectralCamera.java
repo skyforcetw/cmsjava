@@ -44,7 +44,7 @@ public class SpectralCamera {
     camera = IdealDigitalCamera.getInstance(
         IdealDigitalCamera.Source.CIEXYZ, illuminant);
     white = new CIEXYZ(camera.captureOriginalOutput(illuminantSpectra));
-    //k=5�ĪG�̦n
+    //k=5效果最好
     wiener = new Wiener(camera, source, 5, illuminantSpectra);
     if (colorSpace != null) {
       spectraAdjustFactor = 1. /

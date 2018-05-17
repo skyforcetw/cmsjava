@@ -13,14 +13,14 @@ package shu.cms.measure;
  * @version 1.0
  */
 public enum DICOM {
-  //«DDICOM¼Ò¦¡, ¥þ¿Ã¹õ
+  //éžDICOMæ¨¡å¼, å…¨èž¢å¹•
   None,
-  //¥¿³WDICOM¼Ò¦¡, ­I´º¬°¤¤©Ê¦Ç
+  //æ­£è¦DICOMæ¨¡å¼, èƒŒæ™¯ç‚ºä¸­æ€§ç°
   Normal,
-  //¦P¥¿³WDICOM¼Ò¦¡, ¦ý­I´º¬°¶Â¦â
+  //åŒæ­£è¦DICOMæ¨¡å¼, ä½†èƒŒæ™¯ç‚ºé»‘è‰²
 //  Black,
-  //µLµøµ¡Ãä®ØªºDICOM Black¼Ò¦¡
+  //ç„¡è¦–çª—é‚Šæ¡†çš„DICOM Blackæ¨¡å¼
 //  UndecoratedBlack,
-  //µLµøµ¡Ãä®ØªºDICOM
+  //ç„¡è¦–çª—é‚Šæ¡†çš„DICOM
   Undecorated
 }

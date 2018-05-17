@@ -15,7 +15,7 @@ import shu.cms.colorspace.depend.DeviceDependentSpace;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * Àx¦s¹ï·Óªí¥H¤Î¬ÛÃö¸ê°T
+ * å„²å­˜å°ç…§è¡¨ä»¥åŠç›¸é—œè³‡è¨Š
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -72,7 +72,7 @@ public class ColorSpaceConnectedLUT {
   protected double[][] outputTables;
 
   /**
-   * inputTables»PoutputTablesªºªø«×¶·¤@­P,¦Ó¥B¨âªÌ¶·¦P®É¦s¦b(©ÎªÌ³£¤£¦s¦b)
+   * inputTablesèˆ‡outputTablesçš„é•·åº¦é ˆä¸€è‡´,è€Œä¸”å…©è€…é ˆåŒæ™‚å­˜åœ¨(æˆ–è€…éƒ½ä¸å­˜åœ¨)
    * @param inputChannels int
    * @param outputChannels int
    * @param numberOfGridPoints int
@@ -136,7 +136,7 @@ public class ColorSpaceConnectedLUT {
   protected final static boolean DO_LEGACY_CORRECT = true;
 
   /**
-   * ¿é¥X²Å¦XICC Profile¤UªºCLUT®æ¦¡
+   * è¼¸å‡ºç¬¦åˆICC Profileä¸‹çš„CLUTæ ¼å¼
    * @return double[]
    */
   public double[] getICCFormatOutput() {
@@ -191,7 +191,7 @@ public class ColorSpaceConnectedLUT {
      }*/
 
   /**
-   * ±Ninput¥H¤Îoutput¦X¨Ö¨ì¤@­Ó¤Tºûªºdouble¯x°}
+   * å°‡inputä»¥åŠoutputåˆä½µåˆ°ä¸€å€‹ä¸‰ç¶­çš„doubleçŸ©é™£
    * @param input double[][]
    * @param output double[][]
    * @return double[][][]
@@ -302,7 +302,7 @@ public class ColorSpaceConnectedLUT {
   }
 
   /**
-   * Âà´«¦¨CubeTable
+   * è½‰æ›æˆCubeTable
    * @return CubeTable
    */
   public CubeTable produceCubeTable() {
@@ -325,7 +325,7 @@ public class ColorSpaceConnectedLUT {
          int size = getCLUTSize(grid, 3);
          double[][] XYZGrid = new double[size][3];
          int index = 0;
-//²£¥ÍD50ªºXYZ
+//ç”¢ç”ŸD50çš„XYZ
          for (double X = 0; X <= 100.; X += step) {
       for (double Y = 0; Y <= 100.; Y += step) {
         for (double Z = 0; Z <= 100.; Z += step) {

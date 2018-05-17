@@ -29,31 +29,31 @@ public class IPComparator {
     String filename = dir + "rgb_cmy_H.bmp";
 
     //saturation
-    //¨M©wsaturationªºturn point
+    //æ±ºå®šsaturationçš„turn point
     byte turnPoint = 7;
-    //¨M©wsaturationªºturn pointªºbit¼Æ
+    //æ±ºå®šsaturationçš„turn pointçš„bitæ•¸
     byte turnPointBit = 4;
 
 //    int saturationAdjust = 30; //+-63
     //value
 //    byte valueOffset = 25;
 
-    //¨M©wh s v¬O§_­n³B²z
-    boolean doHueAdjust = true; //°ò¥»¤W¥»µ{¦¡¨S¦³¹ïhue°µ³B²z, ©Ò¥H¦¹¿ï¶µ¨S¦³·N¸q
+    //æ±ºå®šh s væ˜¯å¦è¦è™•ç†
+    boolean doHueAdjust = true; //åŸºæœ¬ä¸Šæœ¬ç¨‹å¼æ²’æœ‰å°hueåšè™•ç†, æ‰€ä»¥æ­¤é¸é …æ²’æœ‰æ„ç¾©
     boolean doSaturationAdjust = true;
     boolean doValuesAdjust = true;
 
-    //¨M©wsaturation¬O§_­nclip
+    //æ±ºå®šsaturationæ˜¯å¦è¦clip
     boolean doSaturationClip = true;
-    //¨M©wvalue¬O§_­nclip
+    //æ±ºå®švalueæ˜¯å¦è¦clip
     boolean doValueClip = true;
 
-    //¨M©w¬O§_­ndump¸ê®Æ
+    //æ±ºå®šæ˜¯å¦è¦dumpè³‡æ–™
     boolean doDump = true;
-    //¨M©w¬O§_­n¤â°Ê³]©wlut­È
+    //æ±ºå®šæ˜¯å¦è¦æ‰‹å‹•è¨­å®šlutå€¼
     boolean doManualHSVLut = true;
     //==========================================================================
-    // hsv lut setting  (¦b³oÃä§ï³]©w­È)
+    // hsv lut setting  (åœ¨é€™é‚Šæ”¹è¨­å®šå€¼)
     //==========================================================================
     HSVLUTInterpolator.ManualHueLut = new short[] {
         1, 34, 67, 100, 133, 166,
@@ -145,9 +145,9 @@ public class IPComparator {
         HSV hsv = new HSV(rgb);
 
         //======================================================================
-        // ­ì©lHSV
+        // åŸå§‹HSV
         //======================================================================
-        //Âà¦¨auoªºhsv®æ¦¡
+        //è½‰æˆauoçš„hsvæ ¼å¼
         HSV.AUO.toHSVValues(hsv, auoHSVValues);
         short h = auoHSVValues[0];
 //        System.out.println(h);
@@ -242,7 +242,7 @@ public class IPComparator {
           bpWriter.write(Integer.toHexString( (short) rgbpValues[2]) + space);
         }
         //======================================================================
-        // ¼g¦¨¹Ï
+        // å¯«æˆåœ–
         //======================================================================
         rgbpValues = rgbp.getValues(rgbpValues, RGB.MaxValue.Int8Bit);
         raster.setPixel(x, y, rgbpValues);

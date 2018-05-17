@@ -7,7 +7,7 @@ import shu.cms.devicemodel.lcd.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ­¡¥N³ø§i
+ * è¿­ä»£å ±å‘Š
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -48,7 +48,7 @@ public class IterativeReport {
   public DeltaEReport deltaEReport;
 
   /**
-   * ¤ÀªR³ø§i,·|§ä¥X³Ì¨Îªºµ²ªG
+   * åˆ†æå ±å‘Š,æœƒæ‰¾å‡ºæœ€ä½³çš„çµæœ
    * @param report1 IterativeReport
    * @param report2 IterativeReport
    * @return IterativeReport

@@ -9,7 +9,7 @@ import shu.cms.colorspace.independ.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¥Î¦b¨S¦³®Õ¦â¾¹ªº¾÷¾¹¤W, ¥i¥H¼ÒÀÀArgyllªºspotreadªº°Ê§@(¥²­n¥\¯àªº¼ÒÀÀ¦Ó¤w)
+ * ç”¨åœ¨æ²’æœ‰æ ¡è‰²å™¨çš„æ©Ÿå™¨ä¸Š, å¯ä»¥æ¨¡æ“¬Argyllçš„spotreadçš„å‹•ä½œ(å¿…è¦åŠŸèƒ½çš„æ¨¡æ“¬è€Œå·²)
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

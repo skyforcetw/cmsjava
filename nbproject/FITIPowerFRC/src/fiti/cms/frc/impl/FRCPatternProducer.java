@@ -1,9 +1,9 @@
-package auo.cms.frc.impl;
+package fiti.cms.frc.impl;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-import auo.cms.frc.FRCPattern;
+import fiti.cms.frc.FRCPattern;
 
 /**
  * <p>Title: </p>

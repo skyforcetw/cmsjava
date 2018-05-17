@@ -10,7 +10,7 @@ import shu.cms.hvs.cam.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ³]³Æ¿W¥ß¦âªÅ¶¡ªº¤½¥Î¨ç¦¡
+ * è¨­å‚™ç¨ç«‹è‰²ç©ºé–“çš„å…¬ç”¨å‡½å¼
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -125,9 +125,9 @@ public abstract class DeviceIndependentSpace
   public final static double INTENT_KAPPA = 24389.0 / 27.0;
 
   public static enum CIEStandard {
-    //CIE´£¨Ñªº­È
+    //CIEæä¾›çš„å€¼
     ActualStandard,
-    //­×¥¿CIEªº­È(·|¸û·Ç½T)
+    //ä¿®æ­£CIEçš„å€¼(æœƒè¼ƒæº–ç¢º)
     IntentStandard
   }
 
@@ -170,28 +170,28 @@ public abstract class DeviceIndependentSpace
   }
 
   public static void example(String[] args) {
-    //³]©w­nÂà´«ªºXYZ
+    //è¨­å®šè¦è½‰æ›çš„XYZ
     CIEXYZ XYZ = new CIEXYZ(new double[] {.80, 1, .30});
-    //³]©w¥ÕÂI
+    //è¨­å®šç™½é»
     CIEXYZ wp = new CIEXYZ(new double[] {.90, 1, .88});
-    //±qXYZÂà¨ìLuv
+    //å¾XYZè½‰åˆ°Luv
     CIELuv luv = CIELuv.fromXYZ(XYZ, wp);
-    //Åã¥Ü
+    //é¡¯ç¤º
     System.out.println(luv);
-    //±qLuvÂà¦^XYZ
+    //å¾Luvè½‰å›XYZ
     CIEXYZ XYZ2 = CIELuv.toXYZ(luv, wp);
-    //Åã¥Ü
+    //é¡¯ç¤º
     System.out.println(XYZ2);
   }
 
   /**
-   * Àx¦s¦UºØ¦â¾AÀ³Âà´«
+   * å„²å­˜å„ç¨®è‰²é©æ‡‰è½‰æ›
    */
   protected final static Map<CIEXYZ, ChromaticAdaptation>
       chromaticAdaptationMap = new HashMap<CIEXYZ, ChromaticAdaptation> ();
 
   /**
-   * ±qD65XYZValues¦â¾AÀ³¨ìoriginalWhiteXYZValues¬°¥ÕÂIªºXYZValues
+   * å¾D65XYZValuesè‰²é©æ‡‰åˆ°originalWhiteXYZValuesç‚ºç™½é»çš„XYZValues
    * @param D65XYZValues double[]
    * @param originalWhiteXYZValues double[]
    * @return double[]
@@ -204,7 +204,7 @@ public abstract class DeviceIndependentSpace
   }
 
   /**
-   * ±qD65XYZValues¦â¾AÀ³¨ìoriginalWhiteXYZValues¬°¥ÕÂIªºXYZValues
+   * å¾D65XYZValuesè‰²é©æ‡‰åˆ°originalWhiteXYZValuesç‚ºç™½é»çš„XYZValues
    * @param D65XYZValues double[]
    * @param originalWhiteXYZ CIEXYZ
    * @return double[]
@@ -218,10 +218,10 @@ public abstract class DeviceIndependentSpace
   }
 
   /**
-   * ±NXYZValues¥HwhiteXYZValues¬°¥ÕÂI, ¦â¾AÀ³¨ìD65¤UªºXYZValues
+   * å°‡XYZValuesä»¥whiteXYZValuesç‚ºç™½é», è‰²é©æ‡‰åˆ°D65ä¸‹çš„XYZValues
    * @param XYZValues double[]
    * @param whiteXYZValues double[]
-   * @return double[] D65¤UªºXYZValues
+   * @return double[] D65ä¸‹çš„XYZValues
    */
   protected final static double[] getD65XYZValues(double[] XYZValues,
                                                   double[] whiteXYZValues) {
@@ -231,7 +231,7 @@ public abstract class DeviceIndependentSpace
   }
 
   /**
-   * ±NXYZValues¥HwhiteXYZValues¬°¥ÕÂI, ¦â¾AÀ³¨ìD65¤UªºXYZValues
+   * å°‡XYZValuesä»¥whiteXYZValuesç‚ºç™½é», è‰²é©æ‡‰åˆ°D65ä¸‹çš„XYZValues
    * @param XYZValues double[]
    * @param whiteXYZ CIEXYZ
    * @return double[]
@@ -244,7 +244,7 @@ public abstract class DeviceIndependentSpace
   }
 
   /**
-   * ±qwhiteXYZValues¦â¾AÀ³¨ìD65ªº¦â¾AÀ³Âà´«
+   * å¾whiteXYZValuesè‰²é©æ‡‰åˆ°D65çš„è‰²é©æ‡‰è½‰æ›
    * @param whiteXYZValues double[]
    * @return ChromaticAdaptation
    */
@@ -263,7 +263,7 @@ public abstract class DeviceIndependentSpace
   }
 
   /**
-   * ±qwhiteXYZValues¦â¾AÀ³¨ìD65ªº¦â¾AÀ³Âà´«
+   * å¾whiteXYZValuesè‰²é©æ‡‰åˆ°D65çš„è‰²é©æ‡‰è½‰æ›
    * @param whiteXYZ CIEXYZ
    * @return ChromaticAdaptation
    */

@@ -8,7 +8,7 @@ import shu.math.array.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Ó¥NªíSpectraWin³nÅé²£¥Íªº.txt¸ê®ÆÀÉ
+ * ç”¨ä¾†ä»£è¡¨SpectraWinè»Ÿé«”ç”¢ç”Ÿçš„.txtè³‡æ–™æª”
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *

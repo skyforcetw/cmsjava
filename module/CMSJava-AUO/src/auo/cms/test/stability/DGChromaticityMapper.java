@@ -24,7 +24,7 @@ public class DGChromaticityMapper {
 
   public static void main(String[] args) throws IOException, BiffException {
     ExcelFile xls = new ExcelFile(
-        "D:\\≥n≈È\\nobody zone\\exp data\\CCTv3\\2012\\120611/stability(255-0, step1).xls");
+        "D:\\‡∏ìn‡∏•‡πâ\\nobody zone\\exp data\\CCTv3\\2012\\120611/stability(255-0, step1).xls");
     xls.selectSheet("Measure");
     int size = xls.getRows();
     int datasize = size - 1;

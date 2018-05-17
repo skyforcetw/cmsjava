@@ -4,10 +4,10 @@ package shu.cms.devicemodel.lcd.thread;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥Î¨Óªí¥Ü«Y¼Æ½d³ò
+ * ç”¨ä¾†è¡¨ç¤ºä¿‚æ•¸ç¯„åœ
  *
- * ¥Î¨Ó°t¦X­¡¥N¨D¸Ñ®É,«ü©w²Ó­z½d³òªºÃş§O.
- * ¨C¦¸­¡¥N§¹«á,°t¦XCooperationªº¤¶­±,¥i¥H­pºâ¥X¤U¤@¦¸ªº­¡¥N½d³ò.
+ * ç”¨ä¾†é…åˆè¿­ä»£æ±‚è§£æ™‚,æŒ‡å®šç´°è¿°ç¯„åœçš„é¡åˆ¥.
+ * æ¯æ¬¡è¿­ä»£å®Œå¾Œ,é…åˆCooperationçš„ä»‹é¢,å¯ä»¥è¨ˆç®—å‡ºä¸‹ä¸€æ¬¡çš„è¿­ä»£ç¯„åœ.
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -43,7 +43,7 @@ public class Range {
   public static Range determineRange(double original, Range old,
                                      double stepRate, double rangeRate) {
     if (original == old.start || original == old.end) {
-      //ºû«ù¤£ÅÜ
+      //ç¶­æŒä¸è®Š
       return old;
     }
 

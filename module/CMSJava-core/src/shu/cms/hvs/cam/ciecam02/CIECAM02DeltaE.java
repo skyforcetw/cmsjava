@@ -6,8 +6,8 @@ import shu.math.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¥HCIECAM02¬°°òÂ¦ªº¦â®t¤½¦¡.
- * (ÀË¬dok,­«ÂI¦b©óam/bmªº­pºâ)
+ * ä»¥CIECAM02ç‚ºåŸºç¤çš„è‰²å·®å…¬å¼.
+ * (æª¢æŸ¥ok,é‡é»åœ¨æ–¼am/bmçš„è¨ˆç®—)
  *
  * ref: M. R. Luo, C. Li and G. Cui,
  * Combining Colour Appearance Model with Colour Difference Formula,

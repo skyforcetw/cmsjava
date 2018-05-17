@@ -129,8 +129,8 @@ public final class CIELab
   }
 
   /**
-   * Labªº¦X²z¤Æ,±NLabªºL­­¨î¦b0~100¶¡.
-   * a¤Îb­­¨î¦b-128~127¤§¶¡.
+   * Labçš„åˆç†åŒ–,å°‡Labçš„Lé™åˆ¶åœ¨0~100é–“.
+   * aåŠbé™åˆ¶åœ¨-128~127ä¹‹é–“.
    * @param LabValuesArray double[][]
    * @return int
    */

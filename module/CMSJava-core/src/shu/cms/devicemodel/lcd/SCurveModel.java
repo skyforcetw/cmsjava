@@ -32,7 +32,7 @@ public class SCurveModel
   }
 
   /**
-   * ­pºâRGB,¤Ï±À¼Ò¦¡
+   * è¨ˆç®—RGB,åæ¨æ¨¡å¼
    *
    * @param relativeXYZ CIEXYZ
    * @param factor Factor[]
@@ -43,7 +43,7 @@ public class SCurveModel
   }
 
   /**
-   * ­pºâXYZ,«e¾É¼Ò¦¡
+   * è¨ˆç®—XYZ,å‰å°æ¨¡å¼
    *
    * @param rgb RGB
    * @param factor Factor[]
@@ -75,7 +75,7 @@ public class SCurveModel
   private double[][] parameters = new double[9][];
   private double[] pureMaximum = new double[9];
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    */

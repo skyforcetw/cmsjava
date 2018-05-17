@@ -11,7 +11,7 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * SOCS¸ê®Æ®æ¦¡ªº¸ÑªR¾¹
+ * SOCSè³‡æ–™æ ¼å¼çš„è§£æå™¨
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -106,14 +106,14 @@ public class PrepressDigitalDataExchangeParser
   }
 
   /**
-   * §PÂ_¸¨¦bHeader©ÎDataFormat
+   * åˆ¤æ–·è½åœ¨Headeræˆ–DataFormat
    * @param section ArrayList
    */
   protected void judge(ArrayList section) {
     String line = ( (String) section.get(0)).trim();
     if (line.startsWith(BEGIN)) {
       if (line.equals(BEGIN_DATA_FORMAT) && !parseFormat) {
-        //¸ê®Æ®æ¦¡°Ï¬q
+        //è³‡æ–™æ ¼å¼å€æ®µ
         dataFormat = parseDataFormat(section);
         parseFormat = true;
       }
@@ -123,14 +123,14 @@ public class PrepressDigitalDataExchangeParser
     }
     else
     if (!parseHeader) {
-      //header°Ï¬q
+      //headerå€æ®µ
       pddeHeader = parseHeader(section);
       parseHeader = true;
     }
   }
 
   /**
-   * ©î¸Ñ¼ĞÀY°Ï¬q
+   * æ‹†è§£æ¨™é ­å€æ®µ
    * @param section ArrayList
    * @return GretagMacbethAsciiFile.Header
    */

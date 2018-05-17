@@ -9,7 +9,7 @@ import shu.math.array.DoubleArray;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¹w´ú®Ä¯àªº³ø§i
+ * é æ¸¬æ•ˆèƒ½çš„å ±å‘Š
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -25,7 +25,7 @@ public class EstimatorReport {
   }
 
   /**
-   * »s§@¹w´ú®Ä¯àªº³ø§i
+   * è£½ä½œé æ¸¬æ•ˆèƒ½çš„å ±å‘Š
    * @param estimatedValues double[][]
    * @param realValues double[][]
    * @return EstimatorReport
@@ -38,7 +38,7 @@ public class EstimatorReport {
   }
 
   /**
-   * ¹w´ú®Ä¯àªº²Î­p
+   * é æ¸¬æ•ˆèƒ½çš„çµ±è¨ˆ
    * @param estimatedValues double[][]
    * @param realValues double[][]
    */
@@ -65,7 +65,7 @@ public class EstimatorReport {
   }
 
   /**
-   * ¥­§¡ªºµ´¹ï»~®t
+   * å¹³å‡çš„çµ•å°èª¤å·®
    * @return double
    */
   public double getAbsErrMeanDeltaRGB() {
@@ -73,7 +73,7 @@ public class EstimatorReport {
   }
 
   /**
-   * ³Ì¤jªºµ´¹ï»~®t
+   * æœ€å¤§çš„çµ•å°èª¤å·®
    * @return double
    */
   public double getAbsErrMaxDeltaRGB() {
@@ -81,7 +81,7 @@ public class EstimatorReport {
   }
 
   /**
-   * ³Ì¤jªº¥­§¡»~®t
+   * æœ€å¤§çš„å¹³å‡èª¤å·®
    * @return double
    */
   public double getRelErrMeanDeltaRGB() {
@@ -89,7 +89,7 @@ public class EstimatorReport {
   }
 
   /**
-   * ³Ì¤jªº¬Û¹ï»~®t
+   * æœ€å¤§çš„ç›¸å°èª¤å·®
    * @return double
    */
   public double getRelErrMaxDeltaRGB() {
@@ -165,7 +165,7 @@ public class EstimatorReport {
   public double[] relErrRGBMax;
 
   /**
-   * ­pºâ¬Û¹ï¼Æ­È: (est-real)/real
+   * è¨ˆç®—ç›¸å°æ•¸å€¼: (est-real)/real
    * @param errorsValues double[][]
    * @param realValues double[][]
    * @return double[][]

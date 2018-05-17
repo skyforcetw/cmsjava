@@ -33,7 +33,7 @@ public class AdvancedDGLutGenerator {
     }
 
     /**
-     * plot°e¶i¨ÓªºcomponentList°ò©ótarget¹ïÀ³ªºintensity
+     * ploté€é€²ä¾†çš„componentListåŸºæ–¼targetå°æ‡‰çš„intensity
      * @param plotIntensity boolean
      */
     public void setPlotIncomingIntensity(boolean plotIntensity) {

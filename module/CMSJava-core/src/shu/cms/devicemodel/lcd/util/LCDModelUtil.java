@@ -24,7 +24,7 @@ import shu.math.array.*;
 public class LCDModelUtil {
 
   /**
-   * ¹LÂo¥X³æ¤@ÀW¹Dªº¦â¶ô¶°¦X
+   * éæ¿¾å‡ºå–®ä¸€é »é“çš„è‰²å¡Šé›†åˆ
    * @param lcdTarget LCDTarget
    * @param ch Channel
    * @return Set
@@ -34,10 +34,10 @@ public class LCDModelUtil {
                                                  RGBBase.Channel ch) {
     Set<Patch> singleChannelPatch = new TreeSet<Patch> ();
     /**
-     * @note ±Ä¥ÎblackPatch¸û¬°¦X²z, ¦ı¬O¦³¥i¯à¦³¤ÏÂàªº²{¶H(­ì¦]¦b©ó»ö¾¹ªº·t³¡¤£Ã­©w),
-     * ¦Ó¥B­pºâµ²ªG¥i¯à¥X¿ù.
-     * ±Ä¥ÎdarkestPatch­pºâµ²ªG·|¸û¬°¥¿½T.
-     * «ØÄ³±Ä¥ÎdarkestPatch
+     * @note æ¡ç”¨blackPatchè¼ƒç‚ºåˆç†, ä½†æ˜¯æœ‰å¯èƒ½æœ‰åè½‰çš„ç¾è±¡(åŸå› åœ¨æ–¼å„€å™¨çš„æš—éƒ¨ä¸ç©©å®š),
+     * è€Œä¸”è¨ˆç®—çµæœå¯èƒ½å‡ºéŒ¯.
+     * æ¡ç”¨darkestPatchè¨ˆç®—çµæœæœƒè¼ƒç‚ºæ­£ç¢º.
+     * å»ºè­°æ¡ç”¨darkestPatch
      */
 //    Patch darkestPatch = lcdTarget.getDarkestPatch();
     Patch darkestPatch = lcdTarget.getBlackPatch();
@@ -54,7 +54,7 @@ public class LCDModelUtil {
   }
 
   /**
-   * µû¦ô¨ú±oflareªº¤è¦¡
+   * è©•ä¼°å–å¾—flareçš„æ–¹å¼
    * @param flareType FlareType
    * @param lcdTarget LCDTarget
    * @return CIEXYZ
@@ -106,7 +106,7 @@ public class LCDModelUtil {
 
   protected static boolean isValid(Set<Patch> singleChannelPatch,
       boolean byPower) {
-    //«e¤@­Ó°Ñ¦Ò­È
+    //å‰ä¸€å€‹åƒè€ƒå€¼
     Patch forwardPatch = null;
 
     for (Patch p : singleChannelPatch) {
@@ -119,11 +119,11 @@ public class LCDModelUtil {
           forwardPatch.getXYZ().Y;
 
       if (now <= pre) {
-        //¦³¤ÏÂàªº±¡§Î
+        //æœ‰åè½‰çš„æƒ…å½¢
         return false;
       }
       else {
-        //¥¿±`
+        //æ­£å¸¸
         forwardPatch = p;
       }
     }
@@ -172,15 +172,15 @@ public class LCDModelUtil {
   }
 
   /**
-   * ÅçÃÒYªº¦X²z©Ê,¤£¦X²z«h²¾°£.
-   * YÀ³¸Óºû«ù»¼¼W,¦pªG¦³¤ÏÂà,¥i¯à¬O1.»ö¾¹ 2.¿Ã¹õ ³y¦¨ªº
-   * ²¾°£±¼³o¨Ç²z½×¤W¤£¦X²zªº¼Æ­È,¦³§U©ó¼Ò¦¡ªº¥¿½T©Ê
+   * é©—è­‰Yçš„åˆç†æ€§,ä¸åˆç†å‰‡ç§»é™¤.
+   * Yæ‡‰è©²ç¶­æŒéå¢,å¦‚æœæœ‰åè½‰,å¯èƒ½æ˜¯1.å„€å™¨ 2.è¢å¹• é€ æˆçš„
+   * ç§»é™¤æ‰é€™äº›ç†è«–ä¸Šä¸åˆç†çš„æ•¸å€¼,æœ‰åŠ©æ–¼æ¨¡å¼çš„æ­£ç¢ºæ€§
    * @param singleChannelPatch Set
    * @return Set
    * @deprecated
    */
   protected static Set<Patch> validateY(Set<Patch> singleChannelPatch) {
-    //«e¤@­Ó°Ñ¦Ò­È
+    //å‰ä¸€å€‹åƒè€ƒå€¼
     Patch forwardPatch = null;
     Set<Patch> remove = new LinkedHashSet<Patch> ();
 
@@ -190,7 +190,7 @@ public class LCDModelUtil {
         continue;
       }
       if (p.getXYZ().Y <= forwardPatch.getXYZ().Y) {
-        //¦³¤ÏÂàªº±¡§Î
+        //æœ‰åè½‰çš„æƒ…å½¢
 //        if (p.getRGB().getSaturationChannels() != 0) {
 //          remove.add(forwardPatch);
 //        }
@@ -199,7 +199,7 @@ public class LCDModelUtil {
 //        }
       }
       else {
-        //¥¿±`
+        //æ­£å¸¸
         forwardPatch = p;
       }
     }
@@ -211,7 +211,7 @@ public class LCDModelUtil {
 
   public static Set<Patch> validate(Set<Patch> singleChannelPatch,
       boolean byPower) {
-    //«e¤@­Ó°Ñ¦Ò­È
+    //å‰ä¸€å€‹åƒè€ƒå€¼
     Patch forwardPatch = null;
     Set<Patch> remove = new LinkedHashSet<Patch> ();
 
@@ -227,7 +227,7 @@ public class LCDModelUtil {
         remove.add(p);
       }
       else {
-        //¥¿±`
+        //æ­£å¸¸
         forwardPatch = p;
       }
     }

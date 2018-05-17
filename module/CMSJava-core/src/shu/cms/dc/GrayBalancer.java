@@ -19,11 +19,11 @@ import shu.image.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * 1.¦bRGB§@ªº¸Ü, ´N¬O¥HR/B¹ï»ôGªº¤è¦¡, ­pºâ¥X¤@­Ó¨t¼Æ; ¨Ã¥B¥H¤º´¡ªº¤è¦¡²£¥Í¨ä¥L¨S¦³gray scaleªº«Y¼Æ
- * 2.¦bRGBCAT§@ªº¸Ü, ´N¬O¥H­ì©lRGBÂà¨ìXYZ, ¦A¥H­ì©lRGBªºG¬Û¦Pªº­È²Õ¦¨ªºRGB, ¨ú±oXYZ';
- *   ­pºâXYZ»PXYZ'ªº¦â¾AÀ³¯x°}. ¦Ü©ó¤¤¶¡¨S¦³ªº­È, ¥H¤º®tªº¤è¦¡²£¥Í­ì©lRGB, ¬Û¹ïÀ³ªº¤]¥i¥H²£¥Í¦â¾AÀ³¯x°}.
- *   ¦â¾AÀ³¤§«á, ¦AÂà¦^RGB, ´À¥N±¼­ì©lRGB.
- * 3.Âà¨ìXYZ,¦AÂà¨ì ¬õºñ ¶ÀÂÅ ¦â±mªÅ¶¡(Lab,Jab,IPT¬Ò¥i), ¥H¦¹ªÅ¶¡§@ a/b¶bªº½Õ¾ã
+ * 1.åœ¨RGBä½œçš„è©±, å°±æ˜¯ä»¥R/Bå°é½ŠGçš„æ–¹å¼, è¨ˆç®—å‡ºä¸€å€‹ç³»æ•¸; ä¸¦ä¸”ä»¥å…§æ’çš„æ–¹å¼ç”¢ç”Ÿå…¶ä»–æ²’æœ‰gray scaleçš„ä¿‚æ•¸
+ * 2.åœ¨RGBCATä½œçš„è©±, å°±æ˜¯ä»¥åŽŸå§‹RGBè½‰åˆ°XYZ, å†ä»¥åŽŸå§‹RGBçš„Gç›¸åŒçš„å€¼çµ„æˆçš„RGB, å–å¾—XYZ';
+ *   è¨ˆç®—XYZèˆ‡XYZ'çš„è‰²é©æ‡‰çŸ©é™£. è‡³æ–¼ä¸­é–“æ²’æœ‰çš„å€¼, ä»¥å…§å·®çš„æ–¹å¼ç”¢ç”ŸåŽŸå§‹RGB, ç›¸å°æ‡‰çš„ä¹Ÿå¯ä»¥ç”¢ç”Ÿè‰²é©æ‡‰çŸ©é™£.
+ *   è‰²é©æ‡‰ä¹‹å¾Œ, å†è½‰å›žRGB, æ›¿ä»£æŽ‰åŽŸå§‹RGB.
+ * 3.è½‰åˆ°XYZ,å†è½‰åˆ° ç´…ç¶  é»ƒè— è‰²å½©ç©ºé–“(Lab,Jab,IPTçš†å¯), ä»¥æ­¤ç©ºé–“ä½œ a/bè»¸çš„èª¿æ•´
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -39,7 +39,7 @@ public class GrayBalancer {
   }
 
   /**
-   * ªì¨B«ØÄ³¤£­n¥ÎrgbMapping
+   * åˆæ­¥å»ºè­°ä¸è¦ç”¨rgbMapping
    * @param grayScale List
    * @param style Style
    * @param rgbColorSpace RGBColorSpace
@@ -267,14 +267,14 @@ public class GrayBalancer {
   protected Style style;
 
   public static enum Style {
-    //µLgb
+    //ç„¡gb
     None,
-    //RGBªÅ¶¡§@gb, ­×RGB
+    //RGBç©ºé–“ä½œgb, ä¿®RGB
     RGBMap,
     RGBScale,
-    //±qRGBªÅ¶¡Âà¨ì¿W¥ß¦âªÅ¶¡, ¥H¦â¾AÀ³¯x°}§@gb. ¥ý¤£­n°µ
+    //å¾žRGBç©ºé–“è½‰åˆ°ç¨ç«‹è‰²ç©ºé–“, ä»¥è‰²é©æ‡‰çŸ©é™£ä½œgb. å…ˆä¸è¦åš
     RGBCAT,
-    //¦b¿W¥ß¦âªÅ¶¡¥H ¬õºñ ¶ÀÂÅ §@gb, ­×Lab
+    //åœ¨ç¨ç«‹è‰²ç©ºé–“ä»¥ ç´…ç¶  é»ƒè— ä½œgb, ä¿®Lab
     Lab
   }
 }

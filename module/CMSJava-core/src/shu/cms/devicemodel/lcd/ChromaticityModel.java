@@ -35,7 +35,7 @@ public class ChromaticityModel
   }
 
   /**
-   * ¨D­È¼Ò¦¡
+   * æ±‚å€¼æ¨¡å¼
    *
    * @param lcdTarget LCDTarget
    */
@@ -44,7 +44,7 @@ public class ChromaticityModel
   }
 
   /**
-   * ­pºâRGB,¤Ï±À¼Ò¦¡
+   * è¨ˆç®—RGB,åæ¨æ¨¡å¼
    *
    * @param relativeXYZ CIEXYZ
    * @param factor Factor[]
@@ -55,7 +55,7 @@ public class ChromaticityModel
   }
 
   /**
-   * ­pºâXYZ,«e¾É¼Ò¦¡
+   * è¨ˆç®—XYZ,å‰å°æ¨¡å¼
    *
    * @param rgb RGB
    * @param factor Factor[]
@@ -269,7 +269,7 @@ public class ChromaticityModel
   }
 
   /**
-   * ¨D«Y¼Æ
+   * æ±‚ä¿‚æ•¸
    *
    * @return Factor[]
    */
@@ -305,7 +305,7 @@ public class ChromaticityModel
         }
       }
       //========================================================================
-      // luminance ³B²z
+      // luminance è™•ç†
       //========================================================================
       double[] luminanceCurve = rgbxyYCurve[index][2];
       double[] relativeLuminanceCurve = DoubleArray.minus(luminanceCurve,
@@ -320,7 +320,7 @@ public class ChromaticityModel
       //========================================================================
 
       //========================================================================
-      // ¦â«×³B²z
+      // è‰²åº¦è™•ç†
       //========================================================================
       PolynomialRegression xRegress = new PolynomialRegression(inputx,
           rgbxyYCurve[index][0], Polynomial.COEF_1.BY_4C);

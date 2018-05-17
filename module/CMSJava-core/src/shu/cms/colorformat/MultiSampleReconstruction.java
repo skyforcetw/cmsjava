@@ -11,9 +11,9 @@ import shu.cms.colorformat.trans.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ±N¦h¦¸¨ú¼ËªºSpectraWinASCIIÀÉ®×ÁÙ­ì
- * ÁÙ­ìªº¤è¦¡¬°±Ä¥Î¥­§¡ªº¤è¦¡
- * ÁÙ­ìªºÀÉ®×¬°.CxF
+ * å°‡å¤šæ¬¡å–æ¨£çš„SpectraWinASCIIæª”æ¡ˆé‚„åŸ
+ * é‚„åŸçš„æ–¹å¼ç‚ºæ¡ç”¨å¹³å‡çš„æ–¹å¼
+ * é‚„åŸçš„æª”æ¡ˆç‚º.CxF
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -78,7 +78,7 @@ public class MultiSampleReconstruction
 
     m.marshal(cxf, new BufferedWriter(new FileWriter(outputFilename)));
 
-    //µ²§ô
+    //çµæŸ
     current = lengthOfTask;
     done = true;
   }
@@ -94,12 +94,12 @@ public class MultiSampleReconstruction
           getValue();
 
       if (valTmp == null) {
-        //¦pªG¬°null,¥Nªí°µ¹L¤@¦¸¥­§¡,¨Ã¥B¿é¥X¸ê®Æ¤F
-        //¦]¦¹¤@¤Á­«ÀY¶}©l
+        //å¦‚æœç‚ºnull,ä»£è¡¨åšéä¸€æ¬¡å¹³å‡,ä¸¦ä¸”è¼¸å‡ºè³‡æ–™äº†
+        //å› æ­¤ä¸€åˆ‡é‡é ­é–‹å§‹
         valTmp = values;
       }
       else {
-        //¥[Á`
+        //åŠ ç¸½
         int size = values.size();
         for (int x = 0; x < size; x++) {
           Value val = valTmp.get(x);

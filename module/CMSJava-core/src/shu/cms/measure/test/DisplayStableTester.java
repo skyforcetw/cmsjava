@@ -14,7 +14,7 @@ import shu.math.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ´ú¸Õ¦â¶ô¬O§_·|¨ü¨ì¶q´ú¶¶§Çªº¼vÅT
+ * æ¸¬è©¦è‰²å¡Šæ˜¯å¦æœƒå—åˆ°é‡æ¸¬é †åºçš„å½±éŸ¿
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -150,9 +150,9 @@ public class DisplayStableTester {
       RandomIndex ri = new RandomIndex(n);
 //      mm.measure(RGB.White, null);
       for (int y = 0; y < n; y++) {
-//        int index = ri.nextIndex(); //¶Ã¼Æ
-//        int index = n - y - 1; //¤Ï¦V
-        int index = y; //¥¿¦V
+//        int index = ri.nextIndex(); //äº‚æ•¸
+//        int index = n - y - 1; //åå‘
+        int index = y; //æ­£å‘
         Patch p = mm.measure(rgbArray[index], null);
         System.out.println("mea " + p);
         lumiArray[index][x] = p.getXYZ().Y;

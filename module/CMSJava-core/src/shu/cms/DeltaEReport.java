@@ -43,7 +43,7 @@ public final class DeltaEReport
   public DeltaE meanCIE2000DeltaLCH;
 
   /**
-   * ©Ò¦³ªºdeltaEªºlist
+   * æ‰€æœ‰çš„deltaEçš„list
    */
   private List<DeltaE> deltaEList;
   private List<Patch> originalPatchList;
@@ -63,7 +63,7 @@ public final class DeltaEReport
   /**
    * 0:0~.99
    * 1:1~1.99
-   * ¾lÃş±À...
+   * é¤˜é¡æ¨...
    * 9:>=9
    */
   public int[] deltaEDistribute = null; // new int[10];
@@ -94,7 +94,7 @@ public final class DeltaEReport
 
     if (OnlyCountMeasuredDeltaE) {
       //==========================================================================
-      // ¥u¦³measured deltaE(¹w³]¬OCIEDE2000)
+      // åªæœ‰measured deltaE(é è¨­æ˜¯CIEDE2000)
       //==========================================================================
       buf.append("#DeltaE Formula: " + DeltaE.getMeasuredDeltaEDescription() +
                  '\n');
@@ -137,7 +137,7 @@ public final class DeltaEReport
     }
     else {
       //==========================================================================
-      // ¥ş³¡ªºdeltaE
+      // å…¨éƒ¨çš„deltaE
       //==========================================================================
       buf.append("mean: " + toString(meanDeltaE) + '\n');
       buf.append("min: " + toString(minDeltaE) + '\n');
@@ -258,10 +258,10 @@ public final class DeltaEReport
     }
 
     /**
-     * ¹ïoriginalPatches©MmodelPatchesªºLab­pºâ¦â®t
+     * å°originalPatcheså’ŒmodelPatchesçš„Labè¨ˆç®—è‰²å·®
      * @param originalPatches List
      * @param modelPatches List
-     * @param doColorDividing boolean ¬O§_­n§@¦â±m¤À°Ï
+     * @param doColorDividing boolean æ˜¯å¦è¦ä½œè‰²å½©åˆ†å€
      * @return DeltaEReport[]
      */
     public static DeltaEReport[] patchReport(List<Patch> originalPatches,
@@ -270,8 +270,8 @@ public final class DeltaEReport
     }
 
     /**
-     * ¹ïoriginalPatches©MmodelPatchesªºLab­pºâ¦â®t
-     * ¦â®t¨ì¹FstopWhenTouched®É,°±¤î­pºâ
+     * å°originalPatcheså’ŒmodelPatchesçš„Labè¨ˆç®—è‰²å·®
+     * è‰²å·®åˆ°é”stopWhenTouchedæ™‚,åœæ­¢è¨ˆç®—
      * @param originalPatches List
      * @param modelPatches List
      * @param doColorDividing boolean
@@ -304,9 +304,9 @@ public final class DeltaEReport
     }
 
     /**
-     * ­pºâDeltaEReport.
-     * ·í¦â®t¤j©óstopWhenTouched®É,°±¤î¹Bºâ,¥B¦^¶Çnull
-     * stopWhenTouchedªº§P§O¥HdeltaEType³]©w
+     * è¨ˆç®—DeltaEReport.
+     * ç•¶è‰²å·®å¤§æ–¼stopWhenTouchedæ™‚,åœæ­¢é‹ç®—,ä¸”å›å‚³null
+     * stopWhenTouchedçš„åˆ¤åˆ¥ä»¥deltaETypeè¨­å®š
      * @param LabList1 List
      * @param LabList2 List
      * @param stopWhenTouched double
@@ -324,7 +324,7 @@ public final class DeltaEReport
       }
 
       //==========================================================================
-      // ¸ê®Æªº·Ç³Æ
+      // è³‡æ–™çš„æº–å‚™
       //==========================================================================
       int size = LabList1.size();
       List<DeltaE> deltaEList = new ArrayList<DeltaE> (size);
@@ -334,7 +334,7 @@ public final class DeltaEReport
       //==========================================================================
 
       //==========================================================================
-      // ¤ñ¸û©Ò¦³¦â¶ô
+      // æ¯”è¼ƒæ‰€æœ‰è‰²å¡Š
       //==========================================================================
       for (int x = 0; x < size; x++) {
         CIELab Lab1 = LabList1.get(x);
@@ -360,7 +360,7 @@ public final class DeltaEReport
         double de = deltaE.getMeasuredDeltaE();
 
         if (de < 0.5) {
-          //²Ä¤@¤¸¯À¬O0~0.5
+          //ç¬¬ä¸€å…ƒç´ æ˜¯0~0.5
           deltaEDistribute[0]++;
         }
         else {
@@ -385,7 +385,7 @@ public final class DeltaEReport
      * <p>Title: Colour Management System</p>
      *
      * <p>Description: a Colour Management System by Java</p>
-     * ¥Î¨Ó²Î¾ãPatch©MCIELabªºList, ¤è«K²£¥Íreport
+     * ç”¨ä¾†çµ±æ•´Patchå’ŒCIELabçš„List, æ–¹ä¾¿ç”¢ç”Ÿreport
      *
      * <p>Copyright: Copyright (c) 2008</p>
      *
@@ -461,9 +461,9 @@ public final class DeltaEReport
     }
 
     /**
-     * ­pºâDeltaEReport.
-     * ·í¦â®t¤j©óstopWhenTouched®É,°±¤î¹Bºâ,¥B¦^¶Çnull
-     * stopWhenTouchedªº§P§O¥HdeltaEType³]©w
+     * è¨ˆç®—DeltaEReport.
+     * ç•¶è‰²å·®å¤§æ–¼stopWhenTouchedæ™‚,åœæ­¢é‹ç®—,ä¸”å›å‚³null
+     * stopWhenTouchedçš„åˆ¤åˆ¥ä»¥deltaETypeè¨­å®š
      * @param sample1 Sample
      * @param sample2 Sample
      * @param stopWhenTouched double
@@ -480,7 +480,7 @@ public final class DeltaEReport
       }
 
       //==========================================================================
-      // ¸ê®Æªº·Ç³Æ
+      // è³‡æ–™çš„æº–å‚™
       //==========================================================================
       int size = sample1.size();
       List<DeltaE> deltaEList = new ArrayList<DeltaE> (size);
@@ -491,7 +491,7 @@ public final class DeltaEReport
       //==========================================================================
 
       //==========================================================================
-      // ¤ñ¸û©Ò¦³¦â¶ô
+      // æ¯”è¼ƒæ‰€æœ‰è‰²å¡Š
       //==========================================================================
       for (int x = 0; x < size; x++) {
         CIELab Lab1 = sample1.getLab(x);
@@ -526,7 +526,7 @@ public final class DeltaEReport
         double de = deltaE.getMeasuredDeltaE();
 
         if (de < 0.5) {
-          //²Ä¤@¤¸¯À¬O0~0.5
+          //ç¬¬ä¸€å…ƒç´ æ˜¯0~0.5
           deltaEDistribute[0]++;
         }
         else {
@@ -610,7 +610,7 @@ public final class DeltaEReport
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ±N¦â¶ô¥H¤Î¸Ó¦â¶ôªº¦â®tµ²¦X¬°³æ¤@ª«¥ó
+   * å°‡è‰²å¡Šä»¥åŠè©²è‰²å¡Šçš„è‰²å·®çµåˆç‚ºå–®ä¸€ç‰©ä»¶
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -623,11 +623,11 @@ public final class DeltaEReport
       implements Comparable {
     protected DeltaE deltaE;
     /**
-     * ­ì©l¾É¨ãªºpatch
+     * åŸå§‹å°å…·çš„patch
      */
     protected Patch originalPatch;
     /**
-     * model©Ò¹w´ú¥X¨Óªºpatch
+     * modelæ‰€é æ¸¬å‡ºä¾†çš„patch
      */
     protected Patch modelPatch;
 
@@ -698,9 +698,9 @@ public final class DeltaEReport
   }
 
   /**
-   * ¥Ñ©óDeltaEReport¥u¦³deltaE¸ê°T,µLªk§PÅª¬O­ş­Ó¦â¶ôªºdeltaE.
-   * ©Ò¥H¬°¤F¤è«K§PÂ_­ş¨ÇRGB¦â¶ôªºdeltaE¬O¦p¦ó,
-   * ¥i¥H¨Ï¥Î¦¹¨ç¦¡±Npatch»PdeltaE§@²Õ¦X,¥H«K§PÅª.
+   * ç”±æ–¼DeltaEReportåªæœ‰deltaEè³‡è¨Š,ç„¡æ³•åˆ¤è®€æ˜¯å“ªå€‹è‰²å¡Šçš„deltaE.
+   * æ‰€ä»¥ç‚ºäº†æ–¹ä¾¿åˆ¤æ–·å“ªäº›RGBè‰²å¡Šçš„deltaEæ˜¯å¦‚ä½•,
+   * å¯ä»¥ä½¿ç”¨æ­¤å‡½å¼å°‡patchèˆ‡deltaEä½œçµ„åˆ,ä»¥ä¾¿åˆ¤è®€.
    * @param sort boolean
    * @return List
    */
@@ -724,7 +724,7 @@ public final class DeltaEReport
    * <p>Title: Colour Management System</p>
    *
    * <p>Description: </p>
-   * ¦â¶ô¥H¤Î¸Ó¦â¶ôªº¦â®tªºreport
+   * è‰²å¡Šä»¥åŠè©²è‰²å¡Šçš„è‰²å·®çš„report
    *
    * <p>Copyright: Copyright (c) 2006</p>
    *
@@ -739,7 +739,7 @@ public final class DeltaEReport
       Plot3D plot3D = Plot3D.getInstance();
 
       //==========================================================================
-      // ³]©w¶b
+      // è¨­å®šè»¸
       //==========================================================================
       plot3D.setAxeLabel(2, "DeltaE");
       switch (reportType) {
@@ -870,7 +870,7 @@ public final class DeltaEReport
     }
 
     /**
-     * ¤j©óreportMinimumDeltaEªº¦â¶ô¼Æ¶q
+     * å¤§æ–¼reportMinimumDeltaEçš„è‰²å¡Šæ•¸é‡
      * @return int
      */
     public int sizeOfGreaterThanReportDeltaE() {
@@ -1042,7 +1042,7 @@ public final class DeltaEReport
   }
 
   /**
-   * ¨ú±o¦â¶ôªºdeltaE³ø§i,±N·|³ø§ideltaE¦b3¥H¤WªÌ
+   * å–å¾—è‰²å¡Šçš„deltaEå ±å‘Š,å°‡æœƒå ±å‘ŠdeltaEåœ¨3ä»¥ä¸Šè€…
    * @return PatchDeltaEReport
    */
   public PatchDeltaEReport getPatchDeltaEReport() {
@@ -1056,7 +1056,7 @@ public final class DeltaEReport
   }
 
   /**
-   * ¨ú±o¦â¶ôªºdeltaE³ø§i,±N·|³ø§ideltaE¦breportMinimumDeltaE¥H¤WªÌ
+   * å–å¾—è‰²å¡Šçš„deltaEå ±å‘Š,å°‡æœƒå ±å‘ŠdeltaEåœ¨reportMinimumDeltaEä»¥ä¸Šè€…
    * @param reportMinimumDeltaE double
    * @return PatchDeltaEReport
    */
@@ -1074,9 +1074,9 @@ public final class DeltaEReport
   protected List<PatchDeltaE> patchDeltaEList;
 
   /**
-   * ¥Ñ©óDeltaEReport¥u¦³deltaE¸ê°T,µLªk§PÅª¬O­ş­Ó¦â¶ôªºdeltaE.
-   * ©Ò¥H¬°¤F¤è«K§PÂ_­ş¨ÇRGB¦â¶ôªºdeltaE¬O¦p¦ó,
-   * ¥i¥H¨Ï¥Î¦¹¨ç¦¡±Nrgb»PdeltaE§@²Õ¦X,¥H«K§PÅª.
+   * ç”±æ–¼DeltaEReportåªæœ‰deltaEè³‡è¨Š,ç„¡æ³•åˆ¤è®€æ˜¯å“ªå€‹è‰²å¡Šçš„deltaE.
+   * æ‰€ä»¥ç‚ºäº†æ–¹ä¾¿åˆ¤æ–·å“ªäº›RGBè‰²å¡Šçš„deltaEæ˜¯å¦‚ä½•,
+   * å¯ä»¥ä½¿ç”¨æ­¤å‡½å¼å°‡rgbèˆ‡deltaEä½œçµ„åˆ,ä»¥ä¾¿åˆ¤è®€.
    * @param originalPatchList List
    * @param modelPatchList List
    * @param sort boolean
@@ -1111,7 +1111,7 @@ public final class DeltaEReport
   }
 
   /**
-   * ¤ÀªR©Ò±Ä¥Îªº·Ç«h
+   * åˆ†ææ‰€æ¡ç”¨çš„æº–å‰‡
    */
   public final static AnalyzeType analyzeType = AnalyzeType.Average;
 
@@ -1141,12 +1141,12 @@ public final class DeltaEReport
 
   public final static class Analyze {
     /**
-     * ¤ÀªR©Ò±Ä¥Îªº·Ç«h
+     * åˆ†ææ‰€æ¡ç”¨çš„æº–å‰‡
      */
     public final static AnalyzeType analyzeType = AnalyzeType.Average;
 
     /**
-     * ¶Ç¤J¨â­ÓDeltaEReport,¤ÀªR«á,¦^¶Ç¦â®t¸û¤pªÌ
+     * å‚³å…¥å…©å€‹DeltaEReport,åˆ†æå¾Œ,å›å‚³è‰²å·®è¼ƒå°è€…
      * @param report1 DeltaEReport
      * @param report2 DeltaEReport
      * @return DeltaEReport
@@ -1158,7 +1158,7 @@ public final class DeltaEReport
     }
 
     /**
-     * ¶Ç¤J¨â­ÓDeltaEReport,¤ÀªR«á,¦^¶Ç¦â®t¸û¤pªÌ
+     * å‚³å…¥å…©å€‹DeltaEReport,åˆ†æå¾Œ,å›å‚³è‰²å·®è¼ƒå°è€…
      * @param report1 DeltaEReport
      * @param report2 DeltaEReport
      * @param analyzeType AnalyzeType
@@ -1192,18 +1192,18 @@ public final class DeltaEReport
           break;
       }
 
-      //¦pªG¦³¥ÕÂIªº¦â®t
+      //å¦‚æœæœ‰ç™½é»çš„è‰²å·®
       if (analyzeWhitePoint && report1.whitePointDeltaE != null &&
           report2.whitePointDeltaE != null) {
         double white1 = report1.whitePointDeltaE.getMeasuredDeltaE();
         double white2 = report2.whitePointDeltaE.getMeasuredDeltaE();
 
         if (white1 > 1. ^ white2 > 1.) {
-          //¦pªG¨ä¤¤¤@­Ó¥ÕÂI<1,¥t¥~¤@­Ó>1 (XOR)
+          //å¦‚æœå…¶ä¸­ä¸€å€‹ç™½é»<1,å¦å¤–ä¸€å€‹>1 (XOR)
           return white2 > 1. ? report1 : report2;
         }
         /*else if (white1 > 1. && white2 > 1.) {
-          //¦pªG³£>1
+          //å¦‚æœéƒ½>1
           return white1 < white2 ? report1 : report2;
                }*/
       }
@@ -1248,7 +1248,7 @@ public final class DeltaEReport
                             int[] deltaEDistribute,
                             double[][] CIE2000DeltaLCHs) {
     //==========================================================================
-    // ¦â®tªº²Î­p
+    // è‰²å·®çš„çµ±è¨ˆ
     //==========================================================================
     deltaEs = DoubleArray.transpose(deltaEs);
     double[] std = new double[deltaEs.length];
@@ -1278,7 +1278,7 @@ public final class DeltaEReport
     //==========================================================================
 
     //==========================================================================
-    //report¼Æ­Èªº³]©w
+    //reportæ•¸å€¼çš„è¨­å®š
     //==========================================================================
     this.maxDeltaE = new DeltaE();
     this.maxDeltaE.deltaE = max;

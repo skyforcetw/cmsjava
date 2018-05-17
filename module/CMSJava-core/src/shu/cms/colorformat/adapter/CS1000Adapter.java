@@ -11,7 +11,7 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ±qCS1000ªºÀÉ®×Åª¨ú¥úÃĞ¸ê®Æ
+ * å¾CS1000çš„æª”æ¡ˆè®€å–å…‰è­œè³‡æ–™
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *

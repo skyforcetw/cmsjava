@@ -22,15 +22,15 @@ import shu.util.log.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: a Colour Management System by Java</p>
- * ¶È¦Ò¼{¾F±µpixel³y¦¨ªºXtalk®ÄÀ³¤§Model
- * ³Ì§¹¬ü¶KªñLCD¯S©Êªºmodel
+ * åƒ…è€ƒæ…®é„°æ¥pixelé€ æˆçš„Xtalkæ•ˆæ‡‰ä¹‹Model
+ * æœ€å®Œç¾è²¼è¿‘LCDç‰¹æ€§çš„model
  *
- * ¤@ºØ¥[³tXtalk¸ÑªRªº¤èªk:
- * 1. ­º¥ı¶q´úrgb ramp, «Ø¥ßmulti-matrix model
- * 2. §Q¥Îmmmodel, §@¥Xcp code, ¥H¦¹cp code¤ÀªR¥i¯à§Q¥Î¨ìªºcode°Ï°ì
- * 3. ¥H¦¹°Ï°ì°ÊºA«Ø¥ß¥Xxtalk¥Îtarget. ¦A¥H¦¹target²£¥Íxtalk model.
- * 4. §Q¥Îxtalk model­«·s°µ¥Xcp code.
- * ¦p¦¹¥i¥H´î¤Ö«Ü¦h®Ú¥»¨S¦³¥²­n¶q´úªº°Ï°ì.
+ * ä¸€ç¨®åŠ é€ŸXtalkè§£æçš„æ–¹æ³•:
+ * 1. é¦–å…ˆé‡æ¸¬rgb ramp, å»ºç«‹multi-matrix model
+ * 2. åˆ©ç”¨mmmodel, ä½œå‡ºcp code, ä»¥æ­¤cp codeåˆ†æå¯èƒ½åˆ©ç”¨åˆ°çš„codeå€åŸŸ
+ * 3. ä»¥æ­¤å€åŸŸå‹•æ…‹å»ºç«‹å‡ºxtalkç”¨target. å†ä»¥æ­¤targetç”¢ç”Ÿxtalk model.
+ * 4. åˆ©ç”¨xtalk modelé‡æ–°åšå‡ºcp code.
+ * å¦‚æ­¤å¯ä»¥æ¸›å°‘å¾ˆå¤šæ ¹æœ¬æ²’æœ‰å¿…è¦é‡æ¸¬çš„å€åŸŸ.
  *
  * <p>Copyright: Copyright (c) 2008</p>
  *
@@ -81,7 +81,7 @@ public class AdjacentPixelXtalkModel extends ChannelDependentModel {
     }
 
     /**
-     * ­pºâRGB,¤Ï±À¼Ò¦¡
+     * è¨ˆç®—RGB,åæ¨æ¨¡å¼
      *
      * @param XYZ CIEXYZ
      * @param factor Factor[]
@@ -94,7 +94,7 @@ public class AdjacentPixelXtalkModel extends ChannelDependentModel {
     }
 
     /**
-     * ­pºâXYZ,«e¾É¼Ò¦¡
+     * è¨ˆç®—XYZ,å‰å°æ¨¡å¼
      *
      * @param rgb RGB
      * @param factor Factor[]
@@ -108,21 +108,21 @@ public class AdjacentPixelXtalkModel extends ChannelDependentModel {
     protected RGB correctRGB(final RGB rgb, boolean uncorrect) {
         RGB correctRGB = (RGB) rgb.clone();
         for (RGBBase.Channel ch : RGBBase.Channel.RGBChannel) {
-            // R/G/B¦U®Õ¥¿¤@¦¸
+            // R/G/Bå„æ ¡æ­£ä¸€æ¬¡
             double selfValues = rgb.getValue(ch);
             double adjValues = rgb.getValue(property.getAdjacentChannel(ch));
             adjValues = RGB.rationalize(adjValues, rgb.getMaxValue());
 
-            //selfªº­×¥¿¶µ
+            //selfçš„ä¿®æ­£é …
             double selfCorrectValues = eliminator.getCorrectionValue(ch,
                     selfValues, adjValues);
 
             if (uncorrect) {
-                //²¾°£xtalk
+                //ç§»é™¤xtalk
                 correctRGB.setValue(ch,
                                     correctRGB.getValue(ch) - selfCorrectValues);
             } else {
-                //¹w´úxtalk(­×¥¿)
+                //é æ¸¬xtalk(ä¿®æ­£)
                 correctRGB.setValue(ch,
                                     correctRGB.getValue(ch) + selfCorrectValues);
             }
@@ -132,14 +132,14 @@ public class AdjacentPixelXtalkModel extends ChannelDependentModel {
 
     protected RGB getCorrectRGB(final RGB rgb, boolean uncorrect) {
         if (rgb.isPrimaryChannel() || !crosstalkCorrect) {
-            //¸`¬Ù®É¶¡
+            //ç¯€çœæ™‚é–“
             return rgb;
         }
 
         RGB correctRGB = (RGB) rgb.clone();
 
         if (correctByLuminance) {
-            //¥H«G«×®Õ¥¿ªº¸Ü, ¥ıÂà¨ì«G«×domain
+            //ä»¥äº®åº¦æ ¡æ­£çš„è©±, å…ˆè½‰åˆ°äº®åº¦domain
             correct.gammaCorrect(correctRGB);
         }
 
@@ -151,7 +151,7 @@ public class AdjacentPixelXtalkModel extends ChannelDependentModel {
         }
 
         if (correctByLuminance) {
-            //¥H«G«×®Õ¥¿ªº¸Ü, ­n±q«G«×domainÂà¦^code
+            //ä»¥äº®åº¦æ ¡æ­£çš„è©±, è¦å¾äº®åº¦domainè½‰å›code
             correct.gammaUncorrect(correctRGB);
         }
 
@@ -161,16 +161,16 @@ public class AdjacentPixelXtalkModel extends ChannelDependentModel {
     protected double[] codeValues;
     private boolean doubleCorrect = false;
     /**
-     * ­×¥¿¹ï·Óªí¬O§_¥HLuminance RGBÀx¦s
-     * ³o¼Ëªº¥Î·N¬O¬°¤FÅı¤º´¡®É, ¥HLuminance RGBªºªÅ¶¡¤º´¡·|¦³¸û¦nªºµ²ªG,
-     *  ¦ı¬O¹ê»Ú´ú¸Õµ²ªG¨Ã¨S¦³®t¤Ó¦h.
-     * @note ¤£­n¥Î
+     * ä¿®æ­£å°ç…§è¡¨æ˜¯å¦ä»¥Luminance RGBå„²å­˜
+     * é€™æ¨£çš„ç”¨æ„æ˜¯ç‚ºäº†è®“å…§æ’æ™‚, ä»¥Luminance RGBçš„ç©ºé–“å…§æ’æœƒæœ‰è¼ƒå¥½çš„çµæœ,
+     *  ä½†æ˜¯å¯¦éš›æ¸¬è©¦çµæœä¸¦æ²’æœ‰å·®å¤ªå¤š.
+     * @note ä¸è¦ç”¨
      */
     protected final static boolean correctByLuminance = false;
     protected boolean crosstalkCorrect = true;
 
     /**
-     * ¨D«Y¼Æ
+     * æ±‚ä¿‚æ•¸
      *
      * @return Factor[]
      */
@@ -226,7 +226,7 @@ public class AdjacentPixelXtalkModel extends ChannelDependentModel {
         keyRGB.setColorBlack();
         int selfSize = selfChannelValues.length;
         int adfSize = adjacentChannelValues.length;
-        //¦¹³BªºcorrectLutªº¦ì¸m»Ppatent¤Wªº¤£¦P, ¤w¸g¹ï½Õ¤F
+        //æ­¤è™•çš„correctLutçš„ä½ç½®èˆ‡patentä¸Šçš„ä¸åŒ, å·²ç¶“å°èª¿äº†
         double[][] correctLut = DoubleArray.fill(adfSize, selfSize, Double.NaN);
 
         for (int x = 0; x < adfSize; x++) {
@@ -236,7 +236,7 @@ public class AdjacentPixelXtalkModel extends ChannelDependentModel {
 
                 Patch p = xtalkLCDTarget.getPatch(keyRGB);
                 if (p == null || !p.getRGB().isSecondaryChannel()) {
-                    //¦pªG¤£¬O¤G¦¸¦â, ¨S¿ìªk¨DXtalk RGB
+                    //å¦‚æœä¸æ˜¯äºŒæ¬¡è‰², æ²’è¾¦æ³•æ±‚Xtalk RGB
                     if (adjacentChannelValues[x] == 0 ||
                         selfChannelValues[y] == 0) {
                         correctLut[x][y] = 0;
@@ -273,7 +273,7 @@ public class AdjacentPixelXtalkModel extends ChannelDependentModel {
     }
 
     /**
-     * ¬O§_­nlog³Ìdetail
+     * æ˜¯å¦è¦logæœ€detail
      */
     private final static boolean LoggingDetail = true; /*AutoCPOptions.get(
           "XTalkModel_LoggingDetail");*/

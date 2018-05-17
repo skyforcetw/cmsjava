@@ -1,4 +1,4 @@
-package auo.cms.frc.impl;
+package fiti.cms.frc.impl;
 
 import java.io.BufferedInputStream;
 import java.io.BufferedOutputStream;
@@ -10,7 +10,7 @@ import java.io.ObjectInputStream;
 import java.io.ObjectOutputStream;
 import java.util.LinkedList;
 
-import auo.cms.frc.FRCPattern;
+import fiti.cms.frc.FRCPattern;
 import shu.math.array.IntArray;
 
 /**

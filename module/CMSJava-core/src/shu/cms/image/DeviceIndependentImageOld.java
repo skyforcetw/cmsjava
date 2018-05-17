@@ -15,7 +15,7 @@ import shu.image.*;
  * <p>Title: Colour Management System</p>
  *
  * <p>Description: </p>
- * ¿W¥ß¦âªÅ¶¡ªº¼v¹³
+ * ç¨ç«‹è‰²ç©ºé–“çš„å½±åƒ
  *
  * <p>Copyright: Copyright (c) 2006</p>
  *
@@ -43,7 +43,7 @@ public class DeviceIndependentImageOld {
 //
 //      this.bufferedImage = image;
 //      source = Source.BufferedImage;
-//      //R+G+Bªºbit¼Æ¶q
+//      //R+G+Bçš„bitæ•¸é‡
 //      int pixelSize = bufferedImage.getColorModel().getPixelSize();
 //      this.normal = Math.pow(2, pixelSize / 3) - 1;
 //
@@ -80,7 +80,7 @@ public class DeviceIndependentImageOld {
                                    CAMConst.CATType catType) {
     this.bufferedImage = image;
     source = Source.BufferedImage;
-    //R+G+Bªºbit¼Æ¶q
+    //R+G+Bçš„bitæ•¸é‡
     int pixelSize = bufferedImage.getColorModel().getPixelSize();
     this.normal = Math.pow(2, pixelSize / 3) - 1;
 

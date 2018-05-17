@@ -24,7 +24,7 @@ public class RBCalculator {
   private LCDModelExposure adapter;
 
   /**
-   * ³]©w­pºâ¦â®t©Ò¨Ï¥Îªº¥ÕÂI
+   * è¨­å®šè¨ˆç®—è‰²å·®æ‰€ä½¿ç”¨çš„ç™½é»
    * @param whiteXYZ CIEXYZ
    */
   public void setWhitePoint(CIEXYZ whiteXYZ) {
@@ -39,10 +39,10 @@ public class RBCalculator {
 
   /**
    *
-   * @param xyY CIExyY ¥Ø¼ĞªºxyY­È
-   * @param g double ¥Ø¼ĞªºG­È
-   * @param GTolerance double G¥i®e³\ªº°¾®t­È
-   * @param relativeXYZ boolean XYZ­È¬O§_¬°¬Û¹ï­È
+   * @param xyY CIExyY ç›®æ¨™çš„xyYå€¼
+   * @param g double ç›®æ¨™çš„Gå€¼
+   * @param GTolerance double Gå¯å®¹è¨±çš„åå·®å€¼
+   * @param relativeXYZ boolean XYZå€¼æ˜¯å¦ç‚ºç›¸å°å€¼
    * @return RGB
    */
   public RGB getRB(CIExyY xyY, double g, double GTolerance,
@@ -58,11 +58,11 @@ public class RBCalculator {
   }
 
   /**
-   * ¤wª¾GB(or RB), ¨ú³Ì±µªñxyYªºRGB²Õ¦X
-   * @param xyY CIExyY ¥Ø¼ĞxyY
-   * @param rgb RGB ¤wª¾ªºGB(or RB)
-   * @param tolerance double R(or B)ªº¼e®e­È
-   * @param relativeXYZ boolean XYZ(xyY)¬O§_¬°¬Û¹ï­È
+   * å·²çŸ¥GB(or RB), å–æœ€æ¥è¿‘xyYçš„RGBçµ„åˆ
+   * @param xyY CIExyY ç›®æ¨™xyY
+   * @param rgb RGB å·²çŸ¥çš„GB(or RB)
+   * @param tolerance double R(or B)çš„å¯¬å®¹å€¼
+   * @param relativeXYZ boolean XYZ(xyY)æ˜¯å¦ç‚ºç›¸å°å€¼
    * @param getB boolean
    * @return RGB
    * @deprecated
@@ -70,15 +70,15 @@ public class RBCalculator {
   public RGB getRorB(CIExyY xyY, final RGB rgb, double tolerance,
                      boolean relativeXYZ, boolean getB) {
     /**
-     * ²£¥Í¤èªk
-     * 1.¥ı¥ÎxyY§ä¨ì³Ì±µªñªºRGB
-     * 2.¥HRGBªºR·f°tgbªºGB, ­pºâ¥XXYZ
-     * 3.½Õ¾ãR, ­°§CXYZ»PxyYªº®t¶Z
+     * ç”¢ç”Ÿæ–¹æ³•
+     * 1.å…ˆç”¨xyYæ‰¾åˆ°æœ€æ¥è¿‘çš„RGB
+     * 2.ä»¥RGBçš„Ræ­é…gbçš„GB, è¨ˆç®—å‡ºXYZ
+     * 3.èª¿æ•´R, é™ä½XYZèˆ‡xyYçš„å·®è·
      */
     double targetG = rgb.getValue(RGBBase.Channel.G, RGB.MaxValue.Double255);
-    //°_©lRGB
+    //èµ·å§‹RGB
     RGB initRGB = this.getRB(xyY, targetG, tolerance, relativeXYZ);
-    //´À´«¤W¥Ø¼ĞG&B
+    //æ›¿æ›ä¸Šç›®æ¨™G&B
     initRGB.G = rgb.G;
     MinimisationFunction func = null;
 
@@ -175,12 +175,12 @@ public class RBCalculator {
   }
 
   /**
-   * ¤wª¾¥Ø¼Ğchannel ch, ¥B¤wª¾¥Ø¼Ğchannel¹ïÀ³ªº­ÈtargetValue, ­n¨D¬Û¹ïÀ³ªºxyY¤UªºRGB
-   * @param xyY CIExyY ¤wª¾xyY
-   * @param targetValue double ¤wª¾¼Æ­È
+   * å·²çŸ¥ç›®æ¨™channel ch, ä¸”å·²çŸ¥ç›®æ¨™channelå°æ‡‰çš„å€¼targetValue, è¦æ±‚ç›¸å°æ‡‰çš„xyYä¸‹çš„RGB
+   * @param xyY CIExyY å·²çŸ¥xyY
+   * @param targetValue double å·²çŸ¥æ•¸å€¼
    * @param tolerance double
-   * @param ch Channel ¤wª¾¼Æ­È(targetValue)ªºchannel
-   * @param relativeXYZ boolean XYZ(xyY)¬O§_¬°¬Û¹ï­È
+   * @param ch Channel å·²çŸ¥æ•¸å€¼(targetValue)çš„channel
+   * @param relativeXYZ boolean XYZ(xyY)æ˜¯å¦ç‚ºç›¸å°å€¼
    * @return RGB
    */
   public RGB getRGBByLumi(CIExyY xyY, double targetValue, double tolerance,
@@ -192,7 +192,7 @@ public class RBCalculator {
 
   private void calculateRBDeltaE(RGB rb, CIExyY xyY, boolean relativeXYZ) {
     //==========================================================================
-    // ­pºâinverseLabªºdeltaE
+    // è¨ˆç®—inverseLabçš„deltaE
     //==========================================================================
     _getRBDeltaE = getDeltaE(rb, xyY, relativeXYZ);
     //==========================================================================
@@ -200,10 +200,10 @@ public class RBCalculator {
 
   private DeltaE getDeltaE(RGB rb, CIExyY xyY, boolean relativeXYZ) {
     //==========================================================================
-    // ­pºâinverseLabªºdeltaE
+    // è¨ˆç®—inverseLabçš„deltaE
     //==========================================================================
     CIEXYZ XYZ = xyY.toXYZ();
-    //¦]¬°¥u­n¤ñ¸û¦â«×, ©Ò¥H±N«G«×Âà¨ì¸ò­pºâ¦Ó±oªºrbªº«G«×¬Û¦P
+    //å› ç‚ºåªè¦æ¯”è¼ƒè‰²åº¦, æ‰€ä»¥å°‡äº®åº¦è½‰åˆ°è·Ÿè¨ˆç®—è€Œå¾—çš„rbçš„äº®åº¦ç›¸åŒ
     CIEXYZ rbXYZ = lcdModel.getXYZ(rb, relativeXYZ);
 //    XYZ.scaleY(rbXYZ);
     DeltaE dE = lcdModel.getDeltaE(XYZ, rbXYZ);
@@ -216,15 +216,15 @@ public class RBCalculator {
   }
 
   /**
-   * §Q¥ÎÀu¤Æªº¤è¦¡½Õ¾ã«G«×, §ä¨ì³Ì±µªñªº¸Ñ
-   * @param targetxyY CIExyY ¥Ø¼ĞªºxyY
-   * @param relativeXYZ boolean ¥Ø¼ĞXYZ(xyY)¬O§_¬O¬Û¹ï­È
-   * @param tolerance double ¼e®e­È
-   * @param targetValue double ¥Ø¼Ğ¼Æ­È
-   * @param ch Channel ¥Ø¼Ğ¼Æ­Èªºchannel
-   * @param whiteRGB boolean ¬O§_¬OwhiteRGB;
-   * ¦pªG¬OwhiteRGB, «h©¿²¤chªº³]©w, ¥Ø¼Ğ¼Æ­È·|¥H³Ì¤j¼Æ­Èªºchannel¬°¥D,
-   *  ¥B¨C¦¸maxLuminanceConstraint·|²¤´î, ¬°½T«O¤@©w­n§ä¨ìµ²ªG.
+   * åˆ©ç”¨å„ªåŒ–çš„æ–¹å¼èª¿æ•´äº®åº¦, æ‰¾åˆ°æœ€æ¥è¿‘çš„è§£
+   * @param targetxyY CIExyY ç›®æ¨™çš„xyY
+   * @param relativeXYZ boolean ç›®æ¨™XYZ(xyY)æ˜¯å¦æ˜¯ç›¸å°å€¼
+   * @param tolerance double å¯¬å®¹å€¼
+   * @param targetValue double ç›®æ¨™æ•¸å€¼
+   * @param ch Channel ç›®æ¨™æ•¸å€¼çš„channel
+   * @param whiteRGB boolean æ˜¯å¦æ˜¯whiteRGB;
+   * å¦‚æœæ˜¯whiteRGB, å‰‡å¿½ç•¥chçš„è¨­å®š, ç›®æ¨™æ•¸å€¼æœƒä»¥æœ€å¤§æ•¸å€¼çš„channelç‚ºä¸»,
+   *  ä¸”æ¯æ¬¡maxLuminanceConstraintæœƒç•¥æ¸›, ç‚ºç¢ºä¿ä¸€å®šè¦æ‰¾åˆ°çµæœ.
    * @return RGB
    */
   private RGB getRBByLumi(final CIExyY targetxyY, boolean relativeXYZ,
@@ -233,7 +233,7 @@ public class RBCalculator {
 
     double initStep = INIT_STEP;
 
-    //±N«G«×­­¨î¦b¿Ã¹õªº³Ì¤j«G«×
+    //å°‡äº®åº¦é™åˆ¶åœ¨è¢å¹•çš„æœ€å¤§äº®åº¦
     if (maxLuminanceConstraint == -1) {
       this.luminanceConstraint = this.lcdModel.getLuminance().Y;
     }
@@ -274,7 +274,7 @@ public class RBCalculator {
         minDeltaE = dEIndex;
         minDeltaGRGB = rgb;
       }
-      //¬°¤F´£°ª§ä¨ìªº¾÷²v, ¨C¤@¦¸°j°é, ³£µy·L­°§C(¼W¥[)¨ä«G«×¬°0.9­¿
+      //ç‚ºäº†æé«˜æ‰¾åˆ°çš„æ©Ÿç‡, æ¯ä¸€æ¬¡è¿´åœˆ, éƒ½ç¨å¾®é™ä½(å¢åŠ )å…¶äº®åº¦ç‚º0.9å€
       clone.Y *= 0.9;
 
       if (whiteRGB && luminanceConstraint != -1) {
@@ -293,16 +293,16 @@ public class RBCalculator {
     return touchMaxIterativeTime;
   }
 
-  //«G«×ªº°_©l­¡¥Nstep
+  //äº®åº¦çš„èµ·å§‹è¿­ä»£step
   protected final static double INIT_STEP = 1;
-  //³Ì¤j­¡¥N¦¸¼Æ
+  //æœ€å¤§è¿­ä»£æ¬¡æ•¸
   protected final static int MAX_ITERATIVE_TIME = 180;
-  //«G«×­­¨î
+  //äº®åº¦é™åˆ¶
   protected double maxLuminanceConstraint = -1;
-  //«G«×­­¨î
+  //äº®åº¦é™åˆ¶
   protected double minLuminanceConstraint = 0;
   /**
-   * ¨Ñ¹Bºâ¥Îªº«G«×­­¨î
+   * ä¾›é‹ç®—ç”¨çš„äº®åº¦é™åˆ¶
    */
   private double luminanceConstraint = -1;
 
@@ -362,9 +362,9 @@ public class RBCalculator {
     }
 
     /**
-     * ³Ì¨Î¤Æ¥Ø¼Ğ¨ç¼Æ.
-     * ¥Î³Ì¨Î¤Æªº¤è¦¡,¦bxyY domain¤W½Õ¾ã«G«×,¨Ï¨ä«G«×¹ïÀ³ªºG­È²Å¦X©Ò»İ.
-     * delta¬°¥Ø¼Ğ¨ç¼Æ,¤£Â_½Õ¾ãY±o¨ì³Ì¤pªºdelta,¬°³Ì¨Î¤Æªº¹Lµ{.
+     * æœ€ä½³åŒ–ç›®æ¨™å‡½æ•¸.
+     * ç”¨æœ€ä½³åŒ–çš„æ–¹å¼,åœ¨xyY domainä¸Šèª¿æ•´äº®åº¦,ä½¿å…¶äº®åº¦å°æ‡‰çš„Gå€¼ç¬¦åˆæ‰€éœ€.
+     * deltaç‚ºç›®æ¨™å‡½æ•¸,ä¸æ–·èª¿æ•´Yå¾—åˆ°æœ€å°çš„delta,ç‚ºæœ€ä½³åŒ–çš„éç¨‹.
      * @param Y double[]
      * @return double
      */
@@ -420,8 +420,8 @@ public class RBCalculator {
   }
 
   /**
-   * ­¡¥N®Éªº³Ì¤j«G«×­­¨î.
-   * ¹ï©ógamma¤ÏÂàªº­±ªO«Ü¦³¥Î³B.
+   * è¿­ä»£æ™‚çš„æœ€å¤§äº®åº¦é™åˆ¶.
+   * å°æ–¼gammaåè½‰çš„é¢æ¿å¾ˆæœ‰ç”¨è™•.
    * @param maxLuminanceConstraint double
    */
   public void setMaxLuminanceConstraint(double maxLuminanceConstraint) {
