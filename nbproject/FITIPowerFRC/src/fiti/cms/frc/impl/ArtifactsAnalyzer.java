@@ -1,7 +1,5 @@
 package fiti.cms.frc.impl;
 
-import java.io.FileNotFoundException;
-import java.io.IOException;
 
 import fiti.cms.frc.FRCPattern;
 import shu.math.array.DoubleArray;
@@ -29,8 +27,7 @@ public class ArtifactsAnalyzer {
     }
 
     public static void analyze(FRCPattern frcpattern, int level) {
-//        boolean[][][][] pattern = frcpattern.pattern;
-//        AUOFRC auofrc = new AUOFRC(pattern, false);
+ 
         ArtifactsAnalyzer analyzer = new
                                      ArtifactsAnalyzer(
                                              ArtifactsAnalyzer.Inversion.Dot,
@@ -58,21 +55,7 @@ public class ArtifactsAnalyzer {
                                          boolean checkEqualsPolarity,
                                          boolean checkLeftRightBalance) {
         analyze(frcpattern);
-//        boolean[][][][] pattern = frcpattern.pattern;
-//        AUOFRC auofrc = new AUOFRC(pattern, false);
-//        ArtifactsAnalyzer analyzer = new
-//                                     ArtifactsAnalyzer(
-//                                             ArtifactsAnalyzer.Inversion.Dot,
-//                                             auofrc);
-//
-//        byte[][] artifacts = analyzer.getArtifactsArray(
-//                1);
-//
-//        frcpattern.artifacts = artifacts;
-//        frcpattern.sum = analyzer.analyzeSubpixelBaseSum(1);
-//        frcpattern.balancedSum = analyzer.getBalancedSumArray(1);
-//        frcpattern.plusOneSum = analyzer.analyzeSubpixelBasePlusOneSum(1);
-//        frcpattern.caculateInfo();
+ 
 
         boolean check1 = (!checkArtifactsSymmetry || CheckTool.checkArtifactsSymmetry(frcpattern));
         boolean check2 = (!checkEqualsPolarity || CheckTool.checkPolarityBalance(frcpattern));
@@ -705,22 +688,7 @@ public class ArtifactsAnalyzer {
     }, { {F, F, F, F}, {F, F, F, F}
     }
     };
-
-    /*
-    public static void main(String[] args) throws FileNotFoundException,
-            IOException {
-        System.out.println("1211134");
-        ArtifactsAnalyzer analyzer = new ArtifactsAnalyzer(ArtifactsAnalyzer.
-                Inversion.Dot,
-//                new AUOFRC("frc/auofrc.csv", AUOFRC.PatternCount.FRC8));
-                new FRCPattern("frc/auofrc.csv"));
-
-//        analyzer.setInverse(true);
-//        analyzer.setNPlus1DotInversion(true);
-//        analyzer.setNLineDotInversion(2);
-        System.out.println(FRCUtil.toString(analyzer.getPolarity(0)));
-    }
-    */
+ 
     
     public static void main(String[] args) {
         System.out.println("1234");

@@ -57,28 +57,18 @@ public class FRCPattern implements Serializable {
             return null;
         }
         int frame = polarityPattern.length;
-//        int height = polarityPattern[0].length;
-//        int width=polarityPattern[0][0].length;
         StringBuilder buf1 = new StringBuilder();
-//        StringBuilder buf2 = new StringBuilder();
+
         for (int f = 0; f < frame; f++) {
             if (polarityPattern[f][h][w] == 1) {
-//                buf1.append('��');
-//                buf1.append("�z�{");
-//                buf2.append("�}�|");
+
             } else if (polarityPattern[f][h][w] == -1) {
                 buf1.append('_');
-//                buf1.append("�{�z");
-//                buf2.append("�|�}");
             } else if (polarityPattern[f][h][w] == 0) {
                 buf1.append('-');
-//                buf1.append("    ");
-//                buf2.append("�v�v");
-
             }
         }
-//        buf1.append('\n');
-//        buf1.append(buf2);
+
         return buf1.toString();
     }
 
@@ -392,10 +382,6 @@ public class FRCPattern implements Serializable {
         return eq;
     }
 
-//        public boolean equalsArtifacts(Object obj) {
-//
-//        }
-
     public static String toString(boolean[][] pattern) {
         int height = pattern.length;
         int width = pattern[0].length;
@@ -403,7 +389,6 @@ public class FRCPattern implements Serializable {
         for (int h = 0; h < height; h++) {
             for (int w = 0; w < width; w++) {
                 b.append(pattern[h][w] ? '1' : '0');
-//                b.append(pattern[h][w] ? '1' : ' ');
                 b.append(' ');
             }
             b.append(' ');
@@ -574,8 +559,6 @@ public class FRCPattern implements Serializable {
     public static void main(String[] args) throws FileNotFoundException, IOException {
         String filename = "D:/My Documents/�u�@/Project/FRC/FRC Research/NewFRC/AllNewFRC2.txt";
 
-//         AUOFRC frc = new AUOFRC(filename, AUOFRC.PatternCount.FRC16);
-//        FRCPattern frc = new FRCPattern(filename);
-//        System.out.println(frc);
+ 
     }
 }
